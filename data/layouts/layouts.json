@@ -4682,14 +4682,14 @@
       "blockdata_filepath": "data/layouts/Route10/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE11",
-      "name": "Route11_Layout",
+      "id": "LAYOUT_ROUTE11CS",
+      "name": "Route11CS_Layout",
       "width": 40,
       "height": 65,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/Route11/border.bin",
-      "blockdata_filepath": "data/layouts/Route11/map.bin"
+      "border_filepath": "data/layouts/Route11CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route11CS/map.bin"
     },
     {
       "id": "LAYOUT_MARE_E",

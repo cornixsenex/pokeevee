@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE11",
-  "name": "Route11",
-  "layout": "LAYOUT_ROUTE11",
+  "id": "MAP_ROUTE11CS",
+  "name": "Route11CS",
+  "layout": "LAYOUT_ROUTE11CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -49,7 +49,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_ActaTranquilla"
+      "script": "Route11CS_Script_Transition_ActaTranquilla"
     },
     {
       "type": "trigger",
@@ -58,7 +58,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_ActaTranquilla"
+      "script": "Route11CS_Script_Transition_ActaTranquilla"
     },
     {
       "type": "trigger",
@@ -67,7 +67,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_ActaTranquilla"
+      "script": "Route11CS_Script_Transition_ActaTranquilla"
     },
     {
       "type": "trigger",
@@ -76,7 +76,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_ActaTranquilla"
+      "script": "Route11CS_Script_Transition_ActaTranquilla"
     },
     {
       "type": "trigger",
@@ -85,7 +85,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -94,7 +94,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -103,7 +103,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -112,7 +112,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -121,7 +121,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -130,7 +130,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -139,7 +139,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -148,7 +148,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -157,7 +157,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -166,7 +166,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -175,7 +175,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -184,7 +184,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -193,7 +193,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -202,7 +202,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -211,7 +211,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -220,7 +220,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -229,7 +229,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -238,7 +238,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -247,7 +247,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -256,7 +256,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -265,7 +265,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -274,7 +274,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -283,7 +283,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -292,7 +292,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route11_Script_Transition_PortusUrbis"
+      "script": "Route11CS_Script_Transition_PortusUrbis"
     },
     {
       "type": "trigger",
@@ -301,7 +301,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -310,7 +310,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -319,7 +319,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -328,7 +328,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -337,7 +337,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -346,7 +346,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -355,7 +355,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -364,7 +364,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -373,7 +373,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -382,7 +382,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -391,7 +391,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -400,7 +400,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -409,7 +409,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -418,7 +418,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -427,7 +427,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -436,7 +436,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -445,7 +445,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -454,7 +454,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -463,7 +463,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -472,7 +472,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -481,7 +481,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     },
     {
       "type": "trigger",
@@ -490,7 +490,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route11_Script_Transition_MareTranquillum"
+      "script": "Route11CS_Script_Transition_MareTranquillum"
     }
   ],
   "bg_events": []

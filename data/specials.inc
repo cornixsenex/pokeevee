@@ -630,7 +630,7 @@ gSpecials::
     def_special IsPyramidsDCactorum_F
     def_special GetDynamicMapSec_EliciusBeach_F
     def_special GetDynamicMapSec_Route10_F
-    def_special GetDynamicMapSec_Route11_F
+    def_special GetDynamicMapSec_Route11CS_F
     def_special GetDynamicMapSec_Hippodrome_F
     def_special IsSanjoRockFillerSabinaNova_F
     def_special IsGatoCityParkNThermae_F

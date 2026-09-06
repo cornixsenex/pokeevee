@@ -1206,7 +1206,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route9/scripts.inc"
 	.include "data/maps/EliciusBeach/scripts.inc"
 	.include "data/maps/Route10/scripts.inc"
-	.include "data/maps/Route11/scripts.inc"
+	.include "data/maps/Route11CS/scripts.inc"
 	.include "data/maps/MareE/scripts.inc"
 	.include "data/maps/MareC/scripts.inc"
 	.include "data/maps/FortMontgomery/scripts.inc"

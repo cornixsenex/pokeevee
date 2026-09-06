@@ -4551,9 +4551,9 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		}
 	}
 	//Route11 - Portus Urbis, Acta Tranquilla, Mare Tranquilum
-	if (mapGroup == MAP_GROUP(MAP_ROUTE11) && mapNum == MAP_NUM(MAP_ROUTE11)) 
+	if (mapGroup == MAP_GROUP(MAP_ROUTE11CS) && mapNum == MAP_NUM(MAP_ROUTE11CS)) 
 	{
-		n = GetDynamicMapSec_Route11(FALSE);
+		n = GetDynamicMapSec_Route11CS(FALSE);
 		switch (n) {
 			case 1:
 				return MAPSEC_PORTUS_URBIS;
@@ -5406,10 +5406,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		}
 	}
 	//Route11 - Portus Urbis, Acta Tranquilla, Mare Tranquillum
-	if (mapGroup == MAP_GROUP(MAP_ROUTE11) && mapNum == MAP_NUM(MAP_ROUTE11)) 
+	if (mapGroup == MAP_GROUP(MAP_ROUTE11CS) && mapNum == MAP_NUM(MAP_ROUTE11CS)) 
 	{
-		n = GetDynamicMapSec_Route11(useWarpInfo);
-		DebugPrintf("GetDynamicMapSec_Route11 returned: %d\n", n);
+		n = GetDynamicMapSec_Route11CS(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_Route11CS returned: %d\n", n);
 		switch (n) {
 		    //Portus Urbis
 			case 1:

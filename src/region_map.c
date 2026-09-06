@@ -2039,10 +2039,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
-		//Route11 - Portus Urbis, Acta Tranquilla, Mare Tranquillum
-		if (mapGroup == MAP_GROUP(MAP_ROUTE11) && mapNum == MAP_NUM(MAP_ROUTE11))
+		//Route11CS - Portus Urbis, Acta Tranquilla, Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_ROUTE11CS) && mapNum == MAP_NUM(MAP_ROUTE11CS))
         {
-			n = GetDynamicMapSec_Route11(FALSE);
+			n = GetDynamicMapSec_Route11CS(FALSE);
 			switch (n)
 			{
 				case 1:
@@ -4674,7 +4674,7 @@ bool32 GetDynamicMapSec_Route10(bool32 useWarpInfo)
         return 2;
 }
 
-bool32 GetDynamicMapSec_Route11(bool32 useWarpInfo)
+bool32 GetDynamicMapSec_Route11CS(bool32 useWarpInfo)
 {
 	//1: Portus Urbis
 	//2: Acta Tranquilla
@@ -4690,7 +4690,7 @@ bool32 GetDynamicMapSec_Route11(bool32 useWarpInfo)
         y = gSaveBlock1Ptr->pos.y;
     }
 
-	DebugPrintf("GetDynamicMapSec_Route11\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
+	DebugPrintf("GetDynamicMapSec_Route11CS\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
 
 
 	//Left side - Top is all Acta, bottom all Mare

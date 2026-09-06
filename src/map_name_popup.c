@@ -1249,10 +1249,10 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
-		//Route11 - Portus Urbis, Acta Tranquilla, Mare Tranquilum
-        if (mapGroup == MAP_GROUP(MAP_ROUTE11) && mapNum == MAP_NUM(MAP_ROUTE11)) 
+		//Route11CS - Portus Urbis, Acta Tranquilla, Mare Tranquilum
+        if (mapGroup == MAP_GROUP(MAP_ROUTE11CS) && mapNum == MAP_NUM(MAP_ROUTE11CS)) 
 		{
-			n = GetDynamicMapSec_Route11(FALSE);
+			n = GetDynamicMapSec_Route11CS(FALSE);
 			switch (n) {
 				case 1:
 					regionMapSectionId = MAPSEC_PORTUS_URBIS;
