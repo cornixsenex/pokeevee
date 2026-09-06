@@ -33,16 +33,6 @@ Route14
 #Route16
 #Route17
 
->data/maps/RouteX
->RouteX_Script_Name (map scripts)
->LAYOUT_ROUTEX
->RouteX
->ROUTEX
->MAP_ROUTEX
-
->NOTE DO not need to update the MAPSEC_ROUTE_X because those are placehodlers for the FRLG maps
-(Also note the MAPSEC_COUNT may need to be expanded or smth idk could be an issue during merge)
-
 >rename directory data/maps/RouteX -> data/maps/RouteXCS
 >data/maps/RouteX/script.pory
 >data/maps/RouteX/map.json
@@ -51,12 +41,11 @@ Route14
 >data/layouts/layouts.json
 >data/event_scripts.s
 
->src/map_name_popup.c
->dynamic maps
->porymap.user.cfg (Should not have the maps open lol)
->Connector map's map.json (grep ROUTEX)
-src/map_name_popup.c
-src/data/region_map_region_map_sections.json
+>RouteX
+>ROUTEX
+
+>NOTE DO not need to update the MAPSEC_ROUTE_X because those are placehodlers for the FRLG maps
+(Also note the MAPSEC_COUNT may need to be expanded or smth idk could be an issue during merge)
 
 
 > Handle FRLG trainers being merged in

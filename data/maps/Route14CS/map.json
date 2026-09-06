@@ -1,9 +1,9 @@
 {
-  "id": "MAP_ROUTE14",
-  "name": "Route14",
-  "layout": "LAYOUT_ROUTE14",
+  "id": "MAP_ROUTE14CS",
+  "name": "Route14CS",
+  "layout": "LAYOUT_ROUTE14CS",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ROUTE_114",
+  "region_map_section": "MAPSEC_DESERTUM_CALIDUM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -35,7 +35,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route14_EventScript_TestBattle",
+      "script": "Route14CS_EventScript_TestBattle",
       "flag": "0"
     },
     {

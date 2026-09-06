@@ -4872,14 +4872,14 @@
       "blockdata_filepath": "data/layouts/Slabs/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE14",
-      "name": "Route14_Layout",
+      "id": "LAYOUT_ROUTE14CS",
+      "name": "Route14CS_Layout",
       "width": 69,
       "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fallarbor",
-      "border_filepath": "data/layouts/Route14/border.bin",
-      "blockdata_filepath": "data/layouts/Route14/map.bin"
+      "border_filepath": "data/layouts/Route14CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route14CS/map.bin"
     },
     {
       "id": "LAYOUT_BIKE_ROUTE_NWS",

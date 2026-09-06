@@ -1,19 +1,19 @@
-mapscripts Route14_MapScripts {
+mapscripts Route14CS_MapScripts {
 
 
 	MAP_SCRIPT_ON_RESUME {
-		call (Route14_OnResume)
+		call (Route14CS_OnResume)
 	}
 
 }
 
 
-script Route14_OnResume {
+script Route14CS_OnResume {
 	setstepcallback (STEP_CB_ASH)
 	end
 }
 
-script Route14_EventScript_TestBattle {
+script Route14CS_EventScript_TestBattle {
 	lock
 	msgbox("Test Battle!")
 	closemessage

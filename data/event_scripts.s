@@ -1225,7 +1225,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Graveyard/scripts.inc"
 	.include "data/maps/Route12/scripts.inc"
 	.include "data/maps/Slabs/scripts.inc"
-	.include "data/maps/Route14/scripts.inc"
+	.include "data/maps/Route14CS/scripts.inc"
 	.include "data/maps/BikeRouteNWS/scripts.inc"
 	.include "data/maps/Pyramids/scripts.inc"
 	.include "data/maps/Phoenix/scripts.inc"
