@@ -1223,7 +1223,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BikeRouteGatoN/scripts.inc"
 	.include "data/maps/BikeRouteNE/scripts.inc"
 	.include "data/maps/Graveyard/scripts.inc"
-	.include "data/maps/Route12/scripts.inc"
+	.include "data/maps/Route12CS/scripts.inc"
 	.include "data/maps/Slabs/scripts.inc"
 	.include "data/maps/Route14CS/scripts.inc"
 	.include "data/maps/BikeRouteNWS/scripts.inc"

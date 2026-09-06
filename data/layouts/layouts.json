@@ -4852,14 +4852,14 @@
       "blockdata_filepath": "data/layouts/Graveyard/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE12",
-      "name": "Route12_Layout",
+      "id": "LAYOUT_ROUTE12CS",
+      "name": "Route12CS_Layout",
       "width": 126,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fallarbor",
-      "border_filepath": "data/layouts/Route12/border.bin",
-      "blockdata_filepath": "data/layouts/Route12/map.bin"
+      "border_filepath": "data/layouts/Route12CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route12CS/map.bin"
     },
     {
       "id": "LAYOUT_SLABS",
