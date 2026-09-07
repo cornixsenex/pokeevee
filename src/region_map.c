@@ -2023,10 +2023,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
-        //Route10 - Tranquillitas, Acta Tranquilla, Mare Tranquillum
-		if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10))
+        //Route10CS - Tranquillitas, Acta Tranquilla, Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_ROUTE10CS) && mapNum == MAP_NUM(MAP_ROUTE10CS))
         {
-			n = GetDynamicMapSec_Route10(FALSE);
+			n = GetDynamicMapSec_Route10CS(FALSE);
 			switch (n)
 			{
 				case 1:
@@ -4634,7 +4634,7 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
 		return 5;
 }
 
-bool32 GetDynamicMapSec_Route10(bool32 useWarpInfo)
+bool32 GetDynamicMapSec_Route10CS(bool32 useWarpInfo)
 {
 	//1: Tranquillitas
 	//2: Acta Tranquilla
@@ -4650,7 +4650,7 @@ bool32 GetDynamicMapSec_Route10(bool32 useWarpInfo)
         y = gSaveBlock1Ptr->pos.y;
     }
 
-	DebugPrintf("GetDynamicMapSec_Route10\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
+	DebugPrintf("GetDynamicMapSec_Route10CS\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
 
     //Tranquillitas
     if 

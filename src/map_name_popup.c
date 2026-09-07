@@ -1231,10 +1231,10 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
-        //Route10 - Tranquilitas, Acta Tranquilla, Mare Tranquilum
-        if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) 
+        //Route10CS - Tranquilitas, Acta Tranquilla, Mare Tranquilum
+        if (mapGroup == MAP_GROUP(MAP_ROUTE10CS) && mapNum == MAP_NUM(MAP_ROUTE10CS)) 
 		{
-			n = GetDynamicMapSec_Route10(FALSE);
+			n = GetDynamicMapSec_Route10CS(FALSE);
 			switch (n) {
 				case 1:
 					regionMapSectionId = MAPSEC_TRANQUILLITAS;

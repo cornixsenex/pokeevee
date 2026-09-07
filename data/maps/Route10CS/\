@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE10",
-  "name": "Route10",
-  "layout": "LAYOUT_ROUTE10",
+  "id": "MAP_ROUTE10CS",
+  "name": "Route10CS",
+  "layout": "LAYOUT_ROUTE10CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route10_EventScript_Rival",
-      "flag": "FLAG_ROUTE10_HIDE_RIVAL"
+      "script": "Route10CS_EventScript_Rival",
+      "flag": "FLAG_ROUTE10CS_HIDE_RIVAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
@@ -258,8 +258,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route10_EventScript_Krabby",
-      "flag": "FLAG_ROUTE10_HIDE_KRABBY"
+      "script": "Route10CS_EventScript_Krabby",
+      "flag": "FLAG_ROUTE10CS_HIDE_KRABBY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",

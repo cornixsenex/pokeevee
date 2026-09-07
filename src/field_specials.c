@@ -6672,9 +6672,9 @@ bool32 GetDynamicMapSec_EliciusBeach_F(void)
     return GetDynamicMapSec_EliciusBeach(FALSE);
 }
 
-bool32 GetDynamicMapSec_Route10_F(void)
+bool32 GetDynamicMapSec_Route10CS_F(void)
 {
-    return GetDynamicMapSec_Route10(FALSE);
+    return GetDynamicMapSec_Route10CS(FALSE);
 }
 
 bool32 GetDynamicMapSec_Route11CS_F(void)

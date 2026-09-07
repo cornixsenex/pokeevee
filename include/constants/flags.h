@@ -99,7 +99,7 @@
 //END DEBUG
 
 // Scripts
-#define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
+#define FLAG_ROUTE10CS_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
 #define FLAG_AEDESLUX_TRIVIS                 0x51 //Set after get Aedes Lux Trivis - Hide Trivis
 #define FLAG_SLABS_HIDE_RIVAL                0x52
 #define FLAG_CASAATREI_AGAMEMNONGIFT         0x53 //Set after Agamemnon gives you the gift
@@ -107,7 +107,7 @@
 #define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
 #define FLAG_WHJ_OPEN                        0x56  // Set when allowed into WHJ 					
 #define FLAG_GATOCITYS_HIDEM1             	 0x57  // Hides M1 in line...should be an easier way but this is expedient.
-#define FLAG_ROUTE10_HIDE_KRABBY             0x58
+#define FLAG_ROUTE10CS_HIDE_KRABBY             0x58
 #define FLAG_GATOCITYS_HIDEM2                0x59
 #define FLAG_GATOCITYS_HIDEM3                0x5A
 #define FLAG_SALTYSPITOON_BRAWL    	         0x5B

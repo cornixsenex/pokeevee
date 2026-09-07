@@ -680,10 +680,10 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
     {
 		mapGroup = gSaveBlock1Ptr->location.mapGroup;
 		mapNum   = gSaveBlock1Ptr->location.mapNum;
-		//Route10 - Check From Mare Tranquillum to Acta Tranquilla
-		if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) {
+		//Route10CS - Check From Mare Tranquillum to Acta Tranquilla
+		if (mapGroup == MAP_GROUP(MAP_ROUTE10CS) && mapNum == MAP_NUM(MAP_ROUTE10CS)) {
 			if (VarGet(VAR_TEMP_5) == 3) {
-				ScriptContext_SetupScript(Route10_Script_Transition_ActaTranquilla);
+				ScriptContext_SetupScript(Route10CS_Script_Transition_ActaTranquilla);
 				return TRUE;
 			}
 		}
@@ -784,10 +784,10 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
     {
 		mapGroup = gSaveBlock1Ptr->location.mapGroup;
 		mapNum   = gSaveBlock1Ptr->location.mapNum;
-		//Route10 - Check From Acta Tranquilla to Mare Tranquillum
-		if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) {
+		//Route10CS - Check From Acta Tranquilla to Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_ROUTE10CS) && mapNum == MAP_NUM(MAP_ROUTE10CS)) {
 			if (VarGet(VAR_TEMP_5) == 2) {
-				ScriptContext_SetupScript(Route10_Script_Transition_MareTranquillum);
+				ScriptContext_SetupScript(Route10CS_Script_Transition_MareTranquillum);
 				return TRUE;
 			}
 		}

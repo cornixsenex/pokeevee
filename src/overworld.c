@@ -4535,10 +4535,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-	//Route10 - Tranquilitas, Acta Tranquilla, Mare Tranquilum
-	if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) 
+	//Route10CS - Tranquilitas, Acta Tranquilla, Mare Tranquilum
+	if (mapGroup == MAP_GROUP(MAP_ROUTE10CS) && mapNum == MAP_NUM(MAP_ROUTE10CS)) 
 	{
-		n = GetDynamicMapSec_Route10(FALSE);
+		n = GetDynamicMapSec_Route10CS(FALSE);
 		switch (n) {
 			case 1:
 				return MAPSEC_TRANQUILLITAS;
@@ -5386,11 +5386,11 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_CANTINA;
 		}
     }
-	//Route10 - Tranquillitas, Acta Tranquilla, Mare Tranquillum
-	if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) 
+	//Route10CS - Tranquillitas, Acta Tranquilla, Mare Tranquillum
+	if (mapGroup == MAP_GROUP(MAP_ROUTE10CS) && mapNum == MAP_NUM(MAP_ROUTE10CS)) 
 	{
-		n = GetDynamicMapSec_Route10(useWarpInfo);
-		DebugPrintf("GetDynamicMapSec_Route10 returned: %d\n", n);
+		n = GetDynamicMapSec_Route10CS(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_Route10CS returned: %d\n", n);
 		switch (n) {
 		    //Tranquillitas
 			case 1:

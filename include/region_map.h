@@ -147,7 +147,7 @@ u32 GetDynamicMapSec_Tucson(bool32 useWarpInfo);
 bool32 IsPyramidsDCactorum(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Vegas(bool32 useWarpInfo);
 u32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo);
-u32 GetDynamicMapSec_Route10(bool32 useWarpInfo);
+u32 GetDynamicMapSec_Route10CS(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Route11CS(bool32 useWarpInfo);
 u32 IsPenninsulaECastrum(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Hippodrome(bool32 useWarpInfo);
