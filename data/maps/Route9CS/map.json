@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE9",
-  "name": "Route9",
-  "layout": "LAYOUT_ROUTE9",
+  "id": "MAP_ROUTE9CS",
+  "name": "Route9CS",
+  "layout": "LAYOUT_ROUTE9CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -159,7 +159,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route9_EventScript_RoadBlocker",
+      "script": "Route9CS_EventScript_RoadBlocker",
       "flag": "0"
     },
     {
@@ -172,7 +172,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route9_EventScript_RoadBlocker",
+      "script": "Route9CS_EventScript_RoadBlocker",
       "flag": "0"
     },
     {
@@ -185,8 +185,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route9_EventScript_RoadBlocker3",
-      "flag": "FLAG_ROUTE9_CLEARBLOCK"
+      "script": "Route9CS_EventScript_RoadBlocker3",
+      "flag": "FLAG_ROUTE9CS_CLEARBLOCK"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
@@ -198,8 +198,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route9_EventScript_RoadBlocker4",
-      "flag": "FLAG_ROUTE9_CLEARBLOCK"
+      "script": "Route9CS_EventScript_RoadBlocker4",
+      "flag": "FLAG_ROUTE9CS_CLEARBLOCK"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -473,7 +473,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_4",
       "var_value": "0",
-      "script": "Route9_EventScript_RoadBlockB"
+      "script": "Route9CS_EventScript_RoadBlockB"
     },
     {
       "type": "trigger",
@@ -482,7 +482,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_4",
       "var_value": "0",
-      "script": "Route9_EventScript_RoadBlockA"
+      "script": "Route9CS_EventScript_RoadBlockA"
     }
   ],
   "bg_events": []

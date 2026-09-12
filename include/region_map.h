@@ -141,7 +141,7 @@ u32 GetDynamicMapSec_Route5(bool32 useWarpInfo);
 bool32 IsSanjoSabinaNova(bool32 useWarpInfo);
 bool32 IsDoakTownRobustica(bool32 useWarpInfo);
 bool32 IsSRoute19MareInternum(bool32 useWarpInfo);
-bool32 IsRoute9ViaSaxosa(bool32 useWarpInfo);
+bool32 IsRoute9CSViaSaxosa(bool32 useWarpInfo);
 bool32 IsRoute16CSVenatorMons(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Tucson(bool32 useWarpInfo);
 bool32 IsPyramidsDCactorum(bool32 useWarpInfo);

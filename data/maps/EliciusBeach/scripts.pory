@@ -16,8 +16,8 @@ mapscripts EliciusBeach_MapScripts {
         specialvar (VAR_TEMP_5, GetDynamicMapSec_EliciusBeach_F)
 
         //clear Via Saxosa
-        if (!flag(FLAG_ROUTE9_CLEARBLOCK)) {
-            setflag (FLAG_ROUTE9_CLEARBLOCK)
+        if (!flag(FLAG_ROUTE9CS_CLEARBLOCK)) {
+            setflag (FLAG_ROUTE9CS_CLEARBLOCK)
         }
 		//Show misty if applicable
 		if (!flag(FLAG_TRANQUILITAS_SURFSCHOOL_OPEN)) {

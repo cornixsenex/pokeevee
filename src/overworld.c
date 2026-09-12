@@ -1019,8 +1019,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 			//DoakTown - Handle from 
 			if (destMapNum == MAP_NUM(MAP_DOAK_TOWN) && destMapGroup == MAP_GROUP(MAP_DOAK_TOWN) && x < 2)
 				ShowMapNamePopup();
-            //Route9 - Handle from Route7
-            if (destMapNum == MAP_NUM(MAP_ROUTE9) && destMapGroup == MAP_GROUP(MAP_ROUTE9) && x < 2 && y < 27)
+            //Route9CS - Handle from Route7
+            if (destMapNum == MAP_NUM(MAP_ROUTE9CS) && destMapGroup == MAP_GROUP(MAP_ROUTE9CS) && x < 2 && y < 27)
                 ShowMapNamePopup();
 			//Vegas - Handle from Columnaris
 			if (destMapNum == MAP_NUM(MAP_VEGAS) && destMapGroup == MAP_GROUP(MAP_VEGAS))
@@ -4462,10 +4462,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		else 
 			return MAPSEC_MONTES_VIGILIAE;
 	}
-    //Route9 - Via Saxosa or Montes Vigiliae
-	if (mapGroup == MAP_GROUP(MAP_ROUTE9) && mapNum == MAP_NUM(MAP_ROUTE9)) 
+    //Route9CS - Via Saxosa or Montes Vigiliae
+	if (mapGroup == MAP_GROUP(MAP_ROUTE9CS) && mapNum == MAP_NUM(MAP_ROUTE9CS)) 
 	{
-		if (IsRoute9ViaSaxosa(FALSE))
+		if (IsRoute9CSViaSaxosa(FALSE))
 			return MAPSEC_VIA_SAXOSA;
 		else 
 			return MAPSEC_MONTES_VIGILIAE;
@@ -5300,10 +5300,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		else 
 			return MUS_B_FRONTIER;
 	}
-    //Route9 - Via Saxosa or Montes Vigiliae
-	if (mapGroup == MAP_GROUP(MAP_ROUTE9) && mapNum == MAP_NUM(MAP_ROUTE9)) 
+    //Route9CS - Via Saxosa or Montes Vigiliae
+	if (mapGroup == MAP_GROUP(MAP_ROUTE9CS) && mapNum == MAP_NUM(MAP_ROUTE9CS)) 
 	{
-		if (IsRoute9ViaSaxosa(useWarpInfo))
+		if (IsRoute9CSViaSaxosa(useWarpInfo))
 			return MUS_ROUTE119;
 		else 
 			return MUS_B_FRONTIER;
@@ -5858,7 +5858,7 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	{
 		if (lastMapSection == MAPSEC_PALATIUM_FELIX  ||    // Exit Palatium Felix to dynamic Peccatum
 			lastMapSection == MAPSEC_HARENAE_AUREAE  ||    // Exit Harenae Aureae to dynamic peccatum
-            lastMapSection == MAPSEC_PUTEUS_OBSCURUS ||    // Exit Dark Cave onto Via Saxosa = dynamic Route9
+            lastMapSection == MAPSEC_PUTEUS_OBSCURUS ||    // Exit Dark Cave onto Via Saxosa = dynamic Route9CS
             lastMapSection == MAPSEC_POWER_PLANT     ||    // Exit Power Plant to dynamic Vegas
             lastMapSection == MAPSEC_AEDES_SUB_MONTE ||    // Exit Aedes Sub Monte to Ignis Mons
             lastMapSection == MAPSEC_AEDES_TRIVIS    ||    // Exit Aedes Sub Monte to Ignis Mons

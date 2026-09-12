@@ -4652,14 +4652,14 @@
       "blockdata_filepath": "data/layouts/Route8/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE9",
-      "name": "Route9_Layout",
+      "id": "LAYOUT_ROUTE9CS",
+      "name": "Route9CS_Layout",
       "width": 72,
       "height": 53,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
-      "border_filepath": "data/layouts/Route9/border.bin",
-      "blockdata_filepath": "data/layouts/Route9/map.bin"
+      "border_filepath": "data/layouts/Route9CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route9CS/map.bin"
     },
     {
       "id": "LAYOUT_ELICIUS_BEACH",

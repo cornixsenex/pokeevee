@@ -1144,10 +1144,10 @@ static void LoadMapNamePopUpWindowBg(void)
 			else 
 				regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
 		}
-		//Route9 - Via Saxosa or Montes Vigiliae
-		if (mapGroup == MAP_GROUP(MAP_ROUTE9) && mapNum == MAP_NUM(MAP_ROUTE9)) 
+		//Route9CS - Via Saxosa or Montes Vigiliae
+		if (mapGroup == MAP_GROUP(MAP_ROUTE9CS) && mapNum == MAP_NUM(MAP_ROUTE9CS)) 
 		{
-			if (IsRoute9ViaSaxosa(FALSE))
+			if (IsRoute9CSViaSaxosa(FALSE))
 				regionMapSectionId = MAPSEC_VIA_SAXOSA;
 			else 
 				regionMapSectionId = MAPSEC_MONTES_VIGILIAE;

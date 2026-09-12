@@ -33,14 +33,14 @@
       "x": 18,
       "y": 122,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE9",
+      "dest_map": "MAP_ROUTE9CS",
       "dest_warp_id": "0"
     },
     {
       "x": 46,
       "y": 122,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE9",
+      "dest_map": "MAP_ROUTE9CS",
       "dest_warp_id": "1"
     }
   ],

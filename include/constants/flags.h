@@ -65,7 +65,7 @@
 #define FLAG_URBIA_BIKESHOP_INTROD                0x33 //Set after initial sales pitch
 #define FLAG_LEAF_ISGF                            0x34 // Set after Leaf agrees to be your GF
 #define FLAG_PALMAE_RENTALHOUSE_LEAFGFINTROD      0x35 //Set after first talk to leaf after Indy Introd 
-#define FLAG_ROUTE9_CLEARBLOCK                    0x36 //Set after enter Tranquilitas - Clears the "rock slide" block 
+#define FLAG_ROUTE9CS_CLEARBLOCK                  0x36 //Set after enter Tranquilitas - Clears the "rock slide" block 
 #define FLAG_TRANQUILITAS_SURFSCHOOL_OPEN         0x37 //Set after Leaf opens Surf School - Hides Misty in Tranquilitas 
 
 #define FLAG_CASATURNI_HIDERUTULI                 0x38 //Set after Turnus battle - hides the rutuli

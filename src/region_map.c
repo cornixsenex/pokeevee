@@ -1947,10 +1947,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
             else
                 return StringCopy(dest, COMPOUND_STRING("MONTES VIGILIAE"));
         }
-        //Route9 - Via Saxosa or Montes Vigiliae
-		if (mapGroup == MAP_GROUP(MAP_ROUTE9) && mapNum == MAP_NUM(MAP_ROUTE9))
+        //Route9CS - Via Saxosa or Montes Vigiliae
+		if (mapGroup == MAP_GROUP(MAP_ROUTE9CS) && mapNum == MAP_NUM(MAP_ROUTE9CS))
         {
-            if (IsRoute9ViaSaxosa(FALSE))
+            if (IsRoute9CSViaSaxosa(FALSE))
                 return StringCopy(dest, COMPOUND_STRING("VIA SAXOSA"));
             else
                 return StringCopy(dest, COMPOUND_STRING("MONTES VIGILIAE"));
@@ -4379,7 +4379,7 @@ bool32 IsSRoute19MareInternum(bool32 useWarpInfo)
 		return TRUE;
 }
 
-bool32 IsRoute9ViaSaxosa(bool32 useWarpInfo)
+bool32 IsRoute9CSViaSaxosa(bool32 useWarpInfo)
 {
    	
     s16 x, y;
