@@ -1004,11 +1004,11 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 			//Route17CS - Handle ONE SQUARE from Silvan Woods :/
 			if (destMapNum == MAP_NUM(MAP_ROUTE17CS) && destMapGroup == MAP_GROUP(MAP_ROUTE17CS) && y == 163)
 				ShowMapNamePopup();
-			//Route6 - Handle from Route7
-			if (destMapNum == MAP_NUM(MAP_ROUTE6) && destMapGroup == MAP_GROUP(MAP_ROUTE6) && x > 70)
+			//Route6CS - Handle from Route7CS
+			if (destMapNum == MAP_NUM(MAP_ROUTE6CS) && destMapGroup == MAP_GROUP(MAP_ROUTE6CS) && x > 70)
 				ShowMapNamePopup();
-			//Route7 - Handle from Route6 AND from Route 9
-			if (destMapNum == MAP_NUM(MAP_ROUTE7) && destMapGroup == MAP_GROUP(MAP_ROUTE7))
+			//Route7CS - Handle from Route6CS AND from Route 9
+			if (destMapNum == MAP_NUM(MAP_ROUTE7CS) && destMapGroup == MAP_GROUP(MAP_ROUTE7CS))
 			{
 				if (y < 15 || (x > 27 && y > 62 && y < 67) )
 					ShowMapNamePopup();
@@ -1019,7 +1019,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 			//DoakTown - Handle from 
 			if (destMapNum == MAP_NUM(MAP_DOAK_TOWN) && destMapGroup == MAP_GROUP(MAP_DOAK_TOWN) && x < 2)
 				ShowMapNamePopup();
-            //Route9CS - Handle from Route7
+            //Route9CS - Handle from Route7CS
             if (destMapNum == MAP_NUM(MAP_ROUTE9CS) && destMapGroup == MAP_GROUP(MAP_ROUTE9CS) && x < 2 && y < 27)
                 ShowMapNamePopup();
 			//Vegas - Handle from Columnaris
@@ -4387,10 +4387,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-	//Route6
-	if (mapGroup == MAP_GROUP(MAP_ROUTE6) && mapNum == MAP_NUM(MAP_ROUTE6))
+	//Route6CS
+	if (mapGroup == MAP_GROUP(MAP_ROUTE6CS) && mapNum == MAP_NUM(MAP_ROUTE6CS))
 	{
-		n = GetDynamicMapSec_Route6(FALSE);
+		n = GetDynamicMapSec_Route6CS(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -4404,10 +4404,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-	//Route7
-	if (mapGroup == MAP_GROUP(MAP_ROUTE7) && mapNum == MAP_NUM(MAP_ROUTE7))
+	//Route7CS
+	if (mapGroup == MAP_GROUP(MAP_ROUTE7CS) && mapNum == MAP_NUM(MAP_ROUTE7CS))
 	{
-		n = GetDynamicMapSec_Route7(FALSE);
+		n = GetDynamicMapSec_Route7CS(FALSE);
 		switch (n) {
 			case 1:
 				return MAPSEC_VIA_LITORALIS;
@@ -5212,10 +5212,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_CANTINA;
 		}
 	}
-	//Route6
-	if (mapGroup == MAP_GROUP(MAP_ROUTE6) && mapNum == MAP_NUM(MAP_ROUTE6))
+	//Route6CS
+	if (mapGroup == MAP_GROUP(MAP_ROUTE6CS) && mapNum == MAP_NUM(MAP_ROUTE6CS))
 	{
-		n = GetDynamicMapSec_Route6(useWarpInfo);
+		n = GetDynamicMapSec_Route6CS(useWarpInfo);
 		switch (n) {
             //Via Litoralis
 			case 1:
@@ -5231,10 +5231,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_CANTINA;
 		}
 	}
-	//Route7
-	if (mapGroup == MAP_GROUP(MAP_ROUTE7) && mapNum == MAP_NUM(MAP_ROUTE7))
+	//Route7CS
+	if (mapGroup == MAP_GROUP(MAP_ROUTE7CS) && mapNum == MAP_NUM(MAP_ROUTE7CS))
 	{
-		n = GetDynamicMapSec_Route7(useWarpInfo);
+		n = GetDynamicMapSec_Route7CS(useWarpInfo);
 		switch (n) {
             //Via Litoralis
 			case 1:

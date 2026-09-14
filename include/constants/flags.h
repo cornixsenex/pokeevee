@@ -76,9 +76,9 @@
 #define FLAG_ROBUSTUS_HIDELEAF                    0x3D // Hides Leaf after entering Robustus
 #define FLAG_ROBUSTUS_HIDECAMPERS                 0x3E // after the flower game
 
-#define FLAG_ROUTE6_HIDEPIKACHU                   0x3F // after J&J cutscen
+#define FLAG_ROUTE6CS_HIDEPIKACHU                 0x3F // after J&J cutscen
 
-#define FLAG_ROUTE7_HIDEOLDWOMAN                  0x40 // Hides the old lady after the roadblock trigger
+#define FLAG_ROUTE7CS_HIDEOLDWOMAN                0x40 // Hides the old lady after the roadblock trigger
 #define FLAG_ROCKTUNNEL_RIVALDEFEATED             0x41 // Hides Leaf on the bridge
 #define FLAG_VEGAS_POWERON                        0x42 // Set after PowerPlant fixed, controls generator metatiles
 #define FLAG_FRAT_LEAF                            0x43 // Set after Indy leaves pyramids 

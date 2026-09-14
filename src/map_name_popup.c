@@ -1046,10 +1046,10 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
-		//Route6
-		if (mapGroup == MAP_GROUP(MAP_ROUTE6) && mapNum == MAP_NUM(MAP_ROUTE6))
+		//Route6CS
+		if (mapGroup == MAP_GROUP(MAP_ROUTE6CS) && mapNum == MAP_NUM(MAP_ROUTE6CS))
 		{
-			n = GetDynamicMapSec_Route6(FALSE);
+			n = GetDynamicMapSec_Route6CS(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -1067,10 +1067,10 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
-		//Route7
-		if (mapGroup == MAP_GROUP(MAP_ROUTE7) && mapNum == MAP_NUM(MAP_ROUTE7))
+		//Route7CS
+		if (mapGroup == MAP_GROUP(MAP_ROUTE7CS) && mapNum == MAP_NUM(MAP_ROUTE7CS))
 		{
-			n = GetDynamicMapSec_Route7(FALSE);
+			n = GetDynamicMapSec_Route7CS(FALSE);
 			switch (n) {
 				//Via Litoralis
 				case 1:

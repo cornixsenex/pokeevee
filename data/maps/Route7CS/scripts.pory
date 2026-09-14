@@ -6,10 +6,10 @@
 //4: Villa Vallis
 //5: Sabina Nova
 
-mapscripts Route7_MapScripts {
+mapscripts Route7CS_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
-		specialvar (VAR_RESULT, GetDynamicMapSec_Route7_F)
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route7CS_F)
 		switch (var(VAR_RESULT)) {
 			case 1:
 				setvar (VAR_TEMP_5, 1)
@@ -26,25 +26,25 @@ mapscripts Route7_MapScripts {
 
 }
 
-script Route7_Script_Transition_ViaLitoralis {
+script Route7CS_Script_Transition_ViaLitoralis {
     setvar (VAR_TEMP_5, 1)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
-script Route7_Script_Transition_MareInternum {
+script Route7CS_Script_Transition_MareInternum {
     setvar (VAR_TEMP_5, 2)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
-script Route7_Script_Transition_VillaVallis {
+script Route7CS_Script_Transition_VillaVallis {
     setvar (VAR_TEMP_5, 4)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
-script Route7_Script_Transition_SabinaNova {
+script Route7CS_Script_Transition_SabinaNova {
     setvar (VAR_TEMP_5, 5)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
@@ -56,14 +56,14 @@ script Route7_Script_Transition_SabinaNova {
 
 
 
-script Route7_EventScript_RoadBlockA {
+script Route7CS_EventScript_RoadBlockA {
 	lock	
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	applymovement (13, Route7_Movement_RoadBlockA)
+	applymovement (13, Route7CS_Movement_RoadBlockA)
 	waitmovement (0)
-	msgbox (Route7_Text_RoadBlock)
+	msgbox (Route7CS_Text_RoadBlock)
 	closemessage
-	applymovement (13, Route7_Movement_RoadBlockA2)
+	applymovement (13, Route7CS_Movement_RoadBlockA2)
 	waitmovement (0)
 	opendoor (15, 56)
 	waitdooranim
@@ -72,24 +72,24 @@ script Route7_EventScript_RoadBlockA {
 	removeobject (13)
 	closedoor (15,56)
 	waitdooranim
-	setflag (FLAG_ROUTE7_HIDEOLDWOMAN)
+	setflag (FLAG_ROUTE7CS_HIDEOLDWOMAN)
 	release
 	end
 }
 
-script Route7_EventScript_RoadBlockB {
+script Route7CS_EventScript_RoadBlockB {
 	lock	
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	applymovement (13, Route7_Movement_RoadBlockB)
+	applymovement (13, Route7CS_Movement_RoadBlockB)
 	waitmovement (0)
-	msgbox (Route7_Text_RoadBlock)
+	msgbox (Route7CS_Text_RoadBlock)
 	closemessage
-	applymovement (13, Route7_Movement_RoadBlockB2)
+	applymovement (13, Route7CS_Movement_RoadBlockB2)
 	waitmovement (0)
 	opendoor (15, 56)
 	waitdooranim
 	removeobject (13)
-	setflag (FLAG_ROUTE7_HIDEOLDWOMAN)
+	setflag (FLAG_ROUTE7CS_HIDEOLDWOMAN)
 	release
 	end
 }
@@ -97,22 +97,22 @@ script Route7_EventScript_RoadBlockB {
 
 
 
-movement Route7_Movement_RoadBlockA {
+movement Route7CS_Movement_RoadBlockA {
 	walk_right * 5
 	face_up
 }
 
-movement Route7_Movement_RoadBlockB {
+movement Route7CS_Movement_RoadBlockB {
 	walk_right * 6
 	face_up
 }
 
-movement Route7_Movement_RoadBlockA2 {
+movement Route7CS_Movement_RoadBlockA2 {
 	walk_left * 6
 	face_up
 }
 
-movement Route7_Movement_RoadBlockB2 {
+movement Route7CS_Movement_RoadBlockB2 {
 	walk_left * 7
 	face_up
 }
@@ -122,7 +122,7 @@ movement Route7_Movement_RoadBlockB2 {
 
 
 
-text Route7_Text_RoadBlock {
+text Route7CS_Text_RoadBlock {
 	format("You poor little young thing! You look tired, come rest a while in grandma's cabin. We have a bed made specially for you!")
 }
 	

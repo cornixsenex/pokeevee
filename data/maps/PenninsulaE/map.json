@@ -34,12 +34,12 @@
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE7",
+      "map": "MAP_ROUTE7CS",
       "offset": -22,
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE8",
+      "map": "MAP_ROUTE8CS",
       "offset": 0,
       "direction": "left"
     }

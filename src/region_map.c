@@ -1869,10 +1869,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
-		//Route6
-		if (mapGroup == MAP_GROUP(MAP_ROUTE6) && mapNum == MAP_NUM(MAP_ROUTE6))
+		//Route6CS
+		if (mapGroup == MAP_GROUP(MAP_ROUTE6CS) && mapNum == MAP_NUM(MAP_ROUTE6CS))
 		{
-			n = GetDynamicMapSec_Route6(FALSE);
+			n = GetDynamicMapSec_Route6CS(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1887,10 +1887,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
-		//Route7
-		if (mapGroup == MAP_GROUP(MAP_ROUTE7) && mapNum == MAP_NUM(MAP_ROUTE7))
+		//Route7CS
+		if (mapGroup == MAP_GROUP(MAP_ROUTE7CS) && mapNum == MAP_NUM(MAP_ROUTE7CS))
 		{
-			n = GetDynamicMapSec_Route7(FALSE);
+			n = GetDynamicMapSec_Route7CS(FALSE);
 			switch (n)
 			{
 				case 1:
@@ -4192,7 +4192,7 @@ u32 GetDynamicMapSec_Route4(bool32 useWarpInfo)
 }
 
 
-u32 GetDynamicMapSec_Route6(bool32 useWarpInfo)
+u32 GetDynamicMapSec_Route6CS(bool32 useWarpInfo)
 {
 
     //1: Via Litoralis
@@ -4222,7 +4222,7 @@ u32 GetDynamicMapSec_Route6(bool32 useWarpInfo)
         return 3;
 }
 
-u32 GetDynamicMapSec_Route7(bool32 useWarpInfo)
+u32 GetDynamicMapSec_Route7CS(bool32 useWarpInfo)
 {
     s16 x, y;
     if (useWarpInfo) 

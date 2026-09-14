@@ -4602,14 +4602,14 @@
       "blockdata_filepath": "data/layouts/DoakTown/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE6",
-      "name": "Route6_Layout",
+      "id": "LAYOUT_ROUTE6CS",
+      "name": "Route6CS_Layout",
       "width": 80,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lilycove",
-      "border_filepath": "data/layouts/Route6/border.bin",
-      "blockdata_filepath": "data/layouts/Route6/map.bin"
+      "border_filepath": "data/layouts/Route6CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route6CS/map.bin"
     },
     {
       "id": "LAYOUT_SROUTE18",
@@ -4622,14 +4622,14 @@
       "blockdata_filepath": "data/layouts/SRoute18/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE7",
-      "name": "Route7_Layout",
+      "id": "LAYOUT_ROUTE7CS",
+      "name": "Route7CS_Layout",
       "width": 32,
       "height": 93,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/Route7/border.bin",
-      "blockdata_filepath": "data/layouts/Route7/map.bin"
+      "border_filepath": "data/layouts/Route7CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route7CS/map.bin"
     },
     {
       "id": "LAYOUT_SROUTE19",
@@ -4642,14 +4642,14 @@
       "blockdata_filepath": "data/layouts/SRoute19/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE8",
-      "name": "Route8_Layout",
+      "id": "LAYOUT_ROUTE8CS",
+      "name": "Route8CS_Layout",
       "width": 22,
       "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Montgomery",
-      "border_filepath": "data/layouts/Route8/border.bin",
-      "blockdata_filepath": "data/layouts/Route8/map.bin"
+      "border_filepath": "data/layouts/Route8CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route8CS/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE9CS",

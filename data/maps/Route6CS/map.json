@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE6",
-  "name": "Route6",
-  "layout": "LAYOUT_ROUTE6",
+  "id": "MAP_ROUTE6CS",
+  "name": "Route6CS",
+  "layout": "LAYOUT_ROUTE6CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -24,7 +24,7 @@
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE7",
+      "map": "MAP_ROUTE7CS",
       "offset": 4,
       "direction": "right"
     },
@@ -137,7 +137,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_ROUTE6_HIDEPIKACHU"
+      "flag": "FLAG_ROUTE6CS_HIDEPIKACHU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH)",
@@ -150,7 +150,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_ROUTE6_HIDEPIKACHU"
+      "flag": "FLAG_ROUTE6CS_HIDEPIKACHU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIKACHU)",
@@ -163,7 +163,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_ROUTE6_HIDEPIKACHU"
+      "flag": "FLAG_ROUTE6CS_HIDEPIKACHU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JAMES",
@@ -176,7 +176,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_ROUTE6_HIDEPIKACHU"
+      "flag": "FLAG_ROUTE6CS_HIDEPIKACHU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -240,7 +240,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route6_EventScript_SafariMan",
+      "script": "Route6CS_EventScript_SafariMan",
       "flag": "0"
     },
     {
@@ -287,7 +287,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_VillaVivaria"
+      "script": "Route6CS_Script_Transition_VillaVivaria"
     },
     {
       "type": "trigger",
@@ -296,7 +296,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_VillaVivaria"
+      "script": "Route6CS_Script_Transition_VillaVivaria"
     },
     {
       "type": "trigger",
@@ -305,7 +305,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -314,7 +314,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -323,7 +323,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -332,7 +332,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -341,7 +341,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -350,7 +350,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -359,7 +359,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -368,7 +368,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -377,7 +377,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -386,7 +386,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -395,7 +395,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -404,7 +404,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -413,7 +413,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -422,7 +422,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -431,7 +431,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -440,7 +440,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -449,7 +449,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -458,7 +458,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -467,7 +467,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -476,7 +476,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -485,7 +485,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -494,7 +494,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -503,7 +503,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -512,7 +512,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -521,7 +521,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -530,7 +530,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -539,7 +539,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -548,7 +548,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -557,7 +557,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -566,7 +566,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -575,7 +575,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -584,7 +584,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -593,7 +593,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -602,7 +602,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -611,7 +611,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -620,7 +620,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -629,7 +629,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -638,7 +638,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -647,7 +647,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -656,7 +656,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -665,7 +665,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -674,7 +674,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -683,7 +683,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -692,7 +692,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -701,7 +701,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route6_Script_Transition_ViaLitoralis"
+      "script": "Route6CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -710,7 +710,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -719,7 +719,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -728,7 +728,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -737,7 +737,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -746,7 +746,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -755,7 +755,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -764,7 +764,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -773,7 +773,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -782,7 +782,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -791,7 +791,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -800,7 +800,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -809,7 +809,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -818,7 +818,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -827,7 +827,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -836,7 +836,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -845,7 +845,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -854,7 +854,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -863,7 +863,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -872,7 +872,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -881,7 +881,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -890,7 +890,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -899,7 +899,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -908,7 +908,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -917,7 +917,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -926,7 +926,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -935,7 +935,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -944,7 +944,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -953,7 +953,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -962,7 +962,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -971,7 +971,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -980,7 +980,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -989,7 +989,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -998,7 +998,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1007,7 +1007,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1016,7 +1016,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1025,7 +1025,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1034,7 +1034,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1043,7 +1043,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1052,7 +1052,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1061,7 +1061,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1070,7 +1070,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1079,7 +1079,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -1088,7 +1088,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route6_Script_Transition_SinusPacificus"
+      "script": "Route6CS_Script_Transition_SinusPacificus"
     }
   ],
   "bg_events": [
@@ -1098,7 +1098,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route6_EventScript_GirafarigSign"
+      "script": "Route6CS_EventScript_GirafarigSign"
     },
     {
       "type": "sign",
@@ -1106,7 +1106,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route6_EventScript_UrsaringSign"
+      "script": "Route6CS_EventScript_UrsaringSign"
     },
     {
       "type": "sign",
@@ -1114,7 +1114,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route6_EventScript_MonfernoSign"
+      "script": "Route6CS_EventScript_MonfernoSign"
     },
     {
       "type": "sign",
@@ -1122,7 +1122,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route6_EventScript_PiplupSign"
+      "script": "Route6CS_EventScript_PiplupSign"
     },
     {
       "type": "sign",
@@ -1130,7 +1130,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route6_EventScript_SavannaSign"
+      "script": "Route6CS_EventScript_SavannaSign"
     }
   ]
 }

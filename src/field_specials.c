@@ -6642,14 +6642,14 @@ u32 GetDynamicMapSec_Route4_F(void)
     return GetDynamicMapSec_Route4(FALSE);
 }
 
-u32 GetDynamicMapSec_Route6_F(void)
+u32 GetDynamicMapSec_Route6CS_F(void)
 {
-    return GetDynamicMapSec_Route6(FALSE);
+    return GetDynamicMapSec_Route6CS(FALSE);
 }
 
-u32 GetDynamicMapSec_Route7_F(void)
+u32 GetDynamicMapSec_Route7CS_F(void)
 {
-    return GetDynamicMapSec_Route7(FALSE);
+    return GetDynamicMapSec_Route7CS(FALSE);
 }
 
 bool32 IsRoute16CSVenatorMons_F(void)

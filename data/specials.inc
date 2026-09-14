@@ -620,8 +620,8 @@ gSpecials::
 	def_special GetDynamicMapSec_SRoute18_F
 	def_special GetDynamicMapSec_MareS5_F
 	def_special GetDynamicMapSec_Route4_F
-	def_special GetDynamicMapSec_Route6_F
-	def_special GetDynamicMapSec_Route7_F
+	def_special GetDynamicMapSec_Route6CS_F
+	def_special GetDynamicMapSec_Route7CS_F
 	def_special TransitionMapMusic
     def_special DoPeccadumTruckScene
 	def_special IsRoute16CSVenatorMons_F
