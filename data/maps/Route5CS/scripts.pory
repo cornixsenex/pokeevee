@@ -6,10 +6,10 @@
 //3: Villa Venatorum
 
 
-mapscripts Route5_MapScripts {
+mapscripts Route5CS_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
-		specialvar (VAR_RESULT, GetDynamicMapSec_Route4_F)
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route4CS_F)
 		switch (var(VAR_RESULT)) {
 			case 1:
 				setvar (VAR_TEMP_5, 1)
@@ -22,33 +22,33 @@ mapscripts Route5_MapScripts {
 
 }
 
-script Route5_Script_Transition_VenatorMons {
+script Route5CS_Script_Transition_VenatorMons {
 	setvar (VAR_TEMP_5, 1)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
-script Route5_Script_Transition_ViaLitoralis {
+script Route5CS_Script_Transition_ViaLitoralis {
 	setvar (VAR_TEMP_5, 2)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
-script Route5_Script_Transition_VillaVenatorum {
+script Route5CS_Script_Transition_VillaVenatorum {
 	setvar (VAR_TEMP_5, 3)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
-script Route5_Script_CampLeader {
+script Route5CS_Script_CampLeader {
 	lock
 	faceplayer
-	msgbox (Route5_Text_CampLeader)
+	msgbox (Route5CS_Text_CampLeader)
 	closemessage
 	release
 	end
 }
 
-text Route5_Text_CampLeader {
+text Route5CS_Text_CampLeader {
 	format("This is terrible! All of the young boys who were attending my summer camp have run off! What am I gonna tell their moms?")
 }

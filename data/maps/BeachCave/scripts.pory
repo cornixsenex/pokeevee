@@ -23,8 +23,8 @@ script BeachCave_Script_HideHector {
 }
 
 script BeachCave_EventScript_Nick {
-	trainerbattle_single(TRAINER_NICK, Route3_Text_NickIntro, Route3_Text_NickLost)
-	msgbox (Route3_Text_NickPost)
+	trainerbattle_single(TRAINER_NICK, Route3CS_Text_NickIntro, Route3CS_Text_NickLost)
+	msgbox (Route3CS_Text_NickPost)
 	closemessage
 	end
 }
@@ -39,36 +39,36 @@ script BeachCave_Script_Lass {
 }
 
 script BeachCave_EventScript_Kyle {
-	trainerbattle_single(TRAINER_KYLE, Route3_Text_KyleIntro, Route3_Text_KyleLost)
-	msgbox (Route3_Text_KylePost)
+	trainerbattle_single(TRAINER_KYLE, Route3CS_Text_KyleIntro, Route3CS_Text_KyleLost)
+	msgbox (Route3CS_Text_KylePost)
 	closemessage
 	end
 }
 
 script BeachCave_EventScript_Jed {
-	trainerbattle_single(TRAINER_JED, Route3_Text_JedIntro, Route3_Text_JedLost)
-	msgbox (Route3_Text_JedPost)
+	trainerbattle_single(TRAINER_JED, Route3CS_Text_JedIntro, Route3CS_Text_JedLost)
+	msgbox (Route3CS_Text_JedPost)
 	closemessage
 	end
 }
 
 script BeachCave_EventScript_Rex {
-	trainerbattle_single(TRAINER_REX, Route3_Text_RexIntro, Route3_Text_RexLost)
-	msgbox (Route3_Text_RexPost)
+	trainerbattle_single(TRAINER_REX, Route3CS_Text_RexIntro, Route3CS_Text_RexLost)
+	msgbox (Route3CS_Text_RexPost)
 	closemessage
 	end
 }
 
 script BeachCave_EventScript_Morgan {
-	trainerbattle_single(TRAINER_MORGAN, Route3_Text_MorganIntro, Route3_Text_MorganLost)
-	msgbox (Route3_Text_MorganPost)
+	trainerbattle_single(TRAINER_MORGAN, Route3CS_Text_MorganIntro, Route3CS_Text_MorganLost)
+	msgbox (Route3CS_Text_MorganPost)
 	closemessage
 	end
 }
 
 script BeachCave_EventScript_Trevor {
-	trainerbattle_single(TRAINER_TREVOR, Route3_Text_TrevorIntro, Route3_Text_TrevorLost)
-	msgbox (Route3_Text_TrevorPost)
+	trainerbattle_single(TRAINER_TREVOR, Route3CS_Text_TrevorIntro, Route3CS_Text_TrevorLost)
+	msgbox (Route3CS_Text_TrevorPost)
 	closemessage
 	end
 }
@@ -82,75 +82,75 @@ script BeachCave_Script_HectorTrainer {
 	msgbox(BeachCave_Text_HectorTrainer2, MSGBOX_NPC)
 }
 
-text Route3_Text_NickIntro {
+text Route3CS_Text_NickIntro {
 	format("We come here to train! Yodaleeahooh!")
 }
 
-text Route3_Text_NickLost {
+text Route3CS_Text_NickLost {
 	format("Not too bad kid")
 }
 
-text Route3_Text_NickPost {
+text Route3CS_Text_NickPost {
 	format("This cave has gotten rather popular lately.")
 }
 
-text Route3_Text_KyleIntro {
+text Route3CS_Text_KyleIntro {
 	format("I'm running first, then getting stoned lated.")
 }
 
-text Route3_Text_KyleLost {
+text Route3CS_Text_KyleLost {
 	format("Guess I was wrong, should have smoked a bowl first.")
 }
 
-text Route3_Text_KylePost {
+text Route3CS_Text_KylePost {
 	format("Come let me know if you get a surfboard!")
 }
 
-text Route3_Text_JedIntro {
+text Route3CS_Text_JedIntro {
 	format("Hey kid have you ever talked to your dog?")
 }
 
-text Route3_Text_JedLost {
+text Route3CS_Text_JedLost {
 	format("Looks like I head back home again.")
 }
 
-text Route3_Text_JedPost {
+text Route3CS_Text_JedPost {
 	format("I moved out here last year from Tennessee!")
 }
 
-text Route3_Text_RexIntro {
+text Route3CS_Text_RexIntro {
 	format("Are you ready to build muscle and gain power over your life and in your core?")
 }
 
-text Route3_Text_RexLost {
+text Route3CS_Text_RexLost {
 	format("I love the flag. I love my body too!")
 }
 
-text Route3_Text_RexPost {
+text Route3CS_Text_RexPost {
 	format("You've got spunk kid, but you're still no black belt.")
 }
 
-text Route3_Text_MorganIntro {
+text Route3CS_Text_MorganIntro {
 	format("Hey cutie do you want to dance with me?")
 }
 
-text Route3_Text_MorganLost {
+text Route3CS_Text_MorganLost {
 	format("Okay, that was awkward...")
 }
 
-text Route3_Text_MorganPost {
+text Route3CS_Text_MorganPost {
 	format("Leave me alone!")
 }
 
-text Route3_Text_TrevorIntro {
+text Route3CS_Text_TrevorIntro {
 	format("Oh dude watch out we're skoobin in the cave!")
 }
 
-text Route3_Text_TrevorLost {
+text Route3CS_Text_TrevorLost {
 	format("Oh shit I think you just fucked up my hand.")
 }
 
-text Route3_Text_TrevorPost {
+text Route3CS_Text_TrevorPost {
 	format("There's no way I'm going to pay for this...")
 }
 

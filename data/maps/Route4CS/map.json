@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE4",
-  "name": "Route4",
-  "layout": "LAYOUT_ROUTE4",
+  "id": "MAP_ROUTE4CS",
+  "name": "Route4CS",
+  "layout": "LAYOUT_ROUTE4CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -29,7 +29,7 @@
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE5",
+      "map": "MAP_ROUTE5CS",
       "offset": -38,
       "direction": "up"
     }
@@ -45,7 +45,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Donovan",
+      "script": "Route4CS_EventScript_Donovan",
       "flag": "0"
     },
     {
@@ -58,7 +58,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Walton",
+      "script": "Route4CS_EventScript_Walton",
       "flag": "0"
     },
     {
@@ -71,7 +71,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Sanjay",
+      "script": "Route4CS_EventScript_Sanjay",
       "flag": "0"
     },
     {
@@ -84,7 +84,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Willie",
+      "script": "Route4CS_EventScript_Willie",
       "flag": "0"
     },
     {
@@ -97,7 +97,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route4_EventScript_Charlie",
+      "script": "Route4CS_EventScript_Charlie",
       "flag": "0"
     },
     {
@@ -110,7 +110,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Delia",
+      "script": "Route4CS_EventScript_Delia",
       "flag": "0"
     },
     {
@@ -123,7 +123,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Bonnie",
+      "script": "Route4CS_EventScript_Bonnie",
       "flag": "0"
     },
     {
@@ -136,7 +136,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Will",
+      "script": "Route4CS_EventScript_Will",
       "flag": "0"
     },
     {
@@ -149,7 +149,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Roy",
+      "script": "Route4CS_EventScript_Roy",
       "flag": "0"
     },
     {
@@ -162,7 +162,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Mandy",
+      "script": "Route4CS_EventScript_Mandy",
       "flag": "0"
     },
     {
@@ -175,7 +175,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Les",
+      "script": "Route4CS_EventScript_Les",
       "flag": "0"
     },
     {
@@ -188,7 +188,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Orion",
+      "script": "Route4CS_EventScript_Orion",
       "flag": "0"
     },
     {
@@ -201,7 +201,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Lewis",
+      "script": "Route4CS_EventScript_Lewis",
       "flag": "0"
     },
     {
@@ -214,7 +214,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Kipland",
+      "script": "Route4CS_EventScript_Kipland",
       "flag": "0"
     },
     {
@@ -227,7 +227,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Helen",
+      "script": "Route4CS_EventScript_Helen",
       "flag": "0"
     },
     {
@@ -240,7 +240,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Paris",
+      "script": "Route4CS_EventScript_Paris",
       "flag": "0"
     },
     {
@@ -253,7 +253,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Betty",
+      "script": "Route4CS_EventScript_Betty",
       "flag": "0"
     },
     {
@@ -266,7 +266,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Mago",
+      "script": "Route4CS_EventScript_Mago",
       "flag": "0"
     },
     {
@@ -279,7 +279,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Dido",
+      "script": "Route4CS_EventScript_Dido",
       "flag": "0"
     },
     {
@@ -292,7 +292,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Sandy",
+      "script": "Route4CS_EventScript_Sandy",
       "flag": "0"
     },
     {
@@ -305,7 +305,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Teucer",
+      "script": "Route4CS_EventScript_Teucer",
       "flag": "0"
     },
     {
@@ -318,7 +318,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Syra",
+      "script": "Route4CS_EventScript_Syra",
       "flag": "0"
     },
     {
@@ -331,7 +331,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Harry",
+      "script": "Route4CS_EventScript_Harry",
       "flag": "0"
     },
     {
@@ -344,7 +344,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_FatMan",
+      "script": "Route4CS_EventScript_FatMan",
       "flag": "0"
     },
     {
@@ -357,7 +357,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Sky",
+      "script": "Route4CS_EventScript_Sky",
       "flag": "0"
     },
     {
@@ -370,7 +370,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Hecuba",
+      "script": "Route4CS_EventScript_Hecuba",
       "flag": "0"
     },
     {
@@ -383,7 +383,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Aias",
+      "script": "Route4CS_EventScript_Aias",
       "flag": "0"
     },
     {
@@ -396,7 +396,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Jeremy",
+      "script": "Route4CS_EventScript_Jeremy",
       "flag": "0"
     },
     {
@@ -409,7 +409,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Andy",
+      "script": "Route4CS_EventScript_Andy",
       "flag": "0"
     },
     {
@@ -422,7 +422,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Lexy",
+      "script": "Route4CS_EventScript_Lexy",
       "flag": "0"
     },
     {
@@ -435,7 +435,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Liz",
+      "script": "Route4CS_EventScript_Liz",
       "flag": "0"
     },
     {
@@ -448,7 +448,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route4_EventScript_Lindsey",
+      "script": "Route4CS_EventScript_Lindsey",
       "flag": "0"
     }
   ],
@@ -461,7 +461,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -470,7 +470,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -479,7 +479,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -488,7 +488,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -497,7 +497,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -506,7 +506,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -515,7 +515,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -524,7 +524,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -533,7 +533,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -542,7 +542,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -551,7 +551,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -560,7 +560,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -569,7 +569,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -578,7 +578,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -587,7 +587,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaFidelium"
+      "script": "Route4CS_Script_Transition_ViaFidelium"
     },
     {
       "type": "trigger",
@@ -596,7 +596,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -605,7 +605,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -614,7 +614,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -623,7 +623,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -632,7 +632,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -641,7 +641,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -650,7 +650,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -659,7 +659,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -668,7 +668,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -677,7 +677,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -686,7 +686,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -695,7 +695,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -704,7 +704,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -713,7 +713,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -722,7 +722,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -731,7 +731,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route4_Script_Transition_SinusPacificus"
+      "script": "Route4CS_Script_Transition_SinusPacificus"
     },
     {
       "type": "trigger",
@@ -740,7 +740,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route4_Script_Transition_ViaLitoralis"
+      "script": "Route4CS_Script_Transition_ViaLitoralis"
     }
   ],
   "bg_events": [

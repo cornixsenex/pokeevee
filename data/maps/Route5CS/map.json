@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE5",
-  "name": "Route5",
-  "layout": "LAYOUT_ROUTE5",
+  "id": "MAP_ROUTE5CS",
+  "name": "Route5CS",
+  "layout": "LAYOUT_ROUTE5CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -19,7 +19,7 @@
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE4",
+      "map": "MAP_ROUTE4CS",
       "offset": 38,
       "direction": "down"
     }
@@ -191,7 +191,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route5_Script_CampLeader",
+      "script": "Route5CS_Script_CampLeader",
       "flag": "FLAG_ROBUSTUS_HIDECAMPERS"
     },
     {
@@ -336,7 +336,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -345,7 +345,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -354,7 +354,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -363,7 +363,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -372,7 +372,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -381,7 +381,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -390,7 +390,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -399,7 +399,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -408,7 +408,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -417,7 +417,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -426,7 +426,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -435,7 +435,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -444,7 +444,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -453,7 +453,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -462,7 +462,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -471,7 +471,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -480,7 +480,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -489,7 +489,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -498,7 +498,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -507,7 +507,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_ViaLitoralis"
+      "script": "Route5CS_Script_Transition_ViaLitoralis"
     },
     {
       "type": "trigger",
@@ -516,7 +516,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -525,7 +525,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route5_Script_Transition_VillaVenatorum"
+      "script": "Route5CS_Script_Transition_VillaVenatorum"
     },
     {
       "type": "trigger",
@@ -534,7 +534,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_VenatorMons"
+      "script": "Route5CS_Script_Transition_VenatorMons"
     },
     {
       "type": "trigger",
@@ -543,7 +543,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route5_Script_Transition_VenatorMons"
+      "script": "Route5CS_Script_Transition_VenatorMons"
     }
   ],
   "bg_events": []

@@ -444,7 +444,7 @@ script Capital_EventScript_GioPresident {
 	delay (5)
 	//Mewtwo unleashed
 	removeobject (OBJ_EVENT_ID_MEWTWO_ARMOR)
-	clearflag (FLAG_ROUTE4_HIDEROCKETS)
+	clearflag (FLAG_ROUTE4CS_HIDEROCKETS)
 	addobject (OBJ_EVENT_ID_MEWTWO)
 	//Set Mewtwo location
 	if (var(VAR_CAPITAL_STATE) > 2) {
@@ -482,7 +482,7 @@ script Capital_EventScript_GioPresident {
 	destroy_field_pic(GIO_FIELD_PIC)
 	delay (5)
 	fadescreenswapbuffers (1)
-	setflag (FLAG_ROUTE4_HIDEROCKETS)
+	setflag (FLAG_ROUTE4CS_HIDEROCKETS)
 	removeobject (OBJ_EVENT_ID_MEWTWO)
 	fadescreenswapbuffers (0)
 	//Gio faces player

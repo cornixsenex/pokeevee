@@ -4492,14 +4492,14 @@
       "blockdata_filepath": "data/layouts/GrandmasCabin/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE1",
-      "name": "Route1_Layout",
+      "id": "LAYOUT_ROUTE1CS",
+      "name": "Route1CS_Layout",
       "width": 22,
       "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/Route1/border.bin",
-      "blockdata_filepath": "data/layouts/Route1/map.bin"
+      "border_filepath": "data/layouts/Route1CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route1CS/map.bin"
     },
     {
       "id": "LAYOUT_RIVAL_HOUSE",
@@ -4532,14 +4532,14 @@
       "blockdata_filepath": "data/layouts/AldeonTown/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE2",
-      "name": "Route2_Layout",
+      "id": "LAYOUT_ROUTE2CS",
+      "name": "Route2CS_Layout",
       "width": 32,
       "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/Route2/border.bin",
-      "blockdata_filepath": "data/layouts/Route2/map.bin"
+      "border_filepath": "data/layouts/Route2CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route2CS/map.bin"
     },
     {
       "id": "LAYOUT_BULBUS_TOWN",
@@ -4552,14 +4552,14 @@
       "blockdata_filepath": "data/layouts/BulbusTown/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE3",
-      "name": "Route3_Layout",
+      "id": "LAYOUT_ROUTE3CS",
+      "name": "Route3CS_Layout",
       "width": 84,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/Route3/border.bin",
-      "blockdata_filepath": "data/layouts/Route3/map.bin"
+      "border_filepath": "data/layouts/Route3CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route3CS/map.bin"
     },
     {
       "id": "LAYOUT_CITY_CLARA",
@@ -4572,24 +4572,24 @@
       "blockdata_filepath": "data/layouts/CityClara/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE4",
-      "name": "Route4_Layout",
+      "id": "LAYOUT_ROUTE4CS",
+      "name": "Route4CS_Layout",
       "width": 34,
       "height": 80,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/Route4/border.bin",
-      "blockdata_filepath": "data/layouts/Route4/map.bin"
+      "border_filepath": "data/layouts/Route4CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route4CS/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE5",
-      "name": "Route5_Layout",
+      "id": "LAYOUT_ROUTE5CS",
+      "name": "Route5CS_Layout",
       "width": 56,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_lodge",
-      "border_filepath": "data/layouts/Route5/border.bin",
-      "blockdata_filepath": "data/layouts/Route5/map.bin"
+      "border_filepath": "data/layouts/Route5CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route5CS/map.bin"
     },
     {
       "id": "LAYOUT_DOAK_TOWN",

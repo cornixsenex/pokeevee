@@ -13,12 +13,12 @@ const FIELD_PIC_LEAF = 4
 
 const OBJ_EVENT_BRIDGEWORKER = 14
 
-mapscripts Route3_MapScripts {
+mapscripts Route3CS_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
 
 		//Handle Dynamic Map
-		specialvar (VAR_RESULT, IsRoute3RiverDelta_F)
+		specialvar (VAR_RESULT, IsRoute3CSRiverDelta_F)
 		if (var(VAR_RESULT) == TRUE) {
 			setvar (VAR_TEMP_5, 2)
 		} else {
@@ -33,11 +33,11 @@ mapscripts Route3_MapScripts {
 
 }
 
-script Route3_Script_BridgeBlock {
+script Route3CS_Script_BridgeBlock {
 	lock
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	msgbox (Route3_Text_BridgeBlock, MSGBOX_DEFAULT)
+	msgbox (Route3CS_Text_BridgeBlock, MSGBOX_DEFAULT)
 	closemessage 
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
 	waitmovement (0)
@@ -45,11 +45,11 @@ script Route3_Script_BridgeBlock {
 	end
 }
 
-script Route3_Script_BridgeWorker {
+script Route3CS_Script_BridgeWorker {
 	lock
 	faceplayer
 	if (var(VAR_TEMP_1) == 1) {
-		msgbox (Route3_Text_BridgeBlock, MSGBOX_DEFAULT)
+		msgbox (Route3CS_Text_BridgeBlock, MSGBOX_DEFAULT)
 		closemessage 
 	    applymovement (OBJ_EVENT_BRIDGEWORKER, Common_Movement_FaceUp)
 		waitmovement (0)
@@ -58,107 +58,107 @@ script Route3_Script_BridgeWorker {
 	end
 }
 
-script Route3_EventScript_Ross {
-	trainerbattle_single(TRAINER_ROSS, Route3_Text_RossIntro, Route3_Text_RossLost)
-	msgbox (Route3_Text_RossPost)	
+script Route3CS_EventScript_Ross {
+	trainerbattle_single(TRAINER_ROSS, Route3CS_Text_RossIntro, Route3CS_Text_RossLost)
+	msgbox (Route3CS_Text_RossPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Izzy {
-	trainerbattle_single(TRAINER_IZZY, Route3_Text_IzzyIntro, Route3_Text_IzzyLost)
-	msgbox (Route3_Text_IzzyPost)	
+script Route3CS_EventScript_Izzy {
+	trainerbattle_single(TRAINER_IZZY, Route3CS_Text_IzzyIntro, Route3CS_Text_IzzyLost)
+	msgbox (Route3CS_Text_IzzyPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Ricardo {
-	trainerbattle_single(TRAINER_RICARDO, Route3_Text_RicardoIntro, Route3_Text_RicardoLost)
-	msgbox (Route3_Text_RicardoPost)	
+script Route3CS_EventScript_Ricardo {
+	trainerbattle_single(TRAINER_RICARDO, Route3CS_Text_RicardoIntro, Route3CS_Text_RicardoLost)
+	msgbox (Route3CS_Text_RicardoPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Pedro {
-	trainerbattle_single(TRAINER_PEDRO, Route3_Text_PedroIntro, Route3_Text_PedroLost)
-	msgbox (Route3_Text_PedroPost)	
+script Route3CS_EventScript_Pedro {
+	trainerbattle_single(TRAINER_PEDRO, Route3CS_Text_PedroIntro, Route3CS_Text_PedroLost)
+	msgbox (Route3CS_Text_PedroPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Monica {
-	trainerbattle_single(TRAINER_MONICA, Route3_Text_MonicaIntro, Route3_Text_MonicaLost)
-	msgbox (Route3_Text_MonicaPost)	
+script Route3CS_EventScript_Monica {
+	trainerbattle_single(TRAINER_MONICA, Route3CS_Text_MonicaIntro, Route3CS_Text_MonicaLost)
+	msgbox (Route3CS_Text_MonicaPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Amber {
-	trainerbattle_single(TRAINER_AMBER, Route3_Text_AmberIntro, Route3_Text_AmberLost)
-	msgbox (Route3_Text_AmberPost)	
+script Route3CS_EventScript_Amber {
+	trainerbattle_single(TRAINER_AMBER, Route3CS_Text_AmberIntro, Route3CS_Text_AmberLost)
+	msgbox (Route3CS_Text_AmberPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Dustin {
-	trainerbattle_single(TRAINER_DUSTIN, Route3_Text_DustinIntro, Route3_Text_DustinLost)
-	msgbox (Route3_Text_DustinPost)	
+script Route3CS_EventScript_Dustin {
+	trainerbattle_single(TRAINER_DUSTIN, Route3CS_Text_DustinIntro, Route3CS_Text_DustinLost)
+	msgbox (Route3CS_Text_DustinPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Jon {
-	trainerbattle_single(TRAINER_JON, Route3_Text_JonIntro, Route3_Text_JonLost)
-	msgbox (Route3_Text_JonPost)	
+script Route3CS_EventScript_Jon {
+	trainerbattle_single(TRAINER_JON, Route3CS_Text_JonIntro, Route3CS_Text_JonLost)
+	msgbox (Route3CS_Text_JonPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Joe {
-	trainerbattle_single(TRAINER_JOE, Route3_Text_JoeIntro, Route3_Text_JoeLost)
-	msgbox (Route3_Text_JoePost)	
+script Route3CS_EventScript_Joe {
+	trainerbattle_single(TRAINER_JOE, Route3CS_Text_JoeIntro, Route3CS_Text_JoeLost)
+	msgbox (Route3CS_Text_JoePost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_Ryan {
-	trainerbattle_single(TRAINER_RYAN, Route3_Text_RyanIntro, Route3_Text_RyanLost)
-	msgbox (Route3_Text_RyanPost)	
+script Route3CS_EventScript_Ryan {
+	trainerbattle_single(TRAINER_RYAN, Route3CS_Text_RyanIntro, Route3CS_Text_RyanLost)
+	msgbox (Route3CS_Text_RyanPost)	
 	closemessage
 	end
 }
-script Route3_EventScript_Megan {
-	trainerbattle_single(TRAINER_MEGAN, Route3_Text_MeganIntro, Route3_Text_MeganLost)
-	msgbox (Route3_Text_MeganPost)	
-	closemessage
-	end
-}
-
-script Route3_EventScript_Devon {
-	trainerbattle_single(TRAINER_DEVON, Route3_Text_DevonIntro, Route3_Text_DevonLost)
-	msgbox (Route3_Text_DevonPost)	
+script Route3CS_EventScript_Megan {
+	trainerbattle_single(TRAINER_MEGAN, Route3CS_Text_MeganIntro, Route3CS_Text_MeganLost)
+	msgbox (Route3CS_Text_MeganPost)	
 	closemessage
 	end
 }
 
-script Route3_EventScript_OldMan {
+script Route3CS_EventScript_Devon {
+	trainerbattle_single(TRAINER_DEVON, Route3CS_Text_DevonIntro, Route3CS_Text_DevonLost)
+	msgbox (Route3CS_Text_DevonPost)	
+	closemessage
+	end
+}
+
+script Route3CS_EventScript_OldMan {
 	lock
 	faceplayer
-	msgbox (Route3_Text_OldMan)
+	msgbox (Route3CS_Text_OldMan)
 	closemessage
 	release
 	end
 }
 
-script Route3_EventScript_SaeclaraSign {
+script Route3CS_EventScript_SaeclaraSign {
 	lock
-	msgbox (Route3_Text_SaeclaraSign)
+	msgbox (Route3CS_Text_SaeclaraSign)
 	closemessage
 	release
 	end
 }
 
-script Route3_Script_Sign {
+script Route3CS_Script_Sign {
 	lock
 	switch (var(VAR_TEMP_5)) {
 		case 0:
@@ -177,7 +177,7 @@ script Route3_Script_Sign {
 }
 
 //Triggered on transit tiles by temp var == 1 (we're transitioning into River Delta)
-script Route3_Script_RiverDeltaTransition {
+script Route3CS_Script_RiverDeltaTransition {
 	//setvar to stop infinite trigger
 	setvar (VAR_TEMP_5, 2)
 	special (TransitionMapMusic)
@@ -185,14 +185,14 @@ script Route3_Script_RiverDeltaTransition {
 }
 
 //Triggered on transit tiles by temp var == 2 (we're transitioning into Canelo Cove)
-script Route3_Script_CanelosCoveTransition {
+script Route3CS_Script_CanelosCoveTransition {
 	//setvar to stop infinite trigger
 	setvar (VAR_TEMP_5, 1)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route3_Script_Scene_SilvanLeaf1 {
+script Route3CS_Script_Scene_SilvanLeaf1 {
     lock
     setvar (VAR_SILVANWOODS_STATE, 2)
     applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
@@ -202,46 +202,46 @@ script Route3_Script_Scene_SilvanLeaf1 {
     setobjectxyperm (OBJ_EVENT_SCOTT, 8, 6)
 	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_SCOTT)
-	showobjectat (OBJ_EVENT_SCOTT, MAP_ROUTE3)
+	showobjectat (OBJ_EVENT_SCOTT, MAP_ROUTE3CS)
     //Show Leaf
 	removeobject (OBJ_EVENT_LEAF)
     setobjectxyperm (OBJ_EVENT_LEAF, 8, 7)
 	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_LEAF)
-	showobjectat (OBJ_EVENT_LEAF, MAP_ROUTE3)
+	showobjectat (OBJ_EVENT_LEAF, MAP_ROUTE3CS)
     //Show Puff
 	removeobject (OBJ_EVENT_IGGLYBUFF)
     setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 8, 8)
 	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_IGGLYBUFF)
-	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ROUTE3)
+	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ROUTE3CS)
     //Move Scott et Leaf to player
-    applymovement (OBJ_EVENT_SCOTT, Route3_Movement_SilvanLeaf1)
-    applymovement (OBJ_EVENT_LEAF, Route3_Movement_SilvanLeaf1)
-    applymovement (OBJ_EVENT_IGGLYBUFF, Route3_Movement_SilvanLeaf1)
+    applymovement (OBJ_EVENT_SCOTT, Route3CS_Movement_SilvanLeaf1)
+    applymovement (OBJ_EVENT_LEAF, Route3CS_Movement_SilvanLeaf1)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Route3CS_Movement_SilvanLeaf1)
     waitmovement (0)
     //S: Bad news. Bridges came down in the storm
 	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
-	msgbox (Route3_Text_Scott1)
+	msgbox (Route3CS_Text_Scott1)
 	destroy_field_pic (FIELD_PIC_SCOTT)
     //L: we're going on ahead to find another way across
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
-	msgbox (Route3_Text_Leaf1)
+	msgbox (Route3CS_Text_Leaf1)
 	destroy_field_pic (FIELD_PIC_LEAF)
     //S: Be careful the silvan woods
 	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
-	msgbox (Route3_Text_Scott2)
+	msgbox (Route3CS_Text_Scott2)
 	destroy_field_pic (FIELD_PIC_SCOTT)
     //Exit Scott et Leaf
 	closemessage
-    applymovement (OBJ_EVENT_SCOTT, Route3_Movement_SilvanLeaf2)
-    applymovement (OBJ_EVENT_LEAF, Route3_Movement_SilvanLeaf2)
-    applymovement (OBJ_EVENT_IGGLYBUFF, Route3_Movement_SilvanLeaf2)
+    applymovement (OBJ_EVENT_SCOTT, Route3CS_Movement_SilvanLeaf2)
+    applymovement (OBJ_EVENT_LEAF, Route3CS_Movement_SilvanLeaf2)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Route3CS_Movement_SilvanLeaf2)
     waitmovement (0)
     //Remove Scott et Leaf
-    hideobjectat (OBJ_EVENT_SCOTT, MAP_ROUTE3)
-    hideobjectat (OBJ_EVENT_LEAF, MAP_ROUTE3)
-    hideobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ROUTE3)
+    hideobjectat (OBJ_EVENT_SCOTT, MAP_ROUTE3CS)
+    hideobjectat (OBJ_EVENT_LEAF, MAP_ROUTE3CS)
+    hideobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ROUTE3CS)
     removeobject (OBJ_EVENT_SCOTT)
     removeobject (OBJ_EVENT_LEAF)
     removeobject (OBJ_EVENT_IGGLYBUFF)
@@ -258,189 +258,189 @@ script Route3_Script_Scene_SilvanLeaf1 {
     end
 }
 
-movement Route3_Movement_SilvanLeaf1 {
+movement Route3CS_Movement_SilvanLeaf1 {
     walk_left * 7
 }
 
-movement Route3_Movement_SilvanLeaf2 {
+movement Route3CS_Movement_SilvanLeaf2 {
     walk_right * 7
 }
 
 
-text Route3_Text_RossIntro {
+text Route3CS_Text_RossIntro {
 	format("I'm learning how to swim! Here check this out!")
 }
 
-text Route3_Text_RossLost {
+text Route3CS_Text_RossLost {
 	format("Help mom I'm gonna drown!")
 }
 
-text Route3_Text_RossPost {
+text Route3CS_Text_RossPost {
 	format("Wow you showed me! Looks like I need to practice dog paddling.")
 }
 
 
-text Route3_Text_IzzyIntro {
+text Route3CS_Text_IzzyIntro {
 	format("Eww gross get away from me you weirdo!")
 }
 
-text Route3_Text_IzzyLost {
+text Route3CS_Text_IzzyLost {
 	format("Please help please help!")
 }
 
-text Route3_Text_IzzyPost {
+text Route3CS_Text_IzzyPost {
 	format("I think you made me wet.")
 }
 
-text Route3_Text_RicardoIntro {
+text Route3CS_Text_RicardoIntro {
 	format("I brought my son here to play on the beach.")
 }
 
-text Route3_Text_RicardoLost {
+text Route3CS_Text_RicardoLost {
 	format("You're making me look weak...")
 }
 
-text Route3_Text_RicardoPost {
+text Route3CS_Text_RicardoPost {
 	format("Have you explored the cave carved in the rock down by the sea?")
 }
 
-text Route3_Text_PedroIntro {
+text Route3CS_Text_PedroIntro {
 	format("Me and my dad are gonna kick your ass!")
 }
 
-text Route3_Text_PedroLost {
+text Route3CS_Text_PedroLost {
 	format("Dad how did we just loose?")
 }
 
-text Route3_Text_PedroPost {
+text Route3CS_Text_PedroPost {
 	format("Okay, you're good.")
 }
 
-text Route3_Text_MonicaIntro {
+text Route3CS_Text_MonicaIntro {
 	format("Hey! Stay away from my children.")
 }
 
-text Route3_Text_MonicaLost {
+text Route3CS_Text_MonicaLost {
 	format("You know, I'm still available.")
 }
 
-text Route3_Text_MonicaPost {
+text Route3CS_Text_MonicaPost {
 	format("Nice to see you!")
 }
 
-text Route3_Text_AmberIntro {
+text Route3CS_Text_AmberIntro {
 	format("My mommy took me and Ross to the beach!")
 }
 
-text Route3_Text_AmberLost {
+text Route3CS_Text_AmberLost {
 	format("No, Mom!")
 }
 
-text Route3_Text_AmberPost {
+text Route3CS_Text_AmberPost {
 	format("You hurt my feelings, go awawy.")
 }
 
-text Route3_Text_DustinIntro {
+text Route3CS_Text_DustinIntro {
 	format("Hey man do you ever want to race birds?")
 }
 
-text Route3_Text_DustinLost {
+text Route3CS_Text_DustinLost {
 	format("That's not correct.")
 }
 
-text Route3_Text_DustinPost {
+text Route3CS_Text_DustinPost {
 	format("Did you go thrugh the woods?")
 }
 
-text Route3_Text_JonIntro {
+text Route3CS_Text_JonIntro {
 	format("Today I thought I'd be a fisherman.")
 }
 
-text Route3_Text_JonLost {
+text Route3CS_Text_JonLost {
 	format("I've lost my fish...")
 }
 
-text Route3_Text_JonPost {
+text Route3CS_Text_JonPost {
 	format("Let's drink a few more beers!")
 }
 
-text Route3_Text_JoeIntro {
+text Route3CS_Text_JoeIntro {
 	format("My friend Jon ain't great at outdoorsy stuff.")
 }
 
-text Route3_Text_JoeLost {
+text Route3CS_Text_JoeLost {
 	format("So much for that.")
 }
 
-text Route3_Text_JoePost {
+text Route3CS_Text_JoePost {
 	format("Think I'll try a new bait.")
 }
 
-text Route3_Text_RyanIntro {
+text Route3CS_Text_RyanIntro {
 	format("The Bugs!\nTHE BUGS!!!")
 }
 
-text Route3_Text_RyanLost {
+text Route3CS_Text_RyanLost {
 	format("You helped me scratch the bugs.")
 }
 
-text Route3_Text_RyanPost {
+text Route3CS_Text_RyanPost {
 	format("Thank you a lot, these bugs are dangerous.")
 }
 
-text Route3_Text_MeganIntro {
+text Route3CS_Text_MeganIntro {
 	format("Hey, didn't you use to make fun of me.")
 }
 
-text Route3_Text_MeganLost {
+text Route3CS_Text_MeganLost {
 	format("Looks like you're still laughing.")
 }
 
-text Route3_Text_MeganPost {
+text Route3CS_Text_MeganPost {
 	format("Hey haven't you heard anything about a new freeway the party was planning to build through here?")
 }
 
-text Route3_Text_DevonIntro {
+text Route3CS_Text_DevonIntro {
 	format("You're not headed into the woods are you?")
 }
 
-text Route3_Text_DevonLost {
+text Route3CS_Text_DevonLost {
 	format("You're pretty tough.")
 }
 
-text Route3_Text_DevonPost {
+text Route3CS_Text_DevonPost {
 	format("You should be safe enough, but be careful that you do not get lost.")
 }
 
-text Route3_Text_OldMan {
+text Route3CS_Text_OldMan {
 	format("Caverna Ilium was this cave's name before The Party changed it to Beach Cave.\p You should only go in if you're prepared.")
 }
 
-text Route3_Text_Leaf2 {
+text Route3CS_Text_Leaf2 {
 	format("Look out {PLAYER} it's {RIVAL} this is a trap!")
 }
 
-text Route3_Text_RivalIntro {
+text Route3CS_Text_RivalIntro {
 	format ("It's {PLAYER} is it? What a disgusting name though fitting for an animal like you. I spent six hours saving Humpty's life after the hospital turned me away but in the end I could not bring him back. You killed my only friend and now you're trapped the both of you like flies caught in my net.")
 }
 
-text Route3_Text_RivalLost {
+text Route3CS_Text_RivalLost {
 	format ("These pathetic insects all let me down!!")
 }
 
-text Route3_Text_RivalPost {
+text Route3CS_Text_RivalPost {
 	format ("You anal sniffing worm, you piece of filth! I will not have you make a fool of me. Already you have stolen my whole life from me. There's nothing to go back, nothing to return to. I'm all alone with nothing, and therefore nothing to loose. I swear to you now {PLAYER} on my own heart and by the mighty power of the sun, in recognition of the River Styx, and under penalty of doom and death you will be met with Justice by my hand. Never know rest for I will never sleep until that day when I have made you pay.")
 }
 
-text Route3_Text_Leaf3 {
+text Route3CS_Text_Leaf3CS {
 	format ("Wow {PLAYER} I'm glad you're here all big and strong to protect me from creeps like that {RIVAL}. It's getting late and I want to see Mew! C'mon silly we need to find my dad!")
 }
 
-text Route3_Text_SaeclaraSign {
+text Route3CS_Text_SaeclaraSign {
 	format("City Saeclara ->\n<- Silvan Woods\n <- Porta Pilo")
 }
 
-text Route3_Text_BridgeBlock {
+text Route3CS_Text_BridgeBlock {
 	format("Hey! Watch it! The bridge came down in the storm! We're working hard to fix it but for now you'll have to find another way across.")
 }
 
@@ -448,19 +448,19 @@ text Route3_Text_BridgeBlock {
 //both bridges that cross the river (the only way)
 //both bridges destroyed
 //
-text Route3_Text_Scott1 {
+text Route3CS_Text_Scott1 {
 	format("Bad news! The old pontes, across Draco, were beaten down by that most mighty storm.")
 }
 
 //We wont give up
 //There must be a way around
-text Route3_Text_Leaf1 {
+text Route3CS_Text_Leaf1 {
 	format("We won't give up our quest! There must be some expedient way across the river.")
 }
 
 //We will journey into the Silvan Woods and seek a crossing
 //Be careful inside the woods there are many pokemon and criminals
-text Route3_Text_Scott2 {
+text Route3CS_Text_Scott2 {
 	format("We'll have to journey into glum Silva in hopes of finding some sure way across. Be careful {PLAYER}. In Silva many folk pushed out of town, criminals, and wild {PKMN} lurk in shadows and tall grass. Tread carefully, and carry a big stick!")
 }
 

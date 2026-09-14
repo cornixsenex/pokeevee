@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE3",
-  "name": "Route3",
-  "layout": "LAYOUT_ROUTE3",
+  "id": "MAP_ROUTE3CS",
+  "name": "Route3CS",
+  "layout": "LAYOUT_ROUTE3CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -55,7 +55,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route3_EventScript_Ross",
+      "script": "Route3CS_EventScript_Ross",
       "flag": "0"
     },
     {
@@ -68,7 +68,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route3_EventScript_Ricardo",
+      "script": "Route3CS_EventScript_Ricardo",
       "flag": "0"
     },
     {
@@ -81,7 +81,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route3_EventScript_Pedro",
+      "script": "Route3CS_EventScript_Pedro",
       "flag": "0"
     },
     {
@@ -94,7 +94,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route3_EventScript_Jon",
+      "script": "Route3CS_EventScript_Jon",
       "flag": "0"
     },
     {
@@ -107,7 +107,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route3_EventScript_Joe",
+      "script": "Route3CS_EventScript_Joe",
       "flag": "0"
     },
     {
@@ -120,7 +120,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route3_EventScript_Amber",
+      "script": "Route3CS_EventScript_Amber",
       "flag": "0"
     },
     {
@@ -133,7 +133,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route3_EventScript_Ryan",
+      "script": "Route3CS_EventScript_Ryan",
       "flag": "0"
     },
     {
@@ -146,7 +146,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route3_EventScript_Megan",
+      "script": "Route3CS_EventScript_Megan",
       "flag": "0"
     },
     {
@@ -159,7 +159,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route3_EventScript_Monica",
+      "script": "Route3CS_EventScript_Monica",
       "flag": "0"
     },
     {
@@ -172,7 +172,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route3_EventScript_Devon",
+      "script": "Route3CS_EventScript_Devon",
       "flag": "0"
     },
     {
@@ -185,7 +185,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route3_EventScript_Izzy",
+      "script": "Route3CS_EventScript_Izzy",
       "flag": "0"
     },
     {
@@ -198,7 +198,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route3_EventScript_Dustin",
+      "script": "Route3CS_EventScript_Dustin",
       "flag": "0"
     },
     {
@@ -211,7 +211,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route3_EventScript_OldMan",
+      "script": "Route3CS_EventScript_OldMan",
       "flag": "0"
     },
     {
@@ -224,7 +224,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route3_Script_BridgeWorker",
+      "script": "Route3CS_Script_BridgeWorker",
       "flag": "0"
     },
     {
@@ -284,7 +284,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -293,7 +293,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -302,7 +302,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -311,7 +311,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -320,7 +320,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -329,7 +329,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -338,7 +338,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -347,7 +347,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -356,7 +356,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -365,7 +365,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -374,7 +374,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -383,7 +383,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -392,7 +392,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -401,7 +401,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -410,7 +410,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -419,7 +419,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -428,7 +428,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -437,7 +437,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -446,7 +446,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -455,7 +455,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -464,7 +464,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -473,7 +473,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -482,7 +482,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -491,7 +491,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -500,7 +500,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -509,7 +509,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -518,7 +518,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -527,7 +527,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -536,7 +536,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -545,7 +545,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -554,7 +554,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route3_Script_RiverDeltaTransition"
+      "script": "Route3CS_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
@@ -563,7 +563,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route3_Script_CanelosCoveTransition"
+      "script": "Route3CS_Script_CanelosCoveTransition"
     },
     {
       "type": "trigger",
@@ -572,7 +572,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "Route3_Script_BridgeBlock"
+      "script": "Route3CS_Script_BridgeBlock"
     },
     {
       "type": "trigger",
@@ -581,7 +581,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "Route3_Script_BridgeBlock"
+      "script": "Route3CS_Script_BridgeBlock"
     },
     {
       "type": "trigger",
@@ -590,7 +590,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "Route3_Script_BridgeBlock"
+      "script": "Route3CS_Script_BridgeBlock"
     },
     {
       "type": "trigger",
@@ -599,7 +599,7 @@
       "elevation": 0,
       "var": "VAR_SILVANWOODS_STATE",
       "var_value": "1",
-      "script": "Route3_Script_Scene_SilvanLeaf1"
+      "script": "Route3CS_Script_Scene_SilvanLeaf1"
     },
     {
       "type": "trigger",
@@ -608,7 +608,7 @@
       "elevation": 0,
       "var": "VAR_SILVANWOODS_STATE",
       "var_value": "1",
-      "script": "Route3_Script_Scene_SilvanLeaf1"
+      "script": "Route3CS_Script_Scene_SilvanLeaf1"
     }
   ],
   "bg_events": [
@@ -618,7 +618,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Route3_EventScript_SaeclaraSign"
+      "script": "Route3CS_EventScript_SaeclaraSign"
     },
     {
       "type": "sign",
@@ -626,7 +626,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Route3_Script_Sign"
+      "script": "Route3CS_Script_Sign"
     }
   ]
 }

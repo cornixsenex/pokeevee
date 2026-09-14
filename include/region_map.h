@@ -121,7 +121,7 @@ u32 FilterFlyDestination(struct RegionMap* regionMap);
 void SetFlyDestination(struct RegionMap* regionMap);
 
 //Cornix Custom - Dynamic Maps
-bool32 IsRoute3RiverDelta(bool32 useWarpInfo);
+bool32 IsRoute3CSRiverDelta(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareWWW(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Route17CS(bool32 useWarpInfo);
 u32 GetDynamicMapSec_LakeIra(bool32 useWarpInfo);
@@ -134,8 +134,8 @@ u32 GetDynamicMapSec_CityClara(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareW(bool32 useWarpInfo);
 u32 GetDynamicMapSec_SRoute18(bool32 useWarpInfo);
 bool32 GetDynamicMapSec_MareS5(bool32 useWarpInfo);
-u32 GetDynamicMapSec_Route4(bool32 useWarpInfo);
-u32 GetDynamicMapSec_Route5(bool32 useWarpInfo);
+u32 GetDynamicMapSec_Route4CS(bool32 useWarpInfo);
+u32 GetDynamicMapSec_Route5CS(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Route6CS(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Route7CS(bool32 useWarpInfo);
 bool32 IsSanjoSabinaNova(bool32 useWarpInfo);

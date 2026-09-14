@@ -769,10 +769,10 @@ static void LoadMapNamePopUpWindowBg(void)
 	{
 		mapGroup = gSaveBlock1Ptr->location.mapGroup;
 		mapNum   = gSaveBlock1Ptr->location.mapNum;
-		//Route 3 - Canelos Cove(Marble), River Delta (Wood)
-		if (mapGroup == MAP_GROUP(MAP_ROUTE3) && mapNum == MAP_NUM(MAP_ROUTE3))
+		//Route3CS - Canelos Cove(Marble), River Delta (Wood)
+		if (mapGroup == MAP_GROUP(MAP_ROUTE3CS) && mapNum == MAP_NUM(MAP_ROUTE3CS))
 		{
-			if (IsRoute3RiverDelta(FALSE))
+			if (IsRoute3CSRiverDelta(FALSE))
 				regionMapSectionId = MAPSEC_DELTA_DRACI;
 			else
 				regionMapSectionId = MAPSEC_SINUS_CAMELUS;
@@ -1025,10 +1025,10 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		} 
-		//Route4
-		if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))
+		//Route4CS
+		if (mapGroup == MAP_GROUP(MAP_ROUTE4CS) && mapNum == MAP_NUM(MAP_ROUTE4CS))
 		{
-			n = GetDynamicMapSec_Route4(FALSE);
+			n = GetDynamicMapSec_Route4CS(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -1096,10 +1096,10 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
-		//Route5
-		if (mapGroup == MAP_GROUP(MAP_ROUTE5) && mapNum == MAP_NUM(MAP_ROUTE5))
+		//Route5CS
+		if (mapGroup == MAP_GROUP(MAP_ROUTE5CS) && mapNum == MAP_NUM(MAP_ROUTE5CS))
 		{
-			n = GetDynamicMapSec_Route5(FALSE);
+			n = GetDynamicMapSec_Route5CS(FALSE);
 			switch (n) {
 				//Venator Mons
 				case 1:

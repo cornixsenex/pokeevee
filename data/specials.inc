@@ -608,7 +608,7 @@ gSpecials::
 	def_special IsMonFollower 
 	def_special ScriptGetPartyMonIsShiny
 	def_special CheckSelectedMonValidSacrifice
-	def_special IsRoute3RiverDelta_F
+	def_special IsRoute3CSRiverDelta_F
 	def_special GetDynamicMapSec_MareWWW_F
 	def_special GetDynamicMapSec_Route17CS_F
 	def_special GetDynamicMapSec_LakeIra_F
@@ -619,7 +619,7 @@ gSpecials::
 	def_special GetDynamicMapSec_MareW_F
 	def_special GetDynamicMapSec_SRoute18_F
 	def_special GetDynamicMapSec_MareS5_F
-	def_special GetDynamicMapSec_Route4_F
+	def_special GetDynamicMapSec_Route4CS_F
 	def_special GetDynamicMapSec_Route6CS_F
 	def_special GetDynamicMapSec_Route7CS_F
 	def_special TransitionMapMusic

@@ -1623,10 +1623,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
     switch (mapSecId)
     {
     case MAPSEC_DYNAMIC:
-		//Route3 - Cove, Delta, River
-		if (mapGroup == MAP_GROUP(MAP_ROUTE3) && mapNum == MAP_NUM(MAP_ROUTE3)) 
+		//Route3CS - Cove, Delta, River
+		if (mapGroup == MAP_GROUP(MAP_ROUTE3CS) && mapNum == MAP_NUM(MAP_ROUTE3CS)) 
 		{
-			if (IsRoute3RiverDelta(FALSE))
+			if (IsRoute3CSRiverDelta(FALSE))
 				return StringCopy(dest, COMPOUND_STRING("DELTA DRACI"));
 			else  // Default part of map => Cove
 				return StringCopy(dest, COMPOUND_STRING("SINVS CAMELVS"));
@@ -1851,10 +1851,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 					return StringCopy(dest, gText_Ferry);
             }
         }
-		//Route4
-		if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))
+		//Route4CS
+		if (mapGroup == MAP_GROUP(MAP_ROUTE4CS) && mapNum == MAP_NUM(MAP_ROUTE4CS))
 		{
-			n = GetDynamicMapSec_Route4(FALSE);
+			n = GetDynamicMapSec_Route4CS(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1907,10 +1907,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
-		//Route5
-		if (mapGroup == MAP_GROUP(MAP_ROUTE5) && mapNum == MAP_NUM(MAP_ROUTE5))
+		//Route5CS
+		if (mapGroup == MAP_GROUP(MAP_ROUTE5CS) && mapNum == MAP_NUM(MAP_ROUTE5CS))
 		{
-			n = GetDynamicMapSec_Route5(FALSE);
+			n = GetDynamicMapSec_Route5CS(FALSE);
 			switch (n)
 			{
 				case 1:
@@ -2849,8 +2849,8 @@ void SetFlyDestination(struct RegionMap* regionMap)
         SetWarpDestinationToMapWarp(sMapHealLocations[regionMap->mapSecId][0], sMapHealLocations[regionMap->mapSecId][1], WARP_ID_NONE);
 }
 
-//Cornix Custom - Part of a series to determine which part of a map ur on. In this case is Route3 Canelo's Cave or River Delta
-bool32 IsRoute3RiverDelta(bool32 useWarpInfo)
+//Cornix Custom - Part of a series to determine which part of a map ur on. In this case is Route3CS Canelo's Cave or River Delta
+bool32 IsRoute3CSRiverDelta(bool32 useWarpInfo)
 {
 	s16 x, y;
     if (useWarpInfo) 
@@ -4146,7 +4146,7 @@ bool32 GetDynamicMapSec_MareS5(bool32 useWarpInfo)
 		return 1;
 }
 	
-u32 GetDynamicMapSec_Route4(bool32 useWarpInfo)
+u32 GetDynamicMapSec_Route4CS(bool32 useWarpInfo)
 {	
 
 	//1: Via Fidelium - South of Mountain and Bay
@@ -4270,7 +4270,7 @@ u32 GetDynamicMapSec_Route7CS(bool32 useWarpInfo)
         return 5;
 }
 
-u32 GetDynamicMapSec_Route5(bool32 useWarpInfo)
+u32 GetDynamicMapSec_Route5CS(bool32 useWarpInfo)
 {
 
 	//1: Venator Mons
@@ -4288,7 +4288,7 @@ u32 GetDynamicMapSec_Route5(bool32 useWarpInfo)
         y = gSaveBlock1Ptr->pos.y;
     }
 
-	DebugPrintf("Route5\nx: %d\ny: %d\n", x, y);
+	DebugPrintf("Route5CS\nx: %d\ny: %d\n", x, y);
 
 	//Venator Mons
 	if 

@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE5",
+      "map": "MAP_ROUTE5CS",
       "offset": 20,
       "direction": "left"
     },
@@ -346,7 +346,7 @@
       "x": 32,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -355,7 +355,7 @@
       "x": 33,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -364,7 +364,7 @@
       "x": 32,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -373,7 +373,7 @@
       "x": 33,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -382,7 +382,7 @@
       "x": 34,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -391,7 +391,7 @@
       "x": 33,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -400,7 +400,7 @@
       "x": 34,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -409,7 +409,7 @@
       "x": 33,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -418,7 +418,7 @@
       "x": 33,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -427,7 +427,7 @@
       "x": 36,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -436,7 +436,7 @@
       "x": 36,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -445,7 +445,7 @@
       "x": 36,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -454,7 +454,7 @@
       "x": 38,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -463,7 +463,7 @@
       "x": 38,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -472,7 +472,7 @@
       "x": 40,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -481,7 +481,7 @@
       "x": 40,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -490,7 +490,7 @@
       "x": 41,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -499,7 +499,7 @@
       "x": 38,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -508,7 +508,7 @@
       "x": 36,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -517,7 +517,7 @@
       "x": 37,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -526,7 +526,7 @@
       "x": 38,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -535,7 +535,7 @@
       "x": 40,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -544,7 +544,7 @@
       "x": 40,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -553,7 +553,7 @@
       "x": 42,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -562,7 +562,7 @@
       "x": 42,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -571,7 +571,7 @@
       "x": 42,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -580,7 +580,7 @@
       "x": 42,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -589,7 +589,7 @@
       "x": 44,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -598,7 +598,7 @@
       "x": 46,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -607,7 +607,7 @@
       "x": 46,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -616,7 +616,7 @@
       "x": 45,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -625,7 +625,7 @@
       "x": 46,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -634,7 +634,7 @@
       "x": 46,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -643,7 +643,7 @@
       "x": 44,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -652,7 +652,7 @@
       "x": 44,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     },
@@ -661,7 +661,7 @@
       "x": 44,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
+      "var": "VAR_ROUTE4CS_STATE",
       "var_value": "1",
       "script": "Robustus_EventScript_ResetCounter"
     }

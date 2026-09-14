@@ -948,8 +948,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 			//mapNum = Destination MapNum
 			//xy     = Coords on Destination Map
 
-			//Route3 - Handle MareWWW Transition
-			if (destMapNum == MAP_NUM(MAP_ROUTE3) && destMapGroup == MAP_GROUP(MAP_ROUTE3)) //From MareWWW AND from Silvan Woods
+			//Route3CS - Handle MareWWW Transition
+			if (destMapNum == MAP_NUM(MAP_ROUTE3CS) && destMapGroup == MAP_GROUP(MAP_ROUTE3CS)) //From MareWWW AND from Silvan Woods
 			{
 				if
 					(
@@ -966,12 +966,12 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 				if ( x > 54 && x < 83 && y < 0)
 					ShowMapNamePopup();
 			}
-			//SilvanWoods - From Route3 OR 1 square from Route17CS
+			//SilvanWoods - From Route3CS OR 1 square from Route17CS
 			if (destMapNum == MAP_NUM(MAP_SILVAN_WOODS) && destMapGroup == MAP_GROUP(MAP_SILVAN_WOODS))
 			{
 				if
 					(
-					//From Route3 - EXCLUDE WESTERN TRANSITION
+					//From Route3CS - EXCLUDE WESTERN TRANSITION
 					//(y > 66 && x > 11 && x < 19) ||
 					(y > 66) ||
 					//ONE SQUARE from Route17CS :/
@@ -985,8 +985,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 				if (x > 86 && y < 34)
 					ShowMapNamePopup();
 			}
-			//Route 4 - Handle from SRoute18
-			if (destMapNum == MAP_NUM(MAP_ROUTE4) && destMapGroup == MAP_GROUP(MAP_ROUTE4))
+			//Route4CS - Handle from SRoute18
+			if (destMapNum == MAP_NUM(MAP_ROUTE4CS) && destMapGroup == MAP_GROUP(MAP_ROUTE4CS))
 			{
 				if (x > 32 && y > 30 && y < 33)
 					ShowMapNamePopup();
@@ -1013,8 +1013,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 				if (y < 15 || (x > 27 && y > 62 && y < 67) )
 					ShowMapNamePopup();
 			}
-			//Route5 - Handle from DoakTown
-			if (destMapNum == MAP_NUM(MAP_ROUTE5) && destMapGroup == MAP_GROUP(MAP_ROUTE5) && x > 54)
+			//Route5CS - Handle from DoakTown
+			if (destMapNum == MAP_NUM(MAP_ROUTE5CS) && destMapGroup == MAP_GROUP(MAP_ROUTE5CS) && x > 54)
 				ShowMapNamePopup();
 			//DoakTown - Handle from 
 			if (destMapNum == MAP_NUM(MAP_DOAK_TOWN) && destMapGroup == MAP_GROUP(MAP_DOAK_TOWN) && x < 2)
@@ -4157,10 +4157,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	mapGroup = gSaveBlock1Ptr->location.mapGroup;
 	mapNum   = gSaveBlock1Ptr->location.mapNum;
 
-	//Route3 - Cove, Delta, River
-	if (mapGroup == MAP_GROUP(MAP_ROUTE3) && mapNum == MAP_NUM(MAP_ROUTE3)) 
+	//Route3CS - Cove, Delta, River
+	if (mapGroup == MAP_GROUP(MAP_ROUTE3CS) && mapNum == MAP_NUM(MAP_ROUTE3CS)) 
 	{
-		if (IsRoute3RiverDelta(FALSE))
+		if (IsRoute3CSRiverDelta(FALSE))
 			return MAPSEC_DELTA_DRACI;
 		else //Everywhere else
 			return MAPSEC_SINUS_CAMELUS;
@@ -4370,10 +4370,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-	//Route4
-	if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))
+	//Route4CS
+	if (mapGroup == MAP_GROUP(MAP_ROUTE4CS) && mapNum == MAP_NUM(MAP_ROUTE4CS))
 	{
-		n = GetDynamicMapSec_Route4(FALSE);
+		n = GetDynamicMapSec_Route4CS(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -4423,10 +4423,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-	//Route5
-	if (mapGroup == MAP_GROUP(MAP_ROUTE5) && mapNum == MAP_NUM(MAP_ROUTE5))
+	//Route5CS
+	if (mapGroup == MAP_GROUP(MAP_ROUTE5CS) && mapNum == MAP_NUM(MAP_ROUTE5CS))
 	{
-		n = GetDynamicMapSec_Route5(FALSE);
+		n = GetDynamicMapSec_Route5CS(FALSE);
 		switch (n) {
 			case 1:
 				return MAPSEC_VENATOR_MONS;
@@ -4939,11 +4939,11 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 
     DebugPrintf("GetDynamicMusic()");
 	
-    //Route3 - Cove, Delta, River
-	if (mapGroup == MAP_GROUP(MAP_ROUTE3) && mapNum == MAP_NUM(MAP_ROUTE3)) 
+    //Route3CS - Cove, Delta, River
+	if (mapGroup == MAP_GROUP(MAP_ROUTE3CS) && mapNum == MAP_NUM(MAP_ROUTE3CS)) 
 	{
 		//Delta Draci
-		if (IsRoute3RiverDelta(useWarpInfo))
+		if (IsRoute3CSRiverDelta(useWarpInfo))
 			return MUS_RG_ROUTE1;
 		else //Sinus Camelus
 			return MUS_ROUTE104;
@@ -5193,10 +5193,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_CANTINA;
 		}
 	}
-	//Route4
-	if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))
+	//Route4CS
+	if (mapGroup == MAP_GROUP(MAP_ROUTE4CS) && mapNum == MAP_NUM(MAP_ROUTE4CS))
 	{
-		n = GetDynamicMapSec_Route4(useWarpInfo);
+		n = GetDynamicMapSec_Route4CS(useWarpInfo);
 		switch (n) {
             //Via Fidelium
 			case 1:
@@ -5255,10 +5255,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_CANTINA;
 		}
 	}
-	//Route5
-	if (mapGroup == MAP_GROUP(MAP_ROUTE5) && mapNum == MAP_NUM(MAP_ROUTE5))
+	//Route5CS
+	if (mapGroup == MAP_GROUP(MAP_ROUTE5CS) && mapNum == MAP_NUM(MAP_ROUTE5CS))
 	{
-		n = GetDynamicMapSec_Route5(useWarpInfo);
+		n = GetDynamicMapSec_Route5CS(useWarpInfo);
 		switch (n) {
 			//Venator Mons
 			case 1:
@@ -5316,7 +5316,7 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		else 
 			return MUS_DESERT;
 	}
-	//Route5
+	//Tucson
 	if (mapGroup == MAP_GROUP(MAP_TUCSON) && mapNum == MAP_NUM(MAP_TUCSON))
 	{
 		n = GetDynamicMapSec_Tucson(useWarpInfo);

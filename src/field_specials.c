@@ -6582,9 +6582,9 @@ void DoPeccadumTruckScene(void)
 
 //Field Specials for Dynamic Maps - just pass FALSE to the actual functions because from field special will always NOT be a warp destination
 
-bool32 IsRoute3RiverDelta_F(void)
+bool32 IsRoute3CSRiverDelta_F(void)
 {
-    return IsRoute3RiverDelta(FALSE);
+    return IsRoute3CSRiverDelta(FALSE);
 }
 
 u32 GetDynamicMapSec_MareWWW_F(void)
@@ -6637,9 +6637,9 @@ bool32 GetDynamicMapSec_MareS5_F(void)
     return GetDynamicMapSec_MareS5(FALSE);
 }
 
-u32 GetDynamicMapSec_Route4_F(void)
+u32 GetDynamicMapSec_Route4CS_F(void)
 {
-    return GetDynamicMapSec_Route4(FALSE);
+    return GetDynamicMapSec_Route4CS(FALSE);
 }
 
 u32 GetDynamicMapSec_Route6CS_F(void)

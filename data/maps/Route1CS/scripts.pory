@@ -5,24 +5,24 @@ const OBJ_EVENT_ZUBAT = 10
 const FIELD_PIC_LEAF = 4
 const FIELD_PIC_BLUE = 3
 
-mapscripts Route1_MapScripts {
+mapscripts Route1CS_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
 		if (var(VAR_GRANNY_STATE) == 10 || var(VAR_GRANNY_STATE) == 11) {
-			call (Route1_Script_SetupStorm)
+			call (Route1CS_Script_SetupStorm)
 		}
 	}
 
 }
 
-script Route1_EventScript_RockTest {
+script Route1CS_EventScript_RockTest {
 	lock
-	call (Route1_EventScript_WarpToLeafHouse)	
+	call (Route1CS_EventScript_WarpToLeafHouse)	
 	release
 	end
 }
 
-script Route1_Script_SetupStorm  {
+script Route1CS_Script_SetupStorm  {
 	setobjectxyperm (5, 0, 0)
 	setobjectmovementtype (5, MOVEMENT_TYPE_INVISIBLE)
 
@@ -43,52 +43,52 @@ script Route1_Script_SetupStorm  {
 }
 
 
-script Route1_EventScript_RivalTrigger1 {
+script Route1CS_EventScript_RivalTrigger1 {
 	lock
 	setvar (VAR_TEMP_A, 1)
-	call (Route1_EventScript_BlueScene)
+	call (Route1CS_EventScript_BlueScene)
 
 	release
 	end
 }
 
-script Route1_EventScript_RivalTrigger2 {
+script Route1CS_EventScript_RivalTrigger2 {
 	lock
 	setvar (VAR_TEMP_A, 2)
-	call (Route1_EventScript_BlueScene)
+	call (Route1CS_EventScript_BlueScene)
 
 	release
 	end
 }
 
-script Route1_EventScript_RivalTrigger3 {
+script Route1CS_EventScript_RivalTrigger3 {
 	lock
 	setvar (VAR_TEMP_A, 3)
-	call (Route1_EventScript_BlueScene)
+	call (Route1CS_EventScript_BlueScene)
 
 	release
 	end
 }
 
-script Route1_EventScript_RivalTrigger4 {
+script Route1CS_EventScript_RivalTrigger4 {
 	lock
 	setvar (VAR_TEMP_A, 4)
-	call (Route1_EventScript_BlueScene)
+	call (Route1CS_EventScript_BlueScene)
 
 	release
 	end
 }
 
-script Route1_EventScript_RivalTrigger5 {
+script Route1CS_EventScript_RivalTrigger5 {
 	lock
 	setvar (VAR_TEMP_A, 5)
-	call (Route1_EventScript_BlueScene)
+	call (Route1CS_EventScript_BlueScene)
 
 	release
 	end
 }
 
-script Route1_EventScript_BlueScene {
+script Route1CS_EventScript_BlueScene {
 	//move player to position
 	setvar (VAR_GRANNY_STATE, 15)
 	playbgm (MUS_RG_ENCOUNTER_RIVAL, TRUE)
@@ -98,15 +98,15 @@ script Route1_EventScript_BlueScene {
 			closemessage
 			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 		case 1:
-			applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_BlueScene_Player1)
+			applymovement (OBJ_EVENT_ID_PLAYER, Route1CS_Movement_BlueScene_Player1)
 		case 2:
-			applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_BlueScene_Player2)
+			applymovement (OBJ_EVENT_ID_PLAYER, Route1CS_Movement_BlueScene_Player2)
 		case 3:
-			applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_BlueScene_Player3)
+			applymovement (OBJ_EVENT_ID_PLAYER, Route1CS_Movement_BlueScene_Player3)
 		case 4:
-			applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_BlueScene_Player4)
+			applymovement (OBJ_EVENT_ID_PLAYER, Route1CS_Movement_BlueScene_Player4)
 		case 5:
-			applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_BlueScene_Player5)
+			applymovement (OBJ_EVENT_ID_PLAYER, Route1CS_Movement_BlueScene_Player5)
 		default:
 			msgbox("VAR_TEMP_A OOB", MSGBOX_DEFAULT)
 			closemessage
@@ -120,24 +120,24 @@ script Route1_EventScript_BlueScene {
 	setobjectxyperm (OBJ_EVENT_BLUE, 19, 7)
 	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_BLUE)
-	showobjectat (OBJ_EVENT_BLUE, MAP_ROUTE1)
+	showobjectat (OBJ_EVENT_BLUE, MAP_ROUTE1CS)
 
 	setobjectxyperm (OBJ_EVENT_LEAF, 19, 8)
 	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_LEAF)
-	showobjectat (OBJ_EVENT_LEAF, MAP_ROUTE1)
+	showobjectat (OBJ_EVENT_LEAF, MAP_ROUTE1CS)
 
 	setobjectxyperm (OBJ_EVENT_ZUBAT, 19, 6)
 	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_ZUBAT)
-	showobjectat (OBJ_EVENT_ZUBAT, MAP_ROUTE1)
+	showobjectat (OBJ_EVENT_ZUBAT, MAP_ROUTE1CS)
 	//leaf and blue enter from north as blue yells 1
-	applymovement (OBJ_EVENT_BLUE, Route1_Movement_BlueLeafEnter)
-	applymovement (OBJ_EVENT_LEAF, Route1_Movement_BlueLeafEnter)
-	applymovement (OBJ_EVENT_ZUBAT, Route1_Movement_BlueLeafEnter)
+	applymovement (OBJ_EVENT_BLUE, Route1CS_Movement_BlueLeafEnter)
+	applymovement (OBJ_EVENT_LEAF, Route1CS_Movement_BlueLeafEnter)
+	applymovement (OBJ_EVENT_ZUBAT, Route1CS_Movement_BlueLeafEnter)
 	load_field_pic (FIELD_PIC_BLUE, 190, 98)
 	//Get back here!
-	msgbox (Route1_Text_Blue1, MSGBOX_DEFAULT)
+	msgbox (Route1CS_Text_Blue1, MSGBOX_DEFAULT)
 	waitmovement (0)
 	//leaf turns back and says no
 	destroy_field_pic (FIELD_PIC_BLUE)
@@ -145,21 +145,21 @@ script Route1_EventScript_BlueScene {
 	waitmovement (0)
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
 	//Going home!
-	msgbox (Route1_Text_Leaf1, MSGBOX_DEFAULT)
+	msgbox (Route1CS_Text_Leaf1, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_LEAF)
 	//they walk down a bit more and blue continues
-	applymovement (OBJ_EVENT_BLUE, Route1_Movement_BlueLeafEnter)
-	applymovement (OBJ_EVENT_LEAF, Route1_Movement_BlueLeafEnter)
-	applymovement (OBJ_EVENT_ZUBAT, Route1_Movement_BlueLeafEnter)
+	applymovement (OBJ_EVENT_BLUE, Route1CS_Movement_BlueLeafEnter)
+	applymovement (OBJ_EVENT_LEAF, Route1CS_Movement_BlueLeafEnter)
+	applymovement (OBJ_EVENT_ZUBAT, Route1CS_Movement_BlueLeafEnter)
 	load_field_pic (FIELD_PIC_BLUE, 190, 98)
 	//No my way
-	msgbox (Route1_Text_Blue2, MSGBOX_DEFAULT)
+	msgbox (Route1CS_Text_Blue2, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_BLUE)
 	waitmovement (0)
 	closemessage
 	//leaf approach player
 	applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceLeft)
-	applymovement (OBJ_EVENT_LEAF, Route1_Movement_LeafToPlayer)
+	applymovement (OBJ_EVENT_LEAF, Route1CS_Movement_LeafToPlayer)
 	waitmovement (0)
 	//alert blue
 	applymovement (OBJ_EVENT_BLUE, Common_Movement_ExclamationMark)
@@ -167,32 +167,32 @@ script Route1_EventScript_BlueScene {
 	//L can you help
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
 	//L: Help!
-	msgbox (Route1_Text_Leaf2, MSGBOX_DEFAULT)
+	msgbox (Route1CS_Text_Leaf2, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
 	//Leaf move to below player
-	applymovement (OBJ_EVENT_LEAF, Route1_Movement_LeafBehindPlayer)
+	applymovement (OBJ_EVENT_LEAF, Route1CS_Movement_LeafBehindPlayer)
 	//Blue move to above player
-	applymovement (OBJ_EVENT_BLUE, Route1_Movement_BlueToPlayer)
-	applymovement (OBJ_EVENT_ZUBAT, Route1_Movement_ZubatToPlayer)
+	applymovement (OBJ_EVENT_BLUE, Route1CS_Movement_BlueToPlayer)
+	applymovement (OBJ_EVENT_ZUBAT, Route1CS_Movement_ZubatToPlayer)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
 	waitmovement (0)
 	//B: Fightin words
 	load_field_pic (FIELD_PIC_BLUE, 190, 98)
-	msgbox (Route1_Text_Blue3, MSGBOX_DEFAULT)
+	msgbox (Route1CS_Text_Blue3, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_BLUE)
 	closemessage
 	//battle
-	trainerbattle_no_intro (TRAINER_RIVAL1, Route1_Text_BlueLost)
+	trainerbattle_no_intro (TRAINER_RIVAL1, Route1CS_Text_BlueLost)
 	//blue swears revenge
 	load_field_pic (FIELD_PIC_BLUE, 190, 98)
-	msgbox (Route1_Text_Blue4, MSGBOX_DEFAULT)
+	msgbox (Route1CS_Text_Blue4, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_BLUE)
 	closemessage
 	//blue exit north
-	applymovement (OBJ_EVENT_BLUE, Route1_Movement_BlueExit)
-	applymovement (OBJ_EVENT_ZUBAT, Route1_Movement_BlueExit)
+	applymovement (OBJ_EVENT_BLUE, Route1CS_Movement_BlueExit)
+	applymovement (OBJ_EVENT_ZUBAT, Route1CS_Movement_BlueExit)
 	waitmovement (0)
 	fadedefaultbgm
 	//Player face leaf
@@ -200,14 +200,14 @@ script Route1_EventScript_BlueScene {
 	waitmovement (0)
 	//L thanks you for help
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
-	msgbox (Route1_Text_Leaf3, MSGBOX_DEFAULT)
+	msgbox (Route1CS_Text_Leaf3, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
 	//Heals your pokemon
 	call (Common_EventScript_OutOfCenterPartyHeal)
 	//invites you back to her house
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
-	msgbox (Route1_Text_Leaf4, MSGBOX_DEFAULT)
+	msgbox (Route1CS_Text_Leaf4, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
 	//warp to leaf -> leaf house scene
@@ -217,24 +217,24 @@ script Route1_EventScript_BlueScene {
 	end
 }
 
-script Route1_EventScript_WarpToLeafHouse {
+script Route1CS_EventScript_WarpToLeafHouse {
 	warp (MAP_ALDEON_LEAF_HOUSE_2F, 255, 6, 5)
 	waitstate
 	return
 }
 
 
-script Route1_EventScript_Rival1 {
+script Route1CS_EventScript_Rival1 {
 	load_field_pic (3, 190, 98)
-	msgbox (Route1_Text_Rival1)
+	msgbox (Route1CS_Text_Rival1)
 	destroy_field_pic (3)
 	load_field_pic (4, 190, 98)
-	msgbox (Route1_Text_Leaf1)
+	msgbox (Route1CS_Text_Leaf1)
 	destroy_field_pic (4)
-	applymovement (4, Route1_Movement_FaceLeft)
+	applymovement (4, Route1CS_Movement_FaceLeft)
 	waitmovement (0)
 	load_field_pic (3, 190, 98)
-	msgbox (Route1_Text_Rival2)
+	msgbox (Route1CS_Text_Rival2)
 	closemessage
 	destroy_field_pic (3)
 	applymovement (3, Common_Movement_ExclamationMark)
@@ -242,326 +242,326 @@ script Route1_EventScript_Rival1 {
 	return	
 }
 
-script Route1_EventScript_Rival2 {
+script Route1CS_EventScript_Rival2 {
 	load_field_pic (3, 190, 98)
-	msgbox (Route1_Text_Rival3)
+	msgbox (Route1CS_Text_Rival3)
 	destroy_field_pic (3)
 	load_field_pic (4, 190, 98)
-	msgbox (Route1_Text_Leaf2)
+	msgbox (Route1CS_Text_Leaf2)
 	destroy_field_pic (4)
 	closemessage
 	return
 }
 
-script Route1_EventScript_Rival3 {
+script Route1CS_EventScript_Rival3 {
 	load_field_pic (3, 190, 98)
-	msgbox (Route1_Text_Rival4)
+	msgbox (Route1CS_Text_Rival4)
 	destroy_field_pic(3)
 	closemessage
-	trainerbattle_no_intro(TRAINER_RIVAL1, Route1_Text_RivalLost)
+	trainerbattle_no_intro(TRAINER_RIVAL1, Route1CS_Text_RivalLost)
 	load_field_pic (3, 190, 98)
-	msgbox (Route1_Text_Rival5)
+	msgbox (Route1CS_Text_Rival5)
 	destroy_field_pic (3)
 	closemessage
-	applymovement (3, Route1_Movement_RivalExit)
+	applymovement (3, Route1CS_Movement_RivalExit)
 	waitmovement (0)
 	removeobject (3)
 	applymovement (4, Common_Movement_FaceRight)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)	
 	load_field_pic (4, 190, 98)
-	msgbox (Route1_Text_Leaf3)
+	msgbox (Route1CS_Text_Leaf3)
 	closemessage
 	destroy_field_pic (4)
 	call (Common_EventScript_OutOfCenterPartyHeal)
 	load_field_pic (4, 190, 98)
-	msgbox (Route1_Text_Leaf4)
+	msgbox (Route1CS_Text_Leaf4)
 	closemessage
 	destroy_field_pic (4)
 	return
 }
 
-script Route1_EventScript_Rival3B {
+script Route1CS_EventScript_Rival3B {
 	load_field_pic (3, 190, 98)
-	msgbox (Route1_Text_Rival4)
+	msgbox (Route1CS_Text_Rival4)
 	destroy_field_pic(3)
 	closemessage
-	trainerbattle_no_intro(TRAINER_RIVAL1, Route1_Text_RivalLost)
+	trainerbattle_no_intro(TRAINER_RIVAL1, Route1CS_Text_RivalLost)
 	load_field_pic (3, 190, 98)
-	msgbox (Route1_Text_Rival5)
+	msgbox (Route1CS_Text_Rival5)
 	destroy_field_pic (3)
 	closemessage
-	applymovement (3, Route1_Movement_RivalExit)
+	applymovement (3, Route1CS_Movement_RivalExit)
 	waitmovement (0)
 	removeobject (3)
 	applymovement (4, Common_Movement_FaceDown)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
 	waitmovement (0)	
 	load_field_pic (4, 190, 98)
-	msgbox (Route1_Text_Leaf3)
+	msgbox (Route1CS_Text_Leaf3)
 	closemessage
 	destroy_field_pic (4)
 	call (Common_EventScript_OutOfCenterPartyHeal)
 	load_field_pic (4, 190, 98)
-	msgbox (Route1_Text_Leaf4)
+	msgbox (Route1CS_Text_Leaf4)
 	closemessage
 	destroy_field_pic (4)
 	return
 }
 
-script Route1_EventScript_Boy {
+script Route1CS_EventScript_Boy {
 	lockall
 	faceplayer
-	msgbox (Route1_Text_Boy1)
+	msgbox (Route1CS_Text_Boy1)
 	closemessage
 	releaseall
 	end
 }
-script Route1_EventScript_BugCatcher {
-	trainerbattle_single(TRAINER_ETIENNE, Route1_Text_BugCatcherFight, Route1_Text_BugCatcherLost)
-	msgbox (Route1_Text_BugCatcherPost)
+script Route1CS_EventScript_BugCatcher {
+	trainerbattle_single(TRAINER_ETIENNE, Route1CS_Text_BugCatcherFight, Route1CS_Text_BugCatcherLost)
+	msgbox (Route1CS_Text_BugCatcherPost)
 	closemessage
 	end
 }
 
-script Route1_EventScript_Lass {
-	trainerbattle_single(TRAINER_KIM, Route1_Text_LassFight, Route1_Text_LassLost)
-	msgbox (Route1_Text_LassPost)
+script Route1CS_EventScript_Lass {
+	trainerbattle_single(TRAINER_KIM, Route1CS_Text_LassFight, Route1CS_Text_LassLost)
+	msgbox (Route1CS_Text_LassPost)
 	closemessage
 	end
 }
 
-script Route1_EventScript_LittleBoy {
-	trainerbattle_single(TRAINER_LOGAN, Route1_Text_LittleBoyFight, Route1_Text_LittleBoyLost)
-	msgbox (Route1_Text_LittleBoyPost)
+script Route1CS_EventScript_LittleBoy {
+	trainerbattle_single(TRAINER_LOGAN, Route1CS_Text_LittleBoyFight, Route1CS_Text_LittleBoyLost)
+	msgbox (Route1CS_Text_LittleBoyPost)
 	closemessage
 	end
 }
 	
-movement Route1_Movement_FaceDown {
+movement Route1CS_Movement_FaceDown {
 	face_down
 }
 
-movement Route1_Movement_FaceLeft {
+movement Route1CS_Movement_FaceLeft {
 	face_left
 }
 
-movement Route1_Movement_LeafWalk1 {
+movement Route1CS_Movement_LeafWalk1 {
 	walk_left * 2
 	walk_up
 }
 
-movement Route1_Movement_LeafWalk2 {
+movement Route1CS_Movement_LeafWalk2 {
 	walk_left * 2
 	face_up
 }
 
-movement Route1_Movement_LeafWalk3 {
+movement Route1CS_Movement_LeafWalk3 {
 	walk_left
 }
 
 
-movement Route1_Movement_LeafStepLU {
+movement Route1CS_Movement_LeafStepLU {
 	walk_left
 	walk_up
 	face_down
 }
 
-movement Route1_Movement_LeafStepUL {
+movement Route1CS_Movement_LeafStepUL {
 	walk_up
 	walk_left
 	face_right
 }
 
-movement Route1_Movement_RivalStep1 {
+movement Route1CS_Movement_RivalStep1 {
 	walk_left * 2
 	walk_up * 2
 	face_left
 }
 
-movement Route1_Movement_RivalStep2 {
+movement Route1CS_Movement_RivalStep2 {
 	walk_left * 2
 	walk_up
 	face_left
 }
 
-movement Route1_Movement_RivalStep3 {
+movement Route1CS_Movement_RivalStep3 {
 	walk_left * 2
 }
 
-movement Route1_Movement_Player1 {
+movement Route1CS_Movement_Player1 {
 	walk_down * 2
 }
 
-movement Route1_Movement_Player2 {
+movement Route1CS_Movement_Player2 {
 	walk_down
 }
 
-movement Route1_Movement_PlayerStep1 {
+movement Route1CS_Movement_PlayerStep1 {
 	walk_down
 }
 
-movement Route1_Movement_RivalExit {
+movement Route1CS_Movement_RivalExit {
 	walk_right * 2
 	walk_down * 8
 }
 
-movement Route1_Movement_BlueScene_Player1 {
+movement Route1CS_Movement_BlueScene_Player1 {
 	walk_down * 2
 	face_right
 }
 
-movement Route1_Movement_BlueScene_Player2 {
+movement Route1CS_Movement_BlueScene_Player2 {
 	walk_down
 	face_right
 }
 
-movement Route1_Movement_BlueScene_Player3 {
+movement Route1CS_Movement_BlueScene_Player3 {
 	face_right
 }
 
-movement Route1_Movement_BlueScene_Player4 {
+movement Route1CS_Movement_BlueScene_Player4 {
 	walk_up
 	face_right
 }
 
-movement Route1_Movement_BlueScene_Player5 {
+movement Route1CS_Movement_BlueScene_Player5 {
 	walk_up * 2
 	face_right
 }
 
-movement Route1_Movement_BlueLeafEnter {
+movement Route1CS_Movement_BlueLeafEnter {
 	walk_down * 3
 }
 
-movement Route1_Movement_LeafToPlayer {
+movement Route1CS_Movement_LeafToPlayer {
 	walk_left * 2
 }
 
-movement Route1_Movement_LeafBehindPlayer {
+movement Route1CS_Movement_LeafBehindPlayer {
 	walk_down
 	walk_left
 	face_up
 }
 
-movement Route1_Movement_BlueToPlayer {
+movement Route1CS_Movement_BlueToPlayer {
 	walk_left * 3
 	face_down
 }
 
-movement Route1_Movement_ZubatToPlayer {
+movement Route1CS_Movement_ZubatToPlayer {
 	walk_down
 	walk_left * 2
 	face_down
 }
 
-movement Route1_Movement_BlueExit {
+movement Route1CS_Movement_BlueExit {
 	walk_right * 2
 	walk_up * 5
 }
 	
 	
-text Route1_Text_RockWarp {
+text Route1CS_Text_RockWarp {
 	format("Wanna warp - test?")
 }
 
-text Route1_Text_Rival1 {
+text Route1CS_Text_Rival1 {
 	format("Come with me babe, today's your lucky day.")
 }
 
-text Route1_Text_Rival2 {
+text Route1CS_Text_Rival2 {
 	format("You stop right there, we're doing things my way!")
 }
 
-text Route1_Text_Rival3 {
+text Route1CS_Text_Rival3 {
 	format("Now where are you...\pand who are YOU?")
 }
 
-text Route1_Text_Rival4 {
+text Route1CS_Text_Rival4 {
 	format("You think that you can steal my girl from me? I'll show you which one of us is the man.")
 }
 
-text Route1_Text_RivalLost {
+text Route1CS_Text_RivalLost {
 	format("Humpty?\pHumpty!??\p Noooo!")
 }
 
-text Route1_Text_Rival5 {
+text Route1CS_Text_Rival5 {
 	format("My God!\p Humpty it's Daddy can you hear my broken voice or feel my stinging tears? Oh Humpty!\pIt's all your fault you monster\pMurderer!\pYou will not get away, violence won't win, I'll make sure in the end that freedom wins.")
 }
 
-text Route1_Text_Leaf1 {
+text Route1CS_Text_Leaf1 {
 	format("The storm has passed! I want to go back home!")
 }
 
-text Route1_Text_Leaf2 {
+text Route1CS_Text_Leaf2 {
 	format("Oh {PLAYER}! Thank God you're here! Please help me out!")
 }
 
-text Route1_Text_Leaf3 {
+text Route1CS_Text_Leaf3 {
 	format("That monster kidnapped me and kept me locked away all night doing unspeakable things to me while the storm raged on outside. I broke free and escaped as the sun rose and thought that Mew was showing me the way but if you were not here he would have caught me and brought me back to his lair. Let me show my affection.")
 }
 
-text Route1_Text_Leaf4 {
+text Route1CS_Text_Leaf4 {
 	format("Thank you so much {PLAYER}! Now come with me, I want you to meet my father who must be worried sick 'bout me.")
 }
 
-text Route1_Text_Blue1 {
+text Route1CS_Text_Blue1 {
 	format("Get back here this instant! Don't ignore me!")
 }
 
-text Route1_Text_Blue2 {
+text Route1CS_Text_Blue2 {
 	format("You stop right there! We're doing things my way!")
 }
 
-text Route1_Text_Blue3 {
+text Route1CS_Text_Blue3 {
 	format("I'll warn you, step aside or face the wrath of the great terror who lives in the trees. I walk under the shadow of power and my reign of glory began this night when mighty Mew herself appeared to me and promised I would rule this world.\pBe gone!\pThat girl is mine!\pSurrender her!\pI see you have chosen destruction.\nSo be it.")
 }
 
-text Route1_Text_BlueLost {
+text Route1CS_Text_BlueLost {
 	format("Impossible! I've never lost before!")
 }
 
-text Route1_Text_Blue4 {
+text Route1CS_Text_Blue4 {
 	format("Though beaten, my destiny is assured... Enjoy this rotten rag you've won from me. I squeezed every ounce of worth from her exhausted corpse. She's useless to me now on my journey of conquest and revenge. Do not forget this face! It will be the last thing your wretched eyes see on this earth for I will hunt you on it ceaselessly and strike you down to revenge this defeat.")
 }
 
-text Route1_Text_Boy1 {
+text Route1CS_Text_Boy1 {
 	format("Be careful friend the roads are dangerous and filled with wild beasts and criminals.")
 }
 
-text Route1_Text_BugCatcherFight {
+text Route1CS_Text_BugCatcherFight {
 	format("Hey, check out my bugs!")
 }
 
-text Route1_Text_BugCatcherLost {
+text Route1CS_Text_BugCatcherLost {
 	format("Dude, what did you do to my bugs?")
 }
 
-text Route1_Text_BugCatcherPost {
+text Route1CS_Text_BugCatcherPost {
 	format("I don't think we should talk anymore.")
 }
 
-text Route1_Text_LassFight {
+text Route1CS_Text_LassFight {
 	format("Wow! {PLAYER} you came back for me.")
 }
 
-text Route1_Text_LassLost {
+text Route1CS_Text_LassLost {
 	format("Heartbroken again.")
 }
 
-text Route1_Text_LassPost {
+text Route1CS_Text_LassPost {
 	format("Get out of here! I'll never love again...")
 }
 
-text Route1_Text_LittleBoyFight {
+text Route1CS_Text_LittleBoyFight {
 	format("Dude, weed!")
 }
 
-text Route1_Text_LittleBoyLost {
+text Route1CS_Text_LittleBoyLost {
 	format("Dang, I got smoked.")
 }
 
-text Route1_Text_LittleBoyPost {
+text Route1CS_Text_LittleBoyPost {
 	format("Maybe we can smoke sometime?")
 }
 
