@@ -320,7 +320,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sage;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Klytaimnestra;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Agamemnon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Agatha;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AgathaCS;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Claire;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wallace2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chuck;
@@ -644,7 +644,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_KLYTAIMNESTRA] =            &gObjectEventGraphicsInfo_Klytaimnestra,
 	[OBJ_EVENT_GFX_AGAMEMNON] =                &gObjectEventGraphicsInfo_Agamemnon,
 	[OBJ_EVENT_GFX_BROCK] =                    &gObjectEventGraphicsInfo_Brock,
-	[OBJ_EVENT_GFX_AGATHA] =                   &gObjectEventGraphicsInfo_Agatha,
+	[OBJ_EVENT_GFX_AGATHA_CS] =                &gObjectEventGraphicsInfo_AgathaCS,
 	[OBJ_EVENT_GFX_CLAIRE] =                   &gObjectEventGraphicsInfo_Claire,
 	[OBJ_EVENT_GFX_WALLACE2] =                 &gObjectEventGraphicsInfo_Wallace2,
 	[OBJ_EVENT_GFX_CHUCK] =                    &gObjectEventGraphicsInfo_Chuck,

@@ -50,7 +50,7 @@ Grep:
 
 
 > Handle FRLG trainers being merged in
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/agatha.png
+#CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/agatha.png
 CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/biker.png
 CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/bill.png
 CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/blaine.png
@@ -72,4 +72,13 @@ CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/rocket_
 CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/rocket_m.png
 CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/sabrina.png
 
-
+#>rename graphics/object_events/pics/people/xxx.png
+#>rename graphics/object_events/pals/xxx.pal
+#>include/constants/event_objects.h
+	>GFX and PAL_TAG
+>src/data/object_events/object_event_graphics_info.h
+>src/data/object_events/object_event_graphics_info_pointers.h
+>src/event_object_movement.c
+>src/data/object_events/object_event_pic_tables.h
+>src/data/object_events/object_event_graphics.h
+>Everywhere the GFX_OBJ_XXX is used in data/maps/xxx/map.json

@@ -709,9 +709,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Agatha = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AgathaCS = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_AGATHA,
+    .paletteTag = OBJ_EVENT_PAL_TAG_AGATHA_CS,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -724,7 +724,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Agatha = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Agatha,
+    .images = sPicTable_AgathaCS,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

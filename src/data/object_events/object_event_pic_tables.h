@@ -1926,16 +1926,16 @@ static const struct SpriteFrameImage sPicTable_Brock[] = {
     overworld_ascending_frames(gObjectEventPic_Brock, 2, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_Agatha[] = {
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Agatha, 2, 4, 2),
+static const struct SpriteFrameImage sPicTable_AgathaCS[] = {
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 0),
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 1),
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 2),
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 0),
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 0),
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 1),
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 1),
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 2),
+    overworld_frame(gObjectEventPic_AgathaCS, 2, 4, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_Claire[] = {
