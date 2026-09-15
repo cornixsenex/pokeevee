@@ -82,3 +82,7 @@ CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/sabrina
 >src/data/object_events/object_event_pic_tables.h
 >src/data/object_events/object_event_graphics.h
 >Everywhere the GFX_OBJ_XXX is used in data/maps/xxx/map.json
+
+
+!! IMPORTANT !!
+>make clean on main before merging this branch to prevent zombie built files
