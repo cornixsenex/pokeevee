@@ -77,8 +77,8 @@ CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/sabrina
 #>include/constants/event_objects.h
 	>GFX and PAL_TAG
 #>src/data/object_events/object_event_graphics_info.h
->src/data/object_events/object_event_graphics_info_pointers.h
->src/event_object_movement.c
+#>src/data/object_events/object_event_graphics_info_pointers.h
+#>src/event_object_movement.c
 >src/data/object_events/object_event_pic_tables.h
 >src/data/object_events/object_event_graphics.h
 >Everywhere the GFX_OBJ_XXX is used in data/maps/xxx/map.json
