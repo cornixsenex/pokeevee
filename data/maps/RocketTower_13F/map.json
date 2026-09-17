@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI",
+      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI_CS",
       "x": 18,
       "y": 11,
       "elevation": 3,
@@ -41,7 +41,7 @@
       "flag": "FLAG_HIDE_ROCKETTOWER_13F_GIO"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLAINE",
+      "graphics_id": "OBJ_EVENT_GFX_BLAINE_CS",
       "x": 17,
       "y": 15,
       "elevation": 3,

@@ -78,7 +78,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI",
+      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI_CS",
       "x": 16,
       "y": 2,
       "elevation": 0,
@@ -117,7 +117,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLAINE",
+      "graphics_id": "OBJ_EVENT_GFX_BLAINE_CS",
       "x": 19,
       "y": 2,
       "elevation": 0,

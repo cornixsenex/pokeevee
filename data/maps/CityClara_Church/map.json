@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLAINE",
+      "graphics_id": "OBJ_EVENT_GFX_BLAINE_CS",
       "x": 20,
       "y": 19,
       "elevation": 3,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M_CS",
       "x": 19,
       "y": 20,
       "elevation": 3,
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_F_CS",
       "x": 21,
       "y": 20,
       "elevation": 3,
@@ -132,7 +132,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_F_CS",
       "x": 37,
       "y": 0,
       "elevation": 3,
@@ -145,7 +145,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_F_CS",
       "x": 35,
       "y": 0,
       "elevation": 3,
