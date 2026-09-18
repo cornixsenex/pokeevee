@@ -79,9 +79,10 @@ CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/sabrina
 #>src/data/object_events/object_event_graphics_info.h
 #>src/data/object_events/object_event_graphics_info_pointers.h
 #>src/event_object_movement.c
->src/data/object_events/object_event_pic_tables.h
+#>src/data/object_events/object_event_pic_tables.h
 >src/data/object_events/object_event_graphics.h
 >Everywhere the GFX_OBJ_XXX is used in data/maps/xxx/map.json
+	>On Blue (just go down the list in event_objects.h)
 
 
 !! IMPORTANT !!
