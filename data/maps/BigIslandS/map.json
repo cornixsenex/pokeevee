@@ -36,7 +36,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN_CS",
       "x": 46,
       "y": 17,
       "elevation": 0,

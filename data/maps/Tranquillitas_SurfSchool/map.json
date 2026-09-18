@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_SURF_SCHOOL_MISTY",
-      "graphics_id": "OBJ_EVENT_GFX_MISTY",
+      "graphics_id": "OBJ_EVENT_GFX_MISTY_CS",
       "x": 8,
       "y": 7,
       "elevation": 0,
