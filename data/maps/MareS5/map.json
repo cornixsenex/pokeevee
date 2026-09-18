@@ -113,7 +113,7 @@
     },
     {
       "local_id": "LOCALID_MARES5_ULYSSES",
-      "graphics_id": "OBJ_EVENT_GFX_BROCK",
+      "graphics_id": "OBJ_EVENT_GFX_BROCK_CS",
       "x": 39,
       "y": 1,
       "elevation": 0,

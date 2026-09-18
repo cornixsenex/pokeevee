@@ -135,7 +135,7 @@
     },
     {
       "local_id": "LOCALID_BIKEMAPE_ULYSSES",
-      "graphics_id": "OBJ_EVENT_GFX_BROCK",
+      "graphics_id": "OBJ_EVENT_GFX_BROCK_CS",
       "x": 74,
       "y": 31,
       "elevation": 0,

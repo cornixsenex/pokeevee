@@ -228,7 +228,7 @@
     },
     {
       "local_id": "LOCALID_MARES4_ASCANIUS",
-      "graphics_id": "OBJ_EVENT_GFX_BILL",
+      "graphics_id": "OBJ_EVENT_GFX_BILL_CS",
       "x": 56,
       "y": 63,
       "elevation": 0,
@@ -284,7 +284,7 @@
     },
     {
       "local_id": "LOCALID_MARES4_ULYSSES",
-      "graphics_id": "OBJ_EVENT_GFX_BROCK",
+      "graphics_id": "OBJ_EVENT_GFX_BROCK_CS",
       "x": 2,
       "y": 0,
       "elevation": 0,

@@ -194,7 +194,7 @@
     },
     {
       "local_id": "LOCALID_TUCSON_ULYSSES",
-      "graphics_id": "OBJ_EVENT_GFX_BROCK",
+      "graphics_id": "OBJ_EVENT_GFX_BROCK_CS",
       "x": 4,
       "y": 0,
       "elevation": 0,
@@ -236,7 +236,7 @@
     },
     {
       "local_id": "LOCALID_TUCSON_HECTOR",
-      "graphics_id": "OBJ_EVENT_GFX_LANCE",
+      "graphics_id": "OBJ_EVENT_GFX_LANCE_CS",
       "x": 6,
       "y": 0,
       "elevation": 0,
