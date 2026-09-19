@@ -398,7 +398,7 @@ const u32 gObjectEventPic_GiovanniCS[] = INCBIN_U32("graphics/object_events/pics
 const u16 gObjectEventPal_GiovanniCS[] = INCBIN_U16("graphics/object_events/palettes/giovanni_cs.gbapal");
 const u32 gObjectEventPic_LoreleiCS[] = INCBIN_U32("graphics/object_events/pics/people/lorelei_cs.4bpp");
 const u16 gObjectEventPal_LoreleiCS[] = INCBIN_U16("graphics/object_events/palettes/lorelei_cs.gbapal");
-const u32 gObjectEventPic_BlaineCS[] = INCBIN_U32("graphics/object_events/pics/people/blaine_cs`.4bpp");
+const u32 gObjectEventPic_BlaineCS[] = INCBIN_U32("graphics/object_events/pics/people/blaine_cs.4bpp");
 const u16 gObjectEventPal_BlaineCS[] = INCBIN_U16("graphics/object_events/palettes/blaine_cs.gbapal");
 const u32 gObjectEventPic_Jessie[] = INCBIN_U32("graphics/object_events/pics/people/jessie.4bpp");
 const u16 gObjectEventPal_Jessie[] = INCBIN_U16("graphics/object_events/palettes/jessie.gbapal");
@@ -414,8 +414,8 @@ const u32 gObjectEventPic_ChannelerCS[] = INCBIN_U32("graphics/object_events/pic
 const u16 gObjectEventPal_ChannelerCS[] = INCBIN_U16("graphics/object_events/palettes/channeler_cs.gbapal");
 const u32 gObjectEventPic_ChefCS[] = INCBIN_U32("graphics/object_events/pics/people/chef_cs.4bpp");
 const u16 gObjectEventPal_ChefCS[] = INCBIN_U16("graphics/object_events/palettes/chef_cs.gbapal");
-const u32 gObjectEventPic_Policeman[] = INCBIN_U32("graphics/object_events/pics/people/policeman.4bpp");
-const u16 gObjectEventPal_Policeman[] = INCBIN_U16("graphics/object_events/palettes/policeman.gbapal");
+const u32 gObjectEventPic_PolicemanCS[] = INCBIN_U32("graphics/object_events/pics/people/policeman_cs.4bpp");
+const u16 gObjectEventPal_PolicemanCS[] = INCBIN_U16("graphics/object_events/palettes/policeman_cs.gbapal");
 const u32 gObjectEventPic_ProfOakCS[] = INCBIN_U32("graphics/object_events/pics/people/prof_oak_cs.4bpp");
 const u16 gObjectEventPal_ProfOakCS[] = INCBIN_U16("graphics/object_events/palettes/prof_oak_cs.gbapal");
 const u32 gObjectEventPic_RockerCS[] = INCBIN_U32("graphics/object_events/pics/people/rocker_cs.4bpp");
@@ -517,8 +517,8 @@ const u16 gObjectEventPal_Paris[] = INCBIN_U16("graphics/object_events/palettes/
 const u32 gObjectEventPic_Silver[] = INCBIN_U32("graphics/object_events/pics/people/silver.4bpp");
 const u16 gObjectEventPal_Silver[] = INCBIN_U16("graphics/object_events/palettes/silver.gbapal");
 
-const u32 gObjectEventPic_Lance[] = INCBIN_U32("graphics/object_events/pics/people/lance.4bpp");
-const u16 gObjectEventPal_Lance[] = INCBIN_U16("graphics/object_events/palettes/lance.gbapal");
+const u32 gObjectEventPic_LanceCS[] = INCBIN_U32("graphics/object_events/pics/people/lance_cs.4bpp");
+const u16 gObjectEventPal_LanceCS[] = INCBIN_U16("graphics/object_events/palettes/lance_cs.gbapal");
 
 //Only pal as pic was added earlier / vanilla
 const u16 gObjectEventPal_Wally[] = INCBIN_U16("graphics/object_events/palettes/wally.gbapal");

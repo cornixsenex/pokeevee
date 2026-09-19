@@ -1970,8 +1970,8 @@ static const struct SpriteFrameImage sPicTable_Leon[] = {
     overworld_ascending_frames(gObjectEventPic_Leon, 2, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_Sabrina[] = {
-    overworld_ascending_frames(gObjectEventPic_Sabrina, 2, 4),
+static const struct SpriteFrameImage sPicTable_SabrinaCS[] = {
+    overworld_ascending_frames(gObjectEventPic_SabrinaCS, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Amazon[] = {
