@@ -4,6 +4,7 @@ FortreeCity_House1_MapScripts::
 FortreeCity_House1_EventScript_Trader::
 	lock
 	faceplayer
+<<<<<<< HEAD
 	setvar VAR_0x8008, INGAME_TRADE_PLUSLE
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
@@ -25,6 +26,11 @@ FortreeCity_House1_EventScript_Trader::
 	waitstate
 	bufferspeciesname STR_VAR_1, VAR_0x8009
 	msgbox FortreeCity_House1_Text_MonYouTakeCare, MSGBOX_DEFAULT
+=======
+	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, FortreeCity_House1_EventScript_TradeCompleted
+	ingame_trade INGAME_TRADE_PLUSLE, FortreeCity_House1_Text_YouWillTradeWontYou, FortreeCity_House1_EventScript_DeclineTrade, FortreeCity_House1_EventScript_NotRequestedMon, FortreeCity_House1_Text_MonYouTakeCare
+	setflag FLAG_FORTREE_NPC_TRADE_COMPLETED
+>>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 	release
 	end
 

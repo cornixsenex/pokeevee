@@ -4,6 +4,7 @@ RustboroCity_House1_MapScripts::
 RustboroCity_House1_EventScript_Trader::
 	lock
 	faceplayer
+<<<<<<< HEAD
 	setvar VAR_0x8008, INGAME_TRADE_SEEDOT
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
@@ -24,6 +25,11 @@ RustboroCity_House1_EventScript_Trader::
 	special DoInGameTradeScene
 	waitstate
 	msgbox RustboroCity_House1_Text_PleaseBeGoodToMyPokemon, MSGBOX_DEFAULT
+=======
+	goto_if_set FLAG_RUSTBORO_NPC_TRADE_COMPLETED, RustboroCity_House1_EventScript_TradeCompleted
+	ingame_trade INGAME_TRADE_SEEDOT, RustboroCity_House1_Text_IllTradeIfYouWant, RustboroCity_House1_EventScript_DeclineTrade, RustboroCity_House1_EventScript_NotRequestedMon, RustboroCity_House1_Text_PleaseBeGoodToMyPokemon
+	setflag FLAG_RUSTBORO_NPC_TRADE_COMPLETED
+>>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 	release
 	end
 

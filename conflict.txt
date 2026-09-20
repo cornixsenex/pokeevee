@@ -1,90 +1,74 @@
-NOTE: It's possible there are more issues. General work flow is first rename the maps (known issue) then rename all the frlg pics / event objects (I think it's easiest to do it this way, rename them, then port in the rhh frlg versions, then if you want delete the extra cornix customs if need be etc)
-Then try to merge 1.15.0 again BUT be prepared there may be another "large" issue that needs fixing possibly even back on main again. Tilesets or something I haven't considered yet etc
-
-# New Branch rename-maps
-# Rename all 17 maps
-# Merge onto main
-# Test build
-# commit upstream
-
-# New branch rename-trainers
-# Rename all 21 object events (Good news! Trainer Pics are appended with _FRLG)
-# Merge onto main
-# Test build
-# commmit upstream
-
-> Rename maps (Routes 1 - 17)
-> Just go Route1 -> Route1CS
-#Route1
-Route2
-#Route3
-#Route4
-#Route5
-#Route6
-#Route7
-#Route8
-#Route9
-#Route10
-#Route11
-#Route12
-#Route13 - Does not exist?
-#Route14
-#Route15
-#Route16
-#Route17
-
->rename directory data/maps/RouteX -> data/maps/RouteXCS
->data/maps/RouteX/script.pory
->data/maps/RouteX/map.json
->data/maps/map_groups.json
->rename directory data/layouts/RouteX/ -> data/layoutsRouteXCS/
->data/layouts/layouts.json
->data/event_scripts.s
-
-Grep:
->RouteX
->ROUTEX
-
->NOTE DO not need to update the MAPSEC_ROUTE_X because those are placehodlers for the FRLG maps
-(Also note the MAPSEC_COUNT may need to be expanded or smth idk could be an issue during merge)
-
-
-> Handle FRLG trainers being merged in
-#CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/agatha.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/biker.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/bill.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/blaine.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/blue.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/brock.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/bruno.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/channeler.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/chef.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/giovanni.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/lance.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/lorelei.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/lt_surge.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/misty.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/old_man_lying_down.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/policeman.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/prof_oak.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/rocker.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/rocket_f.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/rocket_m.png
-CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/sabrina.png
-
-#>rename graphics/object_events/pics/people/xxx.png
-#>rename graphics/object_events/pals/xxx.pal
-#>include/constants/event_objects.h
-	>GFX and PAL_TAG
-#>src/data/object_events/object_event_graphics_info.h
-#>src/data/object_events/object_event_graphics_info_pointers.h
-#>src/event_object_movement.c
-#>src/data/object_events/object_event_pic_tables.h
-#>src/data/object_events/object_event_graphics.h
-#>Everywhere the GFX_OBJ_XXX is used in data/maps/xxx/map.json
-
-#Checks
-
-
-!! IMPORTANT !!
->make clean on main before merging this branch to prevent zombie built files
+#CONFLICT (content): Merge conflict in Makefile
+CONFLICT (content): Merge conflict in charmap.txt
+CONFLICT (content): Merge conflict in data/layouts/layouts.json
+CONFLICT (content): Merge conflict in data/maps/BattleFrontier_BattlePyramidTop/scripts.inc
+CONFLICT (content): Merge conflict in data/maps/BattleFrontier_Lounge6/scripts.inc
+CONFLICT (content): Merge conflict in data/maps/FortreeCity_House1/scripts.inc
+CONFLICT (content): Merge conflict in data/maps/PacifidlogTown_House3/scripts.inc
+CONFLICT (content): Merge conflict in data/maps/RustboroCity_House1/scripts.inc
+CONFLICT (content): Merge conflict in data/maps/map_groups.json
+CONFLICT (content): Merge conflict in data/script_cmd_table.inc
+CONFLICT (content): Merge conflict in data/scripts/field_move_scripts.inc
+CONFLICT (content): Merge conflict in data/scripts/movement.inc
+CONFLICT (content): Merge conflict in data/specials.inc
+CONFLICT (content): Merge conflict in include/bike.h
+CONFLICT (content): Merge conflict in include/config/overworld.h
+CONFLICT (content): Merge conflict in include/config/save.h
+CONFLICT (content): Merge conflict in include/constants/battle_frontier.h
+CONFLICT (content): Merge conflict in include/constants/characters.h
+CONFLICT (content): Merge conflict in include/constants/event_object_movement.h
+CONFLICT (content): Merge conflict in include/constants/event_objects.h
+CONFLICT (content): Merge conflict in include/constants/field_effects.h
+CONFLICT (content): Merge conflict in include/constants/field_specials.h
+CONFLICT (content): Merge conflict in include/constants/field_tasks.h
+CONFLICT (content): Merge conflict in include/constants/flags.h
+CONFLICT (content): Merge conflict in include/constants/global.h
+CONFLICT (content): Merge conflict in include/constants/items.h
+CONFLICT (content): Merge conflict in include/constants/metatile_behaviors.h
+CONFLICT (content): Merge conflict in include/constants/metatile_labels.h
+CONFLICT (content): Merge conflict in include/constants/pokemon.h
+CONFLICT (content): Merge conflict in include/constants/script_menu.h
+CONFLICT (content): Merge conflict in include/constants/trainers.h
+CONFLICT (content): Merge conflict in include/event_object_movement.h
+CONFLICT (content): Merge conflict in include/field_effect_helpers.h
+CONFLICT (content): Merge conflict in include/global.fieldmap.h
+CONFLICT (content): Merge conflict in include/naming_screen.h
+CONFLICT (content): Merge conflict in include/strings.h
+CONFLICT (content): Merge conflict in src/battle_controller_player.c
+CONFLICT (content): Merge conflict in src/battle_main.c
+CONFLICT (content): Merge conflict in src/battle_message.c
+CONFLICT (content): Merge conflict in src/battle_tower.c
+CONFLICT (content): Merge conflict in src/bike.c
+CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
+CONFLICT (content): Merge conflict in src/data/items.h
+CONFLICT (content): Merge conflict in src/data/object_events/movement_action_func_tables.h
+CONFLICT (content): Merge conflict in src/data/object_events/object_event_anims.h
+CONFLICT (content): Merge conflict in src/data/object_events/object_event_graphics_info_pointers.h
+CONFLICT (modify/delete): src/data/pokemon/teachable_learnsets.h deleted in 150649546e909fe96591be707c0fc1810b86480b and modified in HEAD.  Version HEAD of src/data/pokemon/teachable_learnsets.h left in tree.
+CONFLICT (content): Merge conflict in src/data/region_map/region_map_sections.json
+CONFLICT (content): Merge conflict in src/data/script_menu.h
+CONFLICT (content): Merge conflict in src/data/tilesets/graphics.h
+CONFLICT (content): Merge conflict in src/data/tilesets/headers.h
+CONFLICT (content): Merge conflict in src/data/tilesets/metatiles.h
+CONFLICT (content): Merge conflict in src/data/wild_encounters.json
+CONFLICT (content): Merge conflict in src/event_object_movement.c
+CONFLICT (content): Merge conflict in src/field_control_avatar.c
+CONFLICT (content): Merge conflict in src/field_player_avatar.c
+CONFLICT (content): Merge conflict in src/field_specials.c
+CONFLICT (content): Merge conflict in src/field_tasks.c
+CONFLICT (content): Merge conflict in src/fishing.c
+CONFLICT (content): Merge conflict in src/item.c
+CONFLICT (content): Merge conflict in src/mail.c
+CONFLICT (content): Merge conflict in src/main_menu.c
+CONFLICT (content): Merge conflict in src/match_call.c
+CONFLICT (content): Merge conflict in src/metatile_behavior.c
+CONFLICT (content): Merge conflict in src/naming_screen.c
+CONFLICT (content): Merge conflict in src/new_game.c
+CONFLICT (content): Merge conflict in src/overworld.c
+CONFLICT (content): Merge conflict in src/party_menu.c
+CONFLICT (content): Merge conflict in src/pokemon.c
+CONFLICT (content): Merge conflict in src/pokemon_icon.c
+CONFLICT (content): Merge conflict in src/scrcmd.c
+CONFLICT (content): Merge conflict in src/starter_choose.c
+CONFLICT (content): Merge conflict in src/string_util.c
+CONFLICT (content): Merge conflict in src/strings.c

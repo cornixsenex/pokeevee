@@ -566,19 +566,24 @@ Common_Script_FacePlayerLeft::
 	return
 
 Text_WantToRockClimb:
-    .string "The cliff is steep.\n"
-    .string "Would you like to use Rock Climb?$"
+	.string "The cliff is steep.\n"
+	.string "Would you like to use Rock Climb?$"
 
 Text_DoRockClimb:
     .string "{PLAYER} used the Climbing Gloves!$"
 
 Text_MonUsedRockClimb:
-    .string "{STR_VAR_1} used Rock Climb!$"
+	.string "{STR_VAR_1} used Rock Climb!$"
 
 Text_CantRockClimb:
+<<<<<<< HEAD
     .string "The cliff is steep.\n"
     .string "A Pokémon may be able to climb it.$"
 
 Text_CantDoRockClimb:
     .string "The cliff is steep! Maybe one\n"
     .string "day I'll be able to climb it.$"
+=======
+	.string "The cliff is steep.\n"
+	.string "A Pokémon may be able to climb it.$"
+>>>>>>> 150649546e909fe96591be707c0fc1810b86480b

@@ -74,6 +74,14 @@ Common_Movement_WalkInPlaceRight:
 @ End of follower-safe movements
 Common_Movement_FollowerSafeEnd::
 	step_end
+	
+Common_Movement_WalkUp5::
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
 
 Common_Movement_Delay32:
 	delay_16
@@ -377,50 +385,70 @@ Common_Movement_WalkSouthEast::
 
 @ Follower NPC
 Common_Movement_WalkUpSlow::
-    walk_slow_up
-    step_end
+	walk_slow_up
+	step_end
 
 Common_Movement_WalkDownSlow::
-    walk_slow_down
-    step_end
+	walk_slow_down
+	step_end
 
 Common_Movement_WalkRightSlow::
-    walk_slow_right
-    step_end
+	walk_slow_right
+	step_end
 
 Common_Movement_WalkLeftSlow::
-    walk_slow_left
-    step_end
+	walk_slow_left
+	step_end
 
+<<<<<<< HEAD
+=======
+Common_Movement_WalkDown::
+	walk_down
+	step_end
+
+Common_Movement_WalkRight::
+	walk_right
+	step_end
+
+Common_Movement_WalkLeft::
+	walk_left
+	step_end
+
+>>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 Common_Movement_WalkUpFast::
-    walk_fast_up
-    step_end
+	walk_fast_up
+	step_end
 
 Common_Movement_WalkDownFast::
-    walk_fast_down
-    step_end
+	walk_fast_down
+	step_end
 
 Common_Movement_WalkRightFast::
-    walk_fast_right
-    step_end
+	walk_fast_right
+	step_end
 
 Common_Movement_WalkLeftFast::
-    walk_fast_left
-    step_end
+	walk_fast_left
+	step_end
 
 Common_Movement_WalkUpFaster::
-    walk_faster_up
-    step_end
+	walk_faster_up
+	step_end
 
 Common_Movement_WalkDownFaster::
-    walk_faster_down
-    step_end
+	walk_faster_down
+	step_end
 
 Common_Movement_WalkRightFaster::
-    walk_faster_right
-    step_end
+	walk_faster_right
+	step_end
 
 Common_Movement_WalkLeftFaster::
+<<<<<<< HEAD
     walk_faster_left
     step_end
 
+=======
+	walk_faster_left
+	step_end
+>>>>>>> 150649546e909fe96591be707c0fc1810b86480b

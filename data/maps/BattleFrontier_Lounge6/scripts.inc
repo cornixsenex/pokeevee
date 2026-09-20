@@ -4,6 +4,7 @@ BattleFrontier_Lounge6_MapScripts::
 BattleFrontier_Lounge6_EventScript_Trader::
 	lock
 	faceplayer
+<<<<<<< HEAD
 	setvar VAR_0x8008, INGAME_TRADE_MEOWTH
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
@@ -24,6 +25,11 @@ BattleFrontier_Lounge6_EventScript_Trader::
 	special DoInGameTradeScene
 	waitstate
 	msgbox BattleFrontier_Lounge6_Text_PromiseIllBeGoodToIt, MSGBOX_DEFAULT
+=======
+	goto_if_set FLAG_BATTLE_FRONTIER_TRADE_DONE, BattleFrontier_Lounge6_EventScript_TradeCompleted
+	ingame_trade INGAME_TRADE_MEOWTH, BattleFrontier_Lounge6_Text_WouldYouLikeToTrade, BattleFrontier_Lounge6_EventScript_DeclineTrade, BattleFrontier_Lounge6_EventScript_NotRequestedMon, BattleFrontier_Lounge6_Text_PromiseIllBeGoodToIt
+	setflag FLAG_BATTLE_FRONTIER_TRADE_DONE
+>>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 	release
 	end
 
