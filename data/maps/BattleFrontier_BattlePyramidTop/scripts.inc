@@ -179,17 +179,9 @@ BattleFrontier_BattlePyramidTop_EventScript_DefeatedBrandonGold::
 @@	goto BattleFrontier_BattlePyramidTop_EventScript_WarpToLobbyWon
 
 BattleFrontier_BattlePyramidTop_EventScript_DoBrandonBattle::
-<<<<<<< HEAD
-@@	closemessage
-@@	setvar VAR_0x8004, SPECIAL_BATTLE_PYRAMID
-@@	setvar VAR_0x8005, 0
-@@	special DoSpecialTrainerBattle
-@@	waitstate
-=======
 	closemessage
 	dofacilitytrainerbattle FACILITY_BATTLE_PYRAMID
 	waitstate
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 	return
 
 BattleFrontier_BattlePyramidTop_Movement_AttendantMoveAside:

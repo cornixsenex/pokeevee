@@ -1,12 +1,18 @@
 #CONFLICT (content): Merge conflict in Makefile
-CONFLICT (content): Merge conflict in charmap.txt
-CONFLICT (content): Merge conflict in data/layouts/layouts.json
-CONFLICT (content): Merge conflict in data/maps/BattleFrontier_BattlePyramidTop/scripts.inc
-CONFLICT (content): Merge conflict in data/maps/BattleFrontier_Lounge6/scripts.inc
-CONFLICT (content): Merge conflict in data/maps/FortreeCity_House1/scripts.inc
-CONFLICT (content): Merge conflict in data/maps/PacifidlogTown_House3/scripts.inc
-CONFLICT (content): Merge conflict in data/maps/RustboroCity_House1/scripts.inc
-CONFLICT (content): Merge conflict in data/maps/map_groups.json
+	>poryscript
+#CONFLICT (content): Merge conflict in charmap.txt	
+	>new REGION conflict with custom LEAF
+#CONFLICT (content): Merge conflict in data/layouts/layouts.json
+	>new layout (emerald vs frlg)
+#CONFLICT (content): Merge conflict in data/maps/BattleFrontier_BattlePyramidTop/scripts.inc
+	>FACILITY_BATTLE_PYRAMID
+#CONFLICT (content): Merge conflict in data/maps/BattleFrontier_Lounge6/scripts.inc
+#CONFLICT (content): Merge conflict in data/maps/FortreeCity_House1/scripts.inc
+#CONFLICT (content): Merge conflict in data/maps/PacifidlogTown_House3/scripts.inc
+#CONFLICT (content): Merge conflict in data/maps/RustboroCity_House1/scripts.inc
+	>flags
+#CONFLICT (content): Merge conflict in data/maps/map_groups.json
+	>new map groups (porymap)
 CONFLICT (content): Merge conflict in data/script_cmd_table.inc
 CONFLICT (content): Merge conflict in data/scripts/field_move_scripts.inc
 CONFLICT (content): Merge conflict in data/scripts/movement.inc
@@ -72,3 +78,10 @@ CONFLICT (content): Merge conflict in src/scrcmd.c
 CONFLICT (content): Merge conflict in src/starter_choose.c
 CONFLICT (content): Merge conflict in src/string_util.c
 CONFLICT (content): Merge conflict in src/strings.c
+
+
+# CHECKS
+
+poryscript
+leaf charmap (battle and overworld strings)
+porymap

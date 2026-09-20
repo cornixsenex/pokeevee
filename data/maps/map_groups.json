@@ -35,10 +35,7 @@
     "gMapGroup_Myth",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-<<<<<<< HEAD
     "gMapGroup33",
-    "gMapGroup_IndoorRoute124"
-=======
     "gMapGroup_IndoorRoute124",
     "gMapGroup_Link_Frlg",
     "gMapGroup_Dungeons_Frlg",
@@ -81,7 +78,6 @@
     "gMapGroup_IndoorTwoIslandRoute_Frlg",
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg"
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
