@@ -400,21 +400,6 @@ Common_Movement_WalkLeftSlow::
 	walk_slow_left
 	step_end
 
-<<<<<<< HEAD
-=======
-Common_Movement_WalkDown::
-	walk_down
-	step_end
-
-Common_Movement_WalkRight::
-	walk_right
-	step_end
-
-Common_Movement_WalkLeft::
-	walk_left
-	step_end
-
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 Common_Movement_WalkUpFast::
 	walk_fast_up
 	step_end
@@ -444,11 +429,5 @@ Common_Movement_WalkRightFaster::
 	step_end
 
 Common_Movement_WalkLeftFaster::
-<<<<<<< HEAD
-    walk_faster_left
-    step_end
-
-=======
 	walk_faster_left
 	step_end
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b

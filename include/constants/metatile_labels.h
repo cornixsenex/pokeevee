@@ -178,7 +178,6 @@
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
 #define METATILE_Cave_EntranceCover                      0x229
-<<<<<<< HEAD
 #define METATILE_Cave_InnerCornerTopLeft_Eastward        0x3C2
 #define METATILE_Cave_InnerCornerTopLeft_Westward        0x3CC
 #define METATILE_Cave_InnerCornerTopRight_Eastward       0x3C8
@@ -201,12 +200,10 @@
 #define METATILE_Cave_RockWallTop                        0x211
 #define METATILE_Cave_RockWallW                          0x210
 #define METATILE_Cave_RockWallWWater                     0x27A
-=======
 #define METATILE_Cave_Floor_Ledge_Bottom                 0x2E1
 #define METATILE_Cave_Floor_Ledge_Top                    0x2D1
 #define METATILE_Cave_RockBarrier_Bottom                 0x317
 #define METATILE_Cave_RockBarrier_Top                    0x307
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 #define METATILE_Cave_SealedChamberBraille_Mid           0x235
 #define METATILE_Cave_SealedChamberEntrance_BottomLeft   0x232
 #define METATILE_Cave_SealedChamberEntrance_BottomMid    0x233
@@ -1128,7 +1125,6 @@
 #define METATILE_SilphCo_VerticalBarrier_TopRight       0x3C1
 #define METATILE_SilphCo_Wall_LeftEdge                  0x347
 #define METATILE_SilphCo_Wall_RightEdge                 0x346
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 
 // gTileset_Slateport
 #define METATILE_Slateport_CalmWater_False  0x338

@@ -32,12 +32,6 @@
 #define CHALLENGE_STATUS_WON      3
 #define CHALLENGE_STATUS_LOST     4
 
-<<<<<<< HEAD
-// Special trainer battles.		//CornixSenex adjusted this to account for scripted Pv2 trainer battles -_-
-#define SPECIAL_BATTLE_TOWER 0
-=======
-// Special trainer battles.
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 #define SPECIAL_BATTLE_SECRET_BASE 1
 #define SPECIAL_BATTLE_EREADER 2
 #define SPECIAL_BATTLE_MULTI 3

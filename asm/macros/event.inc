@@ -1917,11 +1917,47 @@
 	.4byte \name
 	.2byte \id
 	.endm	
+	
+	@ Hides any follower Pokémon if present, putting them into their Poké Ball; by default waits for their movement to finish.
+	.macro hidefollower wait=1
+	.byte SCR_OP_HIDEFOLLOWER
+	.2byte \wait
+	.endm
 
 	@ Gets the width of the specified message in the Braille font and sets the result to VAR_0x8004.
 	.macro getbraillestringwidth msg:req
 	.byte SCR_OP_GETBRAILLESTRINGWIDTH
 	.4byte \msg
+	.endm
+	
+	@ CORNIX CUSTOM - Changes the value of destination by multiplying value to it. Overflow is not prevented (0x0000 - 1 = 0xFFFF).
+	.macro multvar destination:req, value:req
+	.byte SCR_OP_MULTVAR
+	.2byte \destination
+	.2byte \value
+	.endm
+
+	@ CORNIX CUSTOM - Copied from multvar
+	.macro divvar destination:req, value:req
+	.byte SCR_OP_DIVVAR
+	.2byte \destination
+	.2byte \value
+	.endm
+
+	@ CORNIX CUSTOM - like checkcoins but for money
+	@ Gets the number of money the player has and stores it in the variable 'out'.
+	.macro copymoney out:req
+	.byte SCR_OP_COPYMONEY
+	.2byte \out
+	.endm
+
+	@CORNIX CUSTOM - copied from removemoney but will remove the value of the var passed rather than the var
+	@ Subtracts value from the player's money. If the player has less than 'value' money, their money is set to 0.
+	@ If 'disable' is set to anything but 0 then this command does nothing.
+	.macro removevarmoney value:req, disable=0
+	.byte SCR_OP_REMOVEVARMONEY
+	.4byte \value
+	.byte \disable
 	.endm
 
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
@@ -2593,42 +2629,6 @@
 	callnative Scrcmd_getobjectfacingdirection, requests_effects=1
 	.2byte \localId
 	.2byte \dest
-	.endm
-
-	@ Hides any follower Pokémon if present, putting them into their Poké Ball; by default waits for their movement to finish.
-	.macro hidefollower wait=1
-	.byte SCR_OP_HIDEFOLLOWER
-	.2byte \wait
-	.endm
-
-	@ CORNIX CUSTOM - Changes the value of destination by multiplying value to it. Overflow is not prevented (0x0000 - 1 = 0xFFFF).
-	.macro multvar destination:req, value:req
-	.byte SCR_OP_MULTVAR
-	.2byte \destination
-	.2byte \value
-	.endm
-
-	@ CORNIX CUSTOM - Copied from multvar
-	.macro divvar destination:req, value:req
-	.byte SCR_OP_DIVVAR
-	.2byte \destination
-	.2byte \value
-	.endm
-
-	@ CORNIX CUSTOM - like checkcoins but for money
-	@ Gets the number of money the player has and stores it in the variable 'out'.
-	.macro copymoney out:req
-	.byte SCR_OP_COPYMONEY
-	.2byte \out
-	.endm
-
-	@CORNIX CUSTOM - copied from removemoney but will remove the value of the var passed rather than the var
-	@ Subtracts value from the player's money. If the player has less than 'value' money, their money is set to 0.
-	@ If 'disable' is set to anything but 0 then this command does nothing.
-	.macro removevarmoney value:req, disable=0
-	.byte SCR_OP_REMOVEVARMONEY
-	.4byte \value
-	.byte \disable
 	.endm
 
     @ Cornix Custom - unfaceplayer

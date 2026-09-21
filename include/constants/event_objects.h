@@ -265,102 +265,7 @@
 #define OBJ_EVENT_GFX_POKE_BALL                  239
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
-//KUSTOMS
-#define OBJ_EVENT_GFX_GRANDMA				     242
-#define OBJ_EVENT_GFX_HEX_MANIAC2				 243 
-#define OBJ_EVENT_GFX_PETREL				     244 
-#define OBJ_EVENT_GFX_ORPHEUS				     245 
-#define OBJ_EVENT_GFX_PHIL				         246 
-#define OBJ_EVENT_GFX_THESEUS				     247 
-#define OBJ_EVENT_GFX_NESTOR				     248 
-#define OBJ_EVENT_GFX_HELEN				         249 
-#define OBJ_EVENT_GFX_PARIS				         250 
-#define OBJ_EVENT_GFX_ROCKET_M_CS				 251
-#define OBJ_EVENT_GFX_ROCKET_F_CS				 252
-#define OBJ_EVENT_GFX_GIOVANNI_CS				 253
-#define OBJ_EVENT_GFX_LORELEI_CS				 254
-#define OBJ_EVENT_GFX_BLAINE_CS				     255
-#define OBJ_EVENT_GFX_JESSIE				     256
-#define OBJ_EVENT_GFX_JAMES				         257
-#define OBJ_EVENT_GFX_ROCKETMEOWTH			     258
-#define OBJ_EVENT_GFX_SOLDIER			         259
-#define OBJ_EVENT_GFX_BIKER_CS				     260
-#define OBJ_EVENT_GFX_CHANNELER_CS				 261
-#define OBJ_EVENT_GFX_CHEF_CS  				     262
-#define OBJ_EVENT_GFX_POLICEMAN_CS 				 263
-#define OBJ_EVENT_GFX_PROF_OAK_CS 				 264
-#define OBJ_EVENT_GFX_ROCKER_CS 				 265
-#define OBJ_EVENT_GFX_YOUNGSTER2				 266
-#define OBJ_EVENT_GFX_WORKER					 267
-#define OBJ_EVENT_GFX_MEWTWO_ARMOR			     268
-#define OBJ_EVENT_GFX_LT_SURGE_CS			     269
-#define OBJ_EVENT_GFX_MISTY_CS				     270
-#define OBJ_EVENT_GFX_MAUVILLE_OLD_MAN_2		 271
-#define OBJ_EVENT_GFX_NURSE_JOY		             272
-#define OBJ_EVENT_GFX_BIG_GREEN  	             273
-#define OBJ_EVENT_GFX_YOUNGSTER_RED              274
-#define OBJ_EVENT_GFX_GREEN                      275
-#define OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN_CS      276
-#define OBJ_EVENT_GFX_BIG_RED                    277
-#define OBJ_EVENT_GFX_BIG_YELLOW                 278
-#define OBJ_EVENT_GFX_BRUNO_CS                   279
-#define OBJ_EVENT_GFX_COLLISION_RATTATA          280
-#define OBJ_EVENT_GFX_COLLISION_EKANS            281
-#define OBJ_EVENT_GFX_COLLISION_YOUNGSTER        282
-#define OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2      283
-#define OBJ_EVENT_GFX_COLLISION_DRIFBLIM         284
-#define OBJ_EVENT_GFX_BLUE_CS				     285
-#define OBJ_EVENT_GFX_CYNTHIA					 286
-#define OBJ_EVENT_GFX_LENORA				     287
-#define OBJ_EVENT_GFX_ROOD   				     288
-#define OBJ_EVENT_GFX_KANDO   				     289
-#define OBJ_EVENT_GFX_BILL_CS   				 290
-#define OBJ_EVENT_GFX_SORDWARD   				 291 
-#define OBJ_EVENT_GFX_SHIELBERT   				 292
-#define OBJ_EVENT_GFX_SILVER   				     293
-#define OBJ_EVENT_GFX_LANCE_CS   				 294
-#define OBJ_EVENT_GFX_SAGE   				     295
-#define OBJ_EVENT_GFX_KLYTAIMNESTRA   		     296
-#define OBJ_EVENT_GFX_AGAMEMNON   		         297
-#define OBJ_EVENT_GFX_BROCK_CS   		         298
-#define OBJ_EVENT_GFX_AGATHA_CS   		         299
-#define OBJ_EVENT_GFX_CLAIRE   		             300
-#define OBJ_EVENT_GFX_WALLACE2   		         301
-#define OBJ_EVENT_GFX_CHUCK   		             302
-#define OBJ_EVENT_GFX_AVERY   		             303
-#define OBJ_EVENT_GFX_MOHN   		             304
-#define OBJ_EVENT_GFX_TEUCER   		             305
-#define OBJ_EVENT_GFX_BLAINE2   		         306
-#define OBJ_EVENT_GFX_LEON   		             307
-#define OBJ_EVENT_GFX_SABRINA_CS   		         308
-#define OBJ_EVENT_GFX_AMAZON   		             309
-#define OBJ_EVENT_GFX_HIPPOLYTA   		         310
-#define OBJ_EVENT_GFX_TROJAN   		             311
-#define OBJ_EVENT_GFX_TROILUS   		         312
-#define OBJ_EVENT_GFX_CRESSIDA   		         313
-#define OBJ_EVENT_GFX_KIMONO_GIRL   		     314
-#define OBJ_EVENT_GFX_PRIAM   		             315
-#define OBJ_EVENT_GFX_KAREN   		             316
-#define OBJ_EVENT_GFX_DRAYDEN   		         317
-#define OBJ_EVENT_GFX_GHETSIS   		         318
-#define OBJ_EVENT_GFX_OLYMPIA   		         319
-#define OBJ_EVENT_GFX_LINK   		             320
-#define OBJ_EVENT_GFX_MAP   		             321
-#define OBJ_EVENT_GFX_CIRCLE_CUSHION   		     322
-#define OBJ_EVENT_GFX_SQUARE_CUSHION   		     323
-#define OBJ_EVENT_GFX_KITE_CUSHION   		     324
-#define OBJ_EVENT_GFX_CROSS_CUSHION   		     325
-#define OBJ_EVENT_GFX_GANONDORF   		         326
-#define OBJ_EVENT_GFX_TRIVIS   		             327
-#define OBJ_EVENT_GFX_SHEIK   		             328
-#define OBJ_EVENT_GFX_ZELDA   		             329
-#define OBJ_EVENT_GFX_APRICORN_TREE              330 //rhh
-#define OBJ_EVENT_GFX_BROCK_LYING_DOWN   		 331
-#define OBJ_EVENT_GFX_OLD_MAN_FIRERED   		 332
-#define OBJ_EVENT_GFX_BUTLER   		             333
-
-//UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        334
+#define OBJ_EVENT_GFX_APRICORN_TREE              242
 
 // FRLG objects
 #define OBJ_EVENT_GFX_RED_NORMAL                 243
@@ -513,16 +418,106 @@
 // #define OBJ_EVENT_GFX_MEW OBJ_EVENT_GFX_NINJA_BOY
 // #define OBJ_EVENT_GFX_LUGIA OBJ_EVENT_GFX_NINJA_BOY
 
+// KUSTOMS
 
+#define OBJ_EVENT_GFX_GRANDMA				     388
+#define OBJ_EVENT_GFX_HEX_MANIAC2				 389 
+#define OBJ_EVENT_GFX_PETREL				     390 
+#define OBJ_EVENT_GFX_ORPHEUS				     391 
+#define OBJ_EVENT_GFX_PHIL				         392 
+#define OBJ_EVENT_GFX_THESEUS				     393 
+#define OBJ_EVENT_GFX_NESTOR				     394 
+#define OBJ_EVENT_GFX_HELEN				         395 
+#define OBJ_EVENT_GFX_PARIS				         396 
+#define OBJ_EVENT_GFX_ROCKET_M_CS				 397
+#define OBJ_EVENT_GFX_ROCKET_F_CS				 398
+#define OBJ_EVENT_GFX_GIOVANNI_CS				 399
+#define OBJ_EVENT_GFX_LORELEI_CS				 400
+#define OBJ_EVENT_GFX_BLAINE_CS				     401
+#define OBJ_EVENT_GFX_JESSIE				     402
+#define OBJ_EVENT_GFX_JAMES				         403
+#define OBJ_EVENT_GFX_ROCKETMEOWTH			     404
+#define OBJ_EVENT_GFX_SOLDIER			         405
+#define OBJ_EVENT_GFX_BIKER_CS				     406
+#define OBJ_EVENT_GFX_CHANNELER_CS				 407
+#define OBJ_EVENT_GFX_CHEF_CS  				     408
+#define OBJ_EVENT_GFX_POLICEMAN_CS 				 409
+#define OBJ_EVENT_GFX_PROF_OAK_CS 				 410
+#define OBJ_EVENT_GFX_ROCKER_CS 				 411
+#define OBJ_EVENT_GFX_YOUNGSTER2				 412
+#define OBJ_EVENT_GFX_WORKER					 413
+#define OBJ_EVENT_GFX_MEWTWO_ARMOR			     414
+#define OBJ_EVENT_GFX_LT_SURGE_CS			     415
+#define OBJ_EVENT_GFX_MISTY_CS				     416
+#define OBJ_EVENT_GFX_MAUVILLE_OLD_MAN_2		 417
+#define OBJ_EVENT_GFX_NURSE_JOY		             418
+#define OBJ_EVENT_GFX_BIG_GREEN  	             419
+#define OBJ_EVENT_GFX_YOUNGSTER_RED              420
+#define OBJ_EVENT_GFX_GREEN                      421
+#define OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN_CS      422
+#define OBJ_EVENT_GFX_BIG_RED                    423
+#define OBJ_EVENT_GFX_BIG_YELLOW                 424
+#define OBJ_EVENT_GFX_BRUNO_CS                   425
+#define OBJ_EVENT_GFX_COLLISION_RATTATA          426
+#define OBJ_EVENT_GFX_COLLISION_EKANS            427
+#define OBJ_EVENT_GFX_COLLISION_YOUNGSTER        428
+#define OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2      429
+#define OBJ_EVENT_GFX_COLLISION_DRIFBLIM         430
+#define OBJ_EVENT_GFX_BLUE_CS				     431
+#define OBJ_EVENT_GFX_CYNTHIA					 432
+#define OBJ_EVENT_GFX_LENORA				     433
+#define OBJ_EVENT_GFX_ROOD   				     434
+#define OBJ_EVENT_GFX_KANDO   				     435
+#define OBJ_EVENT_GFX_BILL_CS   				 436
+#define OBJ_EVENT_GFX_SORDWARD   				 437 
+#define OBJ_EVENT_GFX_SHIELBERT   				 438
+#define OBJ_EVENT_GFX_SILVER   				     439
+#define OBJ_EVENT_GFX_LANCE_CS   				 440
+#define OBJ_EVENT_GFX_SAGE   				     441
+#define OBJ_EVENT_GFX_KLYTAIMNESTRA   		     442
+#define OBJ_EVENT_GFX_AGAMEMNON   		         443
+#define OBJ_EVENT_GFX_BROCK_CS   		         444
+#define OBJ_EVENT_GFX_AGATHA_CS   		         445
+#define OBJ_EVENT_GFX_CLAIRE   		             446
+#define OBJ_EVENT_GFX_WALLACE2   		         447
+#define OBJ_EVENT_GFX_CHUCK   		             448
+#define OBJ_EVENT_GFX_AVERY   		             449
+#define OBJ_EVENT_GFX_MOHN   		             450
+#define OBJ_EVENT_GFX_TEUCER   		             451
+#define OBJ_EVENT_GFX_BLAINE2   		         452
+#define OBJ_EVENT_GFX_LEON   		             453
+#define OBJ_EVENT_GFX_SABRINA_CS   		         454
+#define OBJ_EVENT_GFX_AMAZON   		             455
+#define OBJ_EVENT_GFX_HIPPOLYTA   		         456
+#define OBJ_EVENT_GFX_TROJAN   		             457
+#define OBJ_EVENT_GFX_TROILUS   		         458
+#define OBJ_EVENT_GFX_CRESSIDA   		         459
+#define OBJ_EVENT_GFX_KIMONO_GIRL   		     460
+#define OBJ_EVENT_GFX_PRIAM   		             461
+#define OBJ_EVENT_GFX_KAREN   		             462
+#define OBJ_EVENT_GFX_DRAYDEN   		         463
+#define OBJ_EVENT_GFX_GHETSIS   		         464
+#define OBJ_EVENT_GFX_OLYMPIA   		         465
+#define OBJ_EVENT_GFX_LINK   		             466
+#define OBJ_EVENT_GFX_MAP   		             467
+#define OBJ_EVENT_GFX_CIRCLE_CUSHION   		     468
+#define OBJ_EVENT_GFX_SQUARE_CUSHION   		     469
+#define OBJ_EVENT_GFX_KITE_CUSHION   		     470
+#define OBJ_EVENT_GFX_CROSS_CUSHION   		     471
+#define OBJ_EVENT_GFX_GANONDORF   		         472
+#define OBJ_EVENT_GFX_TRIVIS   		             473
+#define OBJ_EVENT_GFX_SHEIK   		             474
+#define OBJ_EVENT_GFX_ZELDA   		             475
+#define OBJ_EVENT_GFX_BROCK_LYING_DOWN   		 476
+#define OBJ_EVENT_GFX_OLD_MAN_FIRERED   		 477
+#define OBJ_EVENT_GFX_BUTLER   		             478
+
+//UPDATE MAX
+#define NUM_OBJ_EVENT_GFX                        479
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-<<<<<<< HEAD
-=======
-#define NUM_OBJ_EVENT_GFX                        388
-
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

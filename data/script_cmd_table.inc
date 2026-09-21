@@ -252,14 +252,11 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_DYNMULTICHOICE                ScrCmd_dynmultichoice,              requests_effects=1  @ 0xe3
 	script_cmd_table_entry SCR_OP_DYNMULTIPUSH                  ScrCmd_dynmultipush,                requests_effects=1  @ 0xe4
 	script_cmd_table_entry SCR_OP_HIDEFOLLOWER                  ScrCmd_hidefollower,                requests_effects=1  @ 0xe5
-<<<<<<< HEAD
-	script_cmd_table_entry SCR_OP_MULTVAR                       ScrCmd_multvar,                     requests_effects=1  @ 0xe6
-	script_cmd_table_entry SCR_OP_DIVVAR                        ScrCmd_divvar,                      requests_effects=1  @ 0xe7
-	script_cmd_table_entry SCR_OP_COPYMONEY                     ScrCmd_copymoney,                   requests_effects=1  @ 0xe8
-	script_cmd_table_entry SCR_OP_REMOVEVARMONEY                ScrCmd_removevarmoney,              requests_effects=1  @ 0xe9
-=======
 	script_cmd_table_entry SCR_OP_GETBRAILLESTRINGWIDTH         ScrCmd_getbraillestringwidth,       requests_effects=1  @ 0xe6
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+	script_cmd_table_entry SCR_OP_MULTVAR                       ScrCmd_multvar,                     requests_effects=1  @ 0xe7
+	script_cmd_table_entry SCR_OP_DIVVAR                        ScrCmd_divvar,                      requests_effects=1  @ 0xe8
+	script_cmd_table_entry SCR_OP_COPYMONEY                     ScrCmd_copymoney,                   requests_effects=1  @ 0xe9
+	script_cmd_table_entry SCR_OP_REMOVEVARMONEY                ScrCmd_removevarmoney,              requests_effects=1  @ 0xea
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 
