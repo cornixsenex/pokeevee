@@ -46,17 +46,26 @@
 	> May need to rename the tileset (ugh)
 #CONFLICT (content): Merge conflict in include/constants/pokemon.h
 	>rhh
-CONFLICT (content): Merge conflict in include/constants/script_menu.h
-CONFLICT (content): Merge conflict in include/constants/trainers.h
-CONFLICT (content): Merge conflict in include/event_object_movement.h
-CONFLICT (content): Merge conflict in include/field_effect_helpers.h
-CONFLICT (content): Merge conflict in include/global.fieldmap.h
-CONFLICT (content): Merge conflict in include/naming_screen.h
-CONFLICT (content): Merge conflict in include/strings.h
-CONFLICT (content): Merge conflict in src/battle_controller_player.c
-CONFLICT (content): Merge conflict in src/battle_main.c
-CONFLICT (content): Merge conflict in src/battle_message.c
-CONFLICT (content): Merge conflict in src/battle_tower.c
+#CONFLICT (content): Merge conflict in include/constants/script_menu.h
+	>accomodate frlg multis
+#CONFLICT (content): Merge conflict in include/constants/trainers.h
+	>trainer pic -> enum
+	>accomodate frlg trainer pics and classes
+#CONFLICT (content): Merge conflict in include/event_object_movement.h
+	> u8 collision -> enum Collision collision
+	> u8 dir -> enum Direction dir
+#CONFLICT (content): Merge conflict in include/field_effect_helpers.h
+	> rhh
+#CONFLICT (content): Merge conflict in include/global.fieldmap.h
+	> rhh spin tiles
+#CONFLICT (content): Merge conflict in include/naming_screen.h
+#CONFLICT (content): Merge conflict in include/strings.h
+#CONFLICT (content): Merge conflict in src/battle_controller_player.c
+#CONFLICT (content): Merge conflict in src/battle_main.c
+#CONFLICT (content): Merge conflict in src/battle_message.c
+	>rival, leaf, darkbrendan custom names
+?CONFLICT (content): Merge conflict in src/battle_tower.c
+	>multi battles now rolled up
 CONFLICT (content): Merge conflict in src/bike.c
 CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
 CONFLICT (content): Merge conflict in src/data/items.h
@@ -101,8 +110,9 @@ porymap
 hidefollower macro
 multvar, divvar, copymoney, removevarmoney - macros
 rockclimb
-bike pull tiles
-scripted multi battles (aeneas, salty spitoon)
+scripted multi battles 
+	>aeneas
+	>salty spitoon
 spin tiles (rhh now hehe)
 kustom items (surfboard, big hammer, live bait)
 check rocket tower elevator door opens correctly
@@ -110,3 +120,14 @@ check rocket tower elevator door opens correctly
 	> check open in porymap
 	> check make clean
 	> check they work after all of that etc
+naming screens
+	> philosophy
+	> rhetoric
+	> leaf
+Custom battle names
+	>rival
+	>leaf
+	>dark brendan
+Bikes
+	>pull tiles
+	>acro works normal (no wheelie tho)

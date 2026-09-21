@@ -2985,31 +2985,35 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
     }
     else
     {
-<<<<<<< HEAD
-        toCpy = GetTrainerNameFromId(trainerId);
-		//Here modified to support Rival and Leaf names
-		if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_RIVAL_NAME)
-			toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
-		if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_LEAF_NAME)
-			toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_LEAF);
-        //Dark Brendan Name
-		if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_PLAYER_NAME)
-			toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_PLAYER);
 
+		// NOTE: Need support for cornix rival, leaf, and dark brendan
+		// new rhh way is to query by class 
+		// ie all "custom name" trainers need a dedicated class thx
+        
+		enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
-=======
-        enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
-
-        if (trainerClass == TRAINER_CLASS_RIVAL_EARLY_FRLG || trainerClass == TRAINER_CLASS_RIVAL_LATE_FRLG || trainerClass == TRAINER_CLASS_CHAMPION_FRLG)
+		// Modified to support cornix rival classes
+        if (trainerClass == TRAINER_CLASS_RIVAL_EARLY_FRLG 
+				|| trainerClass == TRAINER_CLASS_RIVAL_LATE_FRLG 
+				|| trainerClass == TRAINER_CLASS_CHAMPION_FRLG
+				|| trainerClass == TRAINER_CLASS_FUCKBOY)
             toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
-        else
+
+		// Leaf
+		else if (trainerClass == TRAINER_CLASS_LEAF)
+            toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_LEAF);
+		
+		// Dark Brendan
+		else if (trainerClass == DARK_SHADOW)
+            toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_PLAYER);
+       
+		else
             toCpy = GetTrainerNameFromId(trainerId);
     }
 
     assertf(DoesStringProperlyTerminate(toCpy, TRAINER_NAME_LENGTH + 1),"Opponent needs a valid name")
     {
         return gText_Blank;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     }
 
     return toCpy;

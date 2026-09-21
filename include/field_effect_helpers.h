@@ -41,12 +41,7 @@ void UpdateHotSpringsWaterFieldEffect(struct Sprite *sprite);
 void UpdateBubblesFieldEffect(struct Sprite *sprite);
 void UpdateSparkleFieldEffect(struct Sprite *sprite);
 void SetSpriteInvisible(u8 spriteId);
-<<<<<<< HEAD
-void ShowWarpArrowSprite(u8 spriteId, u8 direction, s16 x, s16 y);
-void LoadFieldEffectPalette(u8 fieldEffect);
-=======
 void ShowWarpArrowSprite(u8 spriteId, enum Direction direction, s16 x, s16 y);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 
 u32 FldEff_TallGrass(void);
 

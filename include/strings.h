@@ -2282,7 +2282,30 @@ extern const u8 gText_Cancel3[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
-<<<<<<< HEAD
+// Move Relearner
+extern const u8 MoveRelearner_Text_LevelUpMoveLWR[];
+extern const u8 MoveRelearner_Text_EggMoveLWR[];
+extern const u8 MoveRelearner_Text_TMMoveLWR[];
+extern const u8 MoveRelearner_Text_TutorMoveLWR[];
+extern const u8 MoveRelearner_Text_MoveLWR[];
+
+extern const u8 gText_Ghost[];
+extern const u8 gText_Boulderbadge[];
+extern const u8 gText_Cascadebadge[];
+extern const u8 gText_Thunderbadge[];
+extern const u8 gText_Rainbowbadge[];
+extern const u8 gText_Soulbadge[];
+extern const u8 gText_Marshbadge[];
+extern const u8 gText_Volcanobadge[];
+extern const u8 gText_Earthbadge[];
+extern const u8 gText_OakImportantToGetToKnowPokemonThroughly[];
+extern const u8 gText_OakThisIsListOfPokemon[];
+
+extern const u8 gText_Boy[];
+extern const u8 gText_Girl[];
+
+// CUSTOMS BEGIN
+
 //Book Verse
 extern const u8 gText_BookVerse1[];
 extern const u8 gText_BookVerse2[];
@@ -2340,49 +2363,7 @@ extern const u8 gText_Aglaopheme[];
 extern const u8 gText_Scylla[];
 extern const u8 gText_Charybdis[];
 
-extern const u8 gText_BasePointsResetToZero[];
-
-// Map name pop-up
-extern const u8 gText_AM[];
-extern const u8 gText_PM[];
-
-// FRLG whiteout
-extern const u8 gText_PlayerScurriedToCenter[];
-extern const u8 gText_PlayerScurriedBackHome[];
-extern const u8 gText_PlayerRegroupCenter[];
-extern const u8 gText_PlayerRegroupHome[];
-
-extern const u8 gText_Relearn[]; // move relearner from summary screen
-extern const u8 gText_Relearn_LevelUp[];
-extern const u8 gText_Relearn_Egg[];
-extern const u8 gText_Relearn_TM[];
-extern const u8 gText_Relearn_Tutor[];
-extern const u8 gText_Rename[]; // change nickname from summary screen
-
-=======
-// Move Relearner
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
-extern const u8 MoveRelearner_Text_LevelUpMoveLWR[];
-extern const u8 MoveRelearner_Text_EggMoveLWR[];
-extern const u8 MoveRelearner_Text_TMMoveLWR[];
-extern const u8 MoveRelearner_Text_TutorMoveLWR[];
-extern const u8 MoveRelearner_Text_MoveLWR[];
-
-extern const u8 gText_Ghost[];
-extern const u8 gText_Boulderbadge[];
-extern const u8 gText_Cascadebadge[];
-extern const u8 gText_Thunderbadge[];
-extern const u8 gText_Rainbowbadge[];
-extern const u8 gText_Soulbadge[];
-extern const u8 gText_Marshbadge[];
-extern const u8 gText_Volcanobadge[];
-extern const u8 gText_Earthbadge[];
-extern const u8 gText_OakImportantToGetToKnowPokemonThroughly[];
-extern const u8 gText_OakThisIsListOfPokemon[];
-
-extern const u8 gText_Boy[];
-extern const u8 gText_Girl[];
-
+// CUSTOMS END
 
 #endif // GUARD_STRINGS_H
 

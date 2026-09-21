@@ -124,29 +124,6 @@ static void (*const sMachBikeSpeedCallbacks[])(enum Direction) =
 
 static void (*const sAcroBikeTransitions[])(enum Direction) =
 {
-<<<<<<< HEAD
-    AcroBikeTransition_FaceDirection,
-    AcroBikeTransition_TurnDirection,
-    AcroBikeTransition_Moving,
-    AcroBikeTransition_NormalToWheelie,
-    AcroBikeTransition_WheelieToNormal,
-    AcroBikeTransition_WheelieIdle,
-    AcroBikeTransition_WheelieHoppingStanding,
-    AcroBikeTransition_WheelieHoppingMoving,
-    AcroBikeTransition_SideJump,
-    AcroBikeTransition_TurnJump,
-    AcroBikeTransition_WheelieMoving,
-    AcroBikeTransition_WheelieRisingMoving,
-    AcroBikeTransition_WheelieLoweringMoving,
-	AcroBikeTransition_DownPro,
-	AcroBikeTransition_DownCon,
-	AcroBikeTransition_UpPro,
-	AcroBikeTransition_UpCon,
-	AcroBikeTransition_LeftPro,
-	AcroBikeTransition_LeftCon,
-	AcroBikeTransition_RightPro,
-	AcroBikeTransition_RightCon,
-=======
     [ACRO_TRANS_FACE_DIRECTION]           = AcroBikeTransition_FaceDirection,
     [ACRO_TRANS_TURN_DIRECTION]           = AcroBikeTransition_TurnDirection,
     [ACRO_TRANS_MOVING]                   = AcroBikeTransition_Moving,
@@ -162,24 +139,20 @@ static void (*const sAcroBikeTransitions[])(enum Direction) =
     [ACRO_TRANS_WHEELIE_LOWERING_MOVING]  = AcroBikeTransition_WheelieLoweringMoving,
     [ACRO_TRANS_DOWNHILL]                 = AcroBikeTransition_Downhill,
     [ACRO_TRANS_UPHILL]                   = AcroBikeTransition_Uphill,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+	// CUSTOMS BELOW
+	[ACRO_TRANS_DOWN_PRO]                  = AcroBikeTransition_DownPro,
+	[ACRO_TRANS_DOWN_CON]                  = AcroBikeTransition_DownCon,
+	[ACRO_TRANS_UP_PRO]                    = AcroBikeTransition_UpPro,
+	[ACRO_TRANS_UP_CON]                    = AcroBikeTransition_UpCon,
+	[ACRO_TRANS_LEFT_PRO]                  = AcroBikeTransition_LeftPro,
+	[ACRO_TRANS_LEFT_CON]                  = AcroBikeTransition_LeftCon,
+	[ACRO_TRANS_RIGHT_PRO]                 = AcroBikeTransition_RightPro,
+	[ACRO_TRANS_RIGHT_CON]                 = AcroBikeTransition_RightCon,
+	// CUSTOMS ABOVE
 };
 
 static enum AcroTransition (*const sAcroBikeInputHandlers[])(enum Direction *, u16, u16) =
 {
-<<<<<<< HEAD
-    AcroBikeHandleInputNormal,
-    AcroBikeHandleInputTurning,
-    AcroBikeHandleInputWheelieStanding,
-    AcroBikeHandleInputBunnyHop,
-    AcroBikeHandleInputWheelieMoving,
-    AcroBikeHandleInputSidewaysJump,
-    AcroBikeHandleInputTurnJump,
-	AcroBikeHandleInputPullDown,
-	AcroBikeHandleInputPullUp,
-	AcroBikeHandleInputPullLeft,
-	AcroBikeHandleInputPullRight,
-=======
     [ACRO_STATE_NORMAL]           = AcroBikeHandleInputNormal,
     [ACRO_STATE_TURNING]          = AcroBikeHandleInputTurning,
     [ACRO_STATE_WHEELIE_STANDING] = AcroBikeHandleInputWheelieStanding,
@@ -188,7 +161,10 @@ static enum AcroTransition (*const sAcroBikeInputHandlers[])(enum Direction *, u
     [ACRO_STATE_SIDE_JUMP]        = AcroBikeHandleInputSidewaysJump,
     [ACRO_STATE_TURN_JUMP]        = AcroBikeHandleInputTurnJump,
     [ACRO_STATE_SLOPE]            = AcroBikeHandleInput_Slope,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+	[ACRO_STATE_PULL_DOWN]        = AcroBikeHandleInputPullDown,
+	[ACRO_STATE_PULL_UP]          = AcroBikeHandleInputPullUp,
+	[ACRO_STATE_PULL_LEFT]        = AcroBikeHandleInputPullLeft,
+	[ACRO_STATE_PULL_RIGHT]       = AcroBikeHandleInputPullRight,
 };
 
 // used with bikeFrameCounter from mach bike
@@ -578,25 +554,9 @@ static enum AcroTransition CheckMovementInputAcroBike(enum Direction *newDirecti
     return sAcroBikeInputHandlers[gPlayerAvatar.acroBikeState](newDirection, newKeys, heldKeys);
 }
 
-<<<<<<< HEAD
-
 //DO NOTE: I ripped out the wheelie functionality because I dislike it, to revert just uncomment the lines and...
-static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
-{
-	//Needed for pull tiles
-	
-	u8 direction;
-    struct ObjectEvent *playerObjEvent;
-    playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-
-    direction = GetPlayerMovementDirection();
-
-
-    gPlayerAvatar.bikeFrameCounter = 0;
-
-	//Needed for pull tiles - DOWN
-    if (MetatileBehavior_IsCyclingRoadPullDownTile(playerObjEvent->currentMetatileBehavior) == TRUE)
-=======
+// ALSO NOTE: after frlg merge the frlg functionality dont work either
+// use PullDown rather than slope if you want frlg route to work etc
 static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirection, u16 newKeys, u16 heldKeys)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -605,29 +565,7 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
     gPlayerAvatar.bikeFrameCounter = 0;
     if (MetatileBehavior_IsCyclingRoadPullDownTile(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
-        if (!JOY_HELD(B_BUTTON))
-        {
-            gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
-            gPlayerAvatar.runningState = MOVING;
-            if (*newDirection < DIR_NORTH)
-                return ACRO_TRANS_DOWNHILL;
-            else
-                return ACRO_TRANS_UPHILL;
-        }
-        else
-        {
-            if (*newDirection != DIR_NONE)
-            {
-                gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
-                gPlayerAvatar.runningState = MOVING;
-                return ACRO_TRANS_UPHILL;
-            }
-        }
-    }
-    if (*newDirection == DIR_NONE)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
-    {
-    	if (!(heldKeys & B_BUTTON))
+    	if (!JOY_HELD(B_BUTTON))
         {
             gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_DOWN;
             gPlayerAvatar.runningState = MOVING;
@@ -649,7 +587,7 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
 	//Needed for pull tiles - UP
     if (MetatileBehavior_IsCyclingRoadPullUpTile(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
-    	if (!(heldKeys & B_BUTTON))
+    	if (!JOY_HELD(B_BUTTON))
         {
             gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_UP;
             gPlayerAvatar.runningState = MOVING;
@@ -671,7 +609,7 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
 	//Needed for pull tiles - LEFT
     if (MetatileBehavior_IsCyclingRoadPullLeftTile(playerObjEvent->currentMetatileBehavior) == TRUE || MetatileBehavior_IsCyclingRoadBridgePullLeftTile(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
-    	if (!(heldKeys & B_BUTTON))
+    	if (!JOY_HELD(B_BUTTON))
         {
             gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_LEFT;
             gPlayerAvatar.runningState = MOVING;
@@ -693,7 +631,7 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
 	//Needed for pull tiles - RIGHT
     if (MetatileBehavior_IsCyclingRoadPullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE || MetatileBehavior_IsCyclingRoadBridgePullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
-    	if (!(heldKeys & B_BUTTON))
+    	if (!JOY_HELD(B_BUTTON))
         {
             gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_RIGHT;
             gPlayerAvatar.runningState = MOVING;
@@ -713,6 +651,7 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
         }
     }
 
+	// I removed wheelie functionality because I dont like it
     if (*newDirection == DIR_NONE)
     {
      //   if (newKeys & B_BUTTON)
@@ -735,7 +674,7 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
 
 	//
 	//
-	//REMOVE THIS SECTION AS WELL TO REVERT
+	//REMOVE THIS SECTION AS WELL TO RESTORE WHEELIES
 	else
 	{
 		if (*newDirection != direction && gPlayerAvatar.runningState != MOVING)
@@ -771,18 +710,10 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
     //return ACRO_TRANS_MOVING;
 }
 
-<<<<<<< HEAD
-
 //DO NOTE: I stripped this function down...idk what I did tbh but it just werks now so :idk
-static u8 AcroBikeHandleInputTurning(u8 *newDirection, u16 newKeys, u16 heldKeys)
-{
-
-    u8 UNUSED direction;
-=======
 static enum AcroTransition AcroBikeHandleInputTurning(enum Direction *newDirection, u16 newKeys, u16 heldKeys)
 {
-    enum Direction direction;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+    enum Direction UNUSED direction;
 
     *newDirection = gPlayerAvatar.newDirBackup;
 	gPlayerAvatar.runningState = TURN_DIRECTION;

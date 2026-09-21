@@ -169,13 +169,9 @@ void ObjectEventTurnByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, enum Dir
 const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId);
 void SetObjectInvisibility(u8 localId, u8 mapNum, u8 mapGroup, bool8 invisible);
 void FreeAndReserveObjectSpritePalettes(void);
-<<<<<<< HEAD
-u8 LoadPlayerObjectEventPalette(u8 gender);
-=======
 u8 LoadObjectEventPalette(u16 paletteTag);
 u8 LoadObjectEventPaletteCopy(u16 originalTag, u16 copyTag);
 u8 LoadPlayerObjectEventPalette(enum Gender gender);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 void SetObjectEventSpritePosByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, s16 x, s16 y);
 void ResetObjectSubpriority(u8 localId, u8 mapNum, u8 mapGroup);
 void SetObjectSubpriority(u8 localId, u8 mapNum, u8 mapGroup, u8 subpriority);
@@ -192,12 +188,8 @@ u8 GetWalkInPlaceFasterMovementAction(u32);
 u8 GetWalkInPlaceFastMovementAction(u32);
 u8 GetWalkInPlaceNormalMovementAction(u32);
 u8 GetWalkInPlaceSlowMovementAction(u32);
-<<<<<<< HEAD
-u8 GetCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, u32 dir);
-u8 GetCollisionInDirection(struct ObjectEvent *objectEvent, u8 direction);
-=======
 enum Collision GetCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction dir);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+enum Collision GetCollisionInDirection(struct ObjectEvent *objectEvent, u8 direction); // Cornix - in header for aedes terra puzzle
 u32 GetObjectObjectCollidesWith(struct ObjectEvent *objectEvent, s16 x, s16 y, bool32 addCoords);
 void MoveCoords(enum Direction direction, s16 *x, s16 *y);
 bool8 ObjectEventIsHeldMovementActive(struct ObjectEvent *objectEvent);
@@ -524,7 +516,6 @@ u8 MovementType_Invisible_Step0(struct ObjectEvent *objectEvent, struct Sprite *
 u8 MovementType_Invisible_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Invisible_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 
-<<<<<<< HEAD
 // Kustom Chase Player (DesertTemple)
 u32 MovementType_ChasePlayer_Step0(struct ObjectEvent *, struct Sprite *);
 u32 MovementType_ChasePlayer_Step1(struct ObjectEvent *, struct Sprite *);
@@ -535,14 +526,11 @@ u32 MovementType_ChaseNidoking_Step0(struct ObjectEvent *, struct Sprite *);
 u32 MovementType_ChaseNidoking_Step1(struct ObjectEvent *, struct Sprite *);
 u32 MovementType_ChaseNidoking_Step2(struct ObjectEvent *, struct Sprite *);
 u32 MovementType_ChaseNidoking_Step3(struct ObjectEvent *, struct Sprite *);
+// End Kustom chase player
 
 
-u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, u8 direction);
-void TurnVirtualObject(u8 virtualObjId, u8 direction);
-=======
 u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, enum Direction direction);
 void TurnVirtualObject(u8 virtualObjId, enum Direction direction);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 void SetVirtualObjectGraphics(u8 virtualObjId, u16 graphicsId);
 void SetVirtualObjectInvisibility(u8 virtualObjId, bool32 invisible);
 bool32 IsVirtualObjectInvisible(u8 virtualObjId);
