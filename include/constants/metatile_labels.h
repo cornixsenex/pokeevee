@@ -1069,23 +1069,17 @@
 #define METATILE_Shop_Laptop2_Flash   0x260
 #define METATILE_Shop_Laptop2_Normal  0x2A5
 
-// gTileset_SilphCo
-<<<<<<< HEAD
-#define METATILE_SilphCo_Arrow_Down            0x25F
-#define METATILE_SilphCo_Arrow_Left            0x25E
-#define METATILE_SilphCo_Arrow_Right           0x257
-#define METATILE_SilphCo_Arrow_Up              0x256
-#define METATILE_SilphCo_Elevator_Door_Closed  0x2FC
-#define METATILE_SilphCo_Elevator_Door_Open    0x239
-#define METATILE_SilphCo_FloorLight            0x218
-#define METATILE_SilphCo_FloorShade            0x219
-#define METATILE_SilphCo_PC_Off                0x303
-#define METATILE_SilphCo_PC_On                 0x304
+// gTileset_SilphCo - CORNIX CUSTOMS 
+// annoying name conflict with frlg (ugh) hoping this fixes it (ugh)
+#define METATILE_SilphCo_Cornix_Elevator_Door_Open    0x239
+#define METATILE_SilphCo_Cornix_FloorLight            0x218
+#define METATILE_SilphCo_Cornix_FloorShade            0x219
+#define METATILE_SilphCo_Cornix_PC_Off                0x303
+#define METATILE_SilphCo_Cornix_PC_On                 0x304
 
 // gTileset_SilphLab
 #define METATILE_SilphLab_Elevator_Door_Closed  0x23D
 #define METATILE_SilphLab_Elevator_Door_Open    0x234
-=======
 #define METATILE_SilphCo_Arrow_Down                     0x2A8
 #define METATILE_SilphCo_Arrow_Left                     0x2A1
 #define METATILE_SilphCo_Arrow_Right                    0x2A9

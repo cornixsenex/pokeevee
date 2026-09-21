@@ -20,7 +20,7 @@ script RocketTower_5F_EventScript_SetFloor5 {
 }
 
 script RocketTower_5F_EventScript_OpenElevator {	
-	setmetatile (25, 3, METATILE_SilphCo_Elevator_Door_Open, 0)
+	setmetatile (25, 3, METATILE_SilphCo_Cornix_Elevator_Door_Open, 0)
 	return
 }
 

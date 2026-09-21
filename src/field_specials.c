@@ -1118,8 +1118,8 @@ static bool8 IsPlayerInFrontOfPC(void)
          || tileInFront == METATILE_BrendansMaysHouse_MayPC_Off
          || tileInFront == METATILE_Building_PC_On
          || tileInFront == METATILE_Building_PC_Off
-		 || tileInFront == METATILE_SilphCo_PC_On
-		 || tileInFront == METATILE_SilphCo_PC_Off
+		 || tileInFront == METATILE_SilphCo_Cornix_PC_On
+		 || tileInFront == METATILE_SilphCo_Cornix_PC_Off
 		 || tileInFront == METATILE_Hospital_PC_On
 		 || tileInFront == METATILE_Hospital_PC_Off);
 	//CornixSenex removed to maintain custom PC tiles - better to modify the actual function 1.9.1 240820

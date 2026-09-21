@@ -39,8 +39,13 @@
 #CONFLICT (content): Merge conflict in include/constants/items.h
 	> new frlg items
 #CONFLICT (content): Merge conflict in include/constants/metatile_behaviors.h
-CONFLICT (content): Merge conflict in include/constants/metatile_labels.h
-CONFLICT (content): Merge conflict in include/constants/pokemon.h
+?CONFLICT (content): Merge conflict in include/constants/metatile_labels.h
+	> frlg introduces a silph_co_frlg tileset
+	> I already had a custom silphco tileset
+	> I have renamed the METATILE_ labels idk if that will be sufficient or not
+	> May need to rename the tileset (ugh)
+#CONFLICT (content): Merge conflict in include/constants/pokemon.h
+	>rhh
 CONFLICT (content): Merge conflict in include/constants/script_menu.h
 CONFLICT (content): Merge conflict in include/constants/trainers.h
 CONFLICT (content): Merge conflict in include/event_object_movement.h
