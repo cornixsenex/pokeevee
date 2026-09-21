@@ -105,4 +105,8 @@ bike pull tiles
 scripted multi battles (aeneas, salty spitoon)
 spin tiles (rhh now hehe)
 kustom items (surfboard, big hammer, live bait)
-
+check rocket tower elevator door opens correctly
+	> ie metatile labels are a big ?
+	> check open in porymap
+	> check make clean
+	> check they work after all of that etc
