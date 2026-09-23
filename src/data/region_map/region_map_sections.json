@@ -1207,7 +1207,6 @@
       "height": 2
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_ISLA_ELENNA",
       "name": "ISLA ELENNA"
     },
@@ -1336,93 +1335,6 @@
       "name": "D. CACTORVM",
       "x": 0,
       "y": 0,
-=======
-    {
-      "id": "MAPSEC_THREE_ISLE_PORT",
-      "name": "THREE ISLE PORT",
-      "x": 18,
-      "y": 13,
-      "width": 2,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_RESORT_GORGEOUS",
-      "name": "RESORT GORGEOUS",
-      "x": 16,
-      "y": 9,
-      "width": 3,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_WATER_LABYRINTH",
-      "name": "WATER LABYRINTH",
-      "x": 14,
-      "y": 10,
-      "width": 3,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_FIVE_ISLE_MEADOW",
-      "name": "FIVE ISLE MEADOW",
-      "x": 17,
-      "y": 10,
-      "width": 1,
-      "height": 3
-    },
-    {
-      "id": "MAPSEC_MEMORIAL_PILLAR",
-      "name": "MEMORIAL PILLAR",
-      "x": 18,
-      "y": 12,
-      "width": 1,
-      "height": 3
-    },
-    {
-      "id": "MAPSEC_OUTCAST_ISLAND",
-      "name": "OUTCAST ISLAND",
-      "x": 15,
-      "y": 0,
-      "width": 1,
-      "height": 3
-    },
-    {
-      "id": "MAPSEC_GREEN_PATH",
-      "name": "GREEN PATH",
-      "x": 15,
-      "y": 3,
-      "width": 3,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_WATER_PATH",
-      "name": "WATER PATH",
-      "x": 18,
-      "y": 3,
-      "width": 1,
-      "height": 5
-    },
-    {
-      "id": "MAPSEC_RUIN_VALLEY",
-      "name": "RUIN VALLEY",
-      "x": 16,
-      "y": 7,
-      "width": 2,
-      "height": 2
-    },
-    {
-      "id": "MAPSEC_TRAINER_TOWER",
-      "name": "TRAINER TOWER",
-      "x": 5,
-      "y": 6,
-      "width": 1,
-      "height": 2
-    },
-    {
-      "id": "MAPSEC_CANYON_ENTRANCE",
-      "name": "CANYON ENTRANCE",
-      "x": 5,
-      "y": 9,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
@@ -1473,13 +1385,6 @@
       "x": 0,
       "y": 0,
 =======
-      "id": "MAPSEC_SEVAULT_CANYON",
-      "name": "SEVAULT CANYON",
-      "x": 6,
-      "y": 9,
-      "width": 1,
-      "height": 3
-    },
     {
       "id": "MAPSEC_TANOBY_RUINS",
       "name": "TANOBY RUINS",
@@ -1582,18 +1487,10 @@
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_HARENAE_AUREAE",
       "name": "HARENAE AVREAE",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_TRAINER_TOWER_2",
-      "name": "TRAINER TOWER",
-      "name_clone": true,
-      "x": 5,
-      "y": 6,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },

@@ -322,10 +322,11 @@ static u32 OpponentGetTrainerPicId(enum BattlerId battlerId)
     {
         trainerPicId = GetFrontierBrainTrainerPicIndex();
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
-    {
-        trainerPicId = GetTrainerTowerTrainerFrontSpriteId();
-    }
+	// CORNIX REMOVED MAPSEC_TRAINER_TOWER 260923
+//    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
+//    {
+//        trainerPicId = GetTrainerTowerTrainerFrontSpriteId();
+//    }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
     {
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
