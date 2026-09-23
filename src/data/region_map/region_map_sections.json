@@ -1337,21 +1337,6 @@
       "x": 0,
       "y": 0,
 =======
-      "id": "MAPSEC_CAPE_BRINK",
-      "name": "CAPE BRINK",
-      "x": 9,
-      "y": 7,
-      "width": 1,
-      "height": 2
-    },
-    {
-      "id": "MAPSEC_BOND_BRIDGE",
-      "name": "BOND BRIDGE",
-      "x": 13,
-      "y": 12,
-      "width": 4,
-      "height": 1
-    },
     {
       "id": "MAPSEC_THREE_ISLE_PORT",
       "name": "THREE ISLE PORT",
