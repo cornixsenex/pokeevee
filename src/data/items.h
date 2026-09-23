@@ -159,7 +159,6 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
-<<<<<<< HEAD
 //CUSTOMS
 
 static const u8 sKindBudDesc[] = _(
@@ -297,10 +296,7 @@ static const u8 sPinaFruitDesc[] = _(
 
 //END KUSTOMS
 
-const struct Item gItemsInfo[] =
-=======
 const struct ItemInfo gItemsInfo[] =
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 {
     [ITEM_NONE] =
     {
@@ -13967,11 +13963,8 @@ const struct ItemInfo gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_Bike,
-<<<<<<< HEAD
+//        .secondaryId = STANDARD_BIKE,
         .secondaryId = ACRO_BIKE, //Cornix hacky make pull tiles work w/ normal bike
-=======
-        .secondaryId = STANDARD_BIKE,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
         .iconPic = gItemIcon_Bicycle,
         .iconPalette = gItemIconPalette_Bicycle,
     },

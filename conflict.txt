@@ -66,13 +66,21 @@
 	>rival, leaf, darkbrendan custom names
 ?CONFLICT (content): Merge conflict in src/battle_tower.c
 	>multi battles now rolled up
-CONFLICT (content): Merge conflict in src/bike.c
-CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
-CONFLICT (content): Merge conflict in src/data/items.h
-CONFLICT (content): Merge conflict in src/data/object_events/movement_action_func_tables.h
-CONFLICT (content): Merge conflict in src/data/object_events/object_event_anims.h
-CONFLICT (content): Merge conflict in src/data/object_events/object_event_graphics_info_pointers.h
-CONFLICT (modify/delete): src/data/pokemon/teachable_learnsets.h deleted in 150649546e909fe96591be707c0fc1810b86480b and modified in HEAD.  Version HEAD of src/data/pokemon/teachable_learnsets.h left in tree.
+#CONFLICT (content): Merge conflict in src/bike.c	
+	>new enums Direction and Collision and AcroCollision or AcroTransition or smth
+#CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
+	>TRAINER_PIC_X -> TRAINER_PIC_FRONT_X
+#CONFLICT (content): Merge conflict in src/data/items.h
+	>STANDARD_BIKE 
+	>const struct ItemInfo gItemsInfo[]
+#CONFLICT (content): Merge conflict in src/data/object_events/movement_action_func_tables.h
+	>rhh spin tiles
+#CONFLICT (content): Merge conflict in src/data/object_events/object_event_anims.h
+	>rhh spin tiles
+#CONFLICT (content): Merge conflict in src/data/object_events/object_event_graphics_info_pointers.h
+	>whitespaces
+#CONFLICT (modify/delete): src/data/pokemon/teachable_learnsets.h deleted in 150649546e909fe96591be707c0fc1810b86480b and modified in HEAD.  Version HEAD of src/data/pokemon/teachable_learnsets.h left in tree.
+	>Just delete it
 CONFLICT (content): Merge conflict in src/data/region_map/region_map_sections.json
 CONFLICT (content): Merge conflict in src/data/script_menu.h
 CONFLICT (content): Merge conflict in src/data/tilesets/graphics.h
