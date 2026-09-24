@@ -1435,211 +1435,114 @@
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_PECCATUM",
       "name": "PECCATVM",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_LOST_CAVE",
-      "name": "LOST CAVE",
-      "x": 18,
-      "y": 9,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_VIA_POSTERIOR",
       "name": "VIA POSTERIOR",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_PATTERN_BUSH",
-      "name": "PATTERN BUSH",
-      "x": 17,
-      "y": 3,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_D_COLUMNARIS",
       "name": "D. COLVMNARIS",
       "x": 0,
-=======
-      "id": "MAPSEC_ALTERING_CAVE_FRLG",
-      "name": "ALTERING CAVE",
-      "x": 15,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_VIA_SAXOSA",
       "name": "VIA SAXOSA",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_TANOBY_CHAMBERS",
-      "name": "TANOBY CHAMBERS",
-      "x": 9,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_VIA_MAGNA",
       "name": "VIA MAGNA",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_THREE_ISLE_PATH",
-      "name": "THREE ISLE PATH",
-      "x": 18,
-      "y": 13,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_ROBUSTICA",
       "name": "ROBVSTICA",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_TANOBY_KEY",
-      "name": "TANOBY KEY",
-      "x": 6,
-      "y": 9,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_VENATOR_MONS",
       "name": "VENATOR MONS",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_BIRTH_ISLAND_FRLG",
-      "name": "BIRTH ISLAND",
-      "x": 18,
-      "y": 13,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_VILLA_VENATORUM",
       "name": "VILLA VENATORVM",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_MONEAN_CHAMBER",
-      "name": "MONEAN CHAMBER",
-      "x": 9,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_SABINA_NOVA",
       "name": "SABINA NOVA",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_LIPTOO_CHAMBER",
-      "name": "LIPTOO CHAMBER",
-      "x": 9,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_VILLA_VALLIS",
       "name": "VILLA VALLIS",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_WEEPTH_CHAMBER",
-      "name": "WEEPTH CHAMBER",
-      "x": 9,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_MONTES_VIGILIAE",
       "name": "MONTES VIGILIAE",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_DILFORD_CHAMBER",
-      "name": "DILFORD CHAMBER",
-      "x": 9,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_VILLA_VIVARIA",
       "name": "VILLA VIVARIA",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_SCUFIB_CHAMBER",
-      "name": "SCUFIB CHAMBER",
-      "x": 9,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_VIA_LITORALIS",
       "name": "VIA LITORALIS",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_RIXY_CHAMBER",
-      "name": "RIXY CHAMBER",
-      "x": 9,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_CASTRUM",
       "name": "CASTRVM",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_VIAPOIS_CHAMBER",
-      "name": "VIAPOIS CHAMBER",
-      "x": 9,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },

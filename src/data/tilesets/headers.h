@@ -833,7 +833,6 @@ const struct Tileset gTileset_UnionRoom =
     .callback = NULL,
 };
 
-<<<<<<< HEAD
 const struct Tileset gTileset_Snow =
 {
 	.isCompressed = TRUE,
@@ -986,7 +985,8 @@ const struct Tileset gTileset_willow =
 	.metatiles = gMetatiles_willow,
 	.metatileAttributes = gMetatileAttributes_willow,
 	.callback = NULL,
-=======
+};
+
 #else
 
 // FRLG tilesets
@@ -1461,12 +1461,10 @@ const struct Tileset gTileset_SeaCottage =
     .metatiles = gMetatiles_SeaCottage,
     .metatileAttributes = gMetatileAttributes_SeaCottage,
     .callback = NULL,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 };
 
 const struct Tileset gTileset_SilphCo =
 {
-<<<<<<< HEAD
 	.isCompressed = TRUE,
 	.isSecondary = TRUE,
 	.tiles = gTilesetTiles_SilphCo,
@@ -1475,6 +1473,20 @@ const struct Tileset gTileset_SilphCo =
 	.metatileAttributes = gMetatileAttributes_SilphCo,
 	.callback = NULL,
 };
+
+// NOTE: This is the FRLG version of SilphCo.
+// Kept for notes (notice the anim thing - fountain I think - maybe useful
+// Would be better to macro gate BUT I'm lazed - Cornix 260924
+//const struct Tileset gTileset_SilphCo =
+//{
+//    .isCompressed = TRUE,
+//    .isSecondary = TRUE,
+//    .tiles = gTilesetTiles_Condominiums,
+//    .palettes = gTilesetPalettes_Condominiums,
+//    .metatiles = gMetatiles_SilphCo,
+//    .metatileAttributes = gMetatileAttributes_SilphCo,
+//    .callback = InitTilesetAnim_SilphCo,
+//};
 
 const struct Tileset gTileset_FireRedBuilding =
 {
@@ -1682,15 +1694,6 @@ const struct Tileset gTileset_Calypso =
     .metatiles = gMetatiles_Calypso,
     .metatileAttributes = gMetatileAttributes_Calypso,
     .callback = NULL,
-};
-=======
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Condominiums,
-    .palettes = gTilesetPalettes_Condominiums,
-    .metatiles = gMetatiles_SilphCo,
-    .metatileAttributes = gMetatileAttributes_SilphCo,
-    .callback = InitTilesetAnim_SilphCo,
 };
 
 const struct Tileset gTileset_UndergroundPath =
@@ -1914,4 +1917,3 @@ const struct Tileset gTileset_HallOfFame =
 };
 
 #endif // IS_FRLG
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b

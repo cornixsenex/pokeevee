@@ -4,7 +4,7 @@
   "layout": "LAYOUT_THREE_ISLAND_DUNSPARCE_TUNNEL",
   "music": "MUS_RG_VIRIDIAN_FOREST",
   "region": "REGION_KANTO",
-  "region_map_section": "MAPSEC_THREE_ISLE_PATH",
+  "region_map_section": "MAPSEC_ROUTE_1",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

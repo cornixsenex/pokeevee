@@ -81,12 +81,18 @@
 	>whitespaces
 #CONFLICT (modify/delete): src/data/pokemon/teachable_learnsets.h deleted in 150649546e909fe96591be707c0fc1810b86480b and modified in HEAD.  Version HEAD of src/data/pokemon/teachable_learnsets.h left in tree.
 	>Just delete it
-CONFLICT (content): Merge conflict in src/data/region_map/region_map_sections.json
-CONFLICT (content): Merge conflict in src/data/script_menu.h
-CONFLICT (content): Merge conflict in src/data/tilesets/graphics.h
-CONFLICT (content): Merge conflict in src/data/tilesets/headers.h
-CONFLICT (content): Merge conflict in src/data/tilesets/metatiles.h
-CONFLICT (content): Merge conflict in src/data/wild_encounters.json
+#CONFLICT (content): Merge conflict in src/data/region_map/region_map_sections.json
+	>remove overwritten mapsecs
+#CONFLICT (content): Merge conflict in src/data/script_menu.h
+	>handle frlg multi choices
+#CONFLICT (content): Merge conflict in src/data/tilesets/graphics.h
+	>handle rhh tilesets (merged to bottom)
+#CONFLICT (content): Merge conflict in src/data/tilesets/headers.h
+	>rhh tilesets and silphco (frlg condominium vs custom silph
+#CONFLICT (content): Merge conflict in src/data/tilesets/metatiles.h
+	>frlg tilesets
+#CONFLICT (content): Merge conflict in src/data/wild_encounters.json	
+	>just match rhh (NOTE: you lost all your wild mons!)
 CONFLICT (content): Merge conflict in src/event_object_movement.c
 CONFLICT (content): Merge conflict in src/field_control_avatar.c
 CONFLICT (content): Merge conflict in src/field_player_avatar.c
@@ -139,3 +145,5 @@ Custom battle names
 Bikes
 	>pull tiles
 	>acro works normal (no wheelie tho)
+Silphco Tileset (frlg is broken i think but who care)
+NOTE: Wild mons are no mas (add em in if you care!)

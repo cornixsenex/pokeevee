@@ -210,7 +210,6 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
 
-<<<<<<< HEAD
 //CUSTOM TILESETS
 
 const u16 gMetatiles_Snow[] = INCBIN_U16("data/tilesets/primary/snow/metatiles.bin");
@@ -355,7 +354,9 @@ const u16 gMetatileAttributes_SurfSchool[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_Calypso[] = INCBIN_U16("data/tilesets/secondary/calypso/metatiles.bin");
 const u16 gMetatileAttributes_Calypso[] = INCBIN_U16("data/tilesets/secondary/calypso/metatile_attributes.bin");
-=======
+
+// HERE ENDS CUSTOM METATILES
+
 #else
 
 const u16 gMetatiles_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatiles.bin");
@@ -554,4 +555,3 @@ const u16 gMetatiles_HallOfFame[] = INCBIN_U16("data/tilesets/secondary/hall_of_
 const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame_frlg/metatile_attributes.bin");
 
 #endif // IS_FRLG
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
