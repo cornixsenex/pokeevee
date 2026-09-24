@@ -190,126 +190,126 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .tilemapptr = sPowerPlantMapPreviewTilemap,
         .palptr = sPowerPlantMapPreviewPalette
     },
-    [MPS_MT_EMBER] = {
-        .mapsec = MAPSEC_MT_EMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_MT_EMBER_EXTERIOR,
-        .tilesptr = sMtEmberMapPreviewTiles,
-        .tilemapptr = sMtEmberMapPreviewTilemap,
-        .palptr = sMtEmberMapPreviewPalette
-    },
-    [MPS_ROCKET_WAREHOUSE] = {
-        .mapsec = MAPSEC_ROCKET_WAREHOUSE,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_THREE_ISLAND_BERRY_FOREST,
-        .tilesptr = sRocketWarehouseMapPreviewTiles,
-        .tilemapptr = sRocketWarehouseMapPreviewTilemap,
-        .palptr = sRocketWarehouseMapPreviewPalette
-    },
-    [MPS_MONEAN_CHAMBER] = {
-        .mapsec = MAPSEC_MONEAN_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
-    },
-    [MPS_DOTTED_HOLE] = {
-        .mapsec = MAPSEC_DOTTED_HOLE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_DOTTED_HOLE_1F,
-        .tilesptr = sDottedHoleMapPreviewTiles,
-        .tilemapptr = sDottedHoleMapPreviewTilemap,
-        .palptr = sDottedHoleMapPreviewPalette
-    },
-    [MPS_BERRY_FOREST] = {
-        .mapsec = MAPSEC_BERRY_FOREST,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_THREE_ISLAND_BERRY_FOREST,
-        .tilesptr = sBerryForestMapPreviewTiles,
-        .tilemapptr = sBerryForestMapPreviewTilemap,
-        .palptr = sBerryForestMapPreviewPalette
-    },
-    [MPS_ICEFALL_CAVE] = {
-        .mapsec = MAPSEC_ICEFALL_CAVE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE,
-        .tilesptr = sIcefallCaveMapPreviewTiles,
-        .tilemapptr = sIcefallCaveMapPreviewTilemap,
-        .palptr = sIcefallCaveMapPreviewPalette
-    },
-    [MPS_LOST_CAVE] = {
-        .mapsec = MAPSEC_LOST_CAVE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE,
-        .tilesptr = sLostCaveMapPreviewTiles,
-        .tilemapptr = sLostCaveMapPreviewTilemap,
-        .palptr = sLostCaveMapPreviewPalette
-    },
-    [MPS_ALTERING_CAVE] = {
-        .mapsec = MAPSEC_ALTERING_CAVE_FRLG,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_ALTERING_CAVE,
-        .tilesptr = sAlteringCaveMapPreviewTiles,
-        .tilemapptr = sAlteringCaveMapPreviewTilemap,
-        .palptr = sAlteringCaveMapPreviewPalette
-    },
-    [MPS_PATTERN_BUSH] = {
-        .mapsec = MAPSEC_PATTERN_BUSH,
-        .type = MPS_TYPE_FOREST,
-        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_PATTERN_BUSH,
-        .tilesptr = sViridianForestMapPreviewTiles,
-        .tilemapptr = sViridianForestMapPreviewTilemap,
-        .palptr = sViridianForestMapPreviewPalette
-    },
-    [MPS_LIPTOO_CHAMBER] = {
-        .mapsec = MAPSEC_LIPTOO_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
-    },
-    [MPS_WEEPTH_CHAMBER] = {
-        .mapsec = MAPSEC_WEEPTH_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
-    },
-    [MPS_TDILFORD_CHAMBER] = {
-        .mapsec = MAPSEC_DILFORD_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
-    },
-    [MPS_SCUFIB_CHAMBER] = {
-        .mapsec = MAPSEC_SCUFIB_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
-    },
-    [MPS_RIXY_CHAMBER] = {
-        .mapsec = MAPSEC_RIXY_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
-    },
-    [MPS_VIAPOIS_CHAMBER] = {
-        .mapsec = MAPSEC_VIAPOIS_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
-        .tilesptr = sMoneanChamberMapPreviewTiles,
-        .tilemapptr = sMoneanChamberMapPreviewTilemap,
-        .palptr = sMoneanChamberMapPreviewPalette
-    }
+//    [MPS_MT_EMBER] = {
+//        .mapsec = MAPSEC_MT_EMBER,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_MT_EMBER_EXTERIOR,
+//        .tilesptr = sMtEmberMapPreviewTiles,
+//        .tilemapptr = sMtEmberMapPreviewTilemap,
+//        .palptr = sMtEmberMapPreviewPalette
+//    },
+//    [MPS_ROCKET_WAREHOUSE] = {
+//        .mapsec = MAPSEC_ROCKET_WAREHOUSE,
+//        .type = MPS_TYPE_FOREST,
+//        .flagId = FLAG_WORLD_MAP_THREE_ISLAND_BERRY_FOREST,
+//        .tilesptr = sRocketWarehouseMapPreviewTiles,
+//        .tilemapptr = sRocketWarehouseMapPreviewTilemap,
+//        .palptr = sRocketWarehouseMapPreviewPalette
+//    },
+//    [MPS_MONEAN_CHAMBER] = {
+//        .mapsec = MAPSEC_MONEAN_CHAMBER,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
+//        .tilesptr = sMoneanChamberMapPreviewTiles,
+//        .tilemapptr = sMoneanChamberMapPreviewTilemap,
+//        .palptr = sMoneanChamberMapPreviewPalette
+//    },
+//    [MPS_DOTTED_HOLE] = {
+//        .mapsec = MAPSEC_DOTTED_HOLE,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_DOTTED_HOLE_1F,
+//        .tilesptr = sDottedHoleMapPreviewTiles,
+//        .tilemapptr = sDottedHoleMapPreviewTilemap,
+//        .palptr = sDottedHoleMapPreviewPalette
+//    },
+//    [MPS_BERRY_FOREST] = {
+//        .mapsec = MAPSEC_BERRY_FOREST,
+//        .type = MPS_TYPE_FOREST,
+//        .flagId = FLAG_WORLD_MAP_THREE_ISLAND_BERRY_FOREST,
+//        .tilesptr = sBerryForestMapPreviewTiles,
+//        .tilemapptr = sBerryForestMapPreviewTilemap,
+//        .palptr = sBerryForestMapPreviewPalette
+//    },
+//    [MPS_ICEFALL_CAVE] = {
+//        .mapsec = MAPSEC_ICEFALL_CAVE,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE,
+//        .tilesptr = sIcefallCaveMapPreviewTiles,
+//        .tilemapptr = sIcefallCaveMapPreviewTilemap,
+//        .palptr = sIcefallCaveMapPreviewPalette
+//    },
+//    [MPS_LOST_CAVE] = {
+//        .mapsec = MAPSEC_LOST_CAVE,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE,
+//        .tilesptr = sLostCaveMapPreviewTiles,
+//        .tilemapptr = sLostCaveMapPreviewTilemap,
+//        .palptr = sLostCaveMapPreviewPalette
+//    },
+//    [MPS_ALTERING_CAVE] = {
+//        .mapsec = MAPSEC_ALTERING_CAVE_FRLG,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_ALTERING_CAVE,
+//        .tilesptr = sAlteringCaveMapPreviewTiles,
+//        .tilemapptr = sAlteringCaveMapPreviewTilemap,
+//        .palptr = sAlteringCaveMapPreviewPalette
+//    },
+//    [MPS_PATTERN_BUSH] = {
+//        .mapsec = MAPSEC_PATTERN_BUSH,
+//        .type = MPS_TYPE_FOREST,
+//        .flagId = FLAG_WORLD_MAP_SIX_ISLAND_PATTERN_BUSH,
+//        .tilesptr = sViridianForestMapPreviewTiles,
+//        .tilemapptr = sViridianForestMapPreviewTilemap,
+//        .palptr = sViridianForestMapPreviewPalette
+//    },
+//    [MPS_LIPTOO_CHAMBER] = {
+//        .mapsec = MAPSEC_LIPTOO_CHAMBER,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
+//        .tilesptr = sMoneanChamberMapPreviewTiles,
+//        .tilemapptr = sMoneanChamberMapPreviewTilemap,
+//        .palptr = sMoneanChamberMapPreviewPalette
+//    },
+//    [MPS_WEEPTH_CHAMBER] = {
+//        .mapsec = MAPSEC_WEEPTH_CHAMBER,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
+//        .tilesptr = sMoneanChamberMapPreviewTiles,
+//        .tilemapptr = sMoneanChamberMapPreviewTilemap,
+//        .palptr = sMoneanChamberMapPreviewPalette
+//    },
+//    [MPS_TDILFORD_CHAMBER] = {
+//        .mapsec = MAPSEC_DILFORD_CHAMBER,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
+//        .tilesptr = sMoneanChamberMapPreviewTiles,
+//        .tilemapptr = sMoneanChamberMapPreviewTilemap,
+//        .palptr = sMoneanChamberMapPreviewPalette
+//    },
+//    [MPS_SCUFIB_CHAMBER] = {
+//        .mapsec = MAPSEC_SCUFIB_CHAMBER,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
+//        .tilesptr = sMoneanChamberMapPreviewTiles,
+//        .tilemapptr = sMoneanChamberMapPreviewTilemap,
+//        .palptr = sMoneanChamberMapPreviewPalette
+//    },
+//    [MPS_RIXY_CHAMBER] = {
+//        .mapsec = MAPSEC_RIXY_CHAMBER,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
+//        .tilesptr = sMoneanChamberMapPreviewTiles,
+//        .tilemapptr = sMoneanChamberMapPreviewTilemap,
+//        .palptr = sMoneanChamberMapPreviewPalette
+//    },
+//    [MPS_VIAPOIS_CHAMBER] = {
+//        .mapsec = MAPSEC_VIAPOIS_CHAMBER,
+//        .type = MPS_TYPE_CAVE,
+//        .flagId = FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER,
+//        .tilesptr = sMoneanChamberMapPreviewTiles,
+//        .tilemapptr = sMoneanChamberMapPreviewTilemap,
+//        .palptr = sMoneanChamberMapPreviewPalette
+//    }
 };
 
 static const struct WindowTemplate sMapNameWindow = {

@@ -4,7 +4,7 @@
   "layout": "LAYOUT_NAVEL_ROCK_BASE_PATH_B2F",
   "music": "MUS_RG_SEVII_CAVE",
   "region": "REGION_KANTO",
-  "region_map_section": "MAPSEC_NAVEL_ROCK_FRLG",
+  "region_map_section": "MAPSEC_ROUTE_1",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

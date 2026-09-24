@@ -4,7 +4,7 @@
   "layout": "LAYOUT_SIX_ISLAND_DOTTED_HOLE_B3F",
   "music": "MUS_RG_SEVII_DUNGEON",
   "region": "REGION_KANTO",
-  "region_map_section": "MAPSEC_DOTTED_HOLE",
+  "region_map_section": "MAPSEC_ROUTE_1",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

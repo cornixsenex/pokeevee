@@ -1339,7 +1339,6 @@
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_DESERTUM_CALIDUM",
       "name": "DESERTVM CALIDVM",
       "x": 0,
@@ -1384,105 +1383,38 @@
       "name": "SCHOLA",
       "x": 0,
       "y": 0,
-=======
-    {
-      "id": "MAPSEC_TANOBY_RUINS",
-      "name": "TANOBY RUINS",
-      "x": 3,
-      "y": 12,
-      "width": 7,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_SEVII_ISLE_22",
-      "name": "SEVII ISLE 22",
-      "x": 9,
-      "y": 12,
-      "width": 1,
-      "height": 3
-    },
-    {
-      "id": "MAPSEC_SEVII_ISLE_23",
-      "name": "SEVII ISLE 23",
-      "x": 3,
-      "y": 14,
-      "width": 6,
-      "height": 1
-    },
-    {
-      "id": "MAPSEC_SEVII_ISLE_24",
-      "name": "SEVII ISLE 24",
-      "x": 2,
-      "y": 12,
-      "width": 1,
-      "height": 3
-    },
-    {
-      "id": "MAPSEC_NAVEL_ROCK_FRLG",
-      "name": "NAVEL ROCK",
-      "x": 10,
-      "y": 8,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_ARDENS",
       "name": "ARDENS",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_MT_EMBER",
-      "name": "MT. EMBER",
-      "x": 2,
-      "y": 3,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_IGNIS_MONS",
       "name": "IGNIS MONS",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_BERRY_FOREST",
-      "name": "BERRY FOREST",
-      "x": 14,
-      "y": 12,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_DESERET",
       "name": "DESERET",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_ICEFALL_CAVE",
-      "name": "ICEFALL CAVE",
-      "x": 3,
-      "y": 4,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_URBIA",
       "name": "VRBIA",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_ROCKET_WAREHOUSE",
-      "name": "ROCKET WAREHOUSE",
-      "x": 17,
-      "y": 11,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
@@ -1495,17 +1427,10 @@
       "height": 1
     },
     {
-<<<<<<< HEAD
       "id": "MAPSEC_PALATIUM_FELIX",
       "name": "PALATIVM FELIX",
       "x": 0,
       "y": 0,
-=======
-      "id": "MAPSEC_DOTTED_HOLE",
-      "name": "DOTTED HOLE",
-      "x": 16,
-      "y": 8,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
       "width": 1,
       "height": 1
     },
