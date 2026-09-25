@@ -99,8 +99,10 @@
 #CONFLICT (content): Merge conflict in src/field_control_avatar.c
 #CONFLICT (content): Merge conflict in src/field_player_avatar.c
 	>rhh spin tiles
-CONFLICT (content): Merge conflict in src/field_specials.c
-CONFLICT (content): Merge conflict in src/field_tasks.c
+#CONFLICT (content): Merge conflict in src/field_specials.c
+	> accomodate frlg field specials (sorry the order is scrambled :/)
+#CONFLICT (content): Merge conflict in src/field_tasks.c
+	>accomodate frlg Icefall cave callback
 CONFLICT (content): Merge conflict in src/fishing.c
 CONFLICT (content): Merge conflict in src/item.c
 CONFLICT (content): Merge conflict in src/mail.c
@@ -150,6 +152,7 @@ Bikes
 	>acro works normal (no wheelie tho)
 Silphco Tileset (frlg is broken i think but who care)
 Sideways Stairs (tiles and warps!)
+PC (rocket tower)
 
 NOTE: Wild mons are no mas (add em in if you care!)
 

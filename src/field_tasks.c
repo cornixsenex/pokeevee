@@ -58,11 +58,8 @@ static void FortreeBridgePerStepCallback(u8);
 static void PacifidlogBridgePerStepCallback(u8);
 static void SootopolisGymIcePerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
-<<<<<<< HEAD
-static void FalseFloorPerStepCallback(u8);
-=======
+static void FalseFloorPerStepCallback(u8); // Cornix
 static void IcefallCaveIcePerStepCallback(u8);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 static void Task_MuddySlope(u8);
 
 static const TaskFunc sPerStepCallbacks[] =
@@ -75,11 +72,11 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
-<<<<<<< HEAD
+    [STEP_CB_ICEFALL_CAVE]      = IcefallCaveIcePerStepCallback,
+	// CORNIX
     [STEP_CB_CANVAS]            = CanvasPerStepCallback,
 	[STEP_CB_FALSE_FLOOR]       = FalseFloorPerStepCallback
-=======
-    [STEP_CB_ICEFALL_CAVE]      = IcefallCaveIcePerStepCallback
+	// END CORNIX
 };
 
 // The positions of each map space with crackable ice in Icefall Cave.

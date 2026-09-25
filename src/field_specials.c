@@ -2,12 +2,9 @@
 #include "debug.h"
 #include "malloc.h"
 #include "battle.h"
-<<<<<<< HEAD
-#include "battle_setup.h"
-#include "battle_tower.h"
-=======
+#include "battle_setup.h" // CS - not in rhh - not certain theyre needed
+#include "battle_tower.h" // CS - not in rhh - not certain theyre needed
 #include "battle_special.h"
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 #include "cable_club.h"
 #include "data.h"
 #include "daycare.h"
@@ -161,19 +158,17 @@ static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
-<<<<<<< HEAD
 
-//False Floor Functions
+// False Floor Functions
 static void CheckIgnisMons3FFalseFloorFallWait(s16, s16);
 static void CheckIgnisMons2FFalseFloorFallWait(s16, s16);
 static void CheckTurrisSaltus5FFalseFloorFallWait(s16, s16);
 static void CheckTurrisSaltus4FFalseFloorFallWait(s16, s16);
 static void CheckTurrisSaltus3FFalseFloorFallWait(s16, s16);
+// End False Floor Funcs
 
-=======
 static void CB2_ReturnToFieldWhileLearningMove(void);
 static void Task_ReturnToFieldWhileLearningMove(u8);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 #if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
@@ -588,13 +583,8 @@ void SpawnLinkPartnerObjectEvent(void)
         {-1,  0}
     };
     u8 myLinkPlayerNumber;
-<<<<<<< HEAD
-    u8 playerFacingDirection;
-    u16 linkSpriteId;
-=======
     enum Direction playerFacingDirection;
-    u8 linkSpriteId;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+    u16 linkSpriteId;
     u8 i;
 
     myLinkPlayerNumber = GetMultiplayerId();
@@ -1048,60 +1038,46 @@ void FieldShowRegionMap(void)
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
-<<<<<<< HEAD
 //NOTE: CORNIX SENEX REMOVED THESE FUNCTIONS
+
 //static bool32 IsBuildingPCTile(u32 tileId)
 //{
-//    return (MetatileBehavior_IsPC(UNPACK_BEHAVIOR(GetMetatileAttributesById(tileId))));
+//    if (IS_FRLG)
+//        return FALSE;
+//
+//    return (MetatileBehavior_IsPC(GetAttributeByMetatileIdAndMapLayout(tileId, METATILE_ATTRIBUTE_BEHAVIOR, FALSE)));
 //}
-
-//NOTE: CORNIX SENEX REMOVED THESE FUNCTIONS
+//
+//static bool32 IsBuildingPCTileFrlg(u32 tileId)
+//{
+//    if (IS_FRLG)
+//        return gMapHeader.mapLayout->primaryTileset == &gTileset_BuildingFrlg && (tileId == METATILE_BuildingFrlg_PCOn || tileId == METATILE_BuildingFrlg_PCOff);
+//
+//    return FALSE;
+//}
+//
 //static bool32 IsPlayerHousePCTile(u32 tileId)
 //{
+//    if (IS_FRLG)
+//        return FALSE;
+//
 //    return gMapHeader.mapLayout->secondaryTileset == &gTileset_BrendansMaysHouse
 //        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On
 //            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
 //            || tileId == METATILE_BrendansMaysHouse_MayPC_On
 //            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
 //}
-=======
-static bool32 IsBuildingPCTile(u32 tileId)
-{
-    if (IS_FRLG)
-        return FALSE;
 
-    return (MetatileBehavior_IsPC(GetAttributeByMetatileIdAndMapLayout(tileId, METATILE_ATTRIBUTE_BEHAVIOR, FALSE)));
-}
+//static bool32 IsPlayerHousePCTileFrlg(u32 tileId)
+//{
+//    if (IS_FRLG)
+//        return gMapHeader.mapLayout->secondaryTileset == &gTileset_GenericBuilding1
+//            && (tileId == METATILE_GenericBuilding1_PlayersPCOn || tileId == METATILE_GenericBuilding1_PlayersPCOff);
+//
+//    return FALSE;
+//}
 
-static bool32 IsBuildingPCTileFrlg(u32 tileId)
-{
-    if (IS_FRLG)
-        return gMapHeader.mapLayout->primaryTileset == &gTileset_BuildingFrlg && (tileId == METATILE_BuildingFrlg_PCOn || tileId == METATILE_BuildingFrlg_PCOff);
-
-    return FALSE;
-}
-
-static bool32 IsPlayerHousePCTile(u32 tileId)
-{
-    if (IS_FRLG)
-        return FALSE;
-
-    return gMapHeader.mapLayout->secondaryTileset == &gTileset_BrendansMaysHouse
-        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On
-            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
-            || tileId == METATILE_BrendansMaysHouse_MayPC_On
-            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
-}
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
-
-static bool32 IsPlayerHousePCTileFrlg(u32 tileId)
-{
-    if (IS_FRLG)
-        return gMapHeader.mapLayout->secondaryTileset == &gTileset_GenericBuilding1
-            && (tileId == METATILE_GenericBuilding1_PlayersPCOn || tileId == METATILE_GenericBuilding1_PlayersPCOff);
-
-    return FALSE;
-}
+// NOTE: END REMOVED FUNCS
 
 static bool8 IsPlayerInFrontOfPC(void)
 {
@@ -1111,7 +1087,6 @@ static bool8 IsPlayerInFrontOfPC(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     tileInFront = MapGridGetMetatileIdAt(x, y);
 
-<<<<<<< HEAD
     return (tileInFront == METATILE_BrendansMaysHouse_BrendanPC_On
          || tileInFront == METATILE_BrendansMaysHouse_BrendanPC_Off
          || tileInFront == METATILE_BrendansMaysHouse_MayPC_On
@@ -1123,13 +1098,11 @@ static bool8 IsPlayerInFrontOfPC(void)
 		 || tileInFront == METATILE_Hospital_PC_On
 		 || tileInFront == METATILE_Hospital_PC_Off);
 	//CornixSenex removed to maintain custom PC tiles - better to modify the actual function 1.9.1 240820
-    //return IsBuildingPCTile(tileInFront) || IsPlayerHousePCTile(tileInFront);
-=======
-    return IsBuildingPCTile(tileInFront)
-        || IsBuildingPCTileFrlg(tileInFront)
-        || IsPlayerHousePCTile(tileInFront)
-        || IsPlayerHousePCTileFrlg(tileInFront);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+	// Still removed after FRLG - 260925
+//    return IsBuildingPCTile(tileInFront)
+//        || IsBuildingPCTileFrlg(tileInFront)
+//        || IsPlayerHousePCTile(tileInFront)
+//        || IsPlayerHousePCTileFrlg(tileInFront);
 }
 
 // Task data for Task_PCTurnOnEffect and Task_LotteryCornerComputerEffect
@@ -1214,15 +1187,14 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
             metatileId = METATILE_BrendansMaysHouse_BrendanPC_Off;
         else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_MayPC_Off;
-<<<<<<< HEAD
+        else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
+            metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+		// KUSTOMS
 		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
 			metatileId = METATILE_SilphCo_PC_Off;
 		else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
 			metatileId = METATILE_Hospital_PC_Off;
-=======
-        else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
-            metatileId = METATILE_GenericBuilding1_PlayersPCOff;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+		// END KUSTOMS
     }
     else
     {
@@ -1233,15 +1205,14 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
             metatileId = METATILE_BrendansMaysHouse_BrendanPC_On;
         else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_MayPC_On;
-<<<<<<< HEAD
+        else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
+            metatileId = METATILE_GenericBuilding1_PlayersPCOn;
+		// KUSTOMS
 		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
 			metatileId = METATILE_SilphCo_PC_On;
 		else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
 			metatileId = METATILE_Hospital_PC_On;
-=======
-        else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
-            metatileId = METATILE_GenericBuilding1_PlayersPCOn;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+		// END KUSTOMS
     }
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
 }
@@ -1287,16 +1258,14 @@ static void PCTurnOffEffect(void)
         metatileId = METATILE_BrendansMaysHouse_BrendanPC_Off;
     else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
         metatileId = METATILE_BrendansMaysHouse_MayPC_Off;
-<<<<<<< HEAD
+    else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
+        metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+	// KUSTOMS
     else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
 			metatileId = METATILE_SilphCo_PC_Off;
     else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
 			metatileId = METATILE_Hospital_PC_Off;
-=======
-    else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
-        metatileId = METATILE_GenericBuilding1_PlayersPCOff;
-
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+	// END CUSTOMS
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
     DrawWholeMapView();
 }
@@ -1729,16 +1698,16 @@ u16 ScriptGetPartyMonSpecies(void)
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
 }
 
-<<<<<<< HEAD
+// Cornix Custom
 u16 ScriptGetPartyMonIsShiny(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IS_SHINY, NULL);
-=======
+}
+
 u16 ScriptGetSelectedMonSpecies(void)
 {
     struct BoxPokemon *boxmon = GetSelectedBoxMonFromPcOrParty();
     return GetBoxMonData(boxmon, MON_DATA_SPECIES_OR_EGG);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
 
 // Removed for Emerald
@@ -2572,7 +2541,36 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-<<<<<<< HEAD
+	
+	// FRLG BEGIN
+
+	case SCROLL_MULTI_BADGES:
+        task->tMaxItemsOnScreen = 4;
+        task->tNumItems = 9;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 12;
+        task->tHeight = 8;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SILPHCO_FLOORS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 12;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 8;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        task->tScrollOffset = sElevatorScroll;
+        task->tSelectedRow = sElevatorCursorPos;
+        break;
+	
+	//FRLG END
+
+	// CUSTOMS BEGIN 
+
 	case SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR:	
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 14;
@@ -2695,38 +2693,19 @@ void ShowScrollableMultichoice(void)
         task->tTaskId = taskId;
         break;
 	case SCROLL_MULTI_PALATIUM_FELIX_COIN_CASHIER:
-=======
-    case SCROLL_MULTI_BADGES:
-        task->tMaxItemsOnScreen = 4;
-        task->tNumItems = 9;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 12;
-        task->tHeight = 8;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-    case SCROLL_MULTI_SILPHCO_FLOORS:
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 12;
         task->tLeft = 1;
         task->tTop = 1;
-<<<<<<< HEAD
         task->tWidth = 7;
         task->tHeight = 12;
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
-=======
-        task->tWidth = 8;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        task->tScrollOffset = sElevatorScroll;
-        task->tSelectedRow = sElevatorCursorPos;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
         break;
-    default:
+	
+	// CUSTOMS END
+    
+	default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
         break;
@@ -2887,8 +2866,37 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_WhenInDanger,
         gText_Exit
     },
-<<<<<<< HEAD
-    [SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR] =
+    [SCROLL_MULTI_BADGES] =
+    {
+        gText_Boulderbadge,
+        gText_Cascadebadge,
+        gText_Thunderbadge,
+        gText_Rainbowbadge,
+        gText_Soulbadge,
+        gText_Marshbadge,
+        gText_Volcanobadge,
+        gText_Earthbadge,
+        gText_Exit,
+    },
+    [SCROLL_MULTI_SILPHCO_FLOORS] =
+    {
+        gText_11F,
+        gText_10F,
+        gText_9F,
+        gText_8F,
+        gText_7F,
+        gText_6F,
+        gText_5F,
+        gText_4F,
+        gText_3F,
+        gText_2F,
+        gText_1F,
+        gText_Exit,
+    }
+
+	// CUSTOMS
+    
+	[SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR] =
 	{
 		gText_FloorChooseBF1,
 		gText_FloorChoose1,
@@ -3036,35 +3044,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("5,000"),
         COMPOUND_STRING("NEVER MIND"),
 	},
-=======
-    [SCROLL_MULTI_BADGES] =
-    {
-        gText_Boulderbadge,
-        gText_Cascadebadge,
-        gText_Thunderbadge,
-        gText_Rainbowbadge,
-        gText_Soulbadge,
-        gText_Marshbadge,
-        gText_Volcanobadge,
-        gText_Earthbadge,
-        gText_Exit,
-    },
-    [SCROLL_MULTI_SILPHCO_FLOORS] =
-    {
-        gText_11F,
-        gText_10F,
-        gText_9F,
-        gText_8F,
-        gText_7F,
-        gText_6F,
-        gText_5F,
-        gText_4F,
-        gText_3F,
-        gText_2F,
-        gText_1F,
-        gText_Exit,
-    }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 };
 
 static void Task_ShowScrollableMultichoice(u8 taskId)
@@ -4973,9 +4952,10 @@ void SetAbility(void)
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &ability);
 }
 
-<<<<<<< HEAD
 //CUSTOMS
 // - DO NOTE: VARIABLES MUST BE DECLARED AT THE TOP OF FUNCTION C89 BS OR SMTHN
+// NOTE: I think that's not true anymore but idk maybe 260925
+// NOTE: Sorry the order is scrambled - FRLG merge 260925
 
 void ChangePersonality (void)
 {
@@ -6539,7 +6519,10 @@ bool32 CheckHeadbutt(void)
             gSpecialVar_0x8004 = i;
             return TRUE;
         }
-=======
+    }
+    return FALSE;
+}
+
 void DaisyMassageServices(void)
 {
     AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);
@@ -6886,12 +6869,10 @@ bool8 DoesPlayerPartyContainSpecies(void)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == gSpecialVar_0x8004)
             return TRUE;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     }
     return FALSE;
 }
 
-<<<<<<< HEAD
 bool32 IsMonFollower(void)
 {
 	u32 i = VarGet(VAR_0x8004); //NOTE VAR_0x8004 is hard coded
@@ -7373,7 +7354,8 @@ bool32 GetDynamicMapSec_MareS10_F(void)
 bool32 GetDynamicMapSec_OceanPerimeter2_F(void)
 {
     return GetDynamicMapSec_OceanPerimeter2(FALSE);
-=======
+}
+
 static const u8 sSlotMachineIndices[] = {
     0,
     0,
@@ -8202,5 +8184,4 @@ bool8 CheckAddCoins(void)
         return FALSE;
     else
         return TRUE;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
