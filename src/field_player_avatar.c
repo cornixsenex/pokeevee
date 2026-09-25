@@ -5,11 +5,7 @@
 #include "event_object_movement.h"
 #include "event_scripts.h"
 #include "field_camera.h"
-<<<<<<< HEAD
-#include "field_control_avatar.h" //Cornix surf transition triggers
-=======
 #include "field_control_avatar.h"
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_screen_effect.h"
@@ -45,10 +41,6 @@
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
 
-<<<<<<< HEAD
-//I don't like this hard code define...it should reference NELEMS(sForcedMovementTestFuncs) but whatever
-=======
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 #define NUM_FORCED_MOVEMENTS 22
 #define NUM_ACRO_BIKE_COLLISIONS 5
 
@@ -138,26 +130,12 @@ static bool8 PlayerAnimIsMultiFrameStationaryAndStateNotTurning(void);
 static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 
-<<<<<<< HEAD
-//Spin Tiles
-static void PlayerGoSpin(u8 direction);
-static void PlayerApplyTileForcedMovement(u8 metatileBehavior);
-static void PlayerWalkSlow(u8 direction); // UNUSED in Expansion 1.11.1 BUT used by GHOUL SIDEWAYS STAIRS
-
-static void PlayerWalkSlowStairs(u8 direction);
-
-static void PlayerRunSlow(u8 direction);
-static void PlayerRun(u8);
-static void PlayerNotOnBikeCollide(u8);
-static void PlayerNotOnBikeCollideWithFarawayIslandMew(u8);
-=======
 static void PlayerWalkSlowStairs(enum Direction direction);
-static void UNUSED PlayerWalkSlow(enum Direction direction);
+static void PlayerWalkSlow(enum Direction direction);
 static void PlayerRunSlow(enum Direction direction);
 static void PlayerRun(enum Direction);
 static void PlayerNotOnBikeCollide(enum Direction);
 static void PlayerNotOnBikeCollideWithFarawayIslandMew(enum Direction);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 
 static void PlayCollisionSoundIfNotFacingWarp(enum Direction);
 static void PlayerGoSpin(enum Direction direction);
@@ -205,7 +183,7 @@ static bool8 CanStopSurfing(s16, s16, u8);
 static bool8 CanStartSurfing(s16, s16, u8);
 
 //Kustom Collisions
-static bool8 CheckSpecialObjectCollision(s16, s16, u8);
+static bool8 CheckSpecialObjectCollision(s16 x, s16 y, enum Direction direction);
 
 // .rodata
 
@@ -349,25 +327,6 @@ static const struct PACKED
 {
     u16 graphicsId;
     u8 playerFlag;
-<<<<<<< HEAD
-} sPlayerAvatarGfxToStateFlag[GENDER_COUNT][5] = {
-		[MALE] =
-		{
-			{OBJ_EVENT_GFX_BRENDAN_NORMAL,     PLAYER_AVATAR_FLAG_ON_FOOT},
-			{OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,  PLAYER_AVATAR_FLAG_MACH_BIKE},
-			{OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE,  PLAYER_AVATAR_FLAG_ACRO_BIKE},
-			{OBJ_EVENT_GFX_BRENDAN_SURFING,    PLAYER_AVATAR_FLAG_SURFING},
-			{OBJ_EVENT_GFX_BRENDAN_UNDERWATER, PLAYER_AVATAR_FLAG_UNDERWATER},
-		},
-		[FEMALE] =
-		{
-			{OBJ_EVENT_GFX_MAY_NORMAL,         PLAYER_AVATAR_FLAG_ON_FOOT},
-			{OBJ_EVENT_GFX_MAY_MACH_BIKE,      PLAYER_AVATAR_FLAG_MACH_BIKE},
-			{OBJ_EVENT_GFX_MAY_ACRO_BIKE,      PLAYER_AVATAR_FLAG_ACRO_BIKE},
-			{OBJ_EVENT_GFX_MAY_SURFING,        PLAYER_AVATAR_FLAG_SURFING},
-			{OBJ_EVENT_GFX_MAY_UNDERWATER,     PLAYER_AVATAR_FLAG_UNDERWATER},
-		}
-=======
 } sPlayerAvatarGfxToStateFlag[GENDER_COUNT][5] =
 {
     [MALE] =
@@ -386,7 +345,6 @@ static const struct PACKED
         {PLAYER_AVATAR_GFX_FEMALE_SURFING,        PLAYER_AVATAR_FLAG_SURFING},
         {PLAYER_AVATAR_GFX_FEMALE_UNDERWATER,     PLAYER_AVATAR_FLAG_UNDERWATER},
     }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 };
 
 static bool8 (*const sArrowWarpMetatileBehaviorChecks2[])(u8) =  //Duplicate of sArrowWarpMetatileBehaviorChecks
@@ -440,11 +398,7 @@ void PlayerStep(enum Direction direction, u16 newKeys, u16 heldKeys)
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
 
     HideShowWarpArrow(playerObjEvent);
-<<<<<<< HEAD
-     if (gPlayerAvatar.preventStep == FALSE && TryUpdatePlayerSpinDirection() == FALSE)
-=======
     if (gPlayerAvatar.preventStep == FALSE && !TryUpdatePlayerSpinDirection())
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     {
         Bike_TryAcroBikeHistoryUpdate(newKeys, heldKeys);
         if (TryInterruptObjectEventSpecialAnim(playerObjEvent, direction) == 0)
@@ -545,11 +499,6 @@ static bool8 TryUpdatePlayerSpinDirection(void)
         if (playerObjEvent->heldMovementFinished)
         {
             if (MetatileBehavior_IsStopSpinning(playerObjEvent->currentMetatileBehavior))
-<<<<<<< HEAD
-                return FALSE;
-            if (MetatileBehavior_IsSpinTile(playerObjEvent->currentMetatileBehavior))
-                gPlayerAvatar.lastSpinTile = playerObjEvent->currentMetatileBehavior;
-=======
             {
                 return FALSE;
             }
@@ -557,7 +506,6 @@ static bool8 TryUpdatePlayerSpinDirection(void)
             {
                 gPlayerAvatar.lastSpinTile = playerObjEvent->currentMetatileBehavior;
             }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
             ObjectEventClearHeldMovement(playerObjEvent);
             PlayerApplyTileForcedMovement(gPlayerAvatar.lastSpinTile);
         }
@@ -582,17 +530,10 @@ static u8 GetForcedMovementByMetatileBehavior(void)
         for (i = 0; i < NUM_FORCED_MOVEMENTS; i++)
         {
             if (sForcedMovementTestFuncs[i](metatileBehavior))
-<<<<<<< HEAD
-			{                 
-				gPlayerAvatar.lastSpinTile = metatileBehavior;
-                return i + 1;
-			}
-=======
             {
                 gPlayerAvatar.lastSpinTile = metatileBehavior;
                 return i + 1;
             }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
         }
     }
     return 0;
@@ -805,12 +746,7 @@ static void PlaySpinSound(void)
     PlaySE(SE_M_RAZOR_WIND2);
 }
 
-<<<<<<< HEAD
-
-static void MovePlayerNotOnBike(u8 direction, u16 heldKeys)
-=======
 static void MovePlayerNotOnBike(enum Direction direction, u16 heldKeys)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 {
     sPlayerNotOnBikeFuncs[CheckMovementInputNotOnBike(direction)](direction, heldKeys);
 }
@@ -957,13 +893,8 @@ static void PlayerNotOnBikeTurningInPlace(enum Direction direction, u16 heldKeys
 
 static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
 {
-<<<<<<< HEAD
-    u8 collision = CheckForPlayerAvatarCollision(direction);
-    
-=======
     enum Collision collision = CheckForPlayerAvatarCollision(direction);
 
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     if (collision)
     {
         if (collision == COLLISION_LEDGE_JUMP)
@@ -1159,8 +1090,7 @@ static bool8 ShouldJumpLedge(s16 x, s16 y, enum Direction direction)
         return FALSE;
 }
 
-<<<<<<< HEAD
-static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
+static bool8 CheckSpecialObjectCollision(s16 x, s16 y, enum Direction direction)
 {
 	u8 objectEventId = GetObjectEventIdByXY(x, y);
 	const u8 *script;
@@ -1186,10 +1116,7 @@ static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
 	return FALSE;
 }
 
-static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
-=======
 static bool8 TryPushBoulder(s16 x, s16 y, enum Direction direction)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 {
     if (FlagGet(FLAG_SYS_USE_STRENGTH))
     {
@@ -1510,13 +1437,8 @@ static void PlayerWalkSlowStairs(enum Direction direction)
     PlayerSetAnimId(GetWalkSlowStairsMovementAction(direction), COPY_MOVE_WALK);
 }
 
-<<<<<<< HEAD
 // slow - UNUSED in expansion but used in CORNIX for Ghoul Sideways Stairs (I THINK)
-static void PlayerWalkSlow(u8 direction)
-=======
-// slow
-static void UNUSED PlayerWalkSlow(enum Direction direction)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+static void PlayerWalkSlow(enum Direction direction)
 {
     PlayerSetAnimId(GetWalkSlowMovementAction(direction), COPY_MOVE_WALK);
 }
@@ -1537,12 +1459,7 @@ void PlayerWalkFast(enum Direction direction)
     PlayerSetAnimId(GetWalkFastMovementAction(direction), COPY_MOVE_WALK);
 }
 
-<<<<<<< HEAD
-// acro bike speed
-void PlayerRideWaterCurrent(u8 direction)
-=======
 void PlayerRideWaterCurrent(enum Direction direction)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 {
     PlayerSetAnimId(GetRideWaterCurrentMovementAction(direction), COPY_MOVE_WALK);
 }
@@ -1621,38 +1538,22 @@ void PlayerFreeze(void)
     }
 }
 
-<<<<<<< HEAD
-static void PlayerGoSpin(u8 direction)
-{
-    PlayerSetAnimId(GetSpinMovementAction(direction), COPY_MOVE_WALK);
-=======
 static void PlayerGoSpin(enum Direction direction)
 {
     PlayerSetAnimId(GetSpinMovementAction(direction), 3);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
 
 static void PlayerApplyTileForcedMovement(u8 metatileBehavior)
 {
-<<<<<<< HEAD
-    u32 i;
-
-    for (i = 0; i < NUM_FORCED_MOVEMENTS; i++)
-=======
     int i;
 
     for (i = 0; i < ARRAY_COUNT(sForcedMovementTestFuncs); i++)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     {
         if (sForcedMovementTestFuncs[i](metatileBehavior))
             sForcedMovementFuncs[i + 1]();
     }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 // wheelie idle
 void PlayerIdleWheelie(enum Direction direction)
 {

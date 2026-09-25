@@ -189,7 +189,7 @@ u8 GetWalkInPlaceFastMovementAction(u32);
 u8 GetWalkInPlaceNormalMovementAction(u32);
 u8 GetWalkInPlaceSlowMovementAction(u32);
 enum Collision GetCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction dir);
-enum Collision GetCollisionInDirection(struct ObjectEvent *objectEvent, u8 direction); // Cornix - in header for aedes terra puzzle
+enum Collision GetCollisionInDirection(struct ObjectEvent *objectEvent, enum Direction direction); // Cornix - in header for aedes terra puzzle
 u32 GetObjectObjectCollidesWith(struct ObjectEvent *objectEvent, s16 x, s16 y, bool32 addCoords);
 void MoveCoords(enum Direction direction, s16 *x, s16 *y);
 bool8 ObjectEventIsHeldMovementActive(struct ObjectEvent *objectEvent);

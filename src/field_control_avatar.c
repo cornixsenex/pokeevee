@@ -76,22 +76,14 @@ static void UpdateFollowerStepCounter(void);
 #if OW_POISON_DAMAGE < GEN_5
 static bool8 UpdatePoisonStepCounter(void);
 #endif // OW_POISON_DAMAGE
-<<<<<<< HEAD
 static bool8 EnableAutoRun(void); //Apparently auto run isn't in rhh? IDK
-static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition * position, u32 metatileBehavior, u32 playerDirection);
-static void SetMsgSignPostAndVarFacing(u32 playerDirection);
-static void SetUpWalkIntoSignScript(const u8 *script, u32 playerDirection);
-static u32 GetFacingSignpostType(u16 metatileBehvaior, u32 direction);
-static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition * position);
-//Cornix Tombstones
-static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position);
-=======
 static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition *position, u32 metatileBehavior, enum Direction playerDirection);
 static void SetMsgSignPostAndVarFacing(enum Direction playerDirection);
 static void SetUpWalkIntoSignScript(const u8 *script, enum Direction playerDirection);
 static u32 GetFacingSignpostType(u16 metatileBehvaior, enum Direction direction);
 static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition *position);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+//Cornix Tombstones
+static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position);
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -1692,7 +1684,6 @@ int SetCableClubWarp(void)
     return 0;
 }
 
-<<<<<<< HEAD
 //Begin Auto Run
 extern const u8 EventScript_DisableAutoRun[];
 extern const u8 EventScript_EnableAutoRun[];
@@ -1718,10 +1709,7 @@ static bool8 EnableAutoRun(void)
 }
 //End Auto Run
 
-static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition *position, u32 metatileBehavior, u32 playerDirection)
-=======
 static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition *position, u32 metatileBehavior, enum Direction playerDirection)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 {
     const u8 *script;
 
@@ -1831,7 +1819,6 @@ void CancelSignPostMessageBox(struct FieldInput *input)
     CreateTask(Task_OpenStartMenu, 8);
 }
 
-<<<<<<< HEAD
 //cornix Mortia tombstone
 static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 {
@@ -2371,7 +2358,8 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
     //Default - unused I do believe
 	else
 		return Script_Tombstone_Default;
-=======
+}
+
 u16 GetBoulderRevealFlagByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
 {
     // Pushable boulder object events store the flag to reveal the boulder
