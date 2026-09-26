@@ -1536,36 +1536,22 @@ static void Task_NewGameBirchSpeech_ChooseGender(u8 taskId)
 
     switch (gender)
     {
-<<<<<<< HEAD
-        case MALE:
-            PlaySE(SE_SELECT);
-            gSaveBlock2Ptr->playerGender = gender;
-            NewGameBirchSpeech_ClearGenderWindow(1, 1);
-            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
-            break;
-        case FEMALE:
-			NewGameBirchSpeech_ShowGenderMenu();
-            //PlaySE(SE_SELECT);
-            //gSaveBlock2Ptr->playerGender = gender;
-            //NewGameBirchSpeech_ClearGenderWindow(1, 1);
-            //gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
-            //break;
-=======
     case MALE:
         PlaySE(SE_SELECT);
         gSaveBlock2Ptr->playerGender = gender;
         NewGameBirchSpeech_ClearGenderWindow(1, 1);
         gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
         break;
-    case FEMALE:
-        PlaySE(SE_SELECT);
-        gSaveBlock2Ptr->playerGender = gender;
-        NewGameBirchSpeech_ClearGenderWindow(1, 1);
-        gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
-        break;
+	// Modified to prevent female player character
+	case FEMALE:
+			NewGameBirchSpeech_ShowGenderMenu();
+            //PlaySE(SE_SELECT);
+            //gSaveBlock2Ptr->playerGender = gender;
+            //NewGameBirchSpeech_ClearGenderWindow(1, 1);
+            //gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+            //break;
     default: //repeat task if nothing is selected
         break;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     }
     gender2 = Menu_GetCursorPos();
     if (gender2 != gTasks[taskId].tPlayerGender)

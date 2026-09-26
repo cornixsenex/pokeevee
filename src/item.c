@@ -913,12 +913,8 @@ u32 GetItemFlingPower(enum Item itemId)
     return gItemsInfo[SanitizeItemId(itemId)].flingPower;
 }
 
-<<<<<<< HEAD
-u32 GetItemStatus1Mask(u16 itemId)
-=======
 
 u32 GetItemStatus1Mask(enum Item itemId)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 {
     const u8 *effect = GetItemEffect(itemId);
     switch (effect[3])

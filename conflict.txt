@@ -103,11 +103,15 @@
 	> accomodate frlg field specials (sorry the order is scrambled :/)
 #CONFLICT (content): Merge conflict in src/field_tasks.c
 	>accomodate frlg Icefall cave callback
-CONFLICT (content): Merge conflict in src/fishing.c
-CONFLICT (content): Merge conflict in src/item.c
-CONFLICT (content): Merge conflict in src/mail.c
-CONFLICT (content): Merge conflict in src/main_menu.c
-CONFLICT (content): Merge conflict in src/match_call.c
+#CONFLICT (content): Merge conflict in src/fishing.c
+	>dont see what changed tbh
+#CONFLICT (content): Merge conflict in src/item.c
+	>enum Item itemId
+#CONFLICT (content): Merge conflict in src/mail.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/main_menu.c
+#CONFLICT (content): Merge conflict in src/match_call.c
+	>GABBY_AND_TY matchcall removed
 CONFLICT (content): Merge conflict in src/metatile_behavior.c
 CONFLICT (content): Merge conflict in src/naming_screen.c
 CONFLICT (content): Merge conflict in src/new_game.c
@@ -153,6 +157,11 @@ Bikes
 Silphco Tileset (frlg is broken i think but who care)
 Sideways Stairs (tiles and warps!)
 PC (rocket tower)
+Fishing
+	>lure
+	>bait
+	>rod
+	>treasure
 
 NOTE: Wild mons are no mas (add em in if you care!)
 

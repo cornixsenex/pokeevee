@@ -315,44 +315,26 @@ static bool32 Fishing_GotBite(struct Task *task)
 //Cornix Modified for determing minigame on FISHING_LURE
 static bool32 Fishing_ChangeMinigame(struct Task *task)
 {
-<<<<<<< HEAD
 	if (task->tFishingRod != FISHING_LURE)
 		task->tStep = FISHING_A_PRESS_NO_MINIGAME;
 	else
 		task->tStep = FISHING_WAIT_FOR_A;
     
 	return TRUE;
-=======
-    switch (I_FISHING_MINIGAME)
-    {
-    case GEN_1:
-    case GEN_2:
-        task->tStep = FISHING_A_PRESS_NO_MINIGAME;
-        break;
-    case GEN_3:
-    default:
-        task->tStep = FISHING_WAIT_FOR_A;
-        break;
-    }
-    return TRUE;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
-}
-
-//static bool32 Fishing_ChangeMinigame(struct Task *task)
-//{
 //    switch (I_FISHING_MINIGAME)
 //    {
-//        case GEN_1:
-//        case GEN_2:
-//            task->tStep = FISHING_A_PRESS_NO_MINIGAME;
-//            break;
-//        case GEN_3:
-//        default:
-//            task->tStep = FISHING_WAIT_FOR_A;
-//            break;
+//    case GEN_1:
+//    case GEN_2:
+//        task->tStep = FISHING_A_PRESS_NO_MINIGAME;
+//        break;
+//    case GEN_3:
+//    default:
+//        task->tStep = FISHING_WAIT_FOR_A;
+//        break;
 //    }
 //    return TRUE;
-//}
+}
+
 
 // We have a bite. Now, wait for the player to press A, or the timer to expire.
 static bool32 Fishing_WaitForA(struct Task *task)
@@ -467,13 +449,8 @@ static bool32 Fishing_NotEvenNibble(struct Task *task)
     AlignFishingAnimationFrames();
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
-<<<<<<< HEAD
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-	task->tStep = FISHING_NO_MON;
-=======
     AddTextPrinterParameterized2(0, FONT_NORMAL, sText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     task->tStep = FISHING_NO_MON;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     return TRUE;
 }
 
@@ -528,36 +505,20 @@ static bool32 Fishing_EndNoMon(struct Task *task)
     return FALSE;
 }
 
-<<<<<<< HEAD
-
 //Cornix is changing - Using a lure means play mini game otherwise no mini game - 250909
 //OG rhh 
 //static bool32 DoesFishingMinigameAllowCancel(void)
 //{
-//    switch(I_FISHING_MINIGAME)
+//    switch (I_FISHING_MINIGAME)
 //    {
-//        case GEN_1:
-//        case GEN_2:
-//            return FALSE;
-//        case GEN_3:
-//        default:
+//    case GEN_1:
+//    case GEN_2:
+//        return FALSE;
+//    case GEN_3:
+//    default:
 //            return TRUE;
 //    }
 //}
-=======
-static bool32 DoesFishingMinigameAllowCancel(void)
-{
-    switch (I_FISHING_MINIGAME)
-    {
-    case GEN_1:
-    case GEN_2:
-        return FALSE;
-    case GEN_3:
-    default:
-            return TRUE;
-    }
-}
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 
 static bool32 Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold(void)
 {
