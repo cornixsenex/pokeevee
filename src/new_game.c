@@ -132,16 +132,15 @@ static void ClearFrontierRecord(void)
     gSaveBlock2Ptr->frontier.opponentNames[1][0] = EOS;
 }
 
+// Cornix hacked to start custom story
+// Should be a different func all together tbh but lazy
 static void WarpToTruck(void)
 {
-<<<<<<< HEAD
     SetWarpDestination(MAP_GROUP(MAP_LOONIX_INSIDE_REAL_F2), MAP_NUM(MAP_LOONIX_INSIDE_REAL_F2), WARP_ID_NONE, 1, 5);
-=======
-    if (IS_FRLG)
-        SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
-    else
-        SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+//    if (IS_FRLG)
+//        SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
+//    else
+//        SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
     WarpIntoMap();
 }
 

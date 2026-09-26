@@ -69,11 +69,8 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/moves.h"
-<<<<<<< HEAD
 #include "constants/metatile_behaviors.h" //CornixSenex
-=======
 #include "constants/party_menu.h"
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 #include "constants/regions.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -1481,12 +1478,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personal
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
 }
 
-<<<<<<< HEAD
-
-void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
-=======
 static bool32 IsValidGender(u32 gender)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 {
     switch (gender)
     {
@@ -7418,7 +7410,6 @@ bool32 IsSpeciesOfType(u32 species, enum Type type)
     return FALSE;
 }
 
-<<<<<<< HEAD
 //Cornix Custom - Live Bait Tools
 bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon)
 {
@@ -7480,8 +7471,6 @@ bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon)
 		return FALSE;
 }
 
-
-=======
 struct BoxPokemon *GetSelectedBoxMonFromPcOrParty(void)
 {
     struct BoxPokemon *boxmon;
@@ -7534,4 +7523,3 @@ void ChangePokemonNicknameWithCallback(void (*callback)(void))
     GetBoxMonData(boxMon, MON_DATA_NICKNAME, gStringVar2);
     DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, GetBoxMonData(boxMon, MON_DATA_SPECIES), GetBoxMonGender(boxMon), GetBoxMonData(boxMon, MON_DATA_PERSONALITY), callback);
 }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b

@@ -1703,9 +1703,7 @@ void Overworld_ClearSavedMusic(void)
 
 void TransitionMapMusic(void)
 {
-<<<<<<< HEAD
-    DebugPrintf("Top TransitionMapMusic()");
-=======
+//    DebugPrintf("Top TransitionMapMusic()");
     if (gDisableMapMusicChangeOnMapLoad == MUSIC_DISABLE_STOP)
     {
         StopMapMusic();
@@ -1714,7 +1712,6 @@ void TransitionMapMusic(void)
     if (gDisableMapMusicChangeOnMapLoad == MUSIC_DISABLE_KEEP)
         return;
 
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE)
     {
         u16 newMusic = GetWarpDestinationMusic(FALSE);
@@ -2278,9 +2275,11 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-<<<<<<< HEAD
 	//This is disables to allow the custom game to load over Emerald
-    //gFieldCallback = ExecuteTruckSequence;
+//    if (IS_FRLG)
+//        gFieldCallback = FieldCB_WarpExitFadeFromBlack;
+//    else
+//        gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
@@ -2296,12 +2295,6 @@ void CB2_PeccadumTruckScene(void)
     //Copied from CB2_NewGame - Just setup the truck thing
     ScriptContext_Init();
     gFieldCallback = ExecuteTruckSequence;
-=======
-    if (IS_FRLG)
-        gFieldCallback = FieldCB_WarpExitFadeFromBlack;
-    else
-        gFieldCallback = ExecuteTruckSequence;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
@@ -4278,7 +4271,6 @@ bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
     return FALSE;
 }
 
-<<<<<<< HEAD
 u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom dynamic maps 
 {
 	s32 mapGroup, mapNum;
@@ -6027,7 +6019,6 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	}
 }
 
-=======
 // Credits
 
 void Overworld_CreditsMainCB(void)
@@ -6224,4 +6215,3 @@ static void Task_OvwldCredits_WaitFade(u8 taskId)
         DestroyTask(taskId);
     }
 }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b

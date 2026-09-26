@@ -2264,7 +2264,6 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
     .title = COMPOUND_STRING("Tell him the words."),
 };
 
-<<<<<<< HEAD
 static const u8 sText_RivalsName[] = _("Fuckboy's Name?");
 static const struct NamingScreenTemplate sRivalNamingScreenTemplate =
 {
@@ -2277,9 +2276,6 @@ static const struct NamingScreenTemplate sRivalNamingScreenTemplate =
     .title = sText_RivalsName,
 };
 
-static const u8 sText_EnterCode[] = _("Enter code:");
-=======
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 static const struct NamingScreenTemplate sCodeScreenTemplate =
 {
     .copyExistingString = FALSE,

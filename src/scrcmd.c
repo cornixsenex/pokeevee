@@ -3340,7 +3340,6 @@ bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
     return FALSE;
 }
 
-<<<<<<< HEAD
 //Cornix Custom
 bool8 ScrCmd_copymoney(struct ScriptContext *ctx)
 {
@@ -3367,7 +3366,11 @@ bool8 ScrCmd_removevarmoney(struct ScriptContext *ctx)
 
         RemoveMoney(&gSaveBlock1Ptr->money, *ptr);
     }
-=======
+	return FALSE;
+}
+
+// 1.15.0 Below (FRLG)
+
 bool8 ScrCmd_setstartingstatus(struct ScriptContext *ctx)
 {
     enum StartingStatus status = ScriptReadByte(ctx);
@@ -3406,6 +3409,5 @@ bool8 ScrCmd_getbraillestringwidth(struct ScriptContext * ctx)
         msg = (u8 *)ctx->data[0];
 
     gSpecialVar_0x8004 = GetStringWidth(FONT_BRAILLE, msg, -1);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     return FALSE;
 }

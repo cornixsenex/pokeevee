@@ -14,6 +14,8 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_LONG_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     //Art Canvas
     [MB_CANVAS]                             = TILE_FLAG_HAS_ENCOUNTERS,
+    //Mortia Tombstone
+    [MB_TOMBSTONE]                          = TILE_FLAG_UNUSED,
     [MB_DEEP_SAND]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_SHORT_GRASS]                        = TILE_FLAG_UNUSED,
     [MB_CAVE]                               = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
@@ -38,12 +40,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_ICE]                                = TILE_FLAG_UNUSED,
     [MB_SAND]                               = TILE_FLAG_UNUSED,
     [MB_SEAWEED]                            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-<<<<<<< HEAD
-    //Mortia Tombstone
-    [MB_TOMBSTONE]                          = TILE_FLAG_UNUSED,
-=======
     [MB_STRENGTH_BUTTON]                    = TILE_FLAG_UNUSED,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
     [MB_ASHGRASS]                           = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_FOOTPRINTS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_THIN_ICE]                           = TILE_FLAG_UNUSED,
@@ -152,7 +149,6 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_SIDEWAYS_STAIRS_LEFT_SIDE_BOTTOM]   = TILE_FLAG_UNUSED,
     [MB_ROCK_STAIRS]                        = TILE_FLAG_UNUSED,
     [MB_ROCK_CLIMB]                         = TILE_FLAG_UNUSED,
-<<<<<<< HEAD
     //Ignis Mons etc false floor
     [MB_FALSE_FLOOR]                     = TILE_FLAG_UNUSED,
     [MB_FALSE_FLOOR_HOLE]                = TILE_FLAG_UNUSED,
@@ -171,11 +167,9 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
 	[MB_OCEAN_MAP_TRANSITION_C]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
 	[MB_OCEAN_MAP_TRANSITION_D]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
 	[MB_OCEAN_MAP_TRANSITION_E]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-=======
     [MB_CYCLING_ROAD_PULL_DOWN_GRASS]       = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_FAST_WATER]                         = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_CYCLING_ROAD_WATER]                 = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 };
 
 bool8 MetatileBehavior_IsATile(u8 metatileBehavior)
@@ -1286,21 +1280,22 @@ bool8 MetatileBehavior_IsCrackedFloor(u8 metatileBehavior)
         return FALSE;
 }
 
-<<<<<<< HEAD
 bool8 MetatileBehavior_IsFalseFloor(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_FALSE_FLOOR)
-=======
+		return TRUE;
+	else
+		return FALSE;
+}
+
 bool32 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS)
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
         return TRUE;
     else
         return FALSE;
 }
 
-<<<<<<< HEAD
 bool8 MetatileBehavior_IsColchisBattle(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_COLCHIS_BATTLE)
@@ -1355,11 +1350,11 @@ bool8 MetatileBehavior_IsOceanMapTransitionE(u8 metatileBehavior)
         return TRUE;
     else
         return FALSE;
-=======
+}
+
 bool8 MetatileBehavior_IsCyclingRoadPullDownTileGrass(u8 metatileBehavior)
 {
     return metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
 
 bool8 MetatileBehavior_IsMuddySlope(u8 metatileBehavior)
@@ -1704,75 +1699,44 @@ bool8 MetatileBehavior_IsRockClimbable(u8 metatileBehavior)
         return FALSE;
 }
 
-<<<<<<< HEAD
-//EDN SIDEWAYS STAIRS
-
-//Spin Tiles
-bool8 MetatileBehavior_IsSpinRight(u8 metatileBehavior)
-{
-    return metatileBehavior == MB_SPIN_RIGHT;
-=======
 bool8 MetatileBehavior_IsSpinRight(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_SPIN_RIGHT)
         return TRUE;
     else
         return FALSE;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
 
 bool8 MetatileBehavior_IsSpinLeft(u8 metatileBehavior)
 {
-<<<<<<< HEAD
-    return metatileBehavior == MB_SPIN_LEFT;
-=======
     if (metatileBehavior == MB_SPIN_LEFT)
         return TRUE;
     else
         return FALSE;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
 
 bool8 MetatileBehavior_IsSpinUp(u8 metatileBehavior)
 {
-<<<<<<< HEAD
-    return metatileBehavior == MB_SPIN_UP;
-=======
     if (metatileBehavior == MB_SPIN_UP)
         return TRUE;
     else
         return FALSE;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
 
 bool8 MetatileBehavior_IsSpinDown(u8 metatileBehavior)
 {
-<<<<<<< HEAD
-    return metatileBehavior == MB_SPIN_DOWN;
-=======
     if (metatileBehavior == MB_SPIN_DOWN)
         return TRUE;
     else
         return FALSE;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
 
 bool8 MetatileBehavior_IsStopSpinning(u8 metatileBehavior)
 {
-<<<<<<< HEAD
-    return metatileBehavior == MB_STOP_SPINNING;
-=======
     if (metatileBehavior == MB_STOP_SPINNING)
         return TRUE;
     else
         return FALSE;
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
-}
-
-bool8 MetatileBehavior_IsSpinTile(u8 metatileBehavior)
-{
-<<<<<<< HEAD
-    return metatileBehavior >= MB_SPIN_RIGHT && metatileBehavior <= MB_SPIN_DOWN;
 }
 
 //Cycling Road Pull Tiles
@@ -1828,8 +1792,8 @@ bool8 MetatileBehavior_IsCyclingRoadBridgePullLeftTile(u8 metatileBehavior)
 }
 
 
-
-=======
+bool8 MetatileBehavior_IsSpinTile(u8 metatileBehavior)
+{
     bool8 result = FALSE;
 
     if (metatileBehavior == MB_SPIN_RIGHT
@@ -2030,5 +1994,4 @@ bool8 MetatileBehavior_IsTrainerTowerMonitor(u8 metatileBehavior)
     else
         return FALSE;
 }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 

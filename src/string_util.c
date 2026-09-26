@@ -477,26 +477,29 @@ static const u8 *ExpandPlaceholder_KunChan(void)
         return gText_ExpandedPlaceholder_Chan;
 }
 
+//static const u8 *ExpandPlaceholder_RivalName(void)
+//{
+//#if IS_FRLG
+//    if (gSaveBlock1Ptr->rivalName[0] != EOS)
+//        return gSaveBlock1Ptr->rivalName;
+//#endif
+//
+//    if (gSaveBlock2Ptr->playerGender == MALE)
+//        return (IS_FRLG ? gText_ExpandedPlaceholder_Green : gText_ExpandedPlaceholder_May);
+//    else
+//        return (IS_FRLG ? gText_ExpandedPlaceholder_Red : gText_ExpandedPlaceholder_Brendan);
+//}
+
+// Cornix Custom NOT rhh neccesarily
 static const u8 *ExpandPlaceholder_RivalName(void)
 {
-<<<<<<< HEAD
     return gSaveBlock2Ptr->rivalName;
 }
 
+// rhh / frlg uses the rival name. Leaf and "rival" are different in cornix
 static const u8 *ExpandPlaceholder_LeafName(void)
 {
     return gSaveBlock2Ptr->leafName;
-=======
-#if IS_FRLG
-    if (gSaveBlock1Ptr->rivalName[0] != EOS)
-        return gSaveBlock1Ptr->rivalName;
-#endif
-
-    if (gSaveBlock2Ptr->playerGender == MALE)
-        return (IS_FRLG ? gText_ExpandedPlaceholder_Green : gText_ExpandedPlaceholder_May);
-    else
-        return (IS_FRLG ? gText_ExpandedPlaceholder_Red : gText_ExpandedPlaceholder_Brendan);
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }
 
 static const u8 *ExpandPlaceholder_Version(void)
@@ -562,11 +565,8 @@ const u8 *GetExpandedPlaceholder(u32 id)
         [PLACEHOLDER_ID_MAXIE]        = ExpandPlaceholder_Maxie,
         [PLACEHOLDER_ID_KYOGRE]       = ExpandPlaceholder_Kyogre,
         [PLACEHOLDER_ID_GROUDON]      = ExpandPlaceholder_Groudon,
-<<<<<<< HEAD
-        [PLACEHOLDER_ID_LEAF]         = ExpandPlaceholder_LeafName,
-=======
         [PLACEHOLDER_ID_REGION]       = ExpandPlaceholder_Region,
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
+        [PLACEHOLDER_ID_LEAF]         = ExpandPlaceholder_LeafName,
     };
 
     if (id >= ARRAY_COUNT(funcs))

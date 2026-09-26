@@ -112,17 +112,27 @@
 #CONFLICT (content): Merge conflict in src/main_menu.c
 #CONFLICT (content): Merge conflict in src/match_call.c
 	>GABBY_AND_TY matchcall removed
-CONFLICT (content): Merge conflict in src/metatile_behavior.c
-CONFLICT (content): Merge conflict in src/naming_screen.c
-CONFLICT (content): Merge conflict in src/new_game.c
-CONFLICT (content): Merge conflict in src/overworld.c
-CONFLICT (content): Merge conflict in src/party_menu.c
-CONFLICT (content): Merge conflict in src/pokemon.c
-CONFLICT (content): Merge conflict in src/pokemon_icon.c
-CONFLICT (content): Merge conflict in src/scrcmd.c
-CONFLICT (content): Merge conflict in src/starter_choose.c
-CONFLICT (content): Merge conflict in src/string_util.c
-CONFLICT (content): Merge conflict in src/strings.c
+#CONFLICT (content): Merge conflict in src/metatile_behavior.c
+	> new MB_XX in sTileBitAttributes (pretty sure they dont need be in order)
+	>rhh spin tiles
+#CONFLICT (content): Merge conflict in src/naming_screen.c
+	>rmove sText_EnterCode
+#CONFLICT (content): Merge conflict in src/new_game.c
+#CONFLICT (content): Merge conflict in src/overworld.c
+	>frlg truck sequence and credits
+#CONFLICT (content): Merge conflict in src/party_menu.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/pokemon.c
+	> rhh
+#CONFLICT (content): Merge conflict in src/pokemon_icon.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/scrcmd.c
+	>accomodate new script commands
+#CONFLICT (content): Merge conflict in src/starter_choose.c
+	>I had modified starter choices lol idk
+#CONFLICT (content): Merge conflict in src/string_util.c
+	>frlg ExpandPlaceholder_RivalName removed for cornix custom
+#CONFLICT (content): Merge conflict in src/strings.c
 
 
 # CHECKS
@@ -162,6 +172,7 @@ Fishing
 	>bait
 	>rod
 	>treasure
+New game loonix inside real warp
 
 NOTE: Wild mons are no mas (add em in if you care!)
 
