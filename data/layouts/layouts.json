@@ -7403,7 +7403,7 @@
       "primary_tileset": "gTileset_BuildingFrlg",
       "secondary_tileset": "gTileset_GenericBuilding1",
       "border_filepath": "data/layouts/PalletTown_PlayersHouse_1F_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/PalletTown_PlayersHouse_1F_Frlg/map.bin",,
+      "blockdata_filepath": "data/layouts/PalletTown_PlayersHouse_1F_Frlg/map.bin",
       "layout_version": "frlg"
     },
     {
