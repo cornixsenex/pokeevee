@@ -176,5 +176,6 @@ Fishing
 	>treasure
 New game loonix inside real warp
 
+
 NOTE: Wild mons are no mas (add em in if you care!)
 

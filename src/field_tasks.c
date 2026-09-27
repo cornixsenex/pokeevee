@@ -91,7 +91,6 @@ static const u8 sIcefallCaveIceCoords[][2] =
     {  8, 10 },
     {  9, 10 },
     {  8, 14 }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 };
 
 // Each array has 4 pairs of data, each pair representing two metatiles of a log and their relative position.

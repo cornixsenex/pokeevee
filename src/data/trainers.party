@@ -51,7 +51,7 @@ Level: 4
 Ability: Slot 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Shiny: No
-Ball: Love Ball
+Ball: Love
 
 === TRAINER_LOGAN ===
 Name: LOGAN
@@ -69,7 +69,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Shinx
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ball: Quick Ball
+Ball: Quick
 
 === TRAINER_MADDIE ===
 Name: MADDIE
@@ -1017,7 +1017,7 @@ Pool Pick Functions: Default
 
 Batty (Zubat) (M) @ Assault Vest
 Level: 9
-Ball: Net Ball
+Ball: Net
 Ability: Pressure
 EVs: 200 HP / 200 Atk / 200 Def / 200 SpA / 200 SpD / 200 Spe
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe

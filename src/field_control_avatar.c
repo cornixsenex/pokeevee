@@ -2394,5 +2394,4 @@ void HandleBoulderActivateVictoryRoadSwitch(u16 x, u16 y)
             }
         }
     }
->>>>>>> 150649546e909fe96591be707c0fc1810b86480b
 }

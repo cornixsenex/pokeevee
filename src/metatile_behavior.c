@@ -50,10 +50,10 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_SEAWEED_NO_SURFACING]               = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_REFLECTION_UNDER_BRIDGE]            = TILE_FLAG_UNUSED,
     //Cycling Directional Pull Tiles
-	[MB_CYCLING_ROAD_PULL_DOWN]            = TILE_FLAG_UNUSED,
-	[MB_CYCLING_ROAD_PULL_UP]              = TILE_FLAG_UNUSED,
-	[MB_CYCLING_ROAD_PULL_LEFT]            = TILE_FLAG_UNUSED,
-	[MB_CYCLING_ROAD_PULL_RIGHT]           = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_DOWN_CS]          = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_UP]               = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_LEFT]             = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_RIGHT]            = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_EAST]                    = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_WEST]                    = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_NORTH]                   = TILE_FLAG_UNUSED,
@@ -1741,9 +1741,9 @@ bool8 MetatileBehavior_IsStopSpinning(u8 metatileBehavior)
 
 //Cycling Road Pull Tiles
 
-bool8 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior)
+bool8 MetatileBehavior_IsCyclingRoadPullDownTileCS(u8 metatileBehavior)
 {
-	if (metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN) 
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_CS) 
 		return TRUE;
 	else 
 		return FALSE;

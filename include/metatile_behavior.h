@@ -217,7 +217,7 @@ bool8 MetatileBehavior_IsStopSpinning(u8);
 bool8 MetatileBehavior_IsSpinTile(u8);
 
 //Cycling Road Pull Tiles
-bool8 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior);
+bool8 MetatileBehavior_IsCyclingRoadPullDownTileCS(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCyclingRoadPullUpTile(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCyclingRoadPullLeftTile(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCyclingRoadPullRightTile(u8 metatileBehavior);

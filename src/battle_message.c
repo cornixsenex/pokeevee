@@ -3006,7 +3006,7 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
             toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_LEAF);
 		
 		// Dark Brendan
-		else if (trainerClass == DARK_SHADOW)
+		else if (trainerClass == TRAINER_CLASS_DARK_SHADOW)
             toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_PLAYER);
        
 		else

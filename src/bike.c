@@ -563,7 +563,7 @@ static enum AcroTransition AcroBikeHandleInputNormal(enum Direction *newDirectio
     enum Direction direction = GetPlayerMovementDirection();
 
     gPlayerAvatar.bikeFrameCounter = 0;
-    if (MetatileBehavior_IsCyclingRoadPullDownTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    if (MetatileBehavior_IsCyclingRoadPullDownTileCS(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
     	if (!JOY_HELD(B_BUTTON))
         {

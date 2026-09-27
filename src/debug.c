@@ -1087,11 +1087,12 @@ static u8 Debug_GenerateListTrainerMenu(void)
                 noDraw = TRUE;
                 break;
             }
-            if (gSaveBlock1Ptr->trainerRematches[rematchTableId])
-                StringCopy(gStringVar1, COMPOUND_STRING("{COLOR GREEN} TRUE"));
-            else
-                StringCopy(gStringVar1, COMPOUND_STRING("{COLOR RED} FALSE"));
-            break;
+			// Cornix removed trainerRematches
+//            if (gSaveBlock1Ptr->trainerRematches[rematchTableId])
+//                StringCopy(gStringVar1, COMPOUND_STRING("{COLOR GREEN} TRUE"));
+//            else
+//                StringCopy(gStringVar1, COMPOUND_STRING("{COLOR RED} FALSE"));
+//            break;
         case 8:
             if (I_VS_SEEKER_CHARGING == 0)
                 noDraw = TRUE;
@@ -2145,12 +2146,14 @@ static void DebugAction_Trainers_SetRematch(u8 taskId)
 
 static void DebugAction_Trainers_SetRematchReadiness(u8 taskId)
 {
-    if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] == -1)
-        return;
-    if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]])
-        gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = FALSE;
-    else
-        gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = TRUE;
+	// Cornix removed trainerRematches
+//    if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] == -1)
+//        return;
+//    if (gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]])
+//        gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = FALSE;
+//    else
+//        gSaveBlock1Ptr->trainerRematches[sDebugMenuListData->data[1]] = TRUE;
+	return;
 }
 
 static void DebugAction_Trainers_TryBattle(u8 taskId)
@@ -2197,7 +2200,8 @@ static void DebugAction_Trainers_TryBattle(u8 taskId)
 
 static void DebugAction_Trainers_RechargeVsSeeker(u8 taskId)
 {
-    gSaveBlock1Ptr->trainerRematchStepCounter = VSSEEKER_RECHARGE_STEPS;
+	// Cornix removed trainer rematch 
+///    gSaveBlock1Ptr->trainerRematchStepCounter = VSSEEKER_RECHARGE_STEPS;
     MapResetTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     ScriptContext_SetupScript(EventScript_VsSeekerChargingDone);
     Debug_DestroyMenu_Full(taskId);

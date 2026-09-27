@@ -302,16 +302,6 @@ u8 MovementAction_SpinLeft_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SpinRight_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SpinRight_Step1(struct ObjectEvent *, struct Sprite *);
 
-//Spin Tiles
-u8 MovementAction_SpinDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-u8 MovementAction_SpinDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-u8 MovementAction_SpinUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-u8 MovementAction_SpinUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-u8 MovementAction_SpinLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-u8 MovementAction_SpinLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-u8 MovementAction_SpinRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-u8 MovementAction_SpinRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-
 u8 (*const gMovementActionFuncs_FaceDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FaceUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FaceLeft[])(struct ObjectEvent *, struct Sprite *);
@@ -1670,31 +1660,6 @@ u8 (*const gMovementActionFuncs_RunLeftSlow[])(struct ObjectEvent *, struct Spri
 u8 (*const gMovementActionFuncs_RunRightSlow[])(struct ObjectEvent *, struct Sprite *) = {
     MovementActionFunc_RunSlowRight_Step0,
     MovementActionFunc_RunSlow_Step1,
-    MovementAction_PauseSpriteAnim,
-};
-
-//Spin Tiles - These 4 are CUSTOM
-u8 (*const gMovementActionFuncs_SpinDown[])(struct ObjectEvent *, struct Sprite *) = {
-    MovementAction_SpinDown_Step0,
-    MovementAction_SpinDown_Step1,
-    MovementAction_PauseSpriteAnim,
-};
-
-u8 (*const gMovementActionFuncs_SpinUp[])(struct ObjectEvent *, struct Sprite *) = {
-    MovementAction_SpinUp_Step0,
-    MovementAction_SpinUp_Step1,
-    MovementAction_PauseSpriteAnim,
-};
-
-u8 (*const gMovementActionFuncs_SpinLeft[])(struct ObjectEvent *, struct Sprite *) = {
-    MovementAction_SpinLeft_Step0,
-    MovementAction_SpinLeft_Step1,
-    MovementAction_PauseSpriteAnim,
-};
-
-u8 (*const gMovementActionFuncs_SpinRight[])(struct ObjectEvent *, struct Sprite *) = {
-    MovementAction_SpinRight_Step0,
-    MovementAction_SpinRight_Step1,
     MovementAction_PauseSpriteAnim,
 };
 
