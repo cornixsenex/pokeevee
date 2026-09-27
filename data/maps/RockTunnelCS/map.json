@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROCK_TUNNEL",
-  "name": "RockTunnel",
-  "layout": "LAYOUT_ROCK_TUNNEL",
+  "id": "MAP_ROCK_TUNNEL_CS",
+  "name": "RockTunnelCS",
+  "layout": "LAYOUT_ROCK_TUNNEL_CS",
   "music": "MUS_VICTORY_ROAD",
   "region_map_section": "MAPSEC_VIA_POSTERIOR",
   "requires_flash": true,

@@ -1,6 +1,6 @@
 {
-  "id": "MAP_POWER_PLANT",
-  "name": "PowerPlant",
+  "id": "MAP_POWER_PLANT_CS",
+  "name": "PowerPlantCS",
   "layout": "LAYOUT_NEW_MAUVILLE_INSIDE",
   "music": "MUS_MT_PYRE",
   "region_map_section": "MAPSEC_NEW_MAUVILLE",

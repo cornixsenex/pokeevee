@@ -1056,7 +1056,7 @@ enum __attribute__((packed)) Item
 	ITEM_CORNELIUS_LETTER             = 874,
 	ITEM_TRIVIS_SAPIENTIAE            = 875,
 	ITEM_TRIVIS_FORTITUDINIS          = 876,
-	ITEM_TRIVIS_SHARD1                = 877
+	ITEM_TRIVIS_SHARD1                = 877,
 	ITEM_TRIVIS_SHARD2                = 878,
 	ITEM_TRIVIS_SHARD3                = 879,
 	ITEM_TRIVIS_SHARD4                = 880,

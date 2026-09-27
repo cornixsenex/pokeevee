@@ -324,7 +324,7 @@
       "x": 10,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_ROCK_TUNNEL",
+      "dest_map": "MAP_ROCK_TUNNEL_CS",
       "dest_warp_id": "0"
     }
   ],
