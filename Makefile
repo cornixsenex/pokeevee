@@ -2,7 +2,7 @@ GAME_VERSION ?= EMERALD
 TITLE        ?= POKEEVEE
 GAME_CODE    ?= BPEE
 BUILD_NAME   ?= eevee
-MAP_VERSION  ?= eevee
+MAP_VERSION  ?= emerald
 
 ifeq (firered,$(MAKECMDGOALS))
   	GAME_VERSION 	:= FIRERED
