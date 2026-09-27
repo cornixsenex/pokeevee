@@ -447,7 +447,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 	[TRAINER_CLASS_LOTUS] = { _("LOTUS") },
 	[TRAINER_CLASS_FRUIT_FAN] = { _("FRUIT FAN") },
 	[TRAINER_CLASS_BRAVE] = { _("BRAVE") },
-	[TRAINER_CLASS_BRAVE] = { _("OLD FRIEND") },
+	[TRAINER_CLASS_LEAF] = { _("OLD FRIEND") },
 
 	//End Kustom Classes
 };
