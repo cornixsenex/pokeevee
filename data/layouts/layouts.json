@@ -5579,14 +5579,14 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_ROCK_TUNNEL",
-      "name": "RockTunnel_Layout",
+      "id": "LAYOUT_ROCK_TUNNEL_CS",
+      "name": "RockTunnelCS_Layout",
       "width": 42,
       "height": 165,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
-      "border_filepath": "data/layouts/RockTunnel/border.bin",
-      "blockdata_filepath": "data/layouts/RockTunnel/map.bin",
+      "border_filepath": "data/layouts/RockTunnelCS/border.bin",
+      "blockdata_filepath": "data/layouts/RockTunnelCS/map.bin",
       "layout_version": "emerald"
     },
     {

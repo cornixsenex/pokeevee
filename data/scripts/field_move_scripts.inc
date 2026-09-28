@@ -520,7 +520,7 @@ EventScript_DoRockClimb::
 	end
 
 EventScript_CantDoRockClimb::
-	msgbox Text_CantDoRockClimb, MSGBOX_DEFAULT
+	msgbox Text_CantRockClimb, MSGBOX_DEFAULT
     closemessage
     releaseall
     end

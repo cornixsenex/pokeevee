@@ -7523,3 +7523,66 @@ void ChangePokemonNicknameWithCallback(void (*callback)(void))
     GetBoxMonData(boxMon, MON_DATA_NICKNAME, gStringVar2);
     DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, GetBoxMonData(boxMon, MON_DATA_SPECIES), GetBoxMonGender(boxMon), GetBoxMonData(boxMon, MON_DATA_PERSONALITY), callback);
 }
+
+// I use this to create the special mons for scripted story battles
+// (shiny mareep, lupa, scylla etc)
+// It does not begin the battle it just copies the created mon into the
+// 0 index for the enemy party
+void Cornix_CreateSpecialMon(const u16 species, const u8 level, const u8* nicknameString, const u16 move1, const u16 move2, const u16 move3, const u16 move4, enum CornixGender gender, bool32 isShiny)
+{
+	// Assign Gender
+	u32 personality;
+	switch (gender) {
+		case CORNIX_GENDER_MALE:
+			do
+				personality = Random32();
+			while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_MALE);
+			break;
+		case CORNIX_GENDER_FEMALE:
+			do
+				personality = Random32();
+			while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
+			break;
+		default:
+			personality = Random32();
+			break;
+	}
+
+	// Set Mon Data
+	struct Pokemon *mon = &gEnemyParty[0];
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
+	CalculateMonStats(mon); // Always!
+
+	// Moves and PP
+	u32 pp;
+	struct BoxPokemon *boxMon = &mon->box;
+
+	SetMonData(mon, MON_DATA_MOVE1, &move1);
+	pp = GetMovePP(move1);
+	SetBoxMonData(boxMon, MON_DATA_PP1, &pp);
+	
+	SetMonData(mon, MON_DATA_MOVE2, &move2);
+	pp = GetMovePP(move2);
+	SetBoxMonData(boxMon, MON_DATA_PP2, &pp);
+	
+	SetMonData(mon, MON_DATA_MOVE3, &move3);
+	pp = GetMovePP(move3);
+	SetBoxMonData(boxMon, MON_DATA_PP3, &pp);
+
+	SetMonData(mon, MON_DATA_MOVE4, &move4);   
+	pp = GetMovePP(move4);
+	SetBoxMonData(boxMon, MON_DATA_PP4, &pp);
+
+	// Shiny
+	if (isShiny) {
+		bool32 makeShiny = TRUE;
+		SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
+	}
+
+	// Nickname
+	if (nicknameString != NULL) {
+		u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
+		StringCopy(nickname, nicknameString);
+		SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	}
+}

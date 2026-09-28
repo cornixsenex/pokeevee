@@ -201,7 +201,8 @@ static const u8 *const sTransferredToPCMessages[] =
 };
 
 
-static const u8 sText_RivalsName[] = _("RIVAL's NAME?");
+// Cornix changed this to fuckboy member - frlg 260927
+//static const u8 sText_RivalsName[] = _("RIVAL's NAME?");
 static const u8 sText_AlphabetUpperLower[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!");
 
 static const struct BgTemplate sBgTemplates[] =
@@ -1377,7 +1378,6 @@ static void NamingScreen_CreatePlayerIcon(void);
 static void NamingScreen_CreatePCIcon(void);
 static void NamingScreen_CreateMonIcon(void);
 static void NamingScreen_CreateWaldaDadIcon(void);
-static void NamingScreen_CreateRivalIcon(void);
 static void NamingScreen_CreateQmarkIcon(void);
 static void NamingScreen_CreateLeafIcon(void);
 static void NamingScreen_CreateCodeIcon(void);
@@ -1390,7 +1390,6 @@ static void (*const sIconFunctions[])(void) =
     NamingScreen_CreatePCIcon,
     NamingScreen_CreateMonIcon,
     NamingScreen_CreateWaldaDadIcon,
-    NamingScreen_CreateRivalIcon,
     NamingScreen_CreateQmarkIcon,
 	NamingScreen_CreateLeafIcon,
     NamingScreen_CreateCodeIcon,
@@ -1443,18 +1442,6 @@ static void NamingScreen_CreateWaldaDadIcon(void)
     spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAN_1, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
-}
-
-static void NamingScreen_CreateRivalIcon(void)
-{
-   // u8 rivalGfxId;
-    u8 spriteId;
-    
-    //rivalGfxId = GetRivalAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender ^ 1);
-    //spriteId = AddPseudoObjectEvent(rivalGfxId, SpriteCallbackDummy, 56, 37, 0);
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BLUE_CS, SpriteCallbackDummy, 56, 37, 0);
-    gSprites[spriteId].oam.priority = 3;
-    StartSpriteAnim(&gSprites[spriteId], 4);
 }
 
 static void NamingScreen_CreateLeafIcon(void)
@@ -1834,7 +1821,6 @@ static void (*const sDrawTextEntryBoxFuncs[])(void) =
     [NAMING_SCREEN_CAUGHT_MON] = DrawMonTextEntryBox,
     [NAMING_SCREEN_NICKNAME]   = DrawMonTextEntryBox,
     [NAMING_SCREEN_WALDA]      = DrawNormalTextEntryBox,
-    [NAMING_SCREEN_RIVAL]      = DrawNormalTextEntryBox,
     [NAMING_SCREEN_PHILOSOPHY] = DrawNormalTextEntryBox,
     [NAMING_SCREEN_RHETORIC]   = DrawNormalTextEntryBox,
     [NAMING_SCREEN_LEAF]       = DrawNormalTextEntryBox,
@@ -2264,18 +2250,6 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
     .title = COMPOUND_STRING("Tell him the words."),
 };
 
-static const u8 sText_RivalsName[] = _("Fuckboy's Name?");
-static const struct NamingScreenTemplate sRivalNamingScreenTemplate =
-{
-    .copyExistingString = FALSE,
-    .maxChars = PLAYER_NAME_LENGTH,
-	.iconFunction = 5,
-    .addGenderIcon = FALSE,
-    .initialPage = KBPAGE_LETTERS_UPPER,
-    .unused = 35,
-    .title = sText_RivalsName,
-};
-
 static const struct NamingScreenTemplate sCodeScreenTemplate =
 {
     .copyExistingString = FALSE,
@@ -2287,6 +2261,7 @@ static const struct NamingScreenTemplate sCodeScreenTemplate =
     .title = COMPOUND_STRING("Enter code:"),
 };
 
+static const u8 sText_RivalsName[] = _("Fuckboy's Name?");
 static const struct NamingScreenTemplate sRivalNamingScreenTemplate =
 {
     .copyExistingString = FALSE,
@@ -2345,7 +2320,6 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
     [NAMING_SCREEN_RHETORIC]   = &sRhetoricNamingScreenTemplate,
     [NAMING_SCREEN_LEAF]       = &sLeafNamingScreenTemplate,
     [NAMING_SCREEN_CODE]       = &sCodeScreenTemplate,
-    [NAMING_SCREEN_RIVAL]      = &sRivalNamingScreenTemplate,
 };
 
 static const struct OamData sOam_8x8 =

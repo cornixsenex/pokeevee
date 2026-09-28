@@ -145,6 +145,7 @@ porymap
 hidefollower macro
 multvar, divvar, copymoney, removevarmoney - macros
 rockclimb
+	>if works delete Cornix Customs in data/scripts/field_move_scripts.inc
 scripted multi battles 
 	>aeneas
 	>salty spitoon
