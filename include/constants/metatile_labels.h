@@ -178,6 +178,8 @@
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
 #define METATILE_Cave_EntranceCover                      0x229
+#define METATILE_Cave_Floor_Ledge_Bottom                 0x2E1
+#define METATILE_Cave_Floor_Ledge_Top                    0x2D1
 #define METATILE_Cave_InnerCornerTopLeft_Eastward        0x3C2
 #define METATILE_Cave_InnerCornerTopLeft_Westward        0x3CC
 #define METATILE_Cave_InnerCornerTopRight_Eastward       0x3C8
@@ -187,6 +189,8 @@
 #define METATILE_Cave_Left_Westward                      0x3D0
 #define METATILE_Cave_Right_Eastward                     0x3AC
 #define METATILE_Cave_Right_Westward                     0x3CF
+#define METATILE_Cave_RockBarrier_Bottom                 0x317
+#define METATILE_Cave_RockBarrier_Top                    0x307
 #define METATILE_Cave_RockCornerSEWater                  0x2B5
 #define METATILE_Cave_RockCornerSEWaterHalf              0x39F
 #define METATILE_Cave_RockCornerSWWater                  0x2B3
@@ -200,10 +204,6 @@
 #define METATILE_Cave_RockWallTop                        0x211
 #define METATILE_Cave_RockWallW                          0x210
 #define METATILE_Cave_RockWallWWater                     0x27A
-#define METATILE_Cave_Floor_Ledge_Bottom                 0x2E1
-#define METATILE_Cave_Floor_Ledge_Top                    0x2D1
-#define METATILE_Cave_RockBarrier_Bottom                 0x317
-#define METATILE_Cave_RockBarrier_Top                    0x307
 #define METATILE_Cave_SealedChamberBraille_Mid           0x235
 #define METATILE_Cave_SealedChamberEntrance_BottomLeft   0x232
 #define METATILE_Cave_SealedChamberEntrance_BottomMid    0x233
@@ -221,12 +221,6 @@
 #define METATILE_Cave_WaterDoorEdgeL                     0x3A1
 #define METATILE_Cave_WaterDoorEdgeR                     0x3A2
 #define METATILE_Cave_WaterLedgeS                        0x291
-
-// gTileset_Colchis
-#define METATILE_Colchis_DoorOpen_Left        0x200
-#define METATILE_Colchis_DoorOpen_Right       0x201
-#define METATILE_Colchis_JailDoorOpen_Bottom  0x313
-#define METATILE_Colchis_JailDoorOpen_Top     0x30B
 
 // gTileset_CeladonCity
 #define METATILE_CeladonCity_CyclingRoad_Grass  0x352
@@ -248,6 +242,12 @@
 
 // gTileset_CinnabarIsland
 #define METATILE_CinnabarIsland_LabDoor  0x2AD
+
+// gTileset_Colchis
+#define METATILE_Colchis_DoorOpen_Left        0x200
+#define METATILE_Colchis_DoorOpen_Right       0x201
+#define METATILE_Colchis_JailDoorOpen_Bottom  0x313
+#define METATILE_Colchis_JailDoorOpen_Top     0x30B
 
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9
@@ -400,6 +400,10 @@
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed      0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down      0x219
 
+// gTileset_GenericBuilding1
+#define METATILE_GenericBuilding1_PlayersPCOff  0x28F
+#define METATILE_GenericBuilding1_PlayersPCOn   0x28A
+
 // gTileset_Hospital
 #define METATILE_Hospital_PC_Off  0x000
 #define METATILE_Hospital_PC_On   0x001
@@ -425,10 +429,6 @@
 #define METATILE_IgnisMons_FalseFloor_Shadow       0x221
 #define METATILE_IgnisMons_Floor                   0x208
 #define METATILE_IgnisMons_Floor_Shadow            0x209
-
-// gTileset_GenericBuilding1
-#define METATILE_GenericBuilding1_PlayersPCOff  0x28F
-#define METATILE_GenericBuilding1_PlayersPCOn   0x28A
 
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
@@ -1069,21 +1069,16 @@
 #define METATILE_Shop_Laptop2_Flash   0x260
 #define METATILE_Shop_Laptop2_Normal  0x2A5
 
-// gTileset_SilphCo - CORNIX CUSTOMS 
-// annoying name conflict with frlg (ugh) hoping this fixes it (ugh)
-#define METATILE_SilphCo_Cornix_Elevator_Door_Open    0x239
-#define METATILE_SilphCo_Cornix_FloorLight            0x218
-#define METATILE_SilphCo_Cornix_FloorShade            0x219
-#define METATILE_SilphCo_Cornix_PC_Off                0x303
-#define METATILE_SilphCo_Cornix_PC_On                 0x304
-
-// gTileset_SilphLab
-#define METATILE_SilphLab_Elevator_Door_Closed  0x23D
-#define METATILE_SilphLab_Elevator_Door_Open    0x234
+// gTileset_SilphCo
 #define METATILE_SilphCo_Arrow_Down                     0x2A8
 #define METATILE_SilphCo_Arrow_Left                     0x2A1
 #define METATILE_SilphCo_Arrow_Right                    0x2A9
 #define METATILE_SilphCo_Arrow_Up                       0x2A0
+#define METATILE_SilphCo_Cornix_Elevator_Door_Open      0x239
+#define METATILE_SilphCo_Cornix_FloorLight              0x218
+#define METATILE_SilphCo_Cornix_FloorShade              0x219
+#define METATILE_SilphCo_Cornix_PC_Off                  0x303
+#define METATILE_SilphCo_Cornix_PC_On                   0x304
 #define METATILE_SilphCo_ElevatorDoor                   0x2E2
 #define METATILE_SilphCo_ElevatorWindow_Bottom0         0x2F8
 #define METATILE_SilphCo_ElevatorWindow_Bottom1         0x2F9
@@ -1119,6 +1114,10 @@
 #define METATILE_SilphCo_VerticalBarrier_TopRight       0x3C1
 #define METATILE_SilphCo_Wall_LeftEdge                  0x347
 #define METATILE_SilphCo_Wall_RightEdge                 0x346
+
+// gTileset_SilphLab
+#define METATILE_SilphLab_Elevator_Door_Closed  0x23D
+#define METATILE_SilphLab_Elevator_Door_Open    0x234
 
 // gTileset_Slateport
 #define METATILE_Slateport_CalmWater_False  0x338
@@ -1194,26 +1193,6 @@
 #define METATILE_Underwater_UnderwaterFloor      0x216
 #define METATILE_Underwater_UnderwaterWallSouth  0x21B
 
-// gTileset_desert
-#define METATILE_desert_DeepSand_Center  0x219
-
-// gTileset_downtown
-#define METATILE_downtown_CanvasBlank   0x3A0
-#define METATILE_downtown_CanvasFilled  0x398
-
-// gTileset_pyramids
-#define METATILE_pyramids_DeepSand_Center  0x251
-
-// gTileset_weeniehutjr
-#define METATILE_weeniehutjr_TicTacToe_BlueO    0x256
-#define METATILE_weeniehutjr_TicTacToe_BlueX    0x255
-#define METATILE_weeniehutjr_TicTacToe_OrangeO  0x276
-#define METATILE_weeniehutjr_TicTacToe_OrangeX  0x275
-#define METATILE_weeniehutjr_TicTacToe_PinkO    0x254
-#define METATILE_weeniehutjr_TicTacToe_PinkX    0x253
-#define METATILE_weeniehutjr_TicTacToe_PurpleO  0x236
-#define METATILE_weeniehutjr_TicTacToe_PurpleX  0x235
-
 // gTileset_VermilionCity
 #define METATILE_VermilionCity_Door        0x29E
 #define METATILE_VermilionCity_SSAnneWarp  0x2E1
@@ -1255,6 +1234,26 @@
 // gTileset_ViridianForest
 #define METATILE_ViridianForest_HugeTreeTopMiddle_Grass  0x284
 #define METATILE_ViridianForest_HugeTreeTopMiddle_Mowed  0x281
+
+// gTileset_desert
+#define METATILE_desert_DeepSand_Center  0x219
+
+// gTileset_downtown
+#define METATILE_downtown_CanvasBlank   0x3A0
+#define METATILE_downtown_CanvasFilled  0x398
+
+// gTileset_pyramids
+#define METATILE_pyramids_DeepSand_Center  0x251
+
+// gTileset_weeniehutjr
+#define METATILE_weeniehutjr_TicTacToe_BlueO    0x256
+#define METATILE_weeniehutjr_TicTacToe_BlueX    0x255
+#define METATILE_weeniehutjr_TicTacToe_OrangeO  0x276
+#define METATILE_weeniehutjr_TicTacToe_OrangeX  0x275
+#define METATILE_weeniehutjr_TicTacToe_PinkO    0x254
+#define METATILE_weeniehutjr_TicTacToe_PinkX    0x253
+#define METATILE_weeniehutjr_TicTacToe_PurpleO  0x236
+#define METATILE_weeniehutjr_TicTacToe_PurpleX  0x235
 
 // Other
 #define METATILE_GeneralFrlg_CalmWater               0x12B
