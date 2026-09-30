@@ -137,13 +137,8 @@
 
 # CHECKS
 
-porymap!
-
-poryscript
-leaf charmap (battle and overworld strings)
-porymap
-hidefollower macro
 multvar, divvar, copymoney, removevarmoney - macros
+	>mult var works
 rockclimb
 	>if works delete Cornix Customs in data/scripts/field_move_scripts.inc
 scripted multi battles 
@@ -159,7 +154,6 @@ check rocket tower elevator door opens correctly
 naming screens
 	> philosophy
 	> rhetoric
-	> leaf
 Custom battle names
 	>rival
 	>leaf
@@ -175,8 +169,7 @@ Fishing
 	>bait
 	>rod
 	>treasure
-New game loonix inside real warp
-
+Nameboxes
 
 NOTE: Wild mons are no mas (add em in if you care!)
 

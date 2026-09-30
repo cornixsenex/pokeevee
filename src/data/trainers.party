@@ -48,7 +48,7 @@ AI: Basic Trainer
 KIPPIE (Mudkip) @ Lotus Leaf 
 Adamant Nature
 Level: 4
-Ability: Slot 2
+Ability: Damp
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Shiny: No
 Ball: Love
@@ -1018,7 +1018,7 @@ Pool Pick Functions: Default
 Batty (Zubat) (M) @ Assault Vest
 Level: 9
 Ball: Net
-Ability: Pressure
+Ability: Inner Focus
 EVs: 200 HP / 200 Atk / 200 Def / 200 SpA / 200 SpD / 200 Spe
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Happiness: 255

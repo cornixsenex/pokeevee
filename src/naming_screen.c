@@ -1390,10 +1390,10 @@ static void (*const sIconFunctions[])(void) =
     NamingScreen_CreatePCIcon,
     NamingScreen_CreateMonIcon,
     NamingScreen_CreateWaldaDadIcon,
-    NamingScreen_CreateQmarkIcon,
-	NamingScreen_CreateLeafIcon,
     NamingScreen_CreateCodeIcon,
     NamingScreen_CreateRivalIcon,
+    NamingScreen_CreateQmarkIcon,
+	NamingScreen_CreateLeafIcon,
 };
 
 static void CreateInputTargetIcon(void)
@@ -2277,7 +2277,7 @@ static const struct NamingScreenTemplate sPhilosophyNamingScreenTemplate =
 {
     .copyExistingString = FALSE,
     .maxChars = PLAYER_NAME_LENGTH,
-    .iconFunction = 6,
+    .iconFunction = 7,
     .addGenderIcon = FALSE,
     .initialPage = KBPAGE_LETTERS_UPPER,
     .unused = 35,
@@ -2289,7 +2289,7 @@ static const struct NamingScreenTemplate sRhetoricNamingScreenTemplate =
 {
     .copyExistingString = FALSE,
     .maxChars = PLAYER_NAME_LENGTH,
-    .iconFunction = 6,
+    .iconFunction = 7,
     .addGenderIcon = FALSE,
     .initialPage = KBPAGE_LETTERS_UPPER,
     .unused = 35,
@@ -2301,7 +2301,7 @@ static const struct NamingScreenTemplate sLeafNamingScreenTemplate =
 {
     .copyExistingString = FALSE,
     .maxChars = PLAYER_NAME_LENGTH,
-    .iconFunction = 7,
+    .iconFunction = 8,
     .addGenderIcon = FALSE,
     .initialPage = KBPAGE_LETTERS_UPPER,
     .unused = 35,
