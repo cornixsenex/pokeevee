@@ -269,50 +269,6 @@ const u16 gMetatileAttributes_underground_path[] = INCBIN_U16("data/tilesets/sec
 const u16 gMetatiles_Capital[] = INCBIN_U16("data/tilesets/secondary/capital/metatiles.bin");
 const u16 gMetatileAttributes_Capital[] = INCBIN_U16("data/tilesets/secondary/capital/metatile_attributes.bin");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const u16 gMetatiles_weeniehutjr[] = INCBIN_U16("data/tilesets/secondary/weeniehutjr/metatiles.bin");
 const u16 gMetatileAttributes_weeniehutjr[] = INCBIN_U16("data/tilesets/secondary/weeniehutjr/metatile_attributes.bin");
 

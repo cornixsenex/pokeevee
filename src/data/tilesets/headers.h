@@ -1174,6 +1174,7 @@ const struct Tileset gTileset_Tucson =
     .callback = NULL,
 };
 
+// Cornix version
 const struct Tileset gTileset_SilphCo =
 {
 	.isCompressed = TRUE,
@@ -1664,7 +1665,6 @@ const struct Tileset gTileset_SeaCottage =
 
 // NOTE: This is the FRLG version of SilphCo.
 // Kept for notes (notice the anim thing - fountain I think - maybe useful
-// Would be better to macro gate BUT I'm lazed - Cornix 260924
 const struct Tileset gTileset_SilphCo =
 {
     .isCompressed = TRUE,
