@@ -624,16 +624,33 @@ bool8 ScrCmd_multvar(struct ScriptContext *ctx){
 }
 
 bool8 ScrCmd_divvar(struct ScriptContext *ctx){
-    u32 varId = ScriptReadHalfword(ctx);
-    u16 *ptr = GetVarPointer(varId);
+    u32 highVarId = ScriptReadHalfword(ctx);
+    u32 lowVarId = ScriptReadHalfword(ctx);
 
-    DebugPrintf("divvar: %d", *ptr);
+    u16 *ptrLow = GetVarPointer(lowVarId);
+    u16 *ptrHigh = GetVarPointer(highVarId);
+	
+	u16 denominator = VarGet(ScriptReadHalfword(ctx));
+	
+	// Guard against division by zero
+	if (denominator == 0) {
+		DebugPrintf("====\nERROR: divvar32 attempted division by zero!\n====\n");
+        return FALSE;
+    }
+    
+	Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(lowVarId);
+    Script_RequestWriteVar(highVarId);
 
-    Script_RequestEffects(SCREFF_V1);
-    Script_RequestWriteVar(varId);
+	u32 numerator = ((u32)*ptrHigh << 16) | (u32)*ptrLow;
 
-    *ptr /= VarGet(ScriptReadHalfword(ctx));
-    DebugPrintf("divvar DOS: %d", *ptr);
+	u32 result = numerator / (u32)denominator;
+   
+	DebugPrintf("====\ndivvar32\nnumerator: %u\ndenominator: %u\nresult: %u\n====\n", numerator, denominator, result);
+	
+	*ptrHigh = (u16)(result >> 16);
+	*ptrLow = (u16)(result & 0xFFFF);
+
     return FALSE;
 }
 
@@ -3343,30 +3360,58 @@ bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
 //Cornix Custom
 bool8 ScrCmd_copymoney(struct ScriptContext *ctx)
 {
-    u32 varId = ScriptReadHalfword(ctx);
-    u16 *ptr = GetVarPointer(varId);
+    u32 highVarId = ScriptReadHalfword(ctx);
+	u32 lowVarId = ScriptReadHalfword(ctx);
+
+    u16 *ptrLow = GetVarPointer(lowVarId);
+    u16 *ptrHigh = GetVarPointer(highVarId);
 
     Script_RequestEffects(SCREFF_V1);
-    Script_RequestWriteVar(varId);
+    Script_RequestWriteVar(lowVarId);
+    Script_RequestWriteVar(highVarId);
 
-    *ptr = GetMoneyForCopyMoney();
+	u32 money = GetMoneyForCopyMoney();
+
+	// Split value across the two vars
+	*ptrHigh = (u16)(money >> 16);        // Upper 16 bits
+	*ptrLow = (u16)(money & 0xFFFF);      // Lower 16 bits
+
     return FALSE;
 }
 
 //Cornix Custom
 bool8 ScrCmd_removevarmoney(struct ScriptContext *ctx)
 {
-    u32 varId = ScriptReadHalfword(ctx);
-    u16 *ptr = GetVarPointer(varId);
-    u8 ignore = ScriptReadByte(ctx);
+    u32 lowVarId = ScriptReadHalfword(ctx);
+    u32 highVarId = ScriptReadHalfword(ctx);
 
-    if (!ignore)
-    {
-        Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+	u16 *ptrLow = GetVarPointer(lowVarId);
+	u16 *ptrHigh = GetVarPointer(highVarId);
 
-        RemoveMoney(&gSaveBlock1Ptr->money, *ptr);
-    }
+	u32 total = ((u32)*ptrHigh << 16) | (u32)*ptrLow;
+	
+	Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+	RemoveMoney(&gSaveBlock1Ptr->money, total);
 	return FALSE;
+}
+
+// Cornix Custom
+bool8 ScrCmd_buffernumberstring32(struct ScriptContext *ctx)
+{
+    u8 stringVarIndex = ScriptReadByte(ctx);
+
+	u16 high = VarGet(ScriptReadHalfword(ctx));
+	u16 low = VarGet(ScriptReadHalfword(ctx));
+
+	u32 num =  ((u32)high << 16) | (u32)low;
+
+    u8 numDigits = CountDigits(num);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    ConvertIntToDecimalStringN(sScriptStringVars[stringVarIndex], num, STR_CONV_MODE_LEFT_ALIGN, numDigits);
+    return FALSE;
 }
 
 // 1.15.0 Below (FRLG)

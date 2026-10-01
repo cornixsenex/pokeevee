@@ -1,5 +1,5 @@
 
-//VAR_TEMP_B is REGISTRATION_FEE
+//VAR_TEMP_B and VAR_TEMP_C is REGISTRATION_FEE
 
 //Dynamic Map is  VAR_TEMP_5 :
     //1: Via Saxosa
@@ -237,10 +237,10 @@ script Tranquilitas_Script_NoMoney {
 }
 
 script Tranquilitas_Script_Registration {
-	copymoney (VAR_TEMP_B)
-	divvar (VAR_TEMP_B, 3)
+	copymoney (VAR_TEMP_B, VAR_TEMP_C)
+	divvar32 (VAR_TEMP_B, VAR_TEMP_C, 3)
 	//copy fee into string var
-	buffernumberstring (STR_VAR_1, VAR_TEMP_B)
+	buffernumberstring32 (STR_VAR_1, VAR_TEMP_B, VAR_TEMP_C)
 	load_field_pic (FIELD_PIC_MISTY, 190, 98)
 	//tell price - already grabbed --misty pic already shown
 	msgbox (Tranquilitas_Text_Registration, MSGBOX_YESNO)
@@ -268,7 +268,7 @@ script Tranquilitas_Script_Registration {
 		call (Tranquilitas_Script_Registration)
 	} else { //YES
 		//pay money
-        removevarmoney(VAR_TEMP_B)
+        removevarmoney(VAR_TEMP_B, VAR_TEMP_C)
         updatemoneybox
         playse (SE_SHOP)
         waitse

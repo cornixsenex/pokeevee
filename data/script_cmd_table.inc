@@ -257,6 +257,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_DIVVAR                        ScrCmd_divvar,                      requests_effects=1  @ 0xe8
 	script_cmd_table_entry SCR_OP_COPYMONEY                     ScrCmd_copymoney,                   requests_effects=1  @ 0xe9
 	script_cmd_table_entry SCR_OP_REMOVEVARMONEY                ScrCmd_removevarmoney,              requests_effects=1  @ 0xea
+	script_cmd_table_entry SCR_OP_BUFFERNUMBERSTRING32          ScrCmd_buffernumberstring32,        requests_effects=1  @ 0xeb
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 

@@ -71,7 +71,7 @@ u32 GetMoney(u32 *moneyPtr)
 }
 
 //Cornix Custom - Copied from GetCoins()
-u16 GetMoneyForCopyMoney(void)
+u32 GetMoneyForCopyMoney(void)
 {
 	return gSaveBlock1Ptr->money ^ gSaveBlock2Ptr->encryptionKey;
 }

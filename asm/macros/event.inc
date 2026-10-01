@@ -1937,27 +1937,36 @@
 	.2byte \value
 	.endm
 
-	@ CORNIX CUSTOM - Copied from multvar
-	.macro divvar destination:req, value:req
+	@ CORNIX CUSTOM
+	.macro divvar32 high:req, low:req, amount:req
 	.byte SCR_OP_DIVVAR
-	.2byte \destination
-	.2byte \value
+	.2byte \high
+	.2byte \low
+	.2byte \amount
 	.endm
 
 	@ CORNIX CUSTOM - like checkcoins but for money
 	@ Gets the number of money the player has and stores it in the variable 'out'.
-	.macro copymoney out:req
+	.macro copymoney high:req, low:req
 	.byte SCR_OP_COPYMONEY
-	.2byte \out
+	.2byte \high
+	.2byte \low
 	.endm
 
 	@CORNIX CUSTOM - copied from removemoney but will remove the value of the var passed rather than the var
 	@ Subtracts value from the player's money. If the player has less than 'value' money, their money is set to 0.
-	@ If 'disable' is set to anything but 0 then this command does nothing.
-	.macro removevarmoney value:req, disable=0
+	.macro removevarmoney high:req, low:req
 	.byte SCR_OP_REMOVEVARMONEY
-	.4byte \value
-	.byte \disable
+	.2byte \high
+	.2byte \low
+	.endm
+
+	@CORNIX CUSTOM - buffernumberstring for 32 bit / dual var values (surf school)
+	.macro buffernumberstring32 stringVarId:req, high:req, low:req
+	.byte SCR_OP_BUFFERNUMBERSTRING32
+	stringvar \stringVarId
+	.2byte \high
+	.2byte \low
 	.endm
 
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req

@@ -359,11 +359,11 @@ Tranquilitas_Script_NoMoney::
 
 Tranquilitas_Script_Registration::
 # 240 "data/maps/EliciusBeach/scripts.pory"
-	copymoney VAR_TEMP_B
+	copymoney VAR_TEMP_B, VAR_TEMP_C
 # 241 "data/maps/EliciusBeach/scripts.pory"
-	divvar VAR_TEMP_B, 3
+	divvar32 VAR_TEMP_B, VAR_TEMP_C, 3
 # 243 "data/maps/EliciusBeach/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_TEMP_B
+	buffernumberstring32 STR_VAR_1, VAR_TEMP_B, VAR_TEMP_C
 # 244 "data/maps/EliciusBeach/scripts.pory"
 	load_field_pic FIELD_PIC_MISTY, 190, 98
 # 246 "data/maps/EliciusBeach/scripts.pory"
@@ -372,7 +372,7 @@ Tranquilitas_Script_Registration::
 	compare VAR_RESULT, NO
 	goto_if_eq Tranquilitas_Script_Registration_1
 # 271 "data/maps/EliciusBeach/scripts.pory"
-	removevarmoney VAR_TEMP_B
+	removevarmoney VAR_TEMP_B, VAR_TEMP_C
 # 272 "data/maps/EliciusBeach/scripts.pory"
 	updatemoneybox
 # 273 "data/maps/EliciusBeach/scripts.pory"
