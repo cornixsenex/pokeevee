@@ -5837,7 +5837,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_1F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_1F/map.bin",
       "layout_version": "emerald"
@@ -5848,7 +5848,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_2F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_2F/map.bin",
       "layout_version": "emerald"
@@ -5859,7 +5859,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_3F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_3F/map.bin",
       "layout_version": "emerald"
@@ -5870,7 +5870,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_4F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_4F/map.bin",
       "layout_version": "emerald"
@@ -5881,7 +5881,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_5F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_5F/map.bin",
       "layout_version": "emerald"
@@ -5892,7 +5892,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_6F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_6F/map.bin",
       "layout_version": "emerald"
@@ -5903,7 +5903,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_7F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_7F/map.bin",
       "layout_version": "emerald"
@@ -5914,7 +5914,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_8F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_8F/map.bin",
       "layout_version": "emerald"
@@ -5925,7 +5925,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_9F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_9F/map.bin",
       "layout_version": "emerald"
@@ -5936,7 +5936,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_10F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_10F/map.bin",
       "layout_version": "emerald"
@@ -5958,7 +5958,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_12F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_12F/map.bin",
       "layout_version": "emerald"
@@ -5969,7 +5969,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_13F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_13F/map.bin",
       "layout_version": "emerald"
@@ -5980,7 +5980,7 @@
       "width": 5,
       "height": 7,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_Elevator/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_Elevator/map.bin",
       "layout_version": "emerald"
@@ -5991,7 +5991,7 @@
       "width": 8,
       "height": 8,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/RocketTower_BF1/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_BF1/map.bin",
       "layout_version": "emerald"
@@ -6134,7 +6134,7 @@
       "width": 5,
       "height": 7,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphCoCS",
       "border_filepath": "data/layouts/Hospital_Elevator/border.bin",
       "blockdata_filepath": "data/layouts/Hospital_Elevator/map.bin",
       "layout_version": "emerald"

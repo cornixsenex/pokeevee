@@ -1905,24 +1905,24 @@ const u16 gTilesetPalettes_willow[][16] =
 
 const u32 gTilesetTiles_willow[] = INCBIN_U32("data/tilesets/secondary/willow/tiles.4bpp.fastSmol");
 
-const u16 gTilesetPalettes_SilphCo[][16] =
+const u16 gTilesetPalettes_SilphCoCS[][16] =
 {
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/00.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/01.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/02.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/03.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/04.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/05.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/06.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/07.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/08.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/09.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/10.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/11.gbapal"),
-	INCBIN_U16("data/tilesets/secondary/silphco/palettes/12.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/silphco_cs/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_SilphCo[] = INCBIN_U32("data/tilesets/secondary/silphco/tiles.4bpp.fastSmol");
+const u32 gTilesetTiles_SilphCoCS[] = INCBIN_U32("data/tilesets/secondary/silphco_cs/tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_FireRedBuilding[][16] =
 {

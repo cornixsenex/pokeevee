@@ -660,12 +660,12 @@ gMetatileAttributes_willow::
 
 
 	.align 1
-gMetatiles_SilphCo::
-	.incbin "data/tilesets/secondary/silphco/metatiles.bin"
+gMetatiles_SilphCoCS::
+	.incbin "data/tilesets/secondary/silphco_cs/metatiles.bin"
 
 	.align 1
-gMetatileAttributes_SilphCo::
-	.incbin "data/tilesets/secondary/silphco/metatile_attributes.bin"
+gMetatileAttributes_SilphCoCS::
+	.incbin "data/tilesets/secondary/silphco_cs/metatile_attributes.bin"
 	.align 1
 gMetatiles_FireRedBuilding::
 	.incbin "data/tilesets/primary/fireredbuilding/metatiles.bin"

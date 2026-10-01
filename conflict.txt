@@ -137,9 +137,6 @@
 
 # CHECKS
 
-Silphco Tileset
-	>actually only broken in porymap - in game seems fine
-	>probably getting confused, there are two different silphco tileset (:/)
 spin tiles (rhh now hehe)
 	>broken btw
 kustom items (surfboard, big hammer, live bait)

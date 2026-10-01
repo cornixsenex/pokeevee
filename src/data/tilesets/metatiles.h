@@ -254,8 +254,8 @@ const u16 gMetatileAttributes_vegas[] = INCBIN_U16("data/tilesets/secondary/vega
 const u16 gMetatiles_willow[] = INCBIN_U16("data/tilesets/secondary/willow/metatiles.bin");
 const u16 gMetatileAttributes_willow[] = INCBIN_U16("data/tilesets/secondary/willow/metatile_attributes.bin");
 
-const u16 gMetatiles_SilphCo[] = INCBIN_U16("data/tilesets/secondary/silphco/metatiles.bin");
-const u16 gMetatileAttributes_SilphCo[] = INCBIN_U16("data/tilesets/secondary/silphco/metatile_attributes.bin");
+const u16 gMetatiles_SilphCoCS[] = INCBIN_U16("data/tilesets/secondary/silphco_cs/metatiles.bin");
+const u16 gMetatileAttributes_SilphCoCS[] = INCBIN_U16("data/tilesets/secondary/silphco_cs/metatile_attributes.bin");
 
 const u16 gMetatiles_FireRedBuilding[] = INCBIN_U16("data/tilesets/primary/fireredbuilding/metatiles.bin");
 const u16 gMetatileAttributes_FireRedBuilding[] = INCBIN_U16("data/tilesets/primary/fireredbuilding/metatile_attributes.bin");

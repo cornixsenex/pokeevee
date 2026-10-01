@@ -1175,14 +1175,14 @@ const struct Tileset gTileset_Tucson =
 };
 
 // Cornix version
-const struct Tileset gTileset_SilphCo =
+const struct Tileset gTileset_SilphCoCS =
 {
 	.isCompressed = TRUE,
 	.isSecondary = TRUE,
-	.tiles = gTilesetTiles_SilphCo,
-	.palettes = gTilesetPalettes_SilphCo,
-	.metatiles = gMetatiles_SilphCo,
-	.metatileAttributes = gMetatileAttributes_SilphCo,
+	.tiles = gTilesetTiles_SilphCoCS,
+	.palettes = gTilesetPalettes_SilphCoCS,
+	.metatiles = gMetatiles_SilphCoCS,
+	.metatileAttributes = gMetatileAttributes_SilphCoCS,
 	.callback = NULL,
 };
 
