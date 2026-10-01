@@ -608,8 +608,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return Common_EventScript_ShowPokemonCenterSign;
     }
     if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
-        //return EventScript_UseRockClimb; -Cornix Custom is Climbing Gloves
-        return EventScript_DoRockClimb;
+        return EventScript_UseRockClimb; 
+        //return EventScript_DoRockClimb; // Cornix Custom is Climbing Gloves (HM_DIVE idk)
 
     elevation = position->elevation;
     if (elevation == MapGridGetElevationAt(position->x, position->y))

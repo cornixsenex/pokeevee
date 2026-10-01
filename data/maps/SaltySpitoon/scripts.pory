@@ -591,7 +591,6 @@ script SaltySpitoon_EventScript_CantinaBrawl {
 	//setvar (VAR_0x8004, SPECIAL_BATTLE_CANTINA_BRAWL)
 	//special (DoSpecialTrainerBattle)
 	trainerbattle_two_trainers(TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABU, SaltySpitoon_Text_PondaBabuLost)
-	waitstate
 	setflag (FLAG_SALTYSPITOON_BRAWL)
 	return
 }

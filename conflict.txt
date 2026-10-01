@@ -137,13 +137,7 @@
 
 # CHECKS
 
-multvar, divvar, copymoney, removevarmoney - macros
-	>mult var works
-rockclimb
-	>if works delete Cornix Customs in data/scripts/field_move_scripts.inc
-scripted multi battles 
-	>aeneas
-	>salty spitoon
+Silphco Tileset (frlg is broken i think but who care)
 spin tiles (rhh now hehe)
 kustom items (surfboard, big hammer, live bait)
 check rocket tower elevator door opens correctly
@@ -161,7 +155,6 @@ Custom battle names
 Bikes
 	>pull tiles
 	>acro works normal (no wheelie tho)
-Silphco Tileset (frlg is broken i think but who care)
 Sideways Stairs (tiles and warps!)
 PC (rocket tower)
 Fishing
@@ -170,6 +163,7 @@ Fishing
 	>rod
 	>treasure
 Nameboxes
+map popups cutoff
 
 NOTE: Wild mons are no mas (add em in if you care!)
 
