@@ -145,9 +145,6 @@ spin tiles
 
 Bikes
 	>pull tiles
-	>acro works normal (no wheelie tho)
-Sideways Stairs (tiles and warps!)
-PC (rocket tower)
 Fishing
 	>lure
 	>bait
