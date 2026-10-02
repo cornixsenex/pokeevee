@@ -1093,8 +1093,8 @@ static bool8 IsPlayerInFrontOfPC(void)
          || tileInFront == METATILE_BrendansMaysHouse_MayPC_Off
          || tileInFront == METATILE_Building_PC_On
          || tileInFront == METATILE_Building_PC_Off
-		 || tileInFront == METATILE_SilphCo_Cornix_PC_On
-		 || tileInFront == METATILE_SilphCo_Cornix_PC_Off
+		 || tileInFront == METATILE_SilphCoCS_PC_On
+		 || tileInFront == METATILE_SilphCoCS_PC_Off
 		 || tileInFront == METATILE_Hospital_PC_On
 		 || tileInFront == METATILE_Hospital_PC_Off);
 	//CornixSenex removed to maintain custom PC tiles - better to modify the actual function 1.9.1 240820
@@ -1191,7 +1191,7 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
             metatileId = METATILE_GenericBuilding1_PlayersPCOff;
 		// KUSTOMS
 		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
-			metatileId = METATILE_SilphCo_Cornix_PC_Off;
+			metatileId = METATILE_SilphCoCS_PC_Off;
 		else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
 			metatileId = METATILE_Hospital_PC_Off;
 		// END KUSTOMS
@@ -1209,7 +1209,7 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
             metatileId = METATILE_GenericBuilding1_PlayersPCOn;
 		// KUSTOMS
 		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
-			metatileId = METATILE_SilphCo_Cornix_PC_On;
+			metatileId = METATILE_SilphCoCS_PC_On;
 		else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
 			metatileId = METATILE_Hospital_PC_On;
 		// END KUSTOMS
@@ -1262,7 +1262,7 @@ static void PCTurnOffEffect(void)
         metatileId = METATILE_GenericBuilding1_PlayersPCOff;
 	// KUSTOMS
     else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
-			metatileId = METATILE_SilphCo_Cornix_PC_Off;
+			metatileId = METATILE_SilphCoCS_PC_Off;
     else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
 			metatileId = METATILE_Hospital_PC_Off;
 	// END CUSTOMS

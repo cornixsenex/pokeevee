@@ -3684,10 +3684,10 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 break;
 			//CUSTOM CORNIX RIVAL NAME
 			case B_TXT_RIVAL_NAME:
-                toCpy = gSaveBlock2Ptr->rivalName;
+                toCpy = gSaveBlock1Ptr->rivalName;
 			//CUSTOM CORNIX LEAF NAME (MIRROR RIVAL NAME)
 			case B_TXT_LEAF_NAME:
-				toCpy = gSaveBlock2Ptr->leafName;
+				toCpy = gSaveBlock1Ptr->leafName;
             case B_TXT_ATK_NAME_WITH_PREFIX2:
                 HANDLE_NICKNAME_STRING_LOWERCASE(gBattlerAttacker)
                 break;

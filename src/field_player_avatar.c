@@ -77,9 +77,6 @@ static void MovePlayerAvatarUsingKeypadInput(enum Direction, u16, u16);
 static void PlayerAllowForcedMovementIfMovingSameDirection(void);
 static u8 GetForcedMovementByMetatileBehavior(void);
 
-//KUSTOM Spin Tiles
-static bool8 TryUpdatePlayerSpinDirection(void);
-
 static bool8 ForcedMovement_None(void);
 static bool8 ForcedMovement_Slip(void);
 static bool8 ForcedMovement_WalkSouth(void);

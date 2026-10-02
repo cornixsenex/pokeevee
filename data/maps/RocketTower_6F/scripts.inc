@@ -32,7 +32,7 @@ RocketTower_6F_EventScript_SetFloor6::
 
 RocketTower_6F_EventScript_OpenElevator::
 # 23 "data/maps/RocketTower_6F/scripts.pory"
-	setmetatile 25, 3, METATILE_SilphCo_Cornix_Elevator_Door_Open, 0
+	setmetatile 25, 3, METATILE_SilphCoCS_Elevator_Door_Open, 0
 	return
 
 
@@ -56,13 +56,13 @@ RocketTower_6F_EventScript_Door1_2:
 # 31 "data/maps/RocketTower_6F/scripts.pory"
 	closemessage
 # 32 "data/maps/RocketTower_6F/scripts.pory"
-	setmetatile 4, 9, METATILE_SilphCo_Cornix_FloorShade, 0
+	setmetatile 4, 9, METATILE_SilphCoCS_FloorShade, 0
 # 33 "data/maps/RocketTower_6F/scripts.pory"
-	setmetatile 4, 10, METATILE_SilphCo_Cornix_FloorShade, 0
+	setmetatile 4, 10, METATILE_SilphCoCS_FloorShade, 0
 # 34 "data/maps/RocketTower_6F/scripts.pory"
-	setmetatile 5, 9, METATILE_SilphCo_Cornix_FloorLight, 0
+	setmetatile 5, 9, METATILE_SilphCoCS_FloorLight, 0
 # 35 "data/maps/RocketTower_6F/scripts.pory"
-	setmetatile 5, 10, METATILE_SilphCo_Cornix_FloorLight, 0
+	setmetatile 5, 10, METATILE_SilphCoCS_FloorLight, 0
 # 36 "data/maps/RocketTower_6F/scripts.pory"
 	playfanfare MUS_LEVEL_UP
 # 37 "data/maps/RocketTower_6F/scripts.pory"

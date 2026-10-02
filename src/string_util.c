@@ -493,13 +493,13 @@ static const u8 *ExpandPlaceholder_KunChan(void)
 // Cornix Custom NOT rhh neccesarily
 static const u8 *ExpandPlaceholder_RivalName(void)
 {
-    return gSaveBlock2Ptr->rivalName;
+    return gSaveBlock1Ptr->rivalName;
 }
 
 // rhh / frlg uses the rival name. Leaf and "rival" are different in cornix
 static const u8 *ExpandPlaceholder_LeafName(void)
 {
-    return gSaveBlock2Ptr->leafName;
+    return gSaveBlock1Ptr->leafName;
 }
 
 static const u8 *ExpandPlaceholder_Version(void)

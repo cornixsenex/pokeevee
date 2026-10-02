@@ -1074,11 +1074,6 @@
 #define METATILE_SilphCo_Arrow_Left                     0x2A1
 #define METATILE_SilphCo_Arrow_Right                    0x2A9
 #define METATILE_SilphCo_Arrow_Up                       0x2A0
-#define METATILE_SilphCo_Cornix_Elevator_Door_Open      0x239
-#define METATILE_SilphCo_Cornix_FloorLight              0x218
-#define METATILE_SilphCo_Cornix_FloorShade              0x219
-#define METATILE_SilphCo_Cornix_PC_Off                  0x303
-#define METATILE_SilphCo_Cornix_PC_On                   0x304
 #define METATILE_SilphCo_ElevatorDoor                   0x2E2
 #define METATILE_SilphCo_ElevatorWindow_Bottom0         0x2F8
 #define METATILE_SilphCo_ElevatorWindow_Bottom1         0x2F9
@@ -1114,6 +1109,13 @@
 #define METATILE_SilphCo_VerticalBarrier_TopRight       0x3C1
 #define METATILE_SilphCo_Wall_LeftEdge                  0x347
 #define METATILE_SilphCo_Wall_RightEdge                 0x346
+
+// gTileset_SilphCoCS
+#define METATILE_SilphCoCS_Elevator_Door_Open  0x239
+#define METATILE_SilphCoCS_FloorLight          0x218
+#define METATILE_SilphCoCS_FloorShade          0x219
+#define METATILE_SilphCoCS_PC_Off              0x303
+#define METATILE_SilphCoCS_PC_On               0x304
 
 // gTileset_SilphLab
 #define METATILE_SilphLab_Elevator_Door_Closed  0x23D

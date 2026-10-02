@@ -137,21 +137,12 @@
 
 # CHECKS
 
-spin tiles (rhh now hehe)
-	>broken btw
-kustom items (surfboard, big hammer, live bait)
-check rocket tower elevator door opens correctly
-	> ie metatile labels are a big ?
-	> check open in porymap
-	> check make clean
-	> check they work after all of that etc
-naming screens
-	> philosophy
-	> rhetoric
-Custom battle names
-	>rival
-	>leaf
-	>dark brendan
+spin tiles
+	>cause some kind of bad opsec crash if you hit a collision
+	>ie collisions are not being handled correctly
+	>fixed (?) in 10551 (1.16.4)
+
+
 Bikes
 	>pull tiles
 	>acro works normal (no wheelie tho)

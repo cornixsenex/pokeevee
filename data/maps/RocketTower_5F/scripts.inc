@@ -32,6 +32,6 @@ RocketTower_5F_EventScript_SetFloor5::
 
 RocketTower_5F_EventScript_OpenElevator::
 # 23 "data/maps/RocketTower_5F/scripts.pory"
-	setmetatile 25, 3, METATILE_SilphCo_Cornix_Elevator_Door_Open, 0
+	setmetatile 25, 3, METATILE_SilphCoCS_Elevator_Door_Open, 0
 	return
 

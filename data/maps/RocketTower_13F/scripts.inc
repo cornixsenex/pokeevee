@@ -31,7 +31,7 @@ RocketTower_13F_EventScript_SetFloor13::
 
 RocketTower_13F_EventScript_OpenElevator::
 # 33 "data/maps/RocketTower_13F/scripts.pory"
-	setmetatile 25, 3, METATILE_SilphCo_Cornix_Elevator_Door_Open, 0
+	setmetatile 25, 3, METATILE_SilphCoCS_Elevator_Door_Open, 0
 	return
 
 

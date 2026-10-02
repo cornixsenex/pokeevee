@@ -1485,26 +1485,37 @@ static const union AnimCmd *const sAnims_Rival[] =
 
 static void NamingScreen_CreateRivalIcon(void)
 {
-    const struct SpriteSheet sheet = {
-        sRival_Gfx, 0x900, GFXTAG_RIVAL
-    };
-    const struct SpritePalette palette = {
-        sRival_Pal, PALTAG_RIVAL
-    };
-    struct SpriteTemplate template;
-    const struct SubspriteTable * tables_p;
     u8 spriteId;
 
-    CopyObjectGraphicsInfoToSpriteTemplate(OBJ_EVENT_GFX_RED_NORMAL, SpriteCallbackDummy, &template, &tables_p);
-
-    template.tileTag = sheet.tag;
-    template.paletteTag = palette.tag;
-    template.anims = sAnims_Rival;
-    LoadSpriteSheet(&sheet);
-    LoadSpritePalette(&palette);
-    spriteId = CreateSprite(&template, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BLUE_CS, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
+    StartSpriteAnim(&gSprites[spriteId], 4);
 }
+
+
+// IDK wasn't working, I'll just do a custom
+//static void NamingScreen_CreateRivalIcon(void)
+//{
+//    const struct SpriteSheet sheet = {
+//        sRival_Gfx, 0x900, GFXTAG_RIVAL
+//    };
+//    const struct SpritePalette palette = {
+//        sRival_Pal, PALTAG_RIVAL
+//    };
+//    struct SpriteTemplate template;
+//    const struct SubspriteTable * tables_p;
+//    u8 spriteId;
+//
+//    CopyObjectGraphicsInfoToSpriteTemplate(OBJ_EVENT_GFX_RED_NORMAL, SpriteCallbackDummy, &template, &tables_p);
+//
+//    template.tileTag = sheet.tag;
+//    template.paletteTag = palette.tag;
+//    template.anims = sAnims_Rival;
+//    LoadSpriteSheet(&sheet);
+//    LoadSpritePalette(&palette);
+//    spriteId = CreateSprite(&template, 56, 37, 0);
+//    gSprites[spriteId].oam.priority = 3;
+//}
 
 //--------------------------------------------------
 // Keyboard handling
@@ -2176,8 +2187,8 @@ void NameRival(void)
 {
 
 	//Set default Rival Name
-	StringCopy(gSaveBlock2Ptr->rivalName, gText_ExpandedPlaceholder_Brendan); // choose a random name from gMalePresetNames for a female player's rival
-    DoNamingScreen(NAMING_SCREEN_RIVAL, gSaveBlock2Ptr->rivalName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+	StringCopy(gSaveBlock1Ptr->rivalName, gText_ExpandedPlaceholder_Brendan); // choose a random name from gMalePresetNames for a female player's rival
+    DoNamingScreen(NAMING_SCREEN_RIVAL, gSaveBlock1Ptr->rivalName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 
 void NamePhilosophy(void)
@@ -2194,8 +2205,8 @@ void NameLeaf(void)
 {
 
 	//Default Noe name
-	StringCopy(gSaveBlock2Ptr->leafName, gText_ExpandedPlaceholder_May); // choose a random name from gFemalePresetNames for a male player's rival
-    DoNamingScreen(NAMING_SCREEN_LEAF, gSaveBlock2Ptr->leafName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+	StringCopy(gSaveBlock1Ptr->leafName, gText_ExpandedPlaceholder_May); // choose a random name from gFemalePresetNames for a male player's rival
+    DoNamingScreen(NAMING_SCREEN_LEAF, gSaveBlock1Ptr->leafName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 
 

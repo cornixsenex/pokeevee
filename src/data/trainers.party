@@ -1003,7 +1003,7 @@ Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TEST_BATTLE ===
-Name: {B_RIVAL_NAME}
+Name: class4leaf
 Class: Champion
 Pic: Ganondorf
 Gender: Male
@@ -1930,27 +1930,27 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Starmie
+Crobat
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Corsola
+Lucario
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Golduck
+Dusknoir
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Lanturn
+Flygon
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Togepi
+Pinsir
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Dewgong
+Rampardos
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -1963,27 +1963,27 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Starmie
+Crobat
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Corsola
+Lucario
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Golduck
+Dusknoir
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Lanturn
+Flygon
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Togepi
+Pinsir
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Dewgong
+Rampardos
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3252,9 +3252,19 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 
-Slugma
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Batty (Zubat) (M) @ Assault Vest
+Level: 9
+Ball: Net
+Ability: Inner Focus
+EVs: 200 HP / 200 Atk / 200 Def / 200 SpA / 200 SpD / 200 Spe
+IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Happiness: 255
+Nature: Timid
+Shiny: Yes
+- Earthquake
+- Psychic
+- Meteor Mash
+- Shadow Ball
 
 === TRAINER_SURFINSTRUCTOR ===
 Name: INSTRUCTOR
