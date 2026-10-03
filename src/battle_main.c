@@ -3281,11 +3281,9 @@ void SwitchInClearSetData(enum BattlerId battler, struct Volatiles *volatilesCop
         {
             if (gBattleMons[i].volatiles.escapePrevention && gBattleMons[i].volatiles.battlerPreventingEscape == battler)
                 gBattleMons[i].volatiles.escapePrevention = FALSE;
-            if (gBattleMons[i].volatiles.lockOn && gBattleMons[i].volatiles.battlerWithSureHit == battler)
-            {
-                gBattleMons[i].volatiles.lockOn = 0;
+
+            if (gBattleMons[i].volatiles.battlerWithSureHit == battler + 1)
                 gBattleMons[i].volatiles.battlerWithSureHit = 0;
-            }
         }
     }
     if (effect != EFFECT_BATON_PASS || GetConfig(B_BATON_PASS_TRAPPING) >= GEN_5)
@@ -3311,15 +3309,6 @@ void SwitchInClearSetData(enum BattlerId battler, struct Volatiles *volatilesCop
          */
 
         enum BattlerId i;
-        for (i = 0; i < gBattlersCount; i++)
-        {
-            if (!IsBattlerAlly(battler, i)
-             && gBattleMons[i].volatiles.lockOn != 0
-             && (gBattleMons[i].volatiles.battlerWithSureHit == battler))
-            {
-                gBattleMons[i].volatiles.lockOn = 0;
-            }
-        }
         if (gBattleMons[battler].volatiles.powerTrick)
             SWAP(gBattleMons[battler].attack, gBattleMons[battler].defense, i);
     }
@@ -3345,7 +3334,6 @@ void SwitchInClearSetData(enum BattlerId battler, struct Volatiles *volatilesCop
     if (effect == EFFECT_BATON_PASS)
     {
         gBattleMons[battler].volatiles.substituteHP = volatilesCopy->substituteHP;
-        gBattleMons[battler].volatiles.battlerWithSureHit = volatilesCopy->battlerWithSureHit;
         gBattleMons[battler].volatiles.perishSongTimer = volatilesCopy->perishSongTimer;
         gBattleMons[battler].volatiles.battlerPreventingEscape = volatilesCopy->battlerPreventingEscape;
         gBattleMons[battler].volatiles.embargoTimer = volatilesCopy->embargoTimer;
@@ -3439,6 +3427,8 @@ const u8* FaintClearSetData(enum BattlerId battler)
 
     for (enum BattlerId i = 0; i < gBattlersCount; i++)
     {
+        if (gBattleMons[i].volatiles.battlerWithSureHit == battler + 1)
+            gBattleMons[i].volatiles.battlerWithSureHit = 0;
         if (gBattleMons[i].volatiles.escapePrevention && gBattleMons[i].volatiles.battlerPreventingEscape == battler)
             gBattleMons[i].volatiles.escapePrevention = FALSE;
         if (gBattleMons[i].volatiles.infatuation == INFATUATED_WITH(battler))
@@ -3494,11 +3484,14 @@ const u8* FaintClearSetData(enum BattlerId battler)
         enum BattlerId partner = BATTLE_PARTNER(battler);
         // Clear commander state immediately so a replacement doesn't inherit it.
         gBattleStruct->battlerState[battler].commanderSpecies = SPECIES_NONE;
-        gBattleMons[partner].volatiles.semiInvulnerable = STATE_NONE;
-        if (IsBattlerAlive(partner))
+        if (gBattleMons[partner].volatiles.semiInvulnerable == STATE_COMMANDER)
         {
-            BtlController_EmitSpriteInvisibility(partner, B_COMM_TO_CONTROLLER, FALSE);
-            MarkBattlerForControllerExec(partner);
+            gBattleMons[partner].volatiles.semiInvulnerable = STATE_NONE;
+            if (IsBattlerAlive(partner))
+            {
+                BtlController_EmitSpriteInvisibility(partner, B_COMM_TO_CONTROLLER, FALSE);
+                MarkBattlerForControllerExec(partner);
+            }
         }
     }
 
@@ -4124,7 +4117,7 @@ void BattleTurnPassed(void)
     {
         if (gSideTimers[i].retaliateTimer > 0)
             gSideTimers[i].retaliateTimer--;
-    }
+    }    
 
     gFieldStatuses &= ~STATUS_FIELD_ION_DELUGE;
 

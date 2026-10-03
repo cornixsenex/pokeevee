@@ -1,0 +1,10 @@
+#CONFLICT (content): Merge conflict in include/constants/battle_partner.h
+#CONFLICT (content): Merge conflict in sound/songs/midi/midi.cfg
+#CONFLICT (content): Merge conflict in src/bike.c
+#CONFLICT (content): Merge conflict in src/data/battle_partners.party
+#CONFLICT (content): Merge conflict in src/data/heal_locations.json
+#CONFLICT (content): Merge conflict in src/data/region_map/region_map_layout.h
+#CONFLICT (content): Merge conflict in src/debug.c
+#CONFLICT (content): Merge conflict in src/field_effect.c
+#CONFLICT (content): Merge conflict in src/overworld.c
+	

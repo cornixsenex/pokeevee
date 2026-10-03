@@ -1646,8 +1646,8 @@ void GetOnOffBike(u8 transitionFlags)
         EndORASDowsing();
         SetPlayerAvatarTransitionFlags(transitionFlags);
 		//Remove auto cycling music
-        //Overworld_SetSavedMusic(MUS_CYCLING);
-        //Overworld_ChangeMusicTo(MUS_CYCLING);
+        //Overworld_SetSavedMusic(IS_FRLG ? MUS_RG_CYCLING : MUS_CYCLING);
+        //Overworld_ChangeMusicTo(IS_FRLG ? MUS_RG_CYCLING : MUS_CYCLING);
     }
 }
 

@@ -2,7 +2,7 @@
   "id": "MAP_TRANQUILLITAS_SURF_SCHOOL",
   "name": "Tranquillitas_SurfSchool",
   "layout": "LAYOUT_TRANQUILLITAS_SURF_SCHOOL",
-  "music": "MUS_DUMMY",
+  "music": "MUS_XXPLOSIVE",
   "region_map_section": "MAPSEC_TRANQUILLITAS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

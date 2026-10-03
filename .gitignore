@@ -56,6 +56,7 @@ src/data/trainers_frlg.h
 src/data/debug_trainers.h
 src/data/tutor_moves.h
 test/battle/trainer_control.h
+test/battle/partner_control.h
 tools/compresSmol/compresSmol
 tools/compresSmol/compresSmolTilemap
 tools/aif2pcm/aif2pcm
@@ -66,3 +67,4 @@ tools/aif2pcm/aif2pcm
 *.swp
 porymap.user.cfg
 __pycache__
+.map_version
