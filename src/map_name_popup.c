@@ -680,7 +680,7 @@ static void ShowMapNamePopUpWindow(void)
     }
 	else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
 	{
-        withoutPrefixPtr = &(mapDisplayHeader[3]);
+        withoutPrefixPtr = &(mapDisplayHeader[6]);
         GetMapNameGeneric(withoutPrefixPtr, gMapHeader.regionMapSectionId);
 	}
     else

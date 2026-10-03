@@ -1,0 +1,10 @@
+
+spin tiles
+	>cause some kind of bad opsec crash if you hit a collision
+	>ie collisions are not being handled correctly
+	>fixed (?) in 10551 (1.16.4)
+
+
+Nameboxes
+
+NOTE: Wild mons are no mas (add em in if you care!)

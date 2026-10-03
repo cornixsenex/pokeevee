@@ -5982,6 +5982,7 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	{
 		if (lastMapSection == MAPSEC_PALATIUM_FELIX  ||    // Exit Palatium Felix to dynamic Peccatum
 			lastMapSection == MAPSEC_HARENAE_AUREAE  ||    // Exit Harenae Aureae to dynamic peccatum
+			lastMapSection == MAPSEC_VIA_POSTERIOR   ||    // Exit Rock Tunell to Route5 / Route16
             lastMapSection == MAPSEC_PUTEUS_OBSCURUS ||    // Exit Dark Cave onto Via Saxosa = dynamic Route9CS
             lastMapSection == MAPSEC_POWER_PLANT     ||    // Exit Power Plant to dynamic Vegas
             lastMapSection == MAPSEC_AEDES_SUB_MONTE ||    // Exit Aedes Sub Monte to Ignis Mons
@@ -5999,6 +6000,7 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	else if (lastMapSection == MAPSEC_DYNAMIC)
 	{
 		if (destMapSection == MAPSEC_PALATIUM_FELIX  || //Enter Palatium Felix from dynamic Peccatuma
+            destMapSection == MAPSEC_VIA_POSTERIOR   || // Enter Rock Tunell from Route 5 / 16
             destMapSection == MAPSEC_PUTEUS_OBSCURUS || // Enter Dark Cave from dynamic Via Saxosa
             destMapSection == MAPSEC_POWER_PLANT     || //Enter Power plant from dynamic vegas
             destMapSection == MAPSEC_AEDES_SUB_MONTE || //Enter Aedes Sub Monte from Ignis Mons 
