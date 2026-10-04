@@ -3954,12 +3954,12 @@ static const struct SpriteFrameImage sPicTable_LilligantHisui[] = {
 #endif //P_FAMILY_PETILIL
 
 #if P_FAMILY_BASCULIN
-const u32 gOverworldPalette_BasculinRedStriped[] = INCBIN_U32("graphics/pokemon/basculin/overworld_normal.gbapal.lz");
-const u32 gOverworldPalette_BasculinBlueStriped[] = INCBIN_U32("graphics/pokemon/basculin/blue_striped/overworld_normal.gbapal.lz");
-const u32 gOverworldShinyPalette_BasculinRedStriped[] = INCBIN_U32("graphics/pokemon/basculin/overworld_shiny.gbapal.lz");
-const u32 gOverworldShinyPalette_BasculinBlueStriped[] = INCBIN_U32("graphics/pokemon/basculin/blue_striped/overworld_shiny.gbapal.lz");
-const u32 gObjectEventPic_BasculinRedStriped[] = INCBIN_COMP("graphics/pokemon/basculin/overworld.4bpp");
-const u32 gObjectEventPic_BasculinBlueStriped[] = INCBIN_COMP("graphics/pokemon/basculin/blue_striped/overworld.4bpp");
+const u32 gOverworldPalette_BasculinRedStriped[] = INCGFX_U32("graphics/pokemon/basculin/overworld_normal.pal", ".gbapal.lz");
+const u32 gOverworldPalette_BasculinBlueStriped[] = INCGFX_U32("graphics/pokemon/basculin/blue_striped/overworld_normal.pal", ".gbapal.lz");
+const u32 gOverworldShinyPalette_BasculinRedStriped[] = INCGFX_U32("graphics/pokemon/basculin/overworld_shiny.pal", ".gbapal.lz");
+const u32 gOverworldShinyPalette_BasculinBlueStriped[] = INCGFX_U32("graphics/pokemon/basculin/blue_striped/overworld_shiny.pal", ".gbapal.lz");
+const u32 gObjectEventPic_BasculinRedStriped[] = INCGFX_COMP("graphics/pokemon/basculin/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_BasculinBlueStriped[] = INCGFX_COMP("graphics/pokemon/basculin/blue_striped/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
 static const struct SpriteFrameImage sPicTable_BasculinRedStriped[] = {
     overworld_ascending_frames(gObjectEventPic_BasculinRedStriped, 4, 4),
 };
