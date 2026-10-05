@@ -1,71 +1,40 @@
-#CONFLICT (content): Merge conflict in data/maps/AlteringCave/map.json
-#CONFLICT (content): Merge conflict in data/maps/AquaHideout_1F/map.json
-#CONFLICT (content): Merge conflict in data/maps/AquaHideout_B1F/map.json
-#CONFLICT (content): Merge conflict in data/maps/AquaHideout_B2F/map.json
-#CONFLICT (content): Merge conflict in data/maps/AquaHideout_UnusedRubyMap1/map.json
-#CONFLICT (content): Merge conflict in data/maps/AquaHideout_UnusedRubyMap2/map.json
-#CONFLICT (content): Merge conflict in data/maps/AquaHideout_UnusedRubyMap3/map.json
-#CONFLICT (content): Merge conflict in data/maps/ArtisanCave_1F/map.json
-#CONFLICT (content): Merge conflict in data/maps/ArtisanCave_B1F/map.json
-#CONFLICT (content): Merge conflict in data/maps/BirthIsland_Exterior/map.json
-#CONFLICT (content): Merge conflict in data/maps/BirthIsland_Harbor/map.json
-#CONFLICT (content): Merge conflict in data/maps/DesertUnderpass/map.json
-#CONFLICT (content): Merge conflict in data/maps/FarawayIsland_Entrance/map.json
-#CONFLICT (content): Merge conflict in data/maps/FarawayIsland_Interior/map.json
-#CONFLICT (content): Merge conflict in data/maps/MagmaHideout_1F/map.json
-#CONFLICT (content): Merge conflict in data/maps/MagmaHideout_2F_1R/map.json
-#CONFLICT (content): Merge conflict in data/maps/MagmaHideout_2F_2R/map.json
-#CONFLICT (content): Merge conflict in data/maps/MagmaHideout_2F_3R/map.json
-#CONFLICT (content): Merge conflict in data/maps/MagmaHideout_3F_1R/map.json
-#CONFLICT (content): Merge conflict in data/maps/MagmaHideout_3F_2R/map.json
-#CONFLICT (content): Merge conflict in data/maps/MagmaHideout_3F_3R/map.json
-#CONFLICT (content): Merge conflict in data/maps/MagmaHideout_4F/map.json
-#CONFLICT (content): Merge conflict in data/maps/MarineCave_End/map.json
-#CONFLICT (content): Merge conflict in data/maps/MarineCave_Entrance/map.json
-#CONFLICT (content): Merge conflict in data/maps/MirageTower_1F/map.json
-#CONFLICT (content): Merge conflict in data/maps/MirageTower_2F/map.json
-#CONFLICT (content): Merge conflict in data/maps/MirageTower_3F/map.json
-#CONFLICT (content): Merge conflict in data/maps/MirageTower_4F/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_B1F/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Bottom/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Bottom/scripts.inc
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down01/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down02/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down03/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down04/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down05/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down06/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down07/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down08/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down09/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down10/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Down11/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Entrance/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Exterior/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Fork/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Harbor/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Top/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Top/scripts.inc
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Up1/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Up2/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Up3/map.json
-#CONFLICT (content): Merge conflict in data/maps/NavelRock_Up4/map.json
-#CONFLICT (content): Merge conflict in data/maps/SootopolisCity/scripts.inc
-#CONFLICT (content): Merge conflict in data/maps/TerraCave_End/map.json
-#CONFLICT (content): Merge conflict in data/maps/TerraCave_Entrance/map.json
-#CONFLICT (content): Merge conflict in data/maps/TrainerHill_1F/map.json
-#CONFLICT (content): Merge conflict in data/maps/TrainerHill_2F/map.json
-#CONFLICT (content): Merge conflict in data/maps/TrainerHill_3F/map.json
-#CONFLICT (content): Merge conflict in data/maps/TrainerHill_4F/map.json
-#CONFLICT (content): Merge conflict in data/maps/TrainerHill_Elevator/map.json
-#CONFLICT (content): Merge conflict in data/maps/TrainerHill_Entrance/map.json
-#CONFLICT (content): Merge conflict in data/maps/TrainerHill_Roof/map.json
-#CONFLICT (content): Merge conflict in data/maps/Underwater_MarineCave/map.json
-#CONFLICT (content): Merge conflict in data/maps/Underwater_Route105/map.json
-#CONFLICT (content): Merge conflict in data/maps/Underwater_Route124/map.json
-#CONFLICT (content): Merge conflict in data/maps/Underwater_Route125/map.json
-#CONFLICT (content): Merge conflict in data/maps/Underwater_Route126/map.json
-#CONFLICT (content): Merge conflict in data/maps/Underwater_Route127/map.json
-#CONFLICT (content): Merge conflict in data/maps/Underwater_Route128/map.json
-#CONFLICT (content): Merge conflict in data/maps/Underwater_Route129/map.json
-#CONFLICT (content): Merge conflict in src/pokenav_match_call_data.c
+#CONFLICT (content): Merge conflict in data/event_scripts.s
+	>accomodate new wild_encounter.inc
+#CONFLICT (content): Merge conflict in data/scripts/new_game.inc
+	>berry tests overwritten - just match rhh
+#CONFLICT (content): Merge conflict in include/config/battle.h
+	>wild_encounter config (also overworld encounters)
+#CONFLICT (content): Merge conflict in include/config/overworld.h
+#CONFLICT (content): Merge conflict in include/constants/battle_partner.h
+	>remove PARTNER_DUMMY
+CONFLICT (content): Merge conflict in include/constants/event_object_movement.h
+CONFLICT (content): Merge conflict in include/constants/event_objects.h
+CONFLICT (content): Merge conflict in include/constants/field_effects.h
+CONFLICT (content): Merge conflict in include/constants/flags.h
+CONFLICT (content): Merge conflict in include/constants/script_menu.h
+CONFLICT (content): Merge conflict in include/constants/trainers.h
+CONFLICT (content): Merge conflict in include/event_object_movement.h
+CONFLICT (content): Merge conflict in include/party_menu.h
+CONFLICT (content): Merge conflict in src/battle_main.c
+CONFLICT (content): Merge conflict in src/data/battle_partners.party
+CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
+CONFLICT (modify/delete): src/data/trainer_parties.h deleted in a9d9c29acc53c6f80c39729dfbb995001ff2d2f4 and modified in HEAD.  Version HEAD of src/data/trainer_parties.h left in tree.
+CONFLICT (content): Merge conflict in src/data/trainers.party
+CONFLICT (content): Merge conflict in src/event_object_movement.c
+CONFLICT (content): Merge conflict in src/field_control_avatar.c
+CONFLICT (content): Merge conflict in src/field_specials.c
+CONFLICT (content): Merge conflict in src/map_preview_screen.c
+CONFLICT (content): Merge conflict in src/overworld.c
+CONFLICT (content): Merge conflict in src/pokemon.c
+CONFLICT (content): Merge conflict in src/pokemon_icon.c
+CONFLICT (content): Merge conflict in src/pokenav_match_call_data.c
+CONFLICT (content): Merge conflict in src/scrcmd.c
+CONFLICT (content): Merge conflict in src/strings.c
+CONFLICT (content): Merge conflict in src/wild_encounter.c
+
+partner battles
+	>leaf surf school	
+	>aeneas pig
+Custom Movement Types
+	>MOVEMENT_TYPE_CHASE_PLAYER
+	>MOVEMENT_TYPE_CHASE_NIDOKING

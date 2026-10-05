@@ -72,9 +72,7 @@ Route104_PrettyPetalFlowerShop_EventScript_RandomBerryGirl::
 	faceplayer
 	dotimebasedevents
 	msgbox Route104_PrettyPetalFlowerShop_Text_ImGrowingFlowers, MSGBOX_DEFAULT
-	random 8
-	addvar VAR_RESULT, FIRST_BERRY_INDEX
-	giveitem VAR_RESULT
+	giverandomberry BERRY_ID_CHERI, BERRY_ID_PERSIM
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	msgbox Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries, MSGBOX_DEFAULT
 	release

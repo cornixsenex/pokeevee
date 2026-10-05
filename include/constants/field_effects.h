@@ -83,7 +83,11 @@
 #define FLDEFF_SMILEY_FACE_ICON          78
 #define FLDEFF_HALL_OF_FAME_RECORD_FRLG  79
 #define FLDEFF_PHOTO_FLASH               80
+<<<<<<< HEAD
 //NOTE if these values change be sure to re-arrange the table at data/field_effect_scripts.s
+=======
+#define FLDEFF_OW_ENCOUNTER_SPAWN_ANIM   81
+>>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
@@ -130,6 +134,7 @@
 #define FLDEFFOBJ_ROCK_CLIMB_DUST       42
 #define FLDEFFOBJ_ORAS_DOWSE_BRENDAN    43
 #define FLDEFFOBJ_ORAS_DOWSE_MAY        44
+#define FLDEFFOBJ_SHINY_SPARKLE         45
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003

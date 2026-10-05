@@ -26,6 +26,8 @@ Optional (but still recommended) fields for trainers:
     - Mugshot (enable Mugshots during battle transition
                set to one of Purple, Green, Pink, Blue or Yellow)
     - Starting Status (see include/constants/battle.h for values)
+    - Multi Party   (Half reduces two-trainer battle sides to 3 Pokemon each)
+                    (defaults to Full but requires B_MULTI_HALF_TEAMS to be FALSE)
 
 Pokemon are then specified using the Showdown Export format.
 If a field is not specified, it will use it's default value.
@@ -9395,7 +9397,12 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
+<<<<<<< HEAD
 AI: Basic Trainer
+=======
+AI: Check Bad Move
+Multi Party: Half
+>>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 
 Camerupt
 Level: 36
@@ -13539,7 +13546,12 @@ Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
 Double Battle: No
+<<<<<<< HEAD
 AI: Check Bad Move / Try To Faint / Check Viability
+=======
+AI: Basic Trainer
+Multi Party: Half
+>>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 
 Mightyena
 Level: 42

@@ -1,5 +1,5 @@
-#ifndef GUARD_CONSTANTS_GENERATIONAL_CHANGES_H
-#define GUARD_CONSTANTS_GENERATIONAL_CHANGES_H
+#ifndef GUARD_CONSTANTS_CONFIG_CHANGES_H
+#define GUARD_CONSTANTS_CONFIG_CHANGES_H
 
 /* Config definitions */
 #define BATTLE_CONFIG_DEFINITIONS(F) \
@@ -50,11 +50,11 @@
     /* Turn settings */ \
     F(B_BINDING_TURNS,             bindingTurns,            (u32, GEN_COUNT - 1)) \
     F(B_UPROAR_TURNS,              uproarTurns,             (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
-    F(B_UPROAR_IGNORE_SOUNDPROOF,  uproarIgnoreSoundproof,  (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_DISABLE_TURNS,             disableTurns,            (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_TAILWIND_TURNS,            tailwindTurns,           (u32, GEN_COUNT - 1)) \
     F(B_SLEEP_TURNS,               sleepTurns,              (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_TAUNT_TURNS,               tauntTurns,              (u32, GEN_COUNT - 1)) \
+    F(B_ENCORE_TURNS,              encoreTurns,             (u32, GEN_COUNT - 1)) \
     F(B_SPORT_TURNS,               sportTurns,              (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_MEGA_EVO_TURN_ORDER,       megaEvoTurnOrder,        (u32, GEN_COUNT - 1)) \
     F(B_RECALC_TURN_AFTER_ACTIONS, recalcTurnAfterActions,  (u32, GEN_COUNT - 1)) \
@@ -98,7 +98,7 @@
     F(B_SKILL_SWAP,                skillSwap,               (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_BRICK_BREAK,               brickBreak,              (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_WISH_HP_SOURCE,            wishHpSource,            (u32, GEN_COUNT - 1)) \
-    F(B_RAMPAGE_CANCELLING,        rampageCancelling,       (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
+    F(B_RAMPAGE_CONFUSION,         rampageConfusion,        (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_HEAL_BLOCKING,             healBlocking,            (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_ROOTED_GROUNDING,          rootedGrounding,         (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_METRONOME_MOVES,           metronomeMoves,          (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
@@ -140,6 +140,10 @@
     F(B_RAGE_BUILDS,               rageBuilds,              (u32, GEN_COUNT - 1)) \
     F(B_CHECK_USER_FAILURE,        checkUserFailure,        (u32, GEN_COUNT - 1)) \
     F(B_ABSORB_MESSAGE,            absorbMessge,            (u32, GEN_COUNT - 1)) \
+    F(B_COUNTER_MIRROR_COAT_ALLY,  counterMirrorCoatAlly,   (u32, GEN_COUNT - 1)) \
+    F(B_COUNTER_TRY_HIT_PARTNER,   counterTryHitPartner,    (u32, GEN_COUNT - 1)) \
+    F(B_UPROAR,                    uproar,                  (u32, GEN_COUNT - 1)) \
+    F(B_UPROAR_IGNORE_SOUNDPROOF,  uproarIgnoreSoundproof,  (u32, GEN_COUNT - 1)) \
     /* Ability settings */ \
     F(B_GALE_WINGS,                galeWings,               (u32, GEN_COUNT - 1)) \
     F(B_STANCE_CHANGE_FAIL,        stanceChangeFail,        (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
@@ -170,6 +174,7 @@
     F(B_ATE_MULTIPLIER,            ateMultiplier,           (u32, GEN_COUNT - 1)) \
     F(B_DEFIANT_STICKY_WEB,        defiantStickyWeb,        (u32, GEN_COUNT - 1)) \
     F(B_INFILTRATOR_SUBSTITUTE,    infiltratorSubstitute,   (u32, GEN_COUNT - 1)) \
+    F(B_DANCER_ORDER,              dancerOrder,             (u32, GEN_COUNT - 1)) \
     /* Item settings */ \
     F(B_CONFUSE_BERRIES_HEAL,      confuseBerriesHeal,      (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_X_ITEMS_BUFF,              xItemsBuff,              (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
@@ -214,13 +219,12 @@
     F(B_MISSING_BADGE_CATCH_MALUS, missingBadgeCatchMalue,  (u32, GEN_COUNT - 1)) \
     F(B_CRITICAL_CAPTURE_IF_OWNED, criticalCaptureIfOwned,  (u32, GEN_COUNT - 1)) \
     /* Other settings */ \
-    F(B_WILD_NATURAL_ENEMIES,      wildNaturalEnemies,      (u32, TRUE))          /* TODO: use in tests */ \
+    F(WE_WILD_NATURAL_ENEMIES,     wildNaturalEnemies,      (u32, TRUE))          /* TODO: use in tests */ \
     F(B_AFFECTION_MECHANICS,       affectionMechanics,      (u32, TRUE))          /* TODO: use in tests */ \
     F(B_OBEDIENCE_MECHANICS,       obedienceMechanics,      (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_USE_FROSTBITE,             useFrostbite,            (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_SANDSTORM_SOLAR_BEAM,      standstormSolarBeam,     (u32, GEN_COUNT - 1)) \
-    F(B_COUNTER_MIRROR_COAT_ALLY,  counterMirrorCoatAlly,   (u32, GEN_COUNT - 1)) \
-    F(B_COUNTER_TRY_HIT_PARTNER,   counterTryHitPartner,    (u32, GEN_COUNT - 1)) \
+    F(B_MULTI_BATTLE_WHITEOUT,     multiBattleWhiteout,     (u32, GEN_COUNT - 1)) \
 
 
 #define POKEMON_CONFIG_DEFINITIONS(F) \
@@ -232,6 +236,11 @@
     F(POKERUS_HERD_IMMUNITY,     pokerusHerdImmunity,     (u32, TRUE))          \
     F(POKERUS_WEAK_VARIANT,      pokerusWeakVariant,      (u32, TRUE))          \
 
+#define AI_CONFIG_DEFINITIONS(F) \
+    F(AI_REVERSE_BATTLER_LOGIC_ORDER_CHANCE,    reverseBattlerLogicChance,  (u32, 100)) \
+    F(SHOULD_SWITCH_ALL_MOVES_BAD_PERCENTAGE,   switchAllBadMovesChance,    (u32, 100)) \
+    F(SHOULD_SWITCH_LOSES_1V1_PERCENTAGE,       switchLoses1v1Chance,       (u32, 100)) \
+    F(AI_ROLL_ATTACKING,                        aiRollAttacking,            (u32, AI_ROLL_TYPE_COUNT - 1)) \
 
 #define GET_CONFIG_MAXIMUM(_typeMaxValue, ...) INVOKE_WITH_B(GET_CONFIG_MAXIMUM_, _typeMaxValue)
 #define GET_CONFIG_MAXIMUM_(_type, ...) FIRST(__VA_OPT__(FIRST(__VA_ARGS__),) MAX_BITS((sizeof(_type) * 8)))
@@ -242,7 +251,8 @@ enum ConfigTag
 {
     BATTLE_CONFIG_DEFINITIONS(UNPACK_CONFIG_ENUMS)
     POKEMON_CONFIG_DEFINITIONS(UNPACK_CONFIG_ENUMS)
+    AI_CONFIG_DEFINITIONS(UNPACK_CONFIG_ENUMS)
     CONFIG_COUNT
 };
 
-#endif // GUARD_CONSTANTS_GENERATIONAL_CHANGES_H
+#endif // GUARD_CONSTANTS_CONFIG_CHANGES_H
