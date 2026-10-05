@@ -47,11 +47,7 @@ NavelRock_Bottom_EventScript_Lugia::
 	delay 20
 	seteventmon SPECIES_LUGIA, 70
 	special BattleSetup_StartLegendaryBattle
-<<<<<<< HEAD
-	waitstate
-=======
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Bottom_EventScript_DefeatedLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Bottom_EventScript_RanFromLugia

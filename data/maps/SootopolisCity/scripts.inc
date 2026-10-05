@@ -497,11 +497,7 @@ SootopolisCity_EventScript_RayquazaSceneFromPokeCenter::
 	waitmovement 0
 	removeobject LOCALID_SOOTOPOLIS_RAYQUAZA
 	special WaitWeather
-<<<<<<< HEAD
-	waitstate
-=======
 	clearflag FLAG_SYS_WEATHER_CTRL
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
 	setvar VAR_SKY_PILLAR_STATE, 3
 	fadenewbgm MUS_SOOTOPOLIS
 	delay 120
@@ -550,11 +546,7 @@ SootopolisCity_EventScript_RayquazaSceneFromDive::
 	waitmovement 0
 	removeobject LOCALID_SOOTOPOLIS_RAYQUAZA
 	special WaitWeather
-<<<<<<< HEAD
-	waitstate
-=======
 	clearflag FLAG_SYS_WEATHER_CTRL
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
 	setvar VAR_SKY_PILLAR_STATE, 2
 	fadenewbgm MUS_SURF
 	delay 120

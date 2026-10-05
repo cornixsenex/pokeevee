@@ -74,7 +74,6 @@ script Hospital_Elevator_EventScript_ChooseFloor {
 	closemessage
 	setvar (VAR_0x8004, SCROLL_MULTI_HOSPITAL_ELEVATOR_FLOOR)
 	special (ShowScrollableMultichoice)
-	waitstate
 	switch (var(VAR_RESULT)) {
 		case 0:
 			setvar(VAR_HOSPITAL_FLOOR, 1)

@@ -202,27 +202,15 @@ static const struct MatchCallStructNPC sMrStoneMatchCallHeader =
 };
 
 static const match_call_text_data_t sNormanTextScripts[] = {
-<<<<<<< HEAD
-//    { MatchCall_Text_Norman1, FLAG_ENABLE_NORMAN_MATCH_CALL, NO_FLAG_TO_SET },
-//    { MatchCall_Text_Norman2, FLAG_DEFEATED_DEWFORD_GYM,     NO_FLAG_TO_SET },
-//    { MatchCall_Text_Norman3, FLAG_DEFEATED_LAVARIDGE_GYM,   NO_FLAG_TO_SET },
-//    { MatchCall_Text_Norman4, FLAG_DEFEATED_PETALBURG_GYM,   NO_FLAG_TO_SET },
-//    { MatchCall_Text_Norman5, FLAG_RECEIVED_RED_OR_BLUE_ORB, NO_FLAG_TO_SET },
-//    { MatchCall_Text_Norman6, 0xFFFE,                        NO_FLAG_TO_SET },
-//    { MatchCall_Text_Norman7, FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
-//    { MatchCall_Text_Norman8, FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
-//    { MatchCall_Text_Norman9, FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
-=======
-    { MatchCall_Text_Norman1,                  FLAG_ENABLE_NORMAN_MATCH_CALL, NO_FLAG_TO_SET },
-    { MatchCall_Text_Norman2,                  FLAG_DEFEATED_DEWFORD_GYM,     NO_FLAG_TO_SET },
-    { MatchCall_Text_Norman3,                  FLAG_DEFEATED_LAVARIDGE_GYM,   NO_FLAG_TO_SET },
-    { MatchCall_Text_Norman4,                  FLAG_DEFEATED_PETALBURG_GYM,   NO_FLAG_TO_SET },
-    { MatchCall_Text_Norman5,                  FLAG_RECEIVED_RED_OR_BLUE_ORB, NO_FLAG_TO_SET },
-    { MatchCall_Text_Norman_Preparing,         REMATCH_CALL_START,            NO_FLAG_TO_SET },
-    { MatchCall_Text_Norman_PreparingPostGame, FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
-    { MatchCall_Text_Norman_RematchReady,      FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
-    { MatchCall_Text_Norman_PostRematch,       FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+//    { MatchCall_Text_Norman1,                  FLAG_ENABLE_NORMAN_MATCH_CALL, NO_FLAG_TO_SET },
+//    { MatchCall_Text_Norman2,                  FLAG_DEFEATED_DEWFORD_GYM,     NO_FLAG_TO_SET },
+//    { MatchCall_Text_Norman3,                  FLAG_DEFEATED_LAVARIDGE_GYM,   NO_FLAG_TO_SET },
+//    { MatchCall_Text_Norman4,                  FLAG_DEFEATED_PETALBURG_GYM,   NO_FLAG_TO_SET },
+//    { MatchCall_Text_Norman5,                  FLAG_RECEIVED_RED_OR_BLUE_ORB, NO_FLAG_TO_SET },
+//    { MatchCall_Text_Norman_Preparing,         REMATCH_CALL_START,            NO_FLAG_TO_SET },
+//    { MatchCall_Text_Norman_PreparingPostGame, FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
+//    { MatchCall_Text_Norman_RematchReady,      FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
+//    { MatchCall_Text_Norman_PostRematch,       FLAG_SYS_GAME_CLEAR,           NO_FLAG_TO_SET },
     MATCH_CALL_TEXT_END
 };
 
@@ -389,17 +377,10 @@ static const struct MatchCallStructNPC sScottMatchCallHeader =
 };
 
 static const match_call_text_data_t sRoxanneTextScripts[] = {
-<<<<<<< HEAD
-//    { MatchCall_Text_Roxanne1, 0xFFFE,              NO_FLAG_TO_SET },
-//    { MatchCall_Text_Roxanne2, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Roxanne3, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Roxanne4, FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
-=======
-    { MatchCall_Text_Roxanne_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
-    { MatchCall_Text_Roxanne_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Roxanne_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Roxanne_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+//    { MatchCall_Text_Roxanne_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
+//    { MatchCall_Text_Roxanne_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Roxanne_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Roxanne_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
     MATCH_CALL_TEXT_END
 };
 
@@ -414,17 +395,10 @@ static const struct MatchCallStructTrainer sRoxanneMatchCallHeader =
 };
 
 static const match_call_text_data_t sBrawlyTextScripts[] = {
-<<<<<<< HEAD
-//    { MatchCall_Text_Brawly1, 0xFFFE,              NO_FLAG_TO_SET },
-//    { MatchCall_Text_Brawly2, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Brawly3, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Brawly4, FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
-=======
-    { MatchCall_Text_Brawly_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
-    { MatchCall_Text_Brawly_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Brawly_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Brawly_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+//    { MatchCall_Text_Brawly_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
+//    { MatchCall_Text_Brawly_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Brawly_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Brawly_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
     MATCH_CALL_TEXT_END
 };
 
@@ -439,17 +413,10 @@ static const struct MatchCallStructTrainer sBrawlyMatchCallHeader =
 };
 
 static const match_call_text_data_t sWattsonTextScripts[] = {
-<<<<<<< HEAD
-//    { MatchCall_Text_Wattson1, 0xFFFE,              NO_FLAG_TO_SET },
-//    { MatchCall_Text_Wattson2, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Wattson3, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Wattson4, FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
-=======
-    { MatchCall_Text_Wattson_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
-    { MatchCall_Text_Wattson_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Wattson_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Wattson_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+//    { MatchCall_Text_Wattson_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
+//    { MatchCall_Text_Wattson_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Wattson_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Wattson_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
     MATCH_CALL_TEXT_END
 };
 
@@ -464,17 +431,10 @@ static const struct MatchCallStructTrainer sWattsonMatchCallHeader =
 };
 
 static const match_call_text_data_t sFlanneryTextScripts[] = {
-<<<<<<< HEAD
-//    { MatchCall_Text_Flannery1, 0xFFFE,              NO_FLAG_TO_SET },
-//    { MatchCall_Text_Flannery2, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Flannery3, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Flannery4, FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
-=======
-    { MatchCall_Text_Flannery_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
-    { MatchCall_Text_Flannery_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Flannery_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Flannery_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+//    { MatchCall_Text_Flannery_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
+//    { MatchCall_Text_Flannery_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Flannery_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Flannery_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
     MATCH_CALL_TEXT_END
 };
 
@@ -489,17 +449,10 @@ static const struct MatchCallStructTrainer sFlanneryMatchCallHeader =
 };
 
 static const match_call_text_data_t sWinonaTextScripts[] = {
-<<<<<<< HEAD
-//    { MatchCall_Text_Winona1, 0xFFFE,              NO_FLAG_TO_SET },
-//    { MatchCall_Text_Winona2, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Winona3, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Winona4, FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
-=======
-    { MatchCall_Text_Winona_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
-    { MatchCall_Text_Winona_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Winona_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Winona_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+//    { MatchCall_Text_Winona_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
+//    { MatchCall_Text_Winona_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Winona_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Winona_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
     MATCH_CALL_TEXT_END
 };
 
@@ -514,16 +467,10 @@ static const struct MatchCallStructTrainer sWinonaMatchCallHeader =
 };
 
 static const match_call_text_data_t sTateLizaTextScripts[] = {
-<<<<<<< HEAD
-//    { MatchCall_Text_TateLiza2, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_TateLiza3, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_TateLiza4, FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
-=======
-    { MatchCall_Text_TateLiza_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
-    { MatchCall_Text_TateLiza_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_TateLiza_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_TateLiza_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+//    { MatchCall_Text_TateLiza_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
+//    { MatchCall_Text_TateLiza_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_TateLiza_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_TateLiza_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
     MATCH_CALL_TEXT_END
 };
 
@@ -538,17 +485,10 @@ static const struct MatchCallStructTrainer sTateLizaMatchCallHeader =
 };
 
 static const match_call_text_data_t sJuanTextScripts[] = {
-<<<<<<< HEAD
-//    { MatchCall_Text_Juan1, 0xFFFE,              NO_FLAG_TO_SET },
-//    { MatchCall_Text_Juan2, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Juan3, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-//    { MatchCall_Text_Juan4, FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
-=======
-    { MatchCall_Text_Juan_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
-    { MatchCall_Text_Juan_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Juan_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
-    { MatchCall_Text_Juan_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+//    { MatchCall_Text_Juan_Preparing,         REMATCH_CALL_START,  NO_FLAG_TO_SET },
+//    { MatchCall_Text_Juan_PreparingPostGame, ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Juan_RematchReady,      ALWAYS_AVAILABLE,    NO_FLAG_TO_SET },
+//    { MatchCall_Text_Juan_PostRematch,       FLAG_SYS_GAME_CLEAR, NO_FLAG_TO_SET },
     MATCH_CALL_TEXT_END
 };
 

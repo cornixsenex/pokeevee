@@ -411,7 +411,6 @@ script MareS6_Script_UlyssesShades {
 		destroy_field_pic (FIELD_PIC_ULYSSES)
 		closemessage
 		special (ChoosePartyMon)
-		waitstate
 		//Nothing was selected
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 			load_field_pic (FIELD_PIC_ULYSSES, 190, 98)

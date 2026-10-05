@@ -243,7 +243,6 @@ script BigIslandS_Script_HoOh {
 	setwildbattle (SPECIES_HO_OH, 13)
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	special (BattleSetup_StartLegendaryBattle)
-	waitstate
 
 	//Post battle HoOh should be gone
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)

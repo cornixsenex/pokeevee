@@ -1604,7 +1604,6 @@ script Colchis_Script_Lugia {
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	setwildbattle (SPECIES_LUGIA, 18)
 	special (BattleSetup_StartLegendaryBattle)
-	waitstate
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	removeobject (OBJ_EVENT_LUGIA)
 	releaseall
@@ -1885,7 +1884,6 @@ script Colchis_Script_SanctumJasonCheckMareep {
 		//Else Choose Shiny Mareep
 		} else {
 			special (ChoosePartyMon)
-			waitstate
 			//If nothing chosen then go back up top
 			if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 				call (Colchis_Script_SanctumJasonCheckMareep)

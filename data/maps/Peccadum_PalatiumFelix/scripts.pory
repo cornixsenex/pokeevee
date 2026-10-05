@@ -94,7 +94,6 @@ script Peccadum_PalatiumFelix_Script_CashierBuyCoins {
 	//multichoice
 	setvar (VAR_0x8004, SCROLL_MULTI_PALATIUM_FELIX_COIN_CASHIER)
 	special (ShowScrollableMultichoice)
-	waitstate
 	//prevent coin_case overflow
 	switch (var(VAR_RESULT)) {
 		//1
@@ -295,7 +294,6 @@ script Peccadum_PalatiumFelix_Script_CashierSellCoins {
 	//multichoice
 	setvar (VAR_0x8004, SCROLL_MULTI_PALATIUM_FELIX_COIN_CASHIER)
 	special (ShowScrollableMultichoice)
-	waitstate
 	//prevent money overflow
 	switch (var(VAR_RESULT)) {
 		//1
@@ -762,7 +760,6 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
 			closemessage
 			setvar (VAR_0x8004, SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER)
 			special (ShowScrollableMultichoice)
-			waitstate
 			switch (var(VAR_RESULT)) {
 				case 0 :
 					setvar (WAGER_NUMBER, 1)
@@ -796,7 +793,6 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
 		case 2:
 			setvar (VAR_0x8004, SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_2_NUMBER)
 			special (ShowScrollableMultichoice)
-			waitstate
 			switch (var(VAR_RESULT)) {
 				case 0 :
 					setvar (WAGER_NUMBER, 11)
@@ -830,7 +826,6 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
 		case 3:
 			setvar (VAR_0x8004, SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER)
 			special (ShowScrollableMultichoice)
-			waitstate
 			switch (var(VAR_RESULT)) {
 				case 0 :
 					setvar (WAGER_NUMBER, 21)
@@ -1285,7 +1280,6 @@ script DealerHiLoKabuto_Script_GetCoinWager {
     closemessage
 	setvar (VAR_0x8004, SCROLL_MULTI_PALATIUM_FELIX_COIN_CASHIER)
 	special (ShowScrollableMultichoice)
-	waitstate
 	copyvar (WAGER, VAR_RESULT)
 	switch (var(WAGER)) {
 		//1

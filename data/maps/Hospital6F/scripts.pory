@@ -58,7 +58,6 @@ script Hospital6F_EventScript_DocLobo {
 script Hospital6F_EventScript_DocLobo_ChooseMon {
 	msgbox (Hospital6F_Text_DocLobo_WhichMon)
 	special (ChoosePartyMon)
-	waitstate
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 		call (Hospital6F_EventScript_DocLobo_DeclineLobo)
 	}
@@ -112,7 +111,6 @@ script Hospital6F_EventScript_DocPS {
 script Hospital6F_EventScript_DocPS_ChooseMon {
 	msgbox (Hospital6F_Text_DocPS_WhichMon)
 	special (ChoosePartyMon)
-	waitstate
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 		call (Hospital6F_EventScript_DocPS_DeclinePS)
 	}
@@ -166,7 +164,6 @@ script Hospital6F_EventScript_DocG {
 script Hospital6F_EventScript_DocG_ChooseMon {
 	msgbox (Hospital6F_Text_DocG_WhichMon)
 	special (ChoosePartyMon)
-	waitstate
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 		call (Hospital6F_EventScript_DocG_DeclineG)
 	}
@@ -225,7 +222,6 @@ script Hospital6F_EventScript_DocP {
 script Hospital6F_EventScript_DocP_ChooseMon {
 	msgbox (Hospital6F_Text_DocP_WhichMon)
 	special (ChoosePartyMon)
-	waitstate
 	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 		call (Hospital6F_EventScript_DocP_DeclineP)
 	}

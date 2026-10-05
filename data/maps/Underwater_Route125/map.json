@@ -3,12 +3,8 @@
   "name": "Underwater_Route125",
   "layout": "LAYOUT_UNDERWATER_ROUTE125",
   "music": "MUS_UNDERWATER",
-<<<<<<< HEAD
-  "region_map_section": "MAPSEC_INSIDE_OF_TRUCK",
-=======
   "region": "REGION_HOENN",
-  "region_map_section": "MAPSEC_UNDERWATER_125",
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
+  "region_map_section": "MAPSEC_INSIDE_OF_TRUCK",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",
   "map_type": "MAP_TYPE_UNDERWATER",

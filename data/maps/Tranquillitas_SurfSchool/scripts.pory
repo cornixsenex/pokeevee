@@ -279,7 +279,6 @@ script SurfSchool_Script_LeafScene {
 script Common_Script_SelectPartyForMultiBattle {
     special (SavePlayerParty)
     special (ChooseHalfPartyForBattle)
-    waitstate
     if (var(VAR_RESULT) == 0) {
         call (Common_Script_SelectPartyForMultiBattle)
     } else {

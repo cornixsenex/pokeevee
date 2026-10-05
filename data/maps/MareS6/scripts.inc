@@ -658,15 +658,15 @@ MareS6_Script_UlyssesShades_1:
 # 410 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_UlyssesShades_5
-# 448 "data/maps/MareS6/scripts.pory"
+# 447 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_NoToSacrifice
-# 449 "data/maps/MareS6/scripts.pory"
+# 448 "data/maps/MareS6/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 450 "data/maps/MareS6/scripts.pory"
+# 449 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 451 "data/maps/MareS6/scripts.pory"
+# 450 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft
-# 452 "data/maps/MareS6/scripts.pory"
+# 451 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
 	end
 
@@ -688,1007 +688,1005 @@ MareS6_Script_UlyssesShades_5:
 	closemessage
 # 413 "data/maps/MareS6/scripts.pory"
 	special ChoosePartyMon
-# 414 "data/maps/MareS6/scripts.pory"
-	waitstate
-# 416 "data/maps/MareS6/scripts.pory"
+# 415 "data/maps/MareS6/scripts.pory"
 	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
 	goto_if_eq MareS6_Script_UlyssesShades_8
-# 426 "data/maps/MareS6/scripts.pory"
+# 425 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, CheckSelectedMonValidSacrifice
-# 428 "data/maps/MareS6/scripts.pory"
+# 427 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MareS6_Script_UlyssesShades_11
-# 433 "data/maps/MareS6/scripts.pory"
+# 432 "data/maps/MareS6/scripts.pory"
 	special BufferMonNickname
-# 434 "data/maps/MareS6/scripts.pory"
+# 433 "data/maps/MareS6/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 435 "data/maps/MareS6/scripts.pory"
+# 434 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_SacrificeNotValid
-# 436 "data/maps/MareS6/scripts.pory"
+# 435 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_NoToSacrifice
-# 437 "data/maps/MareS6/scripts.pory"
+# 436 "data/maps/MareS6/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 438 "data/maps/MareS6/scripts.pory"
+# 437 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 440 "data/maps/MareS6/scripts.pory"
+# 439 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft
-# 441 "data/maps/MareS6/scripts.pory"
+# 440 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
 	end
 
 MareS6_Script_UlyssesShades_8:
-# 417 "data/maps/MareS6/scripts.pory"
+# 416 "data/maps/MareS6/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 418 "data/maps/MareS6/scripts.pory"
+# 417 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_NoToSacrifice, MSGBOX_DEFAULT
-# 419 "data/maps/MareS6/scripts.pory"
+# 418 "data/maps/MareS6/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 420 "data/maps/MareS6/scripts.pory"
+# 419 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 421 "data/maps/MareS6/scripts.pory"
+# 420 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft
-# 422 "data/maps/MareS6/scripts.pory"
+# 421 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
 	end
 
 MareS6_Script_UlyssesShades_11:
-# 429 "data/maps/MareS6/scripts.pory"
+# 428 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_UlyssesSacrificeScene
 	return
 
 
 MareS6_Script_UlyssesSacrificeScene::
-# 458 "data/maps/MareS6/scripts.pory"
+# 457 "data/maps/MareS6/scripts.pory"
 	special BufferMonNickname
-# 459 "data/maps/MareS6/scripts.pory"
+# 458 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_GiveSacrifice
-# 460 "data/maps/MareS6/scripts.pory"
+# 459 "data/maps/MareS6/scripts.pory"
 	special ReleaseChosenMon
+# 460 "data/maps/MareS6/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 461 "data/maps/MareS6/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 462 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UlyssesSacrifice1
-# 463 "data/maps/MareS6/scripts.pory"
+# 462 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft
-# 464 "data/maps/MareS6/scripts.pory"
+# 463 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 465 "data/maps/MareS6/scripts.pory"
+# 464 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UlyssesSacrifice2
+# 465 "data/maps/MareS6/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
 # 466 "data/maps/MareS6/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
+	closemessage
 # 467 "data/maps/MareS6/scripts.pory"
-	closemessage
-# 468 "data/maps/MareS6/scripts.pory"
 	playse SE_FALL
-# 469 "data/maps/MareS6/scripts.pory"
+# 468 "data/maps/MareS6/scripts.pory"
 	delay 60
-# 470 "data/maps/MareS6/scripts.pory"
+# 469 "data/maps/MareS6/scripts.pory"
 	playse SE_M_DIVE
-# 471 "data/maps/MareS6/scripts.pory"
+# 470 "data/maps/MareS6/scripts.pory"
 	delay 120
-# 472 "data/maps/MareS6/scripts.pory"
+# 471 "data/maps/MareS6/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 473 "data/maps/MareS6/scripts.pory"
+# 472 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 474 "data/maps/MareS6/scripts.pory"
+# 473 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UlyssesSacrifice3
-# 475 "data/maps/MareS6/scripts.pory"
+# 474 "data/maps/MareS6/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 476 "data/maps/MareS6/scripts.pory"
+# 475 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 478 "data/maps/MareS6/scripts.pory"
+# 477 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 479 "data/maps/MareS6/scripts.pory"
+# 478 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, DIR_WEST
 	goto_if_eq MareS6_Script_UlyssesSacrificeScene_2
-# 484 "data/maps/MareS6/scripts.pory"
+# 483 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight
-# 485 "data/maps/MareS6/scripts.pory"
+# 484 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 486 "data/maps/MareS6/scripts.pory"
+# 485 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown
 MareS6_Script_UlyssesSacrificeScene_1:
+# 487 "data/maps/MareS6/scripts.pory"
+	waitmovement 0
 # 488 "data/maps/MareS6/scripts.pory"
-	waitmovement 0
-# 489 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown2
+# 489 "data/maps/MareS6/scripts.pory"
+	waitmovement 0
 # 490 "data/maps/MareS6/scripts.pory"
-	waitmovement 0
-# 491 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight4
+# 491 "data/maps/MareS6/scripts.pory"
+	waitmovement 0
 # 492 "data/maps/MareS6/scripts.pory"
-	waitmovement 0
-# 493 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown
+# 493 "data/maps/MareS6/scripts.pory"
+	waitmovement 0
 # 494 "data/maps/MareS6/scripts.pory"
-	waitmovement 0
-# 495 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight3
-# 496 "data/maps/MareS6/scripts.pory"
+# 495 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 498 "data/maps/MareS6/scripts.pory"
+# 497 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_ULYSSES
-# 499 "data/maps/MareS6/scripts.pory"
+# 498 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_ULYSSES, 0, 0
-# 500 "data/maps/MareS6/scripts.pory"
+# 499 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_INVISIBLE
-# 501 "data/maps/MareS6/scripts.pory"
+# 500 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_ULYSSES
-# 503 "data/maps/MareS6/scripts.pory"
+# 502 "data/maps/MareS6/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 14
 	end
 
 MareS6_Script_UlyssesSacrificeScene_2:
-# 480 "data/maps/MareS6/scripts.pory"
+# 479 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown
-# 481 "data/maps/MareS6/scripts.pory"
+# 480 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 482 "data/maps/MareS6/scripts.pory"
+# 481 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight
 	goto MareS6_Script_UlyssesSacrificeScene_1
 
 
 MareS6_Script_Shinx::
-# 512 "data/maps/MareS6/scripts.pory"
+# 511 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 514 "data/maps/MareS6/scripts.pory"
+# 513 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_SHINX, Common_Movement_ExclamationMark
-# 515 "data/maps/MareS6/scripts.pory"
+# 514 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 517 "data/maps/MareS6/scripts.pory"
+# 516 "data/maps/MareS6/scripts.pory"
 	playmoncry SPECIES_SHINX, CRY_MODE_ENCOUNTER
-# 518 "data/maps/MareS6/scripts.pory"
+# 517 "data/maps/MareS6/scripts.pory"
 	waitmoncry
-# 520 "data/maps/MareS6/scripts.pory"
+# 519 "data/maps/MareS6/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_SHINX
-# 521 "data/maps/MareS6/scripts.pory"
+# 520 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_MeetsGaze
-# 523 "data/maps/MareS6/scripts.pory"
+# 522 "data/maps/MareS6/scripts.pory"
 	checkitem ITEM_PINA_FRUIT
-# 524 "data/maps/MareS6/scripts.pory"
+# 523 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_Shinx_1
 	return
 
 MareS6_Script_Shinx_1:
-# 525 "data/maps/MareS6/scripts.pory"
+# 524 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UsePinaFruit, MSGBOX_YESNO
-# 526 "data/maps/MareS6/scripts.pory"
+# 525 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MareS6_Script_Shinx_3
-# 533 "data/maps/MareS6/scripts.pory"
+# 532 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PlayerGaveMoly
-# 534 "data/maps/MareS6/scripts.pory"
+# 533 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 536 "data/maps/MareS6/scripts.pory"
+# 535 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_WHITE
-# 538 "data/maps/MareS6/scripts.pory"
+# 537 "data/maps/MareS6/scripts.pory"
 	playse MUS_HEAL
-# 539 "data/maps/MareS6/scripts.pory"
+# 538 "data/maps/MareS6/scripts.pory"
 	waitse
-# 541 "data/maps/MareS6/scripts.pory"
+# 540 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_SHINX
-# 542 "data/maps/MareS6/scripts.pory"
+# 541 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_SHINX, 0, 0
-# 543 "data/maps/MareS6/scripts.pory"
+# 542 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_SHINX, MOVEMENT_TYPE_INVISIBLE
-# 544 "data/maps/MareS6/scripts.pory"
+# 543 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_SHINX
-# 546 "data/maps/MareS6/scripts.pory"
+# 545 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_SAILOR
-# 547 "data/maps/MareS6/scripts.pory"
+# 546 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_SAILOR, 49, 45
-# 548 "data/maps/MareS6/scripts.pory"
+# 547 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 549 "data/maps/MareS6/scripts.pory"
+# 548 "data/maps/MareS6/scripts.pory"
 	switch VAR_RESULT
-# 550 "data/maps/MareS6/scripts.pory"
+# 549 "data/maps/MareS6/scripts.pory"
 	case DIR_SOUTH, MareS6_Script_Shinx_8
-# 552 "data/maps/MareS6/scripts.pory"
+# 551 "data/maps/MareS6/scripts.pory"
 	case DIR_EAST, MareS6_Script_Shinx_9
-# 554 "data/maps/MareS6/scripts.pory"
+# 553 "data/maps/MareS6/scripts.pory"
 	case DIR_WEST, MareS6_Script_Shinx_10
-# 556 "data/maps/MareS6/scripts.pory"
+# 555 "data/maps/MareS6/scripts.pory"
 	case DIR_NORTH, MareS6_Script_Shinx_11
 MareS6_Script_Shinx_11:
-# 558 "data/maps/MareS6/scripts.pory"
+# 557 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_DOWN
 MareS6_Script_Shinx_6:
-# 560 "data/maps/MareS6/scripts.pory"
+# 559 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_SAILOR
-# 562 "data/maps/MareS6/scripts.pory"
+# 561 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_WHITE
-# 564 "data/maps/MareS6/scripts.pory"
+# 563 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_SailorRestored
-# 565 "data/maps/MareS6/scripts.pory"
+# 564 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_GenericRestored
-# 566 "data/maps/MareS6/scripts.pory"
+# 565 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 568 "data/maps/MareS6/scripts.pory"
+# 567 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 570 "data/maps/MareS6/scripts.pory"
+# 569 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_SAILOR
-# 571 "data/maps/MareS6/scripts.pory"
+# 570 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_SAILOR, 0, 0
-# 572 "data/maps/MareS6/scripts.pory"
+# 571 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_LEFT
-# 573 "data/maps/MareS6/scripts.pory"
+# 572 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_SAILOR
-# 575 "data/maps/MareS6/scripts.pory"
+# 574 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 577 "data/maps/MareS6/scripts.pory"
+# 576 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_MARES6_RESTORED_SHINXSAILOR
-# 579 "data/maps/MareS6/scripts.pory"
+# 578 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_CheckAllRestored
 	end
 
 MareS6_Script_Shinx_3:
-# 527 "data/maps/MareS6/scripts.pory"
+# 526 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 528 "data/maps/MareS6/scripts.pory"
+# 527 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	end
 
 MareS6_Script_Shinx_8:
-# 551 "data/maps/MareS6/scripts.pory"
+# 550 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_UP
 	goto MareS6_Script_Shinx_6
 
 MareS6_Script_Shinx_9:
-# 553 "data/maps/MareS6/scripts.pory"
+# 552 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_LEFT
 	goto MareS6_Script_Shinx_6
 
 MareS6_Script_Shinx_10:
-# 555 "data/maps/MareS6/scripts.pory"
+# 554 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_RIGHT
 	goto MareS6_Script_Shinx_6
 
 
 MareS6_Script_Turtwig::
-# 588 "data/maps/MareS6/scripts.pory"
+# 587 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 590 "data/maps/MareS6/scripts.pory"
+# 589 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_TURTWIG, Common_Movement_ExclamationMark
-# 591 "data/maps/MareS6/scripts.pory"
+# 590 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 593 "data/maps/MareS6/scripts.pory"
+# 592 "data/maps/MareS6/scripts.pory"
 	playmoncry SPECIES_TURTWIG, CRY_MODE_ENCOUNTER
-# 594 "data/maps/MareS6/scripts.pory"
+# 593 "data/maps/MareS6/scripts.pory"
 	waitmoncry
-# 596 "data/maps/MareS6/scripts.pory"
+# 595 "data/maps/MareS6/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TURTWIG
-# 597 "data/maps/MareS6/scripts.pory"
+# 596 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_MeetsGaze
-# 599 "data/maps/MareS6/scripts.pory"
+# 598 "data/maps/MareS6/scripts.pory"
 	checkitem ITEM_PINA_FRUIT
-# 600 "data/maps/MareS6/scripts.pory"
+# 599 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_Turtwig_1
 	return
 
 MareS6_Script_Turtwig_1:
-# 601 "data/maps/MareS6/scripts.pory"
+# 600 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UsePinaFruit, MSGBOX_YESNO
-# 602 "data/maps/MareS6/scripts.pory"
+# 601 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MareS6_Script_Turtwig_3
-# 609 "data/maps/MareS6/scripts.pory"
+# 608 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PlayerGaveMoly
-# 610 "data/maps/MareS6/scripts.pory"
+# 609 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 612 "data/maps/MareS6/scripts.pory"
+# 611 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_WHITE
-# 614 "data/maps/MareS6/scripts.pory"
+# 613 "data/maps/MareS6/scripts.pory"
 	playse MUS_HEAL
-# 615 "data/maps/MareS6/scripts.pory"
+# 614 "data/maps/MareS6/scripts.pory"
 	waitse
-# 617 "data/maps/MareS6/scripts.pory"
+# 616 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_TURTWIG
-# 618 "data/maps/MareS6/scripts.pory"
+# 617 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_TURTWIG, 0, 0
-# 619 "data/maps/MareS6/scripts.pory"
+# 618 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_TURTWIG, MOVEMENT_TYPE_INVISIBLE
-# 620 "data/maps/MareS6/scripts.pory"
+# 619 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_TURTWIG
-# 622 "data/maps/MareS6/scripts.pory"
+# 621 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_CAMPER
-# 623 "data/maps/MareS6/scripts.pory"
+# 622 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_CAMPER, 52, 46
-# 624 "data/maps/MareS6/scripts.pory"
+# 623 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 625 "data/maps/MareS6/scripts.pory"
+# 624 "data/maps/MareS6/scripts.pory"
 	switch VAR_RESULT
-# 626 "data/maps/MareS6/scripts.pory"
+# 625 "data/maps/MareS6/scripts.pory"
 	case DIR_SOUTH, MareS6_Script_Turtwig_8
-# 628 "data/maps/MareS6/scripts.pory"
+# 627 "data/maps/MareS6/scripts.pory"
 	case DIR_EAST, MareS6_Script_Turtwig_9
-# 630 "data/maps/MareS6/scripts.pory"
+# 629 "data/maps/MareS6/scripts.pory"
 	case DIR_WEST, MareS6_Script_Turtwig_10
-# 632 "data/maps/MareS6/scripts.pory"
+# 631 "data/maps/MareS6/scripts.pory"
 	case DIR_NORTH, MareS6_Script_Turtwig_11
 MareS6_Script_Turtwig_11:
-# 634 "data/maps/MareS6/scripts.pory"
+# 633 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_DOWN
 MareS6_Script_Turtwig_6:
-# 636 "data/maps/MareS6/scripts.pory"
+# 635 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_CAMPER
-# 638 "data/maps/MareS6/scripts.pory"
+# 637 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_WHITE
-# 640 "data/maps/MareS6/scripts.pory"
+# 639 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_CamperRestored
-# 641 "data/maps/MareS6/scripts.pory"
+# 640 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_GenericRestored
-# 642 "data/maps/MareS6/scripts.pory"
+# 641 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 644 "data/maps/MareS6/scripts.pory"
+# 643 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 646 "data/maps/MareS6/scripts.pory"
+# 645 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_CAMPER
-# 647 "data/maps/MareS6/scripts.pory"
+# 646 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_CAMPER, 0, 0
-# 648 "data/maps/MareS6/scripts.pory"
+# 647 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_LEFT
-# 649 "data/maps/MareS6/scripts.pory"
+# 648 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_CAMPER
-# 651 "data/maps/MareS6/scripts.pory"
+# 650 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 653 "data/maps/MareS6/scripts.pory"
+# 652 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_MARES6_RESTORED_TURTWIGCAMPER
-# 655 "data/maps/MareS6/scripts.pory"
+# 654 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_CheckAllRestored
 	end
 
 MareS6_Script_Turtwig_3:
-# 603 "data/maps/MareS6/scripts.pory"
+# 602 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 604 "data/maps/MareS6/scripts.pory"
+# 603 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	end
 
 MareS6_Script_Turtwig_8:
-# 627 "data/maps/MareS6/scripts.pory"
+# 626 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_UP
 	goto MareS6_Script_Turtwig_6
 
 MareS6_Script_Turtwig_9:
-# 629 "data/maps/MareS6/scripts.pory"
+# 628 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_LEFT
 	goto MareS6_Script_Turtwig_6
 
 MareS6_Script_Turtwig_10:
-# 631 "data/maps/MareS6/scripts.pory"
+# 630 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_RIGHT
 	goto MareS6_Script_Turtwig_6
 
 
 MareS6_Script_Torchic::
-# 664 "data/maps/MareS6/scripts.pory"
+# 663 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 666 "data/maps/MareS6/scripts.pory"
+# 665 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_TORCHIC, Common_Movement_ExclamationMark
-# 667 "data/maps/MareS6/scripts.pory"
+# 666 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 669 "data/maps/MareS6/scripts.pory"
+# 668 "data/maps/MareS6/scripts.pory"
 	playmoncry SPECIES_TORCHIC, CRY_MODE_ENCOUNTER
-# 670 "data/maps/MareS6/scripts.pory"
+# 669 "data/maps/MareS6/scripts.pory"
 	waitmoncry
-# 672 "data/maps/MareS6/scripts.pory"
+# 671 "data/maps/MareS6/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
-# 673 "data/maps/MareS6/scripts.pory"
+# 672 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_MeetsGaze
-# 675 "data/maps/MareS6/scripts.pory"
+# 674 "data/maps/MareS6/scripts.pory"
 	checkitem ITEM_PINA_FRUIT
-# 676 "data/maps/MareS6/scripts.pory"
+# 675 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_Torchic_1
 	return
 
 MareS6_Script_Torchic_1:
-# 677 "data/maps/MareS6/scripts.pory"
+# 676 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UsePinaFruit, MSGBOX_YESNO
-# 678 "data/maps/MareS6/scripts.pory"
+# 677 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MareS6_Script_Torchic_3
-# 685 "data/maps/MareS6/scripts.pory"
+# 684 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PlayerGaveMoly
-# 686 "data/maps/MareS6/scripts.pory"
+# 685 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 688 "data/maps/MareS6/scripts.pory"
+# 687 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_WHITE
-# 690 "data/maps/MareS6/scripts.pory"
+# 689 "data/maps/MareS6/scripts.pory"
 	playse MUS_HEAL
-# 691 "data/maps/MareS6/scripts.pory"
+# 690 "data/maps/MareS6/scripts.pory"
 	waitse
-# 693 "data/maps/MareS6/scripts.pory"
+# 692 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_TORCHIC
-# 694 "data/maps/MareS6/scripts.pory"
+# 693 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_TORCHIC, 0, 0
-# 695 "data/maps/MareS6/scripts.pory"
+# 694 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_TORCHIC, MOVEMENT_TYPE_INVISIBLE
-# 696 "data/maps/MareS6/scripts.pory"
+# 695 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_TORCHIC
-# 698 "data/maps/MareS6/scripts.pory"
+# 697 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_MAN3
-# 699 "data/maps/MareS6/scripts.pory"
+# 698 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_MAN3, 56, 45
-# 700 "data/maps/MareS6/scripts.pory"
+# 699 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 701 "data/maps/MareS6/scripts.pory"
+# 700 "data/maps/MareS6/scripts.pory"
 	switch VAR_RESULT
-# 702 "data/maps/MareS6/scripts.pory"
+# 701 "data/maps/MareS6/scripts.pory"
 	case DIR_SOUTH, MareS6_Script_Torchic_8
-# 704 "data/maps/MareS6/scripts.pory"
+# 703 "data/maps/MareS6/scripts.pory"
 	case DIR_EAST, MareS6_Script_Torchic_9
-# 706 "data/maps/MareS6/scripts.pory"
+# 705 "data/maps/MareS6/scripts.pory"
 	case DIR_WEST, MareS6_Script_Torchic_10
-# 708 "data/maps/MareS6/scripts.pory"
+# 707 "data/maps/MareS6/scripts.pory"
 	case DIR_NORTH, MareS6_Script_Torchic_11
 MareS6_Script_Torchic_11:
-# 710 "data/maps/MareS6/scripts.pory"
+# 709 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_DOWN
 MareS6_Script_Torchic_6:
-# 712 "data/maps/MareS6/scripts.pory"
+# 711 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_MAN3
-# 714 "data/maps/MareS6/scripts.pory"
+# 713 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_WHITE
-# 716 "data/maps/MareS6/scripts.pory"
+# 715 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_Man3Restored
-# 717 "data/maps/MareS6/scripts.pory"
+# 716 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_GenericRestored
-# 718 "data/maps/MareS6/scripts.pory"
+# 717 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 720 "data/maps/MareS6/scripts.pory"
+# 719 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 722 "data/maps/MareS6/scripts.pory"
+# 721 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_MAN3
-# 723 "data/maps/MareS6/scripts.pory"
+# 722 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_MAN3, 0, 0
-# 724 "data/maps/MareS6/scripts.pory"
+# 723 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_LEFT
-# 725 "data/maps/MareS6/scripts.pory"
+# 724 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_MAN3
-# 727 "data/maps/MareS6/scripts.pory"
+# 726 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 729 "data/maps/MareS6/scripts.pory"
+# 728 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_MARES6_RESTORED_TORCHICMAN3
-# 731 "data/maps/MareS6/scripts.pory"
+# 730 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_CheckAllRestored
 	end
 
 MareS6_Script_Torchic_3:
-# 679 "data/maps/MareS6/scripts.pory"
+# 678 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 680 "data/maps/MareS6/scripts.pory"
+# 679 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	end
 
 MareS6_Script_Torchic_8:
-# 703 "data/maps/MareS6/scripts.pory"
+# 702 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_UP
 	goto MareS6_Script_Torchic_6
 
 MareS6_Script_Torchic_9:
-# 705 "data/maps/MareS6/scripts.pory"
+# 704 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_LEFT
 	goto MareS6_Script_Torchic_6
 
 MareS6_Script_Torchic_10:
-# 707 "data/maps/MareS6/scripts.pory"
+# 706 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_RIGHT
 	goto MareS6_Script_Torchic_6
 
 
 MareS6_Script_Snubbull::
-# 740 "data/maps/MareS6/scripts.pory"
+# 739 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 742 "data/maps/MareS6/scripts.pory"
+# 741 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_SNUBBULL, Common_Movement_ExclamationMark
-# 743 "data/maps/MareS6/scripts.pory"
+# 742 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 745 "data/maps/MareS6/scripts.pory"
+# 744 "data/maps/MareS6/scripts.pory"
 	playmoncry SPECIES_SNUBBULL, CRY_MODE_ENCOUNTER
-# 746 "data/maps/MareS6/scripts.pory"
+# 745 "data/maps/MareS6/scripts.pory"
 	waitmoncry
-# 748 "data/maps/MareS6/scripts.pory"
+# 747 "data/maps/MareS6/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_SNUBBULL
-# 749 "data/maps/MareS6/scripts.pory"
+# 748 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_MeetsGaze
-# 751 "data/maps/MareS6/scripts.pory"
+# 750 "data/maps/MareS6/scripts.pory"
 	checkitem ITEM_PINA_FRUIT
-# 752 "data/maps/MareS6/scripts.pory"
+# 751 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_Snubbull_1
 	return
 
 MareS6_Script_Snubbull_1:
-# 753 "data/maps/MareS6/scripts.pory"
+# 752 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UsePinaFruit, MSGBOX_YESNO
-# 754 "data/maps/MareS6/scripts.pory"
+# 753 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MareS6_Script_Snubbull_3
-# 761 "data/maps/MareS6/scripts.pory"
+# 760 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PlayerGaveMoly
-# 762 "data/maps/MareS6/scripts.pory"
+# 761 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 764 "data/maps/MareS6/scripts.pory"
+# 763 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_WHITE
-# 766 "data/maps/MareS6/scripts.pory"
+# 765 "data/maps/MareS6/scripts.pory"
 	playse MUS_HEAL
-# 767 "data/maps/MareS6/scripts.pory"
+# 766 "data/maps/MareS6/scripts.pory"
 	waitse
-# 769 "data/maps/MareS6/scripts.pory"
+# 768 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_SNUBBULL
-# 770 "data/maps/MareS6/scripts.pory"
+# 769 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_SNUBBULL, 0, 0
-# 771 "data/maps/MareS6/scripts.pory"
+# 770 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_SNUBBULL, MOVEMENT_TYPE_INVISIBLE
-# 772 "data/maps/MareS6/scripts.pory"
+# 771 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_SNUBBULL
-# 774 "data/maps/MareS6/scripts.pory"
+# 773 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_OLDMAN2
-# 775 "data/maps/MareS6/scripts.pory"
+# 774 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_OLDMAN2, 58, 43
-# 776 "data/maps/MareS6/scripts.pory"
+# 775 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 777 "data/maps/MareS6/scripts.pory"
+# 776 "data/maps/MareS6/scripts.pory"
 	switch VAR_RESULT
-# 778 "data/maps/MareS6/scripts.pory"
+# 777 "data/maps/MareS6/scripts.pory"
 	case DIR_SOUTH, MareS6_Script_Snubbull_8
-# 780 "data/maps/MareS6/scripts.pory"
+# 779 "data/maps/MareS6/scripts.pory"
 	case DIR_EAST, MareS6_Script_Snubbull_9
-# 782 "data/maps/MareS6/scripts.pory"
+# 781 "data/maps/MareS6/scripts.pory"
 	case DIR_WEST, MareS6_Script_Snubbull_10
-# 784 "data/maps/MareS6/scripts.pory"
+# 783 "data/maps/MareS6/scripts.pory"
 	case DIR_NORTH, MareS6_Script_Snubbull_11
 MareS6_Script_Snubbull_11:
-# 786 "data/maps/MareS6/scripts.pory"
+# 785 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_DOWN
 MareS6_Script_Snubbull_6:
-# 788 "data/maps/MareS6/scripts.pory"
+# 787 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_OLDMAN2
-# 790 "data/maps/MareS6/scripts.pory"
+# 789 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_WHITE
-# 792 "data/maps/MareS6/scripts.pory"
+# 791 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_OldMan2Restored
-# 793 "data/maps/MareS6/scripts.pory"
+# 792 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_GenericRestored
-# 794 "data/maps/MareS6/scripts.pory"
+# 793 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 796 "data/maps/MareS6/scripts.pory"
+# 795 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 798 "data/maps/MareS6/scripts.pory"
+# 797 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_OLDMAN2
-# 799 "data/maps/MareS6/scripts.pory"
+# 798 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_OLDMAN2, 0, 0
-# 800 "data/maps/MareS6/scripts.pory"
+# 799 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_LEFT
-# 801 "data/maps/MareS6/scripts.pory"
+# 800 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_OLDMAN2
-# 803 "data/maps/MareS6/scripts.pory"
+# 802 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 805 "data/maps/MareS6/scripts.pory"
+# 804 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_MARES6_RESTORED_SNUBBULLOLDMAN2
-# 807 "data/maps/MareS6/scripts.pory"
+# 806 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_CheckAllRestored
 	end
 
 MareS6_Script_Snubbull_3:
-# 755 "data/maps/MareS6/scripts.pory"
+# 754 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 756 "data/maps/MareS6/scripts.pory"
+# 755 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	end
 
 MareS6_Script_Snubbull_8:
-# 779 "data/maps/MareS6/scripts.pory"
+# 778 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_UP
 	goto MareS6_Script_Snubbull_6
 
 MareS6_Script_Snubbull_9:
-# 781 "data/maps/MareS6/scripts.pory"
+# 780 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_LEFT
 	goto MareS6_Script_Snubbull_6
 
 MareS6_Script_Snubbull_10:
-# 783 "data/maps/MareS6/scripts.pory"
+# 782 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_RIGHT
 	goto MareS6_Script_Snubbull_6
 
 
 MareS6_Script_Poochyena::
-# 816 "data/maps/MareS6/scripts.pory"
+# 815 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 818 "data/maps/MareS6/scripts.pory"
+# 817 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_POOCHYENA, Common_Movement_ExclamationMark
-# 819 "data/maps/MareS6/scripts.pory"
+# 818 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 821 "data/maps/MareS6/scripts.pory"
+# 820 "data/maps/MareS6/scripts.pory"
 	playmoncry SPECIES_POOCHYENA, CRY_MODE_ENCOUNTER
-# 822 "data/maps/MareS6/scripts.pory"
+# 821 "data/maps/MareS6/scripts.pory"
 	waitmoncry
-# 824 "data/maps/MareS6/scripts.pory"
+# 823 "data/maps/MareS6/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_POOCHYENA
-# 825 "data/maps/MareS6/scripts.pory"
+# 824 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_MeetsGaze
-# 827 "data/maps/MareS6/scripts.pory"
+# 826 "data/maps/MareS6/scripts.pory"
 	checkitem ITEM_PINA_FRUIT
-# 828 "data/maps/MareS6/scripts.pory"
+# 827 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_Poochyena_1
 	return
 
 MareS6_Script_Poochyena_1:
-# 829 "data/maps/MareS6/scripts.pory"
+# 828 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UsePinaFruit, MSGBOX_YESNO
-# 830 "data/maps/MareS6/scripts.pory"
+# 829 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MareS6_Script_Poochyena_3
-# 837 "data/maps/MareS6/scripts.pory"
+# 836 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PlayerGaveMoly
-# 838 "data/maps/MareS6/scripts.pory"
+# 837 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 840 "data/maps/MareS6/scripts.pory"
+# 839 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_WHITE
-# 842 "data/maps/MareS6/scripts.pory"
+# 841 "data/maps/MareS6/scripts.pory"
 	playse MUS_HEAL
-# 843 "data/maps/MareS6/scripts.pory"
+# 842 "data/maps/MareS6/scripts.pory"
 	waitse
-# 845 "data/maps/MareS6/scripts.pory"
+# 844 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_POOCHYENA
-# 846 "data/maps/MareS6/scripts.pory"
+# 845 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_POOCHYENA, 0, 0
-# 847 "data/maps/MareS6/scripts.pory"
+# 846 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_POOCHYENA, MOVEMENT_TYPE_INVISIBLE
-# 848 "data/maps/MareS6/scripts.pory"
+# 847 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_POOCHYENA
-# 850 "data/maps/MareS6/scripts.pory"
+# 849 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_HIKER
-# 851 "data/maps/MareS6/scripts.pory"
+# 850 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_HIKER, 59, 45
-# 852 "data/maps/MareS6/scripts.pory"
+# 851 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 853 "data/maps/MareS6/scripts.pory"
+# 852 "data/maps/MareS6/scripts.pory"
 	switch VAR_RESULT
-# 854 "data/maps/MareS6/scripts.pory"
+# 853 "data/maps/MareS6/scripts.pory"
 	case DIR_SOUTH, MareS6_Script_Poochyena_8
-# 856 "data/maps/MareS6/scripts.pory"
+# 855 "data/maps/MareS6/scripts.pory"
 	case DIR_EAST, MareS6_Script_Poochyena_9
-# 858 "data/maps/MareS6/scripts.pory"
+# 857 "data/maps/MareS6/scripts.pory"
 	case DIR_WEST, MareS6_Script_Poochyena_10
-# 860 "data/maps/MareS6/scripts.pory"
+# 859 "data/maps/MareS6/scripts.pory"
 	case DIR_NORTH, MareS6_Script_Poochyena_11
 MareS6_Script_Poochyena_11:
-# 862 "data/maps/MareS6/scripts.pory"
+# 861 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_DOWN
 MareS6_Script_Poochyena_6:
-# 864 "data/maps/MareS6/scripts.pory"
+# 863 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_HIKER
-# 866 "data/maps/MareS6/scripts.pory"
+# 865 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_WHITE
-# 868 "data/maps/MareS6/scripts.pory"
+# 867 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_HikerRestored
-# 869 "data/maps/MareS6/scripts.pory"
+# 868 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_GenericRestored
-# 870 "data/maps/MareS6/scripts.pory"
+# 869 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 872 "data/maps/MareS6/scripts.pory"
+# 871 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 874 "data/maps/MareS6/scripts.pory"
+# 873 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_HIKER
-# 875 "data/maps/MareS6/scripts.pory"
+# 874 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_HIKER, 0, 0
-# 876 "data/maps/MareS6/scripts.pory"
+# 875 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_LEFT
-# 877 "data/maps/MareS6/scripts.pory"
+# 876 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_HIKER
-# 879 "data/maps/MareS6/scripts.pory"
+# 878 "data/maps/MareS6/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 881 "data/maps/MareS6/scripts.pory"
+# 880 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_MARES6_RESTORED_POOCHYENAHIKER
-# 883 "data/maps/MareS6/scripts.pory"
+# 882 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_CheckAllRestored
 	end
 
 MareS6_Script_Poochyena_3:
-# 831 "data/maps/MareS6/scripts.pory"
+# 830 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 832 "data/maps/MareS6/scripts.pory"
+# 831 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	end
 
 MareS6_Script_Poochyena_8:
-# 855 "data/maps/MareS6/scripts.pory"
+# 854 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_UP
 	goto MareS6_Script_Poochyena_6
 
 MareS6_Script_Poochyena_9:
-# 857 "data/maps/MareS6/scripts.pory"
+# 856 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_LEFT
 	goto MareS6_Script_Poochyena_6
 
 MareS6_Script_Poochyena_10:
-# 859 "data/maps/MareS6/scripts.pory"
+# 858 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_RIGHT
 	goto MareS6_Script_Poochyena_6
 
 
 MareS6_Script_CheckAllRestored::
-# 892 "data/maps/MareS6/scripts.pory"
+# 891 "data/maps/MareS6/scripts.pory"
 	goto_if_set FLAG_MARES6_RESTORED_SHINXSAILOR, MareS6_Script_CheckAllRestored_4
 MareS6_Script_CheckAllRestored_1:
 	return
 
 MareS6_Script_CheckAllRestored_2:
-# 899 "data/maps/MareS6/scripts.pory"
+# 898 "data/maps/MareS6/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 12
-# 900 "data/maps/MareS6/scripts.pory"
+# 899 "data/maps/MareS6/scripts.pory"
 	removeitem ITEM_PINA_FRUIT
 	goto MareS6_Script_CheckAllRestored_1
 
 MareS6_Script_CheckAllRestored_3:
-# 894 "data/maps/MareS6/scripts.pory"
+# 893 "data/maps/MareS6/scripts.pory"
 	goto_if_set FLAG_MARES6_RESTORED_TORCHICMAN3, MareS6_Script_CheckAllRestored_8
 	goto MareS6_Script_CheckAllRestored_1
 
 MareS6_Script_CheckAllRestored_4:
-# 893 "data/maps/MareS6/scripts.pory"
+# 892 "data/maps/MareS6/scripts.pory"
 	goto_if_set FLAG_MARES6_RESTORED_TURTWIGCAMPER, MareS6_Script_CheckAllRestored_3
 	goto MareS6_Script_CheckAllRestored_1
 
 MareS6_Script_CheckAllRestored_7:
-# 896 "data/maps/MareS6/scripts.pory"
+# 895 "data/maps/MareS6/scripts.pory"
 	goto_if_set FLAG_MARES6_RESTORED_POOCHYENAHIKER, MareS6_Script_CheckAllRestored_2
 	goto MareS6_Script_CheckAllRestored_1
 
 MareS6_Script_CheckAllRestored_8:
-# 895 "data/maps/MareS6/scripts.pory"
+# 894 "data/maps/MareS6/scripts.pory"
 	goto_if_set FLAG_MARES6_RESTORED_SNUBBULLOLDMAN2, MareS6_Script_CheckAllRestored_7
 	goto MareS6_Script_CheckAllRestored_1
 
 
 MareS6_Script_AfterPenTrigger::
-# 907 "data/maps/MareS6/scripts.pory"
+# 906 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 908 "data/maps/MareS6/scripts.pory"
+# 907 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
+# 909 "data/maps/MareS6/scripts.pory"
+	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight
 # 910 "data/maps/MareS6/scripts.pory"
-	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight
-# 911 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 913 "data/maps/MareS6/scripts.pory"
+# 912 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_FaceDown
-# 914 "data/maps/MareS6/scripts.pory"
+# 913 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-# 915 "data/maps/MareS6/scripts.pory"
+# 914 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 917 "data/maps/MareS6/scripts.pory"
+# 916 "data/maps/MareS6/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 918 "data/maps/MareS6/scripts.pory"
+# 917 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_UlyssesAfterPen
-# 919 "data/maps/MareS6/scripts.pory"
+# 918 "data/maps/MareS6/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 920 "data/maps/MareS6/scripts.pory"
+# 919 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 921 "data/maps/MareS6/scripts.pory"
+# 920 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight
-# 922 "data/maps/MareS6/scripts.pory"
+# 921 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 923 "data/maps/MareS6/scripts.pory"
+# 922 "data/maps/MareS6/scripts.pory"
 	removeobject LOCALID_MARES6_ULYSSES
-# 924 "data/maps/MareS6/scripts.pory"
+# 923 "data/maps/MareS6/scripts.pory"
 	setobjectxyperm LOCALID_MARES6_ULYSSES, 0, 0
-# 925 "data/maps/MareS6/scripts.pory"
+# 924 "data/maps/MareS6/scripts.pory"
 	setobjectmovementtype LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_INVISIBLE
-# 926 "data/maps/MareS6/scripts.pory"
+# 925 "data/maps/MareS6/scripts.pory"
 	addobject LOCALID_MARES6_ULYSSES
-# 927 "data/maps/MareS6/scripts.pory"
+# 926 "data/maps/MareS6/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 13
 	end
 
 
 MareS6_Script_PinaFruitTree::
-# 934 "data/maps/MareS6/scripts.pory"
+# 933 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_TEMP_3
-# 936 "data/maps/MareS6/scripts.pory"
+# 935 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_PinaTree
 	return
 
 
 MareS6_Script_PinaTree::
-# 942 "data/maps/MareS6/scripts.pory"
+# 941 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, CheckHeadbutt
-# 943 "data/maps/MareS6/scripts.pory"
+# 942 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_PinaTree_2
-# 951 "data/maps/MareS6/scripts.pory"
+# 950 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_TreeIsHeadbuttable
 MareS6_Script_PinaTree_1:
-# 953 "data/maps/MareS6/scripts.pory"
+# 952 "data/maps/MareS6/scripts.pory"
 	closemessage
 	end
 
 MareS6_Script_PinaTree_2:
-# 945 "data/maps/MareS6/scripts.pory"
+# 944 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_WantToHeadbutt, MSGBOX_YESNO
-# 946 "data/maps/MareS6/scripts.pory"
+# 945 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_PinaTree_5
 	goto MareS6_Script_PinaTree_1
 
 MareS6_Script_PinaTree_5:
-# 947 "data/maps/MareS6/scripts.pory"
+# 946 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_HeadbuttTree
 	goto MareS6_Script_PinaTree_1
 
 
 MareS6_Script_FruitFan::
-# 959 "data/maps/MareS6/scripts.pory"
+# 958 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 961 "data/maps/MareS6/scripts.pory"
+# 960 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
 	goto_if_lt MareS6_Script_FruitFan_2
-# 965 "data/maps/MareS6/scripts.pory"
+# 964 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
 	goto_if_eq MareS6_Script_FruitFan_3
-# 970 "data/maps/MareS6/scripts.pory"
+# 969 "data/maps/MareS6/scripts.pory"
 	checktrainerflag TRAINER_PINA_FRUIT_FAN
 	goto_if 0, MareS6_Script_FruitFan_7
-# 975 "data/maps/MareS6/scripts.pory"
+# 974 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 13
 	goto_if_lt MareS6_Script_FruitFan_10
-# 978 "data/maps/MareS6/scripts.pory"
+# 977 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PinaFruitFanPost2
 MareS6_Script_FruitFan_1:
-# 982 "data/maps/MareS6/scripts.pory"
+# 981 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 983 "data/maps/MareS6/scripts.pory"
+# 982 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	end
 
 MareS6_Script_FruitFan_2:
-# 962 "data/maps/MareS6/scripts.pory"
+# 961 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_FruitFan1
 	goto MareS6_Script_FruitFan_1
 
 MareS6_Script_FruitFan_3:
-# 966 "data/maps/MareS6/scripts.pory"
+# 965 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_FruitFan2
 	goto MareS6_Script_FruitFan_1
 
 MareS6_Script_FruitFan_7:
-# 971 "data/maps/MareS6/scripts.pory"
+# 970 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PinaFruitFanPre
-# 972 "data/maps/MareS6/scripts.pory"
+# 971 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 973 "data/maps/MareS6/scripts.pory"
+# 972 "data/maps/MareS6/scripts.pory"
 	trainerbattle_no_intro TRAINER_PINA_FRUIT_FAN, MareS6_Text_PinaFruitFanLost
 	goto MareS6_Script_FruitFan_1
 
 MareS6_Script_FruitFan_10:
-# 976 "data/maps/MareS6/scripts.pory"
+# 975 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PinaFruitFanPost
 	goto MareS6_Script_FruitFan_1
 
 
 MareS6_Script_HeadbuttTree::
-# 990 "data/maps/MareS6/scripts.pory"
+# 989 "data/maps/MareS6/scripts.pory"
 	bufferpartymonnick STR_VAR_1, VAR_0x8004
-# 991 "data/maps/MareS6/scripts.pory"
+# 990 "data/maps/MareS6/scripts.pory"
 	buffermovename STR_VAR_2, MOVE_HEADBUTT
-# 993 "data/maps/MareS6/scripts.pory"
+# 992 "data/maps/MareS6/scripts.pory"
 	msgbox Text_MonUsedFieldMove
-# 994 "data/maps/MareS6/scripts.pory"
+# 993 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 996 "data/maps/MareS6/scripts.pory"
+# 995 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, IsMonFollower
-# 998 "data/maps/MareS6/scripts.pory"
+# 997 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MareS6_Script_HeadbuttTree_2
 MareS6_Script_HeadbuttTree_1:
-# 1005 "data/maps/MareS6/scripts.pory"
+# 1004 "data/maps/MareS6/scripts.pory"
 	playse SE_M_HEADBUTT
-# 1006 "data/maps/MareS6/scripts.pory"
+# 1005 "data/maps/MareS6/scripts.pory"
 	waitse
-# 1008 "data/maps/MareS6/scripts.pory"
+# 1007 "data/maps/MareS6/scripts.pory"
 	goto_if_set FLAG_TEMP_3, MareS6_Script_HeadbuttTree_7
 MareS6_Script_HeadbuttTree_6:
-# 1012 "data/maps/MareS6/scripts.pory"
+# 1011 "data/maps/MareS6/scripts.pory"
 	setwildbattle SPECIES_EXEGGCUTE, 7
-# 1013 "data/maps/MareS6/scripts.pory"
+# 1012 "data/maps/MareS6/scripts.pory"
 	dowildbattle
 MareS6_Script_HeadbuttTree_4:
-# 1016 "data/maps/MareS6/scripts.pory"
+# 1015 "data/maps/MareS6/scripts.pory"
 	clearflag FLAG_TEMP_3
-# 1018 "data/maps/MareS6/scripts.pory"
+# 1017 "data/maps/MareS6/scripts.pory"
 	releaseall
 	end
 
 MareS6_Script_HeadbuttTree_2:
-# 999 "data/maps/MareS6/scripts.pory"
+# 998 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1000 "data/maps/MareS6/scripts.pory"
+# 999 "data/maps/MareS6/scripts.pory"
 	call EventScript_FollowerFieldMove
-# 1001 "data/maps/MareS6/scripts.pory"
+# 1000 "data/maps/MareS6/scripts.pory"
 	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1002 "data/maps/MareS6/scripts.pory"
+# 1001 "data/maps/MareS6/scripts.pory"
 	updatefollowingmon
 	goto MareS6_Script_HeadbuttTree_1
 
 MareS6_Script_HeadbuttTree_5:
-# 1009 "data/maps/MareS6/scripts.pory"
+# 1008 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_PinaFruit
 	goto MareS6_Script_HeadbuttTree_4
 
 MareS6_Script_HeadbuttTree_7:
-# 1008 "data/maps/MareS6/scripts.pory"
+# 1007 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
 	goto_if_eq MareS6_Script_HeadbuttTree_5
 	goto MareS6_Script_HeadbuttTree_6
 
 
 MareS6_Script_PinaFruit::
-# 1025 "data/maps/MareS6/scripts.pory"
+# 1024 "data/maps/MareS6/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 1026 "data/maps/MareS6/scripts.pory"
+# 1025 "data/maps/MareS6/scripts.pory"
 	waitmovement 0
-# 1028 "data/maps/MareS6/scripts.pory"
+# 1027 "data/maps/MareS6/scripts.pory"
 	playse SE_FALL
-# 1029 "data/maps/MareS6/scripts.pory"
+# 1028 "data/maps/MareS6/scripts.pory"
 	waitse
-# 1031 "data/maps/MareS6/scripts.pory"
+# 1030 "data/maps/MareS6/scripts.pory"
 	setmetatile 16, 60, METATILE_BigIsland_SandPalmNoFruitL, FALSE
-# 1032 "data/maps/MareS6/scripts.pory"
+# 1031 "data/maps/MareS6/scripts.pory"
 	setmetatile 17, 60, METATILE_BigIsland_SandPalmNoFruitC, FALSE
-# 1033 "data/maps/MareS6/scripts.pory"
+# 1032 "data/maps/MareS6/scripts.pory"
 	setmetatile 18, 60, METATILE_BigIsland_SandPalmNoFruitR, FALSE
-# 1034 "data/maps/MareS6/scripts.pory"
+# 1033 "data/maps/MareS6/scripts.pory"
 	special DrawWholeMapView
-# 1036 "data/maps/MareS6/scripts.pory"
+# 1035 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PinaFruitFell
-# 1037 "data/maps/MareS6/scripts.pory"
+# 1036 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 1039 "data/maps/MareS6/scripts.pory"
+# 1038 "data/maps/MareS6/scripts.pory"
 	giveitem ITEM_PINA_FRUIT
-# 1040 "data/maps/MareS6/scripts.pory"
+# 1039 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 1042 "data/maps/MareS6/scripts.pory"
+# 1041 "data/maps/MareS6/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 9
 	return
 
 
 MareS6_Script_Sailor::
-# 1048 "data/maps/MareS6/scripts.pory"
+# 1047 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 1049 "data/maps/MareS6/scripts.pory"
+# 1048 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_SailorPostRestored
-# 1050 "data/maps/MareS6/scripts.pory"
+# 1049 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 1051 "data/maps/MareS6/scripts.pory"
+# 1050 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	return
 
 
 MareS6_Script_Camper::
-# 1055 "data/maps/MareS6/scripts.pory"
+# 1054 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 1056 "data/maps/MareS6/scripts.pory"
+# 1055 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_CamperPostRestored
-# 1057 "data/maps/MareS6/scripts.pory"
+# 1056 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 1058 "data/maps/MareS6/scripts.pory"
+# 1057 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	return
 
 
 MareS6_Script_Hiker::
-# 1062 "data/maps/MareS6/scripts.pory"
+# 1061 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 1063 "data/maps/MareS6/scripts.pory"
+# 1062 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_HikerPostRestored
-# 1064 "data/maps/MareS6/scripts.pory"
+# 1063 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 1065 "data/maps/MareS6/scripts.pory"
+# 1064 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	return
 
@@ -1698,14 +1696,14 @@ MareS6_Script_UlyssesEtFishermanScene_Text_0:
 	.string "ERROR, \nPlayerFacingDirection OOB$"
 
 MareS6_Text_FishermanBeforeUlysses::
-# 1069 "data/maps/MareS6/scripts.pory"
+# 1068 "data/maps/MareS6/scripts.pory"
 	.string "There's been some strange happenings\n"
 	.string "on our sleepy little island. People have\l"
 	.string "been going missing. I'm doing my best to\l"
 	.string "stay out of it and focus on my fishing.$"
 
 MareS6_Text_FishermanDuringUlysses::
-# 1073 "data/maps/MareS6/scripts.pory"
+# 1072 "data/maps/MareS6/scripts.pory"
 	.string "Well, I'll tell you what, that Ulysses\n"
 	.string "character sure is a confident walker\l"
 	.string "and a smooth talker, but I don't think\l"
@@ -1714,13 +1712,13 @@ MareS6_Text_FishermanDuringUlysses::
 	.string "staying here with me and the fishes.$"
 
 MareS6_Text_FishermanAfterUlysses::
-# 1077 "data/maps/MareS6/scripts.pory"
+# 1076 "data/maps/MareS6/scripts.pory"
 	.string "This is my only joy in life, out here just\n"
 	.string "me and the sea. I keep my rod clean and\l"
 	.string "stay out of trouble, that's all I do.$"
 
 MareS6_Text_FishermanExposition::
-# 1081 "data/maps/MareS6/scripts.pory"
+# 1080 "data/maps/MareS6/scripts.pory"
 	.string "Now losing people is an unfortunate\n"
 	.string "part of life out here on Isla Pina, but\l"
 	.string "nothing like this. We must have lost\l"
@@ -1733,12 +1731,12 @@ MareS6_Text_FishermanExposition::
 	.string "do about it.$"
 
 MareS6_Text_UlyssesResponseToFisherman::
-# 1085 "data/maps/MareS6/scripts.pory"
+# 1084 "data/maps/MareS6/scripts.pory"
 	.string "That's terrible! Someone must do\n"
 	.string "something!$"
 
 MareS6_Text_UlyssesCallToAction::
-# 1089 "data/maps/MareS6/scripts.pory"
+# 1088 "data/maps/MareS6/scripts.pory"
 	.string "My goodness, {PLAYER}, am I glad to\n"
 	.string "see you! I washed ashore and these\l"
 	.string "good people of the island gave me food,\l"
@@ -1756,13 +1754,13 @@ MareS6_Text_UlyssesCallToAction::
 	.string "I'll meet you there!$"
 
 MareS6_Text_UlyssesJungle::
-# 1105 "data/maps/MareS6/scripts.pory"
+# 1104 "data/maps/MareS6/scripts.pory"
 	.string "This jungle is more dangerous than I\n"
 	.string "had expected, but we cannot turn back.\l"
 	.string "Let's muscle our way to the witch's lair!$"
 
 MareS6_Text_UlyssesAntePortam::
-# 1111 "data/maps/MareS6/scripts.pory"
+# 1110 "data/maps/MareS6/scripts.pory"
 	.string "This must be it, the evil witch's lair. Be\n"
 	.string "cautious, we don't know what kind of\l"
 	.string "tricks she has waiting for us once we're\l"
@@ -1770,43 +1768,43 @@ MareS6_Text_UlyssesAntePortam::
 	.string "save the town!$"
 
 MareS6_Text_MeetsGaze::
-# 1118 "data/maps/MareS6/scripts.pory"
+# 1117 "data/maps/MareS6/scripts.pory"
 	.string "{STR_VAR_1} meets your gaze with\n"
 	.string "quiet understanding.$"
 
 MareS6_Text_UsePinaFruit::
-# 1122 "data/maps/MareS6/scripts.pory"
+# 1121 "data/maps/MareS6/scripts.pory"
 	.string "Would you like to give {STR_VAR_1}\n"
 	.string "some of the Piña fruit?$"
 
 MareS6_Text_WantToHeadbutt::
-# 1126 "data/maps/MareS6/scripts.pory"
+# 1125 "data/maps/MareS6/scripts.pory"
 	.string "It's a large, formidable tree. Would you\n"
 	.string "like to use Headbutt?$"
 
 MareS6_Text_TreeIsHeadbuttable::
-# 1130 "data/maps/MareS6/scripts.pory"
+# 1129 "data/maps/MareS6/scripts.pory"
 	.string "There's a large, formidable tree that\n"
 	.string "looks like it can be headbutted!$"
 
 MareS6_Text_PinaFruitFell::
-# 1134 "data/maps/MareS6/scripts.pory"
+# 1133 "data/maps/MareS6/scripts.pory"
 	.string "The fruit fell down from the tree!$"
 
 MareS6_Text_FruitFan1::
-# 1138 "data/maps/MareS6/scripts.pory"
+# 1137 "data/maps/MareS6/scripts.pory"
 	.string "This piña tree is preparing to bloom!\n"
 	.string "How do I know? I can talk to the trees.$"
 
 MareS6_Text_FruitFan2::
-# 1143 "data/maps/MareS6/scripts.pory"
+# 1142 "data/maps/MareS6/scripts.pory"
 	.string "The piña tree has borne fruit! Do you\n"
 	.string "know how rare that is? Sometimes not\l"
 	.string "even one tree on the whole island will\l"
 	.string "fruit all year!$"
 
 MareS6_Text_PinaFruitFanPre::
-# 1149 "data/maps/MareS6/scripts.pory"
+# 1148 "data/maps/MareS6/scripts.pory"
 	.string "The piña fruit! What have you done with\n"
 	.string "it? That should belong to the men and\l"
 	.string "women of the island in common, not for\l"
@@ -1814,66 +1812,66 @@ MareS6_Text_PinaFruitFanPre::
 	.string "for this!$"
 
 MareS6_Text_PinaFruitFanLost::
-# 1156 "data/maps/MareS6/scripts.pory"
+# 1155 "data/maps/MareS6/scripts.pory"
 	.string "You are a villain and you are a thief.$"
 
 MareS6_Text_PinaFruitFanPost::
-# 1160 "data/maps/MareS6/scripts.pory"
+# 1159 "data/maps/MareS6/scripts.pory"
 	.string "Well, now the piña fruit is yours. I hope\n"
 	.string "you at least put that rare fruit to\l"
 	.string "good use.$"
 
 MareS6_Text_PinaFruitFanPost2::
-# 1165 "data/maps/MareS6/scripts.pory"
+# 1164 "data/maps/MareS6/scripts.pory"
 	.string "Another fruit will grow another day, and\n"
 	.string "I will make sure that no one steals it.$"
 
 MareS6_Text_PlayerGaveMoly::
-# 1170 "data/maps/MareS6/scripts.pory"
+# 1169 "data/maps/MareS6/scripts.pory"
 	.string "{PLAYER} gave {STR_VAR_1} some of\n"
 	.string "the piña fruit.$"
 
 MareS6_Text_SailorRestored::
-# 1174 "data/maps/MareS6/scripts.pory"
+# 1173 "data/maps/MareS6/scripts.pory"
 	.string "What terrible dreams I've suffered of\n"
 	.string "late! I dreamt my ship had crashed and I\l"
 	.string "had washed ashore upon some cursed\l"
 	.string "island of Shinx.$"
 
 MareS6_Text_CamperRestored::
-# 1180 "data/maps/MareS6/scripts.pory"
+# 1179 "data/maps/MareS6/scripts.pory"
 	.string "All the merit badges I earned could not\n"
 	.string "Save me from Circe's curse. I'm in your\l"
 	.string "debt.$"
 
 MareS6_Text_Man3Restored::
-# 1185 "data/maps/MareS6/scripts.pory"
+# 1184 "data/maps/MareS6/scripts.pory"
 	.string "We came to save the town from Circe but\n"
 	.string "in the end we ourselves needed saving.$"
 
 MareS6_Text_OldMan2Restored::
-# 1190 "data/maps/MareS6/scripts.pory"
+# 1189 "data/maps/MareS6/scripts.pory"
 	.string "I've lived a long time. Never in my days\n"
 	.string "have I seen people turned to Pokemon.$"
 
 MareS6_Text_HikerRestored::
-# 1195 "data/maps/MareS6/scripts.pory"
+# 1194 "data/maps/MareS6/scripts.pory"
 	.string "It feels such a relief to be brought\n"
 	.string "back into my old body again. I feared\l"
 	.string "I'd be stuck as a Pokemon for good!$"
 
 MareS6_Text_GenericRestored::
-# 1201 "data/maps/MareS6/scripts.pory"
+# 1200 "data/maps/MareS6/scripts.pory"
 	.string "Thank you for saving me. I'm heading\n"
 	.string "home!$"
 
 MareS6_Text_UlyssesDuringPen::
-# 1205 "data/maps/MareS6/scripts.pory"
+# 1204 "data/maps/MareS6/scripts.pory"
 	.string "Hurry {PLAYER}! Save them with the\n"
 	.string "piña fruit.$"
 
 MareS6_Text_UlyssesAfterPen::
-# 1209 "data/maps/MareS6/scripts.pory"
+# 1208 "data/maps/MareS6/scripts.pory"
 	.string "We did it {PLAYER}! We saved the\n"
 	.string "townspeople. Now finally we can depart\l"
 	.string "this place, however, even since being\l"
@@ -1889,14 +1887,14 @@ MareS6_Text_UlyssesAfterPen::
 	.string "suitable sacrifice.$"
 
 MareS6_Text_SailorPostRestored::
-# 1224 "data/maps/MareS6/scripts.pory"
+# 1223 "data/maps/MareS6/scripts.pory"
 	.string "It feels so calming to gaze at the sea.\n"
 	.string "I had feared I would never get the\l"
 	.string "chance to see her again while I had\l"
 	.string "been cursed.$"
 
 MareS6_Text_CamperPostRestored::
-# 1230 "data/maps/MareS6/scripts.pory"
+# 1229 "data/maps/MareS6/scripts.pory"
 	.string "I'm glad to be back home. I try to tell\n"
 	.string "myself that it was all just a bad dream\l"
 	.string "but I have lost that rash, impulsive\l"
@@ -1904,21 +1902,21 @@ MareS6_Text_CamperPostRestored::
 	.string "fear I'll be hesitant if danger returns.$"
 
 MareS6_Text_HikerPostRestored::
-# 1238 "data/maps/MareS6/scripts.pory"
+# 1237 "data/maps/MareS6/scripts.pory"
 	.string "They say the air gets thinner as you\n"
 	.string "climb. That may be true, but one thing is\l"
 	.string "for sure. Climbing brings peace of mind,\l"
 	.string "and heals all hurts.$"
 
 MareS6_Text_UlyssesShadesIntro1::
-# 1244 "data/maps/MareS6/scripts.pory"
+# 1243 "data/maps/MareS6/scripts.pory"
 	.string "The western sea, the boundary between\n"
 	.string "this living world of men, and the\l"
 	.string "unknown, undying lands where the sun\l"
 	.string "never sets.$"
 
 MareS6_Text_UlyssesShadesIntro2::
-# 1250 "data/maps/MareS6/scripts.pory"
+# 1249 "data/maps/MareS6/scripts.pory"
 	.string "I fear my passage to those western\n"
 	.string "shores we all must reach, after our\l"
 	.string "lives are done, will be hindered by my\l"
@@ -1927,17 +1925,17 @@ MareS6_Text_UlyssesShadesIntro2::
 	.string "with sacrifice.$"
 
 MareS6_Text_UlyssesShadesIntro3::
-# 1258 "data/maps/MareS6/scripts.pory"
+# 1257 "data/maps/MareS6/scripts.pory"
 	.string "Oh, {PLAYER}! I'm glad you didn't\n"
 	.string "forget me.$"
 
 MareS6_Text_UlyssesBringSacrifice::
-# 1262 "data/maps/MareS6/scripts.pory"
+# 1261 "data/maps/MareS6/scripts.pory"
 	.string "Did you bring me something to\n"
 	.string "sacrifice?$"
 
 MareS6_Text_NoToSacrifice::
-# 1266 "data/maps/MareS6/scripts.pory"
+# 1265 "data/maps/MareS6/scripts.pory"
 	.string "You must bring me a Pokemon to throw\n"
 	.string "into the ocean to please the powers who\l"
 	.string "guard the way to the undying lands from\l"
@@ -1947,24 +1945,24 @@ MareS6_Text_NoToSacrifice::
 	.string "sacrificed.$"
 
 MareS6_Text_SacrificeNotValid::
-# 1275 "data/maps/MareS6/scripts.pory"
+# 1274 "data/maps/MareS6/scripts.pory"
 	.string "I'm sorry, {PLAYER}, but\n"
 	.string "{STR_VAR_1} is not a proper Pokemon\l"
 	.string "to sacrifice.$"
 
 MareS6_Text_GiveSacrifice::
-# 1279 "data/maps/MareS6/scripts.pory"
+# 1278 "data/maps/MareS6/scripts.pory"
 	.string "{PLAYER} gave {STR_VAR_1} to\n"
 	.string "Ulysses!\p"
 	.string "Bye Bye {STR_VAR_1}!$"
 
 MareS6_Text_UlyssesSacrifice1::
-# 1283 "data/maps/MareS6/scripts.pory"
+# 1282 "data/maps/MareS6/scripts.pory"
 	.string "Yes, perfect, {STR_VAR_1} will make\n"
 	.string "an excellent sacrifice.$"
 
 MareS6_Text_UlyssesSacrifice2::
-# 1287 "data/maps/MareS6/scripts.pory"
+# 1286 "data/maps/MareS6/scripts.pory"
 	.string "Now hear me, you powers beyond the sea,\n"
 	.string "Ulysses, ever your faithful servant,\l"
 	.string "have brought you {STR_VAR_1} and\l"
@@ -1977,7 +1975,7 @@ MareS6_Text_UlyssesSacrifice2::
 	.string "the undying lands.$"
 
 MareS6_Text_UlyssesSacrifice3::
-# 1298 "data/maps/MareS6/scripts.pory"
+# 1297 "data/maps/MareS6/scripts.pory"
 	.string "It is done, let us be gone from this\n"
 	.string "place. I am quite ready to set sail again\l"
 	.string "and, at long last, arrive at Nestor's\l"

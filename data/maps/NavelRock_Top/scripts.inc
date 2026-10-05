@@ -51,12 +51,7 @@ NavelRock_Top_EventScript_HoOh::
 	special RemoveCameraObject
 	seteventmon SPECIES_HO_OH, 70
 	special BattleSetup_StartLegendaryBattle
-<<<<<<< HEAD
-	waitstate
-@@	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-=======
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
->>>>>>> b669d9ccf9c148070b99eba11cd65f6071be0741
 	setvar VAR_LAST_TALKED, LOCALID_NAVEL_ROCK_HO_OH
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Top_EventScript_DefeatedHoOh

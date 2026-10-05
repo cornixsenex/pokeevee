@@ -127,66 +127,64 @@ Hospital_Elevator_EventScript_ChooseFloor::
 # 76 "data/maps/Hospital_Elevator/scripts.pory"
 	special ShowScrollableMultichoice
 # 77 "data/maps/Hospital_Elevator/scripts.pory"
-	waitstate
-# 78 "data/maps/Hospital_Elevator/scripts.pory"
 	switch VAR_RESULT
-# 79 "data/maps/Hospital_Elevator/scripts.pory"
+# 78 "data/maps/Hospital_Elevator/scripts.pory"
 	case 0, Hospital_Elevator_EventScript_ChooseFloor_3
-# 81 "data/maps/Hospital_Elevator/scripts.pory"
+# 80 "data/maps/Hospital_Elevator/scripts.pory"
 	case 1, Hospital_Elevator_EventScript_ChooseFloor_4
-# 83 "data/maps/Hospital_Elevator/scripts.pory"
+# 82 "data/maps/Hospital_Elevator/scripts.pory"
 	case 2, Hospital_Elevator_EventScript_ChooseFloor_5
-# 85 "data/maps/Hospital_Elevator/scripts.pory"
+# 84 "data/maps/Hospital_Elevator/scripts.pory"
 	case 3, Hospital_Elevator_EventScript_ChooseFloor_6
-# 87 "data/maps/Hospital_Elevator/scripts.pory"
+# 86 "data/maps/Hospital_Elevator/scripts.pory"
 	case 4, Hospital_Elevator_EventScript_ChooseFloor_7
-# 89 "data/maps/Hospital_Elevator/scripts.pory"
+# 88 "data/maps/Hospital_Elevator/scripts.pory"
 	case 5, Hospital_Elevator_EventScript_ChooseFloor_8
-# 91 "data/maps/Hospital_Elevator/scripts.pory"
+# 90 "data/maps/Hospital_Elevator/scripts.pory"
 	case 6, Hospital_Elevator_EventScript_ChooseFloor_9
 Hospital_Elevator_EventScript_ChooseFloor_1:
-# 94 "data/maps/Hospital_Elevator/scripts.pory"
+# 93 "data/maps/Hospital_Elevator/scripts.pory"
 	call Hospital_Elevator_EventScript_SetFloorWarp
-# 95 "data/maps/Hospital_Elevator/scripts.pory"
+# 94 "data/maps/Hospital_Elevator/scripts.pory"
 	release
 	end
 
 Hospital_Elevator_EventScript_ChooseFloor_3:
-# 80 "data/maps/Hospital_Elevator/scripts.pory"
+# 79 "data/maps/Hospital_Elevator/scripts.pory"
 	setvar VAR_HOSPITAL_FLOOR, 1
 	goto Hospital_Elevator_EventScript_ChooseFloor_1
 
 Hospital_Elevator_EventScript_ChooseFloor_4:
-# 82 "data/maps/Hospital_Elevator/scripts.pory"
+# 81 "data/maps/Hospital_Elevator/scripts.pory"
 	setvar VAR_HOSPITAL_FLOOR, 2
 	goto Hospital_Elevator_EventScript_ChooseFloor_1
 
 Hospital_Elevator_EventScript_ChooseFloor_5:
-# 84 "data/maps/Hospital_Elevator/scripts.pory"
+# 83 "data/maps/Hospital_Elevator/scripts.pory"
 	setvar VAR_HOSPITAL_FLOOR, 3
 	goto Hospital_Elevator_EventScript_ChooseFloor_1
 
 Hospital_Elevator_EventScript_ChooseFloor_6:
-# 86 "data/maps/Hospital_Elevator/scripts.pory"
+# 85 "data/maps/Hospital_Elevator/scripts.pory"
 	setvar VAR_HOSPITAL_FLOOR, 4
 	goto Hospital_Elevator_EventScript_ChooseFloor_1
 
 Hospital_Elevator_EventScript_ChooseFloor_7:
-# 88 "data/maps/Hospital_Elevator/scripts.pory"
+# 87 "data/maps/Hospital_Elevator/scripts.pory"
 	setvar VAR_HOSPITAL_FLOOR, 5
 	goto Hospital_Elevator_EventScript_ChooseFloor_1
 
 Hospital_Elevator_EventScript_ChooseFloor_8:
-# 90 "data/maps/Hospital_Elevator/scripts.pory"
+# 89 "data/maps/Hospital_Elevator/scripts.pory"
 	setvar VAR_HOSPITAL_FLOOR, 6
 	goto Hospital_Elevator_EventScript_ChooseFloor_1
 
 Hospital_Elevator_EventScript_ChooseFloor_9:
-# 92 "data/maps/Hospital_Elevator/scripts.pory"
+# 91 "data/maps/Hospital_Elevator/scripts.pory"
 	setvar VAR_HOSPITAL_FLOOR, 7
 	goto Hospital_Elevator_EventScript_ChooseFloor_1
 
 
 Hospital_Elevator_Text_ChooseFloor::
-# 100 "data/maps/Hospital_Elevator/scripts.pory"
+# 99 "data/maps/Hospital_Elevator/scripts.pory"
 	.string "Which floor would you like to go to?$"

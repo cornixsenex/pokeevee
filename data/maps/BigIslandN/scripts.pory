@@ -905,7 +905,6 @@ script BigIslandN_Script_JasonAtColchisCave {
 			msgbox (BigIslandN_Text_ReleaseSpearow, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				special (ChoosePartyMon)
-				waitstate
 				if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 					msgbox (BigIslandN_Text_DeclineReleaseSpearow, MSGBOX_DEFAULT)
 					closemessage
