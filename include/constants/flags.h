@@ -15,20 +15,6 @@
 #define FLAG_TEMP_2      (TEMP_FLAGS_START + 0x2)
 #define FLAG_TEMP_3      (TEMP_FLAGS_START + 0x3)
 #define FLAG_TEMP_4      (TEMP_FLAGS_START + 0x4)
-<<<<<<< HEAD
-#define FLAG_TEMP_5      (TEMP_FLAGS_START + 0x5)  
-#define FLAG_TEMP_6      (TEMP_FLAGS_START + 0x6)  
-#define FLAG_TEMP_7      (TEMP_FLAGS_START + 0x7)  
-#define FLAG_TEMP_8      (TEMP_FLAGS_START + 0x8)  
-#define FLAG_TEMP_9      (TEMP_FLAGS_START + 0x9)  
-#define FLAG_TEMP_A      (TEMP_FLAGS_START + 0xA)  
-#define FLAG_TEMP_B      (TEMP_FLAGS_START + 0xB)  
-#define FLAG_TEMP_C      (TEMP_FLAGS_START + 0xC)  
-#define FLAG_TEMP_D      (TEMP_FLAGS_START + 0xD)  
-#define FLAG_TEMP_E      (TEMP_FLAGS_START + 0xE)  
-#define FLAG_TEMP_F      (TEMP_FLAGS_START + 0xF)  
-#define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10) 
-=======
 #define FLAG_TEMP_5      (TEMP_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_TEMP_6      (TEMP_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_TEMP_7      (TEMP_FLAGS_START + 0x7)  // Unused Flag
@@ -41,7 +27,6 @@
 #define FLAG_TEMP_E      (TEMP_FLAGS_START + 0xE)  // When set, follower Pokémon won't be spawned
 #define FLAG_TEMP_F      (TEMP_FLAGS_START + 0xF)  // Unused Flag
 #define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10) // Unused Flag
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 #define FLAG_TEMP_11     (TEMP_FLAGS_START + 0x11)
 #define FLAG_TEMP_12     (TEMP_FLAGS_START + 0x12)
 #define FLAG_TEMP_13     (TEMP_FLAGS_START + 0x13)
@@ -174,7 +159,6 @@
 #define FLAG_PHILOSOPHY_INTRO                    0x7D  
 #define FLAG_LITERATURE_INTRO                    0x7E  
 
-<<<<<<< HEAD
 #define FLAG_OPEN_CLASS_GEOLOGY              0x7F
 #define FLAG_OPEN_CLASS_BIOLOGY              0x80 
 #define FLAG_OPEN_CLASS_CHEMISTRY            0x81
@@ -195,22 +179,6 @@
 #define FLAG_OPEN_CLASS_POETRY               0x90
 #define FLAG_OPEN_CLASS_RHETORIC             0x91
 #define FLAG_OPEN_CLASS_GYM                  0x92
-=======
-#define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
-#define FLAG_RECEIVED_HM_STRENGTH            0x6A
-#define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
-#define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player can't white out from poison before receiving Go Goggles
-#define FLAG_RECEIVED_HM_FLASH               0x6D
-#define FLAG_RECEIVED_HM_FLY                 0x6E
-#define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
-#define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
-#define FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE 0x71 // Unused Flag. Used in R/S to indicate whether player defeated or caught Groudon/Kyogre in Cave of Origin.
-#define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
-#define FLAG_RECEIVED_METEORITE              0x73
-#define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
-#define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
-#define FLAG_MET_HIDDEN_POWER_GIVER          0x76
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 
 #define FLAG_PHOENIX_PARTY                   0x93
 #define FLAG_PLEDGE_HAS_KEG                  0x94
