@@ -120,15 +120,7 @@ extern const union AnimCmd *const sAnimTable_Following[];
 extern const union AnimCmd *const sAnimTable_Following_Asym[];
 extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
-//These two for Dynamic Palettes
-extern const u16 *const gBerryTreeObjectEventGraphicsIdTablePointers[];
-extern const u8 *const gBerryTreePaletteSlotTablePointers[];
-
-<<<<<<< HEAD
-extern const struct SpriteFrameImage *const gBerryTreePicTablePointers[];
-=======
 extern const struct SpriteFrameImage gPicTable_PechaBerryTree[];
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 
 extern const struct SpritePalette gSpritePalette_GeneralFieldEffect0;
 extern const struct SpritePalette gSpritePalette_GeneralFieldEffect1;
@@ -200,18 +192,14 @@ u8 GetWalkInPlaceFastMovementAction(u32);
 u8 GetWalkInPlaceNormalMovementAction(u32);
 u8 GetWalkInPlaceSlowMovementAction(u32);
 enum Collision GetCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction dir);
-<<<<<<< HEAD
 enum Collision GetCollisionInDirection(struct ObjectEvent *objectEvent, enum Direction direction); // Cornix - in header for aedes terra puzzle
-=======
 bool8 IsMetatileDirectionallyImpassable(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction direction);
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 u32 GetObjectObjectCollidesWith(struct ObjectEvent *objectEvent, s16 x, s16 y, bool32 addCoords);
 void MoveCoords(enum Direction direction, s16 *x, s16 *y);
 bool8 ObjectEventIsHeldMovementActive(struct ObjectEvent *objectEvent);
 u8 ObjectEventClearHeldMovementIfFinished(struct ObjectEvent *objectEvent);
 u8 GetObjectEventIdByPosition(u16 x, u16 y, u8 elevation);
 void SetTrainerMovementType(struct ObjectEvent *objectEvent, u8 movementType);
-u8 GetCollisionInDirection(struct ObjectEvent *, enum Direction);
 u8 GetTrainerFacingDirectionMovementType(enum Direction direction);
 const u8 *GetObjectEventScriptPointerByObjectEventId(u8 objectEventId);
 u8 GetCollisionFlagsAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction direction);

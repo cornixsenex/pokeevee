@@ -42,7 +42,6 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
-<<<<<<< HEAD
 
 === PARTNER_LEAF ===
 Name: {B_LEAF_NAME}
@@ -50,7 +49,6 @@ Class: Leaf
 Pic: Leaf
 Gender: Female
 Music: Female
-Back Pic: Leaf
 AI: Basic Trainer
 
 Igglybuff
@@ -90,7 +88,6 @@ Class: Rival
 Pic: Steven
 Gender: Male
 Music: Male
-Back Pic: Steven
 AI: Basic Trainer
 
 Metang
@@ -123,16 +120,3 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Solar Beam
 - Dragon Claw
 
-=== PARTNER_DUMMY ===
-Name:
-Class: Pkmn Trainer 1
-Pic: Brendan
-Gender: Male
-Music: Male
-Back Pic: Brendan
-Party Size: 0
-
-Wynaut
-
-=======
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4

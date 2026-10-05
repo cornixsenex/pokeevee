@@ -614,14 +614,9 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         SetMsgSignPostAndVarFacing(direction);
         return Common_EventScript_ShowPokemonCenterSign;
     }
-<<<<<<< HEAD
-    if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
-        return EventScript_UseRockClimb; 
-        //return EventScript_DoRockClimb; // Cornix Custom is Climbing Gloves (HM_DIVE idk)
-=======
     if (IsFieldMoveUnlocked(FIELD_MOVE_ROCK_CLIMB) && MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
         return EventScript_UseRockClimb;
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
+        //return EventScript_DoRockClimb; // Cornix Custom is Climbing Gloves (HM_DIVE idk)
 
     elevation = position->elevation;
     if (elevation == MapGridGetElevationAt(position->x, position->y))

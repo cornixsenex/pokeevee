@@ -516,28 +516,14 @@ const u8 gText_Yes[] = _("YES");
 const u8 gText_No[] = _("NO");
 const u8 gText_Lv50[] = _("LV. 50");
 const u8 gText_OpenLevel[] = _("OPEN LEVEL");
-<<<<<<< HEAD
-const u8 gText_FreshWaterAndPrice[] = _("FRESH WATER{CLEAR_TO 0x48}¥200");
-const u8 gText_SodaPopAndPrice[] = _("SODA POP{CLEAR_TO 0x48}¥300");
-const u8 gText_LemonadeAndPrice[] = _("LEMONADE{CLEAR_TO 0x48}¥350");
-const u8 gText_HowToRide[] = _("HOW TO RIDE");
-const u8 gText_HowToTurn[] = _("HOW TO TURN");
-const u8 gText_SandySlopes[] = _("SANDY SLOPES");
-const u8 gText_Wheelies[] = _("WHEELIES");
-const u8 gText_BunnyHops[] = _("BUNNY-HOPS");
-const u8 gText_Jump[] = _("JUMP");
-const u8 gText_Satisfied[] = _("Satisfied");
-const u8 gText_Dissatisfied[] = _("Dissatisfied");
-const u8 gText_DeepSeaTooth[] = _("DEEPSEATOOTH");
-const u8 gText_DeepSeaScale[] = _("DEEPSEASCALE");
 
-//CITYCLARA_CHURCH_CHOOSE_STONE
+// CITYCLARA_CHURCH_CHOOSE_STONE
 const u8 gText_StoneChooseFire[] = _("FIRE STONE");
 const u8 gText_StoneChooseWater[] = _("WATER STONE");
 const u8 gText_StoneChooseLeaf[] = _("LEAF STONE");
 const u8 gText_StoneChooseNone[] = _("NONE STONE");
 
-
+// Floors
 const u8 gText_FloorChooseBF1[] = _("BASEMENT");
 const u8 gText_FloorChoose1[]   = _("FLOOR 1");
 const u8 gText_FloorChoose2[]   = _("FLOOR 2");
@@ -553,6 +539,7 @@ const u8 gText_FloorChoose11[]  = _("FLOOR 11");
 const u8 gText_FloorChoose12[]  = _("FLOOR 12");
 const u8 gText_FloorChoose13[]  = _("FLOOR 13");
 
+// Tic Tac Toe
 const u8 gText_TicTacToeChoose1[]   = _("1");
 const u8 gText_TicTacToeChoose2[]   = _("2");
 const u8 gText_TicTacToeChoose3[]   = _("3");
@@ -563,6 +550,7 @@ const u8 gText_TicTacToeChoose7[]   = _("7");
 const u8 gText_TicTacToeChoose8[]   = _("8");
 const u8 gText_TicTacToeChoose9[]   = _("9");
 
+// Casinos etc
 const u8 gText_SaltySpitoonWager1[]   = _("1");
 const u8 gText_SaltySpitoonWager2[]   = _("10");
 const u8 gText_SaltySpitoonWager3[]   = _("100");
@@ -571,21 +559,19 @@ const u8 gText_SaltySpitoonWager5[]   = _("10,000");
 const u8 gText_SaltySpitoonWager6[]   = _("100,000");
 const u8 gText_SaltySpitoonWager7[]   = _("NEVER MIND");
 
+// Uni consul
 const u8 gText_ArdorChooseScience1[]    = _("GEOLOGIAM");
 const u8 gText_ArdorChooseScience2[]    = _("BIOLOGIAM");
 const u8 gText_ArdorChooseScience3[]    = _("ALCHEMIAM");
 const u8 gText_ArdorChooseScience4[]    = _("PHYSICAS");
-
 const u8 gText_ArdorChooseSocial1[]     = _("HISTORIAM");
 const u8 gText_ArdorChooseSocial2[]     = _("ARCHAEOLOGIAM");
 const u8 gText_ArdorChooseSocial3[]     = _("PSYCHOLOGIAM");
 const u8 gText_ArdorChooseSocial4[]     = _("PHILOSOPHIAM");
-
 const u8 gText_ArdorChooseElective1[]   = _("PICTURAM");
 const u8 gText_ArdorChooseElective2[]   = _("MUSICAM");
 const u8 gText_ArdorChooseElective3[]   = _("GYMNASIUM");
 const u8 gText_ArdorChooseElective4[]   = _("LOGICAM");
-
 const u8 gText_ChooseFossil1[]   = _("HELIX FOSSIL");
 const u8 gText_ChooseFossil2[]   = _("DOME FOSSIL");
 const u8 gText_ChooseFossil3[]   = _("OLD AMBER");
@@ -593,7 +579,7 @@ const u8 gText_ChooseFossil4[]   = _("ROOT FOSSIL");
 const u8 gText_ChooseFossil5[]   = _("CLAW FOSSIL");
 const u8 gText_ChooseFossil6[]   = _("SKULL FOSSIL");
 const u8 gText_ChooseFossil7[]   = _("ARMOR FOSSIL");
-
+// Ardor Music Class
 const u8 gText_Ardor_MusicChooseNote1[]   = _("C");
 const u8 gText_Ardor_MusicChooseNote2[]   = _("B");
 const u8 gText_Ardor_MusicChooseNote3[]   = _("A");
@@ -625,26 +611,6 @@ const u8 gText_BlueRouletteWagerRange3[]   = _("11 - 20");
 const u8 gText_BlueRouletteWagerRange4[]   = _("21 - 30");
 const u8 gText_BlueRouletteWagerRange5[]   = _("NEVER MIND");
 
-const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
-const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
-const u8 gText_RedFlute2[] = _("RED FLUTE");
-const u8 gText_WhiteFlute2[] = _("WHITE FLUTE");
-const u8 gText_BlackFlute2[] = _("BLACK FLUTE");
-const u8 gText_GlassChair[] = _("GLASS CHAIR");
-const u8 gText_GlassDesk[] = _("GLASS DESK");
-const u8 gText_TreeckoDollAndPrice[] = _("TREECKO DOLL 1,000 COINS");
-const u8 gText_TorchicDollAndPrice[] = _("TORCHIC DOLL 1,000 COINS");
-const u8 gText_MudkipDollAndPrice[] = _("MUDKIP DOLL   1,000 COINS");
-const u8 gText_50CoinsAndPrice[] = _("  50 COINS    ¥1,000");
-const u8 gText_500CoinsAndPrice[] = _("500 COINS  ¥10,000");
-const u8 gText_Excellent2[] = _("Excellent");
-const u8 gText_NotSoGood[] = _("Not so good");
-const u8 gText_RedShard[] = _("RED SHARD");
-const u8 gText_YellowShard[] = _("YELLOW SHARD");
-const u8 gText_BlueShard[] = _("BLUE SHARD");
-const u8 gText_GreenShard[] = _("GREEN SHARD");
-=======
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 const u8 gText_BattleFrontier[] = _("BATTLE FRONTIER");
 const u8 gText_Cool[] = _("COOL");
 const u8 gText_Beauty[] = _("BEAUTY");

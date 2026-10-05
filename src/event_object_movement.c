@@ -133,11 +133,6 @@ static bool8 ObjectEventExecSingleMovementAction(struct ObjectEvent *, struct Sp
 static bool32 UpdateMonMoveInPlace(struct ObjectEvent *, struct Sprite *);
 static void SetMovementDelay(struct Sprite *, s16);
 static bool8 WaitForMovementDelay(struct Sprite *);
-<<<<<<< HEAD
-// Made global for Aedes Terra puzzle - CS 260924
-// static u8 GetCollisionInDirection(struct ObjectEvent *, enum Direction);
-=======
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 static enum Direction GetCopyDirection(u8, enum Direction, enum Direction);
 static void TryEnableObjectEventAnim(struct ObjectEvent *, struct Sprite *);
 static void ObjectEventExecHeldMovementAction(struct ObjectEvent *, struct Sprite *);
@@ -223,16 +218,12 @@ const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(enum Species species
 static bool8 NpcTakeStep(struct Sprite *);
 static void CopyObjectGraphicsInfoToSpriteTemplate_WithMovementType(u16 graphicsId, u16 movementType, struct SpriteTemplate *spriteTemplate, const struct SubspriteTable **subspriteTables);
 
-<<<<<<< HEAD
-//Kustom Collisions
+//Kustom "special" collisions
 static bool8 IsSpecialCollision(struct ObjectEvent *, s16, s16);
-static u16 GetGraphicsIdForMon(u32 species, bool32 shiny, bool32 female);
-static u16 GetUnownSpecies(struct Pokemon *mon);
 
-static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
-=======
+static u16 GetGraphicsIdForMon(u32 species, bool32 shiny, bool32 female);
 static enum Species GetUnownSpecies(struct Pokemon *mon);
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
+static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
 
 static void StartSlowRunningAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, enum Direction direction);
 
@@ -358,16 +349,13 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
-<<<<<<< HEAD
-    [MOVEMENT_TYPE_CHASE_PLAYER] = MovementType_ChasePlayer, //KUSTOM
-=======
     [MOVEMENT_TYPE_WANDER_AROUND_OWE] = MovementType_OverworldWildEncounter_WanderAround,
     [MOVEMENT_TYPE_CHASE_PLAYER_OWE] = MovementType_OverworldWildEncounter_ChasePlayer,
     [MOVEMENT_TYPE_FLEE_PLAYER_OWE] = MovementType_OverworldWildEncounter_FleePlayer,
     [MOVEMENT_TYPE_WATCH_PLAYER_OWE] = MovementType_OverworldWildEncounter_WatchPlayer,
     [MOVEMENT_TYPE_APPROACH_PLAYER_OWE] = MovementType_OverworldWildEncounter_ApproachPlayer,
     [MOVEMENT_TYPE_DESPAWN_OWE] = MovementType_OverworldWildEncounter_Despawn,
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
+    [MOVEMENT_TYPE_CHASE_PLAYER] = MovementType_ChasePlayer, //KUSTOM
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -3343,13 +3331,8 @@ static void SetBerryTreeGraphicsById(struct ObjectEvent *objectEvent, u8 berryId
     const u16 graphicsId = gBerryTreeObjectEventGraphicsIdTable[berryStage];
     const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
     struct Sprite *sprite = &gSprites[objectEvent->spriteId];
-<<<<<<< HEAD
-    UpdateSpritePalette(&sObjectEventSpritePalettes[gBerryTreePaletteSlotTablePointers[berryId][berryStage]-2], sprite);
-	sprite->oam.shape = graphicsInfo->oam->shape;
-=======
     UpdateSpritePalette(&sObjectEventSpritePalettes[gBerries[berryId].berryTreePaletteSlotTable[berryStage] - 2], sprite);
     sprite->oam.shape = graphicsInfo->oam->shape;
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
     sprite->oam.size = graphicsInfo->oam->size;
     sprite->images = gBerries[berryId].berryTreePicTable;
     sprite->anims = graphicsInfo->anims;
@@ -11862,7 +11845,6 @@ bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent)
     return FALSE;
 }
 
-<<<<<<< HEAD
 //KUSTOM GHOUL SET MOVEMENT TYPE ON THE FLY INSTEAD OF IN TRANSITION
 void SetObjectMovementTypeGhoul(void)
 {
@@ -11878,10 +11860,7 @@ void SetObjectMovementTypeGhoul(void)
 
 // END KUSTOM GHOUL SET MOVEMENT TYPE ON THE FLY INSTEAD OF IN TRANSITION
 
-// Get gfx data from daycare pokemon and store it in vars
-=======
 // Get gfx data from daycare Pokémon and store it in vars
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 void GetDaycareGraphics(struct ScriptContext *ctx)
 {
     u16 varGfx[] = {ScriptReadHalfword(ctx), ScriptReadHalfword(ctx)};

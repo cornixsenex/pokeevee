@@ -1891,7 +1891,6 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
-<<<<<<< HEAD
 static void SetupDarkBrendanBattle(void)
 {
     s32 i;
@@ -1952,10 +1951,7 @@ static void SetupDarkBrendanBattle(void)
 
 }
 
-u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
-=======
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 halfTeam, u32 battleTypeFlags)
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 {
     u32 personalityValue;
     u8 monsCount;

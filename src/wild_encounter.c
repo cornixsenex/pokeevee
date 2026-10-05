@@ -630,12 +630,8 @@ static bool8 AllowWildCheckOnNewMetatile(void)
         return TRUE;
 }
 
-<<<<<<< HEAD
 //Cornix is making this function useless - 250402 (OG is preserved below 250530)
-static bool8 AreLegendariesInSootopolisPreventingEncounters(void)
-=======
 bool8 AreLegendariesInSootopolisPreventingEncounters(void)
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 {
     return FALSE;
 

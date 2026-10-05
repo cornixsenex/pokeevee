@@ -2747,21 +2747,33 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         InitTilesetAnimations();
         (*state)++;
         break;
-<<<<<<< HEAD
-    case 11: //CORNIX DID THIS - DISABLE REPEATING MAP POPUPS ON DOOR WARPS
+    case 11:
+		// Cornix modified this case to prevent repeat map popups on door warps
 		DebugPrintf("LoadMapInStepsLocal - Step 11\nLast: %d\nDest: %d", gMapHeader.regionMapSectionId, sLastMapSectionId);
-        if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
+		
+		// rhh just has this if else if very simple - CS 261005 1.16.0 merge
+		// This way it /should/ still support map previes (frlg artsy thing)
+		// if I decide I want to use them
+        if (ShouldRunMapPreview() && CurrentMapHasPreviewScreen(MPS_TYPE_FADE_IN) == TRUE)
+        {
+            MapPreview_LoadGfx(gMapHeader.regionMapSectionId);
+            RunMapPreviewScreenFadeIn(gMapHeader.regionMapSectionId);
+        }
+
+		// Here cornix made the "simple" rather "complex" see this whole 
+		// block below is custom - CS 261005 1.16.0 merge
+		else if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
         {
 			//Last and Dest Maps are not equal
             if (gMapHeader.regionMapSectionId != sLastMapSectionId)
             {
-				
 				//A dynamic map is involver - Check for whether or not to display popup
 				if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC || sLastMapSectionId == MAPSEC_DYNAMIC)
 				{
 					if (CheckDoMapPopupOnDynamicWarp(gMapHeader.regionMapSectionId, sLastMapSectionId))
 						ShowMapNamePopup();
 				}
+				
 				//Neither dest nor prev are DYNAMIC
 				else 
 					ShowMapNamePopup();
@@ -2769,16 +2781,6 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
 			
 			//IDK That it will come up but handle both last and dest are dynamic as well
         }
-=======
-    case 11:
-        if (ShouldRunMapPreview() && CurrentMapHasPreviewScreen(MPS_TYPE_FADE_IN) == TRUE)
-        {
-            MapPreview_LoadGfx(gMapHeader.regionMapSectionId);
-            RunMapPreviewScreenFadeIn(gMapHeader.regionMapSectionId);
-        }
-        else if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
-            ShowMapNamePopup();
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
         (*state)++;
         break;
     case 12:

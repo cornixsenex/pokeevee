@@ -6984,7 +6984,15 @@ void ChangePokemonNicknameWithCallback(void (*callback)(void))
     DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, GetBoxMonData(boxMon, MON_DATA_SPECIES), GetBoxMonGender(boxMon), GetBoxMonData(boxMon, MON_DATA_PERSONALITY), callback);
 }
 
-<<<<<<< HEAD
+bool32 HasShedinjaHPHandling(enum Species species)
+{
+    if (species == SPECIES_SHEDINJA)
+        return TRUE;
+    if (P_BASE_HP_1_SHEDINJA_HANDLING && GetSpeciesBaseHP(species) == 1)
+        return TRUE;
+    return FALSE;
+}
+
 // I use this to create the special mons for scripted story battles
 // (shiny mareep, lupa, scylla etc)
 // It does not begin the battle it just copies the created mon into the
@@ -7046,13 +7054,5 @@ void Cornix_CreateSpecialMon(const u16 species, const u8 level, const u8* nickna
 		StringCopy(nickname, nicknameString);
 		SetMonData(mon, MON_DATA_NICKNAME, nickname);
 	}
-=======
-bool32 HasShedinjaHPHandling(enum Species species)
-{
-    if (species == SPECIES_SHEDINJA)
-        return TRUE;
-    if (P_BASE_HP_1_SHEDINJA_HANDLING && GetSpeciesBaseHP(species) == 1)
-        return TRUE;
-    return FALSE;
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 }
+

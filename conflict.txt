@@ -12,30 +12,37 @@
 	>OBJ_EVENT_GFX_XXX -> enum
 #CONFLICT (content): Merge conflict in include/constants/field_effects.h
 #CONFLICT (content): Merge conflict in include/constants/flags.h
-CONFLICT (content): Merge conflict in include/constants/script_menu.h
-CONFLICT (content): Merge conflict in include/constants/trainers.h
-CONFLICT (content): Merge conflict in include/event_object_movement.h
-CONFLICT (content): Merge conflict in include/party_menu.h
-CONFLICT (content): Merge conflict in src/battle_main.c
-CONFLICT (content): Merge conflict in src/data/battle_partners.party
-CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
+#CONFLICT (content): Merge conflict in include/constants/script_menu.h
+#CONFLICT (content): Merge conflict in include/constants/trainers.h
+	>remove BACK and FRONT from trainer pic qualifiers
+#CONFLICT (content): Merge conflict in include/event_object_movement.h
+	>gPicTable_PechaBerryTree
+#CONFLICT (content): Merge conflict in include/party_menu.h
+	>New testing thing at bottom
+#CONFLICT (content): Merge conflict in src/battle_main.c
+#CONFLICT (content): Merge conflict in src/data/battle_partners.party
+	>remove PARTNER_DUMMY
+#CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
+	>trainer pic refactor
 CONFLICT (modify/delete): src/data/trainer_parties.h deleted in a9d9c29acc53c6f80c39729dfbb995001ff2d2f4 and modified in HEAD.  Version HEAD of src/data/trainer_parties.h left in tree.
-CONFLICT (content): Merge conflict in src/data/trainers.party
-CONFLICT (content): Merge conflict in src/event_object_movement.c
-CONFLICT (content): Merge conflict in src/field_control_avatar.c
-CONFLICT (content): Merge conflict in src/field_specials.c
-CONFLICT (content): Merge conflict in src/map_preview_screen.c
-CONFLICT (content): Merge conflict in src/overworld.c
-CONFLICT (content): Merge conflict in src/pokemon.c
-CONFLICT (content): Merge conflict in src/pokemon_icon.c
-CONFLICT (content): Merge conflict in src/pokenav_match_call_data.c
-CONFLICT (content): Merge conflict in src/scrcmd.c
-CONFLICT (content): Merge conflict in src/strings.c
-CONFLICT (content): Merge conflict in src/wild_encounter.c
+#CONFLICT (content): Merge conflict in src/data/trainers.party
+#CONFLICT (content): Merge conflict in src/event_object_movement.c
+#CONFLICT (content): Merge conflict in src/field_control_avatar.c
+#CONFLICT (content): Merge conflict in src/field_specials.c
+#CONFLICT (content): Merge conflict in src/map_preview_screen.c
+#CONFLICT (content): Merge conflict in src/overworld.c
+#CONFLICT (content): Merge conflict in src/pokemon.c
+#CONFLICT (content): Merge conflict in src/pokemon_icon.c
+!CONFLICT (content): Merge conflict in src/pokenav_match_call_data.c
+	>I just checkout rhh - prolly need to remove some stuff
+#CONFLICT (content): Merge conflict in src/scrcmd.c
+#CONFLICT (content): Merge conflict in src/strings.c
+#CONFLICT (content): Merge conflict in src/wild_encounter.c
 
 partner battles
 	>leaf surf school	
 	>aeneas pig
-Custom Movement Types
-	>MOVEMENT_TYPE_CHASE_PLAYER
-	>MOVEMENT_TYPE_CHASE_NIDOKING
+MOVEMENT_TYPE_CHASE_PLAYER
+Berry Graphics
+Custom Trainer Sprites
+Rock Climb

@@ -147,13 +147,11 @@ bool32 SetUpFieldMove_Waterfall(void);
 bool32 SetUpFieldMove_Dive(void);
 bool32 SetUpFieldMove_RockClimb(void);
 
-<<<<<<< HEAD
 //Custom
 void ItemUseCB_LiveBaitTools(u8 taskId, TaskFunc task);
-=======
+
 #if TESTING
 s8 Test_UpdatePartySelectionSingleLayout(s8 slotId, s8 movementDir, bool8 chooseHalf, u8 lastSelectedSlot);
 #endif
->>>>>>> a9d9c29acc53c6f80c39729dfbb995001ff2d2f4
 
 #endif // GUARD_PARTY_MENU_H
