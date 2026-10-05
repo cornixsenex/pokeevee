@@ -73,7 +73,6 @@ RustboroCity_EventScript_PleaseSelectPokenav::
 
 RustboroCity_EventScript_MatchCallTutorial::
 	special ScriptMenu_CreateStartMenuForPokenavTutorial
-	waitstate
 	switch VAR_RESULT
 	case 0, RustboroCity_EventScript_PleaseSelectPokenav
 	case 1, RustboroCity_EventScript_PleaseSelectPokenav
@@ -84,7 +83,6 @@ RustboroCity_EventScript_MatchCallTutorial::
 	case 7, RustboroCity_EventScript_PleaseSelectPokenav
 	case MULTI_B_PRESSED, RustboroCity_EventScript_PleaseSelectPokenav
 	special OpenPokenavForTutorial
-	waitstate
 	delay 20
 	msgbox RustboroCity_Text_IdBetterGetBackToWork, MSGBOX_DEFAULT
 	closemessage

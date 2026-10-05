@@ -22,6 +22,7 @@ struct FieldInput
     u8 dpadDirection;
 };
 
+void GetPlayerPosition(struct MapPosition *);
 void FieldClearPlayerInput(struct FieldInput *pStruct);
 void FieldGetPlayerInput(struct FieldInput *pStruct, u16 keys, u16 heldKeys);
 int ProcessPlayerFieldInput(struct FieldInput *pStruct);
@@ -36,6 +37,7 @@ void ClearPoisonStepCounter(void);
 void CancelSignPostMessageBox(struct FieldInput *input);
 void HandleBoulderFallThroughHole(struct ObjectEvent *object);
 void HandleBoulderActivateVictoryRoadSwitch(u16 x, u16 y);
+bool8 TryStartStepBasedScript(struct MapPosition *, u16, enum Direction);
 
 //Cornix added for surf mount / dismount trigger support
 void GetPlayerPosition(struct MapPosition *);

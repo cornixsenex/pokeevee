@@ -49,7 +49,6 @@ MirageTower_4F_EventScript_CollapseMirageTower::
 	special ShakeCamera
 	waitstate
 	special DoMirageTowerCeilingCrumble
-	waitstate
 	setvar VAR_MIRAGE_TOWER_STATE, 1
 	warp MAP_ROUTE111, 19, 59
 	waitstate
