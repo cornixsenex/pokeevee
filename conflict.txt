@@ -43,5 +43,4 @@ Fix Aedes Terra puzzle not opening the bridges correctly
 partner battles
 	>leaf surf school	
 	>aeneas pig
-MOVEMENT_TYPE_CHASE_PLAYER
 Berry Graphics
