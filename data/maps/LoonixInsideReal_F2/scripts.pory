@@ -85,7 +85,6 @@ script LoonixInsideReal_F2_Script_TV {
 
 script LoonixInsideReal_F2_Script_MewDream {
 	warpsilent (MAP_LOONIX_SNOW, 10, 10)
-
 	waitstate
 	return
 }

@@ -152,52 +152,52 @@ LoonixInsideReal_F2_Script_TV_4:
 LoonixInsideReal_F2_Script_MewDream::
 # 87 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	warpsilent MAP_LOONIX_SNOW, 10, 10
-# 89 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 88 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	waitstate
 	return
 
 
 LoonixInsideReal_F2_Script_MewNews::
-# 94 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 93 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	lockall
-# 95 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 94 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	setvar VAR_GRANNY_STATE, 13
-# 97 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 96 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 98 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 97 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	waitmovement 0
-# 100 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 99 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_F2_Movement_PlayerToTV
-# 101 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 100 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	waitmovement 0
-# 103 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 102 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	load_field_pic 32, 190, 98
-# 104 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 103 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	msgbox LoonixInsideReal_F2_Text_MewNews
-# 105 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 104 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	destroy_field_pic 32
-# 106 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 105 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	closemessage
-# 108 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 107 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	playbgm MUS_LITTLEROOT, TRUE
-# 110 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 109 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	release
 	end
 
 
-# 114 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 113 "data/maps/LoonixInsideReal_F2/scripts.pory"
 LoonixInsideReal_F2_Movement_PlayerToTV:
-# 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 114 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	walk_right
+# 114 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	walk_right
+# 114 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_right
 # 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	walk_right
-# 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	walk_right
-# 116 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_up
-# 116 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_up
-# 116 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_up
 	step_end
 
@@ -207,28 +207,28 @@ LoonixInsideReal_F2_Script_PS2_Text_0:
 	.string "game,Star Wars Battlefront 2!$"
 
 LoonixInsideReal_F2_Text_Bed::
-# 119 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 118 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "It's your old bed!\p"
 	.string "Would you like to take a rest?$"
 
 LoonixInsideReal_F2_Text_Book::
-# 123 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 122 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "ARMA VIRUMQUE CANO...\n"
 	.string "What does this even mean?$"
 
 LoonixInsideReal_F2_Text_TV1::
-# 127 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 126 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "There's never anything interesting on\n"
 	.string "TV. Better go!$"
 
 LoonixInsideReal_F2_Text_TV2::
-# 131 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 130 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "The news people are interviewing\n"
 	.string "townspeople of Clara City about what\l"
 	.string "they say they saw last night.$"
 
 LoonixInsideReal_F2_Text_MewNews::
-# 135 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 134 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "In an unusual turn of events several\n"
 	.string "cities in the upstate region are\l"
 	.string "reporting sightings of a strange being\l"

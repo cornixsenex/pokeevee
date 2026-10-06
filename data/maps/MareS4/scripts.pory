@@ -416,6 +416,7 @@ script MareS4_Script_Whirlpool {
 	playse (SE_M_DIVE)
 	waitse
 	warpsilent (MAP_SUB_MARE, 27, 45)
+	waitstate
 }
 
 script MareS4_Script_Rutulian1 {

@@ -443,6 +443,7 @@ script GrandmasCabin_Script_SaveLeaf {
 	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
 	warpsilent (MAP_LOONIX_INSIDE_REAL, 4, 8)
+	waitstate
 
 	releaseall
 	end

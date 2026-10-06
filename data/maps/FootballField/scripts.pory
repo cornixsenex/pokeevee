@@ -76,6 +76,7 @@ script FootballField_EventScript_FinishClass {
 	//This will reset the map
 	clearflag (FLAG_OPEN_CLASS_GYM)
 	warpsilent (MAP_FOOTBALL_FIELD, 14, 36)
+	waitstate
 
 	end
 }

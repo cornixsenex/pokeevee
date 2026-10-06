@@ -72,21 +72,25 @@ script AedesAqua_Script_HidePlayer {
 script AedesAqua_Script_Waterfall13 {
 	call (AedesAqua_Script_ShowWaterfall)
 	warpsilent (MAP_AEDES_AQUA_WATER1, 24, 18)
+	waitstate
 }
 
 script AedesAqua_Script_Waterfall15 {
 	call (AedesAqua_Script_ShowWaterfall)
 	warpsilent (MAP_AEDES_AQUA_WATER1, 48, 16)
+	waitstate
 }
 
 script AedesAqua_Script_Waterfall17 {
 	call (AedesAqua_Script_ShowWaterfall)
 	warpsilent (MAP_AEDES_AQUA_WATER1, 16, 48)
+	waitstate
 }
 
 script AedesAqua_Script_Waterfall21 {
 	call (AedesAqua_Script_ShowWaterfall)
 	warpsilent (MAP_AEDES_AQUA_WATER2, 8, 10)
+	waitstate
 }
 
 

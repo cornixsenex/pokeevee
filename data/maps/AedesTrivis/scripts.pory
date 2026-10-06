@@ -389,6 +389,7 @@ script AedesTrivis_Script_TrivisCompleteScene1 {
 	setvar (VAR_ORESTES_STATE, 5)
 	//warp back to map (show Trivis and trigger rest of scene OnFrame5)
 	warpsilent (MAP_AEDES_TRIVIS, 11, 12)
+	waitstate
 }
 
 

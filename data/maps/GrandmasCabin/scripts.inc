@@ -659,7 +659,9 @@ GrandmasCabin_Script_SaveLeaf_1:
 	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 445 "data/maps/GrandmasCabin/scripts.pory"
 	warpsilent MAP_LOONIX_INSIDE_REAL, 4, 8
-# 447 "data/maps/GrandmasCabin/scripts.pory"
+# 446 "data/maps/GrandmasCabin/scripts.pory"
+	waitstate
+# 448 "data/maps/GrandmasCabin/scripts.pory"
 	releaseall
 	end
 
@@ -693,246 +695,246 @@ GrandmasCabin_Script_SaveLeaf_6:
 
 
 GrandmasCabin_Script_GameOver::
-# 452 "data/maps/GrandmasCabin/scripts.pory"
-	lock
 # 453 "data/maps/GrandmasCabin/scripts.pory"
+	lock
+# 454 "data/maps/GrandmasCabin/scripts.pory"
 	msgbox GrandmasCabin_Script_GameOver_Text_0, MSGBOX_DEFAULT
-# 455 "data/maps/GrandmasCabin/scripts.pory"
+# 456 "data/maps/GrandmasCabin/scripts.pory"
 	release
 	end
 
 
-# 459 "data/maps/GrandmasCabin/scripts.pory"
+# 460 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_BeginHideAndSeek:
-# 460 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 460 "data/maps/GrandmasCabin/scripts.pory"
+# 461 "data/maps/GrandmasCabin/scripts.pory"
 	walk_down
 # 461 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 461 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 461 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 461 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 462 "data/maps/GrandmasCabin/scripts.pory"
 	walk_left
 # 462 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
+	walk_left
 # 462 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
+	walk_left
 # 462 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 462 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 462 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 462 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 463 "data/maps/GrandmasCabin/scripts.pory"
 	walk_left
 # 463 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
+	walk_down
 # 463 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
+	walk_down
 # 463 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
+	walk_down
 # 463 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 463 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 463 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 464 "data/maps/GrandmasCabin/scripts.pory"
 	walk_left
 # 464 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
+	walk_left
 # 464 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
+	walk_left
 # 464 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
+	walk_left
 # 464 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 464 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 464 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 464 "data/maps/GrandmasCabin/scripts.pory"
-	walk_down
-# 464 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 465 "data/maps/GrandmasCabin/scripts.pory"
 	walk_down
 # 465 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 465 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 465 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 465 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 465 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 465 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 465 "data/maps/GrandmasCabin/scripts.pory"
+	walk_down
+# 466 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 465 "data/maps/GrandmasCabin/scripts.pory"
+# 466 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
 	step_end
 
-# 468 "data/maps/GrandmasCabin/scripts.pory"
+# 469 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_ApproachLeafAmbush1:
-# 469 "data/maps/GrandmasCabin/scripts.pory"
+# 470 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 469 "data/maps/GrandmasCabin/scripts.pory"
+# 470 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 469 "data/maps/GrandmasCabin/scripts.pory"
+# 470 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
 	step_end
 
-# 472 "data/maps/GrandmasCabin/scripts.pory"
+# 473 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_ApproachLeafAmbush2A:
-# 473 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
-# 473 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
-# 473 "data/maps/GrandmasCabin/scripts.pory"
+# 474 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
 # 474 "data/maps/GrandmasCabin/scripts.pory"
-	walk_right
+	walk_up
+# 474 "data/maps/GrandmasCabin/scripts.pory"
+	walk_up
 # 475 "data/maps/GrandmasCabin/scripts.pory"
+	walk_right
+# 476 "data/maps/GrandmasCabin/scripts.pory"
 	face_up
 	step_end
 
-# 478 "data/maps/GrandmasCabin/scripts.pory"
+# 479 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_ApproachLeafAmbush2B:
-# 479 "data/maps/GrandmasCabin/scripts.pory"
+# 480 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 479 "data/maps/GrandmasCabin/scripts.pory"
+# 480 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 479 "data/maps/GrandmasCabin/scripts.pory"
+# 480 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
 	step_end
 
-# 482 "data/maps/GrandmasCabin/scripts.pory"
+# 483 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_ApproachLeafAmbush2C:
-# 483 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
-# 483 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
-# 483 "data/maps/GrandmasCabin/scripts.pory"
+# 484 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
 # 484 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
+	walk_up
+# 484 "data/maps/GrandmasCabin/scripts.pory"
+	walk_up
 # 485 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 486 "data/maps/GrandmasCabin/scripts.pory"
 	face_up
 	step_end
 
-# 488 "data/maps/GrandmasCabin/scripts.pory"
+# 489 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_EeveeEnter:
-# 489 "data/maps/GrandmasCabin/scripts.pory"
+# 490 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 489 "data/maps/GrandmasCabin/scripts.pory"
+# 490 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 489 "data/maps/GrandmasCabin/scripts.pory"
+# 490 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 489 "data/maps/GrandmasCabin/scripts.pory"
+# 490 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 489 "data/maps/GrandmasCabin/scripts.pory"
+# 490 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 489 "data/maps/GrandmasCabin/scripts.pory"
+# 490 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 489 "data/maps/GrandmasCabin/scripts.pory"
+# 490 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 489 "data/maps/GrandmasCabin/scripts.pory"
+# 490 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
 	step_end
 
-# 492 "data/maps/GrandmasCabin/scripts.pory"
+# 493 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_EndHideAndSeekA:
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
-	walk_left
-# 493 "data/maps/GrandmasCabin/scripts.pory"
+# 494 "data/maps/GrandmasCabin/scripts.pory"
 	walk_left
 # 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 494 "data/maps/GrandmasCabin/scripts.pory"
+	walk_left
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 494 "data/maps/GrandmasCabin/scripts.pory"
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 494 "data/maps/GrandmasCabin/scripts.pory"
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 494 "data/maps/GrandmasCabin/scripts.pory"
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 494 "data/maps/GrandmasCabin/scripts.pory"
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 494 "data/maps/GrandmasCabin/scripts.pory"
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 494 "data/maps/GrandmasCabin/scripts.pory"
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 494 "data/maps/GrandmasCabin/scripts.pory"
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
-# 494 "data/maps/GrandmasCabin/scripts.pory"
+# 495 "data/maps/GrandmasCabin/scripts.pory"
 	walk_up
 	step_end
 
-# 497 "data/maps/GrandmasCabin/scripts.pory"
+# 498 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_EndHideAndSeekB:
-# 498 "data/maps/GrandmasCabin/scripts.pory"
-	walk_right
-# 498 "data/maps/GrandmasCabin/scripts.pory"
-	walk_right
-# 498 "data/maps/GrandmasCabin/scripts.pory"
-	walk_right
-# 498 "data/maps/GrandmasCabin/scripts.pory"
-	walk_right
-# 498 "data/maps/GrandmasCabin/scripts.pory"
-	walk_right
-# 498 "data/maps/GrandmasCabin/scripts.pory"
+# 499 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
 # 499 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
+	walk_right
 # 499 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
+	walk_right
 # 499 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
+	walk_right
 # 499 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
+	walk_right
 # 499 "data/maps/GrandmasCabin/scripts.pory"
-	walk_up
-# 500 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
 # 500 "data/maps/GrandmasCabin/scripts.pory"
-	walk_right
+	walk_up
 # 500 "data/maps/GrandmasCabin/scripts.pory"
+	walk_up
+# 500 "data/maps/GrandmasCabin/scripts.pory"
+	walk_up
+# 500 "data/maps/GrandmasCabin/scripts.pory"
+	walk_up
+# 500 "data/maps/GrandmasCabin/scripts.pory"
+	walk_up
+# 501 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
 # 501 "data/maps/GrandmasCabin/scripts.pory"
+	walk_right
+# 501 "data/maps/GrandmasCabin/scripts.pory"
+	walk_right
+# 502 "data/maps/GrandmasCabin/scripts.pory"
 	face_up
 	step_end
 
-# 504 "data/maps/GrandmasCabin/scripts.pory"
-GrandmasCabin_Movement_LeafExitA:
 # 505 "data/maps/GrandmasCabin/scripts.pory"
+GrandmasCabin_Movement_LeafExitA:
+# 506 "data/maps/GrandmasCabin/scripts.pory"
 	walk_down
-# 506 "data/maps/GrandmasCabin/scripts.pory"
-	walk_right
-# 506 "data/maps/GrandmasCabin/scripts.pory"
+# 507 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
 # 507 "data/maps/GrandmasCabin/scripts.pory"
+	walk_right
+# 508 "data/maps/GrandmasCabin/scripts.pory"
 	face_up
 	step_end
 
-# 510 "data/maps/GrandmasCabin/scripts.pory"
+# 511 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_LeafExitB:
-# 511 "data/maps/GrandmasCabin/scripts.pory"
+# 512 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 511 "data/maps/GrandmasCabin/scripts.pory"
+# 512 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 511 "data/maps/GrandmasCabin/scripts.pory"
+# 512 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 511 "data/maps/GrandmasCabin/scripts.pory"
+# 512 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 511 "data/maps/GrandmasCabin/scripts.pory"
+# 512 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 511 "data/maps/GrandmasCabin/scripts.pory"
+# 512 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 511 "data/maps/GrandmasCabin/scripts.pory"
+# 512 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 511 "data/maps/GrandmasCabin/scripts.pory"
+# 512 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
 	step_end
 
@@ -953,87 +955,87 @@ GrandmasCabin_Script_SaveLeaf_Text_2:
 	.string "VAR_TEMP_5 = OOB$"
 
 GrandmasCabin_Script_GameOver_Text_0:
-# 453 "data/maps/GrandmasCabin/scripts.pory"
+# 454 "data/maps/GrandmasCabin/scripts.pory"
 	.string "GAME OVER$"
 
 GrandmasCabin_Text_Eevee::
-# 514 "data/maps/GrandmasCabin/scripts.pory"
+# 515 "data/maps/GrandmasCabin/scripts.pory"
 	.string "It's your dad's old Pokemon, Eevee. He's\n"
 	.string "looking at you with an unwavering\l"
 	.string "intensity.$"
 
 GrandmasCabin_Text_Leaf1::
-# 518 "data/maps/GrandmasCabin/scripts.pory"
+# 519 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Hi {PLAYER}! C'mon lets go play Hide\n"
 	.string "and Seek!$"
 
 GrandmasCabin_Text_Leaf2::
-# 522 "data/maps/GrandmasCabin/scripts.pory"
+# 523 "data/maps/GrandmasCabin/scripts.pory"
 	.string "I'll go hide first. Close your eyes for a\n"
 	.string "sec.$"
 
 GrandmasCabin_Text_Leaf3::
-# 526 "data/maps/GrandmasCabin/scripts.pory"
+# 527 "data/maps/GrandmasCabin/scripts.pory"
 	.string "You found me! No! Now it's your turn to\n"
 	.string "hide.$"
 
 GrandmasCabin_Text_Leaf4::
-# 530 "data/maps/GrandmasCabin/scripts.pory"
+# 531 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Go find somewhere to hide. I'll close my\n"
 	.string "eyes!$"
 
 GrandmasCabin_Text_Leaf5::
-# 534 "data/maps/GrandmasCabin/scripts.pory"
+# 535 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Ready or not, watch out {PLAYER}!\n"
 	.string "Here I come!$"
 
 GrandmasCabin_Text_Leaf6::
-# 538 "data/maps/GrandmasCabin/scripts.pory"
+# 539 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Haha! I found you, now it's my turn.\n"
 	.string "Close your eyes!$"
 
 GrandmasCabin_Text_Leaf7::
-# 542 "data/maps/GrandmasCabin/scripts.pory"
+# 543 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Please help me, {PLAYER}! I'm scared\n"
 	.string "of Rattata!$"
 
 GrandmasCabin_Text_AvoidGrass::
-# 546 "data/maps/GrandmasCabin/scripts.pory"
+# 547 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Keep your distance from the tall\n"
 	.string "grass...$"
 
 GrandmasCabin_Text_StayHideAndSeek::
-# 550 "data/maps/GrandmasCabin/scripts.pory"
+# 551 "data/maps/GrandmasCabin/scripts.pory"
 	.string "I shouldn't leave {LEAF} behind...$"
 
 GrandmasCabin_Text_HideAndSeek::
-# 554 "data/maps/GrandmasCabin/scripts.pory"
+# 555 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Ready or not, here I come!$"
 
 GrandmasCabin_Text_Leaf8::
-# 558 "data/maps/GrandmasCabin/scripts.pory"
+# 559 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Do it! Eevee and I believe in you.$"
 
 GrandmasCabin_Text_Leaf9::
-# 562 "data/maps/GrandmasCabin/scripts.pory"
+# 563 "data/maps/GrandmasCabin/scripts.pory"
 	.string "That was so scary! {PLAYER} you are\n"
 	.string "so brave. I can't believe how strong\l"
 	.string "your connection with Eevee is. Now let's\l"
 	.string "get out of here.$"
 
 GrandmasCabin_Text_Granny1::
-# 566 "data/maps/GrandmasCabin/scripts.pory"
+# 567 "data/maps/GrandmasCabin/scripts.pory"
 	.string "What's going on? Why did Eevee run off?\n"
 	.string "Where have you been? Oh God!\l"
 	.string "{PLAYER} are you hurt? I told you to\l"
 	.string "stay out of the tall grass!$"
 
 GrandmasCabin_Text_Leaf10::
-# 570 "data/maps/GrandmasCabin/scripts.pory"
+# 571 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Think I should go...sorry...See you\n"
 	.string "around.$"
 
 GrandmasCabin_Text_Granny2::
-# 574 "data/maps/GrandmasCabin/scripts.pory"
+# 575 "data/maps/GrandmasCabin/scripts.pory"
 	.string "March your behind inside! Let's have a\n"
 	.string "chat...$"

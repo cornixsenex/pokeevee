@@ -212,6 +212,7 @@ script Route1CS_EventScript_BlueScene {
 	closemessage
 	//warp to leaf -> leaf house scene
 	warpsilent (MAP_ALDEON_LEAF_HOUSE, 8, 12)
+	waitstate
 
 	release
 	end

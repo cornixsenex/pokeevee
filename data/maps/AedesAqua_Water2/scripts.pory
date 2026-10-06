@@ -112,11 +112,13 @@ script AedesAqua_Water2_Script_ShowLowWaterfall {
 script AedesAqua_Water2_Script_NoWaterfall2 {
     call (AedesAqua_Water2_Script_ShowNoWaterfall)
     warpsilent (MAP_AEDES_AQUA, 58, 6)
+	waitstate
 }
 
 script AedesAqua_Water2_Script_LowWaterfall15 {
     call (AedesAqua_Water2_Script_ShowLowWaterfall)
     warpsilent (MAP_AEDES_AQUA_WATER1, 48, 16)
+	waitstate
 }
 
 script AedesAqua_Water2_Script_HidePlayer {

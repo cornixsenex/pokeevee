@@ -59,16 +59,19 @@ mapscripts AedesAqua_Water1_MapScripts {
 script AedesAqua_Water1_Script_NoWaterfall4 {
 	call (AedesAqua_Water1_Script_ShowNoWaterfall)
 	warpsilent (MAP_AEDES_AQUA, 40, 18)
+	waitstate
 }
 
 script AedesAqua_Water1_Script_NoWaterfall6 {
 	call (AedesAqua_Water1_Script_ShowNoWaterfall)
 	warpsilent (MAP_AEDES_AQUA, 55, 34)
+	waitstate
 }
 
 script AedesAqua_Water1_Script_NoWaterfall8 {
 	call (AedesAqua_Water1_Script_ShowNoWaterfall)
 	warpsilent (MAP_AEDES_AQUA, 45, 52)
+	waitstate
 }
 
 script AedesAqua_Water1_Script_ShowNoWaterfall  {

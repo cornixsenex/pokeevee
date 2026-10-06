@@ -151,6 +151,7 @@ script AedesAqua_Hallways_Script_LinkMessage {
     msgbox (AedesAqua_Text_LinkMessage, MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
         warpsilent (MAP_AEDES_AQUA, 31, 59)
+		waitstate
     } else {
         closemessage
     }

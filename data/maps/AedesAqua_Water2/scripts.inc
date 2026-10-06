@@ -195,75 +195,79 @@ AedesAqua_Water2_Script_NoWaterfall2::
 	call AedesAqua_Water2_Script_ShowNoWaterfall
 # 114 "data/maps/AedesAqua_Water2/scripts.pory"
 	warpsilent MAP_AEDES_AQUA, 58, 6
+# 115 "data/maps/AedesAqua_Water2/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Water2_Script_LowWaterfall15::
-# 118 "data/maps/AedesAqua_Water2/scripts.pory"
-	call AedesAqua_Water2_Script_ShowLowWaterfall
 # 119 "data/maps/AedesAqua_Water2/scripts.pory"
+	call AedesAqua_Water2_Script_ShowLowWaterfall
+# 120 "data/maps/AedesAqua_Water2/scripts.pory"
 	warpsilent MAP_AEDES_AQUA_WATER1, 48, 16
+# 121 "data/maps/AedesAqua_Water2/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Water2_Script_HidePlayer::
-# 123 "data/maps/AedesAqua_Water2/scripts.pory"
+# 125 "data/maps/AedesAqua_Water2/scripts.pory"
 	hideobjectat LOCALID_PLAYER, MAP_AEDES_AQUA_WATER2
-# 124 "data/maps/AedesAqua_Water2/scripts.pory"
+# 126 "data/maps/AedesAqua_Water2/scripts.pory"
 	hideobjectat LOCALID_FOLLOWING_POKEMON, MAP_AEDES_AQUA_WATER2
 	return
 
 
 AedesAqua_Water2_Script_SupressSurf::
-# 129 "data/maps/AedesAqua_Water2/scripts.pory"
+# 131 "data/maps/AedesAqua_Water2/scripts.pory"
 	setmetatile 31, 6, METATILE_Cave_CaveWater_False, FALSE
 	return
 
 
 AedesAqua_Water2_Script_WaterControl2::
-# 134 "data/maps/AedesAqua_Water2/scripts.pory"
+# 136 "data/maps/AedesAqua_Water2/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 135 "data/maps/AedesAqua_Water2/scripts.pory"
+# 137 "data/maps/AedesAqua_Water2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Water2_Script_WaterControl2_1
-# 140 "data/maps/AedesAqua_Water2/scripts.pory"
-	setvar VAR_AEDES_AQUA_STATE, 2
 # 142 "data/maps/AedesAqua_Water2/scripts.pory"
+	setvar VAR_AEDES_AQUA_STATE, 2
+# 144 "data/maps/AedesAqua_Water2/scripts.pory"
 	call AedesAqua_Water2_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Water2_Script_WaterControl2_1:
-# 136 "data/maps/AedesAqua_Water2/scripts.pory"
+# 138 "data/maps/AedesAqua_Water2/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Water2_Script_WaterControl5::
-# 147 "data/maps/AedesAqua_Water2/scripts.pory"
+# 149 "data/maps/AedesAqua_Water2/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 148 "data/maps/AedesAqua_Water2/scripts.pory"
+# 150 "data/maps/AedesAqua_Water2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Water2_Script_WaterControl5_1
-# 153 "data/maps/AedesAqua_Water2/scripts.pory"
-	setvar VAR_AEDES_AQUA_STATE, 15
 # 155 "data/maps/AedesAqua_Water2/scripts.pory"
+	setvar VAR_AEDES_AQUA_STATE, 15
+# 157 "data/maps/AedesAqua_Water2/scripts.pory"
 	call AedesAqua_Water2_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Water2_Script_WaterControl5_1:
-# 149 "data/maps/AedesAqua_Water2/scripts.pory"
+# 151 "data/maps/AedesAqua_Water2/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Water2_Script_GoToWaterfallScene::
-# 162 "data/maps/AedesAqua_Water2/scripts.pory"
+# 164 "data/maps/AedesAqua_Water2/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 163 "data/maps/AedesAqua_Water2/scripts.pory"
-	waitmovement 0
 # 165 "data/maps/AedesAqua_Water2/scripts.pory"
+	waitmovement 0
+# 167 "data/maps/AedesAqua_Water2/scripts.pory"
 	warpsilent MAP_AEDES_AQUA_WATER2, 31, 6
-# 166 "data/maps/AedesAqua_Water2/scripts.pory"
+# 168 "data/maps/AedesAqua_Water2/scripts.pory"
 	waitstate
 	return
 

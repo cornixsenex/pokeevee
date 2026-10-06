@@ -794,7 +794,6 @@ const u16 gTrainerPalette_Mom[] = INCGFX_U16("graphics/trainers/palettes/mom.pal
 const u32 gTrainerFrontPic_Butler[] = INCGFX_U32("graphics/trainers/front_pics/butler.png", ".4bpp.smol");
 const u16 gTrainerPalette_Butler[] = INCGFX_U16("graphics/trainers/palettes/butler.pal", ".gbapal");
 
-
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
     ANIMCMD_FRAME(0, 24),

@@ -133,181 +133,189 @@ AedesAqua_Script_Waterfall13::
 	call AedesAqua_Script_ShowWaterfall
 # 74 "data/maps/AedesAqua/scripts.pory"
 	warpsilent MAP_AEDES_AQUA_WATER1, 24, 18
+# 75 "data/maps/AedesAqua/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Script_Waterfall15::
-# 78 "data/maps/AedesAqua/scripts.pory"
-	call AedesAqua_Script_ShowWaterfall
 # 79 "data/maps/AedesAqua/scripts.pory"
+	call AedesAqua_Script_ShowWaterfall
+# 80 "data/maps/AedesAqua/scripts.pory"
 	warpsilent MAP_AEDES_AQUA_WATER1, 48, 16
+# 81 "data/maps/AedesAqua/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Script_Waterfall17::
-# 83 "data/maps/AedesAqua/scripts.pory"
+# 85 "data/maps/AedesAqua/scripts.pory"
 	call AedesAqua_Script_ShowWaterfall
-# 84 "data/maps/AedesAqua/scripts.pory"
+# 86 "data/maps/AedesAqua/scripts.pory"
 	warpsilent MAP_AEDES_AQUA_WATER1, 16, 48
+# 87 "data/maps/AedesAqua/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Script_Waterfall21::
-# 88 "data/maps/AedesAqua/scripts.pory"
+# 91 "data/maps/AedesAqua/scripts.pory"
 	call AedesAqua_Script_ShowWaterfall
-# 89 "data/maps/AedesAqua/scripts.pory"
+# 92 "data/maps/AedesAqua/scripts.pory"
 	warpsilent MAP_AEDES_AQUA_WATER2, 8, 10
+# 93 "data/maps/AedesAqua/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Script_ShowWaterfall::
-# 94 "data/maps/AedesAqua/scripts.pory"
-	playse SE_M_HYDRO_PUMP
-# 95 "data/maps/AedesAqua/scripts.pory"
-	waitse
-# 97 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 26, 0, METATILE_Cave_RockWallEWater, TRUE
 # 98 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 27, 0, METATILE_Cave_CaveWater, TRUE
-# 99 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 28, 0, METATILE_Cave_CaveWater, TRUE
-# 100 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 29, 0, METATILE_Cave_CaveWater, TRUE
-# 101 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 30, 0, METATILE_Cave_RockWallWWater, TRUE
-# 102 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 32, 0, METATILE_Cave_RockWallEWater, TRUE
-# 103 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 33, 0, METATILE_Cave_CaveWater, TRUE
-# 104 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 34, 0, METATILE_Cave_CaveWater, TRUE
-# 105 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 35, 0, METATILE_Cave_CaveWater, TRUE
-# 106 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 36, 0, METATILE_Cave_RockWallWWater, TRUE
-# 108 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 26, 1, METATILE_Cave_RockWallEWater, TRUE
-# 109 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 27, 1, METATILE_Cave_CaveWater, TRUE
-# 110 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 28, 1, METATILE_Cave_CaveWater, TRUE
-# 111 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 29, 1, METATILE_Cave_CaveWater, TRUE
-# 112 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 30, 1, METATILE_Cave_RockWallWWater, TRUE
-# 113 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 32, 1, METATILE_Cave_RockWallEWater, TRUE
-# 114 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 33, 1, METATILE_Cave_CaveWater, TRUE
-# 115 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 34, 1, METATILE_Cave_CaveWater, TRUE
-# 116 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 35, 1, METATILE_Cave_CaveWater, TRUE
-# 117 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 36, 1, METATILE_Cave_RockWallWWater, TRUE
-# 119 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 26, 2, METATILE_Cave_RockCornerSEWaterHalf, TRUE
-# 120 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 27, 2, METATILE_Cave_CaveWater, TRUE
-# 121 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 28, 2, METATILE_Cave_CaveWater, TRUE
-# 122 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 29, 2, METATILE_Cave_CaveWater, TRUE
-# 123 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 30, 2, METATILE_Cave_RockCornerSWWater, TRUE
-# 124 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 31, 2, METATILE_Cave_RockWallSWater, TRUE
-# 125 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 32, 2, METATILE_Cave_RockCornerSEWater, TRUE
-# 126 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 33, 2, METATILE_Cave_CaveWater, TRUE
-# 127 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 34, 2, METATILE_Cave_CaveWater, TRUE
-# 128 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 35, 2, METATILE_Cave_CaveWater, TRUE
-# 129 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 36, 2, METATILE_Cave_RockCornerSWWaterHalf, TRUE
-# 131 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 27, 3, METATILE_General_WaterfallTop, TRUE
-# 132 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 28, 3, METATILE_General_WaterfallTop, TRUE
-# 133 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 29, 3, METATILE_General_WaterfallTop, TRUE
-# 134 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 30, 3, METATILE_General_WaterfallTop, TRUE
-# 135 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 31, 3, METATILE_General_WaterfallTop, TRUE
-# 136 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 32, 3, METATILE_General_WaterfallTop, TRUE
-# 137 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 33, 3, METATILE_General_WaterfallTop, TRUE
-# 138 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 34, 3, METATILE_General_WaterfallTop, TRUE
-# 139 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 35, 3, METATILE_General_WaterfallTop, TRUE
-# 141 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 27, 4, METATILE_General_WaterfallBottom, TRUE
-# 142 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 28, 4, METATILE_General_WaterfallBottom, TRUE
-# 143 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 29, 4, METATILE_General_WaterfallBottom, TRUE
-# 144 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 30, 4, METATILE_General_WaterfallBottom, TRUE
-# 145 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 31, 4, METATILE_General_WaterfallBottom, TRUE
-# 146 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 32, 4, METATILE_General_WaterfallBottom, TRUE
-# 147 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 33, 4, METATILE_General_WaterfallBottom, TRUE
-# 148 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 34, 4, METATILE_General_WaterfallBottom, TRUE
-# 149 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 35, 4, METATILE_General_WaterfallBottom, TRUE
-# 151 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 27, 5, METATILE_General_WaterfallBottom, TRUE
-# 152 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 28, 5, METATILE_General_WaterfallBottom, TRUE
-# 153 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 29, 5, METATILE_General_WaterfallBottom, TRUE
-# 154 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 30, 5, METATILE_General_WaterfallBottom, TRUE
-# 155 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 31, 5, METATILE_General_WaterfallBottom, TRUE
-# 156 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 32, 5, METATILE_General_WaterfallBottom, TRUE
-# 157 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 33, 5, METATILE_General_WaterfallBottom, TRUE
-# 158 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 34, 5, METATILE_General_WaterfallBottom, TRUE
-# 159 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 35, 5, METATILE_General_WaterfallBottom, TRUE
-# 160 "data/maps/AedesAqua/scripts.pory"
-	special DrawWholeMapView
-# 161 "data/maps/AedesAqua/scripts.pory"
 	playse SE_M_HYDRO_PUMP
+# 99 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 101 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 26, 0, METATILE_Cave_RockWallEWater, TRUE
+# 102 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 27, 0, METATILE_Cave_CaveWater, TRUE
+# 103 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 28, 0, METATILE_Cave_CaveWater, TRUE
+# 104 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 29, 0, METATILE_Cave_CaveWater, TRUE
+# 105 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 30, 0, METATILE_Cave_RockWallWWater, TRUE
+# 106 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 32, 0, METATILE_Cave_RockWallEWater, TRUE
+# 107 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 33, 0, METATILE_Cave_CaveWater, TRUE
+# 108 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 34, 0, METATILE_Cave_CaveWater, TRUE
+# 109 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 35, 0, METATILE_Cave_CaveWater, TRUE
+# 110 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 36, 0, METATILE_Cave_RockWallWWater, TRUE
+# 112 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 26, 1, METATILE_Cave_RockWallEWater, TRUE
+# 113 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 27, 1, METATILE_Cave_CaveWater, TRUE
+# 114 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 28, 1, METATILE_Cave_CaveWater, TRUE
+# 115 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 29, 1, METATILE_Cave_CaveWater, TRUE
+# 116 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 30, 1, METATILE_Cave_RockWallWWater, TRUE
+# 117 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 32, 1, METATILE_Cave_RockWallEWater, TRUE
+# 118 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 33, 1, METATILE_Cave_CaveWater, TRUE
+# 119 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 34, 1, METATILE_Cave_CaveWater, TRUE
+# 120 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 35, 1, METATILE_Cave_CaveWater, TRUE
+# 121 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 36, 1, METATILE_Cave_RockWallWWater, TRUE
+# 123 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 26, 2, METATILE_Cave_RockCornerSEWaterHalf, TRUE
+# 124 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 27, 2, METATILE_Cave_CaveWater, TRUE
+# 125 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 28, 2, METATILE_Cave_CaveWater, TRUE
+# 126 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 29, 2, METATILE_Cave_CaveWater, TRUE
+# 127 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 30, 2, METATILE_Cave_RockCornerSWWater, TRUE
+# 128 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 31, 2, METATILE_Cave_RockWallSWater, TRUE
+# 129 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 32, 2, METATILE_Cave_RockCornerSEWater, TRUE
+# 130 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 33, 2, METATILE_Cave_CaveWater, TRUE
+# 131 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 34, 2, METATILE_Cave_CaveWater, TRUE
+# 132 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 35, 2, METATILE_Cave_CaveWater, TRUE
+# 133 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 36, 2, METATILE_Cave_RockCornerSWWaterHalf, TRUE
+# 135 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 27, 3, METATILE_General_WaterfallTop, TRUE
+# 136 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 28, 3, METATILE_General_WaterfallTop, TRUE
+# 137 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 29, 3, METATILE_General_WaterfallTop, TRUE
+# 138 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 30, 3, METATILE_General_WaterfallTop, TRUE
+# 139 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 31, 3, METATILE_General_WaterfallTop, TRUE
+# 140 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 32, 3, METATILE_General_WaterfallTop, TRUE
+# 141 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 33, 3, METATILE_General_WaterfallTop, TRUE
+# 142 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 34, 3, METATILE_General_WaterfallTop, TRUE
+# 143 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 35, 3, METATILE_General_WaterfallTop, TRUE
+# 145 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 27, 4, METATILE_General_WaterfallBottom, TRUE
+# 146 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 28, 4, METATILE_General_WaterfallBottom, TRUE
+# 147 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 29, 4, METATILE_General_WaterfallBottom, TRUE
+# 148 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 30, 4, METATILE_General_WaterfallBottom, TRUE
+# 149 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 31, 4, METATILE_General_WaterfallBottom, TRUE
+# 150 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 32, 4, METATILE_General_WaterfallBottom, TRUE
+# 151 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 33, 4, METATILE_General_WaterfallBottom, TRUE
+# 152 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 34, 4, METATILE_General_WaterfallBottom, TRUE
+# 153 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 35, 4, METATILE_General_WaterfallBottom, TRUE
+# 155 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 27, 5, METATILE_General_WaterfallBottom, TRUE
+# 156 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 28, 5, METATILE_General_WaterfallBottom, TRUE
+# 157 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 29, 5, METATILE_General_WaterfallBottom, TRUE
+# 158 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 30, 5, METATILE_General_WaterfallBottom, TRUE
+# 159 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 31, 5, METATILE_General_WaterfallBottom, TRUE
+# 160 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 32, 5, METATILE_General_WaterfallBottom, TRUE
+# 161 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 33, 5, METATILE_General_WaterfallBottom, TRUE
 # 162 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 34, 5, METATILE_General_WaterfallBottom, TRUE
+# 163 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 35, 5, METATILE_General_WaterfallBottom, TRUE
+# 164 "data/maps/AedesAqua/scripts.pory"
+	special DrawWholeMapView
+# 165 "data/maps/AedesAqua/scripts.pory"
+	playse SE_M_HYDRO_PUMP
+# 166 "data/maps/AedesAqua/scripts.pory"
 	waitse
 	return
 
 
 AedesAqua_Script_FacePlayerUp::
-# 167 "data/maps/AedesAqua/scripts.pory"
+# 171 "data/maps/AedesAqua/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
-# 168 "data/maps/AedesAqua/scripts.pory"
+# 172 "data/maps/AedesAqua/scripts.pory"
 	setvar VAR_AEDES_AQUA_STATE, 0
 	return
 
 
 AedesAqua_Script_WaterControlNoEffect::
-# 173 "data/maps/AedesAqua/scripts.pory"
+# 177 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 174 "data/maps/AedesAqua/scripts.pory"
+# 178 "data/maps/AedesAqua/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Script_WaterControlNoEffect_2
-# 176 "data/maps/AedesAqua/scripts.pory"
+# 180 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_WaterControlNoEffect
 AedesAqua_Script_WaterControlNoEffect_1:
-# 178 "data/maps/AedesAqua/scripts.pory"
+# 182 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 	return
 
@@ -316,384 +324,384 @@ AedesAqua_Script_WaterControlNoEffect_2:
 
 
 AedesAqua_Script_WaterControl1::
-# 182 "data/maps/AedesAqua/scripts.pory"
+# 186 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 183 "data/maps/AedesAqua/scripts.pory"
+# 187 "data/maps/AedesAqua/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Script_WaterControl1_1
-# 188 "data/maps/AedesAqua/scripts.pory"
+# 192 "data/maps/AedesAqua/scripts.pory"
 	setvar VAR_AEDES_AQUA_STATE, 21
-# 190 "data/maps/AedesAqua/scripts.pory"
+# 194 "data/maps/AedesAqua/scripts.pory"
 	call AedesAqua_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Script_WaterControl1_1:
-# 184 "data/maps/AedesAqua/scripts.pory"
+# 188 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Script_WaterControl3::
-# 195 "data/maps/AedesAqua/scripts.pory"
+# 199 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 196 "data/maps/AedesAqua/scripts.pory"
+# 200 "data/maps/AedesAqua/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Script_WaterControl3_1
-# 201 "data/maps/AedesAqua/scripts.pory"
+# 205 "data/maps/AedesAqua/scripts.pory"
 	setvar VAR_AEDES_AQUA_STATE, 13
-# 203 "data/maps/AedesAqua/scripts.pory"
+# 207 "data/maps/AedesAqua/scripts.pory"
 	call AedesAqua_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Script_WaterControl3_1:
-# 197 "data/maps/AedesAqua/scripts.pory"
+# 201 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Script_WaterControl5::
-# 208 "data/maps/AedesAqua/scripts.pory"
+# 212 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 209 "data/maps/AedesAqua/scripts.pory"
+# 213 "data/maps/AedesAqua/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Script_WaterControl5_1
-# 214 "data/maps/AedesAqua/scripts.pory"
+# 218 "data/maps/AedesAqua/scripts.pory"
 	setvar VAR_AEDES_AQUA_STATE, 15
-# 216 "data/maps/AedesAqua/scripts.pory"
+# 220 "data/maps/AedesAqua/scripts.pory"
 	call AedesAqua_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Script_WaterControl5_1:
-# 210 "data/maps/AedesAqua/scripts.pory"
+# 214 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Script_WaterControl7::
-# 221 "data/maps/AedesAqua/scripts.pory"
+# 225 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 222 "data/maps/AedesAqua/scripts.pory"
+# 226 "data/maps/AedesAqua/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Script_WaterControl7_1
-# 226 "data/maps/AedesAqua/scripts.pory"
+# 230 "data/maps/AedesAqua/scripts.pory"
 	setvar VAR_AEDES_AQUA_STATE, 17
-# 227 "data/maps/AedesAqua/scripts.pory"
+# 231 "data/maps/AedesAqua/scripts.pory"
 	call AedesAqua_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Script_WaterControl7_1:
-# 223 "data/maps/AedesAqua/scripts.pory"
+# 227 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Script_GoToWaterfallScene::
-# 233 "data/maps/AedesAqua/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 234 "data/maps/AedesAqua/scripts.pory"
-	waitmovement 0
-# 236 "data/maps/AedesAqua/scripts.pory"
-	warpsilent MAP_AEDES_AQUA, 31, 6
 # 237 "data/maps/AedesAqua/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 238 "data/maps/AedesAqua/scripts.pory"
+	waitmovement 0
+# 240 "data/maps/AedesAqua/scripts.pory"
+	warpsilent MAP_AEDES_AQUA, 31, 6
+# 241 "data/maps/AedesAqua/scripts.pory"
 	waitstate
 	return
 
 
 AedesAqua_Script_Crystal1::
-# 241 "data/maps/AedesAqua/scripts.pory"
+# 245 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL1, AedesAqua_Script_Crystal1_2
-# 250 "data/maps/AedesAqua/scripts.pory"
+# 254 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 251 "data/maps/AedesAqua/scripts.pory"
+# 255 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal1_1:
 	end
 
 AedesAqua_Script_Crystal1_2:
-# 242 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL1
-# 243 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 244 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 245 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 246 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL1
 # 247 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 43, 10, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 248 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 249 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 250 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 251 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 43, 10, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 252 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal1_1
 
 
 AedesAqua_Script_Crystal2::
-# 257 "data/maps/AedesAqua/scripts.pory"
+# 261 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL2, AedesAqua_Script_Crystal2_2
-# 266 "data/maps/AedesAqua/scripts.pory"
+# 270 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 267 "data/maps/AedesAqua/scripts.pory"
+# 271 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal2_1:
 	end
 
 AedesAqua_Script_Crystal2_2:
-# 258 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL2
-# 259 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 260 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 261 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 262 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL2
 # 263 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 15, 24, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 264 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 265 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 266 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 267 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 15, 24, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 268 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal2_1
 
 
 AedesAqua_Script_Crystal3::
-# 273 "data/maps/AedesAqua/scripts.pory"
+# 277 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL3, AedesAqua_Script_Crystal3_2
-# 282 "data/maps/AedesAqua/scripts.pory"
+# 286 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 283 "data/maps/AedesAqua/scripts.pory"
+# 287 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal3_1:
 	end
 
 AedesAqua_Script_Crystal3_2:
-# 274 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL3
-# 275 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 276 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 277 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 278 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL3
 # 279 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 32, 25, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 280 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 281 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 282 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 283 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 32, 25, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 284 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal3_1
 
 
 AedesAqua_Script_Crystal4::
-# 289 "data/maps/AedesAqua/scripts.pory"
+# 293 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL4, AedesAqua_Script_Crystal4_2
-# 298 "data/maps/AedesAqua/scripts.pory"
+# 302 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 299 "data/maps/AedesAqua/scripts.pory"
+# 303 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal4_1:
 	end
 
 AedesAqua_Script_Crystal4_2:
-# 290 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL4
-# 291 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 292 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 293 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 294 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL4
 # 295 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 50, 20, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 296 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 297 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 298 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 299 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 50, 20, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 300 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal4_1
 
 
 AedesAqua_Script_Crystal5::
-# 305 "data/maps/AedesAqua/scripts.pory"
+# 309 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL5, AedesAqua_Script_Crystal5_2
-# 314 "data/maps/AedesAqua/scripts.pory"
+# 318 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 315 "data/maps/AedesAqua/scripts.pory"
+# 319 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal5_1:
 	end
 
 AedesAqua_Script_Crystal5_2:
-# 306 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL5
-# 307 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 308 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 309 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 310 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL5
 # 311 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 5, 31, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 312 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 313 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 314 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 315 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 5, 31, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 316 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal5_1
 
 
 AedesAqua_Script_Crystal7::
-# 321 "data/maps/AedesAqua/scripts.pory"
+# 325 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL7, AedesAqua_Script_Crystal7_2
-# 330 "data/maps/AedesAqua/scripts.pory"
+# 334 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 331 "data/maps/AedesAqua/scripts.pory"
+# 335 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal7_1:
 	end
 
 AedesAqua_Script_Crystal7_2:
-# 322 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL7
-# 323 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 324 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 325 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 326 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL7
 # 327 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 29, 38, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 328 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 329 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 330 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 331 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 29, 38, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 332 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal7_1
 
 
 AedesAqua_Script_Crystal9::
-# 337 "data/maps/AedesAqua/scripts.pory"
+# 341 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL9, AedesAqua_Script_Crystal9_2
-# 346 "data/maps/AedesAqua/scripts.pory"
+# 350 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 347 "data/maps/AedesAqua/scripts.pory"
+# 351 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal9_1:
 	end
 
 AedesAqua_Script_Crystal9_2:
-# 338 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL9
-# 339 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 340 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 341 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 342 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL9
 # 343 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 52, 44, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 344 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 345 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 346 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 347 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 52, 44, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 348 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal9_1
 
 
 AedesAqua_Script_Crystal10::
-# 353 "data/maps/AedesAqua/scripts.pory"
+# 357 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL10, AedesAqua_Script_Crystal10_2
-# 362 "data/maps/AedesAqua/scripts.pory"
+# 366 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 363 "data/maps/AedesAqua/scripts.pory"
+# 367 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal10_1:
 	end
 
 AedesAqua_Script_Crystal10_2:
-# 354 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL10
-# 355 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 356 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 357 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 358 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL10
 # 359 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 18, 53, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 360 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 361 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 362 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 363 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 18, 53, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 364 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal10_1
 
 
 AedesAqua_Script_Crystal11::
-# 369 "data/maps/AedesAqua/scripts.pory"
+# 373 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL11, AedesAqua_Script_Crystal11_2
-# 378 "data/maps/AedesAqua/scripts.pory"
+# 382 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 379 "data/maps/AedesAqua/scripts.pory"
+# 383 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal11_1:
 	end
 
 AedesAqua_Script_Crystal11_2:
-# 370 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL11
-# 371 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 372 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 373 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 374 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL11
 # 375 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 35, 52, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 376 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 377 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 378 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 379 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 35, 52, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 380 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal11_1
 
 
 AedesAqua_Script_Crystal12::
-# 385 "data/maps/AedesAqua/scripts.pory"
+# 389 "data/maps/AedesAqua/scripts.pory"
 	goto_if_unset FLAG_AEDES_AQUA_CRYSTAL12, AedesAqua_Script_Crystal12_2
-# 394 "data/maps/AedesAqua/scripts.pory"
+# 398 "data/maps/AedesAqua/scripts.pory"
 	msgbox AedesAqua_Text_CrystalPressed
-# 395 "data/maps/AedesAqua/scripts.pory"
+# 399 "data/maps/AedesAqua/scripts.pory"
 	closemessage
 AedesAqua_Script_Crystal12_1:
 	end
 
 AedesAqua_Script_Crystal12_2:
-# 386 "data/maps/AedesAqua/scripts.pory"
-	setflag FLAG_AEDES_AQUA_CRYSTAL12
-# 387 "data/maps/AedesAqua/scripts.pory"
-	msgbox AedesAqua_Text_CrystalPress
-# 388 "data/maps/AedesAqua/scripts.pory"
-	playse SE_SWITCH
-# 389 "data/maps/AedesAqua/scripts.pory"
-	waitse
 # 390 "data/maps/AedesAqua/scripts.pory"
-	closemessage
+	setflag FLAG_AEDES_AQUA_CRYSTAL12
 # 391 "data/maps/AedesAqua/scripts.pory"
-	setmetatile 11, 62, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+	msgbox AedesAqua_Text_CrystalPress
 # 392 "data/maps/AedesAqua/scripts.pory"
+	playse SE_SWITCH
+# 393 "data/maps/AedesAqua/scripts.pory"
+	waitse
+# 394 "data/maps/AedesAqua/scripts.pory"
+	closemessage
+# 395 "data/maps/AedesAqua/scripts.pory"
+	setmetatile 11, 62, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE
+# 396 "data/maps/AedesAqua/scripts.pory"
 	special DrawWholeMapView
 	goto AedesAqua_Script_Crystal12_1
 
 
 AedesAqua_Text_WaterControl::
-# 400 "data/maps/AedesAqua/scripts.pory"
+# 404 "data/maps/AedesAqua/scripts.pory"
 	.string "It seems to be a control panel. Would\n"
 	.string "you like to try pressing the buttons?$"
 
 AedesAqua_Text_WaterControlNoEffect::
-# 404 "data/maps/AedesAqua/scripts.pory"
+# 408 "data/maps/AedesAqua/scripts.pory"
 	.string "It seems like nothing happened.$"
 
 AedesAqua_Text_CrystalPress::
-# 408 "data/maps/AedesAqua/scripts.pory"
+# 412 "data/maps/AedesAqua/scripts.pory"
 	.string "It looks like the blue crystal can be\n"
 	.string "pushed down. Better press it!$"
 
 AedesAqua_Text_CrystalPressed::
-# 412 "data/maps/AedesAqua/scripts.pory"
+# 416 "data/maps/AedesAqua/scripts.pory"
 	.string "The blue crystal won't go any further\n"
 	.string "down.$"

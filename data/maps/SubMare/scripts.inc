@@ -202,5 +202,7 @@ SubMare_Script_CharybdisScene::
 	waitse
 # 123 "data/maps/SubMare/scripts.pory"
 	warpsilent MAP_MARE_S4, 59, 10
+# 124 "data/maps/SubMare/scripts.pory"
+	waitstate
 	end
 

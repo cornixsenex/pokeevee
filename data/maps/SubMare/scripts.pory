@@ -121,6 +121,7 @@ script SubMare_Script_CharybdisScene {
 	playse (SE_M_DIVE)
 	waitse
 	warpsilent (MAP_MARE_S4, 59, 10)
+	waitstate
 
 	end //should never be reached
 }

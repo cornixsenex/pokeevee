@@ -110,229 +110,235 @@ AedesAqua_Water1_Script_NoWaterfall4::
 	call AedesAqua_Water1_Script_ShowNoWaterfall
 # 61 "data/maps/AedesAqua_Water1/scripts.pory"
 	warpsilent MAP_AEDES_AQUA, 40, 18
+# 62 "data/maps/AedesAqua_Water1/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Water1_Script_NoWaterfall6::
-# 65 "data/maps/AedesAqua_Water1/scripts.pory"
-	call AedesAqua_Water1_Script_ShowNoWaterfall
 # 66 "data/maps/AedesAqua_Water1/scripts.pory"
+	call AedesAqua_Water1_Script_ShowNoWaterfall
+# 67 "data/maps/AedesAqua_Water1/scripts.pory"
 	warpsilent MAP_AEDES_AQUA, 55, 34
+# 68 "data/maps/AedesAqua_Water1/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Water1_Script_NoWaterfall8::
-# 70 "data/maps/AedesAqua_Water1/scripts.pory"
+# 72 "data/maps/AedesAqua_Water1/scripts.pory"
 	call AedesAqua_Water1_Script_ShowNoWaterfall
-# 71 "data/maps/AedesAqua_Water1/scripts.pory"
+# 73 "data/maps/AedesAqua_Water1/scripts.pory"
 	warpsilent MAP_AEDES_AQUA, 45, 52
+# 74 "data/maps/AedesAqua_Water1/scripts.pory"
+	waitstate
 	return
 
 
 AedesAqua_Water1_Script_ShowNoWaterfall::
-# 75 "data/maps/AedesAqua_Water1/scripts.pory"
-	playse SE_M_HYDRO_PUMP
-# 76 "data/maps/AedesAqua_Water1/scripts.pory"
-	waitse
 # 78 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 26, 0, METATILE_Cave_RockWallE, TRUE
+	playse SE_M_HYDRO_PUMP
 # 79 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 27, 0, METATILE_Cave_RockWallTop, TRUE
-# 80 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 28, 0, METATILE_Cave_RockWallTop, TRUE
+	waitse
 # 81 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 29, 0, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 26, 0, METATILE_Cave_RockWallE, TRUE
 # 82 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 30, 0, METATILE_Cave_RockWallW, TRUE
+	setmetatile 27, 0, METATILE_Cave_RockWallTop, TRUE
 # 83 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 32, 0, METATILE_Cave_RockWallE, TRUE
+	setmetatile 28, 0, METATILE_Cave_RockWallTop, TRUE
 # 84 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 33, 0, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 29, 0, METATILE_Cave_RockWallTop, TRUE
 # 85 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 34, 0, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 30, 0, METATILE_Cave_RockWallW, TRUE
 # 86 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 35, 0, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 32, 0, METATILE_Cave_RockWallE, TRUE
 # 87 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 36, 0, METATILE_Cave_RockWallW, TRUE
+	setmetatile 33, 0, METATILE_Cave_RockWallTop, TRUE
+# 88 "data/maps/AedesAqua_Water1/scripts.pory"
+	setmetatile 34, 0, METATILE_Cave_RockWallTop, TRUE
 # 89 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 26, 1, METATILE_Cave_RockWallE, TRUE
+	setmetatile 35, 0, METATILE_Cave_RockWallTop, TRUE
 # 90 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 27, 1, METATILE_Cave_RockWallTop, TRUE
-# 91 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 28, 1, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 36, 0, METATILE_Cave_RockWallW, TRUE
 # 92 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 29, 1, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 26, 1, METATILE_Cave_RockWallE, TRUE
 # 93 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 30, 1, METATILE_Cave_RockWallW, TRUE
+	setmetatile 27, 1, METATILE_Cave_RockWallTop, TRUE
 # 94 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 32, 1, METATILE_Cave_RockWallE, TRUE
+	setmetatile 28, 1, METATILE_Cave_RockWallTop, TRUE
 # 95 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 33, 1, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 29, 1, METATILE_Cave_RockWallTop, TRUE
 # 96 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 34, 1, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 30, 1, METATILE_Cave_RockWallW, TRUE
 # 97 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 35, 1, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 32, 1, METATILE_Cave_RockWallE, TRUE
 # 98 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 36, 1, METATILE_Cave_RockWallW, TRUE
+	setmetatile 33, 1, METATILE_Cave_RockWallTop, TRUE
+# 99 "data/maps/AedesAqua_Water1/scripts.pory"
+	setmetatile 34, 1, METATILE_Cave_RockWallTop, TRUE
 # 100 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 26, 2, METATILE_Cave_RockWallSE, TRUE
+	setmetatile 35, 1, METATILE_Cave_RockWallTop, TRUE
 # 101 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 27, 2, METATILE_Cave_RockWallTop, TRUE
-# 102 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 28, 2, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 36, 1, METATILE_Cave_RockWallW, TRUE
 # 103 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 29, 2, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 26, 2, METATILE_Cave_RockWallSE, TRUE
 # 104 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 30, 2, METATILE_Cave_RockWallSW, TRUE
+	setmetatile 27, 2, METATILE_Cave_RockWallTop, TRUE
 # 105 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 31, 2, METATILE_Cave_RockWallS, TRUE
+	setmetatile 28, 2, METATILE_Cave_RockWallTop, TRUE
 # 106 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 32, 2, METATILE_Cave_RockWallSE, TRUE
+	setmetatile 29, 2, METATILE_Cave_RockWallTop, TRUE
 # 107 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 33, 2, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 30, 2, METATILE_Cave_RockWallSW, TRUE
 # 108 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 34, 2, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 31, 2, METATILE_Cave_RockWallS, TRUE
 # 109 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 35, 2, METATILE_Cave_RockWallTop, TRUE
+	setmetatile 32, 2, METATILE_Cave_RockWallSE, TRUE
 # 110 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 36, 2, METATILE_Cave_RockWallSW, TRUE
+	setmetatile 33, 2, METATILE_Cave_RockWallTop, TRUE
+# 111 "data/maps/AedesAqua_Water1/scripts.pory"
+	setmetatile 34, 2, METATILE_Cave_RockWallTop, TRUE
 # 112 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 27, 3, METATILE_Cave_RockWallS, TRUE
+	setmetatile 35, 2, METATILE_Cave_RockWallTop, TRUE
 # 113 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 28, 3, METATILE_Cave_RockWallS, TRUE
-# 114 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 29, 3, METATILE_Cave_RockWallS, TRUE
+	setmetatile 36, 2, METATILE_Cave_RockWallSW, TRUE
 # 115 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 30, 3, METATILE_Cave_RockWallS, TRUE
+	setmetatile 27, 3, METATILE_Cave_RockWallS, TRUE
 # 116 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 31, 3, METATILE_Cave_RockWallS, TRUE
+	setmetatile 28, 3, METATILE_Cave_RockWallS, TRUE
 # 117 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 32, 3, METATILE_Cave_RockWallS, TRUE
+	setmetatile 29, 3, METATILE_Cave_RockWallS, TRUE
 # 118 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 33, 3, METATILE_Cave_RockWallS, TRUE
+	setmetatile 30, 3, METATILE_Cave_RockWallS, TRUE
 # 119 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 34, 3, METATILE_Cave_RockWallS, TRUE
+	setmetatile 31, 3, METATILE_Cave_RockWallS, TRUE
 # 120 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 35, 3, METATILE_Cave_RockWallS, TRUE
+	setmetatile 32, 3, METATILE_Cave_RockWallS, TRUE
+# 121 "data/maps/AedesAqua_Water1/scripts.pory"
+	setmetatile 33, 3, METATILE_Cave_RockWallS, TRUE
 # 122 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 27, 4, METATILE_Cave_RockWallS, TRUE
+	setmetatile 34, 3, METATILE_Cave_RockWallS, TRUE
 # 123 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 28, 4, METATILE_Cave_RockWallS, TRUE
-# 124 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 29, 4, METATILE_Cave_RockWallS, TRUE
+	setmetatile 35, 3, METATILE_Cave_RockWallS, TRUE
 # 125 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 30, 4, METATILE_Cave_RockWallS, TRUE
+	setmetatile 27, 4, METATILE_Cave_RockWallS, TRUE
 # 126 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 31, 4, METATILE_Cave_SealedChamberEntrance_TopMid, TRUE
+	setmetatile 28, 4, METATILE_Cave_RockWallS, TRUE
 # 127 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 32, 4, METATILE_Cave_RockWallS, TRUE
+	setmetatile 29, 4, METATILE_Cave_RockWallS, TRUE
 # 128 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 33, 4, METATILE_Cave_RockWallS, TRUE
+	setmetatile 30, 4, METATILE_Cave_RockWallS, TRUE
 # 129 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 34, 4, METATILE_Cave_RockWallS, TRUE
+	setmetatile 31, 4, METATILE_Cave_SealedChamberEntrance_TopMid, TRUE
 # 130 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 35, 4, METATILE_Cave_RockWallS, TRUE
+	setmetatile 32, 4, METATILE_Cave_RockWallS, TRUE
+# 131 "data/maps/AedesAqua_Water1/scripts.pory"
+	setmetatile 33, 4, METATILE_Cave_RockWallS, TRUE
 # 132 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 27, 5, METATILE_Cave_WaterLedgeS, TRUE
+	setmetatile 34, 4, METATILE_Cave_RockWallS, TRUE
 # 133 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 28, 5, METATILE_Cave_WaterLedgeS, TRUE
-# 134 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 29, 5, METATILE_Cave_WaterLedgeS, TRUE
+	setmetatile 35, 4, METATILE_Cave_RockWallS, TRUE
 # 135 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 30, 5, METATILE_Cave_WaterDoorEdgeL, TRUE
+	setmetatile 27, 5, METATILE_Cave_WaterLedgeS, TRUE
 # 136 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 31, 5, METATILE_Cave_CaveWater, TRUE
+	setmetatile 28, 5, METATILE_Cave_WaterLedgeS, TRUE
 # 137 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 32, 5, METATILE_Cave_WaterDoorEdgeL, TRUE
+	setmetatile 29, 5, METATILE_Cave_WaterLedgeS, TRUE
 # 138 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 33, 5, METATILE_Cave_WaterLedgeS, TRUE
+	setmetatile 30, 5, METATILE_Cave_WaterDoorEdgeL, TRUE
 # 139 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 34, 5, METATILE_Cave_WaterLedgeS, TRUE
+	setmetatile 31, 5, METATILE_Cave_CaveWater, TRUE
 # 140 "data/maps/AedesAqua_Water1/scripts.pory"
-	setmetatile 35, 5, METATILE_Cave_WaterLedgeS, TRUE
+	setmetatile 32, 5, METATILE_Cave_WaterDoorEdgeL, TRUE
 # 141 "data/maps/AedesAqua_Water1/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 33, 5, METATILE_Cave_WaterLedgeS, TRUE
 # 142 "data/maps/AedesAqua_Water1/scripts.pory"
+	setmetatile 34, 5, METATILE_Cave_WaterLedgeS, TRUE
+# 143 "data/maps/AedesAqua_Water1/scripts.pory"
+	setmetatile 35, 5, METATILE_Cave_WaterLedgeS, TRUE
+# 144 "data/maps/AedesAqua_Water1/scripts.pory"
+	special DrawWholeMapView
+# 145 "data/maps/AedesAqua_Water1/scripts.pory"
 	delay 50
 	return
 
 
 AedesAqua_Water1_Script_SupressSurf::
-# 147 "data/maps/AedesAqua_Water1/scripts.pory"
+# 150 "data/maps/AedesAqua_Water1/scripts.pory"
 	setmetatile 31, 6, METATILE_Cave_CaveWater_False, FALSE
 	return
 
 
 AedesAqua_Water1_Script_HidePlayer::
-# 152 "data/maps/AedesAqua_Water1/scripts.pory"
+# 155 "data/maps/AedesAqua_Water1/scripts.pory"
 	hideobjectat LOCALID_PLAYER, MAP_AEDES_AQUA_WATER1
-# 153 "data/maps/AedesAqua_Water1/scripts.pory"
+# 156 "data/maps/AedesAqua_Water1/scripts.pory"
 	hideobjectat LOCALID_FOLLOWING_POKEMON, MAP_AEDES_AQUA_WATER1
 	return
 
 
 AedesAqua_Water1_Script_WaterControl4::
-# 158 "data/maps/AedesAqua_Water1/scripts.pory"
+# 161 "data/maps/AedesAqua_Water1/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 159 "data/maps/AedesAqua_Water1/scripts.pory"
+# 162 "data/maps/AedesAqua_Water1/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Water1_Script_WaterControl4_1
-# 164 "data/maps/AedesAqua_Water1/scripts.pory"
+# 167 "data/maps/AedesAqua_Water1/scripts.pory"
 	setvar VAR_AEDES_AQUA_STATE, 4
-# 166 "data/maps/AedesAqua_Water1/scripts.pory"
+# 169 "data/maps/AedesAqua_Water1/scripts.pory"
 	call AedesAqua_Water1_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Water1_Script_WaterControl4_1:
-# 160 "data/maps/AedesAqua_Water1/scripts.pory"
+# 163 "data/maps/AedesAqua_Water1/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Water1_Script_WaterControl6::
-# 171 "data/maps/AedesAqua_Water1/scripts.pory"
+# 174 "data/maps/AedesAqua_Water1/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 172 "data/maps/AedesAqua_Water1/scripts.pory"
+# 175 "data/maps/AedesAqua_Water1/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Water1_Script_WaterControl6_1
-# 177 "data/maps/AedesAqua_Water1/scripts.pory"
+# 180 "data/maps/AedesAqua_Water1/scripts.pory"
 	setvar VAR_AEDES_AQUA_STATE, 6
-# 179 "data/maps/AedesAqua_Water1/scripts.pory"
+# 182 "data/maps/AedesAqua_Water1/scripts.pory"
 	call AedesAqua_Water1_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Water1_Script_WaterControl6_1:
-# 173 "data/maps/AedesAqua_Water1/scripts.pory"
+# 176 "data/maps/AedesAqua_Water1/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Water1_Script_WaterControl8::
-# 184 "data/maps/AedesAqua_Water1/scripts.pory"
+# 187 "data/maps/AedesAqua_Water1/scripts.pory"
 	msgbox AedesAqua_Text_WaterControl, MSGBOX_YESNO
-# 185 "data/maps/AedesAqua_Water1/scripts.pory"
+# 188 "data/maps/AedesAqua_Water1/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq AedesAqua_Water1_Script_WaterControl8_1
-# 190 "data/maps/AedesAqua_Water1/scripts.pory"
+# 193 "data/maps/AedesAqua_Water1/scripts.pory"
 	setvar VAR_AEDES_AQUA_STATE, 8
-# 192 "data/maps/AedesAqua_Water1/scripts.pory"
+# 195 "data/maps/AedesAqua_Water1/scripts.pory"
 	call AedesAqua_Water1_Script_GoToWaterfallScene
 	return
 
 AedesAqua_Water1_Script_WaterControl8_1:
-# 186 "data/maps/AedesAqua_Water1/scripts.pory"
+# 189 "data/maps/AedesAqua_Water1/scripts.pory"
 	closemessage
 	end
 
 
 AedesAqua_Water1_Script_GoToWaterfallScene::
-# 198 "data/maps/AedesAqua_Water1/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 199 "data/maps/AedesAqua_Water1/scripts.pory"
-	waitmovement 0
 # 201 "data/maps/AedesAqua_Water1/scripts.pory"
-	warpsilent MAP_AEDES_AQUA_WATER1, 31, 6
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 202 "data/maps/AedesAqua_Water1/scripts.pory"
+	waitmovement 0
+# 204 "data/maps/AedesAqua_Water1/scripts.pory"
+	warpsilent MAP_AEDES_AQUA_WATER1, 31, 6
+# 205 "data/maps/AedesAqua_Water1/scripts.pory"
 	waitstate
 	return
 

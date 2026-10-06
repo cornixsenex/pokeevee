@@ -173,12 +173,14 @@ mapscripts Colchis_MapScripts {
 script Colchis_TempScript_WarpSanctum {
 	setvar (VAR_ARGO_STATE, 11)
 	warpsilent (MAP_COLCHIS, 34, 56)
+	waitstate
 	end
 }
 
 script Colchis_TempScript_SetupTestMedeaDance {
-	warpsilent (MAP_COLCHIS, 51, 25)
 	setvar (VAR_ARGO_STATE, 10)
+	warpsilent (MAP_COLCHIS, 51, 25)
+	waitstate
 	end
 }
 
@@ -1941,6 +1943,7 @@ script Colchis_Script_Exeunt {
 	waitmovement (0)
 	//warp out to BigIslandN
 	warpsilent (MAP_BIG_ISLAND_N, 31, 37)
+	waitstate
 	end
 }
 

@@ -289,6 +289,7 @@ script MareS7_Script_TaurosTelemachus {
 	msgbox(MareS7_Text_UlyssesSaveTelemachus1)
 	setvar (VAR_ULYSSES_STATE, 1)
 	warpsilent (MAP_MARE_S7, 11, 34)
+	waitstate
 }
 
 script MareS7_Script_UlyssesSaveTelemachus {
@@ -303,6 +304,7 @@ script MareS7_Script_UlyssesSaveTelemachus {
 	msgbox(MareS7_Text_UlyssesSaveTelemachus3)
 	//warp into Casa
     warpsilent (MAP_CASA_ULYSSIS, 7, 8)
+	waitstate
 }
 
 script MareS7_Script_Polyphemus {

@@ -77,6 +77,7 @@ script AedesLux_Script_Warp {
 	msgbox (AedesTerra_BossRoom_Text_WarpSign, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		warpsilent (MAP_AEDES_LUX_1F, 17, 47)
+		waitstate
 	} else {
 		closemessage
 	}

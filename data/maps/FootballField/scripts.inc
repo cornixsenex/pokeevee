@@ -71,433 +71,435 @@ FootballField_EventScript_FinishClass::
 	clearflag FLAG_OPEN_CLASS_GYM
 # 78 "data/maps/FootballField/scripts.pory"
 	warpsilent MAP_FOOTBALL_FIELD, 14, 36
+# 79 "data/maps/FootballField/scripts.pory"
+	waitstate
 	end
 
 
 FootballField_EventScript_CatchingTest::
-# 86 "data/maps/FootballField/scripts.pory"
+# 87 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_FinishClass
 	return
 
 
 FootballField_EventScript_SetupRunningTest::
-# 93 "data/maps/FootballField/scripts.pory"
+# 94 "data/maps/FootballField/scripts.pory"
 	fadescreenswapbuffers 1
-# 95 "data/maps/FootballField/scripts.pory"
+# 96 "data/maps/FootballField/scripts.pory"
 	lockall
-# 97 "data/maps/FootballField/scripts.pory"
-	setobjectxy OBJ_EVENT_ID_PLAYER, 13, 33
 # 98 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm OBJ_EVENT_ID_PLAYER, 13, 33
+	setobjectxy OBJ_EVENT_ID_PLAYER, 13, 33
 # 99 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm OBJ_EVENT_ID_PLAYER, 13, 33
+# 100 "data/maps/FootballField/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-# 102 "data/maps/FootballField/scripts.pory"
-	setobjectxy 1, 13, 7
 # 103 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 1, 13, 7
+	setobjectxy 1, 13, 7
 # 104 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 1, 13, 7
+# 105 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_CHASE_PLAYER
-# 107 "data/maps/FootballField/scripts.pory"
-	setobjectxy 7, 10, 9
 # 108 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 7, 10, 9
+	setobjectxy 7, 10, 9
 # 109 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 7, 10, 9
+# 110 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 7, MOVEMENT_TYPE_CHASE_PLAYER
-# 111 "data/maps/FootballField/scripts.pory"
-	setobjectxy 8, 17, 9
 # 112 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 8, 17, 9
+	setobjectxy 8, 17, 9
 # 113 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 8, 17, 9
+# 114 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 8, MOVEMENT_TYPE_CHASE_PLAYER
-# 115 "data/maps/FootballField/scripts.pory"
-	setobjectxy 9, 13, 29
 # 116 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 9, 13, 29
+	setobjectxy 9, 13, 29
 # 117 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 9, 13, 29
+# 118 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 9, MOVEMENT_TYPE_CHASE_PLAYER
-# 119 "data/maps/FootballField/scripts.pory"
-	setobjectxy 10, 8, 25
 # 120 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 10, 8, 25
+	setobjectxy 10, 8, 25
 # 121 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 10, 8, 25
+# 122 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 10, MOVEMENT_TYPE_CHASE_PLAYER
-# 123 "data/maps/FootballField/scripts.pory"
-	removeobject 11
 # 124 "data/maps/FootballField/scripts.pory"
-	setobjectxy 11, 7, 27
+	removeobject 11
 # 125 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 11, 7, 27
+	setobjectxy 11, 7, 27
 # 126 "data/maps/FootballField/scripts.pory"
-	setobjectmovementtype 11, MOVEMENT_TYPE_CHASE_PLAYER
+	setobjectxyperm 11, 7, 27
 # 127 "data/maps/FootballField/scripts.pory"
+	setobjectmovementtype 11, MOVEMENT_TYPE_CHASE_PLAYER
+# 128 "data/maps/FootballField/scripts.pory"
 	addobject 11
-# 130 "data/maps/FootballField/scripts.pory"
-	setobjectxy 2, 17, 26
 # 131 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 2, 17, 26
+	setobjectxy 2, 17, 26
 # 132 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 2, 17, 26
+# 133 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 2, MOVEMENT_TYPE_CHASE_PLAYER
-# 134 "data/maps/FootballField/scripts.pory"
-	setobjectxy 3, 13, 21
 # 135 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 3, 13, 21
+	setobjectxy 3, 13, 21
 # 136 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 3, 13, 21
+# 137 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 3, MOVEMENT_TYPE_CHASE_PLAYER
-# 138 "data/maps/FootballField/scripts.pory"
-	setobjectxy 4, 9, 17
 # 139 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 4, 9, 17
+	setobjectxy 4, 9, 17
 # 140 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 4, 9, 17
+# 141 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 4, MOVEMENT_TYPE_CHASE_PLAYER
-# 142 "data/maps/FootballField/scripts.pory"
-	setobjectxy 5, 17, 17
 # 143 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 5, 17, 17
+	setobjectxy 5, 17, 17
 # 144 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 5, 17, 17
+# 145 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 5, MOVEMENT_TYPE_CHASE_PLAYER
-# 146 "data/maps/FootballField/scripts.pory"
-	setobjectxy 6, 17, 12
 # 147 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm 6, 17, 12
+	setobjectxy 6, 17, 12
 # 148 "data/maps/FootballField/scripts.pory"
+	setobjectxyperm 6, 17, 12
+# 149 "data/maps/FootballField/scripts.pory"
 	setobjectmovementtype 6, MOVEMENT_TYPE_CHASE_PLAYER
-# 150 "data/maps/FootballField/scripts.pory"
-	turnobject 7, DIR_SOUTH
 # 151 "data/maps/FootballField/scripts.pory"
-	turnobject 8, DIR_SOUTH
+	turnobject 7, DIR_SOUTH
 # 152 "data/maps/FootballField/scripts.pory"
-	turnobject 9, DIR_SOUTH
+	turnobject 8, DIR_SOUTH
 # 153 "data/maps/FootballField/scripts.pory"
-	turnobject 10, DIR_SOUTH
+	turnobject 9, DIR_SOUTH
 # 154 "data/maps/FootballField/scripts.pory"
+	turnobject 10, DIR_SOUTH
+# 155 "data/maps/FootballField/scripts.pory"
 	turnobject 11, DIR_SOUTH
-# 156 "data/maps/FootballField/scripts.pory"
-	turnobject 2, DIR_SOUTH
 # 157 "data/maps/FootballField/scripts.pory"
-	turnobject 3, DIR_SOUTH
+	turnobject 2, DIR_SOUTH
 # 158 "data/maps/FootballField/scripts.pory"
-	turnobject 4, DIR_SOUTH
+	turnobject 3, DIR_SOUTH
 # 159 "data/maps/FootballField/scripts.pory"
-	turnobject 5, DIR_SOUTH
+	turnobject 4, DIR_SOUTH
 # 160 "data/maps/FootballField/scripts.pory"
+	turnobject 5, DIR_SOUTH
+# 161 "data/maps/FootballField/scripts.pory"
 	turnobject 6, DIR_SOUTH
-# 163 "data/maps/FootballField/scripts.pory"
-	special ResetCamera
 # 164 "data/maps/FootballField/scripts.pory"
+	special ResetCamera
+# 165 "data/maps/FootballField/scripts.pory"
 	fadescreenswapbuffers 0
 	return
 
 
 FootballField_EventScript_StartRunningTest::
-# 170 "data/maps/FootballField/scripts.pory"
-	lockall
 # 171 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_BeginRunningTest
+	lockall
 # 172 "data/maps/FootballField/scripts.pory"
-	closemessage
+	msgbox FootballField_Text_BeginRunningTest
 # 173 "data/maps/FootballField/scripts.pory"
-	setvar VAR_TEMP_1, 1
+	closemessage
 # 174 "data/maps/FootballField/scripts.pory"
+	setvar VAR_TEMP_1, 1
+# 175 "data/maps/FootballField/scripts.pory"
 	releaseall
 	return
 
 
 FootballField_EventScript_DoNotLeaveField::
-# 179 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 180 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 181 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_DoNotLeaveField
+	waitmovement 0
 # 182 "data/maps/FootballField/scripts.pory"
-	closemessage
+	msgbox FootballField_Text_DoNotLeaveField
 # 183 "data/maps/FootballField/scripts.pory"
-	switch VAR_TEMP_1
+	closemessage
 # 184 "data/maps/FootballField/scripts.pory"
+	switch VAR_TEMP_1
+# 185 "data/maps/FootballField/scripts.pory"
 	case 1, FootballField_EventScript_DoNotLeaveField_2
 	return
 
 FootballField_EventScript_DoNotLeaveField_2:
-# 185 "data/maps/FootballField/scripts.pory"
+# 186 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_RunningTest
 	return
 
 
 FootballField_EventScript_FieldTrigger1::
-# 191 "data/maps/FootballField/scripts.pory"
-	lockall
 # 192 "data/maps/FootballField/scripts.pory"
+	lockall
+# 193 "data/maps/FootballField/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq FootballField_EventScript_FieldTrigger1_2
-# 207 "data/maps/FootballField/scripts.pory"
+# 208 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_DoNotLeaveField
 FootballField_EventScript_FieldTrigger1_1:
-# 209 "data/maps/FootballField/scripts.pory"
+# 210 "data/maps/FootballField/scripts.pory"
 	releaseall
 	end
 
 FootballField_EventScript_FieldTrigger1_2:
-# 193 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 194 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 195 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	waitmovement 0
 # 196 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 197 "data/maps/FootballField/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
-# 198 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
+# 198 "data/maps/FootballField/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
 # 199 "data/maps/FootballField/scripts.pory"
+	waitmovement 0
+# 200 "data/maps/FootballField/scripts.pory"
 	checktrainerflag TRAINER_UNI_GYM
 	goto_if 1, FootballField_EventScript_FieldTrigger1_5
-# 201 "data/maps/FootballField/scripts.pory"
+# 202 "data/maps/FootballField/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_GYM, FootballField_EventScript_FieldTrigger1_6
-# 204 "data/maps/FootballField/scripts.pory"
+# 205 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_FootballCoach
 	goto FootballField_EventScript_FieldTrigger1_1
 
 FootballField_EventScript_FieldTrigger1_5:
-# 200 "data/maps/FootballField/scripts.pory"
+# 201 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_ClassFinished
 	goto FootballField_EventScript_FieldTrigger1_1
 
 FootballField_EventScript_FieldTrigger1_6:
-# 202 "data/maps/FootballField/scripts.pory"
+# 203 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_FieldClosed
 	goto FootballField_EventScript_FieldTrigger1_1
 
 
 FootballField_EventScript_FieldTrigger2::
-# 214 "data/maps/FootballField/scripts.pory"
-	lockall
 # 215 "data/maps/FootballField/scripts.pory"
+	lockall
+# 216 "data/maps/FootballField/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq FootballField_EventScript_FieldTrigger2_2
-# 230 "data/maps/FootballField/scripts.pory"
+# 231 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_DoNotLeaveField
 FootballField_EventScript_FieldTrigger2_1:
-# 232 "data/maps/FootballField/scripts.pory"
+# 233 "data/maps/FootballField/scripts.pory"
 	releaseall
 	end
 
 FootballField_EventScript_FieldTrigger2_2:
-# 216 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 217 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 218 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
 # 219 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 220 "data/maps/FootballField/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
-# 221 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
+# 221 "data/maps/FootballField/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
 # 222 "data/maps/FootballField/scripts.pory"
+	waitmovement 0
+# 223 "data/maps/FootballField/scripts.pory"
 	checktrainerflag TRAINER_UNI_GYM
 	goto_if 1, FootballField_EventScript_FieldTrigger2_5
-# 224 "data/maps/FootballField/scripts.pory"
+# 225 "data/maps/FootballField/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_GYM, FootballField_EventScript_FieldTrigger2_6
-# 227 "data/maps/FootballField/scripts.pory"
+# 228 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_FootballCoach
 	goto FootballField_EventScript_FieldTrigger2_1
 
 FootballField_EventScript_FieldTrigger2_5:
-# 223 "data/maps/FootballField/scripts.pory"
+# 224 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_ClassFinished
 	goto FootballField_EventScript_FieldTrigger2_1
 
 FootballField_EventScript_FieldTrigger2_6:
-# 225 "data/maps/FootballField/scripts.pory"
+# 226 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_FieldClosed
 	goto FootballField_EventScript_FieldTrigger2_1
 
 
 FootballField_EventScript_FieldTrigger3::
-# 237 "data/maps/FootballField/scripts.pory"
-	lockall
 # 238 "data/maps/FootballField/scripts.pory"
+	lockall
+# 239 "data/maps/FootballField/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq FootballField_EventScript_FieldTrigger3_2
-# 251 "data/maps/FootballField/scripts.pory"
+# 252 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_DoNotLeaveField
 FootballField_EventScript_FieldTrigger3_1:
-# 253 "data/maps/FootballField/scripts.pory"
+# 254 "data/maps/FootballField/scripts.pory"
 	releaseall
 	end
 
 FootballField_EventScript_FieldTrigger3_2:
-# 239 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 240 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 241 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
 # 242 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 243 "data/maps/FootballField/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
-# 244 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
+# 244 "data/maps/FootballField/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
 # 245 "data/maps/FootballField/scripts.pory"
+	waitmovement 0
+# 246 "data/maps/FootballField/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_GYM, FootballField_EventScript_FieldTrigger3_5
-# 248 "data/maps/FootballField/scripts.pory"
+# 249 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_FootballCoach
 	goto FootballField_EventScript_FieldTrigger3_1
 
 FootballField_EventScript_FieldTrigger3_5:
-# 246 "data/maps/FootballField/scripts.pory"
+# 247 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_FieldClosed
 	goto FootballField_EventScript_FieldTrigger3_1
 
 
 FootballField_EventScript_EndZoneTrigger::
-# 258 "data/maps/FootballField/scripts.pory"
-	lockall
 # 259 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	lockall
 # 260 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 261 "data/maps/FootballField/scripts.pory"
-	call FootballField_EventScript_EndZone
+	waitmovement 0
 # 262 "data/maps/FootballField/scripts.pory"
+	call FootballField_EventScript_EndZone
+# 263 "data/maps/FootballField/scripts.pory"
 	releaseall
 	end
 
 
 FootballField_EventScript_EndZone::
-# 267 "data/maps/FootballField/scripts.pory"
+# 268 "data/maps/FootballField/scripts.pory"
 	switch VAR_TEMP_1
-# 269 "data/maps/FootballField/scripts.pory"
+# 270 "data/maps/FootballField/scripts.pory"
 	case 0, FootballField_EventScript_EndZone_2
-# 272 "data/maps/FootballField/scripts.pory"
+# 273 "data/maps/FootballField/scripts.pory"
 	case 1, FootballField_EventScript_EndZone_3
 	return
 
 FootballField_EventScript_EndZone_2:
-# 270 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_EventScript_EndZone_Text_0
 # 271 "data/maps/FootballField/scripts.pory"
+	msgbox FootballField_EventScript_EndZone_Text_0
+# 272 "data/maps/FootballField/scripts.pory"
 	closemessage
 	return
 
 FootballField_EventScript_EndZone_3:
-# 273 "data/maps/FootballField/scripts.pory"
-	setvar VAR_TEMP_1, 2
 # 274 "data/maps/FootballField/scripts.pory"
+	setvar VAR_TEMP_1, 2
+# 275 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_CatchingTest
 	return
 
 
 FootballField_EventScript_FootballCoach::
-# 279 "data/maps/FootballField/scripts.pory"
-	lockall
 # 280 "data/maps/FootballField/scripts.pory"
-	faceplayer
+	lockall
 # 281 "data/maps/FootballField/scripts.pory"
+	faceplayer
+# 282 "data/maps/FootballField/scripts.pory"
 	checktrainerflag TRAINER_UNI_GYM
 	goto_if 1, FootballField_EventScript_FootballCoach_2
-# 283 "data/maps/FootballField/scripts.pory"
+# 284 "data/maps/FootballField/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_GYM, FootballField_EventScript_FootballCoach_3
-# 286 "data/maps/FootballField/scripts.pory"
+# 287 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_GymClass
 FootballField_EventScript_FootballCoach_1:
-# 288 "data/maps/FootballField/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
 # 289 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement 1, Common_Movement_FaceDown
 # 290 "data/maps/FootballField/scripts.pory"
+	waitmovement 0
+# 291 "data/maps/FootballField/scripts.pory"
 	release
 	end
 
 FootballField_EventScript_FootballCoach_2:
-# 282 "data/maps/FootballField/scripts.pory"
+# 283 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_ClassFinished
 	goto FootballField_EventScript_FootballCoach_1
 
 FootballField_EventScript_FootballCoach_3:
-# 284 "data/maps/FootballField/scripts.pory"
+# 285 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_FieldClosed
 	goto FootballField_EventScript_FootballCoach_1
 
 
 FootballField_EventScript_ClassFinished::
-# 295 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_CoachComplete
 # 296 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	msgbox FootballField_Text_CoachComplete
 # 297 "data/maps/FootballField/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+# 298 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 	return
 
 
 FootballField_EventScript_GymClass::
-# 303 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_FieldClosed
 # 304 "data/maps/FootballField/scripts.pory"
-	applymovement 1, Common_Movement_ExclamationMark
+	msgbox FootballField_Text_FieldClosed
 # 305 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement 1, Common_Movement_ExclamationMark
 # 306 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_GymIntro
+	waitmovement 0
 # 307 "data/maps/FootballField/scripts.pory"
-	closemessage
+	msgbox FootballField_Text_GymIntro
 # 308 "data/maps/FootballField/scripts.pory"
+	closemessage
+# 309 "data/maps/FootballField/scripts.pory"
 	delay 30
-# 310 "data/maps/FootballField/scripts.pory"
+# 311 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_RunningTest
 	return
 
 
 FootballField_EventScript_CollisionYoungster::
-# 321 "data/maps/FootballField/scripts.pory"
-	lockall
 # 322 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	lockall
 # 323 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 324 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_RunningTestFail
+	waitmovement 0
 # 325 "data/maps/FootballField/scripts.pory"
-	closemessage
+	msgbox FootballField_Text_RunningTestFail
 # 326 "data/maps/FootballField/scripts.pory"
-	call FootballField_EventScript_SetupRunningTest
+	closemessage
 # 327 "data/maps/FootballField/scripts.pory"
-	call FootballField_EventScript_StartRunningTest
+	call FootballField_EventScript_SetupRunningTest
 # 328 "data/maps/FootballField/scripts.pory"
+	call FootballField_EventScript_StartRunningTest
+# 329 "data/maps/FootballField/scripts.pory"
 	releaseall
 	return
 
 
 FootballField_EventScript_FieldClosed::
-# 333 "data/maps/FootballField/scripts.pory"
-	applymovement 1, Common_Movement_ExclamationMark
 # 334 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
+	applymovement 1, Common_Movement_ExclamationMark
 # 335 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_FieldClosed
+	waitmovement 0
 # 336 "data/maps/FootballField/scripts.pory"
-	closemessage
+	msgbox FootballField_Text_FieldClosed
 # 337 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	closemessage
 # 338 "data/maps/FootballField/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+# 339 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 	return
 
 
 FootballField_EventScript_EndZone_Text_0:
-# 270 "data/maps/FootballField/scripts.pory"
+# 271 "data/maps/FootballField/scripts.pory"
 	.string "EndZone Trigger Var 0$"
 
 FootballField_Text_FieldClosed::
-# 343 "data/maps/FootballField/scripts.pory"
+# 344 "data/maps/FootballField/scripts.pory"
 	.string "Hey you! Field's closed! We only want\n"
 	.string "student atheletes touching this grass.$"
 
 FootballField_Text_GymIntro::
-# 347 "data/maps/FootballField/scripts.pory"
+# 348 "data/maps/FootballField/scripts.pory"
 	.string "Wait. Whats that? You're here from the\n"
 	.string "college? Oh shit! Uhh... Ellohey.... uhh...\l"
 	.string "elcomeway... to... uhhh... assclay.. uhhh.\l"
@@ -512,52 +514,52 @@ FootballField_Text_GymIntro::
 	.string "me.$"
 
 FootballField_Text_NoFollowersAllowed::
-# 351 "data/maps/FootballField/scripts.pory"
+# 352 "data/maps/FootballField/scripts.pory"
 	.string "Hey! We don't let those filthy animals\n"
 	.string "on our grass. Your Pokemon, it has to\l"
 	.string "wait outside we don't want it here.$"
 
 FootballField_Text_BeginRunningTest::
-# 355 "data/maps/FootballField/scripts.pory"
+# 356 "data/maps/FootballField/scripts.pory"
 	.string "First things first let's see if you can\n"
 	.string "run. Try to make it to the other side of\l"
 	.string "the field without letting any of my\l"
 	.string "boys hit you first.$"
 
 FootballField_Text_DoNotLeaveField::
-# 359 "data/maps/FootballField/scripts.pory"
+# 360 "data/maps/FootballField/scripts.pory"
 	.string "Hey! Where do you think you're going?\n"
 	.string "Get your lazy ass back on the field and\l"
 	.string "finish the drill!$"
 
 FootballField_Text_ClassFinished::
-# 363 "data/maps/FootballField/scripts.pory"
+# 364 "data/maps/FootballField/scripts.pory"
 	.string "Hey what do you think you're doing? You\n"
 	.string "just made my boys look like total\l"
 	.string "loosers! Get off my field!$"
 
 FootballField_Text_CoachIntro::
-# 367 "data/maps/FootballField/scripts.pory"
+# 368 "data/maps/FootballField/scripts.pory"
 	.string "We can't have some game changer like\n"
 	.string "you running around making us feel bad.\l"
 	.string "We got a championship to win!$"
 
 FootballField_Text_CoachLost::
-# 371 "data/maps/FootballField/scripts.pory"
+# 372 "data/maps/FootballField/scripts.pory"
 	.string "I think I broke something...$"
 
 FootballField_Text_CoachPost::
-# 375 "data/maps/FootballField/scripts.pory"
+# 376 "data/maps/FootballField/scripts.pory"
 	.string "We don't need your fucking help to win.\n"
 	.string "Get out of here kid you passed the\l"
 	.string "class.$"
 
 FootballField_Text_CoachComplete::
-# 379 "data/maps/FootballField/scripts.pory"
+# 380 "data/maps/FootballField/scripts.pory"
 	.string "I told you already, you passed the\n"
 	.string "class, now get out of here.$"
 
 FootballField_Text_RunningTestFail::
-# 383 "data/maps/FootballField/scripts.pory"
+# 384 "data/maps/FootballField/scripts.pory"
 	.string "Hey! One of my boys got ya! You're too\n"
 	.string "slow out there do it again!$"
