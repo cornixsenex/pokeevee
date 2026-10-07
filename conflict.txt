@@ -39,9 +39,7 @@ CONFLICT (modify/delete): src/data/trainer_parties.h deleted in a9d9c29acc53c6f8
 #CONFLICT (content): Merge conflict in src/strings.c
 #CONFLICT (content): Merge conflict in src/wild_encounter.c
 
-partner battles
-	>leaf surf school	
-	>aeneas pig
 Berry Graphics
-gPlayerParty and g:q
+Dark Brendan
+Granon
 

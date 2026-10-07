@@ -6280,7 +6280,7 @@ void Task_LiveBaitTools(u8 taskId)
 	{
 	case 0:
 		//Cant use
-		if (!PokemonCanBeUsedAsLiveBait(&gPlayerParty[gPartyMenu.slotId]))
+		if (!PokemonCanBeUsedAsLiveBait(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId]))
 		{
 			gPartyMenuUseExitCallback = FALSE;
 			PlaySE(SE_SELECT);
@@ -6290,7 +6290,7 @@ void Task_LiveBaitTools(u8 taskId)
 			return;
 		}
 		gPartyMenuUseExitCallback = TRUE;
-		GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
+		GetMonNickname(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId], gStringVar1);
 		StringExpandPlaceholders(gStringVar4, askLiveBaitText);
 		PlaySE(SE_SELECT);
         DisplayPartyMenuMessage(gStringVar4, 1);
@@ -6331,7 +6331,7 @@ void Task_LiveBaitTools(u8 taskId)
             tState++;
         break;
 	case 5:
-		ZeroMonData(&gPlayerParty[gPartyMenu.slotId]);
+		ZeroMonData(&gParties[B_TRAINER_PLAYER][gPartyMenu.slotId]);
 		CompactPartySlots();
 		CalculatePlayerPartyCount();
 		AddBagItem(ITEM_LIVE_BAIT, 1);

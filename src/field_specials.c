@@ -1701,7 +1701,7 @@ enum Species ScriptGetPartyMonSpecies(void)
 // Cornix Custom
 u16 ScriptGetPartyMonIsShiny(void)
 {
-    return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IS_SHINY, NULL);
+    return GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_IS_SHINY, NULL);
 }
 
 enum Species ScriptGetSelectedMonSpecies(void)
@@ -4967,7 +4967,7 @@ void ChangePersonality (void)
 	u16 species;
 	int levelone = 1, HP, MAX_HP, ATK, DEF, SPEED, SPATK, SPDEF, HP_IV, ATK_IV, DEF_IV, SPEED_IV, SPATK_IV, SPDEF_IV;
 
-	mon = &gPlayerParty[gSpecialVar_0x8004];
+	mon = &gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004];
 
 	HP        = GetMonData(mon, MON_DATA_HP);
 	MAX_HP    = GetMonData(mon, MON_DATA_MAX_HP);
@@ -5050,15 +5050,15 @@ void ChangePersonality (void)
 	else
 		SPDEF_IV = 1;
 
-	gender = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
-	species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+	gender = GetMonGender(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004]);
+	species = GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
 
 	do
 	{
 		personality = Random32();
 	} while (gender != GetGenderFromSpeciesAndPersonality(species, personality));
 
-	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
+	UpdateMonPersonality(&(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004])->box, personality);
 
 	SetMonData(mon, MON_DATA_FRIENDSHIP,    &levelone);
 	SetMonData(mon, MON_DATA_HP,            &HP);
@@ -5080,7 +5080,7 @@ void MakeShiny (void)
 {
 	struct Pokemon *mon;
 	bool32 makeShiny = TRUE;
-	mon = &gPlayerParty[gSpecialVar_0x8004];
+	mon = &gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004];
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 
 }
@@ -5088,7 +5088,7 @@ void MakeShiny (void)
 bool8 CheckMonHasGen (void)
 {
 	u8 Gen;
-	Gen = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	Gen = GetMonGender(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004]);
 	if (Gen == MON_FEMALE || Gen == MON_MALE) 
 		return TRUE;
 	else
@@ -5105,10 +5105,10 @@ void ChangeGen (void)
 	u8 nature;
 	int levelone = 1, MAX_HP, ATK, DEF, SPEED, SPATK, SPDEF;
 
-	mon = &gPlayerParty[gSpecialVar_0x8004];
-	nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
-	species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
-	OGen = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	mon = &gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004];
+	nature = GetNature(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004]);
+	species = GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+	OGen = GetMonGender(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004]);
 	if (OGen == MON_FEMALE)
 		NGen = MON_MALE;
 	else
@@ -5156,7 +5156,7 @@ void ChangeGen (void)
 		personality = Random32();
 	} while (nature != GetNatureFromPersonality(personality) || NGen != GetGenderFromSpeciesAndPersonality(species, personality));
 
-	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
+	UpdateMonPersonality(&(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004])->box, personality);
 
 	SetMonData(mon, MON_DATA_HP_IV,      &levelone);
 	SetMonData(mon, MON_DATA_ATK_IV,     &levelone);
@@ -5180,7 +5180,7 @@ void LobotomizePokemon(void)
 	int levelone = 1;
 	u16 struggle;
 	struggle = MOVE_STRUGGLE;
-	mon = &gPlayerParty[gSpecialVar_0x8004];
+	mon = &gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004];
 	SetMonData(mon, MON_DATA_LEVEL, &levelone);
 	SetMonData(mon, MON_DATA_EXP, &levelone);
 	SetMonData(mon, MON_DATA_FRIENDSHIP, &levelone);
@@ -5332,7 +5332,7 @@ bool32 IsRockTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5350,7 +5350,7 @@ bool32 IsGroundTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5370,7 +5370,7 @@ bool32 IsFireTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5390,7 +5390,7 @@ bool32 IsWaterTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5410,7 +5410,7 @@ bool32 IsFlyingTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5430,7 +5430,7 @@ bool32 IsAnimalTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5830,7 +5830,7 @@ bool32 IsPlantTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5882,7 +5882,7 @@ bool32 IsFungusTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5907,7 +5907,7 @@ bool32 IsPsychicTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -5927,7 +5927,7 @@ bool32 IsMagnetTypeInParty(void)
     struct Pokemon *pokemon;
     for (i = 0;i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -6188,7 +6188,7 @@ bool32 IsShinyMareepInParty(void)
 	
 	for (i = 0;i < PARTY_SIZE; i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
@@ -6205,7 +6205,7 @@ bool32 IsShinyMareepInParty(void)
 void ReleaseChosenMon(void)
 {
 	struct Pokemon *mon;
-	mon = &gPlayerParty[gSpecialVar_0x8004];
+	mon = &gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004];
 	ZeroMonData(mon);
 	CompactPartySlots();
 	//CompactPartySprites();
@@ -6449,10 +6449,10 @@ bool32 CheckHeadbutt(void)
 {
     for (u32 i = 0; i < PARTY_SIZE; i++)
     {
-        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        u16 species = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], MOVE_HEADBUTT) == TRUE)
+        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG) && MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], MOVE_HEADBUTT) == TRUE)
         {
             //save species as var for check if follower
             gSpecialVar_0x8004 = i;
@@ -6816,7 +6816,7 @@ bool32 IsMonFollower(void)
 {
 	u32 i = VarGet(VAR_0x8004); //NOTE VAR_0x8004 is hard coded
 	struct Pokemon *follower = GetFirstLiveMon();
-	struct Pokemon *checkMon = &gPlayerParty[i];
+	struct Pokemon *checkMon = &gParties[B_TRAINER_PLAYER][i];
 	if (checkMon == follower) {
 		return TRUE;
 	}
@@ -6827,7 +6827,7 @@ bool32 IsMonFollower(void)
 
 bool32 CheckSelectedMonValidSacrifice(void)
 {
-	u32 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
+	u32 species = GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
 
 	if (	   species == SPECIES_PIDGEY
 			|| species == SPECIES_PIDGEOTTO

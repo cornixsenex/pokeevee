@@ -7018,7 +7018,7 @@ void Cornix_CreateSpecialMon(const u16 species, const u8 level, const u8* nickna
 	}
 
 	// Set Mon Data
-	struct Pokemon *mon = &gEnemyParty[0];
+	struct Pokemon *mon = &gParties[B_TRAINER_OPPONENT_A][0];
 	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	CalculateMonStats(mon); // Always!
 

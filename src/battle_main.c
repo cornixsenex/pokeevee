@@ -1903,10 +1903,10 @@ static void SetupDarkBrendanBattle(void)
     for (i = 0; i < 6; i++)
     {
         //First just copy over the mon
-        gEnemyParty[i] = gPlayerParty[i];
+        gParties[B_TRAINER_OPPONENT_A][i] = gParties[B_TRAINER_PLAYER][i];
         //Assign mon variables
-        enemyMon = &gEnemyParty[i];
-        playerMon = &gPlayerParty[i];
+        enemyMon = &gParties[B_TRAINER_OPPONENT_A][i];
+        playerMon = &gParties[B_TRAINER_PLAYER][i];
         //lower levela
         level = GetMonData(playerMon, MON_DATA_LEVEL);
         level = level - (level / 10);
