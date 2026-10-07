@@ -330,9 +330,9 @@ script AedesTerra_Script_SolvedPuzzle2 {
 script AedesTerra_Script_SolvedPuzzle3 {
 	call (AedesTerra_Script_SolvedPuzzle)
 	//show square on puzzle 2
-	removeobject (LOCALID_AEDESTERRA_CIRCLE3)
-	setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE3, 36, 8)
-	addobject (LOCALID_AEDESTERRA_CIRCLE3)
+	removeobject (LOCALID_AEDESTERRA_CIRCLE2)
+	setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE2, 36, 8)
+	addobject (LOCALID_AEDESTERRA_CIRCLE2)
 	//set flag
 	setflag (FLAG_TEMP_3)
 }
@@ -361,6 +361,8 @@ script AedesTerra_Script_SolvedPuzzle4 {
 }
 
 script AedesTerra_Script_UnSolvedPuzzle4 {
+	msgbox("Unsolve Puzzle 4")
+	closemessage
 	//Hide Bridge Left
 	call (AedesTerra_Script_HideBridgeLeft)
 	//Check Hide Bridge Center
@@ -386,6 +388,8 @@ script AedesTerra_Script_SolvedPuzzle5 {
 }
 
 script AedesTerra_Script_UnSolvedPuzzle5 {
+	msgbox("Unsolve Puzzle 5")
+	closemessage
 	//Hide Bridge Left
 	call (AedesTerra_Script_HideBridgeRight)
 	//Check Hide Bridge Center
