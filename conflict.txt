@@ -39,14 +39,9 @@ CONFLICT (modify/delete): src/data/trainer_parties.h deleted in a9d9c29acc53c6f8
 #CONFLICT (content): Merge conflict in src/strings.c
 #CONFLICT (content): Merge conflict in src/wild_encounter.c
 
-Fix Aedes Terra puzzle not opening the bridges correctly
-	>Ok I re-wrote AedesTerra_CheckSlidePuzzleSolved
-	>now the func is only checking the specific boulder you pushed. 
-	>I discovered some logic erros with the pory script. 
-	>1,4,5 are all confirmed working. 
-	>3 is solvable but I was putting the 3 boulder onto the 2 puzzle rather than moving the 2 boulder to the 2 puzzle. 
-	Needs to be tested to confirm it works. Then test / confirm puzzle 2
 partner battles
 	>leaf surf school	
 	>aeneas pig
 Berry Graphics
+gPlayerParty and g:q
+
