@@ -162,10 +162,10 @@ void SoundTask_PlayCryHighPitch(u8 taskId)
             battler = gBattleAnimTarget;
             break;
         case ANIM_ATK_PARTNER:
-            battler = BATTLE_PARTNER(gBattleAnimAttacker);
+            battler = GetPartnerBattler(gBattleAnimAttacker);
             break;
         default:
-            battler = BATTLE_PARTNER(gBattleAnimTarget);
+            battler = GetPartnerBattler(gBattleAnimTarget);
             break;
         }
 
@@ -215,10 +215,10 @@ void SoundTask_PlayDoubleCry(u8 taskId)
             battler = gBattleAnimTarget;
             break;
         case ANIM_ATK_PARTNER:
-            battler = BATTLE_PARTNER(gBattleAnimAttacker);
+            battler = GetPartnerBattler(gBattleAnimAttacker);
             break;
         default:
-            battler = BATTLE_PARTNER(gBattleAnimTarget);
+            battler = GetPartnerBattler(gBattleAnimTarget);
             break;
         }
 
