@@ -477,6 +477,7 @@ void CameraUpdate(void)
     gTotalCameraPixelOffsetY -= movementSpeedY;
 }
 
+<<<<<<< HEAD
 void MoveCameraAndRedrawMap(int deltaX, int deltaY) 
 {
     CameraMove(deltaX, deltaY);
@@ -496,6 +497,8 @@ void ResetCamera(void)
     MoveCameraAndRedrawMap(deltaX,deltaY);
 }
 
+=======
+>>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 void SetCameraPanningCallback(void (*callback)(void))
 {
     sFieldCameraPanningCallback = callback;
