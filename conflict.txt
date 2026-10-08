@@ -1,6 +1,10 @@
-CONFLICT (content): Merge conflict in data/maps/LavaridgeTown_Gym_1F/scripts.inc
-CONFLICT (content): Merge conflict in data/scripts/day_care.inc
-CONFLICT (content): Merge conflict in include/config/battle.h
+#CONFLICT (content): Merge conflict in data/maps/LavaridgeTown_Gym_1F/scripts.inc
+	>new trainerbattle_lavaridge macro(?)
+	>I had these removed anydoot so just @@
+#CONFLICT (content): Merge conflict in data/scripts/day_care.inc
+	>remove overwritten FLAG_PENDING_DAYCARE_EGG
+#CONFLICT (content): Merge conflict in include/config/battle.h
+	>checkout from rhh and re-configure
 CONFLICT (content): Merge conflict in include/config/item.h
 CONFLICT (content): Merge conflict in src/battle_main.c
 CONFLICT (content): Merge conflict in src/data/items.h
@@ -15,3 +19,6 @@ CONFLICT (content): Merge conflict in src/overworld.c
 CONFLICT (content): Merge conflict in src/pokemon.c
 CONFLICT (content): Merge conflict in src/pokemon_summary_screen.c
 CONFLICT (content): Merge conflict in src/scrcmd.c
+
+reconfigure battle config
+	>B_ENCORE_TURNS (11%)

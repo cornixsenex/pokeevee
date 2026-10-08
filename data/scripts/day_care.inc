@@ -16,10 +16,6 @@ Route117_EventScript_DaycareEggWaiting::
 	msgbox Route117_Text_IWillKeepDoYouWantIt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route117_EventScript_DaycareAcceptEgg
 	msgbox Route117_Text_IllKeepIt, MSGBOX_DEFAULT
-<<<<<<< HEAD
-@@	clearflag FLAG_PENDING_DAYCARE_EGG
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 	special RejectEggFromDayCare
 	release
 	end
@@ -38,10 +34,6 @@ Route117_EventScript_DaycareReceiveEgg::
 	waitbuttonpress
 	msgbox Route117_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
 	special GiveEggFromDaycare
-<<<<<<< HEAD
-@@	clearflag FLAG_PENDING_DAYCARE_EGG
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 	release
 	end
 
