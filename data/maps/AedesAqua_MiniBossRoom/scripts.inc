@@ -86,26 +86,30 @@ AedesAqua_MiniBossRoom_Script_Crystal6_2:
 
 AedesAqua_MiniBossRoom_Script_DarkBrendan::
 # 49 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	lockall
 # 50 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 51 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	waitmovement 0
 # 52 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_DARKBRENDAN, AedesAqua_MiniBossRoom_Text_DarkBrendanLost
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 53 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_DARKBRENDAN, AedesAqua_MiniBossRoom_Text_DarkBrendanLost
+# 54 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 55 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	removeobject LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN
 # 56 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	setobjectxyperm LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 0, 0
+	removeobject LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN
 # 57 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	setobjectmovementtype LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 0, 0
 # 58 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+	setobjectmovementtype LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_INVISIBLE
+# 59 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
 	addobject LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN
+# 60 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+	releaseall
 	end
 
 
 AedesAqua_MiniBossRoom_Text_DarkBrendanLost::
-# 62 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+# 64 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
 	.string "$"

@@ -46,6 +46,7 @@ script AedesAqua_MiniBossRoom_Script_Crystal6 {
 }
 
 script AedesAqua_MiniBossRoom_Script_DarkBrendan {
+	lockall
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
     setflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
@@ -56,6 +57,7 @@ script AedesAqua_MiniBossRoom_Script_DarkBrendan {
     setobjectxyperm (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 0, 0)
     setobjectmovementtype (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_INVISIBLE)
     addobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN)
+	releaseall
 	end
 }
 
