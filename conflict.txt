@@ -21,4 +21,4 @@ CONFLICT (content): Merge conflict in src/pokemon_summary_screen.c
 CONFLICT (content): Merge conflict in src/scrcmd.c
 
 reconfigure battle config
-	>B_ABILITY_WEATHER (70%)
+	>B_TRAINER_MON_RANDOM_ABILITY (85%)
