@@ -1589,9 +1589,6 @@ static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
     return FALSE;
 }
 
-<<<<<<< HEAD
-u16 GetLocationMusic(struct WarpData *warp, bool32 isWarp)
-=======
 static const u16 sNightMusicTable[END_MUS - START_MUS] =
 {
     // example usage: [MUS_SOOTOPOLIS - START_MUS] = MUS_LITTLEROOT,
@@ -1606,8 +1603,7 @@ static u16 GetNightMusicFromTrack(u16 track)
     return track;
 }
 
-u16 GetLocationMusic(struct WarpData *warp)
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
+u16 GetLocationMusic(struct WarpData *warp, bool32 isWarp)
 {
     if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
@@ -1617,7 +1613,6 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
-<<<<<<< HEAD
 	else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && (!isWarp))
     {
         DebugPrintf("GetLocationMusic is DYNAMIC");
@@ -1626,16 +1621,13 @@ u16 GetLocationMusic(struct WarpData *warp)
         else 
             return GetDynamicMusic(FALSE);
     }
-    else
-        return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
-=======
-
-    const struct MapHeader *mapHeader = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum);
-    if (mapHeader->nightMusic != MUS_NONE && GetTimeOfDay() == TIME_NIGHT)
-        return mapHeader->nightMusic;
-    
-    return mapHeader->music;
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
+    else {
+		const struct MapHeader *mapHeader = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum);
+		if (mapHeader->nightMusic != MUS_NONE && GetTimeOfDay() == TIME_NIGHT)
+			return mapHeader->nightMusic;
+		
+		return mapHeader->music;
+	}
 }
 
 u16 GetCurrLocationDefaultMusic(void)
@@ -1739,26 +1731,16 @@ void TransitionMapMusic(void)
     {
         u16 newMusic = GetWarpDestinationMusic(FALSE);
         u16 currentMusic = GetCurrentMapMusic();
-<<<<<<< HEAD
         //Here was Auto-Surf Music 
         DebugPrintf("Assigned TransitionMapMusic\nnewMusic: %d\ncurrentMusic: %d", newMusic, currentMusic);
-        //if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
-        //{
-        //    if (currentMusic == MUS_UNDERWATER || currentMusic == (IS_FRLG ? MUS_RG_SURF : MUS_SURF))
-        //        return;
-        //    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-        //        newMusic = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
-        //}
-=======
-        if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
-        {
-            if (currentMusic == MUS_UNDERWATER || currentMusic == (IS_FRLG ? MUS_RG_SURF : MUS_SURF))
-                return;
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-                newMusic = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
-        }
+//        if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
+//        {
+//            if (currentMusic == MUS_UNDERWATER || currentMusic == (IS_FRLG ? MUS_RG_SURF : MUS_SURF))
+//                return;
+//            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+//                newMusic = (IS_FRLG ? MUS_RG_SURF : MUS_SURF);
+//        }
         newMusic = GetNightMusicFromTrack(newMusic);
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
         if (newMusic != currentMusic)
         {
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
@@ -1796,12 +1778,8 @@ void TryFadeOutOldMapMusic(void)
 {
     DebugPrintf("TryFadeOutOldMapMusic()");
     u16 currentMusic = GetCurrentMapMusic();
-<<<<<<< HEAD
-    u16 warpMusic = GetWarpDestinationMusic(TRUE);
+    u16 warpMusic = GetNightMusicFromTrack(GetWarpDestinationMusic(TRUE));
     DebugPrintf("TryFadeOutOldMapMusic - \ncurrentMusic: %d\nwarpMusic: %d\n", currentMusic, warpMusic);
-=======
-    u16 warpMusic = GetNightMusicFromTrack(GetWarpDestinationMusic());
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
         if (currentMusic == MUS_SURF

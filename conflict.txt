@@ -17,7 +17,7 @@
 #CONFLICT (content): Merge conflict in src/field_camera.c
 #CONFLICT (content): Merge conflict in src/field_specials.c
 #CONFLICT (content): Merge conflict in src/metatile_behavior.c
-CONFLICT (content): Merge conflict in src/overworld.c
+#CONFLICT (content): Merge conflict in src/overworld.c
 	>!!!! 
 	I need to update the dynamic map music thing to accomodate the new Night Music stuff
 CONFLICT (content): Merge conflict in src/pokemon.c
