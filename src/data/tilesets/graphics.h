@@ -1625,7 +1625,6 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 
 const u32 gTilesetTiles_UnionRoom[] = INCGFX_U32("data/tilesets/secondary/union_room/tiles.png", ".4bpp.fastSmol");
 
-<<<<<<< HEAD
 //HERE BEGINS THE CUSTOM TILESETS
 
 const u16 gTilesetPalettes_Snow[][16] =
@@ -2286,10 +2285,7 @@ const u32 gTilesetTiles_Calypso[] = INCGFX_U32("data/tilesets/secondary/calypso/
 
 // HERE ENDS CUSTOM TILESETS 
 
-#if IS_FRLG
-=======
 #else
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 
 const u32 gTilesetTiles_Building_Frlg[] = INCGFX_U32("data/tilesets/primary/building_frlg/tiles.png", ".4bpp.smol");
 

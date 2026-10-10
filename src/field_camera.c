@@ -477,7 +477,7 @@ void CameraUpdate(void)
     gTotalCameraPixelOffsetY -= movementSpeedY;
 }
 
-<<<<<<< HEAD
+// rhh removed these two funcs but I use them in football field so keeping them
 void MoveCameraAndRedrawMap(int deltaX, int deltaY) 
 {
     CameraMove(deltaX, deltaY);
@@ -496,9 +496,8 @@ void ResetCamera(void)
     s16 deltaY = y - gSaveBlock1Ptr->pos.y;
     MoveCameraAndRedrawMap(deltaX,deltaY);
 }
+//ABove two funcs deprecated rhh - 1.17.0 CS 261009
 
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 void SetCameraPanningCallback(void (*callback)(void))
 {
     sFieldCameraPanningCallback = callback;

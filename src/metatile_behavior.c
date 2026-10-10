@@ -288,7 +288,6 @@ bool8 MetatileBehavior_IsEscalator(u8 metatileBehavior)
         return FALSE;
 }
 
-<<<<<<< HEAD
 bool8 MetatileBehavior_IsCanvas(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_CANVAS)
@@ -307,8 +306,6 @@ bool8 MetatileBehavior_IsPlayerFacingTombstone(u8 metatileBehavior, u8 playerDir
         return FALSE;
 }
 
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 bool8 MetatileBehavior_IsLadder(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_LADDER)
@@ -1249,7 +1246,6 @@ bool32 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior)
         return FALSE;
 }
 
-<<<<<<< HEAD
 bool8 MetatileBehavior_IsColchisBattle(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_COLCHIS_BATTLE)
@@ -1311,8 +1307,6 @@ bool8 MetatileBehavior_IsCyclingRoadPullDownTileGrass(u8 metatileBehavior)
     return metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS;
 }
 
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 bool8 MetatileBehavior_IsMuddySlope(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_MUDDY_SLOPE)

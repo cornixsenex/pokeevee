@@ -548,9 +548,6 @@ u8 GetPlayerRunSlowMovementAction(u32);
 //sideways stairs
 enum Collision GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, enum Direction dir, u8 currentBehavior, u8 nextBehavior, enum Collision collision);
 
-u16 GetMiniStepCount(u8 speed);
-void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
-bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 // run slow
 u8 GetPlayerRunSlowMovementAction(u32);
 

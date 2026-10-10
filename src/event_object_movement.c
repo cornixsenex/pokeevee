@@ -3297,15 +3297,6 @@ void ObjectEventTurnByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, enum Dir
         ObjectEventTurn(&gObjectEvents[objectEventId], direction);
 }
 
-<<<<<<< HEAD
-void PlayerObjectTurn(struct PlayerAvatar *playerAvatar, enum Direction direction)
-{
-    ObjectEventTurn(&gObjectEvents[playerAvatar->objectEventId], direction);
-}
-
-//CornixSenex disabled this function / removed it because it broke berry pals - 1.9.0 240806
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 static void SetBerryTreeGraphicsById(struct ObjectEvent *objectEvent, u8 berryId, u8 berryStage)
 {
     const u16 graphicsId = gBerryTreeObjectEventGraphicsIdTable[berryStage];
@@ -11709,30 +11700,6 @@ bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *object
     return TRUE;
 }
 
-<<<<<<< HEAD
-u16 GetMiniStepCount(u8 speed)
-{
-    return (u16)sStepTimes[speed];
-}
-
-void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame)
-{
-    sNpcStepFuncTables[speed][currentFrame](sprite, sprite->data[3]);
-}
-
-bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent)
-{
-    s16 x;
-    s16 y;
-
-    x = objectEvent->currentCoords.x;
-    y = objectEvent->currentCoords.y;
-    MoveCoordsInDirection(DIR_NORTH, &x, &y, 0, 1);
-    if (MetatileBehavior_IsWaterfall(MapGridGetMetatileBehaviorAt(x, y)))
-        return TRUE;
-    return FALSE;
-}
-
 //KUSTOM GHOUL SET MOVEMENT TYPE ON THE FLY INSTEAD OF IN TRANSITION
 void SetObjectMovementTypeGhoul(void)
 {
@@ -11745,11 +11712,8 @@ void SetObjectMovementTypeGhoul(void)
 	gSprites[objectEvent->spriteId].callback = sMovementTypeCallbacks[movementType];
 	gSprites[objectEvent->spriteId].data[1] = 0;
 }
-
 // END KUSTOM GHOUL SET MOVEMENT TYPE ON THE FLY INSTEAD OF IN TRANSITION
 
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 // Get gfx data from daycare Pokémon and store it in vars
 void GetDaycareGraphics(struct ScriptContext *ctx)
 {

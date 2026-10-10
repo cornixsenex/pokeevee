@@ -1698,21 +1698,12 @@ enum Species ScriptGetPartyMonSpecies(void)
     return GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
 }
 
-<<<<<<< HEAD
 // Cornix Custom
 u16 ScriptGetPartyMonIsShiny(void)
 {
     return GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_IS_SHINY, NULL);
 }
 
-enum Species ScriptGetSelectedMonSpecies(void)
-{
-    struct BoxPokemon *boxmon = GetSelectedBoxMonFromPcOrParty();
-    return GetBoxMonData(boxmon, MON_DATA_SPECIES_OR_EGG);
-}
-
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 // Removed for Emerald
 void TryInitBattleTowerAwardManObjectEvent(void)
 {

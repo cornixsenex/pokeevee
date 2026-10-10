@@ -19,20 +19,6 @@
 
 const u8 gQuestionMarksItemName[] = _("????????");
 
-<<<<<<< HEAD
-static const u8 sQuestionMarksDesc[]  = _("?????");
-
-static const u8 sKeyToRoomDesc[]      = _("A key that opens a\n"
-                                          "door inside the\n"
-                                          "Abandoned Ship.");
-
-static const u8 sTeraShardDesc[]      = _("These shards may\n"
-                                          "form when a Tera\n"
-                                          "Pokémon faints.");
-
-static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
-                                          "is unsuitable for\n"
-                                          "local soil.");
 
 //CUSTOMS
 
@@ -170,9 +156,6 @@ static const u8 sPinaFruitDesc[] = _(
 		
 
 //END KUSTOMS
-
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 const struct ItemInfo gItemsInfo[] =
 {
     [ITEM_NONE] =

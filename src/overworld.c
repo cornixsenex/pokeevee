@@ -4304,13 +4304,6 @@ u16 SetTimeOfDay(u16 hours)
     return oldHours;
 }
 
-<<<<<<< HEAD
-bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
-{
-    SetTimeOfDay(ScriptReadByte(ctx));
-    return FALSE;
-}
-
 u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom dynamic maps 
 {
 	s32 mapGroup, mapNum;
@@ -6061,8 +6054,7 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	}
 }
 
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
+====>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 // Credits
 
 void Overworld_CreditsMainCB(void)

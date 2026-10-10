@@ -5,20 +5,35 @@
 	>remove overwritten FLAG_PENDING_DAYCARE_EGG
 #CONFLICT (content): Merge conflict in include/config/battle.h
 	>checkout from rhh and re-configure
-CONFLICT (content): Merge conflict in include/config/item.h
-CONFLICT (content): Merge conflict in src/battle_main.c
-CONFLICT (content): Merge conflict in src/data/items.h
-CONFLICT (content): Merge conflict in src/data/tilesets/graphics.h
-CONFLICT (content): Merge conflict in src/daycare.c
-CONFLICT (content): Merge conflict in src/debug.c
-CONFLICT (content): Merge conflict in src/event_object_movement.c
-CONFLICT (content): Merge conflict in src/field_camera.c
-CONFLICT (content): Merge conflict in src/field_specials.c
-CONFLICT (content): Merge conflict in src/metatile_behavior.c
+#CONFLICT (content): Merge conflict in include/config/item.h
+#CONFLICT (content): Merge conflict in src/battle_main.c
+	> many funcs moved to other places
+#CONFLICT (content): Merge conflict in src/data/items.h
+#CONFLICT (content): Merge conflict in src/data/tilesets/graphics.h
+#CONFLICT (content): Merge conflict in src/daycare.c
+#CONFLICT (content): Merge conflict in src/debug.c
+#CONFLICT (content): Merge conflict in src/event_object_movement.c
+	>removed some obsolete funcs
+#CONFLICT (content): Merge conflict in src/field_camera.c
+#CONFLICT (content): Merge conflict in src/field_specials.c
+#CONFLICT (content): Merge conflict in src/metatile_behavior.c
 CONFLICT (content): Merge conflict in src/overworld.c
+	>!!!! 
+	I need to update the dynamic map music thing to accomodate the new Night Music stuff
 CONFLICT (content): Merge conflict in src/pokemon.c
 CONFLICT (content): Merge conflict in src/pokemon_summary_screen.c
 CONFLICT (content): Merge conflict in src/scrcmd.c
 
-reconfigure battle config
-	>B_TRAINER_MON_RANDOM_ABILITY (85%)
+
+(Custom) Item descr
+Custom Tilesets (porymap and in game pls)
+Debug menu warp to dynamic map
+Berry Pals
+Football Field
+Metatiles
+	>Colchis Battle
+	>FalseFloor
+	>OceanMapTransition
+	>Cycling Road
+	>Canvas
+	>Tombstone

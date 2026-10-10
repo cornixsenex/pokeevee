@@ -452,7 +452,7 @@ static const u8 sDebugText_Continue[] =      _("Continue…");
 
 //Time Menu
 
-const u8 *const gDayNameStringsTable[WEEKDAY_COUNT] = {
+static const u8 *const gDayNameStringsTable[WEEKDAY_COUNT] = {
     COMPOUND_STRING("Sunday"),
     COMPOUND_STRING("Monday"),
     COMPOUND_STRING("Tuesday"),
@@ -1457,7 +1457,8 @@ static u32 Debug_GenerateListOutbreakMenu(const struct DebugMenuOption *items)
             StringCopy(gStringVar1, GetSpeciesName(gSaveBlock1Ptr->outbreakPokemonSpecies));
             break;
         case 3:
-            GetMapName(gStringVar1, Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->outbreakLocationMapGroup, gSaveBlock1Ptr->outbreakLocationMapNum)->regionMapSectionId, 0);
+			// Cornix GetMapName() -> GetMapNameGeneric (dynamic maps)
+            GetMapNameGeneric(gStringVar1, Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->outbreakLocationMapGroup, gSaveBlock1Ptr->outbreakLocationMapNum)->regionMapSectionId, 0);
             break;
         case 4:
             ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->outbreakPokemonLevel, STR_CONV_MODE_RIGHT_ALIGN, 3);
@@ -1760,86 +1761,6 @@ static void DebugSelectionStep_UpdateMapGroup(u8 taskId, u8 digits, u32 min, u32
     DebugNativeStep_PrintWindowSelection(taskId);
 }
 
-<<<<<<< HEAD
-//NOTE: Cornix changed this function - one line - GetMapName() -> GetMapNameGeneric - DYNAMIC MAP SUPPORT
-static void DebugAction_Util_Warp_SelectMapGroup(u8 taskId)
-{
-    if (JOY_NEW(DPAD_ANY))
-    {
-        PlaySE(SE_SELECT);
-        Debug_HandleInput_Numeric(taskId, 0, LAST_MAP_GROUP, 3);
-
-        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, 3);
-        ConvertIntToDecimalStringN(gStringVar2, LAST_MAP_GROUP, STR_CONV_MODE_LEADING_ZEROS, 3);
-        StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
-        StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
-        StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMapGroup);
-        AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
-    }
-
-    if (JOY_NEW(A_BUTTON))
-    {
-        gTasks[taskId].tMapGroup = gTasks[taskId].tInput;
-        gTasks[taskId].tInput = 0;
-        gTasks[taskId].tDigit = 0;
-
-        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, (MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1 >= 100) ? 3 : 2);
-        ConvertIntToDecimalStringN(gStringVar2, MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1, STR_CONV_MODE_LEADING_ZEROS, (MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1 >= 100) ? 3 : 2);
-        StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
-		//NOTE: Changed to GetMapNameGeneric to handle Dynamic Map support 
-        //GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gTasks[taskId].tMapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
-		GetMapNameGeneric(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gTasks[taskId].tMapGroup, gTasks[taskId].tInput)->regionMapSectionId);
-        StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
-        StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMap);
-        AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
-
-        gTasks[taskId].func = DebugAction_Util_Warp_SelectMap;
-    }
-    else if (JOY_NEW(B_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        DebugAction_DestroyExtraWindow(taskId);
-    }
-}
-
-//NOTE: Cornix changed this function - one line - GetMapName() -> GetMapNameGeneric - DYNAMIC MAP SUPPORT
-static void DebugAction_Util_Warp_SelectMap(u8 taskId)
-{
-    u8 max_value = MAP_GROUP_COUNT[gTasks[taskId].tMapGroup]; //maps in the selected map group
-
-    if (JOY_NEW(DPAD_ANY))
-    {
-        PlaySE(SE_SELECT);
-        Debug_HandleInput_Numeric(taskId, 0, max_value - 1, 3);
-
-        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, (max_value >= 100) ? 3 : 2);
-        ConvertIntToDecimalStringN(gStringVar2, MAP_GROUP_COUNT[gTasks[taskId].tMapGroup] - 1, STR_CONV_MODE_LEADING_ZEROS, (max_value >= 100) ? 3 : 2);
-        StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
-		//NOTE: Changed to GetMapNameGeneric to handle Dynamic Map support 
-		GetMapNameGeneric(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gTasks[taskId].tMapGroup, gTasks[taskId].tInput)->regionMapSectionId);
-        StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
-        StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMap);
-        AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
-    }
-
-    if (JOY_NEW(A_BUTTON))
-    {
-        gTasks[taskId].tMapNum = gTasks[taskId].tInput;
-        gTasks[taskId].tInput = 0;
-        gTasks[taskId].tDigit = 0;
-
-        StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
-        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, 3);
-        StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectWarp);
-        AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
-        gTasks[taskId].func = DebugAction_Util_Warp_SelectWarp;
-    }
-    else if (JOY_NEW(B_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        DebugAction_DestroyExtraWindow(taskId);
-    }
-=======
 static void DebugSelectionStep_UpdateMapNum(u8 taskId, u8 digits, u32 min, u32 max)
 {
     u16 mapGroup = DebugSelection_GetData(taskId, gTasks[taskId].tStep - 1);
@@ -1847,7 +1768,8 @@ static void DebugSelectionStep_UpdateMapNum(u8 taskId, u8 digits, u32 min, u32 m
     ConvertIntToDecimalStringN(gStringVar3, max, STR_CONV_MODE_LEADING_ZEROS, digits);
     StringExpandPlaceholders(gStringVar1, COMPOUND_STRING("Map: {STR_VAR_2} / {STR_VAR_3}"));
     StringCopy(gStringVar2, COMPOUND_STRING("MapSec:"));
-    GetMapName(gStringVar3, Overworld_GetMapHeaderByGroupAndId(mapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
+	// Cornix GetMapName() -> GetMapNameGeneric (dynamic maps)
+    GetMapNameGeneric(gStringVar3, Overworld_GetMapHeaderByGroupAndId(mapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
     DebugNativeStep_PrintWindowSelection(taskId);
 }
 
@@ -1855,7 +1777,6 @@ static u32 DebugSelectionStep_GetLastMapNum(u8 taskId)
 {
     u16 mapGroup = DebugSelection_GetData(taskId, gTasks[taskId].tStep - 1);
     return (MAP_GROUP_COUNT[mapGroup] - 1);
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 }
 
 static void DebugSelectionStep_UpdateWarp(u8 taskId, u8 digits, u32 min, u32 max)
@@ -1865,7 +1786,8 @@ static void DebugSelectionStep_UpdateWarp(u8 taskId, u8 digits, u32 min, u32 max
     ConvertIntToDecimalStringN(gStringVar2, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, digits);
     ConvertIntToDecimalStringN(gStringVar3, max, STR_CONV_MODE_LEADING_ZEROS, digits);
     StringExpandPlaceholders(gStringVar1, COMPOUND_STRING("Warp: {STR_VAR_2} / {STR_VAR_3}"));
-    GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->regionMapSectionId, 0);
+	// Cornix GetMapName() -> GetMapNameGeneric (dynamic maps)
+    GetMapNameGeneric(gStringVar2, Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->regionMapSectionId, 0);
     StringCopy(gStringVar3, COMPOUND_STRING(""));
     DebugNativeStep_PrintWindowSelection(taskId);
 }

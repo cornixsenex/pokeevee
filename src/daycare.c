@@ -604,48 +604,8 @@ u32 GetChildNature(struct DayCare *daycare)
 
 static void _TriggerPendingDaycareEgg(struct DayCare *daycare)
 {
-<<<<<<< HEAD
-    s32 parent;
-    s32 natureTries = 0;
-    rng_value_t personalityRand;
-
-    personalityRand = LocalRandomSeed(gMain.vblankCounter2);
-    parent = GetParentToInheritNature(daycare);
-
-    // don't inherit nature
-    if (parent < 0)
-    {
-        daycare->offspringPersonality = (LocalRandom(&personalityRand) << 16) | ((Random() % 0xfffe) + 1);
-    }
-    // inherit nature
-    else
-    {
-        u8 wantedNature = GetNatureFromPersonality(GetBoxMonData(&daycare->mons[parent].mon, MON_DATA_PERSONALITY));
-        u32 personality;
-
-        do
-        {
-            personality = (LocalRandom(&personalityRand) << 16) | (Random());
-            if (wantedNature == GetNatureFromPersonality(personality) && personality != 0)
-                break; // found a personality with the same nature
-
-            natureTries++;
-        } while (natureTries <= 2400);
-
-        daycare->offspringPersonality = personality;
-    }
-
+	return;
 //    FlagSet(FLAG_PENDING_DAYCARE_EGG);
-}
-
-// Functionally unused
-static void _TriggerPendingDaycareMaleEgg(struct DayCare *daycare)
-{
-    daycare->offspringPersonality = (Random()) | (EGG_GENDER_MALE);
-//    FlagSet(FLAG_PENDING_DAYCARE_EGG);
-=======
-    FlagSet(FLAG_PENDING_DAYCARE_EGG);
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 }
 
 void TriggerPendingDaycareEgg(void)
@@ -927,7 +887,7 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
 
 static void RemoveEggFromDayCare(struct DayCare *daycare)
 {
-    FlagClear(FLAG_PENDING_DAYCARE_EGG);
+//    FlagClear(FLAG_PENDING_DAYCARE_EGG);
     daycare->stepCounter = 0;
 }
 
@@ -1113,34 +1073,6 @@ static void _IncrementDaycareSteps(struct DayCare *daycare)
     for (u32 i = 0; i < DAYCARE_MON_COUNT; i++)
     {
         if (GetBoxMonData(&daycare->mons[i].mon, MON_DATA_SANITY_HAS_SPECIES))
-<<<<<<< HEAD
-            daycare->mons[i].steps++, validEggs++;
-    }
-
-    // Check if an egg should be produced
-    if (daycare->offspringPersonality == 0 && validEggs == DAYCARE_MON_COUNT && (daycare->mons[1].steps & 0xFF) == 0xFF)
-    {
-
-        u8 compatibility = ModifyBreedingScoreForOvalCharm(GetDaycareCompatibilityScore(daycare));
-        if (compatibility > (Random() * 100u) / USHRT_MAX)
-            TriggerPendingDaycareEgg();
-    }
-
-    // Try to hatch Egg
-    daycare->stepCounter++;
-    if (((P_EGG_CYCLE_LENGTH <= GEN_3 || P_EGG_CYCLE_LENGTH == GEN_7) && daycare->stepCounter >= 256)
-     || (P_EGG_CYCLE_LENGTH == GEN_4 && daycare->stepCounter >= 255)
-     || ((P_EGG_CYCLE_LENGTH == GEN_5 || P_EGG_CYCLE_LENGTH == GEN_6) && daycare->stepCounter >= 257)
-     || (P_EGG_CYCLE_LENGTH >= GEN_8 && daycare->stepCounter >= 128))
-    {
-        u32 eggCycles;
-        u8 toSub = GetEggCyclesToSubtract();
-
-        daycare->stepCounter = 0;
-
-        for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
-=======
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
         {
             daycare->mons[i].steps++;
             daycareParentCount++;
@@ -1239,7 +1171,8 @@ bool8 ShouldEggHatch(void)
 
 static bool32 IsEggPending(struct DayCare *daycare)
 {
-    return (FlagGet(FLAG_PENDING_DAYCARE_EGG));
+	return;
+///    return (FlagGet(FLAG_PENDING_DAYCARE_EGG));
 }
 
 // gStringVar1 = first mon's nickname

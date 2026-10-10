@@ -2,23 +2,13 @@
 #define GUARD_CONFIG_ITEM_H
 
 // Item config
-<<<<<<< HEAD
-#define I_SHINY_CHARM_ADDITIONAL_ROLLS  2           // Amount of additional shiny rolls if the player has the Shiny Charm. Set it to 0 to disable Shiny Charm's effects.
-#define I_KEY_FOSSILS                   GEN_LATEST  // In Gen4+, all Gen 3 fossils became regular items.
-#define I_KEY_ESCAPE_ROPE               GEN_3  // In Gen8, Escape Rope became a Key Item. Keep in mind, this will make it free to buy in marts.
-#define I_HEALTH_RECOVERY               GEN_3  // In Gen7+, certain healing items recover a different amount of HP than they used to.
-#define I_SITRUS_BERRY_HEAL             GEN_3  // In Gen4+, Sitrus Berry was changed from healing 30 HP to healing 25% of Max HP.
-#define I_VITAMIN_EV_CAP                GEN_3  // In Gen8+, the Vitamins no longer have a cap of 100 EV per stat.
-#define I_BERRY_EV_JUMP                 GEN_LATEST  // In Gen4 only, EV-lowering Berries lower a stat's EV to 100 if it is above 100.
-=======
 #define I_SHINY_CHARM_ADDITIONAL_ROLLS  2           // The amount of additional Shiny rolls if the player has the Shiny Charm. Set it to 0 to disable the Shiny Charm's effects.
 #define I_KEY_FOSSILS                   GEN_LATEST  // In Gen4+, fossils are no longer Key Items.
-#define I_KEY_ESCAPE_ROPE               GEN_LATEST  // In Gen8+, the Escape Rope is a Key Item. Keep in mind that this will make it free to buy in Marts.
-#define I_HEALTH_RECOVERY               GEN_LATEST  // In Gen7+, certain healing items recover a different amount of HP than they did previously.
-#define I_SITRUS_BERRY_HEAL             GEN_LATEST  // In Gen4+, Sitrus Berries heal 30 HP instead of 25% of max HP.
-#define I_VITAMIN_EV_CAP                GEN_LATEST  // In Gen8+, Vitamins no longer have a cap of 100 EVs per stat.
-#define I_BERRY_EV_JUMP                 GEN_LATEST  // In Gen4 only, EV-lowering Berries lower a stat's EVs to 100 if they are above 100.
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
+#define I_KEY_ESCAPE_ROPE               GEN_3  // In Gen8+, the Escape Rope is a Key Item. Keep in mind that this will make it free to buy in Marts.
+#define I_HEALTH_RECOVERY               GEN_3  // In Gen7+, certain healing items recover a different amount of HP than they did previously.
+#define I_SITRUS_BERRY_HEAL             GEN_3  // In Gen4+, Sitrus Berries heal 30 HP instead of 25% of max HP.
+#define I_VITAMIN_EV_CAP                GEN_3  // In Gen8+, Vitamins no longer have a cap of 100 EVs per stat.
+#define I_BERRY_EV_JUMP                 GEN_3  // In Gen4 only, EV-lowering Berries lower a stat's EVs to 100 if they are above 100.
 #define I_GRISEOUS_ORB_FORM_CHANGE      GEN_LATEST  // In Gen9+, the Griseous Orb no longer changes Giratina's form when held.
 #define I_GEM_BOOST_POWER               GEN_LATEST  // In Gen6+, the power multiplier of Gems is 1.3x instead of 1.5x.
 #define I_USE_EVO_HELD_ITEMS_FROM_BAG   FALSE       // If set to TRUE, items such as the Electirizer can be used from the bag to evolve a Pokémon like in PLA.
