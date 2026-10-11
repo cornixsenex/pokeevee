@@ -234,10 +234,10 @@
 #define FLAG_SUBMARE_HIDESUBS                0xC6 //Press panel -> hide submarines
 #define FLAG_SUBMARE_HIDEFOSSIL              0xC7
 #define FLAG_MARES8_KECLEON5                 0xC8 //persist no more beach kecleon
+#define FLAG_PENDING_DAYCARE_EGG             0xCA // Restore daycare
 
 // BREAK // 
 
-#define FLAG_RECEIVED_PINK_SCARF             0xCA
 #define FLAG_RECEIVED_GREEN_SCARF            0xCB
 #define FLAG_RECEIVED_YELLOW_SCARF           0xCC
 #define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD

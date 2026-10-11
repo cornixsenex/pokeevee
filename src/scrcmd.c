@@ -2206,12 +2206,8 @@ bool8 ScrCmd_bufferitemnameplural(struct ScriptContext *ctx)
     enum Item itemId = VarGet(ScriptReadHalfword(ctx));
     u16 quantity = VarGet(ScriptReadHalfword(ctx));
     Script_RequestEffects(SCREFF_V1);
-<<<<<<< HEAD
-    CopyItemNameHandlePlural(itemId, sScriptStringVars[stringVarIndex], quantity);
-=======
 
     CopyItemNameHandlePlural(itemId, GetStringVar(stringVarIndex), quantity);
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
     return FALSE;
 }
 
@@ -2381,15 +2377,7 @@ bool8 ScrCmd_removemoney(struct ScriptContext *ctx)
 {
     u32 amount = ScriptReadWord(ctx);
 
-<<<<<<< HEAD
-    DebugPrintf("removemoney: %d", amount);
-
-    if (!ignore)
-    {
-        Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-=======
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 
     RemoveMoney(&gSaveBlock1Ptr->money, amount);
     return FALSE;
@@ -3446,7 +3434,7 @@ bool8 ScrCmd_buffernumberstring32(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1);
 
-    ConvertIntToDecimalStringN(sScriptStringVars[stringVarIndex], num, STR_CONV_MODE_LEFT_ALIGN, numDigits);
+    ConvertIntToDecimalStringN(GetStringVar(stringVarIndex), num, STR_CONV_MODE_LEFT_ALIGN, numDigits);
     return FALSE;
 }
 

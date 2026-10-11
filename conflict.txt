@@ -21,7 +21,9 @@
 	>!!!! 
 	I need to update the dynamic map music thing to accomodate the new Night Music stuff
 #CONFLICT (content): Merge conflict in src/pokemon.c
-CONFLICT (content): Merge conflict in src/pokemon_summary_screen.c
+#CONFLICT (content): Merge conflict in src/pokemon_summary_screen.c
+	>maybe adjust maxPageIndex to remove contest moves idk
+	>Oh it's a config now
 CONFLICT (content): Merge conflict in src/scrcmd.c
 
 
@@ -37,3 +39,10 @@ Metatiles
 	>Cycling Road
 	>Canvas
 	>Tombstone
+Read all the configs lol
+Item Name Plurals
+removemoney macro
+hidecoinsbox 
+	>palatium felix etc
+showmoneybox position
+	>surf school pay up

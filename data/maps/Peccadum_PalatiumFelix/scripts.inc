@@ -60,7 +60,7 @@ Peccadum_PalatiumFelix_Script_CashierBye::
 # 80 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidemoneybox
 # 81 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 6
+	hidecoinsbox
 # 82 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierBye
 # 83 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -860,7 +860,7 @@ Peccadum_PalatiumFelix_Script_CashierUpdateTransaction::
 # 502 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	updatemoneybox
 # 503 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 1, 6
+	updatecoinsbox
 # 504 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 505 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -1046,7 +1046,7 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_6:
 # 605 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	clearflag FLAG_TEMP_C
 # 606 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 607 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
 # 608 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -1058,7 +1058,7 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_7:
 	compare VAR_RESULT, 25
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_16
 # 621 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 622 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
 # 623 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -1070,7 +1070,7 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_8:
 	compare VAR_RESULT, 100
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_19
 # 636 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 637 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
 # 638 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -1082,7 +1082,7 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_9:
 	compare VAR_RESULT, 500
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_22
 # 651 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 652 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
 # 653 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -1094,7 +1094,7 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_10:
 	compare VAR_RESULT, 1000
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_25
 # 666 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 667 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
 # 668 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -1106,7 +1106,7 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_11:
 	compare VAR_RESULT, 2500
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_28
 # 681 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 682 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
 # 683 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -1117,7 +1117,7 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_12:
 # 686 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	clearflag FLAG_TEMP_C
 # 687 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 688 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRouletteEnd
 	goto Peccadum_PalatiumFelix_Script_GetCoinWager_4
@@ -1126,13 +1126,13 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_13:
 # 597 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 5
 # 598 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 599 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 600 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 601 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 602 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 5
 	return
@@ -1141,13 +1141,13 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_16:
 # 613 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 25
 # 614 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 615 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 616 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 617 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 618 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 25
 	return
@@ -1156,13 +1156,13 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_19:
 # 628 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 100
 # 629 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 630 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 631 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 632 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 633 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 100
 	return
@@ -1171,13 +1171,13 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_22:
 # 643 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 500
 # 644 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 645 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 646 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 647 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 648 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 500
 	return
@@ -1186,13 +1186,13 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_25:
 # 658 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 1000
 # 659 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 660 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 661 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 662 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 663 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 1000
 	return
@@ -1201,13 +1201,13 @@ Peccadum_PalatiumFelix_Script_GetCoinWager_28:
 # 673 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 2500
 # 674 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 675 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 676 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 677 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 678 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 2500
 	return
@@ -2102,7 +2102,7 @@ Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin::
 # 1104 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 2, Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin_5
 # 1117 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1118 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin_Text_0
 # 1119 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2115,13 +2115,13 @@ Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin_1:
 # 1123 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins VAR_TEMP_0
 # 1124 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1125 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1126 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1127 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbo
 # 1128 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRoulettePlayAgain
 	return
@@ -2253,78 +2253,78 @@ Peccadum_PalatiumFelix_Script_BlueRouletteEnd_5:
 # 1151 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins 5
 # 1152 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1153 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1154 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1155 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 	goto Peccadum_PalatiumFelix_Script_BlueRouletteEnd_1
 
 Peccadum_PalatiumFelix_Script_BlueRouletteEnd_6:
 # 1157 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins 25
 # 1158 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1159 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1160 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1161 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 	goto Peccadum_PalatiumFelix_Script_BlueRouletteEnd_1
 
 Peccadum_PalatiumFelix_Script_BlueRouletteEnd_7:
 # 1163 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins 100
 # 1164 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1165 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1166 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1167 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 	goto Peccadum_PalatiumFelix_Script_BlueRouletteEnd_1
 
 Peccadum_PalatiumFelix_Script_BlueRouletteEnd_8:
 # 1169 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins 500
 # 1170 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1171 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1172 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1173 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 	goto Peccadum_PalatiumFelix_Script_BlueRouletteEnd_1
 
 Peccadum_PalatiumFelix_Script_BlueRouletteEnd_9:
 # 1175 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins 1000
 # 1176 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1177 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1178 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1179 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 	goto Peccadum_PalatiumFelix_Script_BlueRouletteEnd_1
 
 Peccadum_PalatiumFelix_Script_BlueRouletteEnd_10:
 # 1181 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins 2500
 # 1182 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1183 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1184 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1185 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 	goto Peccadum_PalatiumFelix_Script_BlueRouletteEnd_1
 
 
@@ -2511,7 +2511,7 @@ DealerHiLoKabuto_Script_GetCoinWager_2:
 	compare VAR_TEMP_6, 0
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_15
 # 1297 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1298 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_NoCoins
 # 1299 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2525,7 +2525,7 @@ DealerHiLoKabuto_Script_GetCoinWager_3:
 	compare VAR_TEMP_6, 4
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_18
 # 1313 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1314 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1315 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2539,7 +2539,7 @@ DealerHiLoKabuto_Script_GetCoinWager_4:
 	compare VAR_TEMP_6, 9
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_21
 # 1329 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1330 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1331 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2553,7 +2553,7 @@ DealerHiLoKabuto_Script_GetCoinWager_5:
 	compare VAR_TEMP_6, 24
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_24
 # 1345 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1346 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1347 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2567,7 +2567,7 @@ DealerHiLoKabuto_Script_GetCoinWager_6:
 	compare VAR_TEMP_6, 49
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_27
 # 1361 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1362 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1363 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2581,7 +2581,7 @@ DealerHiLoKabuto_Script_GetCoinWager_7:
 	compare VAR_TEMP_6, 99
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_30
 # 1377 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1378 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1379 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2595,7 +2595,7 @@ DealerHiLoKabuto_Script_GetCoinWager_8:
 	compare VAR_TEMP_6, 249
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_33
 # 1393 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1394 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1395 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2609,7 +2609,7 @@ DealerHiLoKabuto_Script_GetCoinWager_9:
 	compare VAR_TEMP_6, 499
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_36
 # 1409 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1410 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1411 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2623,7 +2623,7 @@ DealerHiLoKabuto_Script_GetCoinWager_10:
 	compare VAR_TEMP_6, 999
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_39
 # 1425 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1426 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1427 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2637,7 +2637,7 @@ DealerHiLoKabuto_Script_GetCoinWager_11:
 	compare VAR_TEMP_6, 2499
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_42
 # 1441 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1442 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1443 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2651,7 +2651,7 @@ DealerHiLoKabuto_Script_GetCoinWager_12:
 	compare VAR_TEMP_6, 4999
 	goto_if_gt DealerHiLoKabuto_Script_GetCoinWager_45
 # 1457 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1458 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins
 # 1459 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -2660,7 +2660,7 @@ DealerHiLoKabuto_Script_GetCoinWager_12:
 
 DealerHiLoKabuto_Script_GetCoinWager_13:
 # 1463 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1464 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call DealerHiLoKabuto_Script_End
 	return
@@ -2669,13 +2669,13 @@ DealerHiLoKabuto_Script_GetCoinWager_15:
 # 1289 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 1
 # 1290 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1291 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1292 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1293 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1294 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 1
 	return
@@ -2684,13 +2684,13 @@ DealerHiLoKabuto_Script_GetCoinWager_18:
 # 1305 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 5
 # 1306 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1307 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1308 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1309 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1310 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 5
 	return
@@ -2699,13 +2699,13 @@ DealerHiLoKabuto_Script_GetCoinWager_21:
 # 1321 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 10
 # 1322 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1323 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1324 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1325 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1326 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 10
 	return
@@ -2714,13 +2714,13 @@ DealerHiLoKabuto_Script_GetCoinWager_24:
 # 1337 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 25
 # 1338 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1339 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1340 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1341 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1342 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 25
 	return
@@ -2729,13 +2729,13 @@ DealerHiLoKabuto_Script_GetCoinWager_27:
 # 1353 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 50
 # 1354 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1355 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1356 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1357 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1358 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 50
 	return
@@ -2744,13 +2744,13 @@ DealerHiLoKabuto_Script_GetCoinWager_30:
 # 1369 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 100
 # 1370 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1371 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1372 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1373 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1374 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 100
 	return
@@ -2759,13 +2759,13 @@ DealerHiLoKabuto_Script_GetCoinWager_33:
 # 1385 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 250
 # 1386 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1387 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1388 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1389 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1390 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 250
 	return
@@ -2774,13 +2774,13 @@ DealerHiLoKabuto_Script_GetCoinWager_36:
 # 1401 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 500
 # 1402 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1403 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1404 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1405 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1406 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 500
 	return
@@ -2789,13 +2789,13 @@ DealerHiLoKabuto_Script_GetCoinWager_39:
 # 1417 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 1000
 # 1418 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1419 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1420 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1421 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1422 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 1000
 	return
@@ -2804,13 +2804,13 @@ DealerHiLoKabuto_Script_GetCoinWager_42:
 # 1433 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 2500
 # 1434 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1435 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1436 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1437 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1438 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 2500
 	return
@@ -2819,13 +2819,13 @@ DealerHiLoKabuto_Script_GetCoinWager_45:
 # 1449 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 5000
 # 1450 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1451 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1452 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1453 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1454 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 5000
 	return
@@ -2841,13 +2841,13 @@ DealerHiLoKabuto_Script_PlayerWinCoins::
 # 1477 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins VAR_TEMP_0
 # 1478 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1479 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1480 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1481 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 	return
 
 
@@ -2973,7 +2973,7 @@ Peccadum_PalatiumFelix_Script_4HiLoKabuto::
 
 Peccadum_PalatiumFelix_Script_4HiLoKabuto_1:
 # 1549 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1550 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	return
@@ -2995,7 +2995,7 @@ Peccadum_PalatiumFelix_Script_5HiLoKabuto::
 
 Peccadum_PalatiumFelix_Script_5HiLoKabuto_1:
 # 1562 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1563 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	return
@@ -3010,13 +3010,13 @@ HiLoKabuto_Group4_Script_CoinBrain::
 # 1577 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 1000
 # 1578 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1579 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1580 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1581 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 HiLoKabuto_Group4_Script_CoinBrain_1:
 # 1584 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call HiLoKabuto_Group_Script_ResetGame
@@ -3125,7 +3125,7 @@ HiLoKabuto_Group4_Script_CoinBrain_61:
 	compare VAR_RESULT, YES
 	goto_if_eq HiLoKabuto_Group4_Script_CoinBrain_69
 # 1665 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1666 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	goto_if_unset FLAG_PALATIUMFELIX_LOGISTICS_DONE, HiLoKabuto_Group4_Script_CoinBrain_91
 # 1669 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -3136,7 +3136,7 @@ HiLoKabuto_Group4_Script_CoinBrain_2:
 # 1573 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
 # 1574 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1575 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	goto HiLoKabuto_Group4_Script_CoinBrain_1
@@ -3287,13 +3287,13 @@ HiLoKabuto_Group5_Script_CoinBrain::
 # 1683 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 150
 # 1684 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1685 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1686 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1687 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 HiLoKabuto_Group5_Script_CoinBrain_1:
 # 1690 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call HiLoKabuto_Group_Script_ResetGame
@@ -3432,7 +3432,7 @@ HiLoKabuto_Group5_Script_CoinBrain_80:
 	compare VAR_RESULT, YES
 	goto_if_eq HiLoKabuto_Group5_Script_CoinBrain_90
 # 1787 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1788 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	return
@@ -3441,7 +3441,7 @@ HiLoKabuto_Group5_Script_CoinBrain_2:
 # 1679 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
 # 1680 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1681 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	goto HiLoKabuto_Group5_Script_CoinBrain_1
@@ -3647,7 +3647,7 @@ HiLoKabuto_Group4_Script_PlayerWinCoins::
 # 1796 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins 4000
 # 1797 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1798 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1799 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -3658,7 +3658,7 @@ HiLoKabuto_Group4_Script_PlayerWinCoins::
 	compare VAR_RESULT, YES
 	goto_if_eq HiLoKabuto_Group4_Script_PlayerWinCoins_1
 # 1804 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1805 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	goto_if_unset FLAG_PALATIUMFELIX_LOGISTICS_DONE, HiLoKabuto_Group4_Script_PlayerWinCoins_4
 # 1808 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -3684,7 +3684,7 @@ HiLoKabuto_Group5_Script_PlayerWinCoins::
 # 1816 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	addcoins 750
 # 1817 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	updatecoinsbox 21, 1
+	updatecoinsbox
 # 1818 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
 # 1819 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -3695,7 +3695,7 @@ HiLoKabuto_Group5_Script_PlayerWinCoins::
 	compare VAR_RESULT, YES
 	goto_if_eq HiLoKabuto_Group5_Script_PlayerWinCoins_1
 # 1824 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbox 21, 1
+	hidecoinsbox
 # 1825 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	return

@@ -12,6 +12,8 @@ void DebugNative_Party_SetFriendship(void);
 extern EWRAM_DATA bool8 gIsDebugBattle;
 extern EWRAM_DATA u64 gDebugAIFlags;
 
+// Cornix made not static to support using this stuff in the start menu
+// Now if I'm using it other places it should be defined somewhere smarter too but like whatever - CS 261011
 extern const u8 *const gDayNameStringsTable[WEEKDAY_COUNT];
 
 #endif // GUARD_DEBUG_H

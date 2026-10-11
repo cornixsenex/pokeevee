@@ -78,7 +78,7 @@ script Peccadum_PalatiumFelix_Script_Cashier {
 script Peccadum_PalatiumFelix_Script_CashierBye {
 	//thank you come againa
 	hidemoneybox
-	hidecoinsbox (21, 6)
+	hidecoinsbox
 	msgbox (Peccadum_PalatiumFelix_Text_CashierBye)
 	closemessage
 	release
@@ -500,7 +500,7 @@ script Peccadum_PalatiumFelix_Script_CashierSellCoins {
 script Peccadum_PalatiumFelix_Script_CashierUpdateTransaction {
 
 	updatemoneybox
-	updatecoinsbox (1, 6)
+	updatecoinsbox
 	playse (SE_SHOP)
 	waitse
 	return
@@ -595,15 +595,15 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 		case 0:
 			if (var(VAR_RESULT) >= 5) {
 				removecoins (5)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 5)
 				return
 			} else {
 				clearflag (WAGER_REFUND)
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
 				call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
 			}
@@ -611,14 +611,14 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 		case 1:
 			if (var(VAR_RESULT) >= 25) {
 				removecoins (25)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 25)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
 				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
 			}
@@ -626,14 +626,14 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 		case 2:
 			if (var(VAR_RESULT) >= 100) {
 				removecoins (100)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 100)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
 				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
 			}
@@ -641,14 +641,14 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 		case 3:
 			if (var(VAR_RESULT) >= 500) {
 				removecoins (500)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 500)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
 				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
 			}
@@ -656,14 +656,14 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 		case 4:
 			if (var(VAR_RESULT) >= 1000) {
 				removecoins (1000)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 1000)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
 				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
 			}
@@ -671,20 +671,20 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 		case 5:
 			if (var(VAR_RESULT) >= 2500) {
 				removecoins (2500)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 2500)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
 				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
 			}
 		case 6:
 			clearflag (WAGER_REFUND)
-			hidecoinsbox (21, 1)
+			hidecoinsbox
 			call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
 	}
 	msgbox("ERROR\nBottom of GetCoinWager")
@@ -1114,17 +1114,17 @@ script Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin {
 				}
 			}
 		default:
-			hidecoinsbox (21, 1)
+			hidecoinsbox
 			msgbox ("ERROR\nWAGER_TYPE OOB in PlayerWin")
 			closemessage
 			release
 			end
 	}
 	addcoins (WAGER)
-	updatecoinsbox (21, 1)
+	updatecoinsbox
 	playse (SE_SHOP)
 	waitse
-	hidecoinsbox (21,1)
+	hidecoinsbo
 	call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayAgain)
 }
 
@@ -1149,40 +1149,40 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteEnd  {
 		switch (var(WAGER)) {
 			case 5:	
 				addcoins (5)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 			case 25:	
 				addcoins (25)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 			case 100:	
 				addcoins (100)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 			case 500:	
 				addcoins (500)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 			case 1000:	
 				addcoins (1000)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 			case 2500:
 				addcoins (2500)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 			default:
 				msgbox("ERROR\nWAGER OOB in RefundSwitch")
 				closemessage
@@ -1287,14 +1287,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 0) {
 				removecoins (1)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 1)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_NoCoins)
 				call (DealerHiLoKabuto_Script_End)
 			}
@@ -1303,14 +1303,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 4) {
 				removecoins (5)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 5)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1319,14 +1319,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 9) {
 				removecoins (10)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 10)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1335,14 +1335,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 24) {
 				removecoins (25)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 25)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1351,14 +1351,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 49) {
 				removecoins (50)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 50)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1367,14 +1367,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 99) {
 				removecoins (100)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 100)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1383,14 +1383,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 249) {
 				removecoins (250)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 250)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1399,14 +1399,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 499) {
 				removecoins (500)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 500)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1415,14 +1415,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 999) {
 				removecoins (1000)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 1000)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1431,14 +1431,14 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 2499) {
 				removecoins (2500)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 2500)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
@@ -1447,20 +1447,20 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 			checkcoins (CHECK_COINS)
 			if (var(CHECK_COINS) > 4999) {
 				removecoins (5000)
-				updatecoinsbox (21, 1)
+				updatecoinsbox
 				playse (SE_SHOP)
 				waitse
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				setvar (WAGER, 5000)
 				return
 			} else {
-				hidecoinsbox (21, 1)
+				hidecoinsbox
 				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
 				call (DealerHiLoKabuto_Script_GetCoinWager)
 			}
 		//nvm
 		case 11:
-			hidecoinsbox (21, 1)
+			hidecoinsbox
 			call (DealerHiLoKabuto_Script_End)
 		default:
 			msgbox("ERROR\nVAR_RESULT OOB GetCoinWager")
@@ -1475,10 +1475,10 @@ script DealerHiLoKabuto_Script_PlayerWinCoins {
     msgbox (DealerHiLoKabuto_Text_PlayerWin)
 	multvar (WAGER, 2)
 	addcoins (WAGER)
-	updatecoinsbox (21, 1)
+	updatecoinsbox
 	playse (SE_SHOP)
 	waitse
-	hidecoinsbox (21,1)
+	hidecoinsbox
 	return
 }
 
@@ -1546,7 +1546,7 @@ script Peccadum_PalatiumFelix_Script_4HiLoKabuto {
     showcoinsbox (21, 1)
     msgbox (Peccadum_PalatiumFelix_Text_4HiLoKabuto, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == FALSE) {
-        hidecoinsbox (21, 1)
+        hidecoinsbox
 		call (HiLoKabuto_Group_Script_End)
 	} else {
 		call (HiLoKabuto_Group4_Script_CoinBrain)
@@ -1559,7 +1559,7 @@ script Peccadum_PalatiumFelix_Script_5HiLoKabuto {
     showcoinsbox (21, 1)
     msgbox (Peccadum_PalatiumFelix_Text_5HiLoKabuto, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == FALSE) {
-        hidecoinsbox (21, 1)
+        hidecoinsbox
 		call (HiLoKabuto_Group_Script_End)
 	} else {
 		call (HiLoKabuto_Group5_Script_CoinBrain)
@@ -1571,14 +1571,14 @@ script HiLoKabuto_Group4_Script_CoinBrain {
     checkcoins (CHECK_COINS)
     if (var(CHECK_COINS) < 1000) {
         msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-        hidecoinsbox (21, 1)
+        hidecoinsbox
         call (HiLoKabuto_Group_Script_End)
     } else {
        removecoins (1000)
-       updatecoinsbox (21, 1)
+       updatecoinsbox
        playse (SE_SHOP)
        waitse
-       hidecoinsbox (21, 1)
+       hidecoinsbox
     }
     //reset game
     call  (HiLoKabuto_Group_Script_ResetGame)
@@ -1662,7 +1662,7 @@ script HiLoKabuto_Group4_Script_CoinBrain {
 	if (var(VAR_RESULT) == YES) {
 		call (HiLoKabuto_Group4_Script_CoinBrain)
 	} else {
-        hidecoinsbox (21, 1)
+        hidecoinsbox
 		if (!flag(FLAG_PALATIUMFELIX_LOGISTICS_DONE)) {
 			call (Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics)
 		} else {
@@ -1677,14 +1677,14 @@ script HiLoKabuto_Group5_Script_CoinBrain {
     checkcoins (CHECK_COINS)
     if (var(CHECK_COINS) < 150) {
         msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-        hidecoinsbox (21, 1)
+        hidecoinsbox
         call (HiLoKabuto_Group_Script_End)
     } else {
        removecoins (150)
-       updatecoinsbox (21, 1)
+       updatecoinsbox
        playse (SE_SHOP)
        waitse
-       hidecoinsbox (21, 1)
+       hidecoinsbox
     }
     //reset game
     call  (HiLoKabuto_Group_Script_ResetGame)
@@ -1784,7 +1784,7 @@ script HiLoKabuto_Group5_Script_CoinBrain {
 	if (var(VAR_RESULT) == YES) {
 		call (HiLoKabuto_Group5_Script_CoinBrain)
 	} else {
-        hidecoinsbox (21, 1)
+        hidecoinsbox
 		call (HiLoKabuto_Group_Script_End)
 	}
 
@@ -1794,14 +1794,14 @@ script HiLoKabuto_Group4_Script_PlayerWinCoins {
     showcoinsbox (21, 1)
     msgbox (HiLoKabuto_Group_Text_PlayerWin)
     addcoins (4000)
-    updatecoinsbox (21, 1)
+    updatecoinsbox
     playse (SE_SHOP)
     waitse
 	msgbox (HiLoKabuto_Group4Coins_Text_PlayAgain, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		call (HiLoKabuto_Group4_Script_CoinBrain)
 	} else {
-        hidecoinsbox (21, 1)
+        hidecoinsbox
 		if (!flag(FLAG_PALATIUMFELIX_LOGISTICS_DONE)) {
 			call (Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics)
 		} else {
@@ -1814,14 +1814,14 @@ script HiLoKabuto_Group5_Script_PlayerWinCoins {
     showcoinsbox (21, 1)
     msgbox (HiLoKabuto_Group_Text_PlayerWin)
     addcoins (750)
-    updatecoinsbox (21, 1)
+    updatecoinsbox
     playse (SE_SHOP)
     waitse
 	msgbox (HiLoKabuto_Group5Coins_Text_PlayAgain, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		call (HiLoKabuto_Group5_Script_CoinBrain)
 	} else {
-        hidecoinsbox (21, 1)
+        hidecoinsbox
 		call (HiLoKabuto_Group_Script_End)
 	}
 }

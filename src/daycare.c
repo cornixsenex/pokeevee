@@ -604,8 +604,7 @@ u32 GetChildNature(struct DayCare *daycare)
 
 static void _TriggerPendingDaycareEgg(struct DayCare *daycare)
 {
-	return;
-//    FlagSet(FLAG_PENDING_DAYCARE_EGG);
+	FlagSet(FLAG_PENDING_DAYCARE_EGG);
 }
 
 void TriggerPendingDaycareEgg(void)
@@ -887,7 +886,7 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
 
 static void RemoveEggFromDayCare(struct DayCare *daycare)
 {
-//    FlagClear(FLAG_PENDING_DAYCARE_EGG);
+    FlagClear(FLAG_PENDING_DAYCARE_EGG);
     daycare->stepCounter = 0;
 }
 
@@ -1171,8 +1170,7 @@ bool8 ShouldEggHatch(void)
 
 static bool32 IsEggPending(struct DayCare *daycare)
 {
-	return;
-///    return (FlagGet(FLAG_PENDING_DAYCARE_EGG));
+    return (FlagGet(FLAG_PENDING_DAYCARE_EGG));
 }
 
 // gStringVar1 = first mon's nickname

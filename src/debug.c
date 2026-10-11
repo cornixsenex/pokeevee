@@ -452,7 +452,9 @@ static const u8 sDebugText_Continue[] =      _("Continue…");
 
 //Time Menu
 
-static const u8 *const gDayNameStringsTable[WEEKDAY_COUNT] = {
+// Cornix made not static to support using this stuff in the start menu
+// Now if I'm using it other places it should be defined somewhere smarter too but like whatever - CS 261011
+const u8 *const gDayNameStringsTable[WEEKDAY_COUNT] = {
     COMPOUND_STRING("Sunday"),
     COMPOUND_STRING("Monday"),
     COMPOUND_STRING("Tuesday"),

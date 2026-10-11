@@ -6032,7 +6032,6 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	}
 }
 
-====>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
 // Credits
 
 void Overworld_CreditsMainCB(void)
