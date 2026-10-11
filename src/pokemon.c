@@ -30,11 +30,8 @@
 #include "link.h"
 #include "m4a.h"
 #include "main.h"
-<<<<<<< HEAD
-#include "metatile_behavior.h" //CornixSenex
-=======
 #include "mail.h"
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7
+#include "metatile_behavior.h" //CornixSenex
 #include "move_relearner.h"
 #include "naming_screen.h"
 #include "overworld.h"
@@ -6818,7 +6815,6 @@ bool32 HasShedinjaHPHandling(enum Species species)
     return FALSE;
 }
 
-<<<<<<< HEAD
 // I use this to create the special mons for scripted story battles
 // (shiny mareep, lupa, scylla etc)
 // It does not begin the battle it just copies the created mon into the
@@ -6882,7 +6878,6 @@ void Cornix_CreateSpecialMon(const u16 species, const u8 level, const u8* nickna
 	}
 }
 
-=======
 static u32 ResolveAbility(enum Species species, u32 abilityNum)
 {
     assertf(abilityNum < NUM_ABILITY_SLOTS && GetAbilityBySpecies(species, abilityNum) != ABILITY_NONE,
@@ -7135,4 +7130,3 @@ void CreateMonFromTemplate(struct Pokemon *mon, const struct PokemonTemplate *mo
     CalculateMonStats(mon);
     TryFormChange(mon, FORM_CHANGE_ITEM_HOLD, B_TRAINER_PLAYER);
 }
->>>>>>> e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7

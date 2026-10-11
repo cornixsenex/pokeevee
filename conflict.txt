@@ -20,7 +20,7 @@
 #CONFLICT (content): Merge conflict in src/overworld.c
 	>!!!! 
 	I need to update the dynamic map music thing to accomodate the new Night Music stuff
-CONFLICT (content): Merge conflict in src/pokemon.c
+#CONFLICT (content): Merge conflict in src/pokemon.c
 CONFLICT (content): Merge conflict in src/pokemon_summary_screen.c
 CONFLICT (content): Merge conflict in src/scrcmd.c
 
