@@ -91,13 +91,14 @@ script FootballField_EventScript_CatchingTest {
 }
 
 script FootballField_EventScript_SetupRunningTest {
+	msgbox("TEST")
+	closemessage
 	fadescreenswapbuffers (FADE_TO_BLACK)
 	//Setup all Object position and movmement types
-	lockall
 	//Player
-	setobjectxy (OBJ_EVENT_ID_PLAYER, 13, 33)
-	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 13, 33)
-	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+//	setobjectxy (OBJ_EVENT_ID_PLAYER, 13, 33)
+//	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 13, 33)
+//	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
 	
 	//Coach
 	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
@@ -164,6 +165,8 @@ script FootballField_EventScript_SetupRunningTest {
 //	special (ResetCamera)
 	fadescreenswapbuffers (FADE_FROM_BLACK)
 
+	msgbox("TEST2")
+	closemessage
 	return
 }
 
@@ -278,7 +281,6 @@ script FootballField_EventScript_EndZone {
 
 script FootballField_EventScript_FootballCoach {
 	lockall
-	faceplayer
 	if (defeated(TRAINER_UNI_GYM)) {
 		call (FootballField_EventScript_ClassFinished)
 	} elif (!flag(FLAG_OPEN_CLASS_GYM)) {

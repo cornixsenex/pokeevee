@@ -28,6 +28,7 @@ CONFLICT (content): Merge conflict in src/scrcmd.c
 
 
 Football Field
+	>player faces wrong way during triggers
 	>crashes during run test
 Metatiles
 	>Colchis Battle
