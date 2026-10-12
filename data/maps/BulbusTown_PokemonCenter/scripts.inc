@@ -12,12 +12,12 @@ BulbusTown_PokemonCenter_EventScript_Nurse::
 # 12 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
 	closemessage
 # 13 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
-	checkmoney 2500, 0
+	checkmoney 2500
 # 14 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq BulbusTown_PokemonCenter_EventScript_Nurse_5
 # 19 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
-	showmoneybox 0, 0, 0
+	showmoneybox 0, 0
 # 20 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
 	msgbox BulbusTown_PokemonCenter_Text_OutOfPocket, MSGBOX_YESNO
 # 21 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
@@ -53,7 +53,7 @@ BulbusTown_PokemonCenter_EventScript_Nurse_5:
 
 BulbusTown_PokemonCenter_EventScript_Nurse_9:
 # 22 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
-	removemoney 2500, 0
+	removemoney 2500
 # 23 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
 	updatemoneybox
 # 24 "data/maps/BulbusTown_PokemonCenter/scripts.pory"

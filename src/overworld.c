@@ -6001,6 +6001,7 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
             lastMapSection == MAPSEC_AEDES_AQUA      ||    // Exit Aedes Sub Monte to Ignis Mons
             lastMapSection == MAPSEC_AEDES_TERRA     ||    // Exit Aedes Sub Monte to Ignis Mons
             lastMapSection == MAPSEC_AEDES_LUX       ||    // Exit Aedes Sub Monte to Ignis Mons
+            lastMapSection == MAPSEC_CAVERNA_CAMELA  ||    // Exit Caverna Camela to Sinus Camelus 
 			lastMapSection == MAPSEC_VIA_MAGNA             // Exit Terminal (only place with header == VM & warp) 
 		   )
 			return TRUE;
@@ -6019,6 +6020,7 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
             destMapSection == MAPSEC_AEDES_AQUA      || //Enter Aedes Sub Monte from Ignis Mons 
             destMapSection == MAPSEC_AEDES_TERRA     || //Enter Aedes Sub Monte from Ignis Mons 
             destMapSection == MAPSEC_AEDES_LUX       || //Enter Aedes Sub Monte from Ignis Mons 
+            destMapSection == MAPSEC_CAVERNA_CAMELA  || //Enter Caverna Camela from Sinus Camelus
 			destMapSection == MAPSEC_HARENAE_AUREAE    //Enter Harenae Aurea from dynamic Peccatum
 		   )
 			return TRUE;

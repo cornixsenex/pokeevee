@@ -27,11 +27,8 @@
 CONFLICT (content): Merge conflict in src/scrcmd.c
 
 
-(Custom) Item descr
-Custom Tilesets (porymap and in game pls)
-Debug menu warp to dynamic map
-Berry Pals
 Football Field
+	>crashes during run test
 Metatiles
 	>Colchis Battle
 	>FalseFloor
@@ -46,3 +43,23 @@ hidecoinsbox
 	>palatium felix etc
 showmoneybox position
 	>surf school pay up
+B_CHARGE = GEN_5 causing issues with src/data/moves_info.h
+	>
+        .description = COMPOUND_STRING(
+    #if B_CHARGE >= GEN_9
+        #if B_CHARGE_SPDEF_RAISE >= GEN_5
+            "Ups the user's next Electric\n"
+            "move. It also raises Sp. Def."),
+        #else
+            "Charges power to boost the\n"
+            "Electric move used next."),
+        #endif
+    #else
+        #if B_CHARGE_SPDEF_RAISE >= GEN_5
+            "Ups the user's next move if\n"
+            "Electric. Also raises Sp. Def."),
+        #else
+            "Charges power to boost the\n"
+            "Electric move used next turn."),
+        #endif
+		Custom Tilesets (porymap and in game pls)

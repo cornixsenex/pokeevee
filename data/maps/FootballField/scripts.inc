@@ -16,7 +16,7 @@ FootballField_EventScript_FinishClass::
 # 43 "data/maps/FootballField/scripts.pory"
 	closemessage
 # 44 "data/maps/FootballField/scripts.pory"
-	fadescreenswapbuffers 1
+	fadescreenswapbuffers FADE_TO_BLACK
 # 46 "data/maps/FootballField/scripts.pory"
 	setobjectxy OBJ_EVENT_ID_PLAYER, 14, 36
 # 47 "data/maps/FootballField/scripts.pory"
@@ -84,7 +84,7 @@ FootballField_EventScript_CatchingTest::
 
 FootballField_EventScript_SetupRunningTest::
 # 94 "data/maps/FootballField/scripts.pory"
-	fadescreenswapbuffers 1
+	fadescreenswapbuffers FADE_TO_BLACK
 # 96 "data/maps/FootballField/scripts.pory"
 	lockall
 # 98 "data/maps/FootballField/scripts.pory"
@@ -183,10 +183,8 @@ FootballField_EventScript_SetupRunningTest::
 	turnobject 5, DIR_SOUTH
 # 161 "data/maps/FootballField/scripts.pory"
 	turnobject 6, DIR_SOUTH
-# 164 "data/maps/FootballField/scripts.pory"
-	special ResetCamera
 # 165 "data/maps/FootballField/scripts.pory"
-	fadescreenswapbuffers 0
+	fadescreenswapbuffers FADE_FROM_BLACK
 	return
 
 

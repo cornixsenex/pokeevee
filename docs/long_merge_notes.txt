@@ -4,6 +4,26 @@ spin tiles
 	>ie collisions are not being handled correctly
 	>fixed (?) in 10551 (1.16.4)
 
+B_CHARGE = GEN_5 causing issues with src/data/moves_info.h
+	>
+        .description = COMPOUND_STRING(
+    #if B_CHARGE >= GEN_9
+        #if B_CHARGE_SPDEF_RAISE >= GEN_5
+            "Ups the user's next Electric\n"
+            "move. It also raises Sp. Def."),
+        #else
+            "Charges power to boost the\n"
+            "Electric move used next."),
+        #endif
+    #else
+        #if B_CHARGE_SPDEF_RAISE >= GEN_5
+            "Ups the user's next move if\n"
+            "Electric. Also raises Sp. Def."),
+        #else
+            "Charges power to boost the\n"
+            "Electric move used next turn."),
+        #endif
+
 
 Nameboxes
 

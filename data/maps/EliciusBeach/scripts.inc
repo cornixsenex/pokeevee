@@ -196,7 +196,7 @@ Tranquilitas_Script_MistyScene_1:
 # 160 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_MISTY
 # 161 "data/maps/EliciusBeach/scripts.pory"
-	showmoneybox 18, 0, 0
+	showmoneybox 18, 0
 # 162 "data/maps/EliciusBeach/scripts.pory"
 	checkmoney 500
 # 163 "data/maps/EliciusBeach/scripts.pory"

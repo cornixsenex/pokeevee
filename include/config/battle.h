@@ -94,7 +94,7 @@
 #define B_FELL_STINGER_STAT_RAISE   GEN_LATEST // In Gen7+, if Fell Stinger causes the target to faint, the user's Attack raises by 3 stages instead of 2.
 #define B_KINGS_SHIELD_LOWER_ATK    GEN_7 // In Gen8+, King's Shield lowers the Attack of Pokémon that hit it by 1 stage instead of 2.
 #define B_SPEED_BUFFING_RAPID_SPIN  GEN_LATEST // In Gen8+, Rapid Spin raises the user's Speed by 1 stage if it hits.
-#define B_CHARGE_SPDEF_RAISE        GEN_LATEST // In Gen5+, Charge raises the user's Sp. Def by 1 stage.
+#define B_CHARGE_SPDEF_RAISE        GEN_5 // In Gen5+, Charge raises the user's Sp. Def by 1 stage.
 #define B_MINIMIZE_EVASION          GEN_LATEST // In Gen5+, Minimize raises the user's evasion by 2 stages instead of 1.
 #define B_GROWTH_STAT_RAISE         GEN_LATEST // In Gen5+, Growth raises the user's Attack in addition to its Sp. Atk. They are each raised by 1 stage normally, and by 2 stages if it's sunny.
 #define B_FOCUS_ENERGY_CRIT_RATIO   GEN_LATEST // In Gen3+, Focus Energy raises the critical-hit ratio of the user's moves by 2 stages instead of 1.
@@ -140,7 +140,7 @@
 #define B_KNOCK_OFF_REMOVAL             GEN_LATEST // In Gen5+, Knock Off removes the foe's item instead of rendering it unusable.
                                                    // In Champions, Knock Off no longer checks if the target's item is able to change the user's form (i.e. Mega Evolution / Primal Reversion).
 #define B_HEAL_BELL_SOUNDPROOF          GEN_4 // In Gen6+, Heal Bell affects inactive party members with Soundproof. In Gen5 only, it affects all party members, including active ones. In Gen4 and earlier, it does not affect any Pokémon with Soundproof.
-#define B_CHARGE                        GEN_5 // In Gen7 and earlier, Charge status is lost regardless of the typing of the next move.
+#define B_CHARGE                        GEN_LATEST // In Gen7 and earlier, Charge status is lost regardless of the typing of the next move.
 #define B_POWDER_STATUS_HEAVY_RAIN      GEN_LATEST // In Gen7+, Powder no longer damages the user of a Fire-type move in heavy rain.
 #define B_AFTER_YOU_TURN_ORDER          GEN_LATEST // In Gen8+, After You no longer fails if the turn order wouldn't change after use.
 #define B_QUASH_TURN_ORDER              GEN_LATEST // In Gen8+, Quash-affected battlers move according to Speed order. In Gen7 and earlier, Quash-affected battlers move in the order they were affected by Quash.

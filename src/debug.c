@@ -1460,7 +1460,7 @@ static u32 Debug_GenerateListOutbreakMenu(const struct DebugMenuOption *items)
             break;
         case 3:
 			// Cornix GetMapName() -> GetMapNameGeneric (dynamic maps)
-            GetMapNameGeneric(gStringVar1, Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->outbreakLocationMapGroup, gSaveBlock1Ptr->outbreakLocationMapNum)->regionMapSectionId, 0);
+            GetMapNameGeneric(gStringVar1, Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->outbreakLocationMapGroup, gSaveBlock1Ptr->outbreakLocationMapNum)->regionMapSectionId);
             break;
         case 4:
             ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->outbreakPokemonLevel, STR_CONV_MODE_RIGHT_ALIGN, 3);
@@ -1771,7 +1771,7 @@ static void DebugSelectionStep_UpdateMapNum(u8 taskId, u8 digits, u32 min, u32 m
     StringExpandPlaceholders(gStringVar1, COMPOUND_STRING("Map: {STR_VAR_2} / {STR_VAR_3}"));
     StringCopy(gStringVar2, COMPOUND_STRING("MapSec:"));
 	// Cornix GetMapName() -> GetMapNameGeneric (dynamic maps)
-    GetMapNameGeneric(gStringVar3, Overworld_GetMapHeaderByGroupAndId(mapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
+    GetMapNameGeneric(gStringVar3, Overworld_GetMapHeaderByGroupAndId(mapGroup, gTasks[taskId].tInput)->regionMapSectionId);
     DebugNativeStep_PrintWindowSelection(taskId);
 }
 
@@ -1789,7 +1789,7 @@ static void DebugSelectionStep_UpdateWarp(u8 taskId, u8 digits, u32 min, u32 max
     ConvertIntToDecimalStringN(gStringVar3, max, STR_CONV_MODE_LEADING_ZEROS, digits);
     StringExpandPlaceholders(gStringVar1, COMPOUND_STRING("Warp: {STR_VAR_2} / {STR_VAR_3}"));
 	// Cornix GetMapName() -> GetMapNameGeneric (dynamic maps)
-    GetMapNameGeneric(gStringVar2, Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->regionMapSectionId, 0);
+    GetMapNameGeneric(gStringVar2, Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->regionMapSectionId);
     StringCopy(gStringVar3, COMPOUND_STRING(""));
     DebugNativeStep_PrintWindowSelection(taskId);
 }

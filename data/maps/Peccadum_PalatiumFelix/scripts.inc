@@ -2121,7 +2121,7 @@ Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin_1:
 # 1126 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
 # 1127 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	hidecoinsbo
+	hidecoinsbox
 # 1128 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRoulettePlayAgain
 	return

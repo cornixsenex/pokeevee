@@ -1124,7 +1124,7 @@ script Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin {
 	updatecoinsbox
 	playse (SE_SHOP)
 	waitse
-	hidecoinsbo
+	hidecoinsbox
 	call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayAgain)
 }
 

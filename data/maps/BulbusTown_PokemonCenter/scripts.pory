@@ -10,16 +10,16 @@ script BulbusTown_PokemonCenter_EventScript_Nurse {
 	else {
 		msgbox (BulbusTown_PokemonCenter_Text_NoInsurance) 
 		closemessage
-		checkmoney (2500, 0)
+		checkmoney (2500)
 		if (var(VAR_RESULT) == 0) {
 			msgbox (BulbusTown_PokemonCenter_Text_TooPoor)
 			closemessage
 		}
 		else {
-			showmoneybox (0, 0, 0)
+			showmoneybox (0, 0)
 			msgbox (BulbusTown_PokemonCenter_Text_OutOfPocket, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == 1) {
-				removemoney (2500, 0)
+				removemoney (2500)
 				updatemoneybox
 				call (Common_EventScript_PkmnCenterNurse)
 				waitmessage
