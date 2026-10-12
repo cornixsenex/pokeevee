@@ -18,11 +18,11 @@ FootballField_EventScript_FinishClass::
 # 44 "data/maps/FootballField/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 46 "data/maps/FootballField/scripts.pory"
-	setobjectxy OBJ_EVENT_ID_PLAYER, 14, 36
+	setobjectxy LOCALID_PLAYER, 14, 36
 # 47 "data/maps/FootballField/scripts.pory"
-	setobjectxyperm OBJ_EVENT_ID_PLAYER, 14, 36
+	setobjectxyperm LOCALID_PLAYER, 14, 36
 # 48 "data/maps/FootballField/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	turnobject LOCALID_PLAYER, DIR_NORTH
 # 50 "data/maps/FootballField/scripts.pory"
 	setobjectxy 1, 14, 35
 # 51 "data/maps/FootballField/scripts.pory"
@@ -89,6 +89,10 @@ FootballField_EventScript_SetupRunningTest::
 	closemessage
 # 96 "data/maps/FootballField/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
+# 99 "data/maps/FootballField/scripts.pory"
+	setobjectxy LOCALID_PLAYER, 13, 33
+# 101 "data/maps/FootballField/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
 # 104 "data/maps/FootballField/scripts.pory"
 	setobjectxy 1, 13, 7
 # 105 "data/maps/FootballField/scripts.pory"
@@ -204,7 +208,7 @@ FootballField_EventScript_StartRunningTest::
 
 FootballField_EventScript_DoNotLeaveField::
 # 183 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 184 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 185 "data/maps/FootballField/scripts.pory"
@@ -238,11 +242,11 @@ FootballField_EventScript_FieldTrigger1_1:
 
 FootballField_EventScript_FieldTrigger1_2:
 # 197 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 198 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 199 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 # 200 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 201 "data/maps/FootballField/scripts.pory"
@@ -284,11 +288,11 @@ FootballField_EventScript_FieldTrigger2_1:
 
 FootballField_EventScript_FieldTrigger2_2:
 # 220 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 221 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 222 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 # 223 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 224 "data/maps/FootballField/scripts.pory"
@@ -330,11 +334,11 @@ FootballField_EventScript_FieldTrigger3_1:
 
 FootballField_EventScript_FieldTrigger3_2:
 # 243 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 244 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 245 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 # 246 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 247 "data/maps/FootballField/scripts.pory"
@@ -357,7 +361,7 @@ FootballField_EventScript_EndZoneTrigger::
 # 262 "data/maps/FootballField/scripts.pory"
 	lockall
 # 263 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 264 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 265 "data/maps/FootballField/scripts.pory"
@@ -425,7 +429,7 @@ FootballField_EventScript_ClassFinished::
 # 298 "data/maps/FootballField/scripts.pory"
 	msgbox FootballField_Text_CoachComplete
 # 299 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 # 300 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 	return
@@ -453,7 +457,7 @@ FootballField_EventScript_CollisionYoungster::
 # 324 "data/maps/FootballField/scripts.pory"
 	lockall
 # 325 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 326 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 # 327 "data/maps/FootballField/scripts.pory"
@@ -479,7 +483,7 @@ FootballField_EventScript_FieldClosed::
 # 339 "data/maps/FootballField/scripts.pory"
 	closemessage
 # 340 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 # 341 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 	return

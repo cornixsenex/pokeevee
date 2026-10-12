@@ -28,8 +28,11 @@ CONFLICT (content): Merge conflict in src/scrcmd.c
 
 
 Football Field
-	>player faces wrong way during triggers
 	>crashes during run test
+	>setobjectxy (and perm) cause the crash on player
+	>Investigage, could have to do with followers (overworld config)
+	>#define B_FLAG_FOLLOWERS_DISABLED      FLAG_TEMP_HIDE_FOLLOWER          // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
+	>#define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_1F
 Metatiles
 	>Colchis Battle
 	>FalseFloor

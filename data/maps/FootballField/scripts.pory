@@ -43,9 +43,9 @@ script FootballField_EventScript_FinishClass {
 	closemessage
 	fadescreenswapbuffers (FADE_TO_BLACK)
 	//Player
-	setobjectxy (OBJ_EVENT_ID_PLAYER, 14, 36)
-	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 14, 36)
-	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+	setobjectxy (LOCALID_PLAYER, 14, 36)
+	setobjectxyperm (LOCALID_PLAYER, 14, 36)
+	turnobject (LOCALID_PLAYER, DIR_NORTH)
 	//Coach
 	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 14, 35)
 	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 14, 35)
@@ -96,9 +96,9 @@ script FootballField_EventScript_SetupRunningTest {
 	fadescreenswapbuffers (FADE_TO_BLACK)
 	//Setup all Object position and movmement types
 	//Player
-//	setobjectxy (OBJ_EVENT_ID_PLAYER, 13, 33)
-//	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 13, 33)
-//	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+	setobjectxy (LOCALID_PLAYER, 13, 33)
+//	setobjectxyperm (LOCALID_PLAYER, 13, 33)
+	turnobject (LOCALID_PLAYER, DIR_NORTH)
 	
 	//Coach
 	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
@@ -180,7 +180,7 @@ script FootballField_EventScript_StartRunningTest {
 }
 
 script FootballField_EventScript_DoNotLeaveField {
-	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	msgbox(FootballField_Text_DoNotLeaveField)
 	closemessage
@@ -194,9 +194,9 @@ script FootballField_EventScript_DoNotLeaveField {
 script FootballField_EventScript_FieldTrigger1 {
 	lockall
 	if (var(VAR_TEMP_1) == 0) {
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 		waitmovement (0)
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
 		waitmovement (0)
 		applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
 		waitmovement (0)
@@ -217,9 +217,9 @@ script FootballField_EventScript_FieldTrigger1 {
 script FootballField_EventScript_FieldTrigger2 {
 	lockall
 	if (var(VAR_TEMP_1) == 0) {
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 		waitmovement (0)
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)	
+		applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)	
 		waitmovement (0)
 		applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
 		waitmovement (0)
@@ -240,9 +240,9 @@ script FootballField_EventScript_FieldTrigger2 {
 script FootballField_EventScript_FieldTrigger3 {
 	lockall
 	if (var(VAR_TEMP_1) == 0) {
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 		waitmovement (0)
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)	
+		applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)	
 		waitmovement (0)
 		applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
 		waitmovement (0)
@@ -260,7 +260,7 @@ script FootballField_EventScript_FieldTrigger3 {
 
 script FootballField_EventScript_EndZoneTrigger {
 	lockall
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	call (FootballField_EventScript_EndZone)
 	releaseall
@@ -296,7 +296,7 @@ script FootballField_EventScript_FootballCoach {
 
 script FootballField_EventScript_ClassFinished {
 	msgbox(FootballField_Text_CoachComplete)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
 	waitmovement (0) 
 	return
 }
@@ -322,7 +322,7 @@ script FootballField_EventScript_GymClass {
 
 script FootballField_EventScript_CollisionYoungster {
 	lockall
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	msgbox(FootballField_Text_RunningTestFail)
 	closemessage
@@ -337,7 +337,7 @@ script FootballField_EventScript_FieldClosed {
 	waitmovement (0)
 	msgbox(FootballField_Text_FieldClosed)
 	closemessage
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
 	waitmovement (0) 
 	return
 }
