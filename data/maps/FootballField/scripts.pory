@@ -96,7 +96,7 @@ script FootballField_EventScript_SetupRunningTest {
 	fadescreenswapbuffers (FADE_TO_BLACK)
 	//Setup all Object position and movmement types
 	//Player
-	setobjectxy (LOCALID_PLAYER, 13, 33)
+//	setobjectxy (LOCALID_PLAYER, 13, 33)
 //	setobjectxyperm (LOCALID_PLAYER, 13, 33)
 	turnobject (LOCALID_PLAYER, DIR_NORTH)
 	
@@ -162,7 +162,7 @@ script FootballField_EventScript_SetupRunningTest {
 	turnobject (OBJ_EVENT_ID_YELLOW5, DIR_SOUTH)
 
 	//Camera, fade from black, and return
-//	special (ResetCamera)
+	special (ResetCamera)
 	fadescreenswapbuffers (FADE_FROM_BLACK)
 
 	msgbox("TEST2")
