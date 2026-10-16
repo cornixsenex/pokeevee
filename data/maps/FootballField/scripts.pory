@@ -11,6 +11,10 @@ const OBJ_EVENT_ID_YELLOW4 = 5
 const OBJ_EVENT_ID_YELLOW5 = 6
 
 
+// VAR_TEMP_1 controls football game
+	// 0: Not in game
+	// 1: Trigger on frame
+	// 2: During game (trigger No Leave Field and EndZone)
 
 mapscripts FootballField_MapScripts {
 

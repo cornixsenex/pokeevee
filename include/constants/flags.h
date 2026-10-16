@@ -24,7 +24,7 @@
 #define FLAG_TEMP_B      (TEMP_FLAGS_START + 0xB)  // Unused Flag
 #define FLAG_TEMP_C      (TEMP_FLAGS_START + 0xC)  // Unused Flag
 #define FLAG_TEMP_D      (TEMP_FLAGS_START + 0xD)  // Unused Flag
-#define FLAG_TEMP_E      (TEMP_FLAGS_START + 0xE)  // When set, follower Pokémon won't be spawned
+#define FLAG_TEMP_E      (TEMP_FLAGS_START + 0xE)  // rhh temp follower hide flag (cornix 1F) 
 #define FLAG_TEMP_F      (TEMP_FLAGS_START + 0xF)  // Unused Flag
 #define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10) // Unused Flag
 #define FLAG_TEMP_11     (TEMP_FLAGS_START + 0x11)
@@ -235,10 +235,10 @@
 #define FLAG_SUBMARE_HIDEFOSSIL              0xC7
 #define FLAG_MARES8_KECLEON5                 0xC8 //persist no more beach kecleon
 #define FLAG_PENDING_DAYCARE_EGG             0xCA // Restore daycare
+#define FLAG_FOOTBALL_FIELD_SETUP            0xCB // Trigger running test setup - clear b4 OnFrame
 
 // BREAK // 
 
-#define FLAG_RECEIVED_GREEN_SCARF            0xCB
 #define FLAG_RECEIVED_YELLOW_SCARF           0xCC
 #define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD
 #define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE

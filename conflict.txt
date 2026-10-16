@@ -27,12 +27,22 @@
 CONFLICT (content): Merge conflict in src/scrcmd.c
 
 
-Football Field
-	>crashes during run test
-	>setobjectxy (and perm) cause the crash on player
-	>Investigage, could have to do with followers (overworld config)
-	>#define B_FLAG_FOLLOWERS_DISABLED      FLAG_TEMP_HIDE_FOLLOWER          // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
-	>#define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_1F
+FOOTBALL FIELD FIX PLAN:
+	Move Setup to OnTransition (Use new FLAG_FOOTBALL_FIELD_SETUP)
+	Move Start to OnFrame (VAR_TEMP_1 == 1)
+	1. Replace Setup triggers (Coach, coach trigger, collision, no leave field) with SetFlag(FLAG_FOOTBALL_FIELD_SETUP) && warpsilent to position
+	2. Have Setup run OnTransition, turn the player, set FLAG_TEMP_HIDE_FOLLOWER, and set VAR_TEMP_1 to 1 to trigger OnFrame
+	3. Write OnFrame for VAR_TEMP_1 == 1 to run the StartRunningTest (inc var to prevent continuous trigger)
+	4. Update the EndZone stuff (I guess I never finished this idk - make sure to do another warp so the temp follower flag is cleared - test that to make sure it's working)
+
+	General story vibe is:
+		>Coach is upset doesn't want you on the team
+		>Gets scared you might reveal he's not playing by "the rules"
+		>Lets you try out
+		>You beat his boys and make them look bad
+		>He gets angry and kicks you out, passes you to get you out of his hair
+		>Goes back to no letting you on the field
+
 Metatiles
 	>Colchis Battle
 	>FalseFloor
