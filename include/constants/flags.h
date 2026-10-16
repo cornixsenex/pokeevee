@@ -236,10 +236,10 @@
 #define FLAG_MARES8_KECLEON5                 0xC8 //persist no more beach kecleon
 #define FLAG_PENDING_DAYCARE_EGG             0xCA // Restore daycare
 #define FLAG_FOOTBALL_FIELD_SETUP            0xCB // Trigger running test setup - clear b4 OnFrame
+#define FLAG_FOOTBALL_FIELD_FINISH           0xCC // Trigger post test scene w/ coach
 
 // BREAK // 
 
-#define FLAG_RECEIVED_YELLOW_SCARF           0xCC
 #define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD
 #define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF

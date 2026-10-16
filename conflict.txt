@@ -34,7 +34,13 @@ FOOTBALL FIELD FIX PLAN:
 	2. Have Setup run OnTransition, turn the player, set FLAG_TEMP_HIDE_FOLLOWER, and set VAR_TEMP_1 to 1 to trigger OnFrame
 	3. Write OnFrame for VAR_TEMP_1 == 1 to run the StartRunningTest (inc var to prevent continuous trigger)
 	4. Update the EndZone stuff (I guess I never finished this idk - make sure to do another warp so the temp follower flag is cleared - test that to make sure it's working)
-
+	NEW:
+	1. Have Endzone set FLAG_FOOTBALL_FIELD_FINISH
+	2. New OnTransition and OnFrame for
+		>Setup FinishRunningTest
+		>Start FinishRunningTest
+	3. Have Setup clear the flag to prevent continued execution and set VAR_TEMP_1 to 3 to trigger Start FinishRunningTest OnFrame
+	4. Have Start 
 	General story vibe is:
 		>Coach is upset doesn't want you on the team
 		>Gets scared you might reveal he's not playing by "the rules"

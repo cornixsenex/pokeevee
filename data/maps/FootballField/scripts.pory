@@ -15,40 +15,31 @@ const OBJ_EVENT_ID_YELLOW5 = 6
 	// 0: Not in game
 	// 1: Trigger on frame
 	// 2: During game (trigger No Leave Field and EndZone)
+	// 3: Set during post test to trigger scene w/ coach
 
 mapscripts FootballField_MapScripts {
 
 
 	//Set Object Position and Movement Types
-//	MAP_SCRIPT_ON_TRANSITION {
-//
-//		switch (var(VAR_TEMP_1)) {
-//			case 1:
-//				call (FootballField_EventScript_SetupRunningTest)
-//		}
-//	}
-//
-//	//Lock, explain the current situation, then increment var to end the lock
-//	MAP_SCRIPT_ON_FRAME_TABLE [
-//		VAR_TEMP_1, 1: FootballField_EventScript_StartRunningTest
-//	]
+	MAP_SCRIPT_ON_TRANSITION {
+		if (flag(FLAG_FOOTBALL_FIELD_SETUP)) {
+			call (FootballField_EventScript_SetupRunningTest)
+		}
+
+		if (flag(FLAG_FOOTBALL_FIELD_FINISH)) {
+			call (FootballField_EventScript_SetupFinishClass)
+		}
+	}
+
+	//Lock, explain the current situation, then increment var to end the lock
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_1, 1: FootballField_EventScript_StartRunningTest
+		VAR_TEMP_1, 3: FootballField_EventScript_StartFinishClass
+	]
 
 }
 
-script FootballField_EventScript_RunningTest {
-	//set positions
-	call (FootballField_EventScript_SetupRunningTest)
-	call (FootballField_EventScript_StartRunningTest)
-	return
-}
-
-script FootballField_EventScript_FinishClass {
-	msgbox(FootballField_Text_ClassFinished)
-	closemessage
-	fadescreenswapbuffers (FADE_TO_BLACK)
-	//Player
-	setobjectxy (LOCALID_PLAYER, 14, 36)
-	setobjectxyperm (LOCALID_PLAYER, 14, 36)
+script FootballField_EventScript_SetupFinishClass {
 	turnobject (LOCALID_PLAYER, DIR_NORTH)
 	//Coach
 	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 14, 35)
@@ -67,9 +58,12 @@ script FootballField_EventScript_FinishClass {
 	setobjectmovementtype (OBJ_EVENT_ID_YELLOW4, MOVEMENT_TYPE_FACE_DOWN)
 	setobjectmovementtype (OBJ_EVENT_ID_YELLOW5, MOVEMENT_TYPE_FACE_DOWN)
 
-	special(ResetCamera)
-	fadescreenswapbuffers (0)
+	clearflag (FLAG_FOOTBALL_FIELD_FINISH)
+	setvar (VAR_TEMP_1, 3)
+	end
+}
 
+script FootballField_EventScript_StartFinishClass {
 	msgbox(FootballField_Text_CoachIntro)
 	closemessage
 	trainerbattle_no_intro(TRAINER_UNI_GYM, FootballField_Text_CoachLost)
@@ -85,24 +79,20 @@ script FootballField_EventScript_FinishClass {
 	end
 }
 
-script FootballField_EventScript_CatchingTest {
-	
-	//For now I'm just gonna skip this stuff. The running is probably enough
-	call (FootballField_EventScript_FinishClass)	
-	//call (FootballField_EventScript_SetupCatchingTest)
-	//call (FootballField_EventScript_StartCatchingTest)
-	//return
-}
-
 script FootballField_EventScript_SetupRunningTest {
-	msgbox("TEST")
-	closemessage
-	fadescreenswapbuffers (FADE_TO_BLACK)
-	//Setup all Object position and movmement types
-	//Player
-//	setobjectxy (LOCALID_PLAYER, 13, 33)
-//	setobjectxyperm (LOCALID_PLAYER, 13, 33)
+	// Unset flag to prevent continuous execution
+	clearflag(FLAG_FOOTBALL_FIELD_SETUP)
+
+	// Set OnFrame trigger var
+	setvar (VAR_TEMP_1, 1)
+
+	// Suppres Follower
+	setflag (FLAG_TEMP_HIDE_FOLLOWER)
+	
+	// Turn Player
 	turnobject (LOCALID_PLAYER, DIR_NORTH)
+
+	// Setup all Object position and movmement types
 	
 	//Coach
 	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
@@ -165,20 +155,14 @@ script FootballField_EventScript_SetupRunningTest {
 	turnobject (OBJ_EVENT_ID_YELLOW4, DIR_SOUTH)
 	turnobject (OBJ_EVENT_ID_YELLOW5, DIR_SOUTH)
 
-	//Camera, fade from black, and return
-	special (ResetCamera)
-	fadescreenswapbuffers (FADE_FROM_BLACK)
-
-	msgbox("TEST2")
-	closemessage
-	return
+	end
 }
 
 script FootballField_EventScript_StartRunningTest {
 	lockall
 	msgbox(FootballField_Text_BeginRunningTest)
 	closemessage
-	setvar (VAR_TEMP_1, 1)
+	setvar (VAR_TEMP_1, 2)
 	releaseall
 	return
 }
@@ -188,10 +172,7 @@ script FootballField_EventScript_DoNotLeaveField {
 	waitmovement (0)
 	msgbox(FootballField_Text_DoNotLeaveField)
 	closemessage
-	switch (var(VAR_TEMP_1)) {
-	case 1:
-		call (FootballField_EventScript_RunningTest)
-	}
+	call (FootballField_EventScript_TriggerRunningTest)
 }
 
 
@@ -266,21 +247,12 @@ script FootballField_EventScript_EndZoneTrigger {
 	lockall
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	call (FootballField_EventScript_EndZone)
-	releaseall
+	msgbox(FootballField_Text_ClassFinished)
+	closemessage
+	setflag (FLAG_FOOTBALL_FIELD_FINISH)
+	warpsilent (MAP_FOOTBALL_FIELD, 14, 36)
+	waitstate
 	end
-}
-
-script FootballField_EventScript_EndZone {
-	switch (var(VAR_TEMP_1)) {
-		//if 1 then finish running and start catching
-		case 0:
-			msgbox("EndZone Trigger Var 0")
-			closemessage
-		case 1:
-			setvar (VAR_TEMP_1, 2)
-			call (FootballField_EventScript_CatchingTest)
-	}
 }
 
 script FootballField_EventScript_FootballCoach {
@@ -314,7 +286,7 @@ script FootballField_EventScript_GymClass {
 	closemessage
 	delay (30)
 	//running test
-	call (FootballField_EventScript_RunningTest)
+	call (FootballField_EventScript_TriggerRunningTest)
 	//catching test
 	//throwing test
 	//game
@@ -330,10 +302,7 @@ script FootballField_EventScript_CollisionYoungster {
 	waitmovement (0)
 	msgbox(FootballField_Text_RunningTestFail)
 	closemessage
-	call (FootballField_EventScript_SetupRunningTest)
-	call (FootballField_EventScript_StartRunningTest)
-	releaseall
-	return
+	call (FootballField_EventScript_TriggerRunningTest)
 }
 
 script FootballField_EventScript_FieldClosed {
@@ -344,6 +313,13 @@ script FootballField_EventScript_FieldClosed {
 	applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
 	waitmovement (0) 
 	return
+}
+
+script FootballField_EventScript_TriggerRunningTest {
+	setflag (FLAG_FOOTBALL_FIELD_SETUP)
+	warpsilent (MAP_FOOTBALL_FIELD, 13, 33)
+	waitstate
+	end
 }
 
 
