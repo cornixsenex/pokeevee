@@ -51,6 +51,7 @@ FOOTBALL FIELD FIX PLAN:
 
 Metatiles
 	>Colchis Battle
+		>src/battle_setup.c:1390: Trainer script that needs to be used from an object event was called from player
 	>FalseFloor
 	>OceanMapTransition
 	>Cycling Road

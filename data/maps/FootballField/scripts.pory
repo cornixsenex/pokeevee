@@ -31,6 +31,12 @@ mapscripts FootballField_MapScripts {
 		}
 	}
 
+	// Face player north when needed
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_1, 1: Common_Script_FacePlayerUp
+		VAR_TEMP_1, 3: Common_Script_FacePlayerUp
+	]
+
 	//Lock, explain the current situation, then increment var to end the lock
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_TEMP_1, 1: FootballField_EventScript_StartRunningTest
@@ -40,24 +46,11 @@ mapscripts FootballField_MapScripts {
 }
 
 script FootballField_EventScript_SetupFinishClass {
-	turnobject (LOCALID_PLAYER, DIR_NORTH)
 	//Coach
 	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 14, 35)
 	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 14, 35)
 	setobjectmovementtype (OBJ_EVENT_ID_FOOTBALLCOACH, MOVEMENT_TYPE_FACE_DOWN)
 	turnobject (OBJ_EVENT_ID_FOOTBALLCOACH, DIR_SOUTH)
-	setobjectmovementtype (OBJ_EVENT_ID_BLUE1, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (OBJ_EVENT_ID_BLUE2, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (OBJ_EVENT_ID_BLUE3, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (OBJ_EVENT_ID_BLUE4, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (OBJ_EVENT_ID_BLUE5, MOVEMENT_TYPE_FACE_DOWN)
-
-	setobjectmovementtype (OBJ_EVENT_ID_YELLOW1, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (OBJ_EVENT_ID_YELLOW2, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (OBJ_EVENT_ID_YELLOW3, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (OBJ_EVENT_ID_YELLOW4, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (OBJ_EVENT_ID_YELLOW5, MOVEMENT_TYPE_FACE_DOWN)
-
 	clearflag (FLAG_FOOTBALL_FIELD_FINISH)
 	setvar (VAR_TEMP_1, 3)
 	end
@@ -67,12 +60,16 @@ script FootballField_EventScript_StartFinishClass {
 	// Clear var to prevent continuous execution
 	setvar (VAR_TEMP_1, 0)
 
+	lockall
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement
 	msgbox(FootballField_Text_CoachIntro)
 	closemessage
 	trainerbattle_no_intro(TRAINER_UNI_GYM, FootballField_Text_CoachLost)
 	call (Ardor_Uni_TermState_IncrementVar)
 	msgbox(FootballField_Text_CoachPost)
 	closemessage
+	releaseall
 	
 	end
 }
@@ -87,15 +84,12 @@ script FootballField_EventScript_SetupRunningTest {
 	// Suppres Follower
 	setflag (FLAG_TEMP_HIDE_FOLLOWER)
 	
-	// Turn Player
-	turnobject (LOCALID_PLAYER, DIR_NORTH)
-
 	// Setup all Object position and movmement types
 	
 	//Coach
-	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
-	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
-	setobjectmovementtype (OBJ_EVENT_ID_FOOTBALLCOACH, MOVEMENT_TYPE_CHASE_PLAYER)
+	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 36)
+	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 36)
+	setobjectmovementtype (OBJ_EVENT_ID_FOOTBALLCOACH, MOVEMENT_TYPE_FACE_UP)
 
 	//Blue Team
 	setobjectxy (OBJ_EVENT_ID_BLUE1, 10, 9)
@@ -254,7 +248,6 @@ script FootballField_EventScript_EndZoneTrigger {
 }
 
 script FootballField_EventScript_FootballCoach {
-	lockall
 	if (defeated(TRAINER_UNI_GYM)) {
 		call (FootballField_EventScript_ClassFinished)
 	} elif (!flag(FLAG_OPEN_CLASS_GYM)) {
@@ -264,7 +257,6 @@ script FootballField_EventScript_FootballCoach {
 	}
 	applymovement(OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceDown)
 	waitmovement (0)
-	release
 	end
 }
 
@@ -310,6 +302,8 @@ script FootballField_EventScript_FieldClosed {
 	closemessage
 	applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
 	waitmovement (0) 
+	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceDown)
+	waitmovement (0)
 	return
 }
 
@@ -346,7 +340,7 @@ text FootballField_Text_ClassFinished {
 }
 
 text FootballField_Text_CoachIntro {
-	format("We can't have some game changer like you running around making us feel bad. We got a championship to win!")
+	format("We can't have some game changer like you running around making us look bad. We got a championship to win!")
 }
 
 text FootballField_Text_CoachLost {
