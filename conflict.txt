@@ -49,14 +49,18 @@ FOOTBALL FIELD FIX PLAN:
 		>He gets angry and kicks you out, passes you to get you out of his hair
 		>Goes back to no letting you on the field
 
+trainerbattle_two_trainers is causing a crash
+	>maybe refactor to generic trainerbattle macro
 Metatiles
 	>Colchis Battle
+		>FLAG_COLCHIS_FORCED_BATTLE && on IsColchisBattle MetaTile
+		>Colchis_Script_CheckForcedBattle
+		>DoForcedBattle
 		>src/battle_setup.c:1390: Trainer script that needs to be used from an object event was called from player
-	>FalseFloor
-	>OceanMapTransition
-	>Cycling Road
-	>Canvas
+		>I think the metatile works fine the issue is with the trainerbattle_two_trainers macro
 	>Tombstone
+		>metatiles work fine - just some of the labels got scrambled (MB_STRENGHT_BUTTON <> MB_TOMBSTONE)
+Isla Elena halt
 Read all the configs lol
 Item Name Plurals
 removemoney macro

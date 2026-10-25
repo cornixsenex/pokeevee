@@ -1127,7 +1127,7 @@ script MareS8_Script_KecleonSetup {
 	lockall
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-playmoncry (SPECIES_KECLEON, CRY_MODE_ENCOUNTER)
+	playmoncry (SPECIES_KECLEON, CRY_MODE_ENCOUNTER)
 	waitmoncry
 	return
 }

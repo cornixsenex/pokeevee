@@ -316,7 +316,7 @@ script FootballField_EventScript_TriggerRunningTest {
 
 
 text FootballField_Text_FieldClosed {
-	format("Hey you! Field's closed! We only want student atheletes touching this grass.")
+	format("Hey you! Field's closed! We only want student athletes touching this grass.")
 }
 
 text FootballField_Text_GymIntro {
@@ -324,7 +324,7 @@ text FootballField_Text_GymIntro {
 }
 
 text FootballField_Text_NoFollowersAllowed {
-	format("Hey! We don't let those filthy animals on our grass. Your Pokemon, it has to wait outside we don't want it here.")
+	format("Hey! We don't let those filthy beasts on our grass! Your Pokemon, it has to wait outside we don't want it here.")
 }
 
 text FootballField_Text_BeginRunningTest {
@@ -336,7 +336,7 @@ text  FootballField_Text_DoNotLeaveField {
 }
 
 text FootballField_Text_ClassFinished {
-	format("Hey what do you think you're doing? You just made my boys look like total loosers! Get off my field!")
+	format("Hey what do you think you're doing? You just made my boys look like total losers! Get off my field!")
 }
 
 text FootballField_Text_CoachIntro {

@@ -463,7 +463,7 @@ FootballField_EventScript_TriggerRunningTest::
 FootballField_Text_FieldClosed::
 # 318 "data/maps/FootballField/scripts.pory"
 	.string "Hey you! Field's closed! We only want\n"
-	.string "student atheletes touching this grass.$"
+	.string "student athletes touching this grass.$"
 
 FootballField_Text_GymIntro::
 # 322 "data/maps/FootballField/scripts.pory"
@@ -482,9 +482,9 @@ FootballField_Text_GymIntro::
 
 FootballField_Text_NoFollowersAllowed::
 # 326 "data/maps/FootballField/scripts.pory"
-	.string "Hey! We don't let those filthy animals\n"
-	.string "on our grass. Your Pokemon, it has to\l"
-	.string "wait outside we don't want it here.$"
+	.string "Hey! We don't let those filthy beasts on\n"
+	.string "our grass! Your Pokemon, it has to wait\l"
+	.string "outside we don't want it here.$"
 
 FootballField_Text_BeginRunningTest::
 # 330 "data/maps/FootballField/scripts.pory"
@@ -503,7 +503,7 @@ FootballField_Text_ClassFinished::
 # 338 "data/maps/FootballField/scripts.pory"
 	.string "Hey what do you think you're doing? You\n"
 	.string "just made my boys look like total\l"
-	.string "loosers! Get off my field!$"
+	.string "losers! Get off my field!$"
 
 FootballField_Text_CoachIntro::
 # 342 "data/maps/FootballField/scripts.pory"
