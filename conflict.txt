@@ -24,42 +24,12 @@
 #CONFLICT (content): Merge conflict in src/pokemon_summary_screen.c
 	>maybe adjust maxPageIndex to remove contest moves idk
 	>Oh it's a config now
-CONFLICT (content): Merge conflict in src/scrcmd.c
-
-
-FOOTBALL FIELD FIX PLAN:
-	Move Setup to OnTransition (Use new FLAG_FOOTBALL_FIELD_SETUP)
-	Move Start to OnFrame (VAR_TEMP_1 == 1)
-	1. Replace Setup triggers (Coach, coach trigger, collision, no leave field) with SetFlag(FLAG_FOOTBALL_FIELD_SETUP) && warpsilent to position
-	2. Have Setup run OnTransition, turn the player, set FLAG_TEMP_HIDE_FOLLOWER, and set VAR_TEMP_1 to 1 to trigger OnFrame
-	3. Write OnFrame for VAR_TEMP_1 == 1 to run the StartRunningTest (inc var to prevent continuous trigger)
-	4. Update the EndZone stuff (I guess I never finished this idk - make sure to do another warp so the temp follower flag is cleared - test that to make sure it's working)
-	NEW:
-	1. Have Endzone set FLAG_FOOTBALL_FIELD_FINISH
-	2. New OnTransition and OnFrame for
-		>Setup FinishRunningTest
-		>Start FinishRunningTest
-	3. Have Setup clear the flag to prevent continued execution and set VAR_TEMP_1 to 3 to trigger Start FinishRunningTest OnFrame
-	4. Have Start 
-	General story vibe is:
-		>Coach is upset doesn't want you on the team
-		>Gets scared you might reveal he's not playing by "the rules"
-		>Lets you try out
-		>You beat his boys and make them look bad
-		>He gets angry and kicks you out, passes you to get you out of his hair
-		>Goes back to no letting you on the field
+#CONFLICT (content): Merge conflict in src/scrcmd.c
 
 trainerbattle_two_trainers is causing a crash
 	>maybe refactor to generic trainerbattle macro
-Metatiles
-	>Colchis Battle
-		>FLAG_COLCHIS_FORCED_BATTLE && on IsColchisBattle MetaTile
-		>Colchis_Script_CheckForcedBattle
-		>DoForcedBattle
-		>src/battle_setup.c:1390: Trainer script that needs to be used from an object event was called from player
-		>I think the metatile works fine the issue is with the trainerbattle_two_trainers macro
-	>Tombstone
-		>metatiles work fine - just some of the labels got scrambled (MB_STRENGHT_BUTTON <> MB_TOMBSTONE)
+	>grintoul: fixed in 1.17.2
+
 Isla Elena halt
 Read all the configs lol
 Item Name Plurals
@@ -68,6 +38,9 @@ hidecoinsbox
 	>palatium felix etc
 showmoneybox position
 	>surf school pay up
+SetupDarkBrendanBattle defined but not used (?)
+
+
 B_CHARGE = GEN_5 causing issues with src/data/moves_info.h
 	>
         .description = COMPOUND_STRING(
