@@ -30,7 +30,10 @@ trainerbattle_two_trainers is causing a crash
 	>maybe refactor to generic trainerbattle macro
 	>grintoul: fixed in 1.17.2
 
-Isla Elena halt
+Isla Elena
+	>Halt if Kecleon hits follower
+	>Test stairs and bridge elevations
+	>Test ulysses script scene
 Read all the configs lol
 Item Name Plurals
 removemoney macro
