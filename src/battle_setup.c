@@ -2227,12 +2227,80 @@ void SetMultiTrainerBattle(struct ScriptContext *ctx)
     gPartnerTrainerId = TRAINER_PARTNER(ScriptReadHalfword(ctx));
 };
 
+static void SetupDarkBrendanBattle(void)
+{
+    s32 i;
+    u8 level;
+    u8 evZero = 0;
+    u32 ivZero = 0;
+    u16 stat;
+    struct Pokemon *playerMon;
+    struct Pokemon *enemyMon;
+    for (i = 0; i < 6; i++)
+    {
+        //First just copy over the mon
+        gParties[B_TRAINER_OPPONENT_A][i] = gParties[B_TRAINER_PLAYER][i];
+        //Assign mon variables
+        enemyMon = &gParties[B_TRAINER_OPPONENT_A][i];
+        playerMon = &gParties[B_TRAINER_PLAYER][i];
+        //lower levela
+        level = GetMonData(playerMon, MON_DATA_LEVEL);
+        level = level - (level / 10);
+        SetMonData(enemyMon, MON_DATA_LEVEL, &level);
+        //lower attack
+        stat = GetMonData(playerMon, MON_DATA_ATK);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_ATK, &stat);
+        //lower defense
+        stat = GetMonData(playerMon, MON_DATA_DEF);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_DEF, &stat);
+        //lower speed
+        stat = GetMonData(playerMon, MON_DATA_SPEED);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_SPEED, &stat);
+        //lower spAttack
+        stat = GetMonData(playerMon, MON_DATA_SPATK);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_SPATK, &stat);
+        //lower spDefense
+        stat = GetMonData(playerMon, MON_DATA_SPDEF);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_SPDEF, &stat);
+        //Set EVs to zero
+        SetMonData(enemyMon, MON_DATA_HP_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_ATK_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_DEF_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_SPEED_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_SPATK_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_SPDEF_EV, &evZero);
+        //Set IVs to zero
+        SetMonData (enemyMon, MON_DATA_HP_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_ATK_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_DEF_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_SPEED_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_SPATK_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_SPDEF_IV, &ivZero);
+        //Remove held itesm
+        SetMonData(enemyMon, MON_DATA_HELD_ITEM, ITEM_NONE);
+    }
+}
+
 void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer)
 {
     s32 i;
     u8 monsCount;
 
     ZeroPartyMons(party);
+
+	// Dark Brenden hack - 261026
+	// You can probably add any other "overwrites" you would want here
+
+	//Dark Brendan - Copy Player, lower levels, lower stats and 0 EV et IV
+    if (trainer->trainerClass == TRAINER_CLASS_DARK_SHADOW) {
+        SetupDarkBrendanBattle();
+		return;
+	}
 
     monsCount = trainer->partySize;
     if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && (B_MULTI_HALF_TEAMS || trainer->multiTeamSize == MULTI_TEAM_SIZE_HALF))

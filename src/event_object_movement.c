@@ -6766,52 +6766,63 @@ bool8 IsMetatileDirectionallyImpassable(struct ObjectEvent *objectEvent, s16 x, 
 
 static bool8 IsSpecialCollision(struct ObjectEvent *objectEvent, s16 x, s16 y)
 {
-	struct ObjectEvent *playerObject;
-    s16 targetX, targetY;
+	// vars
+	struct ObjectEvent *playerObject = &gObjectEvents[gPlayerAvatar.objectEventId];;
+	struct ObjectEvent *followerObject = GetFollowerObject();
+	// targetX and targetY are used for special collisions between two non player/follower objects (telemachus et tauros)
+    s16 playerX, playerY, followerX, followerY, targetX, targetY;
 	const u8 *script;
-	playerObject = &gObjectEvents[gPlayerAvatar.objectEventId];
 
-	//First we check for collisions with player (most special collisions) so assign target to player xy
-    targetX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
-    targetY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	// Assign X and Y
+    playerX   = playerObject->currentCoords.x;
+    playerY   = playerObject->currentCoords.y;
+	followerX = followerObject->currentCoords.x;
+	followerY = followerObject->currentCoords.y;
+
+
+	//First we check for collisions with player OR follower mon (most special collisions) so assign target to player xy
 	//Check if there is a special object collision with player
-	if (targetX == x && targetY == y)
+	if (
+			// Collision with player
+			((playerX == x && playerY == y) && AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation)) || 
+			// Collision with follower mon
+			((followerX == x && followerY == y) && AreElevationsCompatible(objectEvent->currentElevation, followerObject->currentElevation))
+	   )
 	{
-		if (AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation))
+		DebugPrintf("Special Collision being checked\n");
+		//Check if it's a special Object Event and call correct script
+		if    (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RATTATA
+			|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_EKANS
+			|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
+			|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
+			|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM
+	
+			// Above I was creating duplicate "Collision" sprites - it's better to do it the way i do below with the map check
+		
+			//Colchis Lugia
+			|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && objectEvent->mapNum == MAP_NUM(MAP_COLCHIS) && objectEvent->mapGroup == MAP_GROUP(MAP_COLCHIS) ) //Lugia different cuz no special COLLISION sprite
+			//Aedes Aqua Dark Brendan
+			|| (objectEvent->graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN && objectEvent->mapNum == MAP_NUM(MAP_AEDES_AQUA_MINI_BOSS_ROOM) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_AQUA_MINI_BOSS_ROOM) ) 
+			//Aedes Terra Granon
+			|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(GRANBULL) && objectEvent->mapNum == MAP_NUM(MAP_AEDES_TERRA) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_TERRA) ) 
+
+			//MareS4 Scylla
+			|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(TENTACRUEL) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S4) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S4) ) 
+			//MareS8 Kecleons 
+			|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(KECLEON) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S8) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S8) ) 
+			)
 		{
-			//Check if it's a special Object Event and call correct script
-			if    (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RATTATA
-				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_EKANS
-                || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
-                || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
-				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM
-                //Going forwad just do it this way unless you have a good reason to not to. Saves adding a duplicate COLLISION sprite, seems cleaner and easier
-
-                //Colchis Lugia
-				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && objectEvent->mapNum == MAP_NUM(MAP_COLCHIS) && objectEvent->mapGroup == MAP_GROUP(MAP_COLCHIS) ) //Lugia different cuz no special COLLISION sprite
-                //Aedes Aqua Dark Brendan
-				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN && objectEvent->mapNum == MAP_NUM(MAP_AEDES_AQUA_MINI_BOSS_ROOM) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_AQUA_MINI_BOSS_ROOM) ) 
-				//Aedes Terra Granon
-				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(GRANBULL) && objectEvent->mapNum == MAP_NUM(MAP_AEDES_TERRA) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_TERRA) ) 
-
-				//MareS4 Scylla
-				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(TENTACRUEL) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S4) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S4) ) 
-				//MareS8 Kecleons 
-				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(KECLEON) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S8) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S8) ) 
-				)
-			{
-				//Yes, it's a special collision with player do script
-				//Face Player to special object
-				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);
-				ScriptContext_SetupScript(script);
-				return TRUE;
-			}
-            //MareS7 Tauros is different because normal interaction should have no effect only when it collides with you should script fire
-            if (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(TAUROS) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S7) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S7)) 
-            {
-                ScriptContext_SetupScript(MareS7_Script_TaurosPush);
-                return TRUE;
-            }
+			DebugPrintf("Special Collision Detected\n");
+			//Yes, it's a special collision with player do script
+			script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);
+			ScriptContext_SetupScript(script);
+			return TRUE;
+		}
+		//MareS7 Tauros is different because normal interaction should have no effect only when it collides with you should script fire
+		if (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(TAUROS) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S7) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S7)) 
+		{
+			ScriptContext_SetupScript(MareS7_Script_TaurosPush);
+			return TRUE;
 		}
 	}
 	//next we check other types of special collisions (not involving the player)

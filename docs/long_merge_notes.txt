@@ -27,4 +27,8 @@ B_CHARGE = GEN_5 causing issues with src/data/moves_info.h
 
 Nameboxes
 
+trainerbattle_two_trainers is causing a crash
+	>maybe refactor to generic trainerbattle macro
+	>grintoul: fixed in 1.17.2
+
 NOTE: Wild mons are no mas (add em in if you care!)
