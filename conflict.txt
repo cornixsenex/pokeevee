@@ -31,10 +31,8 @@ trainerbattle_two_trainers is causing a crash
 	>grintoul: fixed in 1.17.2
 
 Isla Elena
-	>Halt if Kecleon hits follower
-		>Cant duplicate
-		>Issue is Kecleon5 appears in wrong spot on top right corner trigger but it's not a big issue tbh
-	>Test stairs and bridge elevations
+	>Issue is Kecleon5 appears in wrong spot on top right corner trigger but it's not a big issue tbh
+		>It's a general issue, idk the cause but Kecleon is "revealed" in wrong / og location 
 	>Test ulysses script scene
 Item Name Plurals
 removemoney macro
@@ -42,8 +40,7 @@ hidecoinsbox
 	>palatium felix etc
 showmoneybox position
 	>surf school pay up
-SetupDarkBrendanBattle defined but not used (?)
-
+Dark Brendan battle - check again after divergent branch history
 
 B_CHARGE = GEN_5 causing issues with src/data/moves_info.h
 	>
