@@ -31,9 +31,11 @@ trainerbattle_two_trainers is causing a crash
 	>grintoul: fixed in 1.17.2
 
 Isla Elena
-	>Issue is Kecleon5 appears in wrong spot on top right corner trigger but it's not a big issue tbh
-		>It's a general issue, idk the cause but Kecleon is "revealed" in wrong / og location 
-	>Test ulysses script scene
+	>Kecleon is "revealed" in wrong / og location 
+	>Test ulysses script scene (var 0x4059 == 3 && flag 0xBC == TRUE)
+		>two issues
+			>one ulysses is not running in a circle
+			>two the script is hanging for one reason or another
 Item Name Plurals
 removemoney macro
 hidecoinsbox 
