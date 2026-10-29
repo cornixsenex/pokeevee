@@ -989,7 +989,7 @@ script MareS8_Script_SetupKecleonChase {
 }
 
 script MareS8_Script_SetupUlysses {
-	setobjectxyperm (LOCALID_MARES8_ULYSSES, 33, 76)
+	setobjectxyperm (LOCALID_MARES8_ULYSSES, 32, 76)
 	setobjectmovementtype (LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP)
 	//remove Kecleon 6
 	setobjectxyperm (LOCALID_MARES8_KECLEON6, 0, 0)
@@ -1011,7 +1011,7 @@ script MareS8_Script_UlyssesSceneB {
 }
 
 script MareS8_Script_UlyssesScene {
-	lockall
+
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_ExclamationMark)
 	waitmovement (0)
@@ -1090,6 +1090,7 @@ script MareS8_Script_UlyssesScene {
 	addobject (LOCALID_MARES8_ULYSSES)
 	//setvars
 	setvar (VAR_ULYSSES_STATE, 4)
+	releaseall
 	end
 }
 

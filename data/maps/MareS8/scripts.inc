@@ -1609,7 +1609,7 @@ MareS8_Script_SetupKecleonChase_2:
 
 MareS8_Script_SetupUlysses::
 # 992 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_ULYSSES, 33, 76
+	setobjectxyperm LOCALID_MARES8_ULYSSES, 32, 76
 # 993 "data/maps/MareS8/scripts.pory"
 	setobjectmovementtype LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP
 # 995 "data/maps/MareS8/scripts.pory"
@@ -1638,8 +1638,6 @@ MareS8_Script_UlyssesSceneB::
 
 
 MareS8_Script_UlyssesScene::
-# 1014 "data/maps/MareS8/scripts.pory"
-	lockall
 # 1015 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 1016 "data/maps/MareS8/scripts.pory"
@@ -1760,6 +1758,8 @@ MareS8_Script_UlyssesScene_5:
 	addobject LOCALID_MARES8_ULYSSES
 # 1092 "data/maps/MareS8/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 4
+# 1093 "data/maps/MareS8/scripts.pory"
+	releaseall
 	end
 
 MareS8_Script_UlyssesScene_2:
@@ -1774,201 +1774,201 @@ MareS8_Script_UlyssesScene_6:
 
 
 MareS8_Script_KecleonChase1::
-# 1097 "data/maps/MareS8/scripts.pory"
+# 1098 "data/maps/MareS8/scripts.pory"
 	setobjectmovementtypeghoul LOCALID_MARES8_KECLEON1, MOVEMENT_TYPE_CHASE_PLAYER
 	return
 
 
 MareS8_Script_KecleonChase2::
-# 1102 "data/maps/MareS8/scripts.pory"
+# 1103 "data/maps/MareS8/scripts.pory"
 	setobjectmovementtypeghoul LOCALID_MARES8_KECLEON2, MOVEMENT_TYPE_CHASE_PLAYER
 	return
 
 
 MareS8_Script_KecleonChase3::
-# 1107 "data/maps/MareS8/scripts.pory"
+# 1108 "data/maps/MareS8/scripts.pory"
 	setobjectmovementtypeghoul LOCALID_MARES8_KECLEON3, MOVEMENT_TYPE_CHASE_PLAYER
 	return
 
 
 MareS8_Script_KecleonChase4::
-# 1112 "data/maps/MareS8/scripts.pory"
+# 1113 "data/maps/MareS8/scripts.pory"
 	setobjectmovementtypeghoul LOCALID_MARES8_KECLEON4, MOVEMENT_TYPE_CHASE_PLAYER
 	return
 
 
 MareS8_Script_KecleonChase5::
-# 1117 "data/maps/MareS8/scripts.pory"
+# 1118 "data/maps/MareS8/scripts.pory"
 	setobjectmovementtypeghoul LOCALID_MARES8_KECLEON5, MOVEMENT_TYPE_CHASE_PLAYER
 	return
 
 
 MareS8_Script_KecleonChase6::
-# 1122 "data/maps/MareS8/scripts.pory"
+# 1123 "data/maps/MareS8/scripts.pory"
 	setobjectmovementtypeghoul LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_CHASE_PLAYER
 	return
 
 
 MareS8_Script_KecleonSetup::
-# 1127 "data/maps/MareS8/scripts.pory"
-	lockall
 # 1128 "data/maps/MareS8/scripts.pory"
-	msgbox MareS8_Script_KecleonSetup_Text_0
+	lockall
 # 1129 "data/maps/MareS8/scripts.pory"
-	closemessage
+	msgbox MareS8_Script_KecleonSetup_Text_0
 # 1130 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	closemessage
 # 1131 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 1132 "data/maps/MareS8/scripts.pory"
-	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
+	waitmovement 0
 # 1133 "data/maps/MareS8/scripts.pory"
+	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
+# 1134 "data/maps/MareS8/scripts.pory"
 	waitmoncry
 	return
 
 
 MareS8_Script_KecleonBattle::
-# 1138 "data/maps/MareS8/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 1139 "data/maps/MareS8/scripts.pory"
-	setwildbattle SPECIES_KECLEON, 13
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 1140 "data/maps/MareS8/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_KECLEON, 13
 # 1141 "data/maps/MareS8/scripts.pory"
+	dowildbattle
+# 1142 "data/maps/MareS8/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	return
 
 
 MareS8_Script_Kecleon1::
-# 1146 "data/maps/MareS8/scripts.pory"
+# 1147 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonSetup
-# 1148 "data/maps/MareS8/scripts.pory"
+# 1149 "data/maps/MareS8/scripts.pory"
 	showobjectat LOCALID_MARES8_KECLEON1, MAP_MARE_S8
-# 1150 "data/maps/MareS8/scripts.pory"
+# 1151 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonBattle
-# 1152 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_KECLEON1
 # 1153 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_KECLEON1, 0, 0
+	removeobject LOCALID_MARES8_KECLEON1
 # 1154 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_KECLEON1, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_MARES8_KECLEON1, 0, 0
 # 1155 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_KECLEON1, MOVEMENT_TYPE_INVISIBLE
+# 1156 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_KECLEON1
-# 1157 "data/maps/MareS8/scripts.pory"
-	setvar VAR_TEMP_A, 0
 # 1158 "data/maps/MareS8/scripts.pory"
+	setvar VAR_TEMP_A, 0
+# 1159 "data/maps/MareS8/scripts.pory"
 	releaseall
 	end
 
 
 MareS8_Script_Kecleon2::
-# 1163 "data/maps/MareS8/scripts.pory"
+# 1164 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonSetup
-# 1165 "data/maps/MareS8/scripts.pory"
+# 1166 "data/maps/MareS8/scripts.pory"
 	showobjectat LOCALID_MARES8_KECLEON2, MAP_MARE_S8
-# 1167 "data/maps/MareS8/scripts.pory"
+# 1168 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonBattle
-# 1169 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_KECLEON2
 # 1170 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_KECLEON2, 0, 0
+	removeobject LOCALID_MARES8_KECLEON2
 # 1171 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_KECLEON2, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_MARES8_KECLEON2, 0, 0
 # 1172 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_KECLEON2, MOVEMENT_TYPE_INVISIBLE
+# 1173 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_KECLEON2
-# 1174 "data/maps/MareS8/scripts.pory"
-	setvar VAR_TEMP_B, 0
 # 1175 "data/maps/MareS8/scripts.pory"
+	setvar VAR_TEMP_B, 0
+# 1176 "data/maps/MareS8/scripts.pory"
 	releaseall
 	end
 
 
 MareS8_Script_Kecleon3::
-# 1180 "data/maps/MareS8/scripts.pory"
+# 1181 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonSetup
-# 1182 "data/maps/MareS8/scripts.pory"
+# 1183 "data/maps/MareS8/scripts.pory"
 	showobjectat LOCALID_MARES8_KECLEON3, MAP_MARE_S8
-# 1184 "data/maps/MareS8/scripts.pory"
+# 1185 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonBattle
-# 1186 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_KECLEON3
 # 1187 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_KECLEON3, 0, 0
+	removeobject LOCALID_MARES8_KECLEON3
 # 1188 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_KECLEON3, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_MARES8_KECLEON3, 0, 0
 # 1189 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_KECLEON3, MOVEMENT_TYPE_INVISIBLE
+# 1190 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_KECLEON3
-# 1191 "data/maps/MareS8/scripts.pory"
-	setvar VAR_TEMP_C, 0
 # 1192 "data/maps/MareS8/scripts.pory"
+	setvar VAR_TEMP_C, 0
+# 1193 "data/maps/MareS8/scripts.pory"
 	releaseall
 	end
 
 
 MareS8_Script_Kecleon4::
-# 1197 "data/maps/MareS8/scripts.pory"
+# 1198 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonSetup
-# 1199 "data/maps/MareS8/scripts.pory"
+# 1200 "data/maps/MareS8/scripts.pory"
 	showobjectat LOCALID_MARES8_KECLEON4, MAP_MARE_S8
-# 1201 "data/maps/MareS8/scripts.pory"
+# 1202 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonBattle
-# 1203 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_KECLEON4
 # 1204 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_KECLEON4, 0, 0
+	removeobject LOCALID_MARES8_KECLEON4
 # 1205 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_KECLEON4, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_MARES8_KECLEON4, 0, 0
 # 1206 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_KECLEON4, MOVEMENT_TYPE_INVISIBLE
+# 1207 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_KECLEON4
-# 1208 "data/maps/MareS8/scripts.pory"
-	setvar VAR_TEMP_D, 0
 # 1209 "data/maps/MareS8/scripts.pory"
+	setvar VAR_TEMP_D, 0
+# 1210 "data/maps/MareS8/scripts.pory"
 	releaseall
 	end
 
 
 MareS8_Script_Kecleon5::
-# 1215 "data/maps/MareS8/scripts.pory"
+# 1216 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonSetup
-# 1217 "data/maps/MareS8/scripts.pory"
+# 1218 "data/maps/MareS8/scripts.pory"
 	showobjectat LOCALID_MARES8_KECLEON5, MAP_MARE_S8
-# 1219 "data/maps/MareS8/scripts.pory"
+# 1220 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonBattle
-# 1221 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_KECLEON5
 # 1222 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_KECLEON5, 0, 0
+	removeobject LOCALID_MARES8_KECLEON5
 # 1223 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_KECLEON5, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_MARES8_KECLEON5, 0, 0
 # 1224 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_KECLEON5, MOVEMENT_TYPE_INVISIBLE
+# 1225 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_KECLEON5
-# 1226 "data/maps/MareS8/scripts.pory"
-	setflag FLAG_MARES8_KECLEON5
 # 1227 "data/maps/MareS8/scripts.pory"
-	setvar VAR_TEMP_E, 0
+	setflag FLAG_MARES8_KECLEON5
 # 1228 "data/maps/MareS8/scripts.pory"
+	setvar VAR_TEMP_E, 0
+# 1229 "data/maps/MareS8/scripts.pory"
 	releaseall
 	end
 
 
 MareS8_Script_Kecleon6::
-# 1233 "data/maps/MareS8/scripts.pory"
+# 1234 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonSetup
-# 1235 "data/maps/MareS8/scripts.pory"
+# 1236 "data/maps/MareS8/scripts.pory"
 	showobjectat LOCALID_MARES8_KECLEON6, MAP_MARE_S8
-# 1237 "data/maps/MareS8/scripts.pory"
+# 1238 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_KecleonBattle
-# 1239 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_KECLEON6
 # 1240 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_KECLEON6, 0, 0
+	removeobject LOCALID_MARES8_KECLEON6
 # 1241 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_MARES8_KECLEON6, 0, 0
 # 1242 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_INVISIBLE
+# 1243 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_KECLEON6
-# 1244 "data/maps/MareS8/scripts.pory"
-	setvar VAR_TEMP_F, 0
 # 1245 "data/maps/MareS8/scripts.pory"
+	setvar VAR_TEMP_F, 0
+# 1246 "data/maps/MareS8/scripts.pory"
 	releaseall
 	end
 
@@ -1982,11 +1982,11 @@ MareS8_Script_RemoveRutulian_Text_0:
 	.string "ERROR: AENEID_STATE OOB$"
 
 MareS8_Script_KecleonSetup_Text_0:
-# 1128 "data/maps/MareS8/scripts.pory"
+# 1129 "data/maps/MareS8/scripts.pory"
 	.string "Kecleon Setup$"
 
 MareS8_Text_Beroe1::
-# 1249 "data/maps/MareS8/scripts.pory"
+# 1250 "data/maps/MareS8/scripts.pory"
 	.string "Leave it to Aeneas to find a way to put\n"
 	.string "us in a worse situation. We lost our ship\l"
 	.string "and still have no idea where we are or\l"
@@ -1994,47 +1994,47 @@ MareS8_Text_Beroe1::
 	.string "could get any worse!$"
 
 MareS8_Text_RutulianAmbush1::
-# 1258 "data/maps/MareS8/scripts.pory"
+# 1259 "data/maps/MareS8/scripts.pory"
 	.string "Foemen sadeathya!$"
 
 MareS8_Text_Aeneas_GetWorse::
-# 1262 "data/maps/MareS8/scripts.pory"
+# 1263 "data/maps/MareS8/scripts.pory"
 	.string "On guard! I think it's about to get\n"
 	.string "worse.$"
 
 MareS8_Text_AeneasSetup::
-# 1266 "data/maps/MareS8/scripts.pory"
+# 1267 "data/maps/MareS8/scripts.pory"
 	.string "We're being attacked by two savages!\n"
 	.string "Let's unite and defeat them as a team.\l"
 	.string "Select three Pokemon you will fight\l"
 	.string "with.$"
 
 MareS8_Text_RutulianAmbushPre::
-# 1273 "data/maps/MareS8/scripts.pory"
+# 1274 "data/maps/MareS8/scripts.pory"
 	.string "Into sea safoe wadrive.$"
 
 MareS8_Text_RutulianAmbushLost1::
-# 1278 "data/maps/MareS8/scripts.pory"
+# 1279 "data/maps/MareS8/scripts.pory"
 	.string "More Rutulians waneed.$"
 
 MareS8_Text_RutulianAmbushLost2::
-# 1283 "data/maps/MareS8/scripts.pory"
+# 1284 "data/maps/MareS8/scripts.pory"
 	.string "Nasty defeatya!$"
 
 MareS8_Text_RutulianAmbushPost::
-# 1288 "data/maps/MareS8/scripts.pory"
+# 1289 "data/maps/MareS8/scripts.pory"
 	.string "Hesperia to safoe fall waletna.\p"
 	.string "Ka-Turnus wawarn and wa-army\n"
 	.string "warouseya!$"
 
 MareS8_Text_Beroe2::
-# 1293 "data/maps/MareS8/scripts.pory"
+# 1294 "data/maps/MareS8/scripts.pory"
 	.string "Well, Aeneas, you're right. It's now much\n"
 	.string "worse. We're lost without a ship and\l"
 	.string "stranded on some hostile island.$"
 
 MareS8_Text_AeneasHesperia::
-# 1299 "data/maps/MareS8/scripts.pory"
+# 1300 "data/maps/MareS8/scripts.pory"
 	.string "Didn't you hear? That savage said this\n"
 	.string "is Hesperia! At long last we have\l"
 	.string "arrived in that land where I'm destined\l"
@@ -2045,7 +2045,7 @@ MareS8_Text_AeneasHesperia::
 	.string "natives and then start building.$"
 
 MareS8_Text_AeneasGoToWar::
-# 1310 "data/maps/MareS8/scripts.pory"
+# 1311 "data/maps/MareS8/scripts.pory"
 	.string "I will wait here, and guard the party\n"
 	.string "from any ambush those primitives might\l"
 	.string "launch. You go ahead, make war on the\l"
@@ -2055,133 +2055,133 @@ MareS8_Text_AeneasGoToWar::
 	.string "for Aeneas' men!$"
 
 MareS8_Text_AscaniusDuringWar::
-# 1319 "data/maps/MareS8/scripts.pory"
+# 1320 "data/maps/MareS8/scripts.pory"
 	.string "While I'm nervous of a savage ambush I'm\n"
 	.string "quite relieved my boys finally calmed\l"
 	.string "down.$"
 
 MareS8_Text_AeneasDuringWar::
-# 1324 "data/maps/MareS8/scripts.pory"
+# 1325 "data/maps/MareS8/scripts.pory"
 	.string "What are you waiting for? Go win glory!$"
 
 MareS8_Text_FaustulusDuringWar::
-# 1329 "data/maps/MareS8/scripts.pory"
+# 1330 "data/maps/MareS8/scripts.pory"
 	.string "Mascarena! Kawin maknow. Alwaysya\n"
 	.string "kawin.$"
 
 MareS8_Text_RomulusDuringWar::
-# 1333 "data/maps/MareS8/scripts.pory"
+# 1334 "data/maps/MareS8/scripts.pory"
 	.string "I think we would be safer if we built a\n"
 	.string "mighty wall to keep out the natives.$"
 
 MareS8_Text_RemusDuringWar::
-# 1338 "data/maps/MareS8/scripts.pory"
+# 1339 "data/maps/MareS8/scripts.pory"
 	.string "If I were older, I'd be fighting too!$"
 
 MareS8_Text_BeroeDuringWar::
-# 1342 "data/maps/MareS8/scripts.pory"
+# 1343 "data/maps/MareS8/scripts.pory"
 	.string "I hope the natives don't attack again.$"
 
 Hesperia_Text_RutulianPre1::
-# 1347 "data/maps/MareS8/scripts.pory"
+# 1348 "data/maps/MareS8/scripts.pory"
 	.string "Death taheathen mado.$"
 
 Hesperia_Text_RutulianPre2::
-# 1352 "data/maps/MareS8/scripts.pory"
+# 1353 "data/maps/MareS8/scripts.pory"
 	.string "Isla Hesperia tacome tamistake last\n"
 	.string "isya.$"
 
 Hesperia_Text_RutulianPre3::
-# 1357 "data/maps/MareS8/scripts.pory"
+# 1358 "data/maps/MareS8/scripts.pory"
 	.string "Outsiders Isla Hesperia on taallowna.$"
 
 Hesperia_Text_RutulianPre4::
-# 1362 "data/maps/MareS8/scripts.pory"
+# 1363 "data/maps/MareS8/scripts.pory"
 	.string "Takill Ka-Turnus mareward Kado.$"
 
 Hesperia_Text_RutulianPre5::
-# 1367 "data/maps/MareS8/scripts.pory"
+# 1368 "data/maps/MareS8/scripts.pory"
 	.string "Tacorpse Wa-Rutuli waeatya.$"
 
 Hesperia_Text_RutulianLost1::
-# 1372 "data/maps/MareS8/scripts.pory"
+# 1373 "data/maps/MareS8/scripts.pory"
 	.string "Ka-Turnus!$"
 
 Hesperia_Text_RutulianLost2::
-# 1377 "data/maps/MareS8/scripts.pory"
+# 1378 "data/maps/MareS8/scripts.pory"
 	.string "Tablack tamagic howya?$"
 
 Hesperia_Text_RutulianLost3::
-# 1382 "data/maps/MareS8/scripts.pory"
+# 1383 "data/maps/MareS8/scripts.pory"
 	.string "Uhu!$"
 
 Hesperia_Text_RutulianLost4::
-# 1387 "data/maps/MareS8/scripts.pory"
+# 1388 "data/maps/MareS8/scripts.pory"
 	.string "Taforebearya!$"
 
 Hesperia_Text_RutulianLost5::
-# 1392 "data/maps/MareS8/scripts.pory"
+# 1393 "data/maps/MareS8/scripts.pory"
 	.string "Ka-Laran! Maforsake whyya?$"
 
 Hesperia_Text_RutulianPost1::
-# 1397 "data/maps/MareS8/scripts.pory"
+# 1398 "data/maps/MareS8/scripts.pory"
 	.string "Malose taoutsider worse dame malose\n"
 	.string "beya.$"
 
 Hesperia_Text_RutulianPost2::
-# 1402 "data/maps/MareS8/scripts.pory"
+# 1403 "data/maps/MareS8/scripts.pory"
 	.string "Ka-Turnus ta kawarn maneed!$"
 
 Hesperia_Text_RutulianPost3::
-# 1407 "data/maps/MareS8/scripts.pory"
+# 1408 "data/maps/MareS8/scripts.pory"
 	.string "Wa-Rutuli tastopya.$"
 
 Hesperia_Text_RutulianPost4::
-# 1412 "data/maps/MareS8/scripts.pory"
+# 1413 "data/maps/MareS8/scripts.pory"
 	.string "Small blow onlyya be.$"
 
 Hesperia_Text_RutulianPost5::
-# 1417 "data/maps/MareS8/scripts.pory"
+# 1418 "data/maps/MareS8/scripts.pory"
 	.string "Overna! Wa-Rutuli yield waknowna.$"
 
 MareS8_Text_RutuliDoublePre1::
-# 1422 "data/maps/MareS8/scripts.pory"
+# 1423 "data/maps/MareS8/scripts.pory"
 	.string "Ta-attack waisland stopya.$"
 
 MareS8_Text_RutuliDoublePre2::
-# 1427 "data/maps/MareS8/scripts.pory"
+# 1428 "data/maps/MareS8/scripts.pory"
 	.string "Watwo Rutuli tadefeatna.$"
 
 MareS8_Text_RutuliDoubleLost1::
-# 1431 "data/maps/MareS8/scripts.pory"
+# 1432 "data/maps/MareS8/scripts.pory"
 	.string "Wafall backya!$"
 
 MareS8_Text_RutuliDoubleLost2::
-# 1435 "data/maps/MareS8/scripts.pory"
+# 1436 "data/maps/MareS8/scripts.pory"
 	.string "Wabeat!$"
 
 MareS8_Text_RutuliDoublePost::
-# 1439 "data/maps/MareS8/scripts.pory"
+# 1440 "data/maps/MareS8/scripts.pory"
 	.string "Waneed more Rutuli here fastya!$"
 
 MareS8_Text_RutuliBlock::
-# 1443 "data/maps/MareS8/scripts.pory"
+# 1444 "data/maps/MareS8/scripts.pory"
 	.string "Isla holy Hesperia beya.\p"
 	.string "Taoutsider welcomena. Tago!$"
 
 MareS8_Text_BeroeDuringSearch::
-# 1447 "data/maps/MareS8/scripts.pory"
+# 1448 "data/maps/MareS8/scripts.pory"
 	.string "The boys, Romulus and Remus, are gone! I\n"
 	.string "hope they turn up soon...It's terrible!$"
 
 MareS8_Text_Ulysses1::
-# 1452 "data/maps/MareS8/scripts.pory"
+# 1453 "data/maps/MareS8/scripts.pory"
 	.string "Please, help me {PLAYER}! Help me! I'm\n"
 	.string "being chased by some kind of invisible\l"
 	.string "monsters!$"
 
 MareS8_Text_Ulysses2::
-# 1457 "data/maps/MareS8/scripts.pory"
+# 1458 "data/maps/MareS8/scripts.pory"
 	.string "Thank you, {PLAYER}. Those monsters\n"
 	.string "had me trapped on this island with no\l"
 	.string "hope of escape. Now I must be gone. I\l"
