@@ -13,6 +13,7 @@
 //Note: 7 is never needed because Kec7 only appears during Ulysses scene
 
 //FLAG_TEMP_A switches player position for Ulysses Scene
+//FLAG_TEMP_B is set during double kecleon battle to trigger ulysses setup correct location after battle
 
 mapscripts MareS8_MapScripts {
 
@@ -52,6 +53,18 @@ mapscripts MareS8_MapScripts {
 			hideobjectat (LOCALID_MARES8_KECLEON5, MAP_MARE_S8)
 			hideobjectat (LOCALID_MARES8_KECLEON6, MAP_MARE_S8)
 			hideobjectat (LOCALID_MARES8_KECLEON7, MAP_MARE_S8)
+		}
+
+		// Setup Ulysses position after double kecleon battle
+		if (flag(FLAG_TEMP_B)) {
+			removeobject (LOCALID_MARES8_ULYSSES)
+			if (flag(FLAG_TEMP_A)) {
+				setobjectxyperm (LOCALID_MARES8_ULYSSES, 34, 77)
+			} else {
+				setobjectxyperm (LOCALID_MARES8_ULYSSES, 34, 78)
+			}
+			setobjectmovementtype (LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT)
+			addobject (LOCALID_MARES8_ULYSSES)
 		}
 	}
 
@@ -1011,16 +1024,17 @@ script MareS8_Script_UlyssesSceneB {
 }
 
 script MareS8_Script_UlyssesScene {
-
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_FaceRight)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)
     load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
 	msgbox (MareS8_Text_Ulysses1)
 	destroy_field_pic (FIELD_PIC_ULYSSES)
 	closemessage
+	lock
 	//setup Kecleon
 	removeobject (LOCALID_MARES8_KECLEON6)
 	setobjectxyperm (LOCALID_MARES8_KECLEON6, 34, 77)
@@ -1041,15 +1055,11 @@ script MareS8_Script_UlyssesScene {
 	showobjectat (LOCALID_MARES8_KECLEON7, MAP_MARE_S8)
 	//Battle Kecleon
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	setflag (FLAG_TEMP_B)
 	setwildbattle (SPECIES_KECLEON, 13, SPECIES_KECLEON, 13)
-	if (flag(FLAG_TEMP_A)) {
-		setobjectxyperm (LOCALID_MARES8_ULYSSES, 34, 77)
-	} else {
-		setobjectxyperm (LOCALID_MARES8_ULYSSES, 34, 78)
-	}
-	setobjectmovementtype (LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT)
 	dowildbattle
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	clearflag (FLAG_TEMP_B)
 	//remove kecleon6
 	removeobject (LOCALID_MARES8_KECLEON6)
 	setobjectxyperm (LOCALID_MARES8_KECLEON6, 0, 0)
@@ -1089,8 +1099,8 @@ script MareS8_Script_UlyssesScene {
 	setobjectmovementtype (LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES8_ULYSSES)
 	//setvars
-	setvar (VAR_ULYSSES_STATE, 4)
-	releaseall
+	setvar (VAR_ULYSSES_STATE, 4) // increment ulysses story
+	setvar (VAR_TEMP_7, 0) // Prevent constant ulysses scene
 	end
 }
 

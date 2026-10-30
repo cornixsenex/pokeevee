@@ -33,8 +33,9 @@ trainerbattle_two_trainers is causing a crash
 Isla Elena
 	>Kecleon is "revealed" in wrong / og location 
 	>Test ulysses script scene (var 0x4059 == 3 && flag 0xBC == TRUE)
-		>two the script is hanging for one reason or another
-			>Related to lockall...
+		>This whole thing feels so bugged idk, maybe waitmovement is doing something idk
+		>After script followr mon doesn't re-appear
+		>After script ulysses walks thru player
 		>Fix "testing" embarkation collision area by ulysses trigger
 Item Name Plurals
 removemoney macro

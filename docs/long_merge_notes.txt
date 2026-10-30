@@ -31,4 +31,6 @@ trainerbattle_two_trainers is causing a crash
 	>maybe refactor to generic trainerbattle macro
 	>grintoul: fixed in 1.17.2
 
+lock / lockall were causing issues with ulysses on Isla elena (kecleons) it's possible these macros will cause more issues in other places, as a result the entire game needs to be play tested
+
 NOTE: Wild mons are no mas (add em in if you care!)
