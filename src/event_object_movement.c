@@ -6779,18 +6779,23 @@ bool8 IsMetatileDirectionallyImpassable(struct ObjectEvent *objectEvent, s16 x, 
 static bool8 IsSpecialCollision(struct ObjectEvent *objectEvent, s16 x, s16 y)
 {
 	// vars
-	struct ObjectEvent *playerObject = &gObjectEvents[gPlayerAvatar.objectEventId];;
-	struct ObjectEvent *followerObject = GetFollowerObject();
-	// targetX and targetY are used for special collisions between two non player/follower objects (telemachus et tauros)
-    s16 playerX, playerY, followerX, followerY, targetX, targetY;
+	struct ObjectEvent *playerObject = &gObjectEvents[gPlayerAvatar.objectEventId];
+	struct ObjectEvent *followerObject = NULL;
 	const u8 *script;
+	
+	// targetX and targetY are used for special collisions between two non player/follower objects (telemachus et tauros)
+    s16 playerX, playerY, followerX = -1, followerY = -1, targetX, targetY;
 
 	// Assign X and Y
     playerX   = playerObject->currentCoords.x;
     playerY   = playerObject->currentCoords.y;
-	followerX = followerObject->currentCoords.x;
-	followerY = followerObject->currentCoords.y;
 
+	// Wrap this to prevent bad assignment when follower does not exist
+	if (IsFollowerVisible()) {
+		followerObject = GetFollowerObject();
+		followerX = followerObject->currentCoords.x;
+		followerY = followerObject->currentCoords.y;
+	}
 
 	//First we check for collisions with player OR follower mon (most special collisions) so assign target to player xy
 	//Check if there is a special object collision with player
@@ -6798,7 +6803,7 @@ static bool8 IsSpecialCollision(struct ObjectEvent *objectEvent, s16 x, s16 y)
 			// Collision with player
 			((playerX == x && playerY == y) && AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation)) || 
 			// Collision with follower mon
-			((followerX == x && followerY == y) && AreElevationsCompatible(objectEvent->currentElevation, followerObject->currentElevation))
+			(IsFollowerVisible() && (followerX == x && followerY == y) && AreElevationsCompatible(objectEvent->currentElevation, followerObject->currentElevation))
 	   )
 	{
 		DebugPrintf("Special Collision being checked\n");

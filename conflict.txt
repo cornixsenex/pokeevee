@@ -1,31 +1,24 @@
+In General, 3 problems:
+	>Halt on first step in new game
+	>Battle config stuff
+		>dynamax
+		>ability pop ups
+	>Script / Macros
 
 First Step on new game is causing crash / halt (illegal opcode)
 
-spin tiles
-	>cause some kind of bad opsec crash if you hit a collision
-	>ie collisions are not being handled correctly
-	>fixed (?) in 10551 (1.16.4)
-
-Nameboxes
-
-trainerbattle_two_trainers is causing a crash
-	>maybe refactor to generic trainerbattle macro
-	>grintoul: fixed in 1.17.2
-
-lock / lockall were causing issues with ulysses on Isla elena (kecleons) it's possible these macros will cause more issues in other places, as a result the entire game needs to be play tested
-
-Isla Elena
-	>Kecleon is "revealed" in wrong / og location 
-	>Test ulysses script scene (var 0x4059 == 3 && flag 0xBC == TRUE)
-		>This whole thing feels so bugged idk, maybe waitmovement is doing something idk
-		>After script followr mon doesn't re-appear
-		>After script ulysses walks thru player
-		>Fix "testing" embarkation collision area by ulysses trigger
+Overall Script issues have been experienced...I only so far have found them causing problems on Isla Elena but i have to imagine there are issues in other places
+	Isla Elena
+		>Kecleon is "revealed" in wrong / og location 
+		>Test ulysses script scene (var 0x4059 == 3 && flag 0xBC == TRUE)
+			>This whole thing feels so bugged idk, maybe waitmovement is doing something idk
+			>After script followr mon doesn't re-appear
+			>After script ulysses walks thru player
+			>Fix "testing" embarkation collision area by ulysses trigger
 
 Battle (config) issues
 	>dynamaxing idk
 	>ability popping up when relevant
 
-Taking the first step on new game causes a halt
-
 NOTE: Wild mons are no mas (add em in if you care!)
+Nameboxes
