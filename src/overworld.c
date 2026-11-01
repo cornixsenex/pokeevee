@@ -2341,6 +2341,7 @@ void CB2_NewGame(void)
 //        gFieldCallback = FieldCB_WarpExitFadeFromBlack;
 //    else
 //        gFieldCallback = ExecuteTruckSequence;
+	gFieldCallback = FieldCB_WarpExitFadeFromBlack; // Cornix
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();

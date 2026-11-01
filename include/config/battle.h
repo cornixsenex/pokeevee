@@ -145,7 +145,7 @@
 #define B_KNOCK_OFF_REMOVAL             GEN_LATEST // In Gen5+, Knock Off removes the foe's item instead of rendering it unusable.
                                                    // In Champions, Knock Off no longer checks if the target's item is able to change the user's form (i.e. Mega Evolution / Primal Reversion).
 #define B_HEAL_BELL_SOUNDPROOF          GEN_4 // In Gen6+, Heal Bell affects inactive party members with Soundproof. In Gen5 only, it affects all party members, including active ones. In Gen4 and earlier, it does not affect any Pokémon with Soundproof.
-#define B_CHARGE                        GEN_LATEST // In Gen7 and earlier, Charge status is lost regardless of the typing of the next move.
+#define B_CHARGE                        GEN_5 // In Gen7 and earlier, Charge status is lost regardless of the typing of the next move.
 #define B_POWDER_STATUS_HEAVY_RAIN      GEN_LATEST // In Gen7+, Powder no longer damages the user of a Fire-type move in heavy rain.
 #define B_AFTER_YOU_TURN_ORDER          GEN_LATEST // In Gen8+, After You no longer fails if the turn order wouldn't change after use.
 #define B_QUASH_TURN_ORDER              GEN_LATEST // In Gen8+, Quash-affected battlers move according to Speed order. In Gen7 and earlier, Quash-affected battlers move in the order they were affected by Quash.
