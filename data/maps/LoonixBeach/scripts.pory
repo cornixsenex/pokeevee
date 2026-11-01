@@ -47,6 +47,12 @@ script LoonixBeach_Script_Sign3 {
 	end
 }
 
+script LoonixBeach_Script_Sign4 {
+	giveitem (ITEM_POTION, 4)
+    closemessage
+	end
+}
+
 text LoonixBeach_Text_BlueFight {
 	format("My first Pokeball is a BEAST BALL")
 }

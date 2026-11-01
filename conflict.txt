@@ -37,7 +37,6 @@ Isla Elena
 		>After script followr mon doesn't re-appear
 		>After script ulysses walks thru player
 		>Fix "testing" embarkation collision area by ulysses trigger
-Item Name Plurals
 removemoney macro
 hidecoinsbox 
 	>palatium felix etc

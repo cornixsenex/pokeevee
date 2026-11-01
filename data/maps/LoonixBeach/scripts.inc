@@ -74,10 +74,18 @@ LoonixBeach_Script_Sign3::
 	end
 
 
+LoonixBeach_Script_Sign4::
+# 51 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_POTION, 4
+# 52 "data/maps/LoonixBeach/scripts.pory"
+	closemessage
+	end
+
+
 LoonixBeach_Text_BlueFight::
-# 50 "data/maps/LoonixBeach/scripts.pory"
+# 56 "data/maps/LoonixBeach/scripts.pory"
 	.string "My first Pokeball is a BEAST BALL$"
 
 LoonixBeach_Text_BlueLost::
-# 54 "data/maps/LoonixBeach/scripts.pory"
+# 60 "data/maps/LoonixBeach/scripts.pory"
 	.string "I wonder why my face looks like that.$"
