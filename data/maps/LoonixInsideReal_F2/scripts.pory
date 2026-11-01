@@ -58,6 +58,8 @@ script LoonixInsideReal_F2_Script_Bed {
 			waitfanfare
 			fadescreenswapbuffers (0)
 		}
+	} else {
+		closemessage
 	}
 	releaseall
 	end

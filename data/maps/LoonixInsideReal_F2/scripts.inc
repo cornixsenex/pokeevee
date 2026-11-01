@@ -75,8 +75,10 @@ LoonixInsideReal_F2_Script_Bed::
 # 47 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq LoonixInsideReal_F2_Script_Bed_2
-LoonixInsideReal_F2_Script_Bed_1:
 # 62 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	closemessage
+LoonixInsideReal_F2_Script_Bed_1:
+# 64 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	releaseall
 	end
 
@@ -84,7 +86,7 @@ LoonixInsideReal_F2_Script_Bed_2:
 # 48 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	closemessage
 # 49 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, LoonixInsideReal_F2_Script_Bed_4
+	goto_if_set FLAG_SYS_POKEMON_GET, LoonixInsideReal_F2_Script_Bed_5
 # 56 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	playfanfare MUS_HEAL
 # 57 "data/maps/LoonixInsideReal_F2/scripts.pory"
@@ -95,109 +97,109 @@ LoonixInsideReal_F2_Script_Bed_2:
 	fadescreenswapbuffers 0
 	goto LoonixInsideReal_F2_Script_Bed_1
 
-LoonixInsideReal_F2_Script_Bed_4:
+LoonixInsideReal_F2_Script_Bed_5:
 # 50 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	compare VAR_GRANNY_STATE, 11
-	goto_if_ne LoonixInsideReal_F2_Script_Bed_7
+	goto_if_ne LoonixInsideReal_F2_Script_Bed_8
 # 53 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	call LoonixInsideReal_F2_Script_MewDream
 	goto LoonixInsideReal_F2_Script_Bed_1
 
-LoonixInsideReal_F2_Script_Bed_7:
+LoonixInsideReal_F2_Script_Bed_8:
 # 51 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	call Common_EventScript_OutOfCenterPartyHeal
 	goto LoonixInsideReal_F2_Script_Bed_1
 
 
 LoonixInsideReal_F2_Script_Book::
-# 67 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	lock
-# 68 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	msgbox LoonixInsideReal_F2_Text_Book, MSGBOX_SIGN
 # 69 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	closemessage
+	lock
 # 70 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	msgbox LoonixInsideReal_F2_Text_Book, MSGBOX_SIGN
+# 71 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	closemessage
+# 72 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	release
 	end
 
 
 LoonixInsideReal_F2_Script_TV::
-# 75 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 77 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	lock
-# 76 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 78 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	compare VAR_GRANNY_STATE, 13
 	goto_if_ne LoonixInsideReal_F2_Script_TV_4
 LoonixInsideReal_F2_Script_TV_3:
-# 79 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 81 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	msgbox LoonixInsideReal_F2_Text_TV2, MSGBOX_DEFAULT
 LoonixInsideReal_F2_Script_TV_1:
-# 81 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 83 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	closemessage
-# 82 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 84 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	release
 	end
 
 LoonixInsideReal_F2_Script_TV_2:
-# 77 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 79 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	msgbox LoonixInsideReal_F2_Text_TV1, MSGBOX_DEFAULT
 	goto LoonixInsideReal_F2_Script_TV_1
 
 LoonixInsideReal_F2_Script_TV_4:
-# 76 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 78 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	compare VAR_GRANNY_STATE, 14
 	goto_if_ne LoonixInsideReal_F2_Script_TV_2
 	goto LoonixInsideReal_F2_Script_TV_3
 
 
 LoonixInsideReal_F2_Script_MewDream::
-# 87 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 89 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	warpsilent MAP_LOONIX_SNOW, 10, 10
-# 88 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 90 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	waitstate
 	return
 
 
 LoonixInsideReal_F2_Script_MewNews::
-# 93 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 95 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	lockall
-# 94 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	setvar VAR_GRANNY_STATE, 13
 # 96 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	setvar VAR_GRANNY_STATE, 13
+# 98 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 97 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	waitmovement 0
 # 99 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_F2_Movement_PlayerToTV
-# 100 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	waitmovement 0
+# 101 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_F2_Movement_PlayerToTV
 # 102 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	load_field_pic 32, 190, 98
-# 103 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	msgbox LoonixInsideReal_F2_Text_MewNews
+	waitmovement 0
 # 104 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	destroy_field_pic 32
+	load_field_pic 32, 190, 98
 # 105 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	closemessage
+	msgbox LoonixInsideReal_F2_Text_MewNews
+# 106 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	destroy_field_pic 32
 # 107 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	playbgm MUS_LITTLEROOT, TRUE
+	closemessage
 # 109 "data/maps/LoonixInsideReal_F2/scripts.pory"
+	playbgm MUS_LITTLEROOT, TRUE
+# 111 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	release
 	end
 
 
-# 113 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
 LoonixInsideReal_F2_Movement_PlayerToTV:
-# 114 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 116 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_right
-# 114 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 116 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_right
-# 114 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 116 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_right
-# 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 117 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_up
-# 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 117 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_up
-# 115 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 117 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	walk_up
 	step_end
 
@@ -207,28 +209,28 @@ LoonixInsideReal_F2_Script_PS2_Text_0:
 	.string "game,Star Wars Battlefront 2!$"
 
 LoonixInsideReal_F2_Text_Bed::
-# 118 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 120 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "It's your old bed!\p"
 	.string "Would you like to take a rest?$"
 
 LoonixInsideReal_F2_Text_Book::
-# 122 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 124 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "ARMA VIRUMQUE CANO...\n"
 	.string "What does this even mean?$"
 
 LoonixInsideReal_F2_Text_TV1::
-# 126 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 128 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "There's never anything interesting on\n"
 	.string "TV. Better go!$"
 
 LoonixInsideReal_F2_Text_TV2::
-# 130 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 132 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "The news people are interviewing\n"
 	.string "townspeople of Clara City about what\l"
 	.string "they say they saw last night.$"
 
 LoonixInsideReal_F2_Text_MewNews::
-# 134 "data/maps/LoonixInsideReal_F2/scripts.pory"
+# 136 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	.string "In an unusual turn of events several\n"
 	.string "cities in the upstate region are\l"
 	.string "reporting sightings of a strange being\l"
