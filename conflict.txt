@@ -37,12 +37,10 @@ Isla Elena
 		>After script followr mon doesn't re-appear
 		>After script ulysses walks thru player
 		>Fix "testing" embarkation collision area by ulysses trigger
-removemoney macro
-hidecoinsbox 
-	>palatium felix etc
-showmoneybox position
-	>surf school pay up
-Dark Brendan battle - check again after divergent branch history
+
+Battle (config) issues
+	>dynamaxing idk
+	>ability popping up when relevant
 
 B_CHARGE = GEN_5 causing issues with src/data/moves_info.h
 	>

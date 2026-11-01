@@ -3406,11 +3406,11 @@ bool8 ScrCmd_copymoney(struct ScriptContext *ctx)
 //Cornix Custom
 bool8 ScrCmd_removevarmoney(struct ScriptContext *ctx)
 {
-    u32 lowVarId = ScriptReadHalfword(ctx);
     u32 highVarId = ScriptReadHalfword(ctx);
+    u32 lowVarId = ScriptReadHalfword(ctx);
 
-	u16 *ptrLow = GetVarPointer(lowVarId);
 	u16 *ptrHigh = GetVarPointer(highVarId);
+	u16 *ptrLow = GetVarPointer(lowVarId);
 
 	u32 total = ((u32)*ptrHigh << 16) | (u32)*ptrLow;
 	

@@ -1998,7 +1998,7 @@
 	.endm
 
 	@ CORNIX CUSTOM - like checkcoins but for money
-	@ Gets the number of money the player has and stores it in the variable 'out'.
+	@ Gets the number of money the player has and stores it in the out variebls (32 bit).
 	.macro copymoney high:req, low:req
 	.byte SCR_OP_COPYMONEY
 	.2byte \high
