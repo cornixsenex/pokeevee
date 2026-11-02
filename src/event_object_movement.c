@@ -6791,7 +6791,7 @@ static bool8 IsSpecialCollision(struct ObjectEvent *objectEvent, s16 x, s16 y)
     playerY   = playerObject->currentCoords.y;
 
 	// Wrap this to prevent bad assignment when follower does not exist
-	if (IsFollowerVisible()) {
+	if (followerObject != NULL) {
 		followerObject = GetFollowerObject();
 		followerX = followerObject->currentCoords.x;
 		followerY = followerObject->currentCoords.y;
@@ -6803,7 +6803,7 @@ static bool8 IsSpecialCollision(struct ObjectEvent *objectEvent, s16 x, s16 y)
 			// Collision with player
 			((playerX == x && playerY == y) && AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation)) || 
 			// Collision with follower mon
-			(IsFollowerVisible() && (followerX == x && followerY == y) && AreElevationsCompatible(objectEvent->currentElevation, followerObject->currentElevation))
+			(followerObject != NULL && (followerX == x && followerY == y) && AreElevationsCompatible(objectEvent->currentElevation, followerObject->currentElevation))
 	   )
 	{
 		DebugPrintf("Special Collision being checked\n");
