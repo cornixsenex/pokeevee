@@ -1,11 +1,8 @@
-In General, 3 problems:
-	>Halt on first step in new game
+In General, 2 problems:
 	>Battle config stuff
 		>dynamax
 		>ability pop ups
 	>Script / Macros
-
-First Step on new game is causing crash / halt (illegal opcode)
 
 Overall Script issues have been experienced...I only so far have found them causing problems on Isla Elena but i have to imagine there are issues in other places
 	Isla Elena

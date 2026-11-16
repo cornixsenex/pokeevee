@@ -115,3 +115,88 @@ Since you are already dealing with massive, sprawling maps that need scaling dow
     The Payoff: When you finally breach it with Indy’s resistance after your island training, it feels like storming the gates of Mordor.
 
     Scaling Advice: Since you mentioned your maps are too big, use the "hub and spoke" or blocked-access trick. Have checkpoints, military blockades, or collapsed bridges leading into the capital area so the player feels the oppressive border control of a police state until the narrative explicitly calls for the siege.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+granny house
+tiny town
+hide and seek
+route 1
+aldeon town
+school (meet bully blue)
+storm
+mew dream
+granny sleeps
+leaf and blue
+forest (cut, leaf2)
+salix
+garden (sneed's feed and seed)
+swamp (blue2 - just ambush)
+porto
+litoralis
+green vegas (team rocket intro)
+power plant (flash)
+zoo (leaf's pikachu and team rocket1)
+Doak
+Pokeball Company (blue3, Blaine1, fly)
+Mountain et Bridges 
+Dojo town
+Bruno Dojo (rock smash)
+Dark Tunnel
+Rest Area (leaf3)
+Little Desert Gorge
+Deseret (fossil museum)
+Desert Rangers (brock, goggles)
+desert
+desert temple (strength)
+ashlands
+slabs (blue4)
+chaparrel
+sleeping sabina nova
+dark tower (need strength to access!, poke flute)
+revive sabina nova with flute (bike shop)
+big bridges
+sanctuary (leaf4)
+mew taken (team rocket 2)
+saxosa
+tranquilitas
+playa
+urbia
+rocket tower (blaine2, blue5)
+climax (gio1)
+surf school (misty, surf)
+water routes
+tarzania (leaf5)
+volcano (rock climb)
+drake climb
+lake
+water temple (waterfall)
+deino cave (blue6)
+snow route
+snow town (leaf6)
+sherpa
+ice cave
+mountain top
+climax2 (gio2)
+pyramid
+climax3 (m2)
+denument
+
+
+
+
