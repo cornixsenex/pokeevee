@@ -344,7 +344,7 @@
 #define P_FAMILY_YAMASK                  P_GEN_5_POKEMON
 #define P_FAMILY_TIRTOUGA                P_GEN_5_POKEMON
 #define P_FAMILY_ARCHEN                  P_GEN_5_POKEMON
-#define P_FAMILY_TRUBBISH                P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_TRUBBISH                P_GEN_5_POKEMON
 #define P_FAMILY_ZORUA                   P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_MINCCINO                P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_GOTHITA                 P_GEN_5_POKEMON
@@ -358,7 +358,7 @@
 #define P_FAMILY_FRILLISH                P_GEN_5_POKEMON
 #define P_FAMILY_ALOMOMOLA               P_GEN_5_POKEMON
 #define P_FAMILY_JOLTIK                  P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_FERROSEED               P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_FERROSEED               P_GEN_5_POKEMON
 #define P_FAMILY_KLINK                   P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_TYNAMO                  P_GEN_5_POKEMON
 #define P_FAMILY_ELGYEM                  P_GEN_5_POKEMON
@@ -412,7 +412,7 @@
 #define P_FAMILY_BINACLE                 P_GEN_6_POKEMON
 #define P_FAMILY_SKRELP                  P_GEN_6_POKEMON
 #define P_FAMILY_CLAUNCHER               P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_HELIOPTILE              P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_HELIOPTILE              P_GEN_6_POKEMON
 #define P_FAMILY_TYRUNT                  P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_AMAURA                  P_GEN_6_POKEMON
 #define P_FAMILY_HAWLUCHA                P_GEN_6_POKEMON

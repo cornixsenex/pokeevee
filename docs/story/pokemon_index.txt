@@ -7,10 +7,10 @@
 P_FAMILY_BULBASAUR              :   XXX
 P_FAMILY_CHARMANDER             :   Ignis 
 P_FAMILY_SQUIRTLE               :   Beach 
-P_FAMILY_CATERPIE               :   XXX
+P_FAMILY_CATERPIE               :   Granny
 P_FAMILY_WEEDLE                 :   XXX 
 P_FAMILY_PIDGEY                 :   XXX 
-P_FAMILY_RATTATA                :   Hide Seek 
+P_FAMILY_RATTATA                :   Granny
 P_FAMILY_SPEAROW                :   XXX 
 P_FAMILY_EKANS                  :   XXX 
 P_FAMILY_PIKACHU                :   XXX 
@@ -44,7 +44,7 @@ P_FAMILY_GRIMER                 :   XXX
 P_FAMILY_SHELLDER               :   XXX 
 P_FAMILY_GASTLY                 :   XXX 
 P_FAMILY_ONIX                   :   Mountain et Bridges / rock tunnel 
-P_FAMILY_DROWZEE                :   XXX  (norm n / sleep d)
+P_FAMILY_DROWZEE                :   Somnia (normal at d?) 
 P_FAMILY_KRABBY                 :   XXX 
 P_FAMILY_VOLTORB                :   PowerPlant 
 P_FAMILY_EXEGGCUTE              :   XXX 
@@ -74,7 +74,7 @@ P_FAMILY_PORYGON                :   Rocket Tower (*)
 P_FAMILY_OMANYTE                :   Fossil 
 P_FAMILY_KABUTO                 :   Fossil 
 P_FAMILY_AERODACTYL             :   Fossil 
-P_FAMILY_SNORLAX                :   Snorlax / Graveyard (***) 
+P_FAMILY_SNORLAX                :   Somnia (***) 
 P_FAMILY_DRATINI                :   Water Temple 
 P_FAMILY_MEWTWO                 :   Pyramid (*)
 P_FAMILY_MEW                    :   Granny (*)
@@ -87,7 +87,7 @@ P_FAMILY_LEDYBA                 :   XXX
 P_FAMILY_SPINARAK               :   XXX 
 P_FAMILY_CHINCHOU               :   XXX 
 P_FAMILY_TOGEPI                 :   Daycare (*) 
-P_FAMILY_NATU                   :   XXX 
+P_FAMILY_NATU                   :   Upper Drake
 P_FAMILY_MAREEP                 :   XXX 
 P_FAMILY_MARILL                 :   XXX 
 P_FAMILY_SUDOWOODO              :   Lower Drake (***) 
@@ -136,7 +136,7 @@ P_FAMILY_WINGULL                :   XXX
 P_FAMILY_RALTS                  :   XXX 
 P_FAMILY_SURSKIT                :   XXX 
 P_FAMILY_SHROOMISH              :   XXX 
-P_FAMILY_SLAKOTH                :   XXX 
+P_FAMILY_SLAKOTH                :   Somnia 
 P_FAMILY_NINCADA                :   XXX 
 P_FAMILY_WHISMUR                :   XXX 
 P_FAMILY_MAKUHITA               :   XXX 
@@ -144,14 +144,14 @@ P_FAMILY_NOSEPASS               :   XXX
 P_FAMILY_SKITTY                 :   XXX 
 P_FAMILY_SABLEYE                :   XXX 
 P_FAMILY_ARON                   :   Tunnel 
-P_FAMILY_MEDITITE               :   XXX 
-P_FAMILY_ELECTRIKE              :   XXX 
+P_FAMILY_MEDITITE               :   Vallonia 
+P_FAMILY_ELECTRIKE              :   Litoralis 
 P_FAMILY_VOLBEAT_ILLUMISE       :   XXX 
 P_FAMILY_ROSELIA                :   XXX 
 P_FAMILY_GULPIN                 :   XXX 
 P_FAMILY_CARVANHA               :   XXX 
 P_FAMILY_WAILMER                :   XXX 
-P_FAMILY_NUMEL                  :   XXX 
+P_FAMILY_NUMEL                  :   Volcano 
 P_FAMILY_TORKOAL                :   Ignis 
 P_FAMILY_SPOINK                 :   XXX 
 P_FAMILY_SPINDA                 :   Ash 
@@ -176,15 +176,15 @@ P_FAMILY_CHIMECHO               :   XXX
 P_FAMILY_ABSOL                  :   Deino 
 P_FAMILY_SNORUNT                :   Ice Cave	 
 P_FAMILY_SPHEAL                 :   Ice Cave (surf / fish) 
-P_FAMILY_CLAMPERL               :   XXX 
+P_FAMILY_CLAMPERL               :   XXX  (fish)
 P_FAMILY_RELICANTH              :   XXX (fish)
-P_FAMILY_LUVDISC                :   XXX 
+P_FAMILY_LUVDISC                :   XXX  (fish)
 P_FAMILY_BAGON                  :   Ignis 
 P_FAMILY_BELDUM                 :   Desert Temple 
 P_FAMILY_TURTWIG                :   XXX 
 P_FAMILY_CHIMCHAR               :   Jungle 
 P_FAMILY_PIPLUP                 :   Ice Cave (Surf) 
-P_FAMILY_STARLY                 :   XXX 
+P_FAMILY_STARLY                 :   Lower Drake
 P_FAMILY_BIDOOF                 :   XXX 
 P_FAMILY_KRICKETOT              :   XXX 
 P_FAMILY_SHINX                  :   XXX 
@@ -215,7 +215,7 @@ P_FAMILY_PATRAT                 :   XXX (n)
 P_FAMILY_LILLIPUP               :   XXX 
 P_FAMILY_PURRLOIN               :   XXX (n)
 P_FAMILY_MUNNA                  :   XXX 
-P_FAMILY_PIDOVE                 :   XXX 
+P_FAMILY_PIDOVE                 :   Zoo
 P_FAMILY_BLITZLE                :   XXX 
 P_FAMILY_ROGGENROLA             :   XXX 
 P_FAMILY_WOOBAT                 :   XXX (n)
@@ -228,7 +228,6 @@ P_FAMILY_VENIPEDE               :   Forest
 P_FAMILY_SANDILE                :   Desert (n) 
 P_FAMILY_DWEBBLE                :   Mountains et Bridges 
 P_FAMILY_SCRAGGY                :   XXX  (n)
-P_FAMILY_TRUBBISH               :   Urbia (***)  (? also maybe yeet idk)
 P_FAMILY_ZORUA                  :   XXX (n)
 P_FAMILY_MINCCINO               :   XXX 
 P_FAMILY_DUCKLETT               :   XXX 
@@ -236,7 +235,6 @@ P_FAMILY_DEERLING               :   XXX (n / m / evening)
 P_FAMILY_EMOLGA                 :   XXX (early)
 P_FAMILY_FOONGUS                :   Forest 
 P_FAMILY_JOLTIK                 :   XXX 
-P_FAMILY_FERROSEED              :   XXX (? maybe yeet)
 P_FAMILY_KLINK                  :   Power Plant 
 P_FAMILY_LITWICK                :   Dark Tower (? rather old chateu but) 
 P_FAMILY_AXEW                   :   Deino Cave 
@@ -259,14 +257,13 @@ P_FAMILY_SKIDDO                 :   Drake (lower / upper)
 P_FAMILY_PANCHAM                :   XXX 
 P_FAMILY_ESPURR                 :   XXX 
 P_FAMILY_CLAUNCHER              :   XXX 
-P_FAMILY_HELIOPTILE             :   XXX  (? maybe yeet)
 P_FAMILY_TYRUNT                 :   Fossil 
 P_FAMILY_BERGMITE               :   Ice Cave 
 P_FAMILY_PIKIPEK                :   Jungle 
 P_FAMILY_YUNGOOS                :   XXX 
 P_FAMILY_ROCKRUFF               :   XXX 
 P_FAMILY_MUDBRAY                :   XXX 
-P_FAMILY_KOMALA                 :   Snorlax / Graveyard 
+P_FAMILY_KOMALA                 :   Somnia 
 P_FAMILY_SKWOVET                :   XXX 
 P_FAMILY_ROOKIDEE               :   XXX (n)
 P_FAMILY_NICKIT                 :   XXX (n)
@@ -281,35 +278,19 @@ P_FAMILY_WATTREL                :   XXX
 P_FAMILY_MASCHIFF               :   XXX (n)
 P_FAMILY_FLAMIGO                :   Lake 
 
-
-Granny Town
-
-Hide And Seek
-	Rattata
-	Caterpie
+# ROUTES
 
 Via Florea
-
-Albion
 
 Silvan Woods
 	Scyther
 	Pinsir
 	Heracros
 	Venipede
-	
-
-
-
-Salix
 
 Swamp
 
-Porto
-
-Litoralis
-
-Peccadum
+Via Litoralis
 
 Power Plant
 
@@ -317,23 +298,11 @@ Lower Drake
 
 Zoo Route
 
-Doak
-
-Pokeball Tower
-
-Mountains et Bridges
-
-Dojo Town
+Via Vallonia
 
 Dark Tunnel
 
-Rest Area
-
 Little Desert
-
-Deseret
-
-Museum (fossil)
 
 Desert
 
@@ -342,41 +311,27 @@ Desert Temple
 
 Ashlands
 
-Slabs
-
 Chapparel
-
-Sabina Nova
 
 Dark Tower
 
-Snorlax et Graveyard route
+Via Somnia
 
 North Bridge
 
 West Bridge
 
-Sanctuary
-
-Saxosa
-
-Tranquillitas
+Via Saxosa
 
 Playa
-
-Urbia
-
-Rocket Tower
-	Porygon*
-	Ditto*
 
 Western Sea
 
 Eastern Sea
 
-Middle Sea
+Southern Sea
 
-Isla (Water)
+Middle Sea
 
 Isla Colchis Cave
 
@@ -384,9 +339,9 @@ Isla Beach Cave
 
 Jungle
 
-Volcano
+Volcano (outside)
 
-Aedes Ignis
+Ignis (inside)
 
 Upper Drake
 
@@ -398,11 +353,62 @@ Deino Cave
 
 Snow Route
 
-Snow Town
-
 Ice Cave
 
 Mountaintop
+
+# TOWNS
+
+Granny Town
+	Rattata
+	Caterpie
+
+Albion
+
+Salix
+
+Porto
+
+Peccadum
+
+Doak
+
+Dojo Town / Pugnea
+
+Rest Area
+
+Deseret
+
+Slabs
+
+Sabina Nova
+
+Sancta / Castalia / Lumina / Mewnitas / Blumina / Plumina
+
+Tranquillitas
+
+Urbia
+
+Tropicana
+
+Snow Town / Nivea
+
+### SPECIAL
+
+Casino
+
+Pokeball Tower
+
+Museum (fossil)
+
+Rocket Tower
+	Porygon*
+	Ditto*
+
+
+
+
+
 
 
 
