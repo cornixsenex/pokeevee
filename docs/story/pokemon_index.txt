@@ -1,0 +1,409 @@
+### This is a list of all pokemon families included in the game and where they are obtainable
+	> each map has a max of 12 land encounters, 5 surf encounters, 10 fish encounters (5 super, 3 good, 2 old), (and 5 rock smash plus etc)
+	> most maps limit land encounters to 5ish mons
+	> You can have morning, day, evening, night
+
+
+P_FAMILY_BULBASAUR              :   XXX
+P_FAMILY_CHARMANDER             :   Ignis 
+P_FAMILY_SQUIRTLE               :   Beach 
+P_FAMILY_CATERPIE               :   XXX
+P_FAMILY_WEEDLE                 :   XXX 
+P_FAMILY_PIDGEY                 :   XXX 
+P_FAMILY_RATTATA                :   Hide Seek 
+P_FAMILY_SPEAROW                :   XXX 
+P_FAMILY_EKANS                  :   XXX 
+P_FAMILY_PIKACHU                :   XXX 
+P_FAMILY_SANDSHREW              :   Little Desert 
+P_FAMILY_NIDORAN                :   XXX 
+P_FAMILY_CLEFAIRY               :   XXX 
+P_FAMILY_VULPIX                 :   XXX 
+P_FAMILY_JIGGLYPUFF             :   XXX 
+P_FAMILY_ZUBAT                  :   XXX (n)
+P_FAMILY_ODDISH                 :   XXX (n)
+P_FAMILY_PARAS                  :   XXX (n)
+P_FAMILY_VENONAT                :   XXX (n)
+P_FAMILY_DIGLETT                :   Tunnel 
+P_FAMILY_MEOWTH                 :   XXX 
+P_FAMILY_PSYDUCK                :   XXX 
+P_FAMILY_MANKEY                 :   Jungle
+P_FAMILY_GROWLITHE              :   XXX (n)
+P_FAMILY_POLIWAG                :   XXX 
+P_FAMILY_ABRA                   :   XXX 
+P_FAMILY_MACHOP                 :   XXX 
+P_FAMILY_BELLSPROUT             :   XXX 
+P_FAMILY_TENTACOOL              :   XXX 
+P_FAMILY_GEODUDE                :   XXX 
+P_FAMILY_PONYTA                 :   XXX 
+P_FAMILY_SLOWPOKE               :   XXX 
+P_FAMILY_MAGNEMITE              :   PowerPlant 
+P_FAMILY_FARFETCHD              :   XXX 
+P_FAMILY_DODUO                  :   XXX 
+P_FAMILY_SEEL                   :   XXX 
+P_FAMILY_GRIMER                 :   XXX 
+P_FAMILY_SHELLDER               :   XXX 
+P_FAMILY_GASTLY                 :   XXX 
+P_FAMILY_ONIX                   :   Mountain et Bridges / rock tunnel 
+P_FAMILY_DROWZEE                :   XXX  (norm n / sleep d)
+P_FAMILY_KRABBY                 :   XXX 
+P_FAMILY_VOLTORB                :   PowerPlant 
+P_FAMILY_EXEGGCUTE              :   XXX 
+P_FAMILY_CUBONE                 :   XXX 
+P_FAMILY_HITMONS                :   (tyrogue *)
+P_FAMILY_LICKITUNG              :   XXX 
+P_FAMILY_KOFFING                :   XXX 
+P_FAMILY_RHYHORN                :   XXX 
+P_FAMILY_CHANSEY                :   XXX 
+P_FAMILY_TANGELA                :   XXX 
+P_FAMILY_KANGASKHAN             :   XXX 
+P_FAMILY_HORSEA                 :   XXX 
+P_FAMILY_GOLDEEN                :   XXX 
+P_FAMILY_STARYU                 :   XXX 
+P_FAMILY_MR_MIME                :   XXX 
+P_FAMILY_SCYTHER                :   Forest 
+P_FAMILY_JYNX                   :   Ice Cave 
+P_FAMILY_ELECTABUZZ             :   Power Plant 
+P_FAMILY_MAGMAR                 :   Ignis 
+P_FAMILY_PINSIR                 :   Forest 
+P_FAMILY_TAUROS                 :   XXX 
+P_FAMILY_MAGIKARP               :   XXX 
+P_FAMILY_LAPRAS                 :   Ice Cave (surf) 
+P_FAMILY_DITTO                  :   Rocket Tower (*) 
+P_FAMILY_EEVEE                  :   Granny (*)
+P_FAMILY_PORYGON                :   Rocket Tower (*)
+P_FAMILY_OMANYTE                :   Fossil 
+P_FAMILY_KABUTO                 :   Fossil 
+P_FAMILY_AERODACTYL             :   Fossil 
+P_FAMILY_SNORLAX                :   Snorlax / Graveyard (***) 
+P_FAMILY_DRATINI                :   Water Temple 
+P_FAMILY_MEWTWO                 :   Pyramid (*)
+P_FAMILY_MEW                    :   Granny (*)
+P_FAMILY_CHIKORITA              :   XXX 
+P_FAMILY_CYNDAQUIL              :   Ignis
+P_FAMILY_TOTODILE               :   Swamp (surf / fish) 
+P_FAMILY_SENTRET                :   XXX 
+P_FAMILY_HOOTHOOT               :   XXX (n) 
+P_FAMILY_LEDYBA                 :   XXX 
+P_FAMILY_SPINARAK               :   XXX 
+P_FAMILY_CHINCHOU               :   XXX 
+P_FAMILY_TOGEPI                 :   Daycare (*) 
+P_FAMILY_NATU                   :   XXX 
+P_FAMILY_MAREEP                 :   XXX 
+P_FAMILY_MARILL                 :   XXX 
+P_FAMILY_SUDOWOODO              :   Lower Drake (***) 
+P_FAMILY_HOPPIP                 :   XXX 
+P_FAMILY_AIPOM                  :   jungle 
+P_FAMILY_SUNKERN                :   XXX 
+P_FAMILY_YANMA                  :   XXX 
+P_FAMILY_WOOPER                 :   Swamp 
+P_FAMILY_MURKROW                :   XXX (n)
+P_FAMILY_MISDREAVUS             :   XXX 
+P_FAMILY_UNOWN                  :   Desert Temple 
+P_FAMILY_WOBBUFFET              :   XXX 
+P_FAMILY_GIRAFARIG              :   XXX (n)
+P_FAMILY_PINECO                 :   XXX 
+P_FAMILY_DUNSPARCE              :   XXX (*?)
+P_FAMILY_GLIGAR                 :   XXX (n) 
+P_FAMILY_SNUBBULL               :   XXX (n)
+P_FAMILY_QWILFISH               :   XXX 
+P_FAMILY_SHUCKLE                :   XXX (*?)
+P_FAMILY_HERACROSS              :   Forest
+P_FAMILY_SNEASEL                :   XXX (ice cave / night)
+P_FAMILY_TEDDIURSA              :   XXX 
+P_FAMILY_SLUGMA                 :   Volcano 
+P_FAMILY_SWINUB                 :   Snow Route 
+P_FAMILY_CORSOLA                :   XXX 
+P_FAMILY_REMORAID               :   XXX 
+P_FAMILY_DELIBIRD               :   XXX 
+P_FAMILY_MANTINE                :   XXX 
+P_FAMILY_SKARMORY               :   Chaparrel / Ash 
+P_FAMILY_HOUNDOUR               :   XXX (n)
+P_FAMILY_PHANPY                 :   Lower Drake / Moutnains et Bridges 
+P_FAMILY_STANTLER               :   XXX (n)
+P_FAMILY_SMEARGLE               :   XXX (*?)
+P_FAMILY_MILTANK                :   XXX 
+P_FAMILY_LARVITAR               :   Desert 
+P_FAMILY_TREECKO                :   XXX 
+P_FAMILY_TORCHIC                :   XXX 
+P_FAMILY_MUDKIP                 :   XXX 
+P_FAMILY_POOCHYENA              :   Swamp 
+P_FAMILY_ZIGZAGOON              :   XXX 
+P_FAMILY_WURMPLE                :   XXX 
+P_FAMILY_LOTAD                  :   Swamp 
+P_FAMILY_SEEDOT                 :   XXX 
+P_FAMILY_TAILLOW                :   XXX 
+P_FAMILY_WINGULL                :   XXX 
+P_FAMILY_RALTS                  :   XXX 
+P_FAMILY_SURSKIT                :   XXX 
+P_FAMILY_SHROOMISH              :   XXX 
+P_FAMILY_SLAKOTH                :   XXX 
+P_FAMILY_NINCADA                :   XXX 
+P_FAMILY_WHISMUR                :   XXX 
+P_FAMILY_MAKUHITA               :   XXX 
+P_FAMILY_NOSEPASS               :   XXX 
+P_FAMILY_SKITTY                 :   XXX 
+P_FAMILY_SABLEYE                :   XXX 
+P_FAMILY_ARON                   :   Tunnel 
+P_FAMILY_MEDITITE               :   XXX 
+P_FAMILY_ELECTRIKE              :   XXX 
+P_FAMILY_VOLBEAT_ILLUMISE       :   XXX 
+P_FAMILY_ROSELIA                :   XXX 
+P_FAMILY_GULPIN                 :   XXX 
+P_FAMILY_CARVANHA               :   XXX 
+P_FAMILY_WAILMER                :   XXX 
+P_FAMILY_NUMEL                  :   XXX 
+P_FAMILY_TORKOAL                :   Ignis 
+P_FAMILY_SPOINK                 :   XXX 
+P_FAMILY_SPINDA                 :   Ash 
+P_FAMILY_TRAPINCH               :   Little Desert 
+P_FAMILY_CACNEA                 :   Desert 
+P_FAMILY_SWABLU                 :   Chaparel / Litoralis 
+P_FAMILY_ZANGOOSE               :   XXX 
+P_FAMILY_SEVIPER                :   XXX 
+P_FAMILY_LUNATONE               :   Desert Temple (n) 
+P_FAMILY_SOLROCK                :   Desert Temple (d) 
+P_FAMILY_BARBOACH               :   XXX 
+P_FAMILY_CORPHISH               :   XXX 
+P_FAMILY_BALTOY                 :   Desert Temple 
+P_FAMILY_LILEEP                 :   Fossil 
+P_FAMILY_ANORITH                :   Fossil 
+P_FAMILY_FEEBAS                 :   Water Temple 
+P_FAMILY_KECLEON                :   Jungle (***) 
+P_FAMILY_SHUPPET                :   XXX 
+P_FAMILY_DUSKULL                :   XXX 
+P_FAMILY_TROPIUS                :   XXX 
+P_FAMILY_CHIMECHO               :   XXX 
+P_FAMILY_ABSOL                  :   Deino 
+P_FAMILY_SNORUNT                :   Ice Cave	 
+P_FAMILY_SPHEAL                 :   Ice Cave (surf / fish) 
+P_FAMILY_CLAMPERL               :   XXX 
+P_FAMILY_RELICANTH              :   XXX (fish)
+P_FAMILY_LUVDISC                :   XXX 
+P_FAMILY_BAGON                  :   Ignis 
+P_FAMILY_BELDUM                 :   Desert Temple 
+P_FAMILY_TURTWIG                :   XXX 
+P_FAMILY_CHIMCHAR               :   Jungle 
+P_FAMILY_PIPLUP                 :   Ice Cave (Surf) 
+P_FAMILY_STARLY                 :   XXX 
+P_FAMILY_BIDOOF                 :   XXX 
+P_FAMILY_KRICKETOT              :   XXX 
+P_FAMILY_SHINX                  :   XXX 
+P_FAMILY_CRANIDOS               :   Fossil 
+P_FAMILY_SHIELDON               :   Fossil 
+P_FAMILY_BURMY                  :   XXX 
+P_FAMILY_COMBEE                 :   XXX 
+P_FAMILY_PACHIRISU              :   XXX 
+P_FAMILY_BUIZEL                 :   XXX 
+P_FAMILY_CHERUBI                :   XXX 
+P_FAMILY_SHELLOS                :   Swamp 
+P_FAMILY_DRIFLOON               :   XXX 
+P_FAMILY_BUNEARY                :   XXX 
+P_FAMILY_GLAMEOW                :   XXX 
+P_FAMILY_STUNKY                 :   XXX (n)
+P_FAMILY_BRONZOR                :   Desert Temple 
+P_FAMILY_CHATOT                 :   XXX 
+P_FAMILY_SPIRITOMB              :   Dark Tower (*?) 
+P_FAMILY_GIBLE                  :   Tunnel 
+P_FAMILY_RIOLU                  :   (*) 
+P_FAMILY_HIPPOPOTAS             :   Desert
+P_FAMILY_SKORUPI                :   XXX 
+P_FAMILY_CROAGUNK               :   Swamp 
+P_FAMILY_CARNIVINE              :   XXX 
+P_FAMILY_FINNEON                :   XXX 
+P_FAMILY_SNOVER                 :   Snow 
+P_FAMILY_PATRAT                 :   XXX (n)
+P_FAMILY_LILLIPUP               :   XXX 
+P_FAMILY_PURRLOIN               :   XXX (n)
+P_FAMILY_MUNNA                  :   XXX 
+P_FAMILY_PIDOVE                 :   XXX 
+P_FAMILY_BLITZLE                :   XXX 
+P_FAMILY_ROGGENROLA             :   XXX 
+P_FAMILY_WOOBAT                 :   XXX (n)
+P_FAMILY_DRILBUR                :   XXX 
+P_FAMILY_AUDINO                 :   XXX 
+P_FAMILY_TIMBURR                :   XXX 
+P_FAMILY_TYMPOLE                :   Swamp (fish / surf)
+P_FAMILY_SEWADDLE               :   XXX 
+P_FAMILY_VENIPEDE               :   Forest 
+P_FAMILY_SANDILE                :   Desert (n) 
+P_FAMILY_DWEBBLE                :   Mountains et Bridges 
+P_FAMILY_SCRAGGY                :   XXX  (n)
+P_FAMILY_TRUBBISH               :   Urbia (***)  (? also maybe yeet idk)
+P_FAMILY_ZORUA                  :   XXX (n)
+P_FAMILY_MINCCINO               :   XXX 
+P_FAMILY_DUCKLETT               :   XXX 
+P_FAMILY_DEERLING               :   XXX (n / m / evening)
+P_FAMILY_EMOLGA                 :   XXX (early)
+P_FAMILY_FOONGUS                :   Forest 
+P_FAMILY_JOLTIK                 :   XXX 
+P_FAMILY_FERROSEED              :   XXX (? maybe yeet)
+P_FAMILY_KLINK                  :   Power Plant 
+P_FAMILY_LITWICK                :   Dark Tower (? rather old chateu but) 
+P_FAMILY_AXEW                   :   Deino Cave 
+P_FAMILY_CUBCHOO                :   Ice Cave 
+P_FAMILY_CRYOGONAL              :   Ice Cave 
+P_FAMILY_STUNFISK               :   XXX 
+P_FAMILY_MIENFOO                :   XXX 
+P_FAMILY_DRUDDIGON              :   Deino Cave 
+P_FAMILY_GOLETT                 :   Dark Tower 
+P_FAMILY_BOUFFALANT             :   XXX 
+P_FAMILY_RUFFLET                :   XXX 
+P_FAMILY_VULLABY                :   XXX (n)
+P_FAMILY_DURANT                 :   Rocket Tower 
+P_FAMILY_DEINO                  :   Deino Cave 
+P_FAMILY_LARVESTA               :   Jungle / Upper Drake 
+P_FAMILY_BUNNELBY               :   XXX
+P_FAMILY_FLETCHLING             :   XXX 
+P_FAMILY_SCATTERBUG             :   XXX (early)
+P_FAMILY_SKIDDO                 :   Drake (lower / upper)
+P_FAMILY_PANCHAM                :   XXX 
+P_FAMILY_ESPURR                 :   XXX 
+P_FAMILY_CLAUNCHER              :   XXX 
+P_FAMILY_HELIOPTILE             :   XXX  (? maybe yeet)
+P_FAMILY_TYRUNT                 :   Fossil 
+P_FAMILY_BERGMITE               :   Ice Cave 
+P_FAMILY_PIKIPEK                :   Jungle 
+P_FAMILY_YUNGOOS                :   XXX 
+P_FAMILY_ROCKRUFF               :   XXX 
+P_FAMILY_MUDBRAY                :   XXX 
+P_FAMILY_KOMALA                 :   Snorlax / Graveyard 
+P_FAMILY_SKWOVET                :   XXX 
+P_FAMILY_ROOKIDEE               :   XXX (n)
+P_FAMILY_NICKIT                 :   XXX (n)
+P_FAMILY_WOOLOO                 :   XXX 
+P_FAMILY_CHEWTLE                :   XXX 
+P_FAMILY_ARROKUDA               :   XXX 
+P_FAMILY_SIZZLIPEDE             :   Volcano 
+P_FAMILY_SNOM                   :   Snow / Ice 
+P_FAMILY_LECHONK                :   XXX 
+P_FAMILY_PAWMI                  :   XXX 
+P_FAMILY_WATTREL                :   XXX 
+P_FAMILY_MASCHIFF               :   XXX (n)
+P_FAMILY_FLAMIGO                :   Lake 
+
+
+Granny Town
+
+Hide And Seek
+	Rattata
+	Caterpie
+
+Via Florea
+
+Albion
+
+Silvan Woods
+	Scyther
+	Pinsir
+	Heracros
+	Venipede
+	
+
+
+
+Salix
+
+Swamp
+
+Porto
+
+Litoralis
+
+Peccadum
+
+Power Plant
+
+Lower Drake
+
+Zoo Route
+
+Doak
+
+Pokeball Tower
+
+Mountains et Bridges
+
+Dojo Town
+
+Dark Tunnel
+
+Rest Area
+
+Little Desert
+
+Deseret
+
+Museum (fossil)
+
+Desert
+
+Desert Temple
+	Beldum
+
+Ashlands
+
+Slabs
+
+Chapparel
+
+Sabina Nova
+
+Dark Tower
+
+Snorlax et Graveyard route
+
+North Bridge
+
+West Bridge
+
+Sanctuary
+
+Saxosa
+
+Tranquillitas
+
+Playa
+
+Urbia
+
+Rocket Tower
+	Porygon*
+	Ditto*
+
+Western Sea
+
+Eastern Sea
+
+Middle Sea
+
+Isla (Water)
+
+Isla Colchis Cave
+
+Isla Beach Cave
+
+Jungle
+
+Volcano
+
+Aedes Ignis
+
+Upper Drake
+
+Drake Lake
+
+Water Temple
+
+Deino Cave
+
+Snow Route
+
+Snow Town
+
+Ice Cave
+
+Mountaintop
+
+
+
+
