@@ -283,7 +283,7 @@
 #define P_FAMILY_GLAMEOW                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_STUNKY                  P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_BRONZOR                 P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_CHATOT                  P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_CHATOT                  P_GEN_4_POKEMON 
 #define P_FAMILY_SPIRITOMB               P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_GIBLE                   P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_RIOLU                   P_GEN_CUSTOM_POKEMON

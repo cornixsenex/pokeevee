@@ -94,7 +94,7 @@ P_FAMILY_SUDOWOODO              :   Lower Drake (***)
 P_FAMILY_HOPPIP                 :   XXX 
 P_FAMILY_AIPOM                  :   jungle 
 P_FAMILY_SUNKERN                :   XXX 
-P_FAMILY_YANMA                  :   XXX 
+P_FAMILY_YANMA                  :   XXX
 P_FAMILY_WOOPER                 :   Swamp 
 P_FAMILY_MURKROW                :   XXX (n)
 P_FAMILY_MISDREAVUS             :   XXX 
@@ -201,7 +201,6 @@ P_FAMILY_BUNEARY                :   XXX
 P_FAMILY_GLAMEOW                :   XXX 
 P_FAMILY_STUNKY                 :   XXX (n)
 P_FAMILY_BRONZOR                :   Desert Temple 
-P_FAMILY_CHATOT                 :   XXX 
 P_FAMILY_SPIRITOMB              :   Dark Tower (*?) 
 P_FAMILY_GIBLE                  :   Tunnel 
 P_FAMILY_RIOLU                  :   (*) 
@@ -409,6 +408,105 @@ Rocket Tower
 
 
 
+
+Order of early mons -> later
+
+caterpie
+wurmple
+weedle
+spinarak
+paras
+bidoof
+Ratata
+Scatterbug
+Sentret
+Yungoos
+Marill
+Poochyena
+Zigzagoon
+Patrat
+Diglet
+Cubone
+Sunkern
+Woobat
+Whooper
+Slugma
+Volbeat / Illumise
+Meditite
+Jigglypuff
+Tangela
+Meowth
+Wingull
+Spearow
+Purrloin
+Ekans
+Chansey / happiny
+Snubull
+Cherubi / Cherrim
+Hoothoot
+Glameow
+Surskit
+Hitmons
+Girafarig
+Tailow
+Shuppet
+Nickit / Thievel
+Nincada
+Seviper
+Hoppip
+Shroomish
+Tropius
+Skwovet (squirel)
+Foongus
+Pineco
+Skarmory
+Stantler
+Gulpin
+Doduo
+Spoink
+Minccino
+Ducklett
+Makuhita
+Vespiqueen
+Manetric
+Shellos
+Sawsbuck / Deerling
+Pidgey
+Stunky
+Lotad
+Seedot
+Bunnary
+Komala
+Cleffa
+Drowzee
+Durant
+Pikachu
+Spiritomb
+Bombirdier
+Munna
+Rockruff
+Unfezeant
+Scraggy
+Lechonk
+Oddish
+Bellsprout
+Slopoke
+Koffing
+Kangaskan
+Tauros
+Milktank
+Whismur
+Altaria
+Crogunk
+Bouffalant
+Dubwool
+Barraskewda
+Wattrel
+Golem
+Fossils
+Buizel
+Panchem (panda)
+Rookidee (corvidknight)
 
 
 
