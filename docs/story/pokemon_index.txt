@@ -120,7 +120,6 @@ P_FAMILY_SKARMORY               :   Chaparrel / Ash
 P_FAMILY_HOUNDOUR               :   XXX (n)
 P_FAMILY_PHANPY                 :   Lower Drake / Moutnains et Bridges 
 P_FAMILY_STANTLER               :   XXX (n)
-P_FAMILY_SMEARGLE               :   XXX (*?)
 P_FAMILY_MILTANK                :   XXX 
 P_FAMILY_LARVITAR               :   Desert 
 P_FAMILY_TREECKO                :   XXX 
@@ -415,6 +414,10 @@ caterpie
 wurmple
 weedle
 spinarak
+Krikitune
+Sabeleye
+far fetchd
+# 400 #
 paras
 bidoof
 Ratata
@@ -507,7 +510,68 @@ Fossils
 Buizel
 Panchem (panda)
 Rookidee (corvidknight)
-
+Blitzle
+Drifloon
+Fletchling
+# 500 #
+Psyduck
+Alakazam (rare)
+Rapidash
+Grimer
+Gengar
+Scyther (forest rare)
+Pinsir  (forest rare)
+Poliwag
+Heracross (forest rare)
+Ursaring
+Houndoom
+Donphan
+Wailord
+Claydol
+Bronzong
+Draipion
+Stoutland / Lilipup
+Clawitzer
+Mudbray (donkey)
+Flamigo
+Nidos
+Ninetales
+Machamp
+Shuckle
+Honkcrow murkrow
+Timbur / Conkeldurr
+Cubchoo (ice bear)
+Maschiff (dark dog)
+Drilbur
+Tympole
+Mareep
+Onyx
+Sneasler
+Gligor
+Zorua
+Meinfoo
+Rufflet (54)
+Vullaby (54)
+Roggenrolla
+Ralts
+Sandile
+Starmie
+Trapinch
+Luxio
+# 525
+Eevee
+Starters
+#540
+Haxorus
+Toge
+Larvestra (59)
+#600
+Dratini
+Larvitar
+Bagon
+Beldum
+Gibble
+Deino
 
 
 
