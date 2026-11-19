@@ -37,7 +37,7 @@ P_FAMILY_GEODUDE                :   XXX
 P_FAMILY_PONYTA                 :   XXX 
 P_FAMILY_SLOWPOKE               :   XXX 
 P_FAMILY_MAGNEMITE              :   PowerPlant 
-P_FAMILY_FARFETCHD              :   XXX 
+P_FAMILY_FARFETCHD              :   XXX (Yeet ?)
 P_FAMILY_DODUO                  :   XXX 
 P_FAMILY_SEEL                   :   XXX 
 P_FAMILY_GRIMER                 :   XXX 
@@ -50,7 +50,7 @@ P_FAMILY_VOLTORB                :   PowerPlant
 P_FAMILY_EXEGGCUTE              :   XXX 
 P_FAMILY_CUBONE                 :   XXX 
 P_FAMILY_HITMONS                :   (tyrogue *)
-P_FAMILY_LICKITUNG              :   XXX 
+P_FAMILY_LICKITUNG              :   XXX  (Yeet ?)
 P_FAMILY_KOFFING                :   XXX 
 P_FAMILY_RHYHORN                :   XXX 
 P_FAMILY_CHANSEY                :   XXX 
@@ -85,7 +85,7 @@ P_FAMILY_SENTRET                :   XXX
 P_FAMILY_HOOTHOOT               :   XXX (n) 
 P_FAMILY_LEDYBA                 :   XXX 
 P_FAMILY_SPINARAK               :   XXX 
-P_FAMILY_CHINCHOU               :   XXX 
+P_FAMILY_CHINCHOU               :   XXX  (fish)
 P_FAMILY_TOGEPI                 :   Daycare (*) 
 P_FAMILY_NATU                   :   Upper Drake
 P_FAMILY_MAREEP                 :   XXX 
@@ -102,7 +102,7 @@ P_FAMILY_UNOWN                  :   Desert Temple
 P_FAMILY_WOBBUFFET              :   XXX 
 P_FAMILY_GIRAFARIG              :   XXX (n)
 P_FAMILY_PINECO                 :   XXX 
-P_FAMILY_DUNSPARCE              :   XXX (*?)
+P_FAMILY_DUNSPARCE              :   XXX (* or yeet ?)
 P_FAMILY_GLIGAR                 :   XXX (n) 
 P_FAMILY_SNUBBULL               :   XXX (n)
 P_FAMILY_QWILFISH               :   XXX 
@@ -114,7 +114,7 @@ P_FAMILY_SLUGMA                 :   Volcano
 P_FAMILY_SWINUB                 :   Snow Route 
 P_FAMILY_CORSOLA                :   XXX 
 P_FAMILY_REMORAID               :   XXX 
-P_FAMILY_DELIBIRD               :   XXX 
+P_FAMILY_DELIBIRD               :   XXX  (Ice / Yeet ?)
 P_FAMILY_MANTINE                :   XXX 
 P_FAMILY_SKARMORY               :   Chaparrel / Ash 
 P_FAMILY_HOUNDOUR               :   XXX (n)
@@ -133,23 +133,21 @@ P_FAMILY_SEEDOT                 :   XXX
 P_FAMILY_TAILLOW                :   XXX 
 P_FAMILY_WINGULL                :   XXX 
 P_FAMILY_RALTS                  :   XXX 
-P_FAMILY_SURSKIT                :   XXX 
 P_FAMILY_SHROOMISH              :   XXX 
 P_FAMILY_SLAKOTH                :   Somnia 
 P_FAMILY_NINCADA                :   XXX 
 P_FAMILY_WHISMUR                :   XXX 
 P_FAMILY_MAKUHITA               :   XXX 
 P_FAMILY_NOSEPASS               :   XXX 
-P_FAMILY_SKITTY                 :   XXX 
-P_FAMILY_SABLEYE                :   XXX 
+P_FAMILY_SKITTY                 :   XXX  (Yeet ?)
+P_FAMILY_SABLEYE                :   XXX  (Beech cave / yeet ?)
 P_FAMILY_ARON                   :   Tunnel 
 P_FAMILY_MEDITITE               :   Vallonia 
 P_FAMILY_ELECTRIKE              :   Litoralis 
-P_FAMILY_VOLBEAT_ILLUMISE       :   XXX 
+P_FAMILY_VOLBEAT_ILLUMISE       :   XXX (morn et evening rare)
 P_FAMILY_ROSELIA                :   XXX 
-P_FAMILY_GULPIN                 :   XXX 
-P_FAMILY_CARVANHA               :   XXX 
-P_FAMILY_WAILMER                :   XXX 
+P_FAMILY_CARVANHA               :   XXX  surf
+P_FAMILY_WAILMER                :   XXX  surf / fish
 P_FAMILY_NUMEL                  :   Volcano 
 P_FAMILY_TORKOAL                :   Ignis 
 P_FAMILY_SPOINK                 :   XXX 
@@ -161,7 +159,7 @@ P_FAMILY_ZANGOOSE               :   XXX
 P_FAMILY_SEVIPER                :   XXX 
 P_FAMILY_LUNATONE               :   Desert Temple (n) 
 P_FAMILY_SOLROCK                :   Desert Temple (d) 
-P_FAMILY_BARBOACH               :   XXX 
+P_FAMILY_BARBOACH               :   XXX  (fish the marsh)
 P_FAMILY_CORPHISH               :   XXX 
 P_FAMILY_BALTOY                 :   Desert Temple 
 P_FAMILY_LILEEP                 :   Fossil 
@@ -177,7 +175,6 @@ P_FAMILY_SNORUNT                :   Ice Cave
 P_FAMILY_SPHEAL                 :   Ice Cave (surf / fish) 
 P_FAMILY_CLAMPERL               :   XXX  (fish)
 P_FAMILY_RELICANTH              :   XXX (fish)
-P_FAMILY_LUVDISC                :   XXX  (fish)
 P_FAMILY_BAGON                  :   Ignis 
 P_FAMILY_BELDUM                 :   Desert Temple 
 P_FAMILY_TURTWIG                :   XXX 
@@ -189,11 +186,8 @@ P_FAMILY_KRICKETOT              :   XXX
 P_FAMILY_SHINX                  :   XXX 
 P_FAMILY_CRANIDOS               :   Fossil 
 P_FAMILY_SHIELDON               :   Fossil 
-P_FAMILY_BURMY                  :   XXX 
-P_FAMILY_COMBEE                 :   XXX 
-P_FAMILY_PACHIRISU              :   XXX 
+P_FAMILY_COMBEE                 :   XXX (Garden)
 P_FAMILY_BUIZEL                 :   XXX 
-P_FAMILY_CHERUBI                :   XXX 
 P_FAMILY_SHELLOS                :   Swamp 
 P_FAMILY_DRIFLOON               :   XXX 
 P_FAMILY_BUNEARY                :   XXX 
@@ -206,10 +200,12 @@ P_FAMILY_RIOLU                  :   (*)
 P_FAMILY_HIPPOPOTAS             :   Desert
 P_FAMILY_SKORUPI                :   XXX 
 P_FAMILY_CROAGUNK               :   Swamp 
-P_FAMILY_CARNIVINE              :   XXX 
-P_FAMILY_FINNEON                :   XXX 
+P_FAMILY_FINNEON                :   XXX  (surf d / fish n - also maybe yeet)
 P_FAMILY_SNOVER                 :   Snow 
-P_FAMILY_PATRAT                 :   XXX (n)
+P_FAMILY_SNIVY                  :   XXX
+P_FAMILY_TEPIG                  :   XXX
+P_FAMILY_OSHAWOTT               :   Lower Drake (surf)
+P_FAMILY_PATRAT                 :   XXX
 P_FAMILY_LILLIPUP               :   XXX 
 P_FAMILY_PURRLOIN               :   XXX (n)
 P_FAMILY_MUNNA                  :   XXX 
@@ -224,28 +220,30 @@ P_FAMILY_TYMPOLE                :   Swamp (fish / surf)
 P_FAMILY_SEWADDLE               :   XXX 
 P_FAMILY_VENIPEDE               :   Forest 
 P_FAMILY_SANDILE                :   Desert (n) 
-P_FAMILY_DWEBBLE                :   Mountains et Bridges 
+P_FAMILY_DWEBBLE                :   Mountains et Bridges / cave / little desert
 P_FAMILY_SCRAGGY                :   XXX  (n)
+P_FAMILY_SIGILYPH               :   Desert Temple
+P_FAMILY_YAMASK                 :   Desert Temple
 P_FAMILY_ZORUA                  :   XXX (n)
-P_FAMILY_MINCCINO               :   XXX 
+P_FAMILY_MINCCINO               :   XXX (Maybe yeet - no niche)
 P_FAMILY_DUCKLETT               :   XXX 
 P_FAMILY_DEERLING               :   XXX (n / m / evening)
-P_FAMILY_EMOLGA                 :   XXX (early)
+P_FAMILY_EMOLGA                 :   XXX (early / shitter - flying squirrel - idk yeet ?)
 P_FAMILY_FOONGUS                :   Forest 
 P_FAMILY_JOLTIK                 :   XXX 
-P_FAMILY_KLINK                  :   Power Plant 
+P_FAMILY_FERROSEED              :   XXX 
+P_FAMILY_KLINK                  :   Power Plant - ? 
 P_FAMILY_LITWICK                :   Dark Tower (? rather old chateu but) 
 P_FAMILY_AXEW                   :   Deino Cave 
-P_FAMILY_CUBCHOO                :   Ice Cave 
+P_FAMILY_CUBCHOO                :   Snow / Ice Cave 
 P_FAMILY_CRYOGONAL              :   Ice Cave 
-P_FAMILY_STUNFISK               :   XXX 
-P_FAMILY_MIENFOO                :   XXX 
+P_FAMILY_MIENFOO                :   Somnia / Saxosa / Upper Drake / Deino Cave
 P_FAMILY_DRUDDIGON              :   Deino Cave 
-P_FAMILY_GOLETT                 :   Dark Tower 
+P_FAMILY_GOLETT                 :   Desert Temple / Dark Tower 
 P_FAMILY_BOUFFALANT             :   XXX 
-P_FAMILY_RUFFLET                :   XXX 
-P_FAMILY_VULLABY                :   XXX (n)
-P_FAMILY_DURANT                 :   Rocket Tower 
+P_FAMILY_RUFFLET                :   XXX (late d)
+P_FAMILY_VULLABY                :   XXX (late n)
+P_FAMILY_DURANT                 :   Rocket Tower / Deino Cave
 P_FAMILY_DEINO                  :   Deino Cave 
 P_FAMILY_LARVESTA               :   Jungle / Upper Drake 
 P_FAMILY_BUNNELBY               :   XXX
@@ -276,90 +274,145 @@ P_FAMILY_WATTREL                :   XXX
 P_FAMILY_MASCHIFF               :   XXX (n)
 P_FAMILY_FLAMIGO                :   Lake 
 
-# ROUTES
+# ROUTES / MAIN ENCOUTNER AREAS
 
-Via Florea
+Via Florea / Via Avia / short to Albion - mostly shitters, flying types, 
 
-Silvan Woods
-	Scyther
-	Pinsir
-	Heracros
-	Venipede
+Silvan Woods - mostly bug shitters, some decent grass types, the most rare bugs too
+	Scyther  (rare)
+	Pinsir   (rare)
+	Heracros (rare)
+	Venipede (485 @ 30)
 
-Swamp
+Swamp - water / ground / grass / poison
+	land
+		lotad
+		whooper
+		croagunk
 
-Via Litoralis
+	surf
 
-Power Plant
+	fis
 
-Lower Drake
+Via Litoralis - whatever you need tbh
 
-Zoo Route
+Beach Cave - just an excuse for some fighting / rock / ground types before power plant and poke tower
+	makuhita
+	aggron?
+	sabelye?
+	machop, zubat, geodude paras etc
 
-Via Vallonia
+Power Plant - electric / steel types
 
-Dark Tunnel
+Lower Drake - california etc
 
-Little Desert
+Zoo Route - whatever you need tbh
 
-Desert
+Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
+	phanphy
+	meditite
 
-Desert Temple
+
+Dark Tunnel - mt moon, dark cave etc also rock smash mons
+	gibble
+
+Little Desert - desert without the sandstorm
+	Cacnea?
+	trapinch
+	Scraggly?
+
+Desert - deep desert
+	Hippodown
+	Sand Crocodile
+	Cacnea?
+
+Desert Temple - mirage tower et meteor falls "heady" rocks
 	Beldum
 
-Ashlands
+Ashlands - just like emerald w/ more variety
 
-Chapparel
+Chapparel - whatever you need
+	Altaria
 
-Dark Tower
+Dark Tower - rare ghosts et dark types
+	litwick
+	spiritomb*
 
-Via Somnia
+Via Somnia - sleep theme? Whatever you need
 
-North Bridge
+Via Saxosa - theme could change, whatever you need
+	Minefoo
 
-West Bridge
+Dark Cave? - add it like Via Saxosa if you need more "special" encounters etc
 
-Via Saxosa
+Playa - wingull, krabs, turtles etc
 
-Playa
+Western Sea - whatever you need make it a theme tho
 
-Western Sea
+Eastern Sea - the opposite theme
 
-Eastern Sea
+Southern Sea - should be the more "rare" theme
 
-Southern Sea
+Middle Sea - not mapped yet, but could be added if needed
 
-Middle Sea
+Isla Colchis Cave - something rare etc
 
-Isla Colchis Cave
+Isla Beach Cave - idk something else rare etc
 
-Isla Beach Cave
+Jungle - monkeys, rare bugs
+	Scolipede, volcoruna
+	Mankey
+	Monferno
+	Shiftry?
+	Aipom
 
-Jungle
+Volcano (outside) - 
+	Camerupt
+	Slugma
 
-Volcano (outside)
 
-Ignis (inside)
+Ignis (inside) -
+	Charmander, Cyndaquil
+	TM Earthquake btw too
 
-Upper Drake
+Upper Drake - California ++
 
-Drake Lake
+Drake Lake - Special Water
 
-Water Temple
+Water Temple - Xtra Special Waters
+	Dratini
 
-Deino Cave
+Deino Cave - last round of normal cave guys
+	Deino
+	Axew or whatever
+	Absol
 
-Snow Route
+Snow Route - ice types not specific to ice cave
+	Abomasnow
+	Sneasel (?)
+	That ice bear
+	Delibird if if makes it in
 
-Ice Cave
+Ice Cave - Ice types like ice (also has surfing / fishing areas)
+	Lapras
+	Icicle
+	Jynx
 
-Mountaintop
+Mountaintop - IDK if it needs any encounters maybe like spear pillar will see
 
 # TOWNS
 
-Granny Town
-	Rattata
+Granny Town - Baby stuff
+	(day)
+	Rattata / Sentret / Zigzagoon / Bidoof / Patrat / Lilipup
 	Caterpie
+
+
+	(morning)
+
+	(night)
+	hoothoot
+	zoobat / woobat
 
 Albion
 
@@ -398,6 +451,9 @@ Casino
 Pokeball Tower
 
 Museum (fossil)
+
+North et West Bridge
+
 
 Rocket Tower
 	Porygon*
