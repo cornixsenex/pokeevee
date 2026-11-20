@@ -276,6 +276,37 @@ P_FAMILY_FLAMIGO                :   Lake
 
 # ROUTES / MAIN ENCOUTNER AREAS
 
+Granny Puddle - baby stuff (mammal, bird, bug, special)
+	
+	Rattata / Sentret / Zigzagoon / Bidoof / Patrat / Lilipup
+	Caterpie
+	hoothoot
+	zoobat / woobat
+
+	(morning)
+	mammal      :
+	bird        :
+	bug         : krikitune
+	special     :
+
+	(day) - NOTE: day is the only state available until after the storm (night) and dream (open)
+	mammal      : rattata / sentret / yungoos
+	bird        : spearow
+	bug         : caterpie
+	special     : azumarill
+
+	(evening)
+	mammal      :
+	bird        : 
+	bug         : weedle
+	special     :
+
+	(night)
+	mammal      : poochyena / zigzagoon
+	bird        : hoothoot
+	bug         : spinkarak
+	special     :
+
 Via Florea / Via Avia / short to Albion - mostly shitters, flying types, 
 	Bug
 	Bird
@@ -445,17 +476,10 @@ Mountaintop - IDK if it needs any encounters maybe like spear pillar will see
 
 # TOWNS
 
-Granny Town - Baby stuff
-	(day)
-	Rattata / Sentret / Zigzagoon / Bidoof / Patrat / Lilipup
-	Caterpie
 
-
-	(morning)
-
-	(night)
-	hoothoot
-	zoobat / woobat
+Granny Town
+	eevee
+	mew
 
 Albion
 
