@@ -2,26 +2,33 @@
 
 Leaf - Eevee types
 Jigglypuff (school)
-Meganium / Treeko / Serepior(?) (Forest)
-Raichu (Power Plant)
-Milotic
-Houndoom
-Jynx
+Treeko / Serepior / Oddish (Forest)
+Raichu (Rest Area)
+Houndoom (Sanctuary)
+Milotic  (On the Island in the town?)
+Jynx     (Snow Town)
 
 Blue - Non eevee types (fight, fly, poison, ground, rock, bug, ghost, steel, dragon)
 
-Machamp
-Pinsir
-Skarmory
-Rampardos
-Gengar
-Garchomp
+Machamp   (Starter)
+Pinsir    (Swamp)
+Rampardos / Roggenrola (Pokeball Tower)
+Skarmory  (Slabs)
+Gengar    (Rocket Tower)
+Garchomp  (Deino Cave)
+
+Machamp        starter
+Pinsir         swamp
+Gengar         pokeball tower
+Rampardos      slabs
+Skarmory       rocket tower
+Garchomp       deino cave
 
 
 
 # TYPE MASTERS
 
-Grass - Sneed   (seedot, ferroseed, chikorsneeda)
+Grass - Sneed   (seedot, chikorsneeda)
 
 (IDK) - Chuck (Golduck, Muk, Chuckorida, Shuckle, Luxio / Luxray, Ducklett, Sawsbuck, 
 

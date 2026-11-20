@@ -21,7 +21,7 @@ P_FAMILY_VULPIX                 :   XXX
 P_FAMILY_JIGGLYPUFF             :   XXX 
 P_FAMILY_ZUBAT                  :   XXX (n)
 P_FAMILY_ODDISH                 :   XXX (n)
-P_FAMILY_PARAS                  :   XXX (n)
+P_FAMILY_PARAS                  :   Forest (n)
 P_FAMILY_VENONAT                :   XXX (n)
 P_FAMILY_DIGLETT                :   Tunnel 
 P_FAMILY_MEOWTH                 :   XXX 
@@ -277,12 +277,30 @@ P_FAMILY_FLAMIGO                :   Lake
 # ROUTES / MAIN ENCOUTNER AREAS
 
 Via Florea / Via Avia / short to Albion - mostly shitters, flying types, 
+	Bug
+	Bird
+	Rodent
+	Leaf grass type (Treeko, or Serepior) - rare find
+
+Pre / Post Woods
+	
 
 Silvan Woods - mostly bug shitters, some decent grass types, the most rare bugs too
+
+	Bug
+	Bug
+	Grass
+	Norm / rare
+	pikachu type very rare
+
 	Scyther  (rare)
 	Pinsir   (rare)
 	Heracros (rare)
 	Venipede (485 @ 30)
+	Paras (n)
+	Farfetchd (*) - cut
+
+Pre / Post Swamp
 
 Swamp - water / ground / grass / poison
 	land
@@ -297,14 +315,29 @@ Swamp - water / ground / grass / poison
 Via Litoralis - whatever you need tbh
 
 Beach Cave - just an excuse for some fighting / rock / ground types before power plant and poke tower
+	
+	fighting
+	flying / bat
+	rock
+	rock rare
+	dark rare
+
 	makuhita
 	aggron?
 	sabelye?
 	machop, zubat, geodude paras etc
 
 Power Plant - electric / steel types
+	magneton
+	voltorb
+	electabuzz (r)
+	klink
+	joltik
 
 Lower Drake - california etc
+	Big birds
+	Big normies
+
 
 Zoo Route - whatever you need tbh
 
@@ -314,7 +347,10 @@ Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
 
 
 Dark Tunnel - mt moon, dark cave etc also rock smash mons
-	gibble
+	Fighting
+	Rock
+	Ground
+	rare - gibble
 
 Little Desert - desert without the sandstorm
 	Cacnea?
@@ -328,8 +364,13 @@ Desert - deep desert
 
 Desert Temple - mirage tower et meteor falls "heady" rocks
 	Beldum
+	Solrock / Lunatone
+	
 
 Ashlands - just like emerald w/ more variety
+	Spidna
+	Skarmory
+	
 
 Chapparel - whatever you need
 	Altaria

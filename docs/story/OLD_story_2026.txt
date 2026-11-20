@@ -133,16 +133,15 @@ Since you are already dealing with massive, sprawling maps that need scaling dow
 
 
 
-granny house
-tiny town
+granny town
 hide and seek
 route 1
-aldeon town
+aldeon town (leaf 1)
 school (meet bully blue)
 storm
 mew dream
 granny sleeps
-leaf and blue
+leaf and blue (blue1)
 forest (cut, leaf2)
 salix
 garden (sneed's feed and seed)
