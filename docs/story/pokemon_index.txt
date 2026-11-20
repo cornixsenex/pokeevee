@@ -277,6 +277,10 @@ P_FAMILY_FLAMIGO                :   Lake
 # ROUTES / MAIN ENCOUTNER AREAS
 
 Granny Puddle - baby stuff (mammal, bird, bug, special)
+	mammal      : rattata
+	bird        : pidgey, spearow
+	bug         : caterpie, weedle, 
+	special     : azumarill, cleffa, igglybuff
 	
 	Rattata / Sentret / Zigzagoon / Bidoof / Patrat / Lilipup
 	Caterpie
@@ -312,8 +316,10 @@ Via Florea / Via Avia / short to Albion - mostly shitters, flying types,
 	Bird
 	Rodent
 	Leaf grass type (Treeko, or Serepior) - rare find
+	cleffa as rare?
 
 Pre / Post Woods
+	Ekans
 	
 
 Silvan Woods - mostly bug shitters, some decent grass types, the most rare bugs too
@@ -329,9 +335,14 @@ Silvan Woods - mostly bug shitters, some decent grass types, the most rare bugs 
 	Heracros (rare)
 	Venipede (485 @ 30)
 	Paras (n)
+	venonat (n)
 	Farfetchd (*) - cut
 
 Pre / Post Swamp
+	oddish (n)
+	meowth
+	Abra (r)
+	bellsprout
 
 Swamp - water / ground / grass / poison
 	land
@@ -344,6 +355,7 @@ Swamp - water / ground / grass / poison
 	fis
 
 Via Litoralis - whatever you need tbh
+	Pikachu
 
 Beach Cave - just an excuse for some fighting / rock / ground types before power plant and poke tower
 	
@@ -356,10 +368,13 @@ Beach Cave - just an excuse for some fighting / rock / ground types before power
 	makuhita
 	aggron?
 	sabelye?
-	machop, zubat, geodude paras etc
+	zubat	
+	diglett
+	slowpoke
+
 
 Power Plant - electric / steel types
-	magneton
+	magnemite
 	voltorb
 	electabuzz (r)
 	klink
@@ -368,15 +383,19 @@ Power Plant - electric / steel types
 Lower Drake - california etc
 	Big birds
 	Big normies
+	Bulbasaur
 
 
 Zoo Route - whatever you need tbh
+	ponyta
+	doduo
 
 Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
 	phanphy
 	meditite
 	Spidna
 	Gligar (n)
+	machop
 
 
 Dark Tunnel - mt moon, dark cave etc also rock smash mons
@@ -384,17 +403,20 @@ Dark Tunnel - mt moon, dark cave etc also rock smash mons
 	Rock
 	Ground
 	rare - gibble
+	cleffairy
 
 Little Desert - desert without the sandstorm
 	Cacnea?
 	trapinch
 	Scraggly?
 	Skarmory
+	sandshrew
 
 Desert - deep desert
 	Hippodown
 	Sand Crocodile
 	Cacnea?
+	sandshrew
 
 Desert Temple - mirage tower et meteor falls "heady" rocks
 	Beldum
@@ -405,7 +427,8 @@ Post Desert - between sandstorm and slabs town - whatever you need
 Chapparel - whatever you need
 	Altaria
 	Zangoose
-	Seviper (
+	Seviper
+	Nidos
 
 
 Dark Tower - rare ghosts et dark types
@@ -413,13 +436,18 @@ Dark Tower - rare ghosts et dark types
 	spiritomb*
 
 Via Somnia - sleep theme? Whatever you need
+	vulpix
+	growlithe
 
 Via Saxosa - theme could change, whatever you need
 	Minefoo
 
 Dark Cave? - add it like Via Saxosa if you need more "special" encounters etc
 
-Playa - wingull, krabs, turtles etc
+Playa - 
+	wingull
+	krabby
+	squirtle
 
 Western Sea - whatever you need make it a theme tho
 
@@ -513,6 +541,16 @@ Snow Town / Nivea
 
 ### SPECIAL
 
+Rock Smash
+	Geodude
+
+Fish Mons
+	Psyduck
+	Poliwag
+
+Surf Mons
+	Tentacool
+
 Casino
 
 Pokeball Tower
@@ -520,7 +558,6 @@ Pokeball Tower
 Museum (fossil)
 
 North et West Bridge
-
 
 Rocket Tower
 	Porygon*
@@ -616,7 +653,7 @@ Scraggy
 Lechonk
 Oddish
 Bellsprout
-Slopoke
+Slowpoke
 Koffing
 Kangaskan
 Tauros
@@ -684,9 +721,11 @@ Luxio
 # 525
 Eevee
 Starters
+Crobat
 #540
 Haxorus
 Toge
+Growlithe
 Larvestra (59)
 #600
 Dratini
