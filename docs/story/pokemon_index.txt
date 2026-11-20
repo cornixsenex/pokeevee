@@ -344,6 +344,8 @@ Zoo Route - whatever you need tbh
 Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
 	phanphy
 	meditite
+	Spidna
+	Gligar (n)
 
 
 Dark Tunnel - mt moon, dark cave etc also rock smash mons
@@ -356,6 +358,7 @@ Little Desert - desert without the sandstorm
 	Cacnea?
 	trapinch
 	Scraggly?
+	Skarmory
 
 Desert - deep desert
 	Hippodown
@@ -365,15 +368,14 @@ Desert - deep desert
 Desert Temple - mirage tower et meteor falls "heady" rocks
 	Beldum
 	Solrock / Lunatone
-	
 
-Ashlands - just like emerald w/ more variety
-	Spidna
-	Skarmory
-	
+Post Desert - between sandstorm and slabs town - whatever you need
 
 Chapparel - whatever you need
 	Altaria
+	Zangoose
+	Seviper (
+
 
 Dark Tower - rare ghosts et dark types
 	litwick
