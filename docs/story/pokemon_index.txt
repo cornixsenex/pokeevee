@@ -50,7 +50,6 @@ P_FAMILY_VOLTORB                :   PowerPlant
 P_FAMILY_EXEGGCUTE              :   XXX 
 P_FAMILY_CUBONE                 :   XXX 
 P_FAMILY_HITMONS                :   (tyrogue *)
-P_FAMILY_LICKITUNG              :   XXX  (Yeet ?)
 P_FAMILY_KOFFING                :   XXX 
 P_FAMILY_RHYHORN                :   XXX 
 P_FAMILY_CHANSEY                :   XXX 
@@ -102,7 +101,7 @@ P_FAMILY_UNOWN                  :   Desert Temple
 P_FAMILY_WOBBUFFET              :   XXX 
 P_FAMILY_GIRAFARIG              :   XXX (n)
 P_FAMILY_PINECO                 :   XXX 
-P_FAMILY_DUNSPARCE              :   XXX (* or yeet ?)
+P_FAMILY_DUNSPARCz`E              :   XXX (* or yeet ?)
 P_FAMILY_GLIGAR                 :   XXX (n) 
 P_FAMILY_SNUBBULL               :   XXX (n)
 P_FAMILY_QWILFISH               :   XXX 
@@ -169,7 +168,6 @@ P_FAMILY_KECLEON                :   Jungle (***)
 P_FAMILY_SHUPPET                :   XXX 
 P_FAMILY_DUSKULL                :   XXX 
 P_FAMILY_TROPIUS                :   XXX 
-P_FAMILY_CHIMECHO               :   XXX 
 P_FAMILY_ABSOL                  :   Deino 
 P_FAMILY_SNORUNT                :   Ice Cave	 
 P_FAMILY_SPHEAL                 :   Ice Cave (surf / fish) 
@@ -277,59 +275,47 @@ P_FAMILY_FLAMIGO                :   Lake
 # ROUTES / MAIN ENCOUTNER AREAS
 
 Granny Puddle - baby stuff (mammal, bird, bug, special)
-	mammal      : rattata
-	bird        : pidgey, spearow
-	bug         : caterpie, weedle, 
-	special     : azumarill, cleffa, igglybuff
-	
-	Rattata / Sentret / Zigzagoon / Bidoof / Patrat / Lilipup
-	Caterpie
+	rattata
+	pidgey
+	spearow
+	caterpie
+	weedle
+	azumarill (?)
+	cleffa (?)
+	igglybuff (?)
 	hoothoot
-	zoobat / woobat
+	sentret
+	zigzagoon
+	zubat (?)
+	woobat (?)
+	krikitune
+	poochyena
+	wurmple
+	tailow
+	skitty ? or yeet
 
-	(morning)
-	mammal      :
-	bird        :
-	bug         : krikitune
-	special     :
-
-	(day) - NOTE: day is the only state available until after the storm (night) and dream (open)
-	mammal      : rattata / sentret / yungoos
-	bird        : spearow
-	bug         : caterpie
-	special     : azumarill
-
-	(evening)
-	mammal      :
-	bird        : 
-	bug         : weedle
-	special     :
-
-	(night)
-	mammal      : poochyena / zigzagoon
-	bird        : hoothoot
-	bug         : spinkarak
-	special     :
 
 Via Florea / Via Avia / short to Albion - mostly shitters, flying types, 
-	Bug
-	Bird
-	Rodent
-	Leaf grass type (Treeko, or Serepior) - rare find
-	cleffa as rare?
+	Serepior
+	cleffa, happiny,  ?
+	chansey ?
+	sentret
+	ledyba
+	spinarak (n)
+	glameow (? or yeet)
 
 Pre / Post Woods
 	Ekans
+	chansey
+	tangela
+	chikorita
+	hoppip
+	sunkern
+	seedot
+	budew
 	
 
 Silvan Woods - mostly bug shitters, some decent grass types, the most rare bugs too
-
-	Bug
-	Bug
-	Grass
-	Norm / rare
-	pikachu type very rare
-
 	Scyther  (rare)
 	Pinsir   (rare)
 	Heracros (rare)
@@ -343,34 +329,39 @@ Pre / Post Swamp
 	meowth
 	Abra (r)
 	bellsprout
+	shroomish
+	nincada
+	turtwig
+	bidoof
+	stunky
 
 Swamp - water / ground / grass / poison
-	land
-		lotad
-		whooper
-		croagunk
+	lotad
+	whooper
+	croagunk
+	tododile (surf)
+	mudkip
+	shellos
 
-	surf
-
-	fis
 
 Via Litoralis - whatever you need tbh
 	Pikachu
+	murkrow (n)
+	torchik
+	ralts
+	electrike
+	volbeat & illumise (m e)
+	shinx
 
 Beach Cave - just an excuse for some fighting / rock / ground types before power plant and poke tower
-	
-	fighting
-	flying / bat
-	rock
-	rock rare
-	dark rare
-
 	makuhita
-	aggron?
-	sabelye?
+	aron
+	sabelye
 	zubat	
 	diglett
 	slowpoke
+	dunsparce (r)
+	whismur
 
 
 Power Plant - electric / steel types
@@ -381,14 +372,25 @@ Power Plant - electric / steel types
 	joltik
 
 Lower Drake - california etc
-	Big birds
-	Big normies
 	Bulbasaur
+	Natu
+	sudowodo (*)
+	yanma
+	pineco
+	starly
+	buizel
 
 
 Zoo Route - whatever you need tbh
 	ponyta
 	doduo
+	Tauros
+	mareep
+	girafarig
+	stantler
+	miltank
+	spoink
+
 
 Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
 	phanphy
@@ -396,53 +398,70 @@ Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
 	Spidna
 	Gligar (n)
 	machop
-
+	onix
+	cubone ? little desert
+	rhyhorn ? little desert  (please disable rhyperior)
 
 Dark Tunnel - mt moon, dark cave etc also rock smash mons
-	Fighting
-	Rock
-	Ground
-	rare - gibble
 	cleffairy
+	nosepass ? any cave really
+	gibble
 
 Little Desert - desert without the sandstorm
-	Cacnea?
+	Cacnea
 	trapinch
-	Scraggly?
-	Skarmory
+	Skarmory ? vallonia
 	sandshrew
+	cubone ? vallis
+	rhyhorn ? vallis (please disable rhyperior)
+
 
 Desert - deep desert
 	Hippodown
 	Sand Crocodile
-	Cacnea?
 	sandshrew
+	Scraggly
 
 Desert Temple - mirage tower et meteor falls "heady" rocks
 	Beldum
 	Solrock / Lunatone
+	unkown
+	baltoy
+	Bronzor
 
 Post Desert - between sandstorm and slabs town - whatever you need
 
 Chapparel - whatever you need
-	Altaria
+	Swablu Altaria
 	Zangoose
 	Seviper
 	Nidos
-
+	Kangaskan ( or earlier to vallonia)
+	gligor (n)
 
 Dark Tower - rare ghosts et dark types
 	litwick
-	spiritomb*
+	spiritomb (*)
+	ghastly (could be outside at n)
+	misdreaveous
+	shuppet  (could be outside at n)
+	duskull  (could be outside at n)
+	drifloon
 
 Via Somnia - sleep theme? Whatever you need
 	vulpix
 	growlithe
+	drowzee
+	snorlax (*)
+	houndour (n)
+	slackoth
 
 Via Saxosa - theme could change, whatever you need
 	Minefoo
 
 Dark Cave? - add it like Via Saxosa if you need more "special" encounters etc
+	wobbufet
+	larvitar
 
 Playa - 
 	wingull
@@ -464,25 +483,36 @@ Isla Beach Cave - idk something else rare etc
 Jungle - monkeys, rare bugs
 	Scolipede, volcoruna
 	Mankey
-	Monferno
-	Shiftry?
+	Chimchar
+	Shiftry (? - seedot early)
 	Aipom
+	exeggcute / exeggutor
+	treeko
+	kecleon (*)
+	Tropius
 
 Volcano (outside) - 
-	Camerupt
+	numel Camerupt
 	Slugma
+	torkoal
 
 
 Ignis (inside) -
-	Charmander, Cyndaquil
+	Charmander
+	Cyndaquil
+	Magmar
+	bagon
 	TM Earthquake btw too
 
 Upper Drake - California ++
+	Ursaring / Teddy
+	Bunneary
 
 Drake Lake - Special Water
 
 Water Temple - Xtra Special Waters
-	Dratini
+	Dratini (fish / surf)
+	feebas
 
 Deino Cave - last round of normal cave guys
 	Deino
@@ -490,15 +520,21 @@ Deino Cave - last round of normal cave guys
 	Absol
 
 Snow Route - ice types not specific to ice cave
+	swinub / piloswine
 	Abomasnow
-	Sneasel (?)
+	Sneasel (n)
 	That ice bear
-	Delibird if if makes it in
+	Delibird ? Ice Cave ? yeet
 
-Ice Cave - Ice types like ice (also has surfing / fishing areas)
+Ice Cave - Ice types like ice (also has water areas)
+	Seel / Dewgong
 	Lapras
 	Icicle
 	Jynx
+	sneasel
+	snorunt
+	spheal
+	piplup
 
 Mountaintop - IDK if it needs any encounters maybe like spear pillar will see
 
@@ -512,12 +548,16 @@ Granny Town
 Albion
 
 Salix
+	Combee (garden)
 
 Porto
 
 Peccadum
 
 Doak
+	grimer / muk
+	koffing
+	snubbul (or yeet)
 
 Dojo Town / Pugnea
 
@@ -547,21 +587,55 @@ Rock Smash
 Fish Mons
 	Psyduck
 	Poliwag
+	Shelder
+	Horsea
+	Goldeen
+	Staryu
+	magikarp
+	chinchou
+	qwilfish
+	corsola
+	remoraid
+	carvanha
+	wailmer
+	barboach
+	corphish
+	clampearl (underwater??)
+	relicanth (underwater / somewhere weird)
+
+
+	
 
 Surf Mons
 	Tentacool
+	gyarados?
+	Mantyke / Mantine
 
 Casino
 
 Pokeball Tower
 
 Museum (fossil)
+	omanyte
+	kabuto
+	aerodactyl
+	cradily
+	anorith
+	cranidos
+	shieldon
 
 North et West Bridge
 
 Rocket Tower
 	Porygon*
 	Ditto*
+
+MISC - IDK all *
+	hitmons (tyrogue)
+	Mr. Mime or yeet
+	togepi (breeders egg)
+	shuckle
+	
 
 
 
@@ -608,7 +682,6 @@ Snubull
 Cherubi / Cherrim
 Hoothoot
 Glameow
-Surskit
 Hitmons
 Girafarig
 Tailow

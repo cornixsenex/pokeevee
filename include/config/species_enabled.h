@@ -106,7 +106,7 @@
 #define P_FAMILY_EXEGGCUTE               P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_CUBONE                  P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_HITMONS                 P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_LICKITUNG               P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_LICKITUNG               FALSE
 #define P_FAMILY_KOFFING                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_RHYHORN                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_CHANSEY                 P_GEN_CUSTOM_POKEMON
@@ -243,7 +243,7 @@
 #define P_FAMILY_SHUPPET                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_DUSKULL                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_TROPIUS                 P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_CHIMECHO                P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_CHIMECHO                FALSE
 #define P_FAMILY_ABSOL                   P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_SNORUNT                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_SPHEAL                  P_GEN_CUSTOM_POKEMON

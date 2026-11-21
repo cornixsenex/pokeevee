@@ -10,19 +10,12 @@ Jynx     (Snow Town)
 
 Blue - Non eevee types (fight, fly, poison, ground, rock, bug, ghost, steel, dragon)
 
-Machamp   (Starter)
-Pinsir    (Swamp)
-Rampardos / Roggenrola (Pokeball Tower)
-Skarmory  (Slabs)
-Gengar    (Rocket Tower)
-Garchomp  (Deino Cave)
-
-Machamp        starter
-Pinsir         swamp
-Gengar         pokeball tower
-Rampardos      slabs
-Skarmory       rocket tower
-Garchomp       deino cave
+Machamp              starter
+Pinsir               swamp
+Aggron               pokeball tower
+Hippodown            slabs
+Gengar               rocket tower
+Salamence            deino cave
 
 
 
