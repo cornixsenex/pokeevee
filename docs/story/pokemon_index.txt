@@ -210,7 +210,6 @@ P_FAMILY_MUNNA                  :   XXX
 P_FAMILY_PIDOVE                 :   Zoo
 P_FAMILY_BLITZLE                :   XXX 
 P_FAMILY_ROGGENROLA             :   XXX 
-P_FAMILY_WOOBAT                 :   XXX (n)
 P_FAMILY_DRILBUR                :   XXX 
 P_FAMILY_AUDINO                 :   XXX 
 P_FAMILY_TYMPOLE                :   Swamp (fish / surf)
@@ -268,39 +267,38 @@ P_FAMILY_FLAMIGO                :   Lake
 
 # ROUTES / MAIN ENCOUTNER AREAS
 
-Granny Puddle - baby stuff (mammal, bird, bug, special)
+Granny Puddle
 	rattata
-	pidgey
-	spearow
-	caterpie
-	weedle
-	azumarill (?)
-	cleffa (?)
-	igglybuff (?)
-	hoothoot
 	zigzagoon
-	zubat (?)
-	woobat (?)
-	krikitune
 	poochyena
-	wurmple
-	tailow
-	skitty ? or yeet
 	patrat
 	lilipup
 	purrloin
-	woobat (n)
+	
+	pidgey   (m, d)
+	hoothoot (e, n)
+
+	caterpie
+	weedle
+	wurmple
+	krikitune
 	scatterbug
+	
+	igglybuff
 
 
-Via Florea / Via Avia / short to Albion - mostly shitters, flying types, 
-	cleffa, happiny,  ?
-	chansey ?
+Via Florea
 	sentret
+	glameow (? or yeet)
+
 	ledyba
 	spinarak (n)
-	glameow (? or yeet)
+	
+	spearow
+	tailow
+	
 	snivy
+	happiny ?
 
 Pre / Post Woods
 	Ekans
@@ -366,7 +364,7 @@ Beach Cave - just an excuse for some fighting / rock / ground types before power
 	sabelye
 	zubat	
 	diglett
-	slowpoke
+	slowpoke (surf)
 	dunsparce (r)
 	whismur
 
@@ -421,7 +419,7 @@ Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
 	Meinfoo
 
 Dark Tunnel - mt moon, dark cave etc also rock smash mons
-	cleffairy
+	cleffairy ? somewhere at night ? gift / misc rare
 	nosepass ? any cave really
 	gibble
 	drilbur
@@ -492,9 +490,12 @@ Dark Cave? - add it like Via Saxosa if you need more "special" encounters etc
 
 Playa - 
 	squirtle
-	krabby
-	wingull
+	krabby  (surf)
+	wingull (surf)
 	Chewtle
+	Marill
+
+Bulbus - Castallia Sea Route
 
 Western Sea - whatever you need make it a theme tho
 
@@ -633,7 +634,6 @@ Fish Mons
 	Poliwag
 	Shelder
 	Horsea
-	Goldeen
 	Staryu
 	magikarp
 	chinchou
@@ -641,7 +641,7 @@ Fish Mons
 	corsola
 	remoraid
 	carvanha
-	wailmer
+	wailmer (r)
 	barboach
 	corphish
 	clampearl (underwater??)
@@ -653,8 +653,17 @@ Fish Mons
 Surf Mons
 	Tentacool
 	gyarados?
-	Mantyke / Mantine
+	Mantyke / Mantine (r)
 	Arrokuda
+	Goldeen
+	Wingull
+	Wailmer / Wailord (r)
+	shellos
+	remoraid (r)
+	finneon (? r)
+	horsea (cave / rare)
+	krabby (c / r)
+	psyduck (r)
 
 Casino
 
@@ -670,7 +679,7 @@ Museum (fossil)
 	shieldon
 	Tyrunt
 
-North et West Bridge
+Bike Bridge
 
 Rocket Tower
 	Porygon*
@@ -682,6 +691,9 @@ MISC - IDK all *
 	togepi (breeders egg)
 	shuckle
 	Riolu
+
+No precise placement (yet?)
+	Skitty / Delcatty
 	
 
 
@@ -712,7 +724,6 @@ Patrat
 Diglet
 Cubone
 Sunkern
-Woobat
 Whooper
 Slugma
 Volbeat / Illumise

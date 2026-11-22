@@ -322,7 +322,7 @@
 #define P_FAMILY_PIDOVE                  P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_BLITZLE                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_ROGGENROLA              P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_WOOBAT                  P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_WOOBAT                  FALSE
 #define P_FAMILY_DRILBUR                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_AUDINO                  P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_TIMBURR                 FALSE
