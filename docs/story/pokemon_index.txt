@@ -278,7 +278,6 @@ Granny Puddle - baby stuff (mammal, bird, bug, special)
 	cleffa (?)
 	igglybuff (?)
 	hoothoot
-	sentret
 	zigzagoon
 	zubat (?)
 	woobat (?)
