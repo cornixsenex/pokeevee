@@ -215,6 +215,7 @@ P_FAMILY_AUDINO                 :   XXX
 P_FAMILY_TYMPOLE                :   Swamp (fish / surf)
 P_FAMILY_SEWADDLE               :   XXX 
 P_FAMILY_VENIPEDE               :   Forest 
+P_FAMILY_BASCULIN               :   surf
 P_FAMILY_SANDILE                :   Desert (n) 
 P_FAMILY_DWEBBLE                :   Mountains et Bridges / cave / little desert
 P_FAMILY_SCRAGGY                :   XXX  (n)
@@ -268,73 +269,102 @@ P_FAMILY_FLAMIGO                :   Lake
 # ROUTES / MAIN ENCOUTNER AREAS
 
 Granny Puddle
-	rattata
-	zigzagoon
-	poochyena
-	patrat
-	lilipup
-	purrloin
+	rattata (a)
 	
-	pidgey   (m, d)
-	hoothoot (e, n)
+	pidgey   (d)
+	hoothoot (n)
 
-	caterpie
-	weedle
-	wurmple
-	krikitune
-	scatterbug
+	caterpie    (d)
+	weedle      (d)
+	zubat (n)
 	
-	igglybuff
-
+	igglybuff (r)
 
 Via Florea
-	sentret
-	glameow (? or yeet)
+	sentret   (d)
+	zigzagoon (n)
+	
+	glameow   (d)
+	purrloin  (n)
+	
+	lilipup    (d)
+	poochyena  (n)
 
-	ledyba
+	krikitune (m, e)
+	ledyba   (d)
 	spinarak (n)
 	
-	spearow
-	tailow
+	spearow (d)
+	tailow  (d)
+	patrat (n)
+	hoothoot  (n)
 	
-	snivy
-	happiny ?
+	snivy (r)
 
-Pre / Post Woods
-	Ekans
-	chansey
-	tangela
-	chikorita
-	hoppip
-	sunkern
-	seedot
-	budew
-	sewaddle
-	Deerling / Sawsbuck ? Upper Drake
-	Skwovet ? Lower Drake
+Pre Woods
+	Skwovet
+	Skitty  (r)
+
+	wurmple / cascoon
+	scatterbug / evo
+
+	hoppip    (d)
+	sunkern   (d)
+	chikorita (d r)
 	
+	Ekans     (n)
+	oddish (n)
+	Deerling  (n r)
 
-Silvan Woods - mostly bug shitters, some decent grass types, the most rare bugs too
+Post Woods
+	Skwovet
+	Skitty  (r)
+
+	wurmple / cascoon
+	scatterbug / evo
+
+	seedot  (d) 
+	budew   (d)
+	tangela (d r)
+	
+	Ekans     (n)
+	oddish (n)
+	Deerling  (n r)
+
+
+Silvan Woods - 3 bugs and 1 grass for each day and night plus the rare bugs
+
+	Wurmple / cascoon   (d)
+	scatterbug / evo (d)
+	caterpie / metapod
+	wurmple / beedrill
+
+
+	sewaddle    (d)
+	bellsprout  (d)
+
 	Scyther  (rare)
 	Pinsir   (rare)
 	Heracros (rare)
+
 	Venipede (n)
 	Paras (n)
 	venonat (n)
+	shroomish (n)
+
 	Farfetchd (*) - cut
+	Foongus   (***) - fake items
 
 Pre / Post Swamp
-	oddish (n)
 	meowth
 	Abra (r)
-	bellsprout
-	shroomish
 	nincada
 	turtwig
 	bidoof
 	stunky
 	skorupi ? little desert ? chaparrel
-	Foongus
+
+	Foongus   (***) - fake items AND grass
 
 Swamp - water / ground / grass / poison
 	lotad
@@ -371,7 +401,7 @@ Beach Cave - just an excuse for some fighting / rock / ground types before power
 
 Power Plant - electric / steel types
 	magnemite
-	voltorb
+	voltorb (** and  fake item!)
 	electabuzz (r)
 	klink
 	joltik
@@ -387,6 +417,8 @@ Lower Drake - california etc
 	Minccino
 	Fletchling
 	rookidee (n)
+	
+	Foongus   (***) - fake items
 
 
 Zoo Route - whatever you need tbh
@@ -481,6 +513,8 @@ Via Somnia - sleep theme? Whatever you need
 	zorua (n)
 	Komala
 	Nickit (n)
+	
+	Foongus   (***) - fake items
 
 Via Saxosa - theme could change, whatever you need
 
@@ -519,6 +553,8 @@ Jungle - monkeys, rare bugs
 	kecleon (*)
 	Tropius
 	Pikipek / Toucannon (Only want toucannon)
+	
+	Foongus   (***) - fake items
 
 Volcano (outside) - 
 	numel Camerupt
@@ -542,10 +578,14 @@ Upper Drake - California ++
 	Rufflet
 	Vullaby (n)
 	Wattrel / Kilowattrel
+	
+	Foongus   (***) - fake items
 
 Drake Lake - Special Water
 	Ducklett
 	Flamigo
+	
+	Foongus   (***) - fake items
 
 Water Temple - Xtra Special Waters
 	Dratini (fish / surf)
@@ -664,6 +704,11 @@ Surf Mons
 	horsea (cave / rare)
 	krabby (c / r)
 	psyduck (r)
+	wooper (r)
+	marril (r)
+	magikarp (certain areas: lake, cave)
+	buizel / floatzel
+	Basculin
 
 Casino
 
@@ -692,8 +737,10 @@ MISC - IDK all *
 	shuckle
 	Riolu
 
-No precise placement (yet?)
+No precise placement (yet? yeet?)
 	Skitty / Delcatty
+	Happiny / Chansey
+	
 	
 
 

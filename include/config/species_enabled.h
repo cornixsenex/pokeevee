@@ -333,8 +333,7 @@
 #define P_FAMILY_VENIPEDE                P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_COTTONEE                FALSE
 #define P_FAMILY_PETILIL                 FALSE
-//#define P_FAMILY_BASCULIN                FALSE
-#define P_FAMILY_BASCULIN                FALSE //Broken for some reason - CornixSenex 1.9.0 240806
+#define P_FAMILY_BASCULIN                P_GEN_CUSTOM_POKEMON 
 #define P_FAMILY_SANDILE                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_DARUMAKA                FALSE
 #define P_FAMILY_MARACTUS                FALSE
