@@ -213,7 +213,6 @@ P_FAMILY_ROGGENROLA             :   XXX
 P_FAMILY_WOOBAT                 :   XXX (n)
 P_FAMILY_DRILBUR                :   XXX 
 P_FAMILY_AUDINO                 :   XXX 
-P_FAMILY_TIMBURR                :   XXX 
 P_FAMILY_TYMPOLE                :   Swamp (fish / surf)
 P_FAMILY_SEWADDLE               :   XXX 
 P_FAMILY_VENIPEDE               :   Forest 
@@ -229,7 +228,6 @@ P_FAMILY_DEERLING               :   XXX (n / m / evening)
 P_FAMILY_EMOLGA                 :   XXX (early / shitter - flying squirrel - idk yeet ?)
 P_FAMILY_FOONGUS                :   Forest 
 P_FAMILY_JOLTIK                 :   XXX 
-P_FAMILY_FERROSEED              :   XXX 
 P_FAMILY_KLINK                  :   Power Plant - ? 
 P_FAMILY_LITWICK                :   Dark Tower (? rather old chateu but) 
 P_FAMILY_AXEW                   :   Deino Cave 
@@ -244,18 +242,14 @@ P_FAMILY_VULLABY                :   XXX (late n)
 P_FAMILY_DURANT                 :   Rocket Tower / Deino Cave
 P_FAMILY_DEINO                  :   Deino Cave 
 P_FAMILY_LARVESTA               :   Jungle / Upper Drake 
-P_FAMILY_BUNNELBY               :   XXX
 P_FAMILY_FLETCHLING             :   XXX 
 P_FAMILY_SCATTERBUG             :   XXX (early)
 P_FAMILY_SKIDDO                 :   Drake (lower / upper)
 P_FAMILY_PANCHAM                :   XXX 
-P_FAMILY_ESPURR                 :   XXX 
 P_FAMILY_CLAUNCHER              :   XXX 
 P_FAMILY_TYRUNT                 :   Fossil 
 P_FAMILY_BERGMITE               :   Ice Cave 
-P_FAMILY_PIKIPEK                :   Jungle 
-P_FAMILY_YUNGOOS                :   XXX 
-P_FAMILY_ROCKRUFF               :   XXX 
+P_FAMILY_PIKIPEK                :   Jungle (NOTE: I only want toucannon)
 P_FAMILY_MUDBRAY                :   XXX 
 P_FAMILY_KOMALA                 :   Somnia 
 P_FAMILY_SKWOVET                :   XXX 
@@ -293,16 +287,21 @@ Granny Puddle - baby stuff (mammal, bird, bug, special)
 	wurmple
 	tailow
 	skitty ? or yeet
+	patrat
+	lilipup
+	purrloin
+	woobat (n)
+	scatterbug
 
 
 Via Florea / Via Avia / short to Albion - mostly shitters, flying types, 
-	Serepior
 	cleffa, happiny,  ?
 	chansey ?
 	sentret
 	ledyba
 	spinarak (n)
 	glameow (? or yeet)
+	snivy
 
 Pre / Post Woods
 	Ekans
@@ -313,13 +312,16 @@ Pre / Post Woods
 	sunkern
 	seedot
 	budew
+	sewaddle
+	Deerling / Sawsbuck ? Upper Drake
+	Skwovet ? Lower Drake
 	
 
 Silvan Woods - mostly bug shitters, some decent grass types, the most rare bugs too
 	Scyther  (rare)
 	Pinsir   (rare)
 	Heracros (rare)
-	Venipede (485 @ 30)
+	Venipede (n)
 	Paras (n)
 	venonat (n)
 	Farfetchd (*) - cut
@@ -334,6 +336,8 @@ Pre / Post Swamp
 	turtwig
 	bidoof
 	stunky
+	skorupi ? little desert ? chaparrel
+	Foongus
 
 Swamp - water / ground / grass / poison
 	lotad
@@ -342,6 +346,7 @@ Swamp - water / ground / grass / poison
 	tododile (surf)
 	mudkip
 	shellos
+	tympole (surf)
 
 
 Via Litoralis - whatever you need tbh
@@ -352,6 +357,9 @@ Via Litoralis - whatever you need tbh
 	electrike
 	volbeat & illumise (m e)
 	shinx
+	blitzle
+	Pawmi
+	Maschiff 
 
 Beach Cave - just an excuse for some fighting / rock / ground types before power plant and poke tower
 	makuhita
@@ -377,8 +385,11 @@ Lower Drake - california etc
 	sudowodo (*)
 	yanma
 	pineco
-	starly
+	starly (d)
 	buizel
+	Minccino
+	Fletchling
+	rookidee (n)
 
 
 Zoo Route - whatever you need tbh
@@ -390,6 +401,13 @@ Zoo Route - whatever you need tbh
 	stantler
 	miltank
 	spoink
+	tepig
+	Bouffalant
+	Skido
+	Pancham
+	Mudbray
+	Wooloo
+	Lechonk
 
 
 Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
@@ -401,11 +419,14 @@ Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
 	onix
 	cubone ? little desert
 	rhyhorn ? little desert  (please disable rhyperior)
+	Meinfoo
 
 Dark Tunnel - mt moon, dark cave etc also rock smash mons
 	cleffairy
 	nosepass ? any cave really
 	gibble
+	drilbur
+	Scraggy
 
 Little Desert - desert without the sandstorm
 	Cacnea
@@ -414,13 +435,14 @@ Little Desert - desert without the sandstorm
 	sandshrew
 	cubone ? vallis
 	rhyhorn ? vallis (please disable rhyperior)
+	dwebble
 
 
 Desert - deep desert
 	Hippodown
 	Sand Crocodile
 	sandshrew
-	Scraggly
+	Sandile
 
 Desert Temple - mirage tower et meteor falls "heady" rocks
 	Beldum
@@ -428,6 +450,8 @@ Desert Temple - mirage tower et meteor falls "heady" rocks
 	unkown
 	baltoy
 	Bronzor
+	Sigilyph
+	Yamask
 
 Post Desert - between sandstorm and slabs town - whatever you need
 
@@ -440,33 +464,38 @@ Chapparel - whatever you need
 	gligor (n)
 
 Dark Tower - rare ghosts et dark types
-	litwick
-	spiritomb (*)
 	ghastly (could be outside at n)
 	misdreaveous
 	shuppet  (could be outside at n)
 	duskull  (could be outside at n)
 	drifloon
+	spiritomb (*)
+	litwick
+	Golett / Golurk ? Desert Temple
 
 Via Somnia - sleep theme? Whatever you need
-	vulpix
-	growlithe
+	vulpix (d)
+	growlithe (d)
 	drowzee
 	snorlax (*)
 	houndour (n)
 	slackoth
+	munna
+	zorua (n)
+	Komala
+	Nickit (n)
 
 Via Saxosa - theme could change, whatever you need
-	Minefoo
 
 Dark Cave? - add it like Via Saxosa if you need more "special" encounters etc
 	wobbufet
 	larvitar
 
 Playa - 
-	wingull
-	krabby
 	squirtle
+	krabby
+	wingull
+	Chewtle
 
 Western Sea - whatever you need make it a theme tho
 
@@ -481,60 +510,74 @@ Isla Colchis Cave - something rare etc
 Isla Beach Cave - idk something else rare etc
 
 Jungle - monkeys, rare bugs
-	Scolipede, volcoruna
 	Mankey
 	Chimchar
 	Shiftry (? - seedot early)
 	Aipom
-	exeggcute / exeggutor
+	exeggcute / exeggutor (headbutt)
 	treeko
 	kecleon (*)
 	Tropius
+	Pikipek / Toucannon (Only want toucannon)
 
 Volcano (outside) - 
 	numel Camerupt
 	Slugma
 	torkoal
-
+	Larvestra
+	Sizzlipede (rare?)
 
 Ignis (inside) -
 	Charmander
 	Cyndaquil
 	Magmar
 	bagon
-	TM Earthquake btw too
 
 Upper Drake - California ++
 	Ursaring / Teddy
 	Bunneary
+	Oshawott / Dewott (surf)
+	Deerling / Sawsbuck ? Silva / pre post
+	Emolga
+	Rufflet
+	Vullaby (n)
+	Wattrel / Kilowattrel
 
 Drake Lake - Special Water
+	Ducklett
+	Flamigo
 
 Water Temple - Xtra Special Waters
 	Dratini (fish / surf)
 	feebas
 
 Deino Cave - last round of normal cave guys
-	Deino
-	Axew or whatever
 	Absol
+	Axew ? other cave
+	Druddigon
+	Durant ? other cave
+	Deino
+
 
 Snow Route - ice types not specific to ice cave
+	Sneasel (n) ? ice cave
 	swinub / piloswine
-	Abomasnow
-	Sneasel (n)
-	That ice bear
-	Delibird ? Ice Cave ? yeet
+	Delibird ? Ice Cave 
+	snover / Abomasnow
+	Cubchoo / Beartic
 
 Ice Cave - Ice types like ice (also has water areas)
-	Seel / Dewgong
-	Lapras
+	Seel / Dewgong (s)
+	Lapras         (s)
 	Icicle
 	Jynx
 	sneasel
 	snorunt
-	spheal
-	piplup
+	spheal         (s)
+	piplup         (s)
+	cryogonal
+	Bergmite
+	snom / frosmoth ? snow route
 
 Mountaintop - IDK if it needs any encounters maybe like spear pillar will see
 
@@ -558,6 +601,7 @@ Doak
 	grimer / muk
 	koffing
 	snubbul (or yeet)
+	pidove ? early / mid route
 
 Dojo Town / Pugnea
 
@@ -583,6 +627,7 @@ Snow Town / Nivea
 
 Rock Smash
 	Geodude
+	Roggenrola
 
 Fish Mons
 	Psyduck
@@ -602,14 +647,15 @@ Fish Mons
 	corphish
 	clampearl (underwater??)
 	relicanth (underwater / somewhere weird)
+	finneon
+	Clauncher
 
-
-	
 
 Surf Mons
 	Tentacool
 	gyarados?
 	Mantyke / Mantine
+	Arrokuda
 
 Casino
 
@@ -623,6 +669,7 @@ Museum (fossil)
 	anorith
 	cranidos
 	shieldon
+	Tyrunt
 
 North et West Bridge
 
@@ -635,6 +682,7 @@ MISC - IDK all *
 	Mr. Mime or yeet
 	togepi (breeders egg)
 	shuckle
+	Riolu
 	
 
 
@@ -772,7 +820,6 @@ Ninetales
 Machamp
 Shuckle
 Honkcrow murkrow
-Timbur / Conkeldurr
 Cubchoo (ice bear)
 Maschiff (dark dog)
 Drilbur

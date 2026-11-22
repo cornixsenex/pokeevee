@@ -325,7 +325,7 @@
 #define P_FAMILY_WOOBAT                  P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_DRILBUR                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_AUDINO                  P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_TIMBURR                 P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_TIMBURR                 FALSE
 #define P_FAMILY_TYMPOLE                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_THROH                   FALSE
 #define P_FAMILY_SAWK                    FALSE
@@ -358,7 +358,7 @@
 #define P_FAMILY_FRILLISH                FALSE
 #define P_FAMILY_ALOMOMOLA               FALSE
 #define P_FAMILY_JOLTIK                  P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_FERROSEED               P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_FERROSEED               FALSE
 #define P_FAMILY_KLINK                   P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_TYNAMO                  FALSE
 #define P_FAMILY_ELGYEM                  FALSE
@@ -396,7 +396,7 @@
 #define P_FAMILY_CHESPIN                 FALSE
 #define P_FAMILY_FENNEKIN                FALSE
 #define P_FAMILY_FROAKIE                 FALSE
-#define P_FAMILY_BUNNELBY                P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_BUNNELBY                FALSE
 #define P_FAMILY_FLETCHLING              P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_SCATTERBUG              P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_LITLEO                  FALSE
@@ -404,7 +404,7 @@
 #define P_FAMILY_SKIDDO                  P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_PANCHAM                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_FURFROU                 FALSE
-#define P_FAMILY_ESPURR                  P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_ESPURR                  FALSE
 #define P_FAMILY_HONEDGE                 FALSE
 #define P_FAMILY_SPRITZEE                FALSE
 #define P_FAMILY_SWIRLIX                 FALSE
@@ -435,12 +435,12 @@
 #define P_FAMILY_LITTEN                  FALSE
 #define P_FAMILY_POPPLIO                 FALSE
 #define P_FAMILY_PIKIPEK                 P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_YUNGOOS                 P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_YUNGOOS                 FALSE
 #define P_FAMILY_GRUBBIN                 FALSE
 #define P_FAMILY_CRABRAWLER              FALSE
 #define P_FAMILY_ORICORIO                FALSE
 #define P_FAMILY_CUTIEFLY                FALSE
-#define P_FAMILY_ROCKRUFF                P_GEN_CUSTOM_POKEMON
+#define P_FAMILY_ROCKRUFF                FALSE
 #define P_FAMILY_WISHIWASHI              FALSE
 #define P_FAMILY_MAREANIE                FALSE
 #define P_FAMILY_MUDBRAY                 P_GEN_CUSTOM_POKEMON
