@@ -348,8 +348,8 @@ Silvan Woods - 3 bugs and 1 grass for each day and night plus the rare bugs
 	caterpie               01
 	// 1 %
 	Scyther      (m)
-	Heracros     (d)
-	Pinsir       (e)
+	Pinsir       (d)
+	Heracros     (e)
 
 	(n)
 	Paras (n)             20
@@ -364,124 +364,167 @@ Silvan Woods - 3 bugs and 1 grass for each day and night plus the rare bugs
 	Foongus   (***) - fake items
 
 Pre / Post Swamp
-	meowth
-	Abra (r)
-	nincada
-	turtwig
-	bidoof
-	stunky
-	skorupi ? little desert ? chaparrel
+	bidoof  (20)
+	foongus (20)
+	meowth  10, 5 = 15
+	nincada 10, 5 = 15
+	
+	skitty  (d) 10, 10 = 20
+	stunky  (n) 10, 10 = 20
+	
+	Abra (r) 4, 4 = 8
+	turtwig (r) 1, 1 = 2
+
 
 	Foongus   (***) - fake items AND grass
 
 Swamp - water / ground / grass / poison
-	lotad
-	whooper
-	croagunk
+	lotad     20
+	whooper   20
+	croagunk  10, 10 = 20
+	shellos   10
+	foongus   10
+	shroomish 5, 5 = 10
+
+	Ducklett (d)  4, 4 = 8
+	murkrow  (n)  4, 4 = 8
+
+	mudkip    1, 1 = 2
+	
 	tododile (surf)
-	mudkip
-	shellos
 	tympole (surf)
 	
 	Foongus   (***) - fake items AND grass
 
 
 Via Litoralis - whatever you need tbh
-	Pikachu
-	murkrow (n)
-	torchik
-	ralts
-	electrike
-	volbeat & illumise (m e)
+	volbeat & illumise (m e) 20
+	blitzle (d)              20
+	murkrow (n)              20
+
+	electrike            
 	shinx
-	blitzle
 	Pawmi
 	Maschiff 
+	
+	Pikachu (r)
+	torchik (r)
+	ralts   (r)
 
 Beach Cave - just an excuse for some fighting / rock / ground types before power plant and poke tower
+
+	1F
+	zubat	
+	whismur
 	makuhita
+	diglett
+	dunsparce (r)
+
+	2F
+	zubat	
 	aron
 	sabelye
-	zubat	
 	diglett
-	slowpoke (surf)
 	dunsparce (r)
-	whismur
+	
+	slowpoke (surf)
 
 
 Power Plant - electric / steel types
-	magnemite
-	voltorb (** and  fake item!)
-	electabuzz (r)
-	klink
-	joltik
+	magnemite 20, 10 (30)
+	voltorb (** and  fake item!) 20, 10 (30)
+	klink 10, 5 (15)
+	joltik 10, 5 (15)
+	electabuzz 4, 4, 1, 1 (10)
 
 Lower Drake - california etc
-	Bulbasaur
-	Natu
-	sudowodo (*)
-	yanma
-	pineco
-	starly (d)
-	buizel
-	Minccino
-	Fletchling
-	rookidee (n)
+	Fletchling (d) 20
+	rookidee (n)   20
 	
+	starly (d)     20 
+	Natu   (n)     20
+	
+	Minccino       10, 10
+	yanma          10, 10
+	pineco         5, 5, 4, 4 (18)
+	Bulbasaura (r) 1, 1       (2)
+	
+	buizel (surf)
+	
+	sudowodo (*)
 	Foongus   (***) - fake items
 
 
 Zoo Route - whatever you need tbh
-	ponyta
-	doduo
-	Tauros
-	mareep
-	girafarig
-	stantler
-	miltank
-	spoink
-	tepig
-	Bouffalant
-	Skido
-	Pancham
-	Mudbray
-	Wooloo
-	Lechonk
 
+	DAY
+		Ponyta   20
+		Mareep   20
+		doduo    10
+		Wooloo   10
+		Skido    10
+		mudbray  10
+		milktank 4, 4 = 8
+		Tauros   5
+		Bouffalant 5
+		tepig 1, 1 = 2
+
+	NIGHT
+		Stantler 20
+		Lechonk 20
+		girafarig 10, 5
+		spoink    10, 5
+		pancham   10, 4
 
 Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
 	phanphy
-	meditite
 	Spidna
+	meditite (n)
+	machop   (d)
+	Meinfoo  (m, e)
+	rhydon
+
+	skarmory (d)
 	Gligar (n)
-	machop
-	onix
-	cubone ? little desert
-	rhyhorn ? little desert  (please disable rhyperior)
-	Meinfoo
+
+	geodude (*** rock smash)
+	Roggenrola (*** rock smash)
 
 Dark Tunnel - mt moon, dark cave etc also rock smash mons
-	cleffairy ? somewhere at night ? gift / misc rare
-	nosepass ? any cave really
-	gibble
+	zubat 
+	nosepass
+	onyx
 	drilbur
 	Scraggy
+	graveller
+	cleffairy (r)
+	gibble (r)
 
-Little Desert - desert without the sandstorm
-	Cacnea
+	geodude (*** rock smash)
+	Roggenrola (*** rock smash)
+
+Little Desert - desert without the sandstorm / cactus
 	trapinch
-	Skarmory ? vallonia
 	sandshrew
-	cubone ? vallis
-	rhyhorn ? vallis (please disable rhyperior)
-	dwebble
+	
+	cubone
 
+	Cacnea  (d)
+	Sizzlipede (n, r)
+	
+	skorupi (n)
+	dwebble (d)
+
+	geodude (*** rock smash)
+	Roggenrola (*** rock smash)
 
 Desert - deep desert
-	Hippodown
-	Sand Crocodile
+	Hippopotas
 	sandshrew
 	Sandile
+	
+	geodude (*** rock smash)
+	Roggenrola (*** rock smash)
 
 Desert Temple - mirage tower et meteor falls "heady" rocks
 	Beldum
@@ -527,6 +570,9 @@ Via Somnia - sleep theme? Whatever you need
 	Foongus   (***) - fake items
 
 Via Saxosa - theme could change, whatever you need
+	
+	geodude (*** rock smash)
+	Roggenrola (*** rock smash)
 
 Dark Cave? - add it like Via Saxosa if you need more "special" encounters etc
 	wobbufet
@@ -571,7 +617,9 @@ Volcano (outside) -
 	Slugma
 	torkoal
 	Larvestra
-	Sizzlipede (rare?)
+	
+	geodude (*** rock smash)
+	Roggenrola (*** rock smash)
 
 Ignis (inside) -
 	Charmander
@@ -748,7 +796,6 @@ MISC - IDK all *
 	Riolu
 
 No precise placement (yet? yeet?)
-	Skitty / Delcatty
 	Happiny / Chansey
 	igglybuff / jigglypuff
 	
