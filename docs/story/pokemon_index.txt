@@ -269,16 +269,15 @@ P_FAMILY_FLAMIGO                :   Lake
 # ROUTES / MAIN ENCOUTNER AREAS
 
 Granny Puddle
-	rattata (a)
-	
-	pidgey   (d)
-	hoothoot (n)
-
-	caterpie    (d)
-	weedle      (d)
-	zubat (n)
-	
-	igglybuff (r)
+	rattata (a)        20, 20 (40)
+	                   
+	pidgey   (d)       10, 10, 10, 10 (40)
+	hoothoot (n)       10, 10, 10, 10 (40)
+                       
+	caterpie    (d)    5, 5 (10)
+	weedle      (d)    4, 4, 1, 1 (10)
+	zubat (n)          5, 5, 4, 4, 1, 1 (20)
+	                   
 
 Via Florea
 	sentret   (d)
@@ -299,7 +298,7 @@ Via Florea
 	patrat (n)
 	hoothoot  (n)
 	
-	snivy (r)
+	snivy (r)          1, 1 (2)
 
 Pre Woods
 	Skwovet
@@ -334,23 +333,32 @@ Post Woods
 
 Silvan Woods - 3 bugs and 1 grass for each day and night plus the rare bugs
 
-	Wurmple / cascoon   (d)
-	scatterbug / evo (d)
-	caterpie / metapod
-	wurmple / beedrill
 
+	(m, d, e)
+	bellsprout             20
+	sewaddle               20
+	metapod                10
+	kakuna                 10
+	cascoon                10
+	silcoon                10
+	spewpa                 05
+	scatterbug             05
+	weedle                 04
+	wurmple                04
+	caterpie               01
+	// 1 %
+	Scyther      (m)
+	Heracros     (d)
+	Pinsir       (e)
 
-	sewaddle    (d)
-	bellsprout  (d)
-
-	Scyther  (rare)
-	Pinsir   (rare)
-	Heracros (rare)
-
-	Venipede (n)
-	Paras (n)
-	venonat (n)
-	shroomish (n)
+	(n)
+	Paras (n)             20
+	venonat (n)           20
+	Venipede (n)          10, 10 (20)
+	shroomish (n)         10, 10 (20)
+	oddish                5, 5   (10)
+	spinarak              4, 4   (8)
+	hoothoot              1, 1   (2)
 
 	Farfetchd (*) - cut
 	Foongus   (***) - fake items
@@ -374,6 +382,8 @@ Swamp - water / ground / grass / poison
 	mudkip
 	shellos
 	tympole (surf)
+	
+	Foongus   (***) - fake items AND grass
 
 
 Via Litoralis - whatever you need tbh
@@ -740,6 +750,7 @@ MISC - IDK all *
 No precise placement (yet? yeet?)
 	Skitty / Delcatty
 	Happiny / Chansey
+	igglybuff / jigglypuff
 	
 	
 
