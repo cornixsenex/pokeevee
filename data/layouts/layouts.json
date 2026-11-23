@@ -11864,6 +11864,16 @@
       "border_height": 2,
       "border_width": 2,
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_NIDIA",
+      "name": "Nidia_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Nidia/border.bin",
+      "blockdata_filepath": "data/layouts/Nidia/map.bin"
     }
   ]
 }
