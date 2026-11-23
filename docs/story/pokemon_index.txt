@@ -239,7 +239,8 @@ P_FAMILY_GOLETT                 :   Desert Temple / Dark Tower
 P_FAMILY_BOUFFALANT             :   XXX 
 P_FAMILY_RUFFLET                :   XXX (late d)
 P_FAMILY_VULLABY                :   XXX (late n)
-P_FAMILY_DURANT                 :   Rocket Tower / Deino Cave
+P_FAMILY_DURANT                 :   Deino Cave
+P_FAMILY_HEATMOR                :   Deino Cave
 P_FAMILY_DEINO                  :   Deino Cave 
 P_FAMILY_LARVESTA               :   Jungle / Upper Drake 
 P_FAMILY_FLETCHLING             :   XXX 
@@ -447,7 +448,7 @@ Lower Drake - california etc
 	Minccino       10, 10
 	yanma          10, 10
 	pineco         5, 5, 4, 4 (18)
-	Bulbasaura (r) 1, 1       (2)
+	Bulbasaur  (r) 1, 1       (2)
 	
 	buizel (surf)
 	
@@ -472,6 +473,7 @@ Zoo Route - whatever you need tbh
 	NIGHT
 		Stantler 20
 		Lechonk 20
+		Nickit
 		girafarig 10, 5
 		spoink    10, 5
 		pancham   10, 4
@@ -522,28 +524,31 @@ Desert - deep desert
 	Hippopotas
 	sandshrew
 	Sandile
+	rhydon
+	diglett
 	
 	geodude (*** rock smash)
 	Roggenrola (*** rock smash)
 
 Desert Temple - mirage tower et meteor falls "heady" rocks
-	Beldum
-	Solrock / Lunatone
-	unkown
+	Solrock  (d)
+	Lunatone (n)
 	baltoy
 	Bronzor
 	Sigilyph
 	Yamask
+	unkown
+	Beldum (r)
 
 Post Desert - between sandstorm and slabs town - whatever you need
 
 Chapparel - whatever you need
-	Swablu Altaria
+	Swablu
 	Zangoose
 	Seviper
-	Nidos
-	Kangaskan ( or earlier to vallonia)
-	gligor (n)
+	Nidorina
+	Nidorino
+	Kangaskan
 
 Dark Tower - rare ghosts et dark types
 	ghastly (could be outside at n)
@@ -551,22 +556,25 @@ Dark Tower - rare ghosts et dark types
 	shuppet  (could be outside at n)
 	duskull  (could be outside at n)
 	drifloon
-	spiritomb (*)
 	litwick
-	Golett / Golurk ? Desert Temple
+	Golett / Golurk
+	spiritomb (*)
 
 Via Somnia - sleep theme? Whatever you need
-	vulpix (d)
-	growlithe (d)
-	drowzee
-	snorlax (*)
-	houndour (n)
-	slackoth
-	munna
-	zorua (n)
-	Komala
-	Nickit (n)
-	
+
+	DAY
+		slacktoh
+		Komala
+		vulpix
+		growlithe
+
+	NIGHT
+		munna
+		drowzee
+		zorua
+		houndour
+
+	snorlax (***) - poke flute block
 	Foongus   (***) - fake items
 
 Via Saxosa - theme could change, whatever you need
@@ -579,7 +587,7 @@ Dark Cave? - add it like Via Saxosa if you need more "special" encounters etc
 	larvitar
 
 Playa - 
-	squirtle
+	squirtle (r)
 	krabby  (surf)
 	wingull (surf)
 	Chewtle
@@ -600,21 +608,22 @@ Isla Colchis Cave - something rare etc
 Isla Beach Cave - idk something else rare etc
 
 Jungle - monkeys, rare bugs
-	Mankey
-	Chimchar
-	Shiftry (? - seedot early)
 	Aipom
-	exeggcute / exeggutor (headbutt)
-	treeko
-	kecleon (*)
+	Mankey
 	Tropius
-	Pikipek / Toucannon (Only want toucannon)
+	Toucannon
+	exeggutor
+	Chimchar (r)
+	treeko (r)
 	
+	kecleon (*)
 	Foongus   (***) - fake items
 
 Volcano (outside) - 
-	numel Camerupt
+	numel 
+	Camerupt
 	Slugma
+	Magcargo
 	torkoal
 	Larvestra
 	
@@ -622,21 +631,22 @@ Volcano (outside) -
 	Roggenrola (*** rock smash)
 
 Ignis (inside) -
+	Magmar
 	Charmander
 	Cyndaquil
-	Magmar
 	bagon
 
 Upper Drake - California ++
-	Ursaring / Teddy
 	Bunneary
-	Oshawott / Dewott (surf)
-	Deerling / Sawsbuck ? Silva / pre post
-	Emolga
-	Rufflet
+	Rufflet (d)
 	Vullaby (n)
+
+	snubbul / granbull
+	Emolga
+	Ursaring
 	Wattrel / Kilowattrel
 	
+	Oshawott / Dewott (surf)
 	Foongus   (***) - fake items
 
 Drake Lake - Special Water
@@ -650,34 +660,32 @@ Water Temple - Xtra Special Waters
 	feebas
 
 Deino Cave - last round of normal cave guys
+	Heatmor
+	Durant
 	Absol
-	Axew ? other cave
-	Druddigon
-	Durant ? other cave
-	Deino
+	Axew      (sorta r)
+	Druddigon (sorta r)
+	Deino  (r)
 
+Snow Route
+	Delibird (d)
+	Sneasel (n)
 
-Snow Route - ice types not specific to ice cave
-	Sneasel (n) ? ice cave
 	swinub / piloswine
-	Delibird ? Ice Cave 
 	snover / Abomasnow
 	Cubchoo / Beartic
 
-Ice Cave - Ice types like ice (also has water areas)
-	Seel / Dewgong (s)
-	Lapras         (s)
-	Icicle
+Ice Cave
 	Jynx
-	sneasel
-	snorunt
+	snorunt / Glalie
+	cryogonal
+	Bergmite / Avalugg
+	snom / frosmoth
+
 	spheal         (s)
 	piplup         (s)
-	cryogonal
-	Bergmite
-	snom / frosmoth ? snow route
-
-Mountaintop - IDK if it needs any encounters maybe like spear pillar will see
+	Seel / Dewgong (s)
+	Lapras         (s)
 
 # TOWNS
 
@@ -698,7 +706,6 @@ Peccadum
 Doak
 	grimer / muk
 	koffing
-	snubbul (or yeet)
 	pidove ? early / mid route
 
 Dojo Town / Pugnea
@@ -799,12 +806,6 @@ No precise placement (yet? yeet?)
 	Happiny / Chansey
 	igglybuff / jigglypuff
 	
-	
-
-
-
-
-
 
 Order of early mons -> later
 

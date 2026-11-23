@@ -374,7 +374,7 @@
 #define P_FAMILY_BOUFFALANT              P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_RUFFLET                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_VULLABY                 P_GEN_CUSTOM_POKEMON
-#define P_FAMILY_HEATMOR                 FALSE
+#define P_FAMILY_HEATMOR                 P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_DURANT                  P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_DEINO                   P_GEN_CUSTOM_POKEMON
 #define P_FAMILY_LARVESTA                P_GEN_CUSTOM_POKEMON
