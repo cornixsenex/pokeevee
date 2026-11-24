@@ -1527,6 +1527,20 @@ enum KantoDexOrder
 #define KANTO_DEX_COUNT (KANTO_DEX_MEW + 1)
 #define HOENN_DEX_COUNT (HOENN_DEX_DEOXYS + 1)
 
+// Cornix custom Hespera Dex
+#define HESPERA_DEX_IF(config, ...)
+
+#define FOREACH_SPECIES_IN_HESPERA_DEX_ORDER(F) \
+	F(EEVEE) \
+	F(VAPOREON) \
+	F(JOLTEON) \
+	F(FLAREON) \
+	F(ESPEON) \
+	F(UMBREON) \
+	F(LEAFEON) \
+	F(GLACEON) \
+	
+
 #define REGIONAL_DEX_COUNT (IS_FRLG ? KANTO_DEX_COUNT : HOENN_DEX_COUNT)
 
 #define DECAGRAMS_IN_POUND             453592

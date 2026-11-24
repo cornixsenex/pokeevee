@@ -269,7 +269,7 @@ P_FAMILY_FLAMIGO                :   Lake
 
 # ROUTES / MAIN ENCOUTNER AREAS
 
-Granny Puddle
+Granny Puddle (d = 2-3, n = 6-10)
 	rattata (a)        20, 20 (40)
 	                   
 	pidgey   (d)       10, 10, 10, 10 (40)
@@ -280,7 +280,7 @@ Granny Puddle
 	zubat (n)          5, 5, 4, 4, 1, 1 (20)
 	                   
 
-Via Florea
+Via Florea (d = 3-5, n = 5-8)
 	sentret   (d)
 	zigzagoon (n)
 	
@@ -301,7 +301,7 @@ Via Florea
 	
 	snivy (r)          1, 1 (2)
 
-Pre Woods
+Pre Woods (10 - 15, 13-18)
 	Skwovet
 	Skitty  (r)
 
@@ -332,7 +332,7 @@ Post Woods
 	Deerling  (n r)
 
 
-Silvan Woods - 3 bugs and 1 grass for each day and night plus the rare bugs
+Silvan Woods - (
 
 
 	(m, d, e)
@@ -391,9 +391,13 @@ Swamp - water / ground / grass / poison
 	murkrow  (n)  4, 4 = 8
 
 	mudkip    1, 1 = 2
+
+	SURF
+		whooper
+		tododile (r)
+		tympole 
+
 	
-	tododile (surf)
-	tympole (surf)
 	
 	Foongus   (***) - fake items AND grass
 

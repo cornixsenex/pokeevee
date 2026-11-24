@@ -11870,8 +11870,8 @@
       "name": "Nidia_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_AltGeneral",
+      "secondary_tileset": "gTileset_TanobyRuins",
       "border_filepath": "data/layouts/Nidia/border.bin",
       "blockdata_filepath": "data/layouts/Nidia/map.bin"
     }
