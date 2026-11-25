@@ -1,0 +1,51 @@
+Hespera — Project & Story Context
+
+Core Premise & Vibe
+
+    Setting: Hespera, a California-inspired region using classical Latin naming conventions, clean geographical progression, and a blend of mythic nature vs. corporate industrialization.
+
+    Tone: Classic Pokémon adventure anchored by a grounded corporate-military syndicate, comedic secondary rivals who genuinely evolve, and a tragic, nihilistic arc for your primary rival.
+
+Main Characters
+
+    Player: Starts in Nidea living with Granny. After receiving a starter Pokémon and experiencing a region-wide psychic dream of Mew, sets out to see Mew and ends up dismantling Team Regnum and facing Mewtwo's ultimate judgment.
+
+    Leaf (Friendly / Guide Rival): Picks the starter weak to yours. Serves as your warm, exploratory counterpart across ~6 milestone battles—pointing you toward new areas and representing wonder, curiosity, and connection with Pokémon.
+
+    Blue (Main / Nihilist Rival): Picks the starter strong against yours. An arrogant, fiercely independent trainer who drops out of Alba Trainer School on day one believing "might makes right."
+
+        Arc: Repeatedly outmaneuvered by Team Regnum's dirty tricks and defeated by you, his pride curdles into bitter obsession—chasing Mewtwo up the mountain like Gollum chasing the Ring. After realizing at the summit that he can never surpass Mewtwo, he snaps into full nihilism: if he can't stand at the pinnacle, humanity deserves to be wiped out.
+
+        Finale: Acts as the penultimate boss inside Mewtwo's pyramid gauntlet to stop anyone from saving the world, ending his arc in empty silence (...) upon defeat.
+
+    Rex (Main Antagonist — Leader of Team Regnum): The ruthless, calculating CEO/kingpin of Team Regnum, a shadowy tech-and-mercenary mega-conglomerate based in Urbia.
+
+        Motivation: Wants to establish Pax Regni—a technocratic monarchy with himself as king—by capturing Mew, cloning it, and encasing Mewtwo in control armor.
+
+        Arc: Dismisses you early at Techne Corp, captures Mew with a stolen Master Ball at Numina, battles you at Arx Regni right before Armored Mewtwo breaks free, and fights you one last time at the mountain summit (Culmen) after Mewtwo rejects him. Defeated and broken, he disbands Regnum and walks away before the final gauntlet.
+
+    Jessie, James & Meowth / JJM (Secondary Double-Battle Rivals): Low-ranking Regnum wannabes who serve as your recurring 2v2 Double Battle rivals.
+
+        Arc: After two early back-to-back failures (Peccatum power plant and Techne Corp), Rex fires them. They ambush you in disguises in the desert, try one last uninvited stall at Numina (where Rex completely ignores them), and finally quit Regnum for good—showing up on vacation in Isla Tropica. Freed from Rex, they train for themselves and return as a legitimately dangerous Double Battle boss in the final pyramid gauntlet.
+
+Plot Flow (Start to Endgame)
+
+    Opening & The Mew Dream: Save Leaf, get your starter, battle Leaf at Alba Trainer School, and meet Blue as he walks out. That night during a storm, everyone dreams of Mew. You defeat Blue outside Nidea the next morning and begin your journey.
+
+    The Techne Corp Heist: Team Regnum cuts the power grid in Peccatum (guarded by JJM) to disable security so Rex can steal the Master Ball prototype and armor blueprints from Techne Corp in Robusta. You beat JJM twice, lose the race for the Master Ball against Blue/Rex, and watch Rex fire JJM and walk out untouchable.
+
+    Mid-Game & The Sleeping Town: JJM ambush you in the desert in bad disguises. Later, you reach Sabina Nova, where the entire town is trapped in an enchanted sleep caused by Mew's psychic ripples; you climb Turris Mortuorum for the Poké Flute to wake them while Blue rushes ahead.
+
+The Capture of Mew (Numina): You reach the sacred island sanctuary just as Rex captures Mew in the Master Ball in front of you and a stunned Blue. JJM try to cover Rex's escape to win their jobs back, get ignored by Rex, and quit Regnum.
+
+Arx Regni & Armored Mewtwo (Urbia): You raid Regnum's skyscraper HQ, fight past an exhausted Blue, and defeat Rex—only for the newly cloned Armored Mewtwo to shatter its containment, destroy the lab, and flee toward the mountains.
+
+Island Expedition & Mountain Climax: You Surf to Isla Tropica (passing a vacationing JJM), traverse the palm grove and volcano to earn Rock Climb, and ascend the Draco river and dragon cavern into the snowy peaks. At the summit (Culmen), Mewtwo rejects Rex, vows to wipe out humanity, and raises its pyramid over the ruins of Arx Regni in Urbia. You defeat Rex one final time, ending Team Regnum.
+
+The Final Gauntlet (Pyramis Ultima): You climb Mewtwo's pyramid in Urbia for the Elite Four-style finale: top regional trainers $\rightarrow$ redeemed JJM (Double Battle) $\rightarrow$ nihilist Blue $\rightarrow$ your Clone Team $\rightarrow$ Mewtwo at the peak.
+
+Current Development Status
+
+    Locked In: World map, Latin naming conventions, faction motivations, character arcs (Rex, Blue, Leaf, JJM), and full plot pacing from intro to endgame.
+
+    Up Next: Boss/gym/gauntlet rosters, level curve, and specific encounter/battle mechanics.

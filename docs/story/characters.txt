@@ -1,0 +1,10 @@
+leaf:	
+	
+blue:
+	
+Rex:
+	Tech
+	control
+	wants pax regni
+	at the end culmen: "The regnum is finished, go die in whatever way seems best to you" off the mountain top
+

@@ -482,7 +482,7 @@ Zoo Route - whatever you need tbh
 		spoink    10, 5
 		pancham   10, 4
 
-Via Vallonia - 'tough' mons also "optional" rock smash mons (rares)
+Via Saxosa - 'tough' mons also "optional" rock smash mons (rares)
 	phanphy
 	Spidna
 	meditite (n)
@@ -509,7 +509,7 @@ Dark Tunnel - mt moon, dark cave etc also rock smash mons
 	geodude (*** rock smash)
 	Roggenrola (*** rock smash)
 
-Little Desert - desert without the sandstorm / cactus
+Little Desert 
 	trapinch
 	sandshrew
 	
@@ -581,7 +581,7 @@ Via Somnia - sleep theme? Whatever you need
 	snorlax (***) - poke flute block
 	Foongus   (***) - fake items
 
-Via Saxosa - theme could change, whatever you need
+Via Vallonia - theme could change, whatever you need
 	
 	geodude (*** rock smash)
 	Roggenrola (*** rock smash)
@@ -707,7 +707,7 @@ Porto
 
 Peccadum
 
-Doak
+Robusta
 	grimer / muk
 	koffing
 	pidove ? early / mid route
