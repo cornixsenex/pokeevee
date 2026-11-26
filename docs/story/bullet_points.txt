@@ -13,16 +13,16 @@ Leaf2 (15)
 Silva Obscura (13-18)
 Via Arborea II (10-15)
 Salix
-Garden (20)
+Garden (20) / Hortus
 Via Stagnalis I
 Palus
 	Blue II
 		>The strong take what they want
 		>This is just a speedbump. I've discovered a tool that will make any pokemon obey me even mew
 Via Stagnalis II
-Portua / portuna / Portunus 
+Portunia
 Via Litoralis
-Antrum Marinum
+Caverna Marina
 Peccatum
 Statio Electrica
 	Regnum I
@@ -84,7 +84,7 @@ Volcano Vulcanus (interior)
 Dracus Superior
 Lacus Dracus
 Water Temple / Nymphaeum / Cisterna
-Deino / Antrum Draconis
+Antrum Draconis
 Via Nivalis (snow route)
 Nix (town)
 Ice Cave / Caverna Gelida
