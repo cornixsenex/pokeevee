@@ -11866,14 +11866,14 @@
       "layout_version": "frlg"
     },
     {
-      "id": "LAYOUT_NIDIA",
-      "name": "Nidia_Layout",
-      "width": 20,
-      "height": 20,
+      "id": "LAYOUT_NIDEA",
+      "name": "Nidea_Layout",
+      "width": 26,
+      "height": 26,
       "primary_tileset": "gTileset_AltGeneral",
       "secondary_tileset": "gTileset_Slateport",
-      "border_filepath": "data/layouts/Nidia/border.bin",
-      "blockdata_filepath": "data/layouts/Nidia/map.bin"
+      "border_filepath": "data/layouts/Nidea/border.bin",
+      "blockdata_filepath": "data/layouts/Nidea/map.bin"
     }
   ]
 }

@@ -349,10 +349,10 @@
       "respawn_npc": "LOCALID_SIX_ISLAND_NURSE"
     },
     {
-      "id": "HEAL_LOCATION_NIDIA",
-      "map": "MAP_NIDIA",
-      "x": -1,
-      "y": -1
+      "id": "HEAL_LOCATION_NIDEA",
+      "map": "MAP_NIDEA",
+      "x": -2,
+      "y": -2
     }
   ]
 }

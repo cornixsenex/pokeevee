@@ -2024,4 +2024,4 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/CavumCalypsus/scripts.inc"
 	.include "data/maps/Scheria/scripts.inc"
 
-	.include "data/maps/Nidia/scripts.inc"
+	.include "data/maps/Nidea/scripts.inc"
