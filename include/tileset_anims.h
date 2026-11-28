@@ -33,6 +33,7 @@ void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
 void InitTilesetAnim_CityClara(void);
 void InitTilesetAnim_BigIsland(void);
+void InitTilesetAnim_AltGeneral(void);
 
 // FRLG
 void InitTilesetAnim_General_Frlg(void);

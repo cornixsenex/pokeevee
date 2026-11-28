@@ -82,6 +82,10 @@ static void QueueAnimTiles_Cave_WaterCurrents(u16); //Water Currenst - Cave
 static void QueueAnimTiles_BigIsland_WaterCurrents(u16); //Water Currenst - Big Island 
 static void QueueAnimTiles_Slateport_WaterCurrents(u16); //Water Currenst - Slateport 
 
+// ALT GENERAL
+static void TilesetAnim_AltGeneral(u16);
+static void QueueAnimTiles_AltGeneral_Flower(u16);
+
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCGFX_U16("data/tilesets/primary/general/anim/flower/1.png", ".4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCGFX_U16("data/tilesets/primary/general/anim/flower/0.png", ".4bpp");
 const u16 gTilesetAnims_General_Flower_Frame2[] = INCGFX_U16("data/tilesets/primary/general/anim/flower/2.png", ".4bpp");
@@ -1625,5 +1629,48 @@ void InitTilesetAnim_CeladonGym(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_CeladonGym;
+}
+
+const u16 gTilesetAnims_AltGeneral_Flower_Frame1[] = INCGFX_U16("data/tilesets/primary/alt_general/anim/flower/1.png", ".4bpp");
+const u16 gTilesetAnims_AltGeneral_Flower_Frame0[] = INCGFX_U16("data/tilesets/primary/alt_general/anim/flower/0.png", ".4bpp");
+const u16 gTilesetAnims_AltGeneral_Flower_Frame2[] = INCGFX_U16("data/tilesets/primary/alt_general/anim/flower/2.png", ".4bpp");
+
+const u16 *const gTilesetAnims_AltGeneral_Flower[] = {
+    gTilesetAnims_AltGeneral_Flower_Frame0,
+    gTilesetAnims_AltGeneral_Flower_Frame1,
+    gTilesetAnims_AltGeneral_Flower_Frame0,
+    gTilesetAnims_AltGeneral_Flower_Frame2
+};
+
+void InitTilesetAnim_AltGeneral(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_AltGeneral;
+}
+
+static void TilesetAnim_AltGeneral(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_AltGeneral_Flower(timer / 16);
+    //if (timer % 16 == 1)
+    //    QueueAnimTiles_General_Water(timer / 16);
+    //if (timer % 16 == 2)
+    //    QueueAnimTiles_General_SandWaterEdge(timer / 16);
+    //if (timer % 16 == 3)
+    //    QueueAnimTiles_General_Waterfall(timer / 16);
+    //if (timer % 16 == 4)
+    //    QueueAnimTiles_General_LandWaterEdge(timer / 16);
+}
+
+
+// NOTE: First number is tile location (convert from hex)
+// NOTE: Second number is the number of tiles to be animated (?)
+// NOTE: tbh I'm not fully sure why this works...but it's working  - CS 261127
+
+static void QueueAnimTiles_AltGeneral_Flower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_AltGeneral_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_AltGeneral_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(3)), 4 * TILE_SIZE_4BPP);
 }
 

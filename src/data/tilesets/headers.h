@@ -1917,5 +1917,5 @@ const struct Tileset gTileset_AltGeneral =
     .palettes = gTilesetPalettes_AltGeneral,
     .metatiles = gMetatiles_AltGeneral,
     .metatileAttributes = gMetatileAttributes_AltGeneral,
-    .callback = NULL,
+    .callback = InitTilesetAnim_AltGeneral,
 };
